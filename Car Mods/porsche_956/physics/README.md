@@ -44,6 +44,12 @@ Abtrieb trifft das Modell jetzt fast genau: 678 kg bei 200 (Modell bei den gemes
 
 Balance aus Radlasten 35 Prozent vorn, unverändert gegenüber Messung 2 trotz `ub_front_balance` 0,40 auf 0,45. Die Radlast-Messung enthält aber die Lastverlagerung durch das Widerstandsmoment (Widerstand greift laut `DRAG_OFFSET` 0,35 m über dem Schwerpunkt an, rund 0,69 m über Boden): bei 260 km/h etwa 90 kg nach hinten, also rund 6 Prozentpunkte. Die reine Aero-Balance liegt damit bei etwa 41 Prozent und damit am Ziel. Balance wird vorerst nicht weiter angefasst.
 
+## Messung 4 (2026-10-13, langer Anlauf Döttinger Höhe, `tools/out/messungen/04_topspeed_20261013.csv`)
+
+Topspeed 290 km/h im Fünften bei knapp 8000/min (Begrenzer 8560, Getriebe erlaubt 293), also leistungs- und widerstandsbegrenzt wie berechnet. Bei 290 km/h: 39 mm vorn, 58 mm hinten, 1842 kg Abtrieb (Modell rund 1900), Balance aus Radlasten 36 Prozent (plus rund 6 Punkte Widerstandsmoment). Fahrerurteil: sehr stabil bei hohem Tempo, ruhig beim Anbremsen, Heck wird nur bei frühem Herunterschalten leicht.
+
+**Aero-Phase damit abgeschlossen.** Kennfeld, Fahrwerk und Widerstand bleiben so, bis Motor, Masse und Reifen auf 1983 stehen. Danach erneut messen.
+
 ## Bekannte Baustellen
 
 - **Widerstand**: nach Messung 2 auf Cd·A 1,04 gesenkt (520 kg bei 322 km/h). Ziel-Topspeed Döttinger Höhe mit Quali-Motor rund 310 bis 320 km/h, Messung 3 abwarten.

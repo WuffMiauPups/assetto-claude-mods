@@ -24,7 +24,7 @@ local cfg = {
   lutFile = 'dirty_air.lut', frontWings = {}, rearWings = {}, exclude = {}, debug = true,
 }
 local lut = nil                     -- {{d, total, front, rear}, ...}
-local state = { front = 0, rear = 0, applied = false }
+local state = { front = 0, rear = 0, applied = false, logTimer = 0, peakFront = 0, nearest = 1e9, messaged = false }
 
 -- CSP-INI trennt Werte an Kommas: ohne Default liefert ini:get eine Liste von Strings, mit String-Default nur den ersten Eintrag
 local function parseList(v)
@@ -131,6 +131,7 @@ function M.update(dt)
   if not cfg.enabled or not lut then return end
   local myPos = car.position
   local bestFront, bestRear = 0, 0
+  local nearest = 1e9
   for i = 0, sim.carsCount - 1 do
     if i ~= car.index then
       local other = ac.getCar(i)
@@ -138,6 +139,7 @@ function M.update(dt)
         local rel = myPos - other.position
         local fwd = other.look
         local along = -rel:dot(fwd)                 -- positiv, wenn wir hinter dem anderen sind
+        if along > 1 and along < nearest then nearest = along end
         if along > 1 and along < cfg.maxDist then
           local side = vec3(fwd.z, 0, -fwd.x)
           local lateral = math.abs(rel:dot(side))
@@ -166,6 +168,21 @@ function M.update(dt)
   if cfg.debug then
     ac.debug('dirty air front', state.front)
     ac.debug('dirty air rear', state.rear)
+    -- alle 10 s eine Logzeile, damit der Effekt auch ohne Debug-App nachvollziehbar ist (nur Spielerauto)
+    if state.front > state.peakFront then state.peakFront = state.front end
+    if nearest < state.nearest then state.nearest = nearest end
+    state.logTimer = state.logTimer + dt
+    if state.logTimer >= 10 and not car.isAIControlled then
+      ac.log(string.format('[dirty_air] car %d: naechster Vordermann %.0f m, Verlust jetzt vorn %.2f hinten %.2f, Spitze vorn %.2f',
+        car.index, state.nearest < 1e8 and state.nearest or -1, state.front, state.rear, state.peakFront))
+      state.logTimer, state.peakFront, state.nearest = 0, 0, 1e9
+    end
+    if state.front > 0.2 and not state.messaged and not car.isAIControlled then
+      ac.setMessage('Dirty Air', string.format('Abtrieb vorn -%.0f%%', state.front * 100))
+      state.messaged = true
+    elseif state.front < 0.05 then
+      state.messaged = false
+    end
   end
 end
 

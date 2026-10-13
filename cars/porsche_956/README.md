@@ -30,7 +30,7 @@ Das erzeugt genau das Fahrgefühl, das Derek Bell beschrieb: Das Auto auf der St
 - Abtrieb: etwa dreifacher Wert des 917, Unterboden mit zwei Tunneln, Motor dafür hinten angehoben.
 - Bellofs 956-007 am Ring 1983 mit größeren 13-Zoll-Vorderrädern und kleineren Anpassungen.
 
-Details und Quellen: `research/01-technische-daten.md` (Fahrzeug) und `research/02-csp-technik.md` (Umsetzung in CSP).
+Details und Quellen: `research/00-quellen.md` (alle Quellen), `01-technische-daten.md` (Fahrzeug), `02-csp-technik.md` (Umsetzung in CSP), `03-modellbewertung.md` (wie realistisch das Venturi-Modell ist).
 
 ## Ordner
 

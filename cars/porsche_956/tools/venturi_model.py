@@ -29,8 +29,8 @@ OUT_DIR = HERE / "out"
 class Config:
     # Zielwerte Gesamtauto bei Referenzgeschwindigkeit (Kurzheck, Schätzung)
     v_ref_kmh: float = 322.0
-    total_downforce_kg: float = 1800.0      # Langheck ~1050 kg, Kurzheck grob das Doppelte abzüglich Reserve
-    total_drag_kg: float = 480.0            # Langheck ~382 kg, Kurzheck mehr
+    total_downforce_kg: float = 1900.0      # Langheck ~1050 kg, Kurzheck ~doppelt; 962 (1993) 2540 kg. Siehe research/03
+    total_drag_kg: float = 640.0            # L/D 3.0; Motor Sport nennt 2.75 für den 956, 962 (1993) 4.0
     underbody_share: float = 0.60           # Anteil des Unterbodens am Gesamtabtrieb bei Design-Bodenfreiheit
     front_balance_total: float = 0.42       # Anteil Vorderachse am Gesamtabtrieb bei Design-Höhe
 
@@ -48,7 +48,8 @@ class Config:
     stall_width: float = 0.008              # Breite des Übergangs in m
     stall_floor: float = 0.35               # Restabtrieb nach Abriss (Anteil)
     rake_stall: float = 0.075               # Rake, ab dem der Diffusor ablöst
-    max_gain: float = 2.6                   # Deckel für das Kennfeld relativ zur Design-Höhe
+    plateau_gain: float = 2.4               # Bereich B der Literatur: weiches Maximum relativ zur Design-Höhe
+    plateau_softness: float = 0.35          # Weichheit des Übergangs in das Plateau
 
     # Balance des Unterbodens
     ub_front_balance: float = 0.40          # Anteil vorn bei Design-Höhe
@@ -106,7 +107,10 @@ class Underbody:
         base = (c.h_rear_design / hr_s) ** c.rear_exponent * (c.h_front_design / hf_s) ** c.front_exponent
         rake = hr - hf
         base *= 1 + c.rake_gain * (rake - c.rake_design)
-        base = np.clip(base, 0.05, c.max_gain)
+        # Bereich A geht weich in das Plateau B über (softmin), statt hart zu kappen
+        base = np.maximum(base, 0.05)
+        k = c.plateau_softness
+        base = -k * np.log(np.exp(-base / k) + np.exp(-c.plateau_gain / k))
         # Abriss: hinten zu tief, vorn zu tief, oder Diffusorwinkel zu steil
         healthy = smoothstep(hr, c.h_rear_stall, c.stall_width) \
             * smoothstep(hf, c.h_front_stall, c.stall_width) \

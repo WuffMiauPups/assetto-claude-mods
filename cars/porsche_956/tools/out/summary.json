@@ -1,240 +1,240 @@
 {
-  "cla_total_design": 3.604,
-  "cda_total_design": 0.961,
-  "cla_underbody_design": 2.162,
-  "cla_wing_rear": 1.009,
-  "cla_wing_front": 0.432,
-  "downforce_kg_at_v_ref_design_height": 1800,
+  "cla_total_design": 3.804,
+  "cda_total_design": 1.281,
+  "cla_underbody_design": 2.282,
+  "cla_wing_rear": 1.065,
+  "cla_wing_front": 0.456,
+  "downforce_kg_at_v_ref_design_height": 1900,
   "equilibrium": [
     {
       "v_kmh": 50,
       "h_front_mm": 54.4,
-      "h_rear_mm": 84.3,
-      "downforce_kg": 44,
+      "h_rear_mm": 84.2,
+      "downforce_kg": 46,
       "front_balance": 0.361
     },
     {
       "v_kmh": 60,
       "h_front_mm": 54.2,
-      "h_rear_mm": 84.0,
-      "downforce_kg": 63,
+      "h_rear_mm": 83.9,
+      "downforce_kg": 66,
       "front_balance": 0.361
     },
     {
       "v_kmh": 70,
       "h_front_mm": 53.9,
-      "h_rear_mm": 83.6,
-      "downforce_kg": 86,
+      "h_rear_mm": 83.5,
+      "downforce_kg": 90,
       "front_balance": 0.362
     },
     {
       "v_kmh": 80,
-      "h_front_mm": 53.6,
-      "h_rear_mm": 83.1,
-      "downforce_kg": 113,
+      "h_front_mm": 53.5,
+      "h_rear_mm": 83.0,
+      "downforce_kg": 119,
       "front_balance": 0.362
     },
     {
       "v_kmh": 90,
-      "h_front_mm": 53.2,
-      "h_rear_mm": 82.6,
-      "downforce_kg": 143,
+      "h_front_mm": 53.1,
+      "h_rear_mm": 82.5,
+      "downforce_kg": 151,
       "front_balance": 0.363
     },
     {
       "v_kmh": 100,
-      "h_front_mm": 52.7,
-      "h_rear_mm": 82.1,
-      "downforce_kg": 178,
+      "h_front_mm": 52.6,
+      "h_rear_mm": 81.9,
+      "downforce_kg": 187,
       "front_balance": 0.364
     },
     {
       "v_kmh": 110,
-      "h_front_mm": 52.2,
-      "h_rear_mm": 81.5,
-      "downforce_kg": 216,
+      "h_front_mm": 52.1,
+      "h_rear_mm": 81.3,
+      "downforce_kg": 227,
       "front_balance": 0.364
     },
     {
       "v_kmh": 120,
-      "h_front_mm": 51.7,
-      "h_rear_mm": 80.8,
-      "downforce_kg": 258,
+      "h_front_mm": 51.5,
+      "h_rear_mm": 80.5,
+      "downforce_kg": 272,
       "front_balance": 0.365
     },
     {
       "v_kmh": 130,
-      "h_front_mm": 51.1,
-      "h_rear_mm": 80.0,
-      "downforce_kg": 305,
+      "h_front_mm": 50.9,
+      "h_rear_mm": 79.7,
+      "downforce_kg": 321,
       "front_balance": 0.366
     },
     {
       "v_kmh": 140,
-      "h_front_mm": 50.4,
-      "h_rear_mm": 79.2,
-      "downforce_kg": 356,
+      "h_front_mm": 50.2,
+      "h_rear_mm": 78.9,
+      "downforce_kg": 375,
       "front_balance": 0.367
     },
     {
       "v_kmh": 150,
-      "h_front_mm": 49.7,
-      "h_rear_mm": 78.3,
-      "downforce_kg": 412,
-      "front_balance": 0.368
-    },
-    {
-      "v_kmh": 160,
-      "h_front_mm": 48.9,
-      "h_rear_mm": 77.3,
-      "downforce_kg": 473,
+      "h_front_mm": 49.4,
+      "h_rear_mm": 77.9,
+      "downforce_kg": 435,
       "front_balance": 0.369
     },
     {
+      "v_kmh": 160,
+      "h_front_mm": 48.5,
+      "h_rear_mm": 76.9,
+      "downforce_kg": 499,
+      "front_balance": 0.37
+    },
+    {
       "v_kmh": 170,
-      "h_front_mm": 48.0,
-      "h_rear_mm": 76.2,
-      "downforce_kg": 540,
+      "h_front_mm": 47.6,
+      "h_rear_mm": 75.8,
+      "downforce_kg": 569,
       "front_balance": 0.371
     },
     {
       "v_kmh": 180,
-      "h_front_mm": 47.0,
-      "h_rear_mm": 75.1,
-      "downforce_kg": 612,
-      "front_balance": 0.372
+      "h_front_mm": 46.6,
+      "h_rear_mm": 74.5,
+      "downforce_kg": 646,
+      "front_balance": 0.373
     },
     {
       "v_kmh": 190,
-      "h_front_mm": 46.0,
-      "h_rear_mm": 73.8,
-      "downforce_kg": 690,
+      "h_front_mm": 45.4,
+      "h_rear_mm": 73.2,
+      "downforce_kg": 729,
       "front_balance": 0.374
     },
     {
       "v_kmh": 200,
-      "h_front_mm": 44.8,
-      "h_rear_mm": 72.5,
-      "downforce_kg": 775,
+      "h_front_mm": 44.2,
+      "h_rear_mm": 71.8,
+      "downforce_kg": 819,
       "front_balance": 0.376
     },
     {
       "v_kmh": 210,
-      "h_front_mm": 43.5,
-      "h_rear_mm": 71.1,
-      "downforce_kg": 868,
+      "h_front_mm": 42.8,
+      "h_rear_mm": 70.3,
+      "downforce_kg": 918,
       "front_balance": 0.378
     },
     {
       "v_kmh": 220,
-      "h_front_mm": 42.1,
-      "h_rear_mm": 69.5,
-      "downforce_kg": 970,
-      "front_balance": 0.38
+      "h_front_mm": 41.3,
+      "h_rear_mm": 68.6,
+      "downforce_kg": 1027,
+      "front_balance": 0.381
     },
     {
       "v_kmh": 230,
-      "h_front_mm": 40.5,
-      "h_rear_mm": 67.7,
-      "downforce_kg": 1082,
-      "front_balance": 0.382
+      "h_front_mm": 39.6,
+      "h_rear_mm": 66.7,
+      "downforce_kg": 1147,
+      "front_balance": 0.383
     },
     {
       "v_kmh": 240,
-      "h_front_mm": 38.7,
-      "h_rear_mm": 65.8,
-      "downforce_kg": 1207,
-      "front_balance": 0.385
+      "h_front_mm": 37.7,
+      "h_rear_mm": 64.7,
+      "downforce_kg": 1282,
+      "front_balance": 0.386
     },
     {
       "v_kmh": 250,
-      "h_front_mm": 37.0,
-      "h_rear_mm": 63.8,
-      "downforce_kg": 1344,
-      "front_balance": 0.388
+      "h_front_mm": 36.8,
+      "h_rear_mm": 62.7,
+      "downforce_kg": 1414,
+      "front_balance": 0.389
     },
     {
       "v_kmh": 260,
-      "h_front_mm": 36.6,
-      "h_rear_mm": 61.9,
-      "downforce_kg": 1470,
-      "front_balance": 0.391
+      "h_front_mm": 36.5,
+      "h_rear_mm": 60.8,
+      "downforce_kg": 1546,
+      "front_balance": 0.393
     },
     {
       "v_kmh": 270,
-      "h_front_mm": 36.3,
-      "h_rear_mm": 59.9,
-      "downforce_kg": 1604,
-      "front_balance": 0.395
+      "h_front_mm": 36.1,
+      "h_rear_mm": 58.7,
+      "downforce_kg": 1687,
+      "front_balance": 0.396
     },
     {
       "v_kmh": 280,
-      "h_front_mm": 35.9,
-      "h_rear_mm": 57.9,
-      "downforce_kg": 1748,
-      "front_balance": 0.398
+      "h_front_mm": 35.7,
+      "h_rear_mm": 56.5,
+      "downforce_kg": 1840,
+      "front_balance": 0.4
     },
     {
       "v_kmh": 290,
-      "h_front_mm": 35.5,
-      "h_rear_mm": 55.6,
-      "downforce_kg": 1903,
-      "front_balance": 0.403
+      "h_front_mm": 35.3,
+      "h_rear_mm": 54.2,
+      "downforce_kg": 2004,
+      "front_balance": 0.405
     },
     {
       "v_kmh": 300,
-      "h_front_mm": 35.1,
-      "h_rear_mm": 53.3,
-      "downforce_kg": 2072,
-      "front_balance": 0.407
+      "h_front_mm": 34.8,
+      "h_rear_mm": 51.7,
+      "downforce_kg": 2183,
+      "front_balance": 0.409
     },
     {
       "v_kmh": 310,
-      "h_front_mm": 34.6,
-      "h_rear_mm": 50.7,
-      "downforce_kg": 2257,
-      "front_balance": 0.412
+      "h_front_mm": 34.2,
+      "h_rear_mm": 49.1,
+      "downforce_kg": 2378,
+      "front_balance": 0.415
     },
     {
       "v_kmh": 320,
-      "h_front_mm": 34.0,
-      "h_rear_mm": 48.0,
-      "downforce_kg": 2463,
-      "front_balance": 0.418
+      "h_front_mm": 33.6,
+      "h_rear_mm": 46.2,
+      "downforce_kg": 2595,
+      "front_balance": 0.42
     },
     {
       "v_kmh": 330,
-      "h_front_mm": 33.3,
-      "h_rear_mm": 44.9,
-      "downforce_kg": 2697,
-      "front_balance": 0.424
+      "h_front_mm": 32.9,
+      "h_rear_mm": 43.0,
+      "downforce_kg": 2840,
+      "front_balance": 0.427
     },
     {
       "v_kmh": 340,
-      "h_front_mm": 32.5,
-      "h_rear_mm": 41.4,
-      "downforce_kg": 2971,
-      "front_balance": 0.431
+      "h_front_mm": 32.1,
+      "h_rear_mm": 39.9,
+      "downforce_kg": 3108,
+      "front_balance": 0.433
     },
     {
       "v_kmh": 350,
-      "h_front_mm": 31.8,
-      "h_rear_mm": 39.7,
-      "downforce_kg": 3224,
-      "front_balance": 0.435
+      "h_front_mm": 31.6,
+      "h_rear_mm": 39.4,
+      "downforce_kg": 3327,
+      "front_balance": 0.434
     },
     {
       "v_kmh": 360,
-      "h_front_mm": 31.2,
-      "h_rear_mm": 39.1,
-      "downforce_kg": 3455,
-      "front_balance": 0.436
+      "h_front_mm": 31.0,
+      "h_rear_mm": 38.8,
+      "downforce_kg": 3559,
+      "front_balance": 0.435
     }
   ],
   "config": {
     "v_ref_kmh": 322.0,
-    "total_downforce_kg": 1800.0,
-    "total_drag_kg": 480.0,
+    "total_downforce_kg": 1900.0,
+    "total_drag_kg": 640.0,
     "underbody_share": 0.6,
     "front_balance_total": 0.42,
     "h_front_design": 0.055,
@@ -248,7 +248,8 @@
     "stall_width": 0.008,
     "stall_floor": 0.35,
     "rake_stall": 0.075,
-    "max_gain": 2.6,
+    "plateau_gain": 2.4,
+    "plateau_softness": 0.35,
     "ub_front_balance": 0.4,
     "balance_rake_gain": -2.5,
     "balance_front_low_gain": 1.2,

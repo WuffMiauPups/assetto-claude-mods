@@ -17,9 +17,9 @@ Das erzeugt genau das Fahrgefühl, das Derek Bell beschrieb: Das Auto auf der St
 
 | Baustein | Technik | Status |
 |---|---|---|
-| Physik-Daten | `car.ini`, `suspensions.ini`, `tyres.ini`, `engine.ini`, `aero.ini` auf Basis realer Daten | offen |
-| Venturi-Modell | CSP Aero Map in `aero.ini`: 2D-Kennfelder für Abtrieb, Widerstand und Balance über Bodenfreiheit vorn und hinten, dazu Speed- und Yaw-LUTs. Lua nur für Abriss-Hysterese, falls nötig | recherchiert, siehe `research/02-csp-technik.md` |
-| Abstimmung | Python-Modell des Venturi-Effekts, erzeugt die Kennfelder: `tools/venturi_model.py` | erste Version läuft |
+| Physik-Daten | `physics/data`, erzeugt von `tools/build_aero.py` aus dem VAC-956; `aero.ini` und `car.ini` neu, Rest noch Basis-Mod | erste Fassung, im Spiel installiert als `porsche_956_venturi` |
+| Venturi-Modell | CSP Aero Map in `aero.ini`: 2D-Kennfelder für Abtrieb, Widerstand und Balance über Bodenfreiheit vorn und hinten, dazu Yaw-LUTs. Lua nur für Abriss-Hysterese, falls nötig | eingebaut als `[MAP_0]`, Spieltest offen |
+| Abstimmung | `tools/venturi_model.py` (Kennfelder), `tools/build_aero.py` (data-Ordner), `tools/install.py` (ins Spiel) | läuft, unkalibriert |
 | 3D-Modell | bestehender 956-Mod als Basis, nur Physik und Skin werden ersetzt | offen |
 | Skin | Rothmans Nr. 2 (oder Nr. 7 bei Brun) als Bellof-Variante | offen |
 | Sound | aus bestehendem Mod übernehmen | offen |
@@ -44,8 +44,11 @@ porsche_956/
   dist/        fertiges Auto zum Kopieren nach content/cars/
 ```
 
-## Was ich brauche
+## Stand und nächste Schritte
 
-1. Welchen 956-Mod hast du installiert? Ordnername aus `content/cars/` reicht. Ich brauche den entpackten `data`-Ordner (Content Manager: Auto auswählen, "Unpack data").
-2. CSP-Version aus Content Manager.
-3. Welche Variante: Rothmans Werks-956 von 1983 oder 1984, oder der Brun-956 von 1985?
+Basis ist `vac_groupc_956` (entpackte Daten in `reference/`), CSP 0.3.0-preview649. Das Auto liegt im Spiel als eigener Ordner `porsche_956_venturi`, das Original bleibt unberührt.
+
+1. Spieltest auf der Nordschleife: lädt das Auto, wie verhält sich die Bodenfreiheit über Geschwindigkeit, wo liegt der Abriss. Ablauf in `physics/README.md`.
+2. Kalibrierung von Abtrieb, Widerstand und Federraten in `tools/venturi_model.py`.
+3. Masse, Motor, Getriebe, Reifen auf 1983 bringen.
+4. Offen: Variante (Rothmans Werks-956 1983 oder 1984, oder Brun 1985) für den Skin.

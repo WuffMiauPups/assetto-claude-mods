@@ -1,18 +1,44 @@
 # Physik
 
-Hier entsteht der entpackte `data`-Ordner des Autos. Basis wird der `data`-Ordner des installierten 956-Mods, der schrittweise ersetzt wird.
+`data/` ist der komplette, entpackte `data`-Ordner des Autos. Er wird von `tools/build_aero.py` erzeugt (Basis: `reference/vac_groupc_956/data`, Unterboden-Kennfelder aus `tools/venturi_model.py`) und von `tools/install.py` ins Spiel nach `content/cars/porsche_956_venturi/data` gespiegelt. Nicht von Hand in `data/` editieren, sondern die Skripte anpassen.
 
 | Datei | Herkunft | Status |
 |---|---|---|
 | `data/aero/*.2Dlut`, `*.lut` | erzeugt von `tools/venturi_model.py` | erzeugt, unkalibriert |
-| `aero_map_template.ini` | Vorlage für den `[MAP_0]`-Block in `data/aero.ini` | fertig |
-| `setup_aeromap_template.ini` | Vorlage für Map-Umschaltung im Setup | fertig |
-| `data/car.ini` | Basis-Mod, `VERSION=extended-2`, Masse 820 kg, Schwerpunkt | offen |
-| `data/aero.ini` | Basis-Mod, Flügel neu skaliert, Map-Block eingefügt | offen |
-| `data/suspensions.ini` | Doppelquerlenker, Radstand 2650, Federraten aus Modell, progressive Kennung | offen |
-| `data/tyres.ini` | Dunlop 280/650 und 350/650, 1983 vorn 13 Zoll Felge | offen |
-| `data/engine.ini`, `power.lut`, Turbo | 935/76, 620 PS bei 8200, 1,3 bar Quali | offen |
-| `data/drivetrain.ini` | 5-Gang Transaxle, Übersetzungen Ring (geschätzt) | offen |
-| `data/brakes.ini`, `electronics.ini` | Basis-Mod | offen |
+| `data/aero.ini` | erzeugt von `build_aero.py`: Karosserie (nur Widerstand), Front- und Heckflügel skaliert, `[MAP_0]` Unterboden; Diffusor-Flügel und Speed-Controller des Basis-Mods entfernt | erste Fassung, Spieltest offen |
+| `data/car.ini` | Basis-Mod, `VERSION=extended-2`, Name geändert; Masse 915 kg noch vom Basis-Mod | Masse und Schwerpunkt offen |
+| `data/suspensions.ini` | Basis-Mod unverändert (Radraten 78/110 N/mm, Radstand 2650) | Federraten aus Modell übernehmen |
+| `data/tyres.ini` | Basis-Mod | Dunlop 1983 vorn 13 Zoll offen |
+| `data/engine.ini`, `power.lut` | Basis-Mod (611 PS bei 8200) | Turbo-Quali-Trimm offen |
+| `data/drivetrain.ini`, `*.rto` | Basis-Mod | Übersetzungen Ring offen |
+| alle übrigen | Basis-Mod unverändert | |
+| `aero_map_template.ini`, `setup_aeromap_template.ini` | Vorlagen, Map-Block ist inzwischen in `build_aero.py` | nur noch Referenz |
 
-Abstimmungsziel: Bei Höchstgeschwindigkeit soll die Bodenfreiheit hinten knapp über der Abrisshöhe liegen (siehe `tools/out/venturi_model.png`), damit Bodenwellen und Kuppen das Auto kurz in den Abriss schicken. Das ist der historische Charakter, siehe Bellofs Überschlag an der Kuppe im Rennen 1983.
+## Kennzahlen der ersten Fassung (`tools/out/build_aero.json`)
+
+Statische Bodenfreiheit aus der Geometrie des Basis-Mods geschätzt: vorn 81 mm, hinten 90 mm (Reifenradius minus BASEY plus PICKUP-Höhe plus ROD_LENGTH). Ob die Aero-Map genau diesen Wert als Eingang bekommt, ist im Spiel zu prüfen (CSP-App mit Bodenfreiheit, Vergleich mit der Setup-Anzeige). Falls nicht, `FRONT_RH_OFFSET` und `REAR_RH_OFFSET` in `build_aero.py` setzen.
+
+| Größe | statisch | Ziel Modell bei Design-Höhe 55/85 mm |
+|---|---|---|
+| Cl·A Unterboden | 1,66 | 2,28 |
+| Cl·A gesamt | 3,18 | 3,80 |
+| Cd·A gesamt | 1,28 | 1,28 |
+| Balance vorn | 0,36 | 0,42 |
+
+Der Unterboden liefert statisch weniger als im Modell, weil das Auto höher steht als die Design-Höhe. Beim Einfedern unter Abtrieb läuft das Heck in den steilen Bereich des Kennfelds (unter 60 mm), das ist gewollt.
+
+## Bekannte Baustellen
+
+- **Widerstand**: Cd·A 1,28 heißt 640 kg Widerstand bei 322 km/h, das braucht rund 750 PS. Mit 611 PS liegt die Höchstgeschwindigkeit dann bei etwa 300 km/h. Für den Ring-Quali-Trimm vertretbar, für Le Mans falsch. `total_drag_kg` in `venturi_model.py` ist Schätzung und wird nach dem ersten Test gegen Döttinger-Höhe-Topspeed kalibriert. Der Karosserie-`CD_GAIN` von 2,77 (Basis-Mod 1,4) ist die Folge dieses Ziels.
+- **Masse**: Basis-Mod 915 kg mit Fahrer, Ziel laut Recherche rund 820 bis 850 kg plus Fahrer.
+- **Federraten**: Modell rechnet mit 140/190 N/mm, Basis-Mod hat 78/110. Erst testen, dann anpassen.
+
+Abstimmungsziel: Bei Höchstgeschwindigkeit soll die Bodenfreiheit hinten knapp über der Abrisshöhe (30 mm) liegen, damit Bodenwellen und Kuppen das Auto kurz in den Abriss schicken. Das ist der historische Charakter, siehe Bellofs Überschlag an der Kuppe im Rennen 1983.
+
+## Testablauf
+
+1. `python tools/venturi_model.py`, dann `python tools/build_aero.py`, dann `python tools/install.py` (aus `tools/` heraus).
+2. Content Manager: Auto "Porsche 956 Venturi (WIP)", Strecke Nordschleife, Practice.
+3. Prüfen, ob das Auto lädt (Fehler in `Documents\Assetto Corsa\logs\log.txt`, Suche nach `aero` oder `MAP_0`).
+4. CSP-Physik-Debug oder eine Aero-App: Bodenfreiheit vorn und hinten bei 100, 200, 300 km/h notieren, Abtrieb und Balance notieren.
+5. Vergleich mit `tools/out/summary.json` (Gleichgewicht über Geschwindigkeit), Kalibrierung in `venturi_model.py`.

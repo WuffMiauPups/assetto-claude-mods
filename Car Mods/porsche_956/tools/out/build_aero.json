@@ -1,0 +1,22 @@
+{
+  "rh_front_static": 0.08100000000000006,
+  "rh_rear_static": 0.09000000000000001,
+  "cg_height": 0.33860000000000007,
+  "front_cl_gain": 0.9868545633907986,
+  "rear_cl_gain": 1.2705191830502003,
+  "body_cd_gain": 2.7665159516367543,
+  "underbody_cla_static": 1.6624999999999992,
+  "underbody_cda_static": 0.1291199999999999,
+  "underbody_front_balance_static": 0.4212,
+  "total_cla_static": 3.183499999999999,
+  "total_cda_static": 1.281,
+  "front_balance_static": 0.3631993089367049,
+  "downforce_kg": {
+    "100": 153,
+    "150": 345,
+    "200": 613,
+    "250": 959,
+    "300": 1380,
+    "322": 1590
+  }
+}

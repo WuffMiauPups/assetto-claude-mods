@@ -42,6 +42,23 @@ MEASURED_ROD = (0.016, 0.015)
 
 # Fahrwerksabstimmung (Zielwerte aus venturi_model.py Config): Design-Hoehe 55/85 mm,
 # Radraten 140/190 N/mm. ROD_LENGTH wirkt etwa 1:1 auf die Bodenfreiheit (im Spiel pruefen).
+# Motor Typ 935/76, Schaetzung (research/01-technische-daten.md): offiziell 620 PS bei 8200/min
+# und 1,3 bar, 600 Nm bei 5000; Porsche gab konservativ an. Hier: 1,3 bar = Quali (Regler 100 %),
+# 1,2 bar Rennen (92 %), 1,1 bar Le Mans (85 %). AC: Moment = power.lut * (1 + Summe Ladedruck).
+ENGINE = {
+    "boost_per_turbo": 0.65,                 # zwei Turbos, zusammen 1,3 bar bei 100 %
+    "default_adjustment": 0.92,              # Rennstufe 1,2 bar
+    "limiter": 8560,
+    # Zielmoment in Nm bei 1,3 bar ueber Drehzahl (Schaetzung)
+    "torque_full_boost": [(0, 60), (1000, 150), (2000, 230), (3000, 330), (3500, 420), (4000, 510),
+                          (4500, 570), (5000, 600), (5500, 600), (6000, 600), (6500, 598),
+                          (7000, 592), (7500, 585), (8000, 578), (8200, 575), (8560, 545), (9000, 500)],
+    "mass_total": 895,                       # 820 kg plus 75 kg Fahrer
+    # Getriebe Ring 1983 (Schaetzung): Fuenfter bei ~320 km/h und 8400/min, Radius hinten 0,33 m
+    "gears": [3.00, 2.00, 1.48, 1.15, 0.92],
+    "final": 3.56,
+}
+
 SUSPENSION = {
     "rh_design": (0.055, 0.085),
     "wheel_rate": (140000, 190000),      # N/m je Rad
@@ -342,6 +359,40 @@ def tune_suspension(res: dict) -> None:
     set_p.write_text(setup)
 
 
+def tune_engine() -> dict:
+    boost_total = 2 * ENGINE["boost_per_turbo"]
+    lut = [(rpm, nm / (1 + boost_total)) for rpm, nm in ENGINE["torque_full_boost"]]
+    (OUT / "power.lut").write_text("".join(f"{rpm}|{nm:.1f}\n" for rpm, nm in lut))
+
+    eng_p = OUT / "engine.ini"
+    eng = eng_p.read_text()
+    eng = set_key(eng, "ENGINE_DATA", "LIMITER", str(ENGINE["limiter"]))
+    eng = set_key(eng, "ENGINE_DATA", "DEFAULT_TURBO_ADJUSTMENT", f"{ENGINE['default_adjustment']:.2f}")
+    for sec in ("TURBO_0", "TURBO_1"):
+        eng = set_key(eng, sec, "MAX_BOOST", f"{ENGINE['boost_per_turbo']:.2f}")
+        eng = set_key(eng, sec, "WASTEGATE", f"{ENGINE['boost_per_turbo']:.2f}")
+        eng = set_key(eng, sec, "DISPLAY_MAX_BOOST", f"{ENGINE['boost_per_turbo']:.2f}")
+    eng = set_key(eng, "DAMAGE", "TURBO_BOOST_THRESHOLD", f"{ENGINE['boost_per_turbo'] + 0.05:.2f}")
+    eng_p.write_text(eng)
+
+    car_p = OUT / "car.ini"
+    car_p.write_text(set_key(car_p.read_text(), "BASIC", "TOTALMASS", str(ENGINE["mass_total"])))
+
+    dt_p = OUT / "drivetrain.ini"
+    dt = dt_p.read_text()
+    for i, g in enumerate(ENGINE["gears"], 1):
+        dt = set_key(dt, "GEARS", f"GEAR_{i}", f"{g:.2f}")
+    dt = set_key(dt, "GEARS", "FINAL", f"{ENGINE['final']:.2f}")
+    dt_p.write_text(dt)
+
+    peak = {}
+    for name, adj in (("quali 1,3 bar", 1.0), ("rennen 1,2 bar", ENGINE["default_adjustment"]), ("le mans 1,1 bar", 0.85)):
+        b = boost_total * adj
+        peak[name] = max(rpm * nm * (1 + b) / 9549 * 1.36 for rpm, nm in lut)
+    v_top = ENGINE["limiter"] / 60 * 2 * 3.14159 * 0.33 / (ENGINE["gears"][-1] * ENGINE["final"]) * 3.6
+    return {"peak_ps": peak, "v_top_kmh_limiter": v_top}
+
+
 def write_data(res: dict) -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     for src in REF.iterdir():
@@ -354,6 +405,7 @@ def write_data(res: dict) -> None:
     car = re.sub(r"^SHORT_NAME\s*=.*$", "SHORT_NAME=956 Venturi", car, flags=re.M)
     (OUT / "car.ini").write_text(car)
     tune_suspension(res)
+    res["engine"] = tune_engine()
 
     (OUT / "aero.ini").write_text(AERO_TEMPLATE.format(
         rh_front=res["rh_front_static"], rh_rear=res["rh_rear_static"],
@@ -384,6 +436,8 @@ def main() -> None:
     if args.check:
         return
     write_data(res)
+    e = res["engine"]
+    print("Motor: " + ", ".join(f"{k} {v:.0f} PS" for k, v in e["peak_ps"].items()) + f"; Fuenfter am Begrenzer {e['v_top_kmh_limiter']:.0f} km/h")
     print(f"Geschrieben: {OUT}")
 
 

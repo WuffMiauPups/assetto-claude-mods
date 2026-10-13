@@ -6,11 +6,11 @@
 |---|---|---|
 | `data/aero/*.2Dlut`, `*.lut` | erzeugt von `tools/venturi_model.py` | erzeugt, unkalibriert |
 | `data/aero.ini` | erzeugt von `build_aero.py`: Karosserie (nur Widerstand), Front- und Heckflügel skaliert, `[MAP_0]` Unterboden; Diffusor-Flügel und Speed-Controller des Basis-Mods entfernt | erste Fassung, Spieltest offen |
-| `data/car.ini` | Basis-Mod, `VERSION=extended-2`, Name geändert; Masse 915 kg noch vom Basis-Mod | Masse und Schwerpunkt offen |
+| `data/car.ini` | Basis-Mod, `VERSION=extended-2`, Name geändert, Masse 895 kg (820 plus Fahrer) | Schwerpunkt, Trägheit offen |
 | `data/suspensions.ini` | Basis-Mod, `ROD_LENGTH` und `SPRING_RATE` von `build_aero.py` gesetzt (55/85 mm, 140/190 N/mm) | Messung 2 abwarten |
 | `data/tyres.ini` | Basis-Mod | Dunlop 1983 vorn 13 Zoll offen |
-| `data/engine.ini`, `power.lut` | Basis-Mod (611 PS bei 8200) | Turbo-Quali-Trimm offen |
-| `data/drivetrain.ini`, `*.rto` | Basis-Mod | Übersetzungen Ring offen |
+| `data/engine.ini`, `power.lut` | von `build_aero.py` (`ENGINE`): 935/76, zwei Turbos je 0,65 bar, Regler 100 % = Quali 1,3 bar 672 PS, 92 % = Rennen 1,2 bar 641 PS, 85 % = Le Mans 615 PS. 600 Nm 5000 bis 6500. Schätzung | Spieltest |
+| `data/drivetrain.ini` | Ring-Übersetzung aus `build_aero.py`: 3,00/2,00/1,48/1,15/0,92, Achse 3,56, Fünfter am Begrenzer 325 km/h. Schätzung. `*.rto` noch Basis-Mod | Spieltest |
 | alle übrigen | Basis-Mod unverändert | |
 | `aero_map_template.ini`, `setup_aeromap_template.ini` | Vorlagen, Map-Block ist inzwischen in `build_aero.py` | nur noch Referenz |
 
@@ -53,7 +53,6 @@ Topspeed 290 km/h im Fünften bei knapp 8000/min (Begrenzer 8560, Getriebe erlau
 ## Bekannte Baustellen
 
 - **Widerstand**: nach Messung 2 auf Cd·A 1,04 gesenkt (520 kg bei 322 km/h). Ziel-Topspeed Döttinger Höhe mit Quali-Motor rund 310 bis 320 km/h, Messung 3 abwarten.
-- **Masse**: Basis-Mod 915 kg mit Fahrer, Ziel laut Recherche rund 820 bis 850 kg plus Fahrer.
 
 Abstimmungsziel: Bei Höchstgeschwindigkeit soll die Bodenfreiheit hinten knapp über der Abrisshöhe (30 mm) liegen, damit Bodenwellen und Kuppen das Auto kurz in den Abriss schicken. Das ist der historische Charakter, siehe Bellofs Überschlag an der Kuppe im Rennen 1983.
 

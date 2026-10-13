@@ -18,7 +18,7 @@ Das erzeugt genau das Fahrgefühl, das Derek Bell beschrieb: Das Auto auf der St
 | Baustein | Technik | Status |
 |---|---|---|
 | Physik-Daten | `car.ini`, `suspensions.ini`, `tyres.ini`, `engine.ini`, `aero.ini` auf Basis realer Daten | offen |
-| Venturi-Modell | CSP Extended Physics, `script.lua` im Datenordner: Abtrieb und Angriffspunkt als Funktion von Bodenfreiheit vorn und hinten, Nickwinkel und Geschwindigkeit, mit Abriss | offen |
+| Venturi-Modell | CSP Aero Map in `aero.ini`: 2D-Kennfelder für Abtrieb, Widerstand und Balance über Bodenfreiheit vorn und hinten, dazu Speed- und Yaw-LUTs. Lua nur für Abriss-Hysterese, falls nötig | recherchiert, siehe `research/02-csp-technik.md` |
 | Abstimmung | Python-Modell des Venturi-Effekts zum Entwerfen der Kennfelder vor dem Spieltest | offen |
 | 3D-Modell | bestehender 956-Mod als Basis, nur Physik und Skin werden ersetzt | offen |
 | Skin | Rothmans Nr. 2 (oder Nr. 7 bei Brun) als Bellof-Variante | offen |
@@ -30,7 +30,7 @@ Das erzeugt genau das Fahrgefühl, das Derek Bell beschrieb: Das Auto auf der St
 - Abtrieb: etwa dreifacher Wert des 917, Unterboden mit zwei Tunneln, Motor dafür hinten angehoben.
 - Bellofs 956-007 am Ring 1983 mit größeren 13-Zoll-Vorderrädern und kleineren Anpassungen.
 
-Alles weitere wird in `research/` gesammelt.
+Details und Quellen: `research/01-technische-daten.md` (Fahrzeug) und `research/02-csp-technik.md` (Umsetzung in CSP).
 
 ## Ordner
 

@@ -72,6 +72,8 @@ def main():
     ap.add_argument("--exclude-wings", default="", help="Flügel, die das Auto selbst steuert, z.B. 5,6")
     ap.add_argument("--front-wings", default="", help="leer = automatisch aus aero.ini")
     ap.add_argument("--rear-wings", default="")
+    ap.add_argument("--strength", default="0.5", help="Skalierung Dirty Air fuer den Spieler, 1.0 = volle Kennlinie")
+    ap.add_argument("--ai-strength", default="0.35", help="Skalierung fuer KI-Autos")
     ap.add_argument("--pack", action="store_true", help="data-Ordner nach data.acd packen (Original als data.acd.bak)")
     a = ap.parse_args()
 
@@ -95,7 +97,7 @@ def main():
 
         ini = Path(a.profile).read_text(encoding="utf-8")
         if "[DIRTY_AIR]" not in ini:
-            ini += (f"\n[DIRTY_AIR]\nENABLED=1\nMAX_DIST=80\nSMOOTHING=6\n"
+            ini += (f"\n[DIRTY_AIR]\nENABLED=1\nSTRENGTH={a.strength}\nAI_STRENGTH={a.ai_strength}\nMAX_DIST=80\nSMOOTHING=6\n"
                     f"FRONT_WINGS={a.front_wings}\nREAR_WINGS={a.rear_wings}\nEXCLUDE_WINGS={a.exclude_wings}\nDEBUG=1\n")
         (data / "failures.ini").write_text(ini, encoding="utf-8")
         for old in ("failures.lua", "dirty_air.lua", "dirty_air.lut"):   # Reste der require-Variante

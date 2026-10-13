@@ -27,14 +27,20 @@ Konsequenz in `build_aero.py`: `ROD_LENGTH` auf 0,011/0,0375 (Ziel statisch 55/8
 |---|---|---|
 | Cl·A Unterboden | 2,27 | 2,28 |
 | Cl·A gesamt | 3,79 | 3,80 |
-| Cd·A gesamt | 1,28 | 1,28 |
+| Cd·A gesamt | 1,04 | 1,04 |
 | Balance vorn | 0,36 | 0,42 |
 
 Beim Einfedern unter Abtrieb läuft das Heck in den steilen Bereich des Kennfelds (unter 60 mm), das ist gewollt.
 
+## Messung 2 (2026-10-13, Modellfahrwerk, `tools/out/messungen/02_modellfahrwerk_20261013.csv`)
+
+Statisch 62/87 mm. Heck bleibt bei 280 km/h mit 59 mm über dem Abriss, Abtrieb steigt sauber: 804 kg bei 200, 1150 bei 240, 1655 bei 280 km/h (Modell 819, 1282, 1840). Balance 35 Prozent vorn (Ziel 42). Topspeed nur 280 km/h, Widerstand zu hoch.
+
+Konsequenz in `venturi_model.py`: `total_drag_kg` 640 auf 520 (Karosserie-`CD_GAIN` jetzt 1,78, rechnerisch rund 300 km/h), `ub_front_balance` 0,40 auf 0,45.
+
 ## Bekannte Baustellen
 
-- **Widerstand**: Cd·A 1,28 heißt 640 kg Widerstand bei 322 km/h, das braucht rund 750 PS. Mit 611 PS liegt die Höchstgeschwindigkeit dann bei etwa 300 km/h. Für den Ring-Quali-Trimm vertretbar, für Le Mans falsch. `total_drag_kg` in `venturi_model.py` ist Schätzung und wird nach dem ersten Test gegen Döttinger-Höhe-Topspeed kalibriert. Der Karosserie-`CD_GAIN` von 2,77 (Basis-Mod 1,4) ist die Folge dieses Ziels.
+- **Widerstand**: nach Messung 2 auf Cd·A 1,04 gesenkt (520 kg bei 322 km/h). Ziel-Topspeed Döttinger Höhe mit Quali-Motor rund 310 bis 320 km/h, Messung 3 abwarten.
 - **Masse**: Basis-Mod 915 kg mit Fahrer, Ziel laut Recherche rund 820 bis 850 kg plus Fahrer.
 
 Abstimmungsziel: Bei Höchstgeschwindigkeit soll die Bodenfreiheit hinten knapp über der Abrisshöhe (30 mm) liegen, damit Bodenwellen und Kuppen das Auto kurz in den Abriss schicken. Das ist der historische Charakter, siehe Bellofs Überschlag an der Kuppe im Rennen 1983.

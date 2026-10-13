@@ -30,7 +30,7 @@ class Config:
     # Zielwerte Gesamtauto bei Referenzgeschwindigkeit (Kurzheck, Schätzung)
     v_ref_kmh: float = 322.0
     total_downforce_kg: float = 1900.0      # Langheck ~1050 kg, Kurzheck ~doppelt; 962 (1993) 2540 kg. Siehe research/03
-    total_drag_kg: float = 640.0            # L/D 3.0; Motor Sport nennt 2.75 für den 956, 962 (1993) 4.0
+    total_drag_kg: float = 520.0            # Messung 2: mit 640 kg nur 280 km/h Topspeed bei 611 PS. 520 kg ergibt rechnerisch ~300 km/h; L/D 3.65. Quali-Motor kommt später dazu
     underbody_share: float = 0.60           # Anteil des Unterbodens am Gesamtabtrieb bei Design-Bodenfreiheit
     front_balance_total: float = 0.42       # Anteil Vorderachse am Gesamtabtrieb bei Design-Höhe
 
@@ -52,7 +52,7 @@ class Config:
     plateau_softness: float = 0.35          # Weichheit des Übergangs in das Plateau
 
     # Balance des Unterbodens
-    ub_front_balance: float = 0.40          # Anteil vorn bei Design-Höhe
+    ub_front_balance: float = 0.45          # Anteil vorn bei Design-Höhe. Messung 2: 0.40 ergab im Spiel nur 35 % vorn gesamt, Ziel 42 %
     balance_rake_gain: float = -2.5         # pro Meter Rake: mehr Rake, Balance nach hinten (Diffusor arbeitet)
     balance_front_low_gain: float = 1.2     # vorn tief: Balance nach vorn
 

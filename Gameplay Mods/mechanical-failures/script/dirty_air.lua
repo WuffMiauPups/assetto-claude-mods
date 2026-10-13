@@ -26,9 +26,14 @@ local cfg = {
 local lut = nil                     -- {{d, total, front, rear}, ...}
 local state = { front = 0, rear = 0, applied = false }
 
-local function parseList(s)
+-- CSP-INI trennt Werte an Kommas: ohne Default liefert ini:get eine Liste von Strings, mit String-Default nur den ersten Eintrag
+local function parseList(v)
   local t = {}
-  for n in tostring(s or ''):gmatch('%-?%d+') do t[#t + 1] = tonumber(n) end
+  if type(v) == 'table' then
+    for _, item in ipairs(v) do for n in tostring(item):gmatch('%-?%d+') do t[#t + 1] = tonumber(n) end end
+  else
+    for n in tostring(v or ''):gmatch('%-?%d+') do t[#t + 1] = tonumber(n) end
+  end
   return t
 end
 
@@ -92,9 +97,9 @@ function M.init(ini)
     cfg.spread = ini:get('DIRTY_AIR', 'WIDTH_SPREAD', cfg.spread)
     cfg.lutFile = ini:get('DIRTY_AIR', 'LUT', cfg.lutFile)
     cfg.debug = ini:get('DIRTY_AIR', 'DEBUG', 1) == 1
-    cfg.frontWings = parseList(ini:get('DIRTY_AIR', 'FRONT_WINGS', ''))
-    cfg.rearWings = parseList(ini:get('DIRTY_AIR', 'REAR_WINGS', ''))
-    cfg.exclude = parseList(ini:get('DIRTY_AIR', 'EXCLUDE_WINGS', ''))
+    cfg.frontWings = parseList(ini:get('DIRTY_AIR', 'FRONT_WINGS'))
+    cfg.rearWings = parseList(ini:get('DIRTY_AIR', 'REAR_WINGS'))
+    cfg.exclude = parseList(ini:get('DIRTY_AIR', 'EXCLUDE_WINGS'))
   end
   if not cfg.enabled then return end
 

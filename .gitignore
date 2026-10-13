@@ -19,3 +19,4 @@ AI/06-reinforcement-learning/checkpoints/
 # Logs und große Daten
 *.log
 AI/data/**/laps/*.csv
+apps/career/data/

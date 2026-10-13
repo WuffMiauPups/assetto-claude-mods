@@ -1,6 +1,6 @@
 """Telemetrie-CSV der Aufnahme-App lesen und in Runden zerlegen.
 
-Spalten (siehe app/fastlane_recorder/recorder.lua):
+Spalten (siehe app/fastlane_recorder/fastlane_recorder.lua):
   t, lap, spline, x, y, z, speed, gas, brake, steer, yaw_rate, track_left, track_right
 """
 from __future__ import annotations

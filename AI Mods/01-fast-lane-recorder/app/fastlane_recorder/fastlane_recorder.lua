@@ -1,4 +1,4 @@
--- Fast Lane Recorder (CSP Lua App)
+-- Fast Lane Recorder (CSP Lua App). Dateiname muss dem Ordnernamen entsprechen: apps/lua/fastlane_recorder/fastlane_recorder.lua
 -- Schreibt pro Frame eine Zeile: t, lap, spline, x, y, z, speed, gas, brake, steer, yaw_rate, track_left, track_right
 -- Ausgabe: apps/lua/fastlane_recorder/logs/<track>_<datum>.csv
 

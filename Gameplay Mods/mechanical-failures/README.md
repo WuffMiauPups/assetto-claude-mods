@@ -1,6 +1,6 @@
-# Mechanische Ausfälle
+# Zuverlässigkeit, Degradation und Dirty Air
 
-Assetto Corsa kennt Unfallschäden, aber keine zufälligen Defekte. Diese Mod rüstet sie nach: Motor, Getriebe, Turbo, Hydraulik, Elektrik, Bremsen, Reifen. Raten pro Ära, pro Bauteil und pro Fahrer, mit Laufleistung über Rennwochenenden.
+Assetto Corsa kennt Unfallschäden, aber keine zufälligen Defekte, keinen Verschleiß über Wochenenden und keinen Abtriebsverlust im Verkehr. Diese Mod rüstet alle drei nach, mit Fokus auf F1. Vollständige Liste aller Defekte, Verluste und des Dirty-Air-Modells mit Machbarkeit: `research/f1-ausfaelle-degradation-dirty-air.md`.
 
 ## Technik
 
@@ -81,7 +81,7 @@ mechanical-failures/
   script/      script.lua (Entwurf) und failures.ini (Vorlage)
   profiles/    Grundraten pro Ära
   tools/       install.py: Script und INI in die Datenordner einer Serie kopieren
-  research/    Ausfallstatistiken der Saisons
+  research/    Vollständige Liste der Defekte, Dirty-Air-Modell, Ausfallstatistiken der Saisons
 ```
 
 ## Status

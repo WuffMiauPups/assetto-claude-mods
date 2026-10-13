@@ -12,6 +12,7 @@
 --
 -- Konfiguration in failures.ini, Abschnitt [DIRTY_AIR]:
 --   ENABLED=1  MAX_DIST=80  SMOOTHING=6  HALF_WIDTH_10M=1.1  WIDTH_SPREAD=0.06  LUT=dirty_air.lut
+--   STRENGTH=0.5  AI_STRENGTH=0.35   (Skalierung des Verlusts, 1.0 = volle Kennlinie; KI passt Linie nicht an, daher weniger)
 --   FRONT_WINGS=1,2  REAR_WINGS=3,4,7   (leer: automatisch aus den NAME-Einträgen in aero.ini)
 --   EXCLUDE_WINGS=5,6                   (Flügel, die ein anderes Script des Autos selbst steuert)
 --   DEBUG=1
@@ -22,6 +23,7 @@ M.lutText = nil   -- optional: Kennlinie als Text (von install.py eingebettet), 
 local cfg = {
   enabled = true, maxDist = 80, smoothing = 6.0, halfWidth10 = 1.1, spread = 0.06,
   lutFile = 'dirty_air.lut', frontWings = {}, rearWings = {}, exclude = {}, debug = true,
+  strength = 0.5, aiStrength = 0.35,
 }
 local lut = nil                     -- {{d, total, front, rear}, ...}
 local state = { front = 0, rear = 0, applied = false, logTimer = 0, peakFront = 0, nearest = 1e9, messaged = false }
@@ -96,6 +98,8 @@ function M.init(ini)
     cfg.halfWidth10 = ini:get('DIRTY_AIR', 'HALF_WIDTH_10M', cfg.halfWidth10)
     cfg.spread = ini:get('DIRTY_AIR', 'WIDTH_SPREAD', cfg.spread)
     cfg.lutFile = ini:get('DIRTY_AIR', 'LUT', cfg.lutFile)
+    cfg.strength = ini:get('DIRTY_AIR', 'STRENGTH', cfg.strength)
+    cfg.aiStrength = ini:get('DIRTY_AIR', 'AI_STRENGTH', cfg.aiStrength)
     cfg.debug = ini:get('DIRTY_AIR', 'DEBUG', 1) == 1
     cfg.frontWings = parseList(ini:get('DIRTY_AIR', 'FRONT_WINGS'))
     cfg.rearWings = parseList(ini:get('DIRTY_AIR', 'REAR_WINGS'))
@@ -118,8 +122,8 @@ function M.init(ini)
   if #cfg.frontWings == 0 and #cfg.rearWings == 0 then classifyWings() end
   cfg.frontWings = removeExcluded(cfg.frontWings)
   cfg.rearWings = removeExcluded(cfg.rearWings)
-  ac.log(string.format('[dirty_air] car %d: %d Punkte in %s, vorn {%s} hinten {%s}', car.index, #lut, cfg.lutFile,
-    table.concat(cfg.frontWings, ','), table.concat(cfg.rearWings, ',')))
+  ac.log(string.format('[dirty_air] car %d: %d Punkte in %s, vorn {%s} hinten {%s}, Staerke %.2f (KI %.2f)', car.index, #lut, cfg.lutFile,
+    table.concat(cfg.frontWings, ','), table.concat(cfg.rearWings, ','), cfg.strength, cfg.aiStrength))
 end
 
 local function applyGains(front, rear)
@@ -153,6 +157,8 @@ function M.update(dt)
     end
   end
 
+  local scale = car.isAIControlled and cfg.aiStrength or cfg.strength
+  bestFront, bestRear = bestFront * scale, bestRear * scale
   local k = math.min(1, cfg.smoothing * dt)
   state.front = state.front + (bestFront - state.front) * k
   state.rear = state.rear + (bestRear - state.rear) * k

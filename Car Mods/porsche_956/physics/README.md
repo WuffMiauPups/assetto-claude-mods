@@ -40,5 +40,5 @@ Abstimmungsziel: Bei Höchstgeschwindigkeit soll die Bodenfreiheit hinten knapp 
 1. `python tools/venturi_model.py`, dann `python tools/build_aero.py`, dann `python tools/install.py` (aus `tools/` heraus).
 2. Content Manager: Auto "Porsche 956 Venturi (WIP)", Strecke Nordschleife, Practice.
 3. Prüfen, ob das Auto lädt (Fehler in `Documents\Assetto Corsa\logs\log.txt`, Suche nach `aero` oder `MAP_0`).
-4. CSP-Physik-Debug oder eine Aero-App: Bodenfreiheit vorn und hinten bei 100, 200, 300 km/h notieren, Abtrieb und Balance notieren.
+4. App "Ride Height Monitor" (wird von `install.py` nach `apps/lua` kopiert) öffnen. Sie zeigt Bodenfreiheit, Cl·A, Abtrieb, Balance und Radlasten live und sammelt je 10 km/h einen Wert bei ruhiger Geradeausfahrt. Döttinger Höhe einmal voll durchfahren, dann "CSV speichern". Datei liegt in `apps/lua/rideheight_monitor/logs/`.
 5. Vergleich mit `tools/out/summary.json` (Gleichgewicht über Geschwindigkeit), Kalibrierung in `venturi_model.py`.

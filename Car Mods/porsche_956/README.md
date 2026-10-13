@@ -40,6 +40,7 @@ porsche_956/
   physics/     data-Ordner des Autos, Vorlagen für aero.ini und setup.ini
   tools/       venturi_model.py und Ausgaben
   script/      optionales Lua-Script (Abriss-Hysterese, Schaden)
+  app/         CSP-Lua-App Ride Height Monitor (Bodenfreiheit, Aero, Radlasten, CSV-Export)
   skins/       Rothmans Nürburgring 1983
   dist/        fertiges Auto zum Kopieren nach content/cars/
 ```

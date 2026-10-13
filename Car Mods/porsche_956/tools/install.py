@@ -7,7 +7,7 @@ Erster Lauf: kopiert content/cars/vac_groupc_956 nach content/cars/porsche_956_v
   - data.acd wird nicht mitkopiert, damit AC den entpackten data-Ordner verwendet.
   - Sound-Bank und GUIDs.txt werden auf den neuen Ordnernamen umgeschrieben (wie CM "Replace sound").
   - ui/ui_car.json bekommt eigenen Namen und Tag.
-Jeder Lauf: physics/data wird komplett in den data-Ordner des Autos gespiegelt. Vorher wird der
+Jeder Lauf: app/rideheight_monitor wird nach apps/lua kopiert, physics/data wird komplett in den data-Ordner des Autos gespiegelt. Vorher wird der
 alte data-Ordner als data.bak gesichert (nur die letzte Version). Das Original vac_groupc_956
 wird nie veraendert.
 """
@@ -21,6 +21,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 MOD = HERE.parent
 SRC_DATA = MOD / "physics" / "data"
+SRC_APP = MOD / "app" / "rideheight_monitor"
 
 AC_DEFAULT = Path(r"E:\SteamLibrary\steamapps\common\assettocorsa")
 BASE_CAR = "vac_groupc_956"
@@ -73,6 +74,14 @@ def sync_data(car: Path) -> None:
         print("Warnung: data.acd liegt noch im Auto-Ordner, AC koennte ihn bevorzugen. Bitte entfernen.")
 
 
+def install_app(ac: Path) -> None:
+    dst = ac / "apps" / "lua" / SRC_APP.name
+    if dst.exists():
+        shutil.rmtree(dst)
+    shutil.copytree(SRC_APP, dst, ignore=shutil.ignore_patterns("logs"))
+    print(f"App installiert: {dst}")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--ac", type=Path, default=AC_DEFAULT)
@@ -84,6 +93,7 @@ def main() -> None:
     if not car.is_dir():
         car = create_car(cars)
     sync_data(car)
+    install_app(args.ac)
     print("Fertig. Im Content Manager: Auto 'Porsche 956 Venturi (WIP)', CSP Extended Physics aktiv lassen.")
 
 

@@ -1,4 +1,4 @@
-# Porsche 956 (Bellof-Spezifikation) mit echtem Ground-Effect
+# Porsche 956-007, Bellof, Nürburgring 1983, mit echtem Ground-Effect
 
 Ziel: Ein 956, dessen Unterboden sich wie ein Venturi-Tunnel verhält, nicht wie ein fester Flügel. Vorlage: Chassis 956-007, Rothmans, Stefan Bellof, Nürburgring 1000 km 1983 (6:11.13 im Training).
 
@@ -19,7 +19,7 @@ Das erzeugt genau das Fahrgefühl, das Derek Bell beschrieb: Das Auto auf der St
 |---|---|---|
 | Physik-Daten | `car.ini`, `suspensions.ini`, `tyres.ini`, `engine.ini`, `aero.ini` auf Basis realer Daten | offen |
 | Venturi-Modell | CSP Aero Map in `aero.ini`: 2D-Kennfelder für Abtrieb, Widerstand und Balance über Bodenfreiheit vorn und hinten, dazu Speed- und Yaw-LUTs. Lua nur für Abriss-Hysterese, falls nötig | recherchiert, siehe `research/02-csp-technik.md` |
-| Abstimmung | Python-Modell des Venturi-Effekts zum Entwerfen der Kennfelder vor dem Spieltest | offen |
+| Abstimmung | Python-Modell des Venturi-Effekts, erzeugt die Kennfelder: `tools/venturi_model.py` | erste Version läuft |
 | 3D-Modell | bestehender 956-Mod als Basis, nur Physik und Skin werden ersetzt | offen |
 | Skin | Rothmans Nr. 2 (oder Nr. 7 bei Brun) als Bellof-Variante | offen |
 | Sound | aus bestehendem Mod übernehmen | offen |
@@ -36,10 +36,12 @@ Details und Quellen: `research/01-technische-daten.md` (Fahrzeug) und `research/
 
 ```
 porsche_956/
-  research/    Datenblätter, Messwerte, Quellen
-  physics/     INI-Dateien des Autos (unverschlüsselter data-Ordner)
-  script/      script.lua für das Venturi-Modell
-  tools/       Python-Modell zum Entwerfen der Aero-Kennfelder
+  research/    Quellen (00), Fahrzeugdaten (01), CSP-Technik (02), Kopien der Wiki-Seiten
+  physics/     data-Ordner des Autos, Vorlagen für aero.ini und setup.ini
+  tools/       venturi_model.py und Ausgaben
+  script/      optionales Lua-Script (Abriss-Hysterese, Schaden)
+  skins/       Rothmans Nürburgring 1983
+  dist/        fertiges Auto zum Kopieren nach content/cars/
 ```
 
 ## Was ich brauche

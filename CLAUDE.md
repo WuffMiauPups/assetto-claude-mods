@@ -18,7 +18,7 @@ Sammlung eigener Assetto-Corsa-Mods. Sprache mit dem Nutzer: Deutsch. Oberste Or
 | `AI Mods/01-fast-lane-recorder` | Python-Paket, Lua-Aufnahme-App, Build-Skripte, Test mit synthetischer Strecke grün | Original `content\tracks\monza\ai\fast_lane.ai` parsen, App im Spiel testen, Runden aufnehmen, erste echte Linie bauen |
 | `AI Mods/02` bis `06` | nur README | nach 01 |
 | `Car Mods/porsche_956` | Recherche, Venturi-Modell (`tools/venturi_model.py`), CSP-Aero-Map-Kennfelder erzeugt | `data`-Ordner von `vac_groupc_956` als Basis übernehmen, `aero.ini` mit `[MAP_0]`, Fahrwerk und Motor abstimmen |
-| `Gameplay Mods/mechanical-failures` | API gegen lua-sdk geprüft, `failures.lua` + `dirty_air.lua` als Module, im BMW Sauber 2008 installiert (Hook an dessen eigenes script.lua) | Test im Spiel: CSP-Debug `dirty air front/rear`, Log `[dirty_air]`/`[failures]` |
+| `Gameplay Mods/mechanical-failures` | Dirty Air im Spiel bestätigt (BMW Sauber 2008, gepackte data.acd, Verluste bis 0,63 vorn) | Fahrgefühl abstimmen, Ausfälle mit `MULT_ALL=20` einzeln testen |
 | `Career Mods/career-system` | Excel-Importer für die 2017er Datei | zurückgestellt, bis die restlichen Excels vorliegen |
 
 ## Konventionen
@@ -38,5 +38,4 @@ Geklärt (lua-sdk liegt unter `Tools/csp-reference/lua-sdk`, Physik-API in `ac_c
 - Reifendruck: `ac.setTyreInflation(ac.Wheel.*, 0..1)`; Motor: `ac.setEngineLifeLeft(0)`; Skin: `ac.getCarSkinID(car.index)`
 Noch offen:
 - Getriebeschaden: `gearboxDamage` in `ac.StateCarPhysics` ist nur lesbar, kein Setter gefunden
-- Ob `require('failures')` aus einem Physik-Script im `data`-Ordner funktioniert (erst im Spiel prüfbar)
-- Ob AC bei vorhandenem `data`-Ordner und `data.acd` den Ordner nimmt (Annahme ja; BMW Sauber hat jetzt beides)
+- Geklärt: AC nimmt die `data.acd`, der entpackte Ordner wird ignoriert. Deshalb bündelt `install.py` alles in ein `script.lua` (kein `require`) und packt mit `--pack` über `Tools/acd/acd_pack.py`

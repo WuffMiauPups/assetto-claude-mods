@@ -83,4 +83,6 @@ mechanical-failures/
 
 ## Status
 
-API-Namen gegen `Tools/csp-reference/lua-sdk/ac_car_cphys` geprüft, Scripts als Module (`failures.lua` ruft `dirty_air.lua`), Syntax mit LuaJIT geprüft. Am 13.10.2026 im BMW Sauber 2008 installiert (`data`-Ordner entpackt, eigenes `script.lua` des Autos als `script.lua.orig` gesichert, Hook angehängt). Offen: Test im Spiel. Dazu Rennen mit KI fahren, im CSP-Debug-Fenster `dirty air front/rear` beobachten und im CSP-Log nach `[dirty_air]` und `[failures]` suchen. Deinstallation: `script.lua.orig` zurück nach `script.lua`, `failures.lua`, `dirty_air.lua`, `dirty_air.lut`, `failures.ini` löschen, oder den ganzen `data`-Ordner löschen (dann gilt wieder `data.acd`).
+Im Spiel getestet am 13.10.2026, BMW Sauber 2008 auf Hockenheim gegen KI, CSP 0.3.0-preview649: Script lädt aus der gepackten `data.acd` (Hook an das eigene Script des Autos), Dirty Air liefert hinter einem Gegner Verluste bis 0,63 vorn und 0,33 hinten, seitlich versetzt fällt der Wert auf 0. Wichtig: AC lädt die `data.acd`, ein entpackter `data`-Ordner daneben wird ignoriert, deshalb immer mit `--pack` installieren.
+
+Offen: Fahrgefühl abstimmen (Untersteuern im Nachlauf spürbar, aber nicht überzogen), Ausfälle mit `MULT_ALL=20` provozieren und jeden Defekttyp einzeln prüfen, Getriebeschaden hat keinen Setter. Deinstallation: `data.acd.bak` zurück nach `data.acd`.

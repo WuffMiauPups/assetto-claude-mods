@@ -11,6 +11,7 @@ Sammlung aller eigenen Assetto-Corsa-Mods. Oberste Ebene: Mod-Kategorien. Darunt
 | `Layout Mods/` | Strecken, Layouts und Strecken-Konfigurationen |
 | `App Mods/` | In-Game-Apps (Lua für CSP, Python für das klassische SDK) |
 | `Career Mods/` | Karriere-System als Ersatz für Excel und Content-Manager-Saisons |
+| `Gameplay Mods/` | Spielregeln und Rennverlauf: mechanische Ausfälle und mehr |
 | `Tools/` | Externe Werkzeuge: Telemetrie, Konverter, Prüfskripte |
 
 ## Aktuelle Mods
@@ -25,6 +26,7 @@ Sammlung aller eigenen Assetto-Corsa-Mods. Oberste Ebene: Mod-Kategorien. Darunt
 | AI Mods | `06-reinforcement-learning` RL-Agent im Simulator | geplant |
 | Car Mods | `porsche_956` Bellof Ring-Rekord 1983 mit Ground-Effect | Recherche und Venturi-Modell fertig, Physikdaten offen |
 | Career Mods | `career-system` Import der Excel-Karrieren, Ziele, Beziehungen, Rennstart | Importer für 2017er Datei fertig |
+| Gameplay Mods | `mechanical-failures` Zufällige Defekte pro Ära, Bauteil und Fahrer | Konzept und Script-Entwurf |
 
 Reihenfolge bei den AI Mods: 1, dann 2 und 3 parallel, danach 4 oder 6. Projekt 1 liefert Parser und Telemetrie, auf denen 5 und 6 aufbauen.
 

@@ -76,9 +76,11 @@ def sync_data(car: Path) -> None:
 
 def install_app(ac: Path) -> None:
     dst = ac / "apps" / "lua" / SRC_APP.name
-    if dst.exists():
-        shutil.rmtree(dst)
-    shutil.copytree(SRC_APP, dst, ignore=shutil.ignore_patterns("logs"))
+    dst.mkdir(parents=True, exist_ok=True)
+    # nur Script und Manifest ersetzen, logs/ mit den Messungen bleibt erhalten
+    for src in SRC_APP.iterdir():
+        if src.is_file():
+            shutil.copy2(src, dst / src.name)
     print(f"App installiert: {dst}")
 
 

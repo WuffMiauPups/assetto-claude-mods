@@ -55,7 +55,9 @@ Fahrerzuordnung über den Skin-Namen, weil KI-Fahrer im selben Auto nur so unter
 
 ## Dirty Air
 
-Abtriebsverlust im Nachlauf pro Ära, aus FIA-CFD-Werten für 2019 bis 2026 und Schätzungen für ältere Jahre: `research/dirty-air.md`, Modell `tools/dirty_air_model.py`, Lua-Entwurf `script/dirty_air.lua`.
+Abtriebsverlust im Nachlauf pro Ära, aus FIA-CFD-Werten für 2019 bis 2026 und Schätzungen für ältere Jahre: `research/dirty-air.md`, Modell `tools/dirty_air_model.py`, Modul `script/dirty_air.lua`.
+
+Umsetzung (gegen das lokale lua-sdk geprüft): pro Physikschritt wird für jedes andere Auto Abstand entlang seiner Fahrtrichtung und seitlicher Versatz berechnet, der Verlust aus `dirty_air.lut` (Spalten Abstand, gesamt, vorn, hinten) mit einer Gauss-Breite über den Versatz gewichtet, tiefpassgefiltert und per `ac.setWingGain(index, 1, 1 - Verlust)` auf die Flügel gelegt. Die Zuordnung vorn/hinten kommt aus den `NAME`-Einträgen der `aero.ini` (FRONT, REAR, DIFF, MONKEY), kann in `failures.ini` unter `[DIRTY_AIR]` mit `FRONT_WINGS`/`REAR_WINGS` fest vorgegeben werden. `EXCLUDE_WINGS` nimmt Flügel aus, die das Auto in seinem eigenen Script steuert (BMW Sauber 2008: Diffusor 5 und 6, Porpoising-Effekt). Widerstand bleibt unverändert, Windschatten macht AC selbst.
 
 ## Kopplung an das Karriere-System
 
@@ -81,4 +83,4 @@ mechanical-failures/
 
 ## Status
 
-Ausfallquoten pro Saison berechnet, Dirty-Air-Kennlinien erzeugt, zwei Script-Entwürfe. Erster Test: BMW Sauber 2008 (`cim_2008_bmw_sauber`) mit CSP 0.3.0-preview649, sobald lua-sdk und Datenordner im Repo liegen.
+API-Namen gegen `Tools/csp-reference/lua-sdk/ac_car_cphys` geprüft, Scripts als Module (`failures.lua` ruft `dirty_air.lua`), Syntax mit LuaJIT geprüft. Am 13.10.2026 im BMW Sauber 2008 installiert (`data`-Ordner entpackt, eigenes `script.lua` des Autos als `script.lua.orig` gesichert, Hook angehängt). Offen: Test im Spiel. Dazu Rennen mit KI fahren, im CSP-Debug-Fenster `dirty air front/rear` beobachten und im CSP-Log nach `[dirty_air]` und `[failures]` suchen. Deinstallation: `script.lua.orig` zurück nach `script.lua`, `failures.lua`, `dirty_air.lua`, `dirty_air.lut`, `failures.ini` löschen, oder den ganzen `data`-Ordner löschen (dann gilt wieder `data.acd`).

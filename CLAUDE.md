@@ -18,7 +18,7 @@ Sammlung eigener Assetto-Corsa-Mods. Sprache mit dem Nutzer: Deutsch. Oberste Or
 | `AI Mods/01-fast-lane-recorder` | Python-Paket, Lua-Aufnahme-App, Build-Skripte, Test mit synthetischer Strecke grün | Original `content\tracks\monza\ai\fast_lane.ai` parsen, App im Spiel testen, Runden aufnehmen, erste echte Linie bauen |
 | `AI Mods/02` bis `06` | nur README | nach 01 |
 | `Car Mods/porsche_956` | Recherche, Venturi-Modell (`tools/venturi_model.py`), CSP-Aero-Map-Kennfelder erzeugt | `data`-Ordner von `vac_groupc_956` als Basis übernehmen, `aero.ini` mit `[MAP_0]`, Fahrwerk und Motor abstimmen |
-| `Gameplay Mods/mechanical-failures` | Ausfallquoten pro Saison aus F1DB, Profile 1988 bis 2025, Dirty-Air-Kennlinien, zwei Lua-Entwürfe | API-Namen gegen lokales lua-sdk prüfen, Script in `cim_2008_bmw_sauber` installieren und testen |
+| `Gameplay Mods/mechanical-failures` | API gegen lua-sdk geprüft, `failures.lua` + `dirty_air.lua` als Module, im BMW Sauber 2008 installiert (Hook an dessen eigenes script.lua) | Test im Spiel: CSP-Debug `dirty air front/rear`, Log `[dirty_air]`/`[failures]` |
 | `Career Mods/career-system` | Excel-Importer für die 2017er Datei | zurückgestellt, bis die restlichen Excels vorliegen |
 
 ## Konventionen
@@ -31,7 +31,12 @@ Sammlung eigener Assetto-Corsa-Mods. Sprache mit dem Nutzer: Deutsch. Oberste Or
 
 ## Offene Prüfpunkte gegen das lokale lua-sdk
 
-- Felder in `ac.accessCarPhysics()`: Reifendruck, Getriebeschaden, Temperaturen (Wasser, Öl, Bremsen, Reifen), Bodenfreiheit
-- Funktionsname für Flügel-Gain (Feature seit CSP 0.1.78)
-- Zugriff auf andere Autos aus dem Physik-Script (`ac.getCar(i)` im Physik-Thread) für Dirty Air
-- `ac.INIConfig.carData` zum Lesen von `failures.ini`
+Geklärt (lua-sdk liegt unter `Tools/csp-reference/lua-sdk`, Physik-API in `ac_car_cphys/lib.lua`):
+- Flügel-Gain: `ac.setWingGain(wingIndex, cdGain, clGain)`
+- Andere Autos im Physik-Script: `ac.getCar(i)` liefert `ac.StateCar` (position, look, isActive, isInPitlane), `sim.carsCount`
+- INI im Datenordner: `ac.INIConfig.carData(car.index, 'failures.ini')`; Dateien lesen: `io.load(ac.getFolder(ac.FolderID.ScriptOrigin) .. '/x')`
+- Reifendruck: `ac.setTyreInflation(ac.Wheel.*, 0..1)`; Motor: `ac.setEngineLifeLeft(0)`; Skin: `ac.getCarSkinID(car.index)`
+Noch offen:
+- Getriebeschaden: `gearboxDamage` in `ac.StateCarPhysics` ist nur lesbar, kein Setter gefunden
+- Ob `require('failures')` aus einem Physik-Script im `data`-Ordner funktioniert (erst im Spiel prüfbar)
+- Ob AC bei vorhandenem `data`-Ordner und `data.acd` den Ordner nimmt (Annahme ja; BMW Sauber hat jetzt beides)

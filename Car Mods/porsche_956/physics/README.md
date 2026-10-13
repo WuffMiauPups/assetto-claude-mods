@@ -38,6 +38,12 @@ Statisch 62/87 mm. Heck bleibt bei 280 km/h mit 59 mm über dem Abriss, Abtrieb 
 
 Konsequenz in `venturi_model.py`: `total_drag_kg` 640 auf 520 (Karosserie-`CD_GAIN` jetzt 1,78, rechnerisch rund 300 km/h), `ub_front_balance` 0,40 auf 0,45.
 
+## Messung 3 (2026-10-13, Widerstand 520 kg, `tools/out/messungen/03_drag520_20261013.csv`)
+
+Abtrieb trifft das Modell jetzt fast genau: 678 kg bei 200 (Modell bei den gemessenen Höhen 729), 1360 bei 260 (1404), 1578 bei 270 (1585). Bodenfreiheit bei 270 km/h 43/61 mm. Topspeed nur 270 km/h, obwohl der Widerstand gesenkt wurde; Getriebe lässt rechnerisch 293 km/h im Fünften zu (0,82 × 4,43, Radius 0,33 m, 8560/min). Ursache offen, Fahrerangabe zu Drehzahl und Gang bei Topspeed nötig.
+
+Balance aus Radlasten 35 Prozent vorn, unverändert gegenüber Messung 2 trotz `ub_front_balance` 0,40 auf 0,45. Die Radlast-Messung enthält aber die Lastverlagerung durch das Widerstandsmoment (Widerstand greift laut `DRAG_OFFSET` 0,35 m über dem Schwerpunkt an, rund 0,69 m über Boden): bei 260 km/h etwa 90 kg nach hinten, also rund 6 Prozentpunkte. Die reine Aero-Balance liegt damit bei etwa 41 Prozent und damit am Ziel. Balance wird vorerst nicht weiter angefasst.
+
 ## Bekannte Baustellen
 
 - **Widerstand**: nach Messung 2 auf Cd·A 1,04 gesenkt (520 kg bei 322 km/h). Ziel-Topspeed Döttinger Höhe mit Quali-Motor rund 310 bis 320 km/h, Messung 3 abwarten.

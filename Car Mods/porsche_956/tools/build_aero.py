@@ -34,6 +34,20 @@ SUMMARY = HERE / "out" / "summary.json"
 RHO = 1.225
 G = 9.81
 
+# Im Spiel gemessen (Ride Height Monitor, 2026-10-13, Basis-Fahrwerk, ROD_LENGTH 0.016/0.015):
+# statische Bodenfreiheit vorn 0.060 m, hinten 0.0625 m. Die Geometrie-Schaetzung aus
+# PICKUP-Hoehe und BASEY lag 21/28 mm darueber, deshalb gelten die Messwerte.
+MEASURED_STATIC_RH = (0.060, 0.0625)
+MEASURED_ROD = (0.016, 0.015)
+
+# Fahrwerksabstimmung (Zielwerte aus venturi_model.py Config): Design-Hoehe 55/85 mm,
+# Radraten 140/190 N/mm. ROD_LENGTH wirkt etwa 1:1 auf die Bodenfreiheit (im Spiel pruefen).
+SUSPENSION = {
+    "rh_design": (0.055, 0.085),
+    "wheel_rate": (140000, 190000),      # N/m je Rad
+    "setup_spring_range": ((100, 180), (150, 240)),  # kN/m, Setup-Schieber
+}
+
 
 # ---------------------------------------------------------------- Hilfsfunktionen
 
@@ -113,10 +127,18 @@ def static_geometry() -> dict:
     cg_f = rf - bf
     cg_r = rr - br
     cg_h = cg_loc * cg_f + (1 - cg_loc) * cg_r
+    geo_f = cg_f + pick_f + rod_f
+    geo_r = cg_r + pick_r + rod_r
+    tf, tr = SUSPENSION["rh_design"]
     return {
         "cg_height": cg_h,
-        "rh_front": cg_f + pick_f + rod_f,
-        "rh_rear": cg_r + pick_r + rod_r,
+        "rh_front": tf,
+        "rh_rear": tr,
+        "rh_front_geometry_estimate": geo_f,
+        "rh_rear_geometry_estimate": geo_r,
+        # neue Stangenlaengen: gemessene Hoehe + Delta zur Zielhoehe
+        "rod_front": MEASURED_ROD[0] + (tf - MEASURED_STATIC_RH[0]),
+        "rod_rear": MEASURED_ROD[1] + (tr - MEASURED_STATIC_RH[1]),
     }
 
 
@@ -165,6 +187,10 @@ def compute(summary: dict, geo: dict) -> dict:
     return {
         "rh_front_static": hf,
         "rh_rear_static": hr,
+        "rod_front": geo["rod_front"],
+        "rod_rear": geo["rod_rear"],
+        "wheel_rate_front": SUSPENSION["wheel_rate"][0],
+        "wheel_rate_rear": SUSPENSION["wheel_rate"][1],
         "cg_height": cg_h,
         "front_cl_gain": front_gain,
         "rear_cl_gain": rear_gain,
@@ -283,6 +309,39 @@ DRAG_FORCE_DELAY=0.045
 """
 
 
+def set_key(text: str, section: str, key: str, value: str) -> str:
+    """Ersetzt key=... innerhalb [section], Kommentar am Zeilenende bleibt erhalten."""
+    m = re.search(rf"\[{re.escape(section)}\]", text)
+    if not m:
+        raise KeyError(f"[{section}] fehlt")
+    start = m.end()
+    nxt = re.search(r"\n\[", text[start:])
+    end = start + nxt.start() if nxt else len(text)
+    body, n = re.subn(rf"^(\s*{re.escape(key)}\s*=\s*)[^;\n]*", lambda mm: mm.group(1) + value, text[start:end], count=1, flags=re.M)
+    if n == 0:
+        raise KeyError(f"{section}.{key} fehlt")
+    return text[:start] + body + text[end:]
+
+
+def tune_suspension(res: dict) -> None:
+    sus_p = OUT / "suspensions.ini"
+    sus = sus_p.read_text()
+    sus = set_key(sus, "FRONT", "ROD_LENGTH", f"{res['rod_front']:.4f}")
+    sus = set_key(sus, "REAR", "ROD_LENGTH", f"{res['rod_rear']:.4f}")
+    sus = set_key(sus, "FRONT", "SPRING_RATE", str(res["wheel_rate_front"]))
+    sus = set_key(sus, "REAR", "SPRING_RATE", str(res["wheel_rate_rear"]))
+    sus_p.write_text(sus)
+
+    set_p = OUT / "setup.ini"
+    setup = set_p.read_text()
+    (fmin, fmax), (rmin, rmax) = SUSPENSION["setup_spring_range"]
+    for sec, lo, hi in (("SPRING_RATE_LF", fmin, fmax), ("SPRING_RATE_RF", fmin, fmax),
+                        ("SPRING_RATE_LR", rmin, rmax), ("SPRING_RATE_RR", rmin, rmax)):
+        setup = set_key(setup, sec, "MIN", str(lo))
+        setup = set_key(setup, sec, "MAX", str(hi))
+    set_p.write_text(setup)
+
+
 def write_data(res: dict) -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     for src in REF.iterdir():
@@ -294,6 +353,7 @@ def write_data(res: dict) -> None:
     car = re.sub(r"^SCREEN_NAME\s*=.*$", "SCREEN_NAME=Porsche 956 Venturi (WIP)", car, flags=re.M)
     car = re.sub(r"^SHORT_NAME\s*=.*$", "SHORT_NAME=956 Venturi", car, flags=re.M)
     (OUT / "car.ini").write_text(car)
+    tune_suspension(res)
 
     (OUT / "aero.ini").write_text(AERO_TEMPLATE.format(
         rh_front=res["rh_front_static"], rh_rear=res["rh_rear_static"],
@@ -315,7 +375,8 @@ def main() -> None:
     summary = json.loads(SUMMARY.read_text())
     res = compute(summary, static_geometry())
 
-    print(f"Statische Bodenfreiheit (geschaetzt aus Basis-Mod): vorn {res['rh_front_static']*1000:.0f} mm, hinten {res['rh_rear_static']*1000:.0f} mm")
+    print(f"Ziel-Bodenfreiheit statisch: vorn {res['rh_front_static']*1000:.0f} mm, hinten {res['rh_rear_static']*1000:.0f} mm "
+          f"(ROD_LENGTH {res['rod_front']:.4f}/{res['rod_rear']:.4f}, Radraten {res['wheel_rate_front']/1000:.0f}/{res['wheel_rate_rear']/1000:.0f} N/mm)")
     print(f"Gains: Front CL {res['front_cl_gain']:.3f}, Heck CL {res['rear_cl_gain']:.3f}, Karosserie CD {res['body_cd_gain']:.3f}")
     print(f"Unterboden statisch: Cl*A {res['underbody_cla_static']:.3f}, Cd*A {res['underbody_cda_static']:.3f}, Balance vorn {res['underbody_front_balance_static']:.2f}")
     print(f"Gesamt statisch: Cl*A {res['total_cla_static']:.3f}, Cd*A {res['total_cda_static']:.3f}, Balance vorn {res['front_balance_static']:.2f}")

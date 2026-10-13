@@ -7,7 +7,7 @@
 | `data/aero/*.2Dlut`, `*.lut` | erzeugt von `tools/venturi_model.py` | erzeugt, unkalibriert |
 | `data/aero.ini` | erzeugt von `build_aero.py`: Karosserie (nur Widerstand), Front- und Heckflügel skaliert, `[MAP_0]` Unterboden; Diffusor-Flügel und Speed-Controller des Basis-Mods entfernt | erste Fassung, Spieltest offen |
 | `data/car.ini` | Basis-Mod, `VERSION=extended-2`, Name geändert; Masse 915 kg noch vom Basis-Mod | Masse und Schwerpunkt offen |
-| `data/suspensions.ini` | Basis-Mod unverändert (Radraten 78/110 N/mm, Radstand 2650) | Federraten aus Modell übernehmen |
+| `data/suspensions.ini` | Basis-Mod, `ROD_LENGTH` und `SPRING_RATE` von `build_aero.py` gesetzt (55/85 mm, 140/190 N/mm) | Messung 2 abwarten |
 | `data/tyres.ini` | Basis-Mod | Dunlop 1983 vorn 13 Zoll offen |
 | `data/engine.ini`, `power.lut` | Basis-Mod (611 PS bei 8200) | Turbo-Quali-Trimm offen |
 | `data/drivetrain.ini`, `*.rto` | Basis-Mod | Übersetzungen Ring offen |
@@ -16,22 +16,26 @@
 
 ## Kennzahlen der ersten Fassung (`tools/out/build_aero.json`)
 
-Statische Bodenfreiheit aus der Geometrie des Basis-Mods geschätzt: vorn 81 mm, hinten 90 mm (Reifenradius minus BASEY plus PICKUP-Höhe plus ROD_LENGTH). Ob die Aero-Map genau diesen Wert als Eingang bekommt, ist im Spiel zu prüfen (CSP-App mit Bodenfreiheit, Vergleich mit der Setup-Anzeige). Falls nicht, `FRONT_RH_OFFSET` und `REAR_RH_OFFSET` in `build_aero.py` setzen.
+## Messung 1 (2026-10-13, Basis-Fahrwerk, `tools/out/messungen/01_basisfahrwerk_20261013.csv`)
 
-| Größe | statisch | Ziel Modell bei Design-Höhe 55/85 mm |
+Statisch 60 mm vorn, 62 mm hinten (die Geometrie-Schätzung 81/90 war 21/28 mm zu hoch, `build_aero.py` nutzt jetzt die Messwerte). Mit den weichen Basis-Federn (78/110 N/mm) sinkt das Heck ab 200 km/h auf 25 mm, also unter die Abrisshöhe von 30 mm: Abtrieb springt zwischen 700 und 1450 kg, Balance 10 bis 45 Prozent vorn. Das ist der Abriss mit Aufschaukeln, nur viel zu früh. Mehr als 260 km/h wurden nicht erreicht.
+
+Konsequenz in `build_aero.py`: `ROD_LENGTH` auf 0,011/0,0375 (Ziel statisch 55/85 mm wie im Modell), Radraten 140/190 N/mm aus dem Modell, Setup-Bereiche der Federn angehoben. Erwartung laut Modell: bei 300 km/h etwa 35 mm vorn, 52 mm hinten, Heck bleibt über dem Abriss.
+
+
+| Größe | statisch (Fassung 2, 55/85 mm) | Ziel Modell bei Design-Höhe 55/85 mm |
 |---|---|---|
-| Cl·A Unterboden | 1,66 | 2,28 |
-| Cl·A gesamt | 3,18 | 3,80 |
+| Cl·A Unterboden | 2,27 | 2,28 |
+| Cl·A gesamt | 3,79 | 3,80 |
 | Cd·A gesamt | 1,28 | 1,28 |
 | Balance vorn | 0,36 | 0,42 |
 
-Der Unterboden liefert statisch weniger als im Modell, weil das Auto höher steht als die Design-Höhe. Beim Einfedern unter Abtrieb läuft das Heck in den steilen Bereich des Kennfelds (unter 60 mm), das ist gewollt.
+Beim Einfedern unter Abtrieb läuft das Heck in den steilen Bereich des Kennfelds (unter 60 mm), das ist gewollt.
 
 ## Bekannte Baustellen
 
 - **Widerstand**: Cd·A 1,28 heißt 640 kg Widerstand bei 322 km/h, das braucht rund 750 PS. Mit 611 PS liegt die Höchstgeschwindigkeit dann bei etwa 300 km/h. Für den Ring-Quali-Trimm vertretbar, für Le Mans falsch. `total_drag_kg` in `venturi_model.py` ist Schätzung und wird nach dem ersten Test gegen Döttinger-Höhe-Topspeed kalibriert. Der Karosserie-`CD_GAIN` von 2,77 (Basis-Mod 1,4) ist die Folge dieses Ziels.
 - **Masse**: Basis-Mod 915 kg mit Fahrer, Ziel laut Recherche rund 820 bis 850 kg plus Fahrer.
-- **Federraten**: Modell rechnet mit 140/190 N/mm, Basis-Mod hat 78/110. Erst testen, dann anpassen.
 
 Abstimmungsziel: Bei Höchstgeschwindigkeit soll die Bodenfreiheit hinten knapp über der Abrisshöhe (30 mm) liegen, damit Bodenwellen und Kuppen das Auto kurz in den Abriss schicken. Das ist der historische Charakter, siehe Bellofs Überschlag an der Kuppe im Rennen 1983.
 
@@ -40,5 +44,5 @@ Abstimmungsziel: Bei Höchstgeschwindigkeit soll die Bodenfreiheit hinten knapp 
 1. `python tools/venturi_model.py`, dann `python tools/build_aero.py`, dann `python tools/install.py` (aus `tools/` heraus).
 2. Content Manager: Auto "Porsche 956 Venturi (WIP)", Strecke Nordschleife, Practice.
 3. Prüfen, ob das Auto lädt (Fehler in `Documents\Assetto Corsa\logs\log.txt`, Suche nach `aero` oder `MAP_0`).
-4. App "Ride Height Monitor" (wird von `install.py` nach `apps/lua` kopiert) öffnen. Sie zeigt Bodenfreiheit, Cl·A, Abtrieb, Balance und Radlasten live und sammelt je 10 km/h einen Wert bei ruhiger Geradeausfahrt. Döttinger Höhe einmal voll durchfahren, dann "CSV speichern". Datei liegt in `apps/lua/rideheight_monitor/logs/`.
+4. App "Ride Height Monitor" (wird von `install.py` nach `apps/lua` kopiert) öffnen. Sie zeigt Bodenfreiheit, Abtrieb (aus Radlasten minus statischer Last, deshalb vor dem Losfahren kurz stehen bleiben), Balance und Radlasten live und mittelt je 10 km/h bei ruhiger Geradeausfahrt. Döttinger Höhe einmal voll durchfahren, dann "CSV speichern". Datei liegt in `apps/lua/rideheight_monitor/logs/`.
 5. Vergleich mit `tools/out/summary.json` (Gleichgewicht über Geschwindigkeit), Kalibrierung in `venturi_model.py`.

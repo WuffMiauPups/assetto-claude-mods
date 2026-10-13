@@ -18,7 +18,7 @@ Sammlung eigener Assetto-Corsa-Mods. Sprache mit dem Nutzer: Deutsch. Oberste Or
 | `AI Mods/01-fast-lane-recorder` | Python-Paket, Lua-Aufnahme-App, Build-Skripte, Test mit synthetischer Strecke grün | Original `content\tracks\monza\ai\fast_lane.ai` parsen, App im Spiel testen, Runden aufnehmen, erste echte Linie bauen |
 | `AI Mods/02` bis `06` | nur README | nach 01 |
 | `Car Mods/porsche_956` | Recherche, Venturi-Modell (`tools/venturi_model.py`), CSP-Aero-Map-Kennfelder erzeugt | `data`-Ordner von `vac_groupc_956` als Basis übernehmen, `aero.ini` mit `[MAP_0]`, Fahrwerk und Motor abstimmen |
-| `Gameplay Mods/mechanical-failures` | Dirty Air im Spiel bestätigt (BMW Sauber 2008, gepackte data.acd, Verluste bis 0,63 vorn) | Fahrgefühl abstimmen, Ausfälle mit `MULT_ALL=20` einzeln testen |
+| `Gameplay Mods/mechanical-failures` | App `app/reliability` (physics-API, alle Autos, keine data.acd-Änderung) gebaut und installiert; Auto-Script-Weg im BMW bestätigt, BMW wieder original | App im Spiel testen, Stärke und Abtriebsanteil abstimmen, Ausfälle mit Rate x20 prüfen |
 | `Career Mods/career-system` | Excel-Importer für die 2017er Datei | zurückgestellt, bis die restlichen Excels vorliegen |
 
 ## Konventionen

@@ -1,5 +1,18 @@
 # Zuverlässigkeit, Degradation und Dirty Air
 
+## Zwei Wege
+
+| | App `app/reliability` (empfohlen) | Auto-Script `script/` |
+|---|---|---|
+| Gilt für | alle Autos im Feld, jede Ära, einmal installieren | nur Autos, in denen es installiert ist |
+| Eingriff ins Auto | keiner, `data.acd` bleibt original | `data.acd` wird neu gepackt (Checksum ändert sich) |
+| Dirty Air | Grip vorn/hinten reduzieren (Runde gültig) oder Luftdichte (Runde ungültig) | Gain pro Flügel, feiner |
+| Ausfälle | Motor, Leistungsverlust, Turbo, Getriebe, Hydraulik, Elektrik, Kühlung, Reifen, Aufhängung | zusätzlich Bremsen |
+| Online | nein, nur offline | ja, wenn Checksum erlaubt |
+| Installation | `python tools/install_app.py --ac <AC>` | `python tools/install.py ... --pack` |
+
+Grundlage für den App-Weg ist die `physics.*`-API in `lua-sdk/ac_apps`, die pro Auto-Index Grip, Luftdichte, Motorleben, Restriktor, Reifen und Aufhängung setzen kann (RARE nutzt dieselbe API). Die Saison kommt aus dem Baujahr des Autos (`ac.getCar(i).year`) oder wird im App-Fenster gesetzt, daraus folgen Dirty-Air-Kennlinie und Ausfallprofil.
+
 Assetto Corsa kennt Unfallschäden, aber keine zufälligen Defekte, keinen Verschleiß über Wochenenden und keinen Abtriebsverlust im Verkehr. Diese Mod rüstet alle drei nach, mit Fokus auf F1. Vollständige Liste aller Defekte, Verluste und des Dirty-Air-Modells mit Machbarkeit: `research/f1-ausfaelle-degradation-dirty-air.md`.
 
 ## Technik
@@ -83,6 +96,6 @@ mechanical-failures/
 
 ## Status
 
-Im Spiel getestet am 13.10.2026, BMW Sauber 2008 auf Hockenheim gegen KI, CSP 0.3.0-preview649: Script lädt aus der gepackten `data.acd` (Hook an das eigene Script des Autos), Dirty Air liefert hinter einem Gegner Verluste bis 0,63 vorn und 0,33 hinten, seitlich versetzt fällt der Wert auf 0. Wichtig: AC lädt die `data.acd`, ein entpackter `data`-Ordner daneben wird ignoriert, deshalb immer mit `--pack` installieren.
+13.10.2026: App `reliability` gebaut und installiert, noch nicht im Spiel getestet. Auto-Script-Weg im BMW Sauber 2008 getestet und bestätigt (Dirty Air bis 0,63 Verlust vorn, Flügel-Gain), danach wieder auf Original-`data.acd` zurückgesetzt, damit App und Script nicht doppelt wirken. Erkenntnis: AC lädt die `data.acd`, ein entpackter `data`-Ordner daneben wird ignoriert.
 
-Offen: Fahrgefühl abstimmen (Untersteuern im Nachlauf spürbar, aber nicht überzogen), Ausfälle mit `MULT_ALL=20` provozieren und jeden Defekttyp einzeln prüfen, Getriebeschaden hat keinen Setter. Deinstallation: `data.acd.bak` zurück nach `data.acd`.
+Offen: App im Spiel testen (Log `[reliability]`, App-Fenster), Dirty-Air-Stärke und Abtriebsanteil abstimmen, Ausfälle mit Rate x20 einzeln prüfen. Restriktor-Skala (Prozent) und Aufhängungsschaden (70 km/h) sind Schätzwerte.

@@ -1,6 +1,6 @@
 # Kunos-Content nicht einchecken (Lizenz)
-AI/data/**/*.kn5
-AI/data/**/*.acd
+AI Mods/data/**/*.kn5
+AI Mods/data/**/*.acd
 *.kn5
 *.acd
 
@@ -11,12 +11,12 @@ __pycache__/
 *.egg-info/
 
 # Trainingsartefakte
-AI/06-reinforcement-learning/runs/
-AI/06-reinforcement-learning/checkpoints/
+AI Mods/06-reinforcement-learning/runs/
+AI Mods/06-reinforcement-learning/checkpoints/
 *.pt
 *.ckpt
 
 # Logs und große Daten
 *.log
-AI/data/**/laps/*.csv
-apps/career/data/
+AI Mods/data/**/laps/*.csv
+Career Mods/career-system/data/

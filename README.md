@@ -1,36 +1,39 @@
 # assetto-claude-mods
 
-Sammlung aller eigenen Assetto-Corsa-Mods: KI-Verbesserungen, Fahrzeuge, Strecken, Apps und Werkzeuge.
+Sammlung aller eigenen Assetto-Corsa-Mods. Oberste Ebene: Mod-Kategorien. Darunter: die einzelnen Mods, jede mit eigenem README (Ziel, Installation, Status).
 
-## Struktur
+## Kategorien
 
 | Ordner | Inhalt |
 |---|---|
-| `AI/` | Alles rund um die Gegner-KI, sechs Teilprojekte (siehe unten) |
-| `cars/` | Eigene Fahrzeuge und Physik-Mods (ein Unterordner pro Auto) |
-| `tracks/` | Eigene Strecken und Strecken-Konfigurationen |
-| `apps/` | In-Game-Apps (Lua für CSP, Python für das klassische SDK) |
-| `tools/` | Externe Werkzeuge: Telemetrie, Konverter, Prüfskripte |
+| `AI Mods/` | Gegner-KI: sechs Teilprojekte, siehe unten |
+| `Car Mods/` | Fahrzeuge und Fahrzeugphysik, ein Unterordner pro Auto |
+| `Layout Mods/` | Strecken, Layouts und Strecken-Konfigurationen |
+| `App Mods/` | In-Game-Apps (Lua für CSP, Python für das klassische SDK) |
+| `Career Mods/` | Karriere-System als Ersatz für Excel und Content-Manager-Saisons |
+| `Tools/` | Externe Werkzeuge: Telemetrie, Konverter, Prüfskripte |
 
-## AI-Teilprojekte
+## Aktuelle Mods
 
-| Nr. | Ordner | Ziel | Aufwand |
-|---|---|---|---|
-| 1 | `AI/01-fast-lane-recorder` | Eigene Runden aufnehmen und als `fast_lane.ai` schreiben | niedrig bis mittel |
-| 2 | `AI/02-ai-hints` | `ai_hints.ini` und Side-Lines gegen Panikbremsen | niedrig |
-| 3 | `AI/03-csp-ai-profile` | Abgestimmte Profile für CSP New AI Behaviour | niedrig |
-| 4 | `AI/04-lua-behaviour` | Lua-Verhaltensschicht: Fake-Moves, Druck, Verteidigung | mittel bis hoch |
-| 5 | `AI/05-line-optimizer` | Ideallinie algorithmisch berechnen | mittel |
-| 6 | `AI/06-reinforcement-learning` | RL-Agent im Python-Simulator, Transfer nach AC | hoch |
+| Kategorie | Mod | Status |
+|---|---|---|
+| AI Mods | `01-fast-lane-recorder` Eigene Runden als `fast_lane.ai` | Paket, App und Skripte fertig, Test mit Monza offen |
+| AI Mods | `02-ai-hints` `ai_hints.ini` gegen Panikbremsen | geplant |
+| AI Mods | `03-csp-ai-profile` Profile für CSP New AI Behaviour | geplant |
+| AI Mods | `04-lua-behaviour` Fake-Moves, Druck, Verteidigung | geplant |
+| AI Mods | `05-line-optimizer` Ideallinie berechnen | geplant |
+| AI Mods | `06-reinforcement-learning` RL-Agent im Simulator | geplant |
+| Car Mods | `porsche_956` Bellof Ring-Rekord 1983 mit Ground-Effect | Recherche und Venturi-Modell fertig, Physikdaten offen |
+| Career Mods | `career-system` Import der Excel-Karrieren, Ziele, Beziehungen, Rennstart | Importer für 2017er Datei fertig |
 
-Reihenfolge der Arbeit: 1, dann 2 und 3 parallel, danach 4 oder 6. Projekt 1 liefert Parser und Telemetrie, auf denen 5 und 6 aufbauen.
+Reihenfolge bei den AI Mods: 1, dann 2 und 3 parallel, danach 4 oder 6. Projekt 1 liefert Parser und Telemetrie, auf denen 5 und 6 aufbauen.
 
 ## Voraussetzungen
 
 - Assetto Corsa mit Content Manager
-- Custom Shaders Patch (CSP), Version im jeweiligen Projekt-README vermerkt
-- Python 3.11 oder neuer für die Werkzeuge in `AI/` und `tools/`
+- Custom Shaders Patch (CSP), Version im jeweiligen Mod-README vermerkt
+- Python 3.11 oder neuer für die Werkzeuge
 
 ## Installation einer Mod
 
-Jedes Teilprojekt hat ein eigenes README mit Installationsschritten. Faustregel: Dateien aus `dist/` des Projekts in den passenden Ordner unter `assettocorsa/content/` oder `assettocorsa/apps/` kopieren. Originaldateien vorher sichern.
+Jede Mod hat ein eigenes README mit Installationsschritten. Faustregel: Dateien aus `dist/` der Mod in den passenden Ordner unter `assettocorsa/content/` oder `assettocorsa/apps/` kopieren. Originaldateien vorher sichern.

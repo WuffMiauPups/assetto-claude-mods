@@ -1,6 +1,6 @@
 """Aus Telemetrie-Logs eine neue fast_lane.ai bauen.
 
-  python scripts/build.py --laps AI/data/monza/laps/*.csv --out dist/monza/fast_lane.ai \
+  python scripts/build.py --laps "../data/monza"/laps/*.csv --out dist/monza/fast_lane.ai \
       [--reference content/tracks/monza/ai/fast_lane.ai] [--margin 0.97] [--spacing 2] \
       [--smooth 9] [--lat-g 1.3] [--brake-g 1.2] [--accel-g 0.5] [--vmax 320] [--use-recorded-speed]
 

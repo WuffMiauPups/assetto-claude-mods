@@ -17,6 +17,7 @@
 --   DEBUG=1
 
 local M = {}
+M.lutText = nil   -- optional: Kennlinie als Text (von install.py eingebettet), sonst wird LUT aus dem Script-Ordner gelesen
 
 local cfg = {
   enabled = true, maxDist = 80, smoothing = 6.0, halfWidth10 = 1.1, spread = 0.06,
@@ -97,8 +98,13 @@ function M.init(ini)
   end
   if not cfg.enabled then return end
 
-  local path = ac.getFolder(ac.FolderID.ScriptOrigin) .. '/' .. cfg.lutFile
-  lut = parseLut(io.load(path))
+  local path = 'eingebettet'
+  if M.lutText then
+    lut = parseLut(M.lutText)
+  else
+    path = ac.getFolder(ac.FolderID.ScriptOrigin) .. '/' .. cfg.lutFile
+    lut = parseLut(io.load(path))
+  end
   if not lut then
     ac.log('[dirty_air] Kennlinie fehlt oder leer: ' .. path .. ', Dirty Air aus')
     cfg.enabled = false

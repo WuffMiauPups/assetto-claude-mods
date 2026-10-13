@@ -30,7 +30,7 @@ def test_roundtrip(tmp):
     assert np.allclose(back.position, line.position)
     assert np.allclose(back.length, line.length)
     assert np.allclose(back.extra, line.extra)
-    assert p.stat().st_size == 16 + n * (20 + 72)
+    assert p.stat().st_size == 16 + n * 20 + 4 + n * 72 + 4
     print("roundtrip ok,", back.summary())
 
 
@@ -75,5 +75,4 @@ if __name__ == "__main__":
         test_roundtrip(tmp)
         test_speed_profile()
         out = test_build_pipeline(tmp)
-        import shutil; shutil.copy(str(out) + ".png", "/tmp/claude-0/-home-user-assetto-claude-mods/c22b9a1f-5d0e-5949-8457-13658f58b47c/scratchpad/synthetic.png")
     print("ALLE TESTS OK")

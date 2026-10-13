@@ -5,12 +5,13 @@ Aufbau (alles little-endian):
     int32  version        (immer 7)
     int32  point_count
     int32  lap_time_ms    (von AC meist 0)
-    int32  sample_count   (identisch zu point_count)
+    int32  sample_count   (bei Kunos-Dateien 0)
   point_count mal
     float32 x, y, z       Position (AC-Koordinaten: y ist Höhe)
     float32 length        kumulierte Strecke in Metern
     int32   id            laufende Nummer
-  point_count mal, 18 float32 "extra":
+  int32  extra_count     (identisch zu point_count)
+  extra_count mal, 18 float32 "extra":
     0  speed              Zielgeschwindigkeit m/s
     1  gas
     2  brake
@@ -29,6 +30,12 @@ Aufbau (alles little-endian):
     15 forward_z
     16 tag
     17 grade
+  int32  has_grid       (1 = Kunos-Nachschlagegitter folgt, 0 = keins)
+  optional Gitter: float32 max_xyz[3], min_xyz[3] (Strecken-Bounding-Box plus 350 m),
+    int32 cell_size, float32 cell_size, int32 cols, int32 rows,
+    dann pro Zelle int32 count + count int32 Punktindizes (die nächstgelegenen Punkte).
+    Das Gitter ist nur ein Lookup-Cache. Beim Lesen wird es roh in AILine.grid behalten,
+    beim Schreiben einer neuen Linie wird has_grid=0 geschrieben.
 """
 from __future__ import annotations
 
@@ -60,7 +67,9 @@ class AILine:
     length: np.ndarray
     extra: np.ndarray
     lap_time_ms: int = 0
+    sample_count: int = 0
     ids: np.ndarray = field(default=None)
+    grid: bytes = b""  # roher Gitterblock (nach has_grid), leer wenn keins
 
     def __post_init__(self):
         n = len(self.position)
@@ -110,19 +119,35 @@ def read_ai(path: str | Path) -> AILine:
     pts = np.frombuffer(data, dtype=np.dtype([("p", "<f4", 3), ("len", "<f4"), ("id", "<i4")]),
                         count=count, offset=off)
     off += count * POINT.size
+    (extra_count,) = struct.unpack_from("<i", data, off)
+    off += 4
+    if extra_count != count:
+        raise ValueError(f"extra_count {extra_count} != point_count {count}")
     extra = np.frombuffer(data, dtype="<f4", count=count * EXTRA_COUNT, offset=off)
     extra = extra.reshape(count, EXTRA_COUNT).copy()
-    if off + count * EXTRA_COUNT * 4 != len(data):
-        raise ValueError("Dateilänge passt nicht zum Header")
+    off += count * EXTRA_COUNT * 4
+    grid = b""
+    if off + 4 <= len(data):
+        (has_grid,) = struct.unpack_from("<i", data, off)
+        off += 4
+        if has_grid == 1:
+            grid = bytes(data[off:])
+        elif len(data) != off:
+            raise ValueError("Dateilänge passt nicht zum Header")
     return AILine(pts["p"].astype(np.float32).copy(), pts["len"].copy(), extra,
-                  lap_time_ms=lap_time, ids=pts["id"].copy())
+                  lap_time_ms=lap_time, sample_count=sample_count, ids=pts["id"].copy(), grid=grid)
 
 
 def write_ai(line: AILine, path: str | Path) -> None:
     n = len(line)
-    out = bytearray(HEADER.pack(VERSION, n, int(line.lap_time_ms), n))
+    out = bytearray(HEADER.pack(VERSION, n, int(line.lap_time_ms), int(line.sample_count)))
     for i in range(n):
         x, y, z = line.position[i]
         out += POINT.pack(float(x), float(y), float(z), float(line.length[i]), int(line.ids[i]))
+    out += struct.pack("<i", n)
     out += line.extra.astype("<f4").tobytes()
+    if line.grid:
+        out += struct.pack("<i", 1) + line.grid
+    else:
+        out += struct.pack("<i", 0)
     Path(path).write_bytes(out)

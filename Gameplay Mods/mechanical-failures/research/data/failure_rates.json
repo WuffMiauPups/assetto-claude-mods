@@ -1,0 +1,4344 @@
+{
+ "source": "f1db (CC BY 4.0)",
+ "years": {
+  "1988": {
+   "starts": 421,
+   "races": 16,
+   "mechanical_total_pct": 39.19,
+   "rates_pct": {
+    "ENGINE": 14.73,
+    "POWER_LOSS": 4.75,
+    "TURBO": 0.24,
+    "GEARBOX": 7.84,
+    "HYDRAULICS": 0.0,
+    "ELECTRICS": 2.85,
+    "BRAKES": 1.66,
+    "PUNCTURE": 0.48,
+    "SUSPENSION": 4.99,
+    "COOLING": 1.66,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "1989": {
+   "starts": 417,
+   "races": 16,
+   "mechanical_total_pct": 37.65,
+   "rates_pct": {
+    "ENGINE": 10.55,
+    "POWER_LOSS": 2.64,
+    "TURBO": 0.0,
+    "GEARBOX": 10.55,
+    "HYDRAULICS": 0.0,
+    "ELECTRICS": 6.47,
+    "BRAKES": 1.44,
+    "PUNCTURE": 0.96,
+    "SUSPENSION": 3.12,
+    "COOLING": 1.92,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "1990": {
+   "starts": 419,
+   "races": 16,
+   "mechanical_total_pct": 35.8,
+   "rates_pct": {
+    "ENGINE": 11.93,
+    "POWER_LOSS": 2.39,
+    "TURBO": 0.0,
+    "GEARBOX": 10.98,
+    "HYDRAULICS": 0.24,
+    "ELECTRICS": 4.06,
+    "BRAKES": 2.15,
+    "PUNCTURE": 1.67,
+    "SUSPENSION": 1.91,
+    "COOLING": 0.48,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "1991": {
+   "starts": 417,
+   "races": 16,
+   "mechanical_total_pct": 37.41,
+   "rates_pct": {
+    "ENGINE": 16.55,
+    "POWER_LOSS": 3.6,
+    "TURBO": 0.0,
+    "GEARBOX": 10.55,
+    "HYDRAULICS": 0.0,
+    "ELECTRICS": 2.64,
+    "BRAKES": 0.48,
+    "PUNCTURE": 1.2,
+    "SUSPENSION": 1.92,
+    "COOLING": 0.48,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "1992": {
+   "starts": 420,
+   "races": 16,
+   "mechanical_total_pct": 32.62,
+   "rates_pct": {
+    "ENGINE": 14.76,
+    "POWER_LOSS": 1.43,
+    "TURBO": 0.0,
+    "GEARBOX": 12.38,
+    "HYDRAULICS": 0.24,
+    "ELECTRICS": 1.43,
+    "BRAKES": 0.0,
+    "PUNCTURE": 0.71,
+    "SUSPENSION": 1.43,
+    "COOLING": 0.24,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "1993": {
+   "starts": 404,
+   "races": 16,
+   "mechanical_total_pct": 28.96,
+   "rates_pct": {
+    "ENGINE": 8.66,
+    "POWER_LOSS": 2.72,
+    "TURBO": 0.0,
+    "GEARBOX": 8.66,
+    "HYDRAULICS": 0.74,
+    "ELECTRICS": 1.24,
+    "BRAKES": 0.74,
+    "PUNCTURE": 1.24,
+    "SUSPENSION": 4.21,
+    "COOLING": 0.74,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "1994": {
+   "starts": 418,
+   "races": 16,
+   "mechanical_total_pct": 29.9,
+   "rates_pct": {
+    "ENGINE": 13.4,
+    "POWER_LOSS": 1.44,
+    "TURBO": 0.0,
+    "GEARBOX": 8.37,
+    "HYDRAULICS": 0.24,
+    "ELECTRICS": 3.35,
+    "BRAKES": 0.48,
+    "PUNCTURE": 0.72,
+    "SUSPENSION": 1.2,
+    "COOLING": 0.72,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "1995": {
+   "starts": 418,
+   "races": 17,
+   "mechanical_total_pct": 30.38,
+   "rates_pct": {
+    "ENGINE": 8.37,
+    "POWER_LOSS": 2.39,
+    "TURBO": 0.0,
+    "GEARBOX": 12.68,
+    "HYDRAULICS": 0.24,
+    "ELECTRICS": 3.11,
+    "BRAKES": 0.72,
+    "PUNCTURE": 1.2,
+    "SUSPENSION": 1.2,
+    "COOLING": 0.48,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "1996": {
+   "starts": 328,
+   "races": 16,
+   "mechanical_total_pct": 27.13,
+   "rates_pct": {
+    "ENGINE": 10.98,
+    "POWER_LOSS": 2.13,
+    "TURBO": 0.0,
+    "GEARBOX": 5.79,
+    "HYDRAULICS": 1.22,
+    "ELECTRICS": 2.13,
+    "BRAKES": 0.91,
+    "PUNCTURE": 0.91,
+    "SUSPENSION": 3.05,
+    "COOLING": 0.0,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "1997": {
+   "starts": 374,
+   "races": 17,
+   "mechanical_total_pct": 27.54,
+   "rates_pct": {
+    "ENGINE": 12.3,
+    "POWER_LOSS": 1.6,
+    "TURBO": 0.0,
+    "GEARBOX": 6.42,
+    "HYDRAULICS": 0.8,
+    "ELECTRICS": 2.41,
+    "BRAKES": 0.53,
+    "PUNCTURE": 1.34,
+    "SUSPENSION": 1.6,
+    "COOLING": 0.53,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "1998": {
+   "starts": 347,
+   "races": 16,
+   "mechanical_total_pct": 27.67,
+   "rates_pct": {
+    "ENGINE": 9.51,
+    "POWER_LOSS": 2.31,
+    "TURBO": 0.0,
+    "GEARBOX": 9.8,
+    "HYDRAULICS": 1.73,
+    "ELECTRICS": 0.86,
+    "BRAKES": 0.58,
+    "PUNCTURE": 0.86,
+    "SUSPENSION": 2.02,
+    "COOLING": 0.0,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "1999": {
+   "starts": 352,
+   "races": 16,
+   "mechanical_total_pct": 33.52,
+   "rates_pct": {
+    "ENGINE": 6.82,
+    "POWER_LOSS": 2.56,
+    "TURBO": 0.0,
+    "GEARBOX": 13.35,
+    "HYDRAULICS": 1.99,
+    "ELECTRICS": 2.56,
+    "BRAKES": 1.7,
+    "PUNCTURE": 1.42,
+    "SUSPENSION": 2.84,
+    "COOLING": 0.28,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2000": {
+   "starts": 374,
+   "races": 17,
+   "mechanical_total_pct": 25.13,
+   "rates_pct": {
+    "ENGINE": 8.82,
+    "POWER_LOSS": 1.07,
+    "TURBO": 0.0,
+    "GEARBOX": 6.42,
+    "HYDRAULICS": 2.41,
+    "ELECTRICS": 3.21,
+    "BRAKES": 1.07,
+    "PUNCTURE": 0.53,
+    "SUSPENSION": 1.6,
+    "COOLING": 0.0,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2001": {
+   "starts": 373,
+   "races": 17,
+   "mechanical_total_pct": 29.49,
+   "rates_pct": {
+    "ENGINE": 9.92,
+    "POWER_LOSS": 1.88,
+    "TURBO": 0.0,
+    "GEARBOX": 8.31,
+    "HYDRAULICS": 2.95,
+    "ELECTRICS": 2.41,
+    "BRAKES": 2.41,
+    "PUNCTURE": 0.0,
+    "SUSPENSION": 1.34,
+    "COOLING": 0.27,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2002": {
+   "starts": 359,
+   "races": 17,
+   "mechanical_total_pct": 31.48,
+   "rates_pct": {
+    "ENGINE": 12.81,
+    "POWER_LOSS": 1.95,
+    "TURBO": 0.0,
+    "GEARBOX": 6.41,
+    "HYDRAULICS": 3.62,
+    "ELECTRICS": 1.67,
+    "BRAKES": 1.11,
+    "PUNCTURE": 0.28,
+    "SUSPENSION": 3.06,
+    "COOLING": 0.56,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2003": {
+   "starts": 320,
+   "races": 16,
+   "mechanical_total_pct": 26.56,
+   "rates_pct": {
+    "ENGINE": 8.75,
+    "POWER_LOSS": 3.75,
+    "TURBO": 0.0,
+    "GEARBOX": 5.62,
+    "HYDRAULICS": 1.56,
+    "ELECTRICS": 1.88,
+    "BRAKES": 1.56,
+    "PUNCTURE": 0.31,
+    "SUSPENSION": 2.81,
+    "COOLING": 0.31,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2004": {
+   "starts": 360,
+   "races": 18,
+   "mechanical_total_pct": 19.17,
+   "rates_pct": {
+    "ENGINE": 6.11,
+    "POWER_LOSS": 0.28,
+    "TURBO": 0.28,
+    "GEARBOX": 5.28,
+    "HYDRAULICS": 1.94,
+    "ELECTRICS": 1.11,
+    "BRAKES": 0.83,
+    "PUNCTURE": 1.39,
+    "SUSPENSION": 1.39,
+    "COOLING": 0.56,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2005": {
+   "starts": 376,
+   "races": 19,
+   "mechanical_total_pct": 14.36,
+   "rates_pct": {
+    "ENGINE": 3.46,
+    "POWER_LOSS": 1.06,
+    "TURBO": 0.0,
+    "GEARBOX": 2.13,
+    "HYDRAULICS": 2.13,
+    "ELECTRICS": 1.06,
+    "BRAKES": 0.8,
+    "PUNCTURE": 2.13,
+    "SUSPENSION": 1.6,
+    "COOLING": 0.0,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2006": {
+   "starts": 396,
+   "races": 18,
+   "mechanical_total_pct": 17.93,
+   "rates_pct": {
+    "ENGINE": 6.31,
+    "POWER_LOSS": 1.01,
+    "TURBO": 0.0,
+    "GEARBOX": 3.54,
+    "HYDRAULICS": 3.54,
+    "ELECTRICS": 0.76,
+    "BRAKES": 0.76,
+    "PUNCTURE": 0.76,
+    "SUSPENSION": 1.01,
+    "COOLING": 0.25,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2007": {
+   "starts": 374,
+   "races": 17,
+   "mechanical_total_pct": 15.51,
+   "rates_pct": {
+    "ENGINE": 2.14,
+    "POWER_LOSS": 1.6,
+    "TURBO": 0.0,
+    "GEARBOX": 2.94,
+    "HYDRAULICS": 3.74,
+    "ELECTRICS": 1.6,
+    "BRAKES": 0.8,
+    "PUNCTURE": 1.07,
+    "SUSPENSION": 1.07,
+    "COOLING": 0.53,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2008": {
+   "starts": 368,
+   "races": 18,
+   "mechanical_total_pct": 8.97,
+   "rates_pct": {
+    "ENGINE": 2.72,
+    "POWER_LOSS": 0.0,
+    "TURBO": 0.27,
+    "GEARBOX": 2.17,
+    "HYDRAULICS": 1.09,
+    "ELECTRICS": 0.54,
+    "BRAKES": 0.54,
+    "PUNCTURE": 0.54,
+    "SUSPENSION": 0.54,
+    "COOLING": 0.54,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2009": {
+   "starts": 340,
+   "races": 17,
+   "mechanical_total_pct": 10.0,
+   "rates_pct": {
+    "ENGINE": 1.18,
+    "POWER_LOSS": 0.29,
+    "TURBO": 0.0,
+    "GEARBOX": 2.94,
+    "HYDRAULICS": 0.59,
+    "ELECTRICS": 0.29,
+    "BRAKES": 2.65,
+    "PUNCTURE": 0.88,
+    "SUSPENSION": 0.59,
+    "COOLING": 0.59,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2010": {
+   "starts": 456,
+   "races": 19,
+   "mechanical_total_pct": 14.91,
+   "rates_pct": {
+    "ENGINE": 3.07,
+    "POWER_LOSS": 0.66,
+    "TURBO": 0.0,
+    "GEARBOX": 2.85,
+    "HYDRAULICS": 4.61,
+    "ELECTRICS": 0.0,
+    "BRAKES": 0.66,
+    "PUNCTURE": 1.1,
+    "SUSPENSION": 1.75,
+    "COOLING": 0.22,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2011": {
+   "starts": 454,
+   "races": 19,
+   "mechanical_total_pct": 10.57,
+   "rates_pct": {
+    "ENGINE": 1.54,
+    "POWER_LOSS": 0.0,
+    "TURBO": 0.0,
+    "GEARBOX": 3.52,
+    "HYDRAULICS": 0.88,
+    "ELECTRICS": 1.32,
+    "BRAKES": 0.22,
+    "PUNCTURE": 1.32,
+    "SUSPENSION": 1.1,
+    "COOLING": 0.66,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2012": {
+   "starts": 478,
+   "races": 20,
+   "mechanical_total_pct": 9.83,
+   "rates_pct": {
+    "ENGINE": 1.67,
+    "POWER_LOSS": 0.84,
+    "TURBO": 0.0,
+    "GEARBOX": 1.26,
+    "HYDRAULICS": 1.46,
+    "ELECTRICS": 1.46,
+    "BRAKES": 1.26,
+    "PUNCTURE": 0.84,
+    "SUSPENSION": 1.05,
+    "COOLING": 0.0,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2013": {
+   "starts": 418,
+   "races": 19,
+   "mechanical_total_pct": 9.33,
+   "rates_pct": {
+    "ENGINE": 1.91,
+    "POWER_LOSS": 0.24,
+    "TURBO": 0.24,
+    "GEARBOX": 1.2,
+    "HYDRAULICS": 1.2,
+    "ELECTRICS": 0.72,
+    "BRAKES": 0.96,
+    "PUNCTURE": 1.91,
+    "SUSPENSION": 0.96,
+    "COOLING": 0.0,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2014": {
+   "starts": 407,
+   "races": 19,
+   "mechanical_total_pct": 14.99,
+   "rates_pct": {
+    "ENGINE": 5.65,
+    "POWER_LOSS": 0.74,
+    "TURBO": 0.74,
+    "GEARBOX": 2.21,
+    "HYDRAULICS": 0.25,
+    "ELECTRICS": 1.72,
+    "BRAKES": 1.23,
+    "PUNCTURE": 0.0,
+    "SUSPENSION": 1.97,
+    "COOLING": 0.49,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2015": {
+   "starts": 380,
+   "races": 19,
+   "mechanical_total_pct": 15.53,
+   "rates_pct": {
+    "ENGINE": 3.68,
+    "POWER_LOSS": 1.05,
+    "TURBO": 0.26,
+    "GEARBOX": 2.89,
+    "HYDRAULICS": 0.0,
+    "ELECTRICS": 2.89,
+    "BRAKES": 2.37,
+    "PUNCTURE": 1.05,
+    "SUSPENSION": 1.32,
+    "COOLING": 0.0,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2016": {
+   "starts": 462,
+   "races": 21,
+   "mechanical_total_pct": 11.04,
+   "rates_pct": {
+    "ENGINE": 2.38,
+    "POWER_LOSS": 0.22,
+    "TURBO": 0.22,
+    "GEARBOX": 1.95,
+    "HYDRAULICS": 0.22,
+    "ELECTRICS": 1.08,
+    "BRAKES": 2.16,
+    "PUNCTURE": 0.87,
+    "SUSPENSION": 1.3,
+    "COOLING": 0.65,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2017": {
+   "starts": 400,
+   "races": 20,
+   "mechanical_total_pct": 15.0,
+   "rates_pct": {
+    "ENGINE": 5.5,
+    "POWER_LOSS": 0.75,
+    "TURBO": 0.25,
+    "GEARBOX": 1.5,
+    "HYDRAULICS": 1.5,
+    "ELECTRICS": 1.25,
+    "BRAKES": 1.25,
+    "PUNCTURE": 0.5,
+    "SUSPENSION": 1.75,
+    "COOLING": 0.75,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2018": {
+   "starts": 420,
+   "races": 21,
+   "mechanical_total_pct": 12.14,
+   "rates_pct": {
+    "ENGINE": 2.62,
+    "POWER_LOSS": 1.67,
+    "TURBO": 0.24,
+    "GEARBOX": 1.9,
+    "HYDRAULICS": 0.95,
+    "ELECTRICS": 0.95,
+    "BRAKES": 1.43,
+    "PUNCTURE": 1.43,
+    "SUSPENSION": 0.48,
+    "COOLING": 0.48,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2019": {
+   "starts": 420,
+   "races": 21,
+   "mechanical_total_pct": 7.38,
+   "rates_pct": {
+    "ENGINE": 1.9,
+    "POWER_LOSS": 1.19,
+    "TURBO": 0.0,
+    "GEARBOX": 0.48,
+    "HYDRAULICS": 0.71,
+    "ELECTRICS": 0.0,
+    "BRAKES": 0.71,
+    "PUNCTURE": 0.95,
+    "SUSPENSION": 0.95,
+    "COOLING": 0.48,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2020": {
+   "starts": 340,
+   "races": 17,
+   "mechanical_total_pct": 9.41,
+   "rates_pct": {
+    "ENGINE": 2.65,
+    "POWER_LOSS": 0.29,
+    "TURBO": 0.0,
+    "GEARBOX": 1.47,
+    "HYDRAULICS": 0.29,
+    "ELECTRICS": 0.88,
+    "BRAKES": 1.18,
+    "PUNCTURE": 1.18,
+    "SUSPENSION": 0.29,
+    "COOLING": 1.18,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2021": {
+   "starts": 440,
+   "races": 22,
+   "mechanical_total_pct": 7.05,
+   "rates_pct": {
+    "ENGINE": 1.14,
+    "POWER_LOSS": 0.68,
+    "TURBO": 0.23,
+    "GEARBOX": 0.91,
+    "HYDRAULICS": 0.23,
+    "ELECTRICS": 0.68,
+    "BRAKES": 0.68,
+    "PUNCTURE": 1.14,
+    "SUSPENSION": 0.91,
+    "COOLING": 0.45,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2022": {
+   "starts": 440,
+   "races": 22,
+   "mechanical_total_pct": 9.32,
+   "rates_pct": {
+    "ENGINE": 2.95,
+    "POWER_LOSS": 1.36,
+    "TURBO": 0.23,
+    "GEARBOX": 1.36,
+    "HYDRAULICS": 0.68,
+    "ELECTRICS": 0.23,
+    "BRAKES": 0.0,
+    "PUNCTURE": 0.0,
+    "SUSPENSION": 1.14,
+    "COOLING": 1.36,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2023": {
+   "starts": 440,
+   "races": 22,
+   "mechanical_total_pct": 7.27,
+   "rates_pct": {
+    "ENGINE": 2.5,
+    "POWER_LOSS": 0.45,
+    "TURBO": 0.0,
+    "GEARBOX": 0.45,
+    "HYDRAULICS": 1.14,
+    "ELECTRICS": 0.23,
+    "BRAKES": 0.45,
+    "PUNCTURE": 0.0,
+    "SUSPENSION": 1.59,
+    "COOLING": 0.45,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2024": {
+   "starts": 479,
+   "races": 24,
+   "mechanical_total_pct": 4.18,
+   "rates_pct": {
+    "ENGINE": 1.04,
+    "POWER_LOSS": 0.0,
+    "TURBO": 0.21,
+    "GEARBOX": 0.84,
+    "HYDRAULICS": 0.42,
+    "ELECTRICS": 0.0,
+    "BRAKES": 0.84,
+    "PUNCTURE": 0.21,
+    "SUSPENSION": 0.0,
+    "COOLING": 0.63,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  },
+  "2025": {
+   "starts": 480,
+   "races": 24,
+   "mechanical_total_pct": 3.96,
+   "rates_pct": {
+    "ENGINE": 1.25,
+    "POWER_LOSS": 0.42,
+    "TURBO": 0.0,
+    "GEARBOX": 0.21,
+    "HYDRAULICS": 0.21,
+    "ELECTRICS": 0.0,
+    "BRAKES": 0.62,
+    "PUNCTURE": 0.21,
+    "SUSPENSION": 0.83,
+    "COOLING": 0.21,
+    "OTHER": 0.0
+   },
+   "unmapped": {}
+  }
+ },
+ "engine_manufacturers": {
+  "1988:ferrari": {
+   "starts": 32,
+   "mech_pct": 28.12,
+   "engine_pct": 18.75,
+   "factor": 0.95
+  },
+  "1988:ford": {
+   "starts": 181,
+   "mech_pct": 44.2,
+   "engine_pct": 17.13,
+   "factor": 0.87
+  },
+  "1988:honda": {
+   "starts": 62,
+   "mech_pct": 12.9,
+   "engine_pct": 8.06,
+   "factor": 0.41
+  },
+  "1988:judd": {
+   "starts": 88,
+   "mech_pct": 44.32,
+   "engine_pct": 27.27,
+   "factor": 1.38
+  },
+  "1988:megatron": {
+   "starts": 32,
+   "mech_pct": 34.38,
+   "engine_pct": 18.75,
+   "factor": 0.95
+  },
+  "1988:osella": {
+   "starts": 11,
+   "mech_pct": 72.73,
+   "engine_pct": 45.45,
+   "factor": 2.31
+  },
+  "1988:zakspeed": {
+   "starts": 15,
+   "mech_pct": 66.67,
+   "engine_pct": 40.0,
+   "factor": 2.03
+  },
+  "1989:ferrari": {
+   "starts": 30,
+   "mech_pct": 46.67,
+   "engine_pct": 3.33,
+   "factor": 0.25
+  },
+  "1989:ford": {
+   "starts": 209,
+   "mech_pct": 35.89,
+   "engine_pct": 11.48,
+   "factor": 0.87
+  },
+  "1989:honda": {
+   "starts": 32,
+   "mech_pct": 15.62,
+   "engine_pct": 6.25,
+   "factor": 0.47
+  },
+  "1989:judd": {
+   "starts": 89,
+   "mech_pct": 44.94,
+   "engine_pct": 19.1,
+   "factor": 1.45
+  },
+  "1989:lamborghini": {
+   "starts": 23,
+   "mech_pct": 52.17,
+   "engine_pct": 34.78,
+   "factor": 2.64
+  },
+  "1989:renault": {
+   "starts": 32,
+   "mech_pct": 31.25,
+   "engine_pct": 9.38,
+   "factor": 0.71
+  },
+  "1990:ferrari": {
+   "starts": 32,
+   "mech_pct": 34.38,
+   "engine_pct": 9.38,
+   "factor": 0.65
+  },
+  "1990:ford": {
+   "starts": 204,
+   "mech_pct": 29.41,
+   "engine_pct": 13.24,
+   "factor": 0.92
+  },
+  "1990:honda": {
+   "starts": 32,
+   "mech_pct": 18.75,
+   "engine_pct": 3.12,
+   "factor": 0.22
+  },
+  "1990:judd": {
+   "starts": 55,
+   "mech_pct": 54.55,
+   "engine_pct": 27.27,
+   "factor": 1.9
+  },
+  "1990:lamborghini": {
+   "starts": 64,
+   "mech_pct": 53.12,
+   "engine_pct": 14.06,
+   "factor": 0.98
+  },
+  "1990:renault": {
+   "starts": 32,
+   "mech_pct": 28.12,
+   "engine_pct": 15.62,
+   "factor": 1.09
+  },
+  "1991:ferrari": {
+   "starts": 64,
+   "mech_pct": 34.38,
+   "engine_pct": 14.06,
+   "factor": 0.7
+  },
+  "1991:ford": {
+   "starts": 104,
+   "mech_pct": 44.23,
+   "engine_pct": 19.23,
+   "factor": 0.95
+  },
+  "1991:honda": {
+   "starts": 64,
+   "mech_pct": 29.69,
+   "engine_pct": 18.75,
+   "factor": 0.93
+  },
+  "1991:ilmor": {
+   "starts": 32,
+   "mech_pct": 50.0,
+   "engine_pct": 28.12,
+   "factor": 1.4
+  },
+  "1991:judd": {
+   "starts": 52,
+   "mech_pct": 40.38,
+   "engine_pct": 28.85,
+   "factor": 1.43
+  },
+  "1991:lamborghini": {
+   "starts": 35,
+   "mech_pct": 28.57,
+   "engine_pct": 22.86,
+   "factor": 1.13
+  },
+  "1991:renault": {
+   "starts": 32,
+   "mech_pct": 21.88,
+   "engine_pct": 0.0,
+   "factor": 0.0
+  },
+  "1991:yamaha": {
+   "starts": 29,
+   "mech_pct": 34.48,
+   "engine_pct": 20.69,
+   "factor": 1.03
+  },
+  "1992:ferrari": {
+   "starts": 63,
+   "mech_pct": 33.33,
+   "engine_pct": 19.05,
+   "factor": 1.18
+  },
+  "1992:ford": {
+   "starts": 82,
+   "mech_pct": 34.15,
+   "engine_pct": 15.85,
+   "factor": 0.98
+  },
+  "1992:honda": {
+   "starts": 32,
+   "mech_pct": 31.25,
+   "engine_pct": 9.38,
+   "factor": 0.58
+  },
+  "1992:ilmor": {
+   "starts": 58,
+   "mech_pct": 39.66,
+   "engine_pct": 20.69,
+   "factor": 1.28
+  },
+  "1992:lamborghini": {
+   "starts": 56,
+   "mech_pct": 41.07,
+   "engine_pct": 19.64,
+   "factor": 1.21
+  },
+  "1992:mugen-honda": {
+   "starts": 30,
+   "mech_pct": 13.33,
+   "engine_pct": 6.67,
+   "factor": 0.41
+  },
+  "1992:renault": {
+   "starts": 64,
+   "mech_pct": 21.88,
+   "engine_pct": 15.62,
+   "factor": 0.97
+  },
+  "1992:yamaha": {
+   "starts": 28,
+   "mech_pct": 46.43,
+   "engine_pct": 14.29,
+   "factor": 0.88
+  },
+  "1993:ferrari": {
+   "starts": 53,
+   "mech_pct": 47.17,
+   "engine_pct": 11.32,
+   "factor": 0.99
+  },
+  "1993:ford": {
+   "starts": 128,
+   "mech_pct": 21.88,
+   "engine_pct": 7.81,
+   "factor": 0.69
+  },
+  "1993:hart": {
+   "starts": 31,
+   "mech_pct": 38.71,
+   "engine_pct": 9.68,
+   "factor": 0.85
+  },
+  "1993:lamborghini": {
+   "starts": 32,
+   "mech_pct": 34.38,
+   "engine_pct": 21.88,
+   "factor": 1.92
+  },
+  "1993:mugen-honda": {
+   "starts": 32,
+   "mech_pct": 18.75,
+   "engine_pct": 6.25,
+   "factor": 0.55
+  },
+  "1993:renault": {
+   "starts": 64,
+   "mech_pct": 10.94,
+   "engine_pct": 4.69,
+   "factor": 0.41
+  },
+  "1993:sauber": {
+   "starts": 32,
+   "mech_pct": 43.75,
+   "engine_pct": 28.12,
+   "factor": 2.47
+  },
+  "1993:yamaha": {
+   "starts": 32,
+   "mech_pct": 43.75,
+   "engine_pct": 18.75,
+   "factor": 1.65
+  },
+  "1994:ferrari": {
+   "starts": 32,
+   "mech_pct": 37.5,
+   "engine_pct": 15.62,
+   "factor": 1.05
+  },
+  "1994:ford": {
+   "starts": 157,
+   "mech_pct": 33.76,
+   "engine_pct": 17.2,
+   "factor": 1.16
+  },
+  "1994:hart": {
+   "starts": 32,
+   "mech_pct": 21.88,
+   "engine_pct": 6.25,
+   "factor": 0.42
+  },
+  "1994:mercedes": {
+   "starts": 31,
+   "mech_pct": 35.48,
+   "engine_pct": 22.58,
+   "factor": 1.52
+  },
+  "1994:mugen-honda": {
+   "starts": 32,
+   "mech_pct": 21.88,
+   "engine_pct": 9.38,
+   "factor": 0.63
+  },
+  "1994:peugeot": {
+   "starts": 32,
+   "mech_pct": 46.88,
+   "engine_pct": 25.0,
+   "factor": 1.69
+  },
+  "1994:renault": {
+   "starts": 63,
+   "mech_pct": 9.52,
+   "engine_pct": 1.59,
+   "factor": 0.11
+  },
+  "1994:yamaha": {
+   "starts": 32,
+   "mech_pct": 31.25,
+   "engine_pct": 21.88,
+   "factor": 1.47
+  },
+  "1995:ferrari": {
+   "starts": 34,
+   "mech_pct": 35.29,
+   "engine_pct": 11.76,
+   "factor": 1.09
+  },
+  "1995:ford": {
+   "starts": 146,
+   "mech_pct": 37.67,
+   "engine_pct": 8.22,
+   "factor": 0.76
+  },
+  "1995:hart": {
+   "starts": 34,
+   "mech_pct": 38.24,
+   "engine_pct": 11.76,
+   "factor": 1.09
+  },
+  "1995:mercedes": {
+   "starts": 34,
+   "mech_pct": 32.35,
+   "engine_pct": 26.47,
+   "factor": 2.46
+  },
+  "1995:mugen-honda": {
+   "starts": 34,
+   "mech_pct": 8.82,
+   "engine_pct": 2.94,
+   "factor": 0.27
+  },
+  "1995:peugeot": {
+   "starts": 34,
+   "mech_pct": 44.12,
+   "engine_pct": 23.53,
+   "factor": 2.19
+  },
+  "1995:renault": {
+   "starts": 68,
+   "mech_pct": 14.71,
+   "engine_pct": 1.47,
+   "factor": 0.14
+  },
+  "1995:yamaha": {
+   "starts": 34,
+   "mech_pct": 23.53,
+   "engine_pct": 17.65,
+   "factor": 1.64
+  },
+  "1996:ferrari": {
+   "starts": 32,
+   "mech_pct": 37.5,
+   "engine_pct": 6.25,
+   "factor": 0.48
+  },
+  "1996:ford": {
+   "starts": 72,
+   "mech_pct": 31.94,
+   "engine_pct": 13.89,
+   "factor": 1.06
+  },
+  "1996:hart": {
+   "starts": 32,
+   "mech_pct": 31.25,
+   "engine_pct": 21.88,
+   "factor": 1.67
+  },
+  "1996:mercedes": {
+   "starts": 32,
+   "mech_pct": 18.75,
+   "engine_pct": 12.5,
+   "factor": 0.95
+  },
+  "1996:mugen-honda": {
+   "starts": 32,
+   "mech_pct": 31.25,
+   "engine_pct": 21.88,
+   "factor": 1.67
+  },
+  "1996:peugeot": {
+   "starts": 32,
+   "mech_pct": 18.75,
+   "engine_pct": 6.25,
+   "factor": 0.48
+  },
+  "1996:renault": {
+   "starts": 64,
+   "mech_pct": 18.75,
+   "engine_pct": 4.69,
+   "factor": 0.36
+  },
+  "1996:yamaha": {
+   "starts": 32,
+   "mech_pct": 31.25,
+   "engine_pct": 25.0,
+   "factor": 1.91
+  },
+  "1997:ferrari": {
+   "starts": 34,
+   "mech_pct": 11.76,
+   "engine_pct": 2.94,
+   "factor": 0.21
+  },
+  "1997:ford": {
+   "starts": 68,
+   "mech_pct": 51.47,
+   "engine_pct": 26.47,
+   "factor": 1.9
+  },
+  "1997:hart": {
+   "starts": 34,
+   "mech_pct": 38.24,
+   "engine_pct": 20.59,
+   "factor": 1.48
+  },
+  "1997:mercedes": {
+   "starts": 34,
+   "mech_pct": 32.35,
+   "engine_pct": 23.53,
+   "factor": 1.69
+  },
+  "1997:mugen-honda": {
+   "starts": 34,
+   "mech_pct": 29.41,
+   "engine_pct": 17.65,
+   "factor": 1.27
+  },
+  "1997:petronas": {
+   "starts": 34,
+   "mech_pct": 8.82,
+   "engine_pct": 2.94,
+   "factor": 0.21
+  },
+  "1997:peugeot": {
+   "starts": 34,
+   "mech_pct": 17.65,
+   "engine_pct": 2.94,
+   "factor": 0.21
+  },
+  "1997:renault": {
+   "starts": 68,
+   "mech_pct": 8.82,
+   "engine_pct": 2.94,
+   "factor": 0.21
+  },
+  "1997:yamaha": {
+   "starts": 34,
+   "mech_pct": 44.12,
+   "engine_pct": 23.53,
+   "factor": 1.69
+  },
+  "1998:arrows": {
+   "starts": 32,
+   "mech_pct": 46.88,
+   "engine_pct": 21.88,
+   "factor": 1.85
+  },
+  "1998:ferrari": {
+   "starts": 32,
+   "mech_pct": 9.38,
+   "engine_pct": 3.12,
+   "factor": 0.26
+  },
+  "1998:ford": {
+   "starts": 91,
+   "mech_pct": 40.66,
+   "engine_pct": 16.48,
+   "factor": 1.4
+  },
+  "1998:mecachrome": {
+   "starts": 32,
+   "mech_pct": 6.25,
+   "engine_pct": 3.12,
+   "factor": 0.26
+  },
+  "1998:mercedes": {
+   "starts": 32,
+   "mech_pct": 15.62,
+   "engine_pct": 9.38,
+   "factor": 0.79
+  },
+  "1998:mugen-honda": {
+   "starts": 32,
+   "mech_pct": 28.12,
+   "engine_pct": 6.25,
+   "factor": 0.53
+  },
+  "1998:petronas": {
+   "starts": 32,
+   "mech_pct": 18.75,
+   "engine_pct": 6.25,
+   "factor": 0.53
+  },
+  "1998:peugeot": {
+   "starts": 32,
+   "mech_pct": 46.88,
+   "engine_pct": 28.12,
+   "factor": 2.38
+  },
+  "1998:playlife": {
+   "starts": 32,
+   "mech_pct": 12.5,
+   "engine_pct": 3.12,
+   "factor": 0.26
+  },
+  "1999:arrows": {
+   "starts": 32,
+   "mech_pct": 53.12,
+   "engine_pct": 15.62,
+   "factor": 1.67
+  },
+  "1999:ferrari": {
+   "starts": 32,
+   "mech_pct": 6.25,
+   "engine_pct": 3.12,
+   "factor": 0.33
+  },
+  "1999:ford": {
+   "starts": 64,
+   "mech_pct": 35.94,
+   "engine_pct": 9.38,
+   "factor": 1.0
+  },
+  "1999:mercedes": {
+   "starts": 32,
+   "mech_pct": 28.12,
+   "engine_pct": 6.25,
+   "factor": 0.67
+  },
+  "1999:mugen-honda": {
+   "starts": 32,
+   "mech_pct": 21.88,
+   "engine_pct": 3.12,
+   "factor": 0.33
+  },
+  "1999:petronas": {
+   "starts": 32,
+   "mech_pct": 37.5,
+   "engine_pct": 9.38,
+   "factor": 1.0
+  },
+  "1999:peugeot": {
+   "starts": 32,
+   "mech_pct": 37.5,
+   "engine_pct": 21.88,
+   "factor": 2.33
+  },
+  "1999:playlife": {
+   "starts": 32,
+   "mech_pct": 25.0,
+   "engine_pct": 9.38,
+   "factor": 1.0
+  },
+  "1999:supertec": {
+   "starts": 64,
+   "mech_pct": 43.75,
+   "engine_pct": 7.81,
+   "factor": 0.83
+  },
+  "2000:bmw": {
+   "starts": 34,
+   "mech_pct": 32.35,
+   "engine_pct": 23.53,
+   "factor": 2.38
+  },
+  "2000:cosworth": {
+   "starts": 34,
+   "mech_pct": 17.65,
+   "engine_pct": 0.0,
+   "factor": 0.0
+  },
+  "2000:ferrari": {
+   "starts": 34,
+   "mech_pct": 14.71,
+   "engine_pct": 5.88,
+   "factor": 0.59
+  },
+  "2000:fondmetal": {
+   "starts": 34,
+   "mech_pct": 29.41,
+   "engine_pct": 20.59,
+   "factor": 2.08
+  },
+  "2000:honda": {
+   "starts": 34,
+   "mech_pct": 20.59,
+   "engine_pct": 8.82,
+   "factor": 0.89
+  },
+  "2000:mercedes": {
+   "starts": 34,
+   "mech_pct": 14.71,
+   "engine_pct": 11.76,
+   "factor": 1.19
+  },
+  "2000:mugen-honda": {
+   "starts": 34,
+   "mech_pct": 35.29,
+   "engine_pct": 8.82,
+   "factor": 0.89
+  },
+  "2000:petronas": {
+   "starts": 34,
+   "mech_pct": 14.71,
+   "engine_pct": 0.0,
+   "factor": 0.0
+  },
+  "2000:peugeot": {
+   "starts": 34,
+   "mech_pct": 50.0,
+   "engine_pct": 20.59,
+   "factor": 2.08
+  },
+  "2000:playlife": {
+   "starts": 34,
+   "mech_pct": 11.76,
+   "engine_pct": 5.88,
+   "factor": 0.59
+  },
+  "2000:supertec": {
+   "starts": 34,
+   "mech_pct": 35.29,
+   "engine_pct": 2.94,
+   "factor": 0.3
+  },
+  "2001:acer": {
+   "starts": 34,
+   "mech_pct": 20.59,
+   "engine_pct": 5.88,
+   "factor": 0.5
+  },
+  "2001:asiatech": {
+   "starts": 34,
+   "mech_pct": 35.29,
+   "engine_pct": 23.53,
+   "factor": 1.99
+  },
+  "2001:bmw": {
+   "starts": 34,
+   "mech_pct": 32.35,
+   "engine_pct": 14.71,
+   "factor": 1.25
+  },
+  "2001:cosworth": {
+   "starts": 34,
+   "mech_pct": 32.35,
+   "engine_pct": 23.53,
+   "factor": 1.99
+  },
+  "2001:european": {
+   "starts": 33,
+   "mech_pct": 51.52,
+   "engine_pct": 9.09,
+   "factor": 0.77
+  },
+  "2001:ferrari": {
+   "starts": 34,
+   "mech_pct": 11.76,
+   "engine_pct": 5.88,
+   "factor": 0.5
+  },
+  "2001:honda": {
+   "starts": 68,
+   "mech_pct": 27.94,
+   "engine_pct": 5.88,
+   "factor": 0.5
+  },
+  "2001:mercedes": {
+   "starts": 34,
+   "mech_pct": 35.29,
+   "engine_pct": 11.76,
+   "factor": 1.0
+  },
+  "2001:petronas": {
+   "starts": 34,
+   "mech_pct": 17.65,
+   "engine_pct": 0.0,
+   "factor": 0.0
+  },
+  "2001:renault": {
+   "starts": 34,
+   "mech_pct": 32.35,
+   "engine_pct": 23.53,
+   "factor": 1.99
+  },
+  "2002:asiatech": {
+   "starts": 31,
+   "mech_pct": 32.26,
+   "engine_pct": 9.68,
+   "factor": 0.66
+  },
+  "2002:bmw": {
+   "starts": 34,
+   "mech_pct": 17.65,
+   "engine_pct": 14.71,
+   "factor": 1.0
+  },
+  "2002:cosworth": {
+   "starts": 56,
+   "mech_pct": 48.21,
+   "engine_pct": 12.5,
+   "factor": 0.85
+  },
+  "2002:ferrari": {
+   "starts": 34,
+   "mech_pct": 11.76,
+   "engine_pct": 5.88,
+   "factor": 0.4
+  },
+  "2002:honda": {
+   "starts": 68,
+   "mech_pct": 38.24,
+   "engine_pct": 23.53,
+   "factor": 1.59
+  },
+  "2002:mercedes": {
+   "starts": 34,
+   "mech_pct": 35.29,
+   "engine_pct": 26.47,
+   "factor": 1.79
+  },
+  "2002:petronas": {
+   "starts": 34,
+   "mech_pct": 11.76,
+   "engine_pct": 2.94,
+   "factor": 0.2
+  },
+  "2002:renault": {
+   "starts": 34,
+   "mech_pct": 38.24,
+   "engine_pct": 20.59,
+   "factor": 1.39
+  },
+  "2002:toyota": {
+   "starts": 34,
+   "mech_pct": 32.35,
+   "engine_pct": 8.82,
+   "factor": 0.6
+  },
+  "2003:bmw": {
+   "starts": 32,
+   "mech_pct": 6.25,
+   "engine_pct": 3.12,
+   "factor": 0.25
+  },
+  "2003:cosworth": {
+   "starts": 64,
+   "mech_pct": 32.81,
+   "engine_pct": 10.94,
+   "factor": 0.88
+  },
+  "2003:ferrari": {
+   "starts": 32,
+   "mech_pct": 6.25,
+   "engine_pct": 3.12,
+   "factor": 0.25
+  },
+  "2003:ford": {
+   "starts": 32,
+   "mech_pct": 46.88,
+   "engine_pct": 31.25,
+   "factor": 2.5
+  },
+  "2003:honda": {
+   "starts": 32,
+   "mech_pct": 37.5,
+   "engine_pct": 15.62,
+   "factor": 1.25
+  },
+  "2003:mercedes": {
+   "starts": 32,
+   "mech_pct": 15.62,
+   "engine_pct": 6.25,
+   "factor": 0.5
+  },
+  "2003:petronas": {
+   "starts": 32,
+   "mech_pct": 31.25,
+   "engine_pct": 15.62,
+   "factor": 1.25
+  },
+  "2003:renault": {
+   "starts": 32,
+   "mech_pct": 25.0,
+   "engine_pct": 18.75,
+   "factor": 1.5
+  },
+  "2003:toyota": {
+   "starts": 32,
+   "mech_pct": 31.25,
+   "engine_pct": 9.38,
+   "factor": 0.75
+  },
+  "2004:bmw": {
+   "starts": 36,
+   "mech_pct": 19.44,
+   "engine_pct": 2.78,
+   "factor": 0.42
+  },
+  "2004:cosworth": {
+   "starts": 72,
+   "mech_pct": 22.22,
+   "engine_pct": 6.94,
+   "factor": 1.04
+  },
+  "2004:ferrari": {
+   "starts": 36,
+   "mech_pct": 0.0,
+   "engine_pct": 0.0,
+   "factor": 0.0
+  },
+  "2004:ford": {
+   "starts": 36,
+   "mech_pct": 30.56,
+   "engine_pct": 2.78,
+   "factor": 0.42
+  },
+  "2004:honda": {
+   "starts": 36,
+   "mech_pct": 25.0,
+   "engine_pct": 19.44,
+   "factor": 2.92
+  },
+  "2004:mercedes": {
+   "starts": 36,
+   "mech_pct": 27.78,
+   "engine_pct": 13.89,
+   "factor": 2.08
+  },
+  "2004:petronas": {
+   "starts": 36,
+   "mech_pct": 8.33,
+   "engine_pct": 2.78,
+   "factor": 0.42
+  },
+  "2004:renault": {
+   "starts": 36,
+   "mech_pct": 16.67,
+   "engine_pct": 5.56,
+   "factor": 0.83
+  },
+  "2004:toyota": {
+   "starts": 36,
+   "mech_pct": 19.44,
+   "engine_pct": 5.56,
+   "factor": 0.83
+  },
+  "2005:bmw": {
+   "starts": 38,
+   "mech_pct": 13.16,
+   "engine_pct": 5.26,
+   "factor": 1.16
+  },
+  "2005:cosworth": {
+   "starts": 76,
+   "mech_pct": 18.42,
+   "engine_pct": 5.26,
+   "factor": 1.16
+  },
+  "2005:ferrari": {
+   "starts": 38,
+   "mech_pct": 10.53,
+   "engine_pct": 0.0,
+   "factor": 0.0
+  },
+  "2005:honda": {
+   "starts": 34,
+   "mech_pct": 23.53,
+   "engine_pct": 11.76,
+   "factor": 2.6
+  },
+  "2005:mercedes": {
+   "starts": 38,
+   "mech_pct": 15.79,
+   "engine_pct": 5.26,
+   "factor": 1.16
+  },
+  "2005:petronas": {
+   "starts": 38,
+   "mech_pct": 15.79,
+   "engine_pct": 7.89,
+   "factor": 1.75
+  },
+  "2005:renault": {
+   "starts": 38,
+   "mech_pct": 7.89,
+   "engine_pct": 2.63,
+   "factor": 0.58
+  },
+  "2005:toyota": {
+   "starts": 76,
+   "mech_pct": 10.53,
+   "engine_pct": 1.32,
+   "factor": 0.29
+  },
+  "2006:bmw": {
+   "starts": 36,
+   "mech_pct": 11.11,
+   "engine_pct": 8.33,
+   "factor": 1.14
+  },
+  "2006:cosworth": {
+   "starts": 72,
+   "mech_pct": 18.06,
+   "engine_pct": 5.56,
+   "factor": 0.76
+  },
+  "2006:ferrari": {
+   "starts": 72,
+   "mech_pct": 12.5,
+   "engine_pct": 1.39,
+   "factor": 0.19
+  },
+  "2006:honda": {
+   "starts": 72,
+   "mech_pct": 26.39,
+   "engine_pct": 15.28,
+   "factor": 2.09
+  },
+  "2006:mercedes": {
+   "starts": 36,
+   "mech_pct": 16.67,
+   "engine_pct": 13.89,
+   "factor": 1.9
+  },
+  "2006:renault": {
+   "starts": 36,
+   "mech_pct": 8.33,
+   "engine_pct": 2.78,
+   "factor": 0.38
+  },
+  "2006:toyota": {
+   "starts": 72,
+   "mech_pct": 23.61,
+   "engine_pct": 5.56,
+   "factor": 0.76
+  },
+  "2007:bmw": {
+   "starts": 34,
+   "mech_pct": 14.71,
+   "engine_pct": 0.0,
+   "factor": 0.0
+  },
+  "2007:ferrari": {
+   "starts": 102,
+   "mech_pct": 19.61,
+   "engine_pct": 3.92,
+   "factor": 1.05
+  },
+  "2007:honda": {
+   "starts": 68,
+   "mech_pct": 17.65,
+   "engine_pct": 8.82,
+   "factor": 2.36
+  },
+  "2007:mercedes": {
+   "starts": 34,
+   "mech_pct": 0.0,
+   "engine_pct": 0.0,
+   "factor": 0.0
+  },
+  "2007:renault": {
+   "starts": 68,
+   "mech_pct": 17.65,
+   "engine_pct": 1.47,
+   "factor": 0.39
+  },
+  "2007:toyota": {
+   "starts": 68,
+   "mech_pct": 13.24,
+   "engine_pct": 4.41,
+   "factor": 1.18
+  },
+  "2008:bmw": {
+   "starts": 36,
+   "mech_pct": 0.0,
+   "engine_pct": 0.0,
+   "factor": 0.0
+  },
+  "2008:ferrari": {
+   "starts": 108,
+   "mech_pct": 14.81,
+   "engine_pct": 4.63,
+   "factor": 1.55
+  },
+  "2008:honda": {
+   "starts": 44,
+   "mech_pct": 9.09,
+   "engine_pct": 2.27,
+   "factor": 0.76
+  },
+  "2008:mercedes": {
+   "starts": 36,
+   "mech_pct": 11.11,
+   "engine_pct": 5.56,
+   "factor": 1.86
+  },
+  "2008:renault": {
+   "starts": 72,
+   "mech_pct": 6.94,
+   "engine_pct": 2.78,
+   "factor": 0.93
+  },
+  "2008:toyota": {
+   "starts": 72,
+   "mech_pct": 5.56,
+   "engine_pct": 1.39,
+   "factor": 0.46
+  },
+  "2009:bmw": {
+   "starts": 34,
+   "mech_pct": 11.76,
+   "engine_pct": 8.82,
+   "factor": 6.0
+  },
+  "2009:ferrari": {
+   "starts": 68,
+   "mech_pct": 17.65,
+   "engine_pct": 0.0,
+   "factor": 0.0
+  },
+  "2009:mercedes": {
+   "starts": 102,
+   "mech_pct": 5.88,
+   "engine_pct": 0.0,
+   "factor": 0.0
+  },
+  "2009:renault": {
+   "starts": 68,
+   "mech_pct": 10.29,
+   "engine_pct": 1.47,
+   "factor": 1.0
+  },
+  "2009:toyota": {
+   "starts": 68,
+   "mech_pct": 7.35,
+   "engine_pct": 1.47,
+   "factor": 1.0
+  },
+  "2010:cosworth": {
+   "starts": 152,
+   "mech_pct": 24.34,
+   "engine_pct": 3.95,
+   "factor": 1.06
+  },
+  "2010:ferrari": {
+   "starts": 114,
+   "mech_pct": 12.28,
+   "engine_pct": 5.26,
+   "factor": 1.41
+  },
+  "2010:mercedes": {
+   "starts": 114,
+   "mech_pct": 8.77,
+   "engine_pct": 3.51,
+   "factor": 0.94
+  },
+  "2010:renault": {
+   "starts": 76,
+   "mech_pct": 9.21,
+   "engine_pct": 1.32,
+   "factor": 0.35
+  },
+  "2011:cosworth": {
+   "starts": 112,
+   "mech_pct": 17.86,
+   "engine_pct": 1.79,
+   "factor": 1.16
+  },
+  "2011:ferrari": {
+   "starts": 114,
+   "mech_pct": 9.65,
+   "engine_pct": 1.75,
+   "factor": 1.14
+  },
+  "2011:mercedes": {
+   "starts": 114,
+   "mech_pct": 6.14,
+   "engine_pct": 0.88,
+   "factor": 0.57
+  },
+  "2011:renault": {
+   "starts": 114,
+   "mech_pct": 8.77,
+   "engine_pct": 1.75,
+   "factor": 1.14
+  },
+  "2012:cosworth": {
+   "starts": 78,
+   "mech_pct": 19.23,
+   "engine_pct": 6.41,
+   "factor": 2.55
+  },
+  "2012:ferrari": {
+   "starts": 120,
+   "mech_pct": 5.0,
+   "engine_pct": 0.0,
+   "factor": 0.0
+  },
+  "2012:mercedes": {
+   "starts": 120,
+   "mech_pct": 10.0,
+   "engine_pct": 3.33,
+   "factor": 1.33
+  },
+  "2012:renault": {
+   "starts": 160,
+   "mech_pct": 8.75,
+   "engine_pct": 1.88,
+   "factor": 0.75
+  },
+  "2013:cosworth": {
+   "starts": 38,
+   "mech_pct": 2.63,
+   "engine_pct": 2.63,
+   "factor": 1.1
+  },
+  "2013:ferrari": {
+   "starts": 114,
+   "mech_pct": 10.53,
+   "engine_pct": 2.63,
+   "factor": 1.1
+  },
+  "2013:mercedes": {
+   "starts": 114,
+   "mech_pct": 8.77,
+   "engine_pct": 0.88,
+   "factor": 0.37
+  },
+  "2013:renault": {
+   "starts": 152,
+   "mech_pct": 10.53,
+   "engine_pct": 3.29,
+   "factor": 1.38
+  },
+  "2014:ferrari": {
+   "starts": 107,
+   "mech_pct": 11.21,
+   "engine_pct": 2.8,
+   "factor": 0.39
+  },
+  "2014:mercedes": {
+   "starts": 152,
+   "mech_pct": 6.58,
+   "engine_pct": 1.97,
+   "factor": 0.28
+  },
+  "2014:renault": {
+   "starts": 148,
+   "mech_pct": 26.35,
+   "engine_pct": 15.54,
+   "factor": 2.18
+  },
+  "2015:ferrari": {
+   "starts": 114,
+   "mech_pct": 10.53,
+   "engine_pct": 1.75,
+   "factor": 0.35
+  },
+  "2015:honda": {
+   "starts": 38,
+   "mech_pct": 34.21,
+   "engine_pct": 18.42,
+   "factor": 3.68
+  },
+  "2015:mercedes": {
+   "starts": 152,
+   "mech_pct": 12.5,
+   "engine_pct": 3.95,
+   "factor": 0.79
+  },
+  "2015:renault": {
+   "starts": 76,
+   "mech_pct": 19.74,
+   "engine_pct": 5.26,
+   "factor": 1.05
+  },
+  "2016:ferrari": {
+   "starts": 168,
+   "mech_pct": 14.29,
+   "engine_pct": 2.98,
+   "factor": 1.06
+  },
+  "2016:honda": {
+   "starts": 42,
+   "mech_pct": 19.05,
+   "engine_pct": 9.52,
+   "factor": 3.38
+  },
+  "2016:mercedes": {
+   "starts": 168,
+   "mech_pct": 6.55,
+   "engine_pct": 1.79,
+   "factor": 0.63
+  },
+  "2016:renault": {
+   "starts": 42,
+   "mech_pct": 14.29,
+   "engine_pct": 2.38,
+   "factor": 0.85
+  },
+  "2016:tag-heuer": {
+   "starts": 42,
+   "mech_pct": 4.76,
+   "engine_pct": 0.0,
+   "factor": 0.0
+  },
+  "2017:ferrari": {
+   "starts": 120,
+   "mech_pct": 10.83,
+   "engine_pct": 2.5,
+   "factor": 0.38
+  },
+  "2017:honda": {
+   "starts": 40,
+   "mech_pct": 30.0,
+   "engine_pct": 15.0,
+   "factor": 2.31
+  },
+  "2017:mercedes": {
+   "starts": 120,
+   "mech_pct": 5.0,
+   "engine_pct": 2.5,
+   "factor": 0.38
+  },
+  "2017:renault": {
+   "starts": 40,
+   "mech_pct": 30.0,
+   "engine_pct": 10.0,
+   "factor": 1.54
+  },
+  "2017:tag-heuer": {
+   "starts": 40,
+   "mech_pct": 25.0,
+   "engine_pct": 12.5,
+   "factor": 1.92
+  },
+  "2017:toro-rosso": {
+   "starts": 40,
+   "mech_pct": 17.5,
+   "engine_pct": 12.5,
+   "factor": 1.92
+  },
+  "2018:ferrari": {
+   "starts": 126,
+   "mech_pct": 8.73,
+   "engine_pct": 3.17,
+   "factor": 0.7
+  },
+  "2018:honda": {
+   "starts": 42,
+   "mech_pct": 16.67,
+   "engine_pct": 7.14,
+   "factor": 1.58
+  },
+  "2018:mercedes": {
+   "starts": 126,
+   "mech_pct": 9.52,
+   "engine_pct": 4.76,
+   "factor": 1.05
+  },
+  "2018:renault": {
+   "starts": 84,
+   "mech_pct": 14.29,
+   "engine_pct": 3.57,
+   "factor": 0.79
+  },
+  "2018:tag-heuer": {
+   "starts": 42,
+   "mech_pct": 21.43,
+   "engine_pct": 7.14,
+   "factor": 1.58
+  },
+  "2019:bwt-mercedes": {
+   "starts": 42,
+   "mech_pct": 7.14,
+   "engine_pct": 2.38,
+   "factor": 0.77
+  },
+  "2019:ferrari": {
+   "starts": 126,
+   "mech_pct": 7.14,
+   "engine_pct": 0.79,
+   "factor": 0.26
+  },
+  "2019:honda": {
+   "starts": 84,
+   "mech_pct": 3.57,
+   "engine_pct": 1.19,
+   "factor": 0.38
+  },
+  "2019:mercedes": {
+   "starts": 84,
+   "mech_pct": 3.57,
+   "engine_pct": 2.38,
+   "factor": 0.77
+  },
+  "2019:renault": {
+   "starts": 84,
+   "mech_pct": 15.48,
+   "engine_pct": 9.52,
+   "factor": 3.08
+  },
+  "2020:bwt-mercedes": {
+   "starts": 34,
+   "mech_pct": 11.76,
+   "engine_pct": 8.82,
+   "factor": 3.0
+  },
+  "2020:ferrari": {
+   "starts": 102,
+   "mech_pct": 8.82,
+   "engine_pct": 0.98,
+   "factor": 0.33
+  },
+  "2020:honda": {
+   "starts": 68,
+   "mech_pct": 13.24,
+   "engine_pct": 1.47,
+   "factor": 0.5
+  },
+  "2020:mercedes": {
+   "starts": 68,
+   "mech_pct": 4.41,
+   "engine_pct": 4.41,
+   "factor": 1.5
+  },
+  "2020:renault": {
+   "starts": 68,
+   "mech_pct": 10.29,
+   "engine_pct": 2.94,
+   "factor": 1.0
+  },
+  "2021:ferrari": {
+   "starts": 132,
+   "mech_pct": 4.55,
+   "engine_pct": 1.52,
+   "factor": 0.74
+  },
+  "2021:honda": {
+   "starts": 88,
+   "mech_pct": 9.09,
+   "engine_pct": 2.27,
+   "factor": 1.11
+  },
+  "2021:mercedes": {
+   "starts": 176,
+   "mech_pct": 7.39,
+   "engine_pct": 2.27,
+   "factor": 1.11
+  },
+  "2021:renault": {
+   "starts": 44,
+   "mech_pct": 9.09,
+   "engine_pct": 2.27,
+   "factor": 1.11
+  },
+  "2022:ferrari": {
+   "starts": 132,
+   "mech_pct": 12.12,
+   "engine_pct": 6.06,
+   "factor": 1.33
+  },
+  "2022:mercedes": {
+   "starts": 176,
+   "mech_pct": 5.11,
+   "engine_pct": 1.7,
+   "factor": 0.37
+  },
+  "2022:rbpt": {
+   "starts": 88,
+   "mech_pct": 10.23,
+   "engine_pct": 5.68,
+   "factor": 1.25
+  },
+  "2022:renault": {
+   "starts": 44,
+   "mech_pct": 15.91,
+   "engine_pct": 9.09,
+   "factor": 2.0
+  },
+  "2023:ferrari": {
+   "starts": 132,
+   "mech_pct": 10.61,
+   "engine_pct": 5.3,
+   "factor": 1.79
+  },
+  "2023:honda-rbpt": {
+   "starts": 88,
+   "mech_pct": 2.27,
+   "engine_pct": 1.14,
+   "factor": 0.38
+  },
+  "2023:mercedes": {
+   "starts": 176,
+   "mech_pct": 7.39,
+   "engine_pct": 2.27,
+   "factor": 0.77
+  },
+  "2023:renault": {
+   "starts": 44,
+   "mech_pct": 6.82,
+   "engine_pct": 2.27,
+   "factor": 0.77
+  },
+  "2024:ferrari": {
+   "starts": 144,
+   "mech_pct": 3.47,
+   "engine_pct": 1.39,
+   "factor": 1.11
+  },
+  "2024:honda-rbpt": {
+   "starts": 96,
+   "mech_pct": 4.17,
+   "engine_pct": 0.0,
+   "factor": 0.0
+  },
+  "2024:mercedes": {
+   "starts": 191,
+   "mech_pct": 3.66,
+   "engine_pct": 1.57,
+   "factor": 1.25
+  },
+  "2024:renault": {
+   "starts": 48,
+   "mech_pct": 8.33,
+   "engine_pct": 2.08,
+   "factor": 1.66
+  },
+  "2025:ferrari": {
+   "starts": 144,
+   "mech_pct": 4.17,
+   "engine_pct": 2.08,
+   "factor": 1.25
+  },
+  "2025:honda-rbpt": {
+   "starts": 96,
+   "mech_pct": 2.08,
+   "engine_pct": 0.0,
+   "factor": 0.0
+  },
+  "2025:mercedes": {
+   "starts": 192,
+   "mech_pct": 5.21,
+   "engine_pct": 2.6,
+   "factor": 1.56
+  },
+  "2025:renault": {
+   "starts": 48,
+   "mech_pct": 2.08,
+   "engine_pct": 0.0,
+   "factor": 0.0
+  }
+ },
+ "constructors": {
+  "1988:ags": {
+   "starts": 16,
+   "mech_pct": 62.5,
+   "factor": 1.59
+  },
+  "1988:arrows": {
+   "starts": 32,
+   "mech_pct": 34.38,
+   "factor": 0.88
+  },
+  "1988:benetton": {
+   "starts": 32,
+   "mech_pct": 31.25,
+   "factor": 0.8
+  },
+  "1988:dallara": {
+   "starts": 14,
+   "mech_pct": 35.71,
+   "factor": 0.91
+  },
+  "1988:eurobrun": {
+   "starts": 20,
+   "mech_pct": 45.0,
+   "factor": 1.15
+  },
+  "1988:ferrari": {
+   "starts": 32,
+   "mech_pct": 28.12,
+   "factor": 0.72
+  },
+  "1988:ligier": {
+   "starts": 24,
+   "mech_pct": 58.33,
+   "factor": 1.49
+  },
+  "1988:lola": {
+   "starts": 30,
+   "mech_pct": 40.0,
+   "factor": 1.02
+  },
+  "1988:lotus": {
+   "starts": 30,
+   "mech_pct": 20.0,
+   "factor": 0.51
+  },
+  "1988:march": {
+   "starts": 32,
+   "mech_pct": 37.5,
+   "factor": 0.96
+  },
+  "1988:mclaren": {
+   "starts": 32,
+   "mech_pct": 6.25,
+   "factor": 0.16
+  },
+  "1988:minardi": {
+   "starts": 25,
+   "mech_pct": 40.0,
+   "factor": 1.02
+  },
+  "1988:osella": {
+   "starts": 11,
+   "mech_pct": 72.73,
+   "factor": 1.86
+  },
+  "1988:rial": {
+   "starts": 16,
+   "mech_pct": 75.0,
+   "factor": 1.91
+  },
+  "1988:tyrrell": {
+   "starts": 20,
+   "mech_pct": 45.0,
+   "factor": 1.15
+  },
+  "1988:williams": {
+   "starts": 32,
+   "mech_pct": 40.62,
+   "factor": 1.04
+  },
+  "1988:zakspeed": {
+   "starts": 15,
+   "mech_pct": 66.67,
+   "factor": 1.7
+  },
+  "1989:arrows": {
+   "starts": 30,
+   "mech_pct": 26.67,
+   "factor": 0.71
+  },
+  "1989:benetton": {
+   "starts": 31,
+   "mech_pct": 19.35,
+   "factor": 0.51
+  },
+  "1989:brabham": {
+   "starts": 30,
+   "mech_pct": 43.33,
+   "factor": 1.15
+  },
+  "1989:dallara": {
+   "starts": 29,
+   "mech_pct": 37.93,
+   "factor": 1.01
+  },
+  "1989:ferrari": {
+   "starts": 30,
+   "mech_pct": 46.67,
+   "factor": 1.24
+  },
+  "1989:ligier": {
+   "starts": 21,
+   "mech_pct": 28.57,
+   "factor": 0.76
+  },
+  "1989:lola": {
+   "starts": 23,
+   "mech_pct": 52.17,
+   "factor": 1.39
+  },
+  "1989:lotus": {
+   "starts": 28,
+   "mech_pct": 21.43,
+   "factor": 0.57
+  },
+  "1989:march": {
+   "starts": 31,
+   "mech_pct": 67.74,
+   "factor": 1.8
+  },
+  "1989:mclaren": {
+   "starts": 32,
+   "mech_pct": 15.62,
+   "factor": 0.42
+  },
+  "1989:minardi": {
+   "starts": 28,
+   "mech_pct": 35.71,
+   "factor": 0.95
+  },
+  "1989:onyx": {
+   "starts": 15,
+   "mech_pct": 53.33,
+   "factor": 1.42
+  },
+  "1989:osella": {
+   "starts": 11,
+   "mech_pct": 72.73,
+   "factor": 1.93
+  },
+  "1989:tyrrell": {
+   "starts": 29,
+   "mech_pct": 31.03,
+   "factor": 0.82
+  },
+  "1989:williams": {
+   "starts": 32,
+   "mech_pct": 31.25,
+   "factor": 0.83
+  },
+  "1990:arrows": {
+   "starts": 25,
+   "mech_pct": 24.0,
+   "factor": 0.67
+  },
+  "1990:benetton": {
+   "starts": 32,
+   "mech_pct": 15.62,
+   "factor": 0.44
+  },
+  "1990:brabham": {
+   "starts": 26,
+   "mech_pct": 53.85,
+   "factor": 1.5
+  },
+  "1990:dallara": {
+   "starts": 30,
+   "mech_pct": 53.33,
+   "factor": 1.49
+  },
+  "1990:ferrari": {
+   "starts": 32,
+   "mech_pct": 34.38,
+   "factor": 0.96
+  },
+  "1990:leyton-house": {
+   "starts": 26,
+   "mech_pct": 57.69,
+   "factor": 1.61
+  },
+  "1990:ligier": {
+   "starts": 31,
+   "mech_pct": 12.9,
+   "factor": 0.36
+  },
+  "1990:lola": {
+   "starts": 32,
+   "mech_pct": 53.12,
+   "factor": 1.48
+  },
+  "1990:lotus": {
+   "starts": 32,
+   "mech_pct": 53.12,
+   "factor": 1.48
+  },
+  "1990:mclaren": {
+   "starts": 32,
+   "mech_pct": 18.75,
+   "factor": 0.52
+  },
+  "1990:minardi": {
+   "starts": 26,
+   "mech_pct": 30.77,
+   "factor": 0.86
+  },
+  "1990:onyx": {
+   "starts": 10,
+   "mech_pct": 50.0,
+   "factor": 1.4
+  },
+  "1990:tyrrell": {
+   "starts": 32,
+   "mech_pct": 25.0,
+   "factor": 0.7
+  },
+  "1990:williams": {
+   "starts": 32,
+   "mech_pct": 28.12,
+   "factor": 0.79
+  },
+  "1991:benetton": {
+   "starts": 32,
+   "mech_pct": 25.0,
+   "factor": 0.67
+  },
+  "1991:brabham": {
+   "starts": 29,
+   "mech_pct": 34.48,
+   "factor": 0.92
+  },
+  "1991:dallara": {
+   "starts": 29,
+   "mech_pct": 44.83,
+   "factor": 1.2
+  },
+  "1991:ferrari": {
+   "starts": 32,
+   "mech_pct": 34.38,
+   "factor": 0.92
+  },
+  "1991:footwork": {
+   "starts": 12,
+   "mech_pct": 66.67,
+   "factor": 1.78
+  },
+  "1991:jordan": {
+   "starts": 31,
+   "mech_pct": 35.48,
+   "factor": 0.95
+  },
+  "1991:leyton-house": {
+   "starts": 32,
+   "mech_pct": 50.0,
+   "factor": 1.34
+  },
+  "1991:ligier": {
+   "starts": 29,
+   "mech_pct": 31.03,
+   "factor": 0.83
+  },
+  "1991:lola": {
+   "starts": 25,
+   "mech_pct": 76.0,
+   "factor": 2.03
+  },
+  "1991:lotus": {
+   "starts": 23,
+   "mech_pct": 34.78,
+   "factor": 0.93
+  },
+  "1991:mclaren": {
+   "starts": 32,
+   "mech_pct": 28.12,
+   "factor": 0.75
+  },
+  "1991:minardi": {
+   "starts": 32,
+   "mech_pct": 34.38,
+   "factor": 0.92
+  },
+  "1991:tyrrell": {
+   "starts": 32,
+   "mech_pct": 31.25,
+   "factor": 0.84
+  },
+  "1991:williams": {
+   "starts": 32,
+   "mech_pct": 21.88,
+   "factor": 0.58
+  },
+  "1992:benetton": {
+   "starts": 32,
+   "mech_pct": 18.75,
+   "factor": 0.57
+  },
+  "1992:dallara": {
+   "starts": 31,
+   "mech_pct": 29.03,
+   "factor": 0.89
+  },
+  "1992:ferrari": {
+   "starts": 32,
+   "mech_pct": 37.5,
+   "factor": 1.15
+  },
+  "1992:fondmetal": {
+   "starts": 19,
+   "mech_pct": 57.89,
+   "factor": 1.77
+  },
+  "1992:footwork": {
+   "starts": 30,
+   "mech_pct": 13.33,
+   "factor": 0.41
+  },
+  "1992:jordan": {
+   "starts": 28,
+   "mech_pct": 46.43,
+   "factor": 1.42
+  },
+  "1992:ligier": {
+   "starts": 32,
+   "mech_pct": 28.12,
+   "factor": 0.86
+  },
+  "1992:lotus": {
+   "starts": 31,
+   "mech_pct": 35.48,
+   "factor": 1.09
+  },
+  "1992:march": {
+   "starts": 26,
+   "mech_pct": 34.62,
+   "factor": 1.06
+  },
+  "1992:mclaren": {
+   "starts": 32,
+   "mech_pct": 31.25,
+   "factor": 0.96
+  },
+  "1992:minardi": {
+   "starts": 26,
+   "mech_pct": 38.46,
+   "factor": 1.18
+  },
+  "1992:tyrrell": {
+   "starts": 32,
+   "mech_pct": 43.75,
+   "factor": 1.34
+  },
+  "1992:venturi": {
+   "starts": 30,
+   "mech_pct": 43.33,
+   "factor": 1.33
+  },
+  "1992:williams": {
+   "starts": 32,
+   "mech_pct": 15.62,
+   "factor": 0.48
+  },
+  "1993:benetton": {
+   "starts": 32,
+   "mech_pct": 18.75,
+   "factor": 0.65
+  },
+  "1993:ferrari": {
+   "starts": 32,
+   "mech_pct": 46.88,
+   "factor": 1.62
+  },
+  "1993:footwork": {
+   "starts": 32,
+   "mech_pct": 18.75,
+   "factor": 0.65
+  },
+  "1993:jordan": {
+   "starts": 31,
+   "mech_pct": 38.71,
+   "factor": 1.34
+  },
+  "1993:larrousse": {
+   "starts": 32,
+   "mech_pct": 34.38,
+   "factor": 1.19
+  },
+  "1993:ligier": {
+   "starts": 32,
+   "mech_pct": 6.25,
+   "factor": 0.22
+  },
+  "1993:lola": {
+   "starts": 21,
+   "mech_pct": 47.62,
+   "factor": 1.64
+  },
+  "1993:lotus": {
+   "starts": 32,
+   "mech_pct": 28.12,
+   "factor": 0.97
+  },
+  "1993:mclaren": {
+   "starts": 32,
+   "mech_pct": 21.88,
+   "factor": 0.76
+  },
+  "1993:minardi": {
+   "starts": 32,
+   "mech_pct": 18.75,
+   "factor": 0.65
+  },
+  "1993:sauber": {
+   "starts": 32,
+   "mech_pct": 43.75,
+   "factor": 1.51
+  },
+  "1993:tyrrell": {
+   "starts": 32,
+   "mech_pct": 43.75,
+   "factor": 1.51
+  },
+  "1993:williams": {
+   "starts": 32,
+   "mech_pct": 15.62,
+   "factor": 0.54
+  },
+  "1994:benetton": {
+   "starts": 32,
+   "mech_pct": 12.5,
+   "factor": 0.42
+  },
+  "1994:ferrari": {
+   "starts": 32,
+   "mech_pct": 37.5,
+   "factor": 1.25
+  },
+  "1994:footwork": {
+   "starts": 32,
+   "mech_pct": 43.75,
+   "factor": 1.46
+  },
+  "1994:jordan": {
+   "starts": 32,
+   "mech_pct": 21.88,
+   "factor": 0.73
+  },
+  "1994:larrousse": {
+   "starts": 32,
+   "mech_pct": 50.0,
+   "factor": 1.67
+  },
+  "1994:ligier": {
+   "starts": 32,
+   "mech_pct": 3.12,
+   "factor": 0.1
+  },
+  "1994:lotus": {
+   "starts": 32,
+   "mech_pct": 21.88,
+   "factor": 0.73
+  },
+  "1994:mclaren": {
+   "starts": 32,
+   "mech_pct": 46.88,
+   "factor": 1.57
+  },
+  "1994:minardi": {
+   "starts": 32,
+   "mech_pct": 21.88,
+   "factor": 0.73
+  },
+  "1994:sauber": {
+   "starts": 31,
+   "mech_pct": 35.48,
+   "factor": 1.19
+  },
+  "1994:simtek": {
+   "starts": 29,
+   "mech_pct": 41.38,
+   "factor": 1.38
+  },
+  "1994:tyrrell": {
+   "starts": 32,
+   "mech_pct": 31.25,
+   "factor": 1.04
+  },
+  "1994:williams": {
+   "starts": 31,
+   "mech_pct": 16.13,
+   "factor": 0.54
+  },
+  "1995:benetton": {
+   "starts": 34,
+   "mech_pct": 5.88,
+   "factor": 0.19
+  },
+  "1995:ferrari": {
+   "starts": 34,
+   "mech_pct": 35.29,
+   "factor": 1.16
+  },
+  "1995:footwork": {
+   "starts": 34,
+   "mech_pct": 38.24,
+   "factor": 1.26
+  },
+  "1995:forti": {
+   "starts": 34,
+   "mech_pct": 38.24,
+   "factor": 1.26
+  },
+  "1995:jordan": {
+   "starts": 34,
+   "mech_pct": 44.12,
+   "factor": 1.45
+  },
+  "1995:ligier": {
+   "starts": 34,
+   "mech_pct": 8.82,
+   "factor": 0.29
+  },
+  "1995:mclaren": {
+   "starts": 34,
+   "mech_pct": 32.35,
+   "factor": 1.06
+  },
+  "1995:minardi": {
+   "starts": 34,
+   "mech_pct": 32.35,
+   "factor": 1.06
+  },
+  "1995:pacific": {
+   "starts": 34,
+   "mech_pct": 52.94,
+   "factor": 1.74
+  },
+  "1995:sauber": {
+   "starts": 34,
+   "mech_pct": 20.59,
+   "factor": 0.68
+  },
+  "1995:simtek": {
+   "starts": 10,
+   "mech_pct": 60.0,
+   "factor": 1.97
+  },
+  "1995:tyrrell": {
+   "starts": 34,
+   "mech_pct": 23.53,
+   "factor": 0.77
+  },
+  "1995:williams": {
+   "starts": 34,
+   "mech_pct": 23.53,
+   "factor": 0.77
+  },
+  "1996:benetton": {
+   "starts": 32,
+   "mech_pct": 25.0,
+   "factor": 0.92
+  },
+  "1996:ferrari": {
+   "starts": 32,
+   "mech_pct": 37.5,
+   "factor": 1.38
+  },
+  "1996:footwork": {
+   "starts": 32,
+   "mech_pct": 31.25,
+   "factor": 1.15
+  },
+  "1996:forti": {
+   "starts": 11,
+   "mech_pct": 36.36,
+   "factor": 1.34
+  },
+  "1996:jordan": {
+   "starts": 32,
+   "mech_pct": 18.75,
+   "factor": 0.69
+  },
+  "1996:ligier": {
+   "starts": 32,
+   "mech_pct": 31.25,
+   "factor": 1.15
+  },
+  "1996:mclaren": {
+   "starts": 32,
+   "mech_pct": 18.75,
+   "factor": 0.69
+  },
+  "1996:minardi": {
+   "starts": 29,
+   "mech_pct": 27.59,
+   "factor": 1.02
+  },
+  "1996:sauber": {
+   "starts": 32,
+   "mech_pct": 34.38,
+   "factor": 1.27
+  },
+  "1996:tyrrell": {
+   "starts": 32,
+   "mech_pct": 31.25,
+   "factor": 1.15
+  },
+  "1996:williams": {
+   "starts": 32,
+   "mech_pct": 12.5,
+   "factor": 0.46
+  },
+  "1997:arrows": {
+   "starts": 34,
+   "mech_pct": 44.12,
+   "factor": 1.6
+  },
+  "1997:benetton": {
+   "starts": 34,
+   "mech_pct": 5.88,
+   "factor": 0.21
+  },
+  "1997:ferrari": {
+   "starts": 34,
+   "mech_pct": 11.76,
+   "factor": 0.43
+  },
+  "1997:jordan": {
+   "starts": 34,
+   "mech_pct": 17.65,
+   "factor": 0.64
+  },
+  "1997:mclaren": {
+   "starts": 34,
+   "mech_pct": 32.35,
+   "factor": 1.17
+  },
+  "1997:minardi": {
+   "starts": 34,
+   "mech_pct": 38.24,
+   "factor": 1.39
+  },
+  "1997:prost": {
+   "starts": 34,
+   "mech_pct": 29.41,
+   "factor": 1.07
+  },
+  "1997:sauber": {
+   "starts": 34,
+   "mech_pct": 8.82,
+   "factor": 0.32
+  },
+  "1997:stewart": {
+   "starts": 34,
+   "mech_pct": 61.76,
+   "factor": 2.24
+  },
+  "1997:tyrrell": {
+   "starts": 34,
+   "mech_pct": 41.18,
+   "factor": 1.5
+  },
+  "1997:williams": {
+   "starts": 34,
+   "mech_pct": 11.76,
+   "factor": 0.43
+  },
+  "1998:arrows": {
+   "starts": 32,
+   "mech_pct": 46.88,
+   "factor": 1.69
+  },
+  "1998:benetton": {
+   "starts": 32,
+   "mech_pct": 12.5,
+   "factor": 0.45
+  },
+  "1998:ferrari": {
+   "starts": 32,
+   "mech_pct": 9.38,
+   "factor": 0.34
+  },
+  "1998:jordan": {
+   "starts": 32,
+   "mech_pct": 28.12,
+   "factor": 1.02
+  },
+  "1998:mclaren": {
+   "starts": 32,
+   "mech_pct": 15.62,
+   "factor": 0.56
+  },
+  "1998:minardi": {
+   "starts": 32,
+   "mech_pct": 37.5,
+   "factor": 1.36
+  },
+  "1998:prost": {
+   "starts": 32,
+   "mech_pct": 46.88,
+   "factor": 1.69
+  },
+  "1998:sauber": {
+   "starts": 32,
+   "mech_pct": 18.75,
+   "factor": 0.68
+  },
+  "1998:stewart": {
+   "starts": 32,
+   "mech_pct": 50.0,
+   "factor": 1.81
+  },
+  "1998:tyrrell": {
+   "starts": 27,
+   "mech_pct": 33.33,
+   "factor": 1.2
+  },
+  "1998:williams": {
+   "starts": 32,
+   "mech_pct": 6.25,
+   "factor": 0.23
+  },
+  "1999:arrows": {
+   "starts": 32,
+   "mech_pct": 53.12,
+   "factor": 1.58
+  },
+  "1999:bar": {
+   "starts": 32,
+   "mech_pct": 59.38,
+   "factor": 1.77
+  },
+  "1999:benetton": {
+   "starts": 32,
+   "mech_pct": 25.0,
+   "factor": 0.75
+  },
+  "1999:ferrari": {
+   "starts": 32,
+   "mech_pct": 6.25,
+   "factor": 0.19
+  },
+  "1999:jordan": {
+   "starts": 32,
+   "mech_pct": 21.88,
+   "factor": 0.65
+  },
+  "1999:mclaren": {
+   "starts": 32,
+   "mech_pct": 28.12,
+   "factor": 0.84
+  },
+  "1999:minardi": {
+   "starts": 32,
+   "mech_pct": 28.12,
+   "factor": 0.84
+  },
+  "1999:prost": {
+   "starts": 32,
+   "mech_pct": 37.5,
+   "factor": 1.12
+  },
+  "1999:sauber": {
+   "starts": 32,
+   "mech_pct": 37.5,
+   "factor": 1.12
+  },
+  "1999:stewart": {
+   "starts": 32,
+   "mech_pct": 43.75,
+   "factor": 1.31
+  },
+  "1999:williams": {
+   "starts": 32,
+   "mech_pct": 28.12,
+   "factor": 0.84
+  },
+  "2000:arrows": {
+   "starts": 34,
+   "mech_pct": 35.29,
+   "factor": 1.4
+  },
+  "2000:bar": {
+   "starts": 34,
+   "mech_pct": 20.59,
+   "factor": 0.82
+  },
+  "2000:benetton": {
+   "starts": 34,
+   "mech_pct": 11.76,
+   "factor": 0.47
+  },
+  "2000:ferrari": {
+   "starts": 34,
+   "mech_pct": 14.71,
+   "factor": 0.59
+  },
+  "2000:jaguar": {
+   "starts": 34,
+   "mech_pct": 17.65,
+   "factor": 0.7
+  },
+  "2000:jordan": {
+   "starts": 34,
+   "mech_pct": 35.29,
+   "factor": 1.4
+  },
+  "2000:mclaren": {
+   "starts": 34,
+   "mech_pct": 14.71,
+   "factor": 0.59
+  },
+  "2000:minardi": {
+   "starts": 34,
+   "mech_pct": 29.41,
+   "factor": 1.17
+  },
+  "2000:prost": {
+   "starts": 34,
+   "mech_pct": 50.0,
+   "factor": 1.99
+  },
+  "2000:sauber": {
+   "starts": 34,
+   "mech_pct": 14.71,
+   "factor": 0.59
+  },
+  "2000:williams": {
+   "starts": 34,
+   "mech_pct": 32.35,
+   "factor": 1.29
+  },
+  "2001:arrows": {
+   "starts": 34,
+   "mech_pct": 35.29,
+   "factor": 1.2
+  },
+  "2001:bar": {
+   "starts": 34,
+   "mech_pct": 26.47,
+   "factor": 0.9
+  },
+  "2001:benetton": {
+   "starts": 34,
+   "mech_pct": 32.35,
+   "factor": 1.1
+  },
+  "2001:ferrari": {
+   "starts": 34,
+   "mech_pct": 11.76,
+   "factor": 0.4
+  },
+  "2001:jaguar": {
+   "starts": 34,
+   "mech_pct": 32.35,
+   "factor": 1.1
+  },
+  "2001:jordan": {
+   "starts": 34,
+   "mech_pct": 29.41,
+   "factor": 1.0
+  },
+  "2001:mclaren": {
+   "starts": 34,
+   "mech_pct": 35.29,
+   "factor": 1.2
+  },
+  "2001:minardi": {
+   "starts": 33,
+   "mech_pct": 51.52,
+   "factor": 1.75
+  },
+  "2001:prost": {
+   "starts": 34,
+   "mech_pct": 20.59,
+   "factor": 0.7
+  },
+  "2001:sauber": {
+   "starts": 34,
+   "mech_pct": 17.65,
+   "factor": 0.6
+  },
+  "2001:williams": {
+   "starts": 34,
+   "mech_pct": 32.35,
+   "factor": 1.1
+  },
+  "2002:arrows": {
+   "starts": 22,
+   "mech_pct": 50.0,
+   "factor": 1.59
+  },
+  "2002:bar": {
+   "starts": 34,
+   "mech_pct": 50.0,
+   "factor": 1.59
+  },
+  "2002:ferrari": {
+   "starts": 34,
+   "mech_pct": 11.76,
+   "factor": 0.37
+  },
+  "2002:jaguar": {
+   "starts": 34,
+   "mech_pct": 47.06,
+   "factor": 1.5
+  },
+  "2002:jordan": {
+   "starts": 34,
+   "mech_pct": 26.47,
+   "factor": 0.84
+  },
+  "2002:mclaren": {
+   "starts": 34,
+   "mech_pct": 35.29,
+   "factor": 1.12
+  },
+  "2002:minardi": {
+   "starts": 31,
+   "mech_pct": 32.26,
+   "factor": 1.02
+  },
+  "2002:renault": {
+   "starts": 34,
+   "mech_pct": 38.24,
+   "factor": 1.21
+  },
+  "2002:sauber": {
+   "starts": 34,
+   "mech_pct": 11.76,
+   "factor": 0.37
+  },
+  "2002:toyota": {
+   "starts": 34,
+   "mech_pct": 32.35,
+   "factor": 1.03
+  },
+  "2002:williams": {
+   "starts": 34,
+   "mech_pct": 17.65,
+   "factor": 0.56
+  },
+  "2003:bar": {
+   "starts": 32,
+   "mech_pct": 37.5,
+   "factor": 1.41
+  },
+  "2003:ferrari": {
+   "starts": 32,
+   "mech_pct": 6.25,
+   "factor": 0.24
+  },
+  "2003:jaguar": {
+   "starts": 32,
+   "mech_pct": 37.5,
+   "factor": 1.41
+  },
+  "2003:jordan": {
+   "starts": 32,
+   "mech_pct": 46.88,
+   "factor": 1.76
+  },
+  "2003:mclaren": {
+   "starts": 32,
+   "mech_pct": 15.62,
+   "factor": 0.59
+  },
+  "2003:minardi": {
+   "starts": 32,
+   "mech_pct": 28.12,
+   "factor": 1.06
+  },
+  "2003:renault": {
+   "starts": 32,
+   "mech_pct": 25.0,
+   "factor": 0.94
+  },
+  "2003:sauber": {
+   "starts": 32,
+   "mech_pct": 31.25,
+   "factor": 1.18
+  },
+  "2003:toyota": {
+   "starts": 32,
+   "mech_pct": 31.25,
+   "factor": 1.18
+  },
+  "2003:williams": {
+   "starts": 32,
+   "mech_pct": 6.25,
+   "factor": 0.24
+  },
+  "2004:bar": {
+   "starts": 36,
+   "mech_pct": 25.0,
+   "factor": 1.3
+  },
+  "2004:ferrari": {
+   "starts": 36,
+   "mech_pct": 0.0,
+   "factor": 0.0
+  },
+  "2004:jaguar": {
+   "starts": 36,
+   "mech_pct": 19.44,
+   "factor": 1.01
+  },
+  "2004:jordan": {
+   "starts": 36,
+   "mech_pct": 30.56,
+   "factor": 1.59
+  },
+  "2004:mclaren": {
+   "starts": 36,
+   "mech_pct": 27.78,
+   "factor": 1.45
+  },
+  "2004:minardi": {
+   "starts": 36,
+   "mech_pct": 25.0,
+   "factor": 1.3
+  },
+  "2004:renault": {
+   "starts": 36,
+   "mech_pct": 16.67,
+   "factor": 0.87
+  },
+  "2004:sauber": {
+   "starts": 36,
+   "mech_pct": 8.33,
+   "factor": 0.43
+  },
+  "2004:toyota": {
+   "starts": 36,
+   "mech_pct": 19.44,
+   "factor": 1.01
+  },
+  "2004:williams": {
+   "starts": 36,
+   "mech_pct": 19.44,
+   "factor": 1.01
+  },
+  "2005:bar": {
+   "starts": 34,
+   "mech_pct": 23.53,
+   "factor": 1.64
+  },
+  "2005:ferrari": {
+   "starts": 38,
+   "mech_pct": 10.53,
+   "factor": 0.73
+  },
+  "2005:jordan": {
+   "starts": 38,
+   "mech_pct": 13.16,
+   "factor": 0.92
+  },
+  "2005:mclaren": {
+   "starts": 38,
+   "mech_pct": 15.79,
+   "factor": 1.1
+  },
+  "2005:minardi": {
+   "starts": 38,
+   "mech_pct": 26.32,
+   "factor": 1.83
+  },
+  "2005:red-bull": {
+   "starts": 38,
+   "mech_pct": 10.53,
+   "factor": 0.73
+  },
+  "2005:renault": {
+   "starts": 38,
+   "mech_pct": 7.89,
+   "factor": 0.55
+  },
+  "2005:sauber": {
+   "starts": 38,
+   "mech_pct": 15.79,
+   "factor": 1.1
+  },
+  "2005:toyota": {
+   "starts": 38,
+   "mech_pct": 7.89,
+   "factor": 0.55
+  },
+  "2005:williams": {
+   "starts": 38,
+   "mech_pct": 13.16,
+   "factor": 0.92
+  },
+  "2006:bmw-sauber": {
+   "starts": 36,
+   "mech_pct": 11.11,
+   "factor": 0.62
+  },
+  "2006:ferrari": {
+   "starts": 36,
+   "mech_pct": 2.78,
+   "factor": 0.15
+  },
+  "2006:honda": {
+   "starts": 36,
+   "mech_pct": 19.44,
+   "factor": 1.08
+  },
+  "2006:mclaren": {
+   "starts": 36,
+   "mech_pct": 16.67,
+   "factor": 0.93
+  },
+  "2006:midland": {
+   "starts": 36,
+   "mech_pct": 16.67,
+   "factor": 0.93
+  },
+  "2006:red-bull": {
+   "starts": 36,
+   "mech_pct": 22.22,
+   "factor": 1.24
+  },
+  "2006:renault": {
+   "starts": 36,
+   "mech_pct": 8.33,
+   "factor": 0.46
+  },
+  "2006:super-aguri": {
+   "starts": 36,
+   "mech_pct": 33.33,
+   "factor": 1.86
+  },
+  "2006:toro-rosso": {
+   "starts": 36,
+   "mech_pct": 11.11,
+   "factor": 0.62
+  },
+  "2006:toyota": {
+   "starts": 36,
+   "mech_pct": 30.56,
+   "factor": 1.7
+  },
+  "2006:williams": {
+   "starts": 36,
+   "mech_pct": 25.0,
+   "factor": 1.39
+  },
+  "2007:bmw-sauber": {
+   "starts": 34,
+   "mech_pct": 14.71,
+   "factor": 0.95
+  },
+  "2007:ferrari": {
+   "starts": 34,
+   "mech_pct": 8.82,
+   "factor": 0.57
+  },
+  "2007:honda": {
+   "starts": 34,
+   "mech_pct": 17.65,
+   "factor": 1.14
+  },
+  "2007:mclaren": {
+   "starts": 34,
+   "mech_pct": 0.0,
+   "factor": 0.0
+  },
+  "2007:red-bull": {
+   "starts": 34,
+   "mech_pct": 29.41,
+   "factor": 1.9
+  },
+  "2007:renault": {
+   "starts": 34,
+   "mech_pct": 5.88,
+   "factor": 0.38
+  },
+  "2007:spyker": {
+   "starts": 34,
+   "mech_pct": 20.59,
+   "factor": 1.33
+  },
+  "2007:super-aguri": {
+   "starts": 34,
+   "mech_pct": 17.65,
+   "factor": 1.14
+  },
+  "2007:toro-rosso": {
+   "starts": 34,
+   "mech_pct": 29.41,
+   "factor": 1.9
+  },
+  "2007:toyota": {
+   "starts": 34,
+   "mech_pct": 14.71,
+   "factor": 0.95
+  },
+  "2007:williams": {
+   "starts": 34,
+   "mech_pct": 11.76,
+   "factor": 0.76
+  },
+  "2008:bmw-sauber": {
+   "starts": 36,
+   "mech_pct": 0.0,
+   "factor": 0.0
+  },
+  "2008:ferrari": {
+   "starts": 36,
+   "mech_pct": 11.11,
+   "factor": 1.24
+  },
+  "2008:force-india": {
+   "starts": 36,
+   "mech_pct": 22.22,
+   "factor": 2.48
+  },
+  "2008:honda": {
+   "starts": 36,
+   "mech_pct": 5.56,
+   "factor": 0.62
+  },
+  "2008:mclaren": {
+   "starts": 36,
+   "mech_pct": 11.11,
+   "factor": 1.24
+  },
+  "2008:red-bull": {
+   "starts": 36,
+   "mech_pct": 5.56,
+   "factor": 0.62
+  },
+  "2008:renault": {
+   "starts": 36,
+   "mech_pct": 8.33,
+   "factor": 0.93
+  },
+  "2008:toro-rosso": {
+   "starts": 36,
+   "mech_pct": 11.11,
+   "factor": 1.24
+  },
+  "2008:toyota": {
+   "starts": 36,
+   "mech_pct": 8.33,
+   "factor": 0.93
+  },
+  "2008:williams": {
+   "starts": 36,
+   "mech_pct": 2.78,
+   "factor": 0.31
+  },
+  "2009:bmw-sauber": {
+   "starts": 34,
+   "mech_pct": 11.76,
+   "factor": 1.18
+  },
+  "2009:brawn": {
+   "starts": 34,
+   "mech_pct": 2.94,
+   "factor": 0.29
+  },
+  "2009:ferrari": {
+   "starts": 34,
+   "mech_pct": 14.71,
+   "factor": 1.47
+  },
+  "2009:force-india": {
+   "starts": 34,
+   "mech_pct": 8.82,
+   "factor": 0.88
+  },
+  "2009:mclaren": {
+   "starts": 34,
+   "mech_pct": 5.88,
+   "factor": 0.59
+  },
+  "2009:red-bull": {
+   "starts": 34,
+   "mech_pct": 8.82,
+   "factor": 0.88
+  },
+  "2009:renault": {
+   "starts": 34,
+   "mech_pct": 11.76,
+   "factor": 1.18
+  },
+  "2009:toro-rosso": {
+   "starts": 34,
+   "mech_pct": 20.59,
+   "factor": 2.06
+  },
+  "2009:toyota": {
+   "starts": 34,
+   "mech_pct": 2.94,
+   "factor": 0.29
+  },
+  "2009:williams": {
+   "starts": 34,
+   "mech_pct": 11.76,
+   "factor": 1.18
+  },
+  "2010:ferrari": {
+   "starts": 38,
+   "mech_pct": 2.63,
+   "factor": 0.18
+  },
+  "2010:force-india": {
+   "starts": 38,
+   "mech_pct": 13.16,
+   "factor": 0.88
+  },
+  "2010:hrt": {
+   "starts": 38,
+   "mech_pct": 26.32,
+   "factor": 1.76
+  },
+  "2010:lotus-racing": {
+   "starts": 38,
+   "mech_pct": 34.21,
+   "factor": 2.29
+  },
+  "2010:mclaren": {
+   "starts": 38,
+   "mech_pct": 5.26,
+   "factor": 0.35
+  },
+  "2010:mercedes": {
+   "starts": 38,
+   "mech_pct": 7.89,
+   "factor": 0.53
+  },
+  "2010:red-bull": {
+   "starts": 38,
+   "mech_pct": 5.26,
+   "factor": 0.35
+  },
+  "2010:renault": {
+   "starts": 38,
+   "mech_pct": 13.16,
+   "factor": 0.88
+  },
+  "2010:sauber": {
+   "starts": 38,
+   "mech_pct": 26.32,
+   "factor": 1.76
+  },
+  "2010:toro-rosso": {
+   "starts": 38,
+   "mech_pct": 7.89,
+   "factor": 0.53
+  },
+  "2010:virgin": {
+   "starts": 38,
+   "mech_pct": 34.21,
+   "factor": 2.29
+  },
+  "2010:williams": {
+   "starts": 38,
+   "mech_pct": 2.63,
+   "factor": 0.18
+  },
+  "2011:ferrari": {
+   "starts": 38,
+   "mech_pct": 5.26,
+   "factor": 0.5
+  },
+  "2011:force-india": {
+   "starts": 38,
+   "mech_pct": 5.26,
+   "factor": 0.5
+  },
+  "2011:hrt": {
+   "starts": 36,
+   "mech_pct": 19.44,
+   "factor": 1.84
+  },
+  "2011:lotus-racing": {
+   "starts": 38,
+   "mech_pct": 21.05,
+   "factor": 1.99
+  },
+  "2011:mclaren": {
+   "starts": 38,
+   "mech_pct": 7.89,
+   "factor": 0.75
+  },
+  "2011:mercedes": {
+   "starts": 38,
+   "mech_pct": 5.26,
+   "factor": 0.5
+  },
+  "2011:red-bull": {
+   "starts": 38,
+   "mech_pct": 2.63,
+   "factor": 0.25
+  },
+  "2011:renault": {
+   "starts": 38,
+   "mech_pct": 2.63,
+   "factor": 0.25
+  },
+  "2011:sauber": {
+   "starts": 38,
+   "mech_pct": 13.16,
+   "factor": 1.24
+  },
+  "2011:toro-rosso": {
+   "starts": 38,
+   "mech_pct": 10.53,
+   "factor": 1.0
+  },
+  "2011:virgin": {
+   "starts": 38,
+   "mech_pct": 15.79,
+   "factor": 1.49
+  },
+  "2011:williams": {
+   "starts": 38,
+   "mech_pct": 18.42,
+   "factor": 1.74
+  },
+  "2012:caterham": {
+   "starts": 40,
+   "mech_pct": 10.0,
+   "factor": 1.02
+  },
+  "2012:ferrari": {
+   "starts": 40,
+   "mech_pct": 0.0,
+   "factor": 0.0
+  },
+  "2012:force-india": {
+   "starts": 40,
+   "mech_pct": 2.5,
+   "factor": 0.25
+  },
+  "2012:hrt": {
+   "starts": 38,
+   "mech_pct": 21.05,
+   "factor": 2.14
+  },
+  "2012:lotus-f1": {
+   "starts": 40,
+   "mech_pct": 5.0,
+   "factor": 0.51
+  },
+  "2012:marussia": {
+   "starts": 40,
+   "mech_pct": 17.5,
+   "factor": 1.78
+  },
+  "2012:mclaren": {
+   "starts": 40,
+   "mech_pct": 12.5,
+   "factor": 1.27
+  },
+  "2012:mercedes": {
+   "starts": 40,
+   "mech_pct": 15.0,
+   "factor": 1.53
+  },
+  "2012:red-bull": {
+   "starts": 40,
+   "mech_pct": 7.5,
+   "factor": 0.76
+  },
+  "2012:sauber": {
+   "starts": 40,
+   "mech_pct": 7.5,
+   "factor": 0.76
+  },
+  "2012:toro-rosso": {
+   "starts": 40,
+   "mech_pct": 7.5,
+   "factor": 0.76
+  },
+  "2012:williams": {
+   "starts": 40,
+   "mech_pct": 12.5,
+   "factor": 1.27
+  },
+  "2013:caterham": {
+   "starts": 38,
+   "mech_pct": 13.16,
+   "factor": 1.41
+  },
+  "2013:ferrari": {
+   "starts": 38,
+   "mech_pct": 2.63,
+   "factor": 0.28
+  },
+  "2013:force-india": {
+   "starts": 38,
+   "mech_pct": 13.16,
+   "factor": 1.41
+  },
+  "2013:lotus-f1": {
+   "starts": 38,
+   "mech_pct": 13.16,
+   "factor": 1.41
+  },
+  "2013:marussia": {
+   "starts": 38,
+   "mech_pct": 2.63,
+   "factor": 0.28
+  },
+  "2013:mclaren": {
+   "starts": 38,
+   "mech_pct": 5.26,
+   "factor": 0.56
+  },
+  "2013:mercedes": {
+   "starts": 38,
+   "mech_pct": 7.89,
+   "factor": 0.85
+  },
+  "2013:red-bull": {
+   "starts": 38,
+   "mech_pct": 10.53,
+   "factor": 1.13
+  },
+  "2013:sauber": {
+   "starts": 38,
+   "mech_pct": 7.89,
+   "factor": 0.85
+  },
+  "2013:toro-rosso": {
+   "starts": 38,
+   "mech_pct": 21.05,
+   "factor": 2.26
+  },
+  "2013:williams": {
+   "starts": 38,
+   "mech_pct": 5.26,
+   "factor": 0.56
+  },
+  "2014:caterham": {
+   "starts": 34,
+   "mech_pct": 32.35,
+   "factor": 2.16
+  },
+  "2014:ferrari": {
+   "starts": 38,
+   "mech_pct": 5.26,
+   "factor": 0.35
+  },
+  "2014:force-india": {
+   "starts": 38,
+   "mech_pct": 5.26,
+   "factor": 0.35
+  },
+  "2014:lotus-f1": {
+   "starts": 38,
+   "mech_pct": 34.21,
+   "factor": 2.28
+  },
+  "2014:marussia": {
+   "starts": 31,
+   "mech_pct": 9.68,
+   "factor": 0.65
+  },
+  "2014:mclaren": {
+   "starts": 38,
+   "mech_pct": 7.89,
+   "factor": 0.53
+  },
+  "2014:mercedes": {
+   "starts": 38,
+   "mech_pct": 10.53,
+   "factor": 0.7
+  },
+  "2014:red-bull": {
+   "starts": 38,
+   "mech_pct": 15.79,
+   "factor": 1.05
+  },
+  "2014:sauber": {
+   "starts": 38,
+   "mech_pct": 18.42,
+   "factor": 1.23
+  },
+  "2014:toro-rosso": {
+   "starts": 38,
+   "mech_pct": 23.68,
+   "factor": 1.58
+  },
+  "2014:williams": {
+   "starts": 38,
+   "mech_pct": 2.63,
+   "factor": 0.18
+  },
+  "2015:ferrari": {
+   "starts": 38,
+   "mech_pct": 10.53,
+   "factor": 0.68
+  },
+  "2015:force-india": {
+   "starts": 38,
+   "mech_pct": 10.53,
+   "factor": 0.68
+  },
+  "2015:lotus-f1": {
+   "starts": 38,
+   "mech_pct": 21.05,
+   "factor": 1.36
+  },
+  "2015:marussia": {
+   "starts": 38,
+   "mech_pct": 10.53,
+   "factor": 0.68
+  },
+  "2015:mclaren": {
+   "starts": 38,
+   "mech_pct": 34.21,
+   "factor": 2.2
+  },
+  "2015:mercedes": {
+   "starts": 38,
+   "mech_pct": 7.89,
+   "factor": 0.51
+  },
+  "2015:red-bull": {
+   "starts": 38,
+   "mech_pct": 13.16,
+   "factor": 0.85
+  },
+  "2015:sauber": {
+   "starts": 38,
+   "mech_pct": 10.53,
+   "factor": 0.68
+  },
+  "2015:toro-rosso": {
+   "starts": 38,
+   "mech_pct": 26.32,
+   "factor": 1.69
+  },
+  "2015:williams": {
+   "starts": 38,
+   "mech_pct": 10.53,
+   "factor": 0.68
+  },
+  "2016:ferrari": {
+   "starts": 42,
+   "mech_pct": 9.52,
+   "factor": 0.86
+  },
+  "2016:force-india": {
+   "starts": 42,
+   "mech_pct": 4.76,
+   "factor": 0.43
+  },
+  "2016:haas": {
+   "starts": 42,
+   "mech_pct": 19.05,
+   "factor": 1.73
+  },
+  "2016:manor": {
+   "starts": 42,
+   "mech_pct": 7.14,
+   "factor": 0.65
+  },
+  "2016:mclaren": {
+   "starts": 42,
+   "mech_pct": 19.05,
+   "factor": 1.73
+  },
+  "2016:mercedes": {
+   "starts": 42,
+   "mech_pct": 2.38,
+   "factor": 0.22
+  },
+  "2016:red-bull": {
+   "starts": 42,
+   "mech_pct": 4.76,
+   "factor": 0.43
+  },
+  "2016:renault": {
+   "starts": 42,
+   "mech_pct": 14.29,
+   "factor": 1.29
+  },
+  "2016:sauber": {
+   "starts": 42,
+   "mech_pct": 11.9,
+   "factor": 1.08
+  },
+  "2016:toro-rosso": {
+   "starts": 42,
+   "mech_pct": 16.67,
+   "factor": 1.51
+  },
+  "2016:williams": {
+   "starts": 42,
+   "mech_pct": 11.9,
+   "factor": 1.08
+  },
+  "2017:ferrari": {
+   "starts": 40,
+   "mech_pct": 5.0,
+   "factor": 0.33
+  },
+  "2017:force-india": {
+   "starts": 40,
+   "mech_pct": 0.0,
+   "factor": 0.0
+  },
+  "2017:haas": {
+   "starts": 40,
+   "mech_pct": 15.0,
+   "factor": 1.0
+  },
+  "2017:mclaren": {
+   "starts": 40,
+   "mech_pct": 30.0,
+   "factor": 2.0
+  },
+  "2017:mercedes": {
+   "starts": 40,
+   "mech_pct": 2.5,
+   "factor": 0.17
+  },
+  "2017:red-bull": {
+   "starts": 40,
+   "mech_pct": 25.0,
+   "factor": 1.67
+  },
+  "2017:renault": {
+   "starts": 40,
+   "mech_pct": 30.0,
+   "factor": 2.0
+  },
+  "2017:sauber": {
+   "starts": 40,
+   "mech_pct": 12.5,
+   "factor": 0.83
+  },
+  "2017:toro-rosso": {
+   "starts": 40,
+   "mech_pct": 17.5,
+   "factor": 1.17
+  },
+  "2017:williams": {
+   "starts": 40,
+   "mech_pct": 12.5,
+   "factor": 0.83
+  },
+  "2018:ferrari": {
+   "starts": 42,
+   "mech_pct": 7.14,
+   "factor": 0.59
+  },
+  "2018:force-india": {
+   "starts": 42,
+   "mech_pct": 11.9,
+   "factor": 0.98
+  },
+  "2018:haas": {
+   "starts": 42,
+   "mech_pct": 7.14,
+   "factor": 0.59
+  },
+  "2018:mclaren": {
+   "starts": 42,
+   "mech_pct": 19.05,
+   "factor": 1.57
+  },
+  "2018:mercedes": {
+   "starts": 42,
+   "mech_pct": 7.14,
+   "factor": 0.59
+  },
+  "2018:red-bull": {
+   "starts": 42,
+   "mech_pct": 21.43,
+   "factor": 1.76
+  },
+  "2018:renault": {
+   "starts": 42,
+   "mech_pct": 9.52,
+   "factor": 0.78
+  },
+  "2018:sauber": {
+   "starts": 42,
+   "mech_pct": 11.9,
+   "factor": 0.98
+  },
+  "2018:toro-rosso": {
+   "starts": 42,
+   "mech_pct": 16.67,
+   "factor": 1.37
+  },
+  "2018:williams": {
+   "starts": 42,
+   "mech_pct": 9.52,
+   "factor": 0.78
+  },
+  "2019:alfa-romeo": {
+   "starts": 42,
+   "mech_pct": 2.38,
+   "factor": 0.32
+  },
+  "2019:ferrari": {
+   "starts": 42,
+   "mech_pct": 7.14,
+   "factor": 0.97
+  },
+  "2019:haas": {
+   "starts": 42,
+   "mech_pct": 11.9,
+   "factor": 1.61
+  },
+  "2019:mclaren": {
+   "starts": 42,
+   "mech_pct": 16.67,
+   "factor": 2.26
+  },
+  "2019:mercedes": {
+   "starts": 42,
+   "mech_pct": 2.38,
+   "factor": 0.32
+  },
+  "2019:racing-point": {
+   "starts": 42,
+   "mech_pct": 7.14,
+   "factor": 0.97
+  },
+  "2019:red-bull": {
+   "starts": 42,
+   "mech_pct": 2.38,
+   "factor": 0.32
+  },
+  "2019:renault": {
+   "starts": 42,
+   "mech_pct": 14.29,
+   "factor": 1.94
+  },
+  "2019:toro-rosso": {
+   "starts": 42,
+   "mech_pct": 4.76,
+   "factor": 0.65
+  },
+  "2019:williams": {
+   "starts": 42,
+   "mech_pct": 4.76,
+   "factor": 0.65
+  },
+  "2020:alfa-romeo": {
+   "starts": 34,
+   "mech_pct": 5.88,
+   "factor": 0.62
+  },
+  "2020:alphatauri": {
+   "starts": 34,
+   "mech_pct": 11.76,
+   "factor": 1.25
+  },
+  "2020:ferrari": {
+   "starts": 34,
+   "mech_pct": 5.88,
+   "factor": 0.62
+  },
+  "2020:haas": {
+   "starts": 34,
+   "mech_pct": 14.71,
+   "factor": 1.56
+  },
+  "2020:mclaren": {
+   "starts": 34,
+   "mech_pct": 5.88,
+   "factor": 0.62
+  },
+  "2020:mercedes": {
+   "starts": 34,
+   "mech_pct": 2.94,
+   "factor": 0.31
+  },
+  "2020:racing-point": {
+   "starts": 34,
+   "mech_pct": 11.76,
+   "factor": 1.25
+  },
+  "2020:red-bull": {
+   "starts": 34,
+   "mech_pct": 14.71,
+   "factor": 1.56
+  },
+  "2020:renault": {
+   "starts": 34,
+   "mech_pct": 14.71,
+   "factor": 1.56
+  },
+  "2020:williams": {
+   "starts": 34,
+   "mech_pct": 5.88,
+   "factor": 0.62
+  },
+  "2021:alfa-romeo": {
+   "starts": 44,
+   "mech_pct": 4.55,
+   "factor": 0.65
+  },
+  "2021:alphatauri": {
+   "starts": 44,
+   "mech_pct": 13.64,
+   "factor": 1.94
+  },
+  "2021:alpine": {
+   "starts": 44,
+   "mech_pct": 9.09,
+   "factor": 1.29
+  },
+  "2021:aston-martin": {
+   "starts": 44,
+   "mech_pct": 9.09,
+   "factor": 1.29
+  },
+  "2021:ferrari": {
+   "starts": 44,
+   "mech_pct": 2.27,
+   "factor": 0.32
+  },
+  "2021:haas": {
+   "starts": 44,
+   "mech_pct": 6.82,
+   "factor": 0.97
+  },
+  "2021:mclaren": {
+   "starts": 44,
+   "mech_pct": 2.27,
+   "factor": 0.32
+  },
+  "2021:mercedes": {
+   "starts": 44,
+   "mech_pct": 4.55,
+   "factor": 0.65
+  },
+  "2021:red-bull": {
+   "starts": 44,
+   "mech_pct": 4.55,
+   "factor": 0.65
+  },
+  "2021:williams": {
+   "starts": 44,
+   "mech_pct": 13.64,
+   "factor": 1.94
+  },
+  "2022:alfa-romeo": {
+   "starts": 44,
+   "mech_pct": 18.18,
+   "factor": 1.95
+  },
+  "2022:alphatauri": {
+   "starts": 44,
+   "mech_pct": 11.36,
+   "factor": 1.22
+  },
+  "2022:alpine": {
+   "starts": 44,
+   "mech_pct": 15.91,
+   "factor": 1.71
+  },
+  "2022:aston-martin": {
+   "starts": 44,
+   "mech_pct": 6.82,
+   "factor": 0.73
+  },
+  "2022:ferrari": {
+   "starts": 44,
+   "mech_pct": 9.09,
+   "factor": 0.98
+  },
+  "2022:haas": {
+   "starts": 44,
+   "mech_pct": 9.09,
+   "factor": 0.98
+  },
+  "2022:mclaren": {
+   "starts": 44,
+   "mech_pct": 6.82,
+   "factor": 0.73
+  },
+  "2022:mercedes": {
+   "starts": 44,
+   "mech_pct": 2.27,
+   "factor": 0.24
+  },
+  "2022:red-bull": {
+   "starts": 44,
+   "mech_pct": 9.09,
+   "factor": 0.98
+  },
+  "2022:williams": {
+   "starts": 44,
+   "mech_pct": 4.55,
+   "factor": 0.49
+  },
+  "2023:alfa-romeo": {
+   "starts": 44,
+   "mech_pct": 11.36,
+   "factor": 1.56
+  },
+  "2023:alphatauri": {
+   "starts": 44,
+   "mech_pct": 4.55,
+   "factor": 0.62
+  },
+  "2023:alpine": {
+   "starts": 44,
+   "mech_pct": 6.82,
+   "factor": 0.94
+  },
+  "2023:aston-martin": {
+   "starts": 44,
+   "mech_pct": 6.82,
+   "factor": 0.94
+  },
+  "2023:ferrari": {
+   "starts": 44,
+   "mech_pct": 11.36,
+   "factor": 1.56
+  },
+  "2023:haas": {
+   "starts": 44,
+   "mech_pct": 9.09,
+   "factor": 1.25
+  },
+  "2023:mclaren": {
+   "starts": 44,
+   "mech_pct": 2.27,
+   "factor": 0.31
+  },
+  "2023:mercedes": {
+   "starts": 44,
+   "mech_pct": 6.82,
+   "factor": 0.94
+  },
+  "2023:red-bull": {
+   "starts": 44,
+   "mech_pct": 0.0,
+   "factor": 0.0
+  },
+  "2023:williams": {
+   "starts": 44,
+   "mech_pct": 13.64,
+   "factor": 1.88
+  },
+  "2024:alpine": {
+   "starts": 48,
+   "mech_pct": 8.33,
+   "factor": 2.0
+  },
+  "2024:aston-martin": {
+   "starts": 48,
+   "mech_pct": 4.17,
+   "factor": 1.0
+  },
+  "2024:ferrari": {
+   "starts": 48,
+   "mech_pct": 2.08,
+   "factor": 0.5
+  },
+  "2024:haas": {
+   "starts": 48,
+   "mech_pct": 2.08,
+   "factor": 0.5
+  },
+  "2024:kick-sauber": {
+   "starts": 48,
+   "mech_pct": 6.25,
+   "factor": 1.5
+  },
+  "2024:mclaren": {
+   "starts": 48,
+   "mech_pct": 0.0,
+   "factor": 0.0
+  },
+  "2024:mercedes": {
+   "starts": 48,
+   "mech_pct": 4.17,
+   "factor": 1.0
+  },
+  "2024:rb": {
+   "starts": 48,
+   "mech_pct": 4.17,
+   "factor": 1.0
+  },
+  "2024:red-bull": {
+   "starts": 48,
+   "mech_pct": 4.17,
+   "factor": 1.0
+  },
+  "2024:williams": {
+   "starts": 47,
+   "mech_pct": 6.38,
+   "factor": 1.53
+  },
+  "2025:alpine": {
+   "starts": 48,
+   "mech_pct": 2.08,
+   "factor": 0.53
+  },
+  "2025:aston-martin": {
+   "starts": 48,
+   "mech_pct": 8.33,
+   "factor": 2.11
+  },
+  "2025:ferrari": {
+   "starts": 48,
+   "mech_pct": 0.0,
+   "factor": 0.0
+  },
+  "2025:haas": {
+   "starts": 48,
+   "mech_pct": 6.25,
+   "factor": 1.58
+  },
+  "2025:kick-sauber": {
+   "starts": 48,
+   "mech_pct": 6.25,
+   "factor": 1.58
+  },
+  "2025:mclaren": {
+   "starts": 48,
+   "mech_pct": 2.08,
+   "factor": 0.53
+  },
+  "2025:mercedes": {
+   "starts": 48,
+   "mech_pct": 4.17,
+   "factor": 1.05
+  },
+  "2025:racing-bulls": {
+   "starts": 48,
+   "mech_pct": 4.17,
+   "factor": 1.05
+  },
+  "2025:red-bull": {
+   "starts": 48,
+   "mech_pct": 0.0,
+   "factor": 0.0
+  },
+  "2025:williams": {
+   "starts": 48,
+   "mech_pct": 6.25,
+   "factor": 1.58
+  }
+ }
+}

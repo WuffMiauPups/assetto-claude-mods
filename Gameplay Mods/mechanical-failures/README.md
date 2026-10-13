@@ -49,18 +49,13 @@ RESTRICTOR=0
 
 Fahrerzuordnung über den Skin-Namen, weil KI-Fahrer im selben Auto nur so unterscheidbar sind. Ballast und Restriktor werden hier nur protokolliert; die Werte selbst setzt Content Manager über die Entry-Liste.
 
-## Profile pro Ära
+## Profile pro Saison
 
-`profiles/` enthält Grundraten je Epoche, abgeleitet aus realen Ausfallquoten der Saisons:
+`profiles/failures_<jahr>.ini` für 1988 bis 2025, berechnet aus allen Rennergebnissen der Saison (F1DB). Details, Tabelle und Fahrer-Multiplikatoren: `research/ausfallstatistik.md`. Die Gruppe-C-Profile für den 956 folgen aus der WEC-Statistik.
 
-| Ära | Ausfallquote real (technisch, pro Auto und Rennen) | Schwerpunkte |
-|---|---|---|
-| 1983 Gruppe C, Turbo | hoch, 20 bis 30 Prozent über Langstrecke | Motor, Turbo, Getriebe |
-| 2004 V10 | mittel, 10 bis 15 Prozent | Motor, Hydraulik |
-| 2017 Hybrid | niedrig bis mittel, 8 bis 12 Prozent, Honda deutlich höher | ERS, Elektrik, Turbo |
-| 2025 | niedrig, unter 8 Prozent | Elektrik, Hydraulik |
+## Dirty Air
 
-Die Werte werden noch gegen die Statistik der jeweiligen Saisons geprüft (Quellen folgen in `research/`).
+Abtriebsverlust im Nachlauf pro Ära, aus FIA-CFD-Werten für 2019 bis 2026 und Schätzungen für ältere Jahre: `research/dirty-air.md`, Modell `tools/dirty_air_model.py`, Lua-Entwurf `script/dirty_air.lua`.
 
 ## Kopplung an das Karriere-System
 
@@ -80,10 +75,10 @@ Die Werte werden noch gegen die Statistik der jeweiligen Saisons geprüft (Quell
 mechanical-failures/
   script/      script.lua (Entwurf) und failures.ini (Vorlage)
   profiles/    Grundraten pro Ära
-  tools/       install.py: Script und INI in die Datenordner einer Serie kopieren
+  tools/       install.py, failure_stats.py (Quoten aus F1DB), dirty_air_model.py
   research/    Vollständige Liste der Defekte, Dirty-Air-Modell, Ausfallstatistiken der Saisons
 ```
 
 ## Status
 
-Konzept und Script-Entwurf. Erster Test braucht einen entpackten Auto-Datenordner und die CSP-Version.
+Ausfallquoten pro Saison berechnet, Dirty-Air-Kennlinien erzeugt, zwei Script-Entwürfe. Erster Test: BMW Sauber 2008 (`cim_2008_bmw_sauber`) mit CSP 0.3.0-preview649, sobald lua-sdk und Datenordner im Repo liegen.

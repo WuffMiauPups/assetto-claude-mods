@@ -55,8 +55,19 @@ ENGINE = {
                           (7000, 592), (7500, 585), (8000, 578), (8200, 575), (8560, 545), (9000, 500)],
     "mass_total": 895,                       # 820 kg plus 75 kg Fahrer
     # Getriebe Ring 1983 (Schaetzung): Fuenfter bei ~320 km/h und 8400/min, Radius hinten 0,33 m
-    "gears": [3.00, 2.00, 1.48, 1.15, 0.92],
-    "final": 3.56,
+    # Fahrer-Setup vom 2026-10-14: 14/37, 18/34, 22/29, 26/26, 28/23 (rto-Saetze des Basis-Mods)
+    "gears": [37 / 14, 34 / 18, 29 / 22, 26 / 26, 23 / 28],
+    "final": 3.875,                          # 8/31 aus final.rto; Fuenfter dann 335 km/h am Begrenzer (zu pruefen)
+}
+
+# Reifen 1983: Dunlop 280/650-13 vorn (956-007 am Ring mit 13-Zoll-Felgen), 350/650-16 hinten.
+# Der Basis-Mod hat vorn Radius 0,28 m (560 mm), real 650 mm. Groesserer Radius hebt in AC
+# Schwerpunkt und Karosserie an, deshalb BASEY und ROD_LENGTH um die Differenz korrigieren,
+# damit Schwerpunkthoehe und statische Bodenfreiheit unveraendert bleiben.
+TYRES = {
+    "radius": (0.325, 0.325),
+    "rim_radius": (0.165 + 0.0254, 0.2032 + 0.0254),   # 13 und 16 Zoll, plus 1 Zoll wie in AC ueblich
+    "width": (0.280, 0.350),
 }
 
 SUSPENSION = {
@@ -147,15 +158,20 @@ def static_geometry() -> dict:
     geo_f = cg_f + pick_f + rod_f
     geo_r = cg_r + pick_r + rod_r
     tf, tr = SUSPENSION["rh_design"]
+    d_rf = TYRES["radius"][0] - rf          # Radiusaenderung durch neue Reifen
+    d_rr = TYRES["radius"][1] - rr
     return {
         "cg_height": cg_h,
         "rh_front": tf,
         "rh_rear": tr,
         "rh_front_geometry_estimate": geo_f,
         "rh_rear_geometry_estimate": geo_r,
-        # neue Stangenlaengen: gemessene Hoehe + Delta zur Zielhoehe
-        "rod_front": MEASURED_ROD[0] + (tf - MEASURED_STATIC_RH[0]),
-        "rod_rear": MEASURED_ROD[1] + (tr - MEASURED_STATIC_RH[1]),
+        # neue Stangenlaengen: gemessene Hoehe + Delta zur Zielhoehe, minus Reifenradius-Zuwachs
+        "rod_front": MEASURED_ROD[0] + (tf - MEASURED_STATIC_RH[0]) - d_rf,
+        "rod_rear": MEASURED_ROD[1] + (tr - MEASURED_STATIC_RH[1]) - d_rr,
+        # BASEY so, dass Schwerpunkt je Achse auf gleicher Hoehe bleibt (CoG = Radius - BASEY)
+        "basey_front": bf + d_rf,
+        "basey_rear": br + d_rr,
     }
 
 
@@ -206,6 +222,8 @@ def compute(summary: dict, geo: dict) -> dict:
         "rh_rear_static": hr,
         "rod_front": geo["rod_front"],
         "rod_rear": geo["rod_rear"],
+        "basey_front": geo["basey_front"],
+        "basey_rear": geo["basey_rear"],
         "wheel_rate_front": SUSPENSION["wheel_rate"][0],
         "wheel_rate_rear": SUSPENSION["wheel_rate"][1],
         "cg_height": cg_h,
@@ -347,7 +365,17 @@ def tune_suspension(res: dict) -> None:
     sus = set_key(sus, "REAR", "ROD_LENGTH", f"{res['rod_rear']:.4f}")
     sus = set_key(sus, "FRONT", "SPRING_RATE", str(res["wheel_rate_front"]))
     sus = set_key(sus, "REAR", "SPRING_RATE", str(res["wheel_rate_rear"]))
+    sus = set_key(sus, "FRONT", "BASEY", f"{res['basey_front']:.4f}")
+    sus = set_key(sus, "REAR", "BASEY", f"{res['basey_rear']:.4f}")
     sus_p.write_text(sus)
+
+    tyr_p = OUT / "tyres.ini"
+    tyr = tyr_p.read_text()
+    for sec, i in (("FRONT", 0), ("REAR", 1)):
+        tyr = set_key(tyr, sec, "RADIUS", f"{TYRES['radius'][i]:.4f}")
+        tyr = set_key(tyr, sec, "RIM_RADIUS", f"{TYRES['rim_radius'][i]:.4f}")
+        tyr = set_key(tyr, sec, "WIDTH", f"{TYRES['width'][i]:.3f}")
+    tyr_p.write_text(tyr)
 
     set_p = OUT / "setup.ini"
     setup = set_p.read_text()
@@ -356,6 +384,12 @@ def tune_suspension(res: dict) -> None:
                         ("SPRING_RATE_LR", rmin, rmax), ("SPRING_RATE_RR", rmin, rmax)):
         setup = set_key(setup, sec, "MIN", str(lo))
         setup = set_key(setup, sec, "MAX", str(hi))
+    # Stangenlaenge vorn ist nach der Reifenkorrektur negativ, Setup-Bereich muss das zulassen (mm)
+    for sec, lo, hi in (("ROD_LENGTH_LF", -80, 120), ("ROD_LENGTH_RF", -80, 120),
+                        ("ROD_LENGTH_LR", -20, 140), ("ROD_LENGTH_RR", -20, 140)):
+        setup = set_key(setup, sec, "MIN", str(lo))
+        setup = set_key(setup, sec, "MAX", str(hi))
+        setup = set_key(setup, sec, "STEP", "1")
     set_p.write_text(setup)
 
 
@@ -389,7 +423,7 @@ def tune_engine() -> dict:
     for name, adj in (("quali 1,3 bar", 1.0), ("rennen 1,2 bar", ENGINE["default_adjustment"]), ("le mans 1,1 bar", 0.85)):
         b = boost_total * adj
         peak[name] = max(rpm * nm * (1 + b) / 9549 * 1.36 for rpm, nm in lut)
-    v_top = ENGINE["limiter"] / 60 * 2 * 3.14159 * 0.33 / (ENGINE["gears"][-1] * ENGINE["final"]) * 3.6
+    v_top = ENGINE["limiter"] / 60 * 2 * 3.14159 * TYRES["radius"][1] / (ENGINE["gears"][-1] * ENGINE["final"]) * 3.6
     return {"peak_ps": peak, "v_top_kmh_limiter": v_top}
 
 
@@ -428,7 +462,8 @@ def main() -> None:
     res = compute(summary, static_geometry())
 
     print(f"Ziel-Bodenfreiheit statisch: vorn {res['rh_front_static']*1000:.0f} mm, hinten {res['rh_rear_static']*1000:.0f} mm "
-          f"(ROD_LENGTH {res['rod_front']:.4f}/{res['rod_rear']:.4f}, Radraten {res['wheel_rate_front']/1000:.0f}/{res['wheel_rate_rear']/1000:.0f} N/mm)")
+          f"(ROD_LENGTH {res['rod_front']:.4f}/{res['rod_rear']:.4f}, BASEY {res['basey_front']:.4f}/{res['basey_rear']:.4f}, "
+          f"Radraten {res['wheel_rate_front']/1000:.0f}/{res['wheel_rate_rear']/1000:.0f} N/mm)")
     print(f"Gains: Front CL {res['front_cl_gain']:.3f}, Heck CL {res['rear_cl_gain']:.3f}, Karosserie CD {res['body_cd_gain']:.3f}")
     print(f"Unterboden statisch: Cl*A {res['underbody_cla_static']:.3f}, Cd*A {res['underbody_cda_static']:.3f}, Balance vorn {res['underbody_front_balance_static']:.2f}")
     print(f"Gesamt statisch: Cl*A {res['total_cla_static']:.3f}, Cd*A {res['total_cda_static']:.3f}, Balance vorn {res['front_balance_static']:.2f}")

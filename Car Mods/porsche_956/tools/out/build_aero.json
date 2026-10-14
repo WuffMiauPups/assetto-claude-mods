@@ -1,8 +1,10 @@
 {
   "rh_front_static": 0.055,
   "rh_rear_static": 0.085,
-  "rod_front": 0.011000000000000003,
-  "rod_rear": 0.037500000000000006,
+  "rod_front": -0.03399999999999998,
+  "rod_rear": 0.04250000000000001,
+  "basey_front": 0.009999999999999981,
+  "basey_rear": -0.030000000000000006,
   "wheel_rate_front": 140000,
   "wheel_rate_rear": 190000,
   "cg_height": 0.33860000000000007,
@@ -29,6 +31,6 @@
       "rennen 1,2 bar": 641.1611687087654,
       "le mans 1,1 bar": 614.5921038852237
     },
-    "v_top_kmh_limiter": 325.14765872007814
+    "v_top_kmh_limiter": 329.4931316330996
   }
 }

@@ -8,9 +8,9 @@
 | `data/aero.ini` | erzeugt von `build_aero.py`: Karosserie (nur Widerstand), Front- und Heckflügel skaliert, `[MAP_0]` Unterboden; Diffusor-Flügel und Speed-Controller des Basis-Mods entfernt | erste Fassung, Spieltest offen |
 | `data/car.ini` | Basis-Mod, `VERSION=extended-2`, Name geändert, Masse 895 kg (820 plus Fahrer) | Schwerpunkt, Trägheit offen |
 | `data/suspensions.ini` | Basis-Mod, `ROD_LENGTH` und `SPRING_RATE` von `build_aero.py` gesetzt (55/85 mm, 140/190 N/mm) | Messung 2 abwarten |
-| `data/tyres.ini` | Basis-Mod | Dunlop 1983 vorn 13 Zoll offen |
+| `data/tyres.ini` | Maße von `build_aero.py` (`TYRES`): 280/650-13 vorn, 350/650-16 hinten, Radius 0,325 m beide. BASEY und ROD_LENGTH kompensieren den um 45 mm größeren Vorderreifen, Schwerpunkt und Bodenfreiheit bleiben. Gummi, Thermik, Verschleiß noch Basis-Mod | Spieltest, dann Verschleiß |
 | `data/engine.ini`, `power.lut` | von `build_aero.py` (`ENGINE`): 935/76, zwei Turbos je 0,65 bar, Regler 100 % = Quali 1,3 bar 672 PS, 92 % = Rennen 1,2 bar 641 PS, 85 % = Le Mans 615 PS. 600 Nm 5000 bis 6500. Schätzung | getestet, 300 km/h, Turbo ab 4000 spürbar |
-| `data/drivetrain.ini` | Ring-Übersetzung aus `build_aero.py`: 3,00/2,00/1,48/1,15/0,92, Achse 3,56, Fünfter am Begrenzer 325 km/h. Schätzung. `*.rto` noch Basis-Mod | fahrbar, Fahrer passt im Setup an; dessen Werte als Standard übernehmen |
+| `data/drivetrain.ini` | Fahrer-Übersetzung 14/37, 18/34, 22/29, 26/26, 28/23, Achse 8/31 (3,875), Fünfter am Begrenzer 329 km/h | Achse bestätigen |
 | alle übrigen | Basis-Mod unverändert | |
 | `aero_map_template.ini`, `setup_aeromap_template.ini` | Vorlagen, Map-Block ist inzwischen in `build_aero.py` | nur noch Referenz |
 
@@ -52,7 +52,7 @@ Topspeed 290 km/h im Fünften bei knapp 8000/min (Begrenzer 8560, Getriebe erlau
 
 ## Messung 5 (2026-10-14, Motor 935/76 Quali 1,3 bar, 895 kg, `tools/out/messungen/05_motor1983_20261014.csv`)
 
-Topspeed 300 km/h (Fahrer: Anlauf nicht ganz voll, Drehzahl passt, Begrenzer nicht erreicht). Bei 300 km/h: 38 mm vorn, 55 mm hinten, 1999 kg Abtrieb, Balance aus Radlasten 38 Prozent (plus Widerstandsmoment, also reine Aero-Balance über 40). Das Heck liegt bei Topspeed 25 mm über dem Abriss, das Auto bleibt laut Fahrer stabil. Turbo setzt ab etwa 4000/min spürbar ein, Übersetzung wurde vom Fahrer im Setup leicht angepasst.
+Topspeed 300 km/h mit vollem Anlauf (Drehzahl passt, Begrenzer nicht erreicht). Bei 300 km/h: 38 mm vorn, 55 mm hinten, 1999 kg Abtrieb, Balance aus Radlasten 38 Prozent (plus Widerstandsmoment, also reine Aero-Balance über 40). Das Heck liegt bei Topspeed 25 mm über dem Abriss, das Auto bleibt laut Fahrer stabil. Turbo setzt ab etwa 4000/min spürbar ein. Fahrer-Übersetzung 14/37, 18/34, 22/29, 26/26, 28/23 ist jetzt Standard in `drivetrain.ini`, Achse 8/31 angenommen. Fahreindruck Reifen: untersteuernd bei niedrigem Tempo, leicht untersteuernd bei hohem, im Grenzbereich schiebt das Heck, Hinterräder blockieren bei zu frühem Herunterschalten, kaum Gripabbau. Entspricht dem historischen Urteil über den 956.
 
 ## Bekannte Baustellen
 

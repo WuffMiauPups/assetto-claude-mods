@@ -18,7 +18,7 @@ Sammlung eigener Assetto-Corsa-Mods. Sprache mit dem Nutzer: Deutsch. Oberste Or
 | `AI Mods/01-fast-lane-recorder` | Python-Paket, Lua-Aufnahme-App, Build-Skripte, Test mit synthetischer Strecke grün | Original `content\tracks\monza\ai\fast_lane.ai` parsen, App im Spiel testen, Runden aufnehmen, erste echte Linie bauen |
 | `AI Mods/02` bis `06` | nur README | nach 01 |
 | `Car Mods/porsche_956` | Aero-Map kalibriert, Motor 935/76 (Quali 1,3 bar 672 PS), 895 kg, Ring-Übersetzung; 5 Messungen in `tools/out/messungen/`, 300 km/h, 2000 kg Abtrieb, Heck 55 mm. Werkzeuge: `venturi_model.py` → `build_aero.py` → `install.py`, Mess-App `app/rideheight_monitor` | Reifen Dunlop 1983 (vorn 13 Zoll), Schwerpunkt und Trägheit, Setup-Übersetzung des Fahrers als Standard übernehmen; danach Skin Rothmans |
-| `Gameplay Mods/mechanical-failures` | Ausfallquoten pro Saison aus F1DB, Profile 1988 bis 2025, Dirty-Air-Kennlinien, zwei Lua-Entwürfe | API-Namen gegen lokales lua-sdk prüfen, Script in `cim_2008_bmw_sauber` installieren und testen |
+| `Gameplay Mods/mechanical-failures` | API gegen lua-sdk geprüft, `failures.lua` als Modul, Installer mit Hook für Autos mit eigenem Script, im `cim_2008_bmw_sauber` installiert (Testdefekt ENGINE nach 20 s) | Im Spiel fahren und Log prüfen, danach `[TEST]` entfernen; Dirty-Air-Kennlinie als `dirty_air.ini` erzeugen |
 | `Career Mods/career-system` | Excel-Importer für die 2017er Datei | zurückgestellt, bis die restlichen Excels vorliegen |
 
 ## Konventionen
@@ -29,9 +29,10 @@ Sammlung eigener Assetto-Corsa-Mods. Sprache mit dem Nutzer: Deutsch. Oberste Or
 - Commits auf `main`, deutsche Commit-Nachrichten
 - Keine Lizenz-Dateien von Kunos oder fremden Mods einchecken (siehe `.gitignore`)
 
-## Offene Prüfpunkte gegen das lokale lua-sdk
+## Geklärt gegen das lokale lua-sdk (ac_car_cphys, 0.3.0-preview649)
 
-- Felder in `ac.accessCarPhysics()`: Reifendruck, Getriebeschaden, Temperaturen (Wasser, Öl, Bremsen, Reifen), Bodenfreiheit
-- Funktionsname für Flügel-Gain (Feature seit CSP 0.1.78)
-- Zugriff auf andere Autos aus dem Physik-Script (`ac.getCar(i)` im Physik-Thread) für Dirty Air
-- `ac.INIConfig.carData` zum Lesen von `failures.ini`
+- `ac.accessCarPhysics()`: `wheels[i].inflation` (nur lesen, setzen mit `ac.setTyreInflation`), `waterTemperature`, `engineLifeLeft` (nur lesen, setzen mit `ac.setEngineLifeLeft`), kein Getriebeschaden-Feld, keine Bodenfreiheit (die liegt in `ac.getCar(i).rideHeight`)
+- Flügel-Gain: `ac.setWingGain(wingIndex, cdGain, clGain)`
+- Andere Autos aus dem Physik-Script: `ac.getCar(i)` erlaubt, Daten aus dem Grafik-Thread, mit Tiefpass nutzbar
+- `ac.INIConfig.carData(car.index, 'failures.ini')` funktioniert, Abschnitte über `.sections[name]`, Skin über `car:skin()`
+- Nicht vorhanden: `SteerRatio` als Physikwert, schreibbarer Getriebeschaden

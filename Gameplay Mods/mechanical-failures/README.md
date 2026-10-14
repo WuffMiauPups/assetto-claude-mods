@@ -4,18 +4,20 @@ Assetto Corsa kennt Unfallschäden, aber keine zufälligen Defekte, keinen Versc
 
 ## Technik
 
-CSP Extended Physics, `script.lua` im Datenordner des Autos. Das Script läuft für jede Instanz des Autos, also Spieler und KI. Pro Physikschritt wird gegen eine Rate gewürfelt; tritt ein Defekt ein, wird er über die verifizierte CSP-API ausgelöst:
+CSP Extended Physics. `failures.lua` liegt als Modul im Datenordner des Autos und wird aus `script.lua` aufgerufen; hat das Auto bereits ein eigenes Script (der BMW Sauber 2008 hat eines für Bremsmigration und Differenzial), hängt der Installer nur einen Hook an. Das Script läuft für jede Instanz des Autos, also Spieler und KI. Pro Physikschritt wird gegen eine Rate gewürfelt; tritt ein Defekt ein, wird er über die gegen das lokale lua-sdk (0.3.0-preview649) geprüfte API ausgelöst:
 
-| Defekt | Auslösung | API |
+| Defekt | Auslösung | API (geprüft) |
 |---|---|---|
-| Motorschaden total | Motor stirbt, Rauch über Schadenswert | `engineLifeLeft = 0` |
+| Motorschaden total | Drehmoment sinkt, Aussetzer, dann Motor aus | `ac.overrideEngineTorque` mit `power.lut`, `ac.setEngineLifeLeft(0)` |
 | Leistungsverlust (Zylinder, Zündung) | Drehmoment auf 70 bis 85 Prozent | `ac.overrideEngineTorque` |
-| Turbo | Gas begrenzt, Drehmoment reduziert | `ac.overrideGasInput`, `ac.overrideEngineTorque` |
-| Getriebe | ein Gang fällt aus oder Schaltverzögerung | `requestedGearIndex`, Gearbox damage |
-| Hydraulik, Servo | Lenkübersetzung verschlechtert | `ac.setPhysicsValue(SteerRatio)` (0.3.0-preview366 oder neuer) |
-| Elektrik | Zündaussetzer, kurze Gasunterbrechungen, am Ende Stillstand | `gas = 0` in Intervallen |
-| Bremsen | Bremsmoment sinkt, Balance wandert | `BrakeTorque`, `BrakeFrontBias` (0.3.0-preview398 oder neuer) |
-| Reifenschaden | Druckverlust, Platzer | Tyre inflation (Feldname gegen das lokale `lua-sdk` prüfen) |
+| Turbo | Ladedruck auf 55 Prozent, Saugmotor: Gas begrenzt | `ac.overrideTurboBoost`, sonst `ac.overrideGasInput` |
+| Getriebe | ein Gang fällt aus, nach zwei Minuten nur noch Neutral | `requestedGearIndex`, `ac.setGearsGrinding` |
+| Hydraulik, Servo | Lenkeingabe gedämpft (kein Lenkübersetzungs-Zugriff im SDK) | `carPhysics.steer` |
+| Elektrik | Zündaussetzer, am Ende Motor aus | `gas = 0` in Intervallen, `ac.setEngineLifeLeft(0)` |
+| Bremsen | Bremsmoment sinkt, Balance wandert nach vorn | `ac.overrideBrakesTorque`, `ac.setBrakeBias` |
+| Reifenschaden | schleichender Druckverlust, dann Platzer | `ac.setTyreInflation(rad, 0)` |
+| Aufhängung | ein Dämpfer verliert seine Wirkung | `ac.accessCarDamper` |
+| Kühlung | Wasser 18 Grad pro Minute wärmer, nach drei Minuten Motor aus | `ac.setWaterTemperature` |
 
 Defekte entwickeln sich: Erst ein Warnsignal (Temperatur, kurzer Aussetzer), dann Verschlechterung, dann Ausfall. Das gibt dir die Chance, das Auto zu schonen, wie 1983 oder 2017 real.
 
@@ -65,20 +67,31 @@ Abtriebsverlust im Nachlauf pro Ära, aus FIA-CFD-Werten für 2019 bis 2026 und 
 
 ## Voraussetzungen und Grenzen
 
-- Jedes betroffene Auto braucht einen entpackten Datenordner mit `VERSION=extended-2` in `car.ini`. Content Manager: Auto auswählen, „Unpack data“. `tools/install.py` erledigt das Einfügen von Script und INI für alle Autos einer Serie.
+- Jedes betroffene Auto braucht einen entpackten Datenordner mit `VERSION=extended-N` in `car.ini`. Content Manager: Auto auswählen, „Unpack data“. `tools/install.py` erledigt das Einfügen von Script und INI für alle Autos einer Serie, mit `--uninstall` auch den Rückbau.
 - Nur offline oder auf eigenen Servern; fremde Server mit Prüfsummen lehnen geänderte Autos ab.
-- Die Felder für Reifendruck und das genaue Verhalten von Getriebeschaden sind gegen das lokale `extension/internal/lua-sdk` der installierten CSP-Version zu prüfen.
+- Nicht im SDK vorhanden: Lenkübersetzung als Physikwert und ein schreibbarer Getriebeschaden. Ersatz: gedämpfte Lenkeingabe und erzwungener Leerlauf.
+- `ac.overrideBrakesTorque` schaltet die Originalbremse für den Rest der Session ab; deshalb wird sie erst beim Bremsdefekt gerufen und danach jeden Schritt für alle vier Räder gesetzt.
 
 ## Struktur
 
 ```
 mechanical-failures/
-  script/      script.lua (Entwurf) und failures.ini (Vorlage)
+  script/      failures.lua (Modul), script.lua (Loader für Autos ohne Script), hook.lua (Anhang für Autos mit Script),
+               dirty_air.lua (Modul, noch ohne Kennlinie), failures.ini (Vorlage)
   profiles/    Grundraten pro Ära
   tools/       install.py, failure_stats.py (Quoten aus F1DB), dirty_air_model.py
   research/    Vollständige Liste der Defekte, Dirty-Air-Modell, Ausfallstatistiken der Saisons
 ```
 
+## Test im Spiel
+
+```
+cd tools
+python install.py --ac "E:/SteamLibrary/steamapps/common/assettocorsa" --cars cim_2008_bmw_sauber --profile ../profiles/failures_2008.ini --test ENGINE:20
+```
+
+`--test ART:SEKUNDEN` schreibt einen Abschnitt `[TEST]` in die `failures.ini`, der den Defekt fest nach der angegebenen Zeit auslöst. Arten: ENGINE, POWER_LOSS, TURBO, GEARBOX, HYDRAULICS, ELECTRICS, BRAKES, PUNCTURE, SUSPENSION, COOLING. Ohne `--test` gelten nur die Raten des Profils. Prüfen im Spiel: Nachricht „Defekt: …“ oben, Zeile `[failures]` im CSP-Log (`Documents\Assetto Corsa\logs\custom_shaders_patch.log`), Wert `failures active` in der CSP-Debug-App.
+
 ## Status
 
-Ausfallquoten pro Saison berechnet, Dirty-Air-Kennlinien erzeugt, zwei Script-Entwürfe. Erster Test: BMW Sauber 2008 (`cim_2008_bmw_sauber`) mit CSP 0.3.0-preview649, sobald lua-sdk und Datenordner im Repo liegen.
+Ausfallquoten pro Saison berechnet, Dirty-Air-Kennlinien erzeugt. API gegen lua-sdk 0.3.0-preview649 geprüft, `failures.lua` darauf umgebaut. Installiert im BMW Sauber 2008 (`cim_2008_bmw_sauber`, Datenordner aus `reference/` entpackt, Profil 2008, Testdefekt ENGINE nach 20 s). Erster Lauf im Spiel steht aus. Dirty Air wartet noch auf die Kennlinie als `dirty_air.ini`.

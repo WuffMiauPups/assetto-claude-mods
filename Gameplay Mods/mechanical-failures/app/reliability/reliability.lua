@@ -13,6 +13,7 @@ local S = ac.storage({
   enabled = true, dirtyAir = true, failures = true,
   strength = 0.4, aiStrength = 0.25, aeroShare = 0.5, mode = 0,   -- mode 0 = Grip, 1 = Luftdichte
   failMult = 1.0, seasonAuto = true, season = 2008, log = true, showCars = true,
+  damageMode = 1, damageStrength = 1.0, damageFull = 80, damageSide = 8,   -- Schaden: 0 aus, 1 nur Autos ohne eigene Aero-Schadenswerte, 2 alle
 }, 'reliability')
 
 local function eraForYear(y)
@@ -245,6 +246,21 @@ local function currentSeason(carIdx)
   return S.season
 end
 
+-- Prüft, ob der Modder Aero-Schaden eingetragen hat: AC rechnet CL = CL / (1 + ZONE_x_CL * Aufprall-km/h).
+-- Kunos-Standard ist 0.01 (50 km/h Treffer = ein Drittel weniger Abtrieb an dem Flügel). Alles 0 = nur Optik.
+local function aeroDamageModelled(i)
+  local ok, aero = pcall(ac.INIConfig.carData, i, 'aero.ini')
+  if not ok or not aero then return true end     -- im Zweifel nicht doppelt bestrafen
+  for w = 0, 63 do
+    local sec = 'WING_' .. w
+    if aero:get(sec, 'NAME', '') == '' then break end
+    for _, z in ipairs({ 'ZONE_FRONT_CL', 'ZONE_REAR_CL', 'ZONE_LEFT_CL', 'ZONE_RIGHT_CL' }) do
+      if math.abs(aero:get(sec, z, 0)) > 0 then return true end
+    end
+  end
+  return false
+end
+
 local function initCar(i)
   local season = currentSeason(i)
   local factor, team = teamFactor(i, season)
@@ -252,9 +268,10 @@ local function initCar(i)
     season = season, era = eraForYear(season), front = 0, rear = 0, total = 0, applied = false,
     rng = { v = (sessionId * 7919 + (i + 1) * 104729 + math.floor(os.clock() * 1000)) % 2147483646 + 1 },
     active = {}, done = {}, baseRestrictor = nil, nearest = 1e9, peak = 0, factor = factor, team = team,
+    aeroModelled = aeroDamageModelled(i), dmgFront = 0, dmgRear = 0, dmgRestr = 0,
   }
-  ac.log(string.format('[reliability] car %d %s: Saison %d, Team %s, Ausfall-Faktor %.2f', i, ac.getCarID(i), season,
-    team or 'unbekannt (1.0)', factor))
+  ac.log(string.format('[reliability] car %d %s: Saison %d, Team %s, Ausfall-Faktor %.2f, Aero-Schaden in aero.ini: %s', i, ac.getCarID(i), season,
+    team or 'unbekannt (1.0)', factor, cars[i].aeroModelled and 'ja' or 'nein'))
 end
 
 local function resetAll()
@@ -304,6 +321,16 @@ local function updateDirtyAir(sim, dt)
       end
       local scale = me.isAIControlled and S.aiStrength or S.strength
       if not S.dirtyAir then scale = 0 end
+      -- Karosserieschaden (Zonen 0 vorn, 1 hinten, 2 links, 3 rechts, Werte in km/h Aufprall)
+      local useDmg = S.damageMode == 2 or (S.damageMode == 1 and not c.aeroModelled)
+      c.dmgFront, c.dmgRear, c.dmgRestr = 0, 0, 0
+      if useDmg and me.damage then
+        local full = math.max(10, S.damageFull)
+        c.dmgFront = math.min(0.6, (me.damage[0] or 0) / full * 0.6) * S.damageStrength
+        c.dmgRear = math.min(0.5, (me.damage[1] or 0) / full * 0.5) * S.damageStrength
+        local side = math.max(me.damage[2] or 0, me.damage[3] or 0)
+        c.dmgRestr = math.min(S.damageSide, side / full * S.damageSide) * S.damageStrength   -- Seitenkasten: Kühlung, Leistung
+      end
       local k = math.min(1, 6 * dt)
       c.front = c.front + (bestF * scale - c.front) * k
       c.rear = c.rear + (bestR * scale - c.rear) * k
@@ -311,13 +338,15 @@ local function updateDirtyAir(sim, dt)
       c.nearest = nearest
       if c.front > c.peak then c.peak = c.front end
 
-      if c.front > 0.002 or c.rear > 0.002 then
+      local lossF = 1 - (1 - c.front) * (1 - c.dmgFront)
+      local lossR = 1 - (1 - c.rear) * (1 - c.dmgRear)
+      if lossF > 0.002 or lossR > 0.002 then
         if S.mode == 0 then
           local share = aeroShare(me.speedKmh)
-          physics.setGripDecrease(i, ac.Wheel.Front, c.front * share)
-          physics.setGripDecrease(i, ac.Wheel.Rear, c.rear * share)
+          physics.setGripDecrease(i, ac.Wheel.Front, lossF * share)
+          physics.setGripDecrease(i, ac.Wheel.Rear, lossR * share)
         else
-          physics.setAirDensityMultiplier(i, 1 - c.total)
+          physics.setAirDensityMultiplier(i, 1 - (1 - (1 - c.total) * (1 - math.max(c.dmgFront, c.dmgRear))))
         end
         c.applied = true
       elseif c.applied then
@@ -344,7 +373,7 @@ end
 local function restrictor(i, pct)
   local c = cars[i]
   if not c.baseRestrictor then local car = ac.getCar(i); c.baseRestrictor = car and car.restrictor or 0 end
-  physics.setCarRestrictor(i, math.max(c.baseRestrictor, pct))
+  physics.setCarRestrictor(i, math.max(c.baseRestrictor, pct, c.dmgRestr or 0))
 end
 
 local WHEELS = { ac.Wheel.FrontLeft, ac.Wheel.FrontRight, ac.Wheel.RearLeft, ac.Wheel.RearRight }
@@ -468,6 +497,10 @@ local function updateFailures(sim, dt)
           end
         end
         if c.dead then killEngine(i) end
+        if next(c.active) == nil then                       -- kein Defekt aktiv: Restriktor nur aus Seitenkastenschaden
+          if (c.dmgRestr or 0) > 0.1 then restrictor(i, 0); c.dmgApplied = true
+          elseif c.dmgApplied then restrictor(i, 0); c.dmgApplied = false end
+        end
         for k, f in pairs(c.active) do
           f.t = f.t + dt
           FAIL[k](i, f, dt)
@@ -532,6 +565,16 @@ function script.windowMain(dt)
   if mc then S.mode = m - 1; resetAll() end
   if S.mode == 0 then S.aeroShare = ui.slider('##share', S.aeroShare, 0.1, 0.9, 'Abtriebsanteil an der Radlast bei 200 km/h %.2f') end
 
+  ui.separator(); ui.header('Karosserieschaden')
+  local DM = { 'Aus', 'Nur Autos ohne eigene Aero-Schadenswerte', 'Alle Autos' }
+  local dm, dmc = ui.combo('Schaden', S.damageMode + 1, ui.ComboFlags.None, DM)
+  if dmc then S.damageMode = dm - 1 end
+  if S.damageMode > 0 then
+    S.damageStrength = ui.slider('##ds', S.damageStrength, 0, 2, 'Stärke %.2f')
+    S.damageFull = ui.slider('##df', S.damageFull, 20, 200, 'Voller Verlust bei %.0f km/h Aufprall')
+    S.damageSide = ui.slider('##dside', S.damageSide, 0, 20, 'Seitenkasten: bis %.0f%% Restriktor')
+  end
+
   ui.separator(); ui.header('Ausfälle')
   S.failMult = ui.slider('##fm', S.failMult, 0, 20, 'Rate x %.1f', 2)
   if c0 then
@@ -551,8 +594,8 @@ function script.windowMain(dt)
       if c and car then
         local fails = {}
         for k in pairs(c.active) do fails[#fails + 1] = k end
-        ui.text(string.format('%2d %-18s %3.0f km/h  DA %.2f/%.2f  x%.2f %s', i, tostring(ac.getDriverName(i)):sub(1, 18), car.speedKmh,
-          c.front, c.rear, c.factor, #fails > 0 and table.concat(fails, ',') or ''))
+        ui.text(string.format('%2d %-18s %3.0f km/h  DA %.2f/%.2f  Schaden %.2f/%.2f  x%.2f %s', i, tostring(ac.getDriverName(i)):sub(1, 18),
+          car.speedKmh, c.front, c.rear, c.dmgFront, c.dmgRear, c.factor, #fails > 0 and table.concat(fails, ',') or ''))
       end
     end
   end

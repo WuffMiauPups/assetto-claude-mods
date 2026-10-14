@@ -350,14 +350,46 @@ end
 local WHEELS = { ac.Wheel.FrontLeft, ac.Wheel.FrontRight, ac.Wheel.RearLeft, ac.Wheel.RearRight }
 
 local FAIL = {}
--- Jeder Defekt: apply(i, f, dt), f.t läuft mit. Terminale Defekte setzen das Motorleben auf 0, das Auto rollt aus.
+-- Totalausfall: physics.setCarEngineLife(car, 0) wirkt im Test nicht (Motorleben blieb 1000, Auto fuhr weiter).
+-- Stattdessen Motor abwürgen: Stall an, Drehzahl jedes Frame auf 0, KI zusätzlich ohne Eingaben (parkt am Rand).
+local function killEngine(i)
+  local car = ac.getCar(i)
+  physics.setEngineStallEnabled(i, true)
+  physics.setEngineRPM(i, 0)
+  if car and car.isAIControlled then physics.setAINoInput(i, true, true) end
+end
+
+-- Anteil der Motor-/Getriebeprobleme, die tödlich enden; neuere Autos überleben öfter mit Leistungsverlust
+local function terminalShare(season)
+  if season <= 1993 then return 0.85 elseif season <= 2004 then return 0.75 elseif season <= 2013 then return 0.65 else return 0.5 end
+end
+
+local function draw(i) return lcg(cars[i].rng) end
+
+local function die(i, f, text)
+  f.done, f.terminal = true, true
+  killEngine(i)
+  logEvent(i, text)
+end
+
+-- Jeder Defekt: apply(i, f, dt), f.t läuft mit, f.done markiert das Ende der Entwicklung.
+-- ENGINE: Warnphase (leichter Verlust), Aussetzer, dann Würfel: Totalausfall oder dauerhafter Leistungsverlust.
 FAIL.ENGINE = function(i, f, dt)
+  if not f.outcome then
+    f.outcome = draw(i) < terminalShare(cars[i].season) and 'dead' or 'weak'
+    f.pct = 25 + math.floor(draw(i) * 20)                                 -- 25..44 % Restriktor, falls er überlebt
+  end
   if f.t < 20 then restrictor(i, 12)
-  elseif f.t < 45 then restrictor(i, f.t % 2 < 0.4 and 60 or 20)
-  elseif not f.done then physics.setCarEngineLife(i, 0); f.done = true; f.terminal = true; logEvent(i, 'Motorschaden') end
+  elseif f.t < 45 then restrictor(i, f.t % 2 < 0.4 and 60 or 20)        -- Aussetzer
+  elseif f.outcome == 'dead' then
+    if not f.done then die(i, f, 'Motorschaden') end
+  else
+    restrictor(i, f.pct)
+    if not f.done then f.done = true; logEvent(i, string.format('Motorproblem, fährt mit %d%% Restriktor weiter', f.pct)) end
+  end
 end
 FAIL.POWER_LOSS = function(i, f, dt)
-  if not f.pct then f.pct = 15 + math.floor(lcg(cars[i].rng) * 15) end
+  if not f.pct then f.pct = 15 + math.floor(draw(i) * 15) end
   restrictor(i, f.t < 10 and 5 or f.pct)
   if f.t >= 10 and not f.done then f.done = true; logEvent(i, string.format('Leistungsverlust, Restriktor %d%%', f.pct)) end
 end
@@ -367,27 +399,48 @@ FAIL.TURBO = function(i, f, dt)
   restrictor(i, f.t < 15 and 10 or 30)
   if f.t >= 15 and not f.done then f.done = true; logEvent(i, 'Turbo defekt, Ladedruck weg') end
 end
+-- GEARBOX: Schaltprobleme in Stufen. Erst gelegentliche Fehlschaltungen (kurze Leistungslöcher), dann häufiger,
+-- dann Würfel: Getriebe fest (Totalausfall) oder dauerhaft hakelig mit Leistungslöchern.
+-- Echtes Verlieren einzelner Gänge geht nur im Auto-Script (requestedGearIndex), nicht über die App-API.
+FAIL.GEARBOX = function(i, f, dt)
+  if not f.outcome then
+    f.outcome = draw(i) < terminalShare(cars[i].season) and 'dead' or 'rough'
+    f.nextCut, f.cutUntil = 5 + draw(i) * 10, 0
+  end
+  if f.outcome == 'dead' and f.t > 90 then
+    if not f.done then die(i, f, 'Getriebeschaden') end
+    return
+  end
+  -- Fehlschaltung: 0,4 s kein Vortrieb, Abstand anfangs 5..15 s, später 3..8 s
+  if f.t >= f.nextCut then
+    f.cutUntil = f.t + 0.4
+    local gap = f.t < 45 and (5 + draw(i) * 10) or (3 + draw(i) * 5)
+    f.nextCut = f.t + gap
+    if not f.warned then f.warned = true; logEvent(i, 'Getriebe hakt, Fehlschaltungen') end
+  end
+  restrictor(i, f.t < f.cutUntil and 95 or 0)
+  if f.outcome == 'rough' and f.t > 90 and not f.done then f.done = true; logEvent(i, 'Getriebe bleibt hakelig') end
+end
 local function terminal(name, warnSec, warnPct)
   return function(i, f, dt)
     if f.t < warnSec then
       if warnPct > 0 then restrictor(i, warnPct) end
     elseif not f.done then
-      physics.setCarEngineLife(i, 0); f.done = true; f.terminal = true; logEvent(i, name)
+      die(i, f, name)
     end
   end
 end
-FAIL.GEARBOX = terminal('Getriebeschaden', 15, 0)
 FAIL.HYDRAULICS = terminal('Hydraulikausfall', 25, 8)
 FAIL.ELECTRICS = terminal('Elektrikdefekt', 30, 15)
 FAIL.COOLING = terminal('Kühlung, Motor überhitzt', 60, 10)
 FAIL.PUNCTURE = function(i, f, dt)
   if not f.done then
-    physics.blowTyres(i, WHEELS[1 + math.floor(lcg(cars[i].rng) * 4)]); f.done = true; logEvent(i, 'Reifenschaden')
+    physics.blowTyres(i, WHEELS[1 + math.floor(draw(i) * 4)]); f.done = true; logEvent(i, 'Reifenschaden')
   end
 end
 FAIL.SUSPENSION = function(i, f, dt)
   if not f.done then
-    physics.setSuspensionDamage(i, WHEELS[1 + math.floor(lcg(cars[i].rng) * 4)], 70); f.done = true; logEvent(i, 'Aufhängung beschädigt')
+    physics.setSuspensionDamage(i, WHEELS[1 + math.floor(draw(i) * 4)], 70); f.done = true; logEvent(i, 'Aufhängung beschädigt')
   end
 end
 -- FAIL.BRAKES: keine API in der App, nur über das Auto-Script
@@ -414,6 +467,7 @@ local function updateFailures(sim, dt)
             end
           end
         end
+        if c.dead then killEngine(i) end
         for k, f in pairs(c.active) do
           f.t = f.t + dt
           FAIL[k](i, f, dt)

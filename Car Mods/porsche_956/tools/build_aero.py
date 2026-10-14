@@ -34,11 +34,13 @@ SUMMARY = HERE / "out" / "summary.json"
 RHO = 1.225
 G = 9.81
 
-# Im Spiel gemessen (Ride Height Monitor, 2026-10-13, Basis-Fahrwerk, ROD_LENGTH 0.016/0.015):
-# statische Bodenfreiheit vorn 0.060 m, hinten 0.0625 m. Die Geometrie-Schaetzung aus
-# PICKUP-Hoehe und BASEY lag 21/28 mm darueber, deshalb gelten die Messwerte.
-MEASURED_STATIC_RH = (0.060, 0.0625)
-MEASURED_ROD = (0.016, 0.015)
+# Im Spiel gemessen (Ride Height Monitor, Messung 6, 2026-10-14) mit den 1983er Reifenmassen
+# (Radius 0,325 beide, BASEY 0,010/-0,030): bei ROD_LENGTH -0,034/0,0425 statisch 0,042/0,074 m.
+# Die Annahme "Stangenlaenge wirkt 1:1" lag mit den neuen Reifen 12 mm daneben, deshalb gilt
+# der Messwert mit den aktuellen Reifen als Referenz. Bei Aenderung von TYRES neu messen.
+MEASURED_STATIC_RH = (0.042, 0.074)
+MEASURED_ROD = (-0.034, 0.0425)
+MEASURED_WITH_TYRE_RADIUS = (0.325, 0.325)
 
 # Fahrwerksabstimmung (Zielwerte aus venturi_model.py Config): Design-Hoehe 55/85 mm,
 # Radraten 140/190 N/mm. ROD_LENGTH wirkt etwa 1:1 auf die Bodenfreiheit (im Spiel pruefen).
@@ -158,8 +160,11 @@ def static_geometry() -> dict:
     geo_f = cg_f + pick_f + rod_f
     geo_r = cg_r + pick_r + rod_r
     tf, tr = SUSPENSION["rh_design"]
-    d_rf = TYRES["radius"][0] - rf          # Radiusaenderung durch neue Reifen
+    d_rf = TYRES["radius"][0] - rf          # Radiusaenderung gegenueber Basis-Mod (fuer BASEY)
     d_rr = TYRES["radius"][1] - rr
+    # Radiusaenderung gegenueber der Messung (fuer ROD_LENGTH); 0, solange TYRES unveraendert
+    m_rf = TYRES["radius"][0] - MEASURED_WITH_TYRE_RADIUS[0]
+    m_rr = TYRES["radius"][1] - MEASURED_WITH_TYRE_RADIUS[1]
     return {
         "cg_height": cg_h,
         "rh_front": tf,
@@ -167,8 +172,8 @@ def static_geometry() -> dict:
         "rh_front_geometry_estimate": geo_f,
         "rh_rear_geometry_estimate": geo_r,
         # neue Stangenlaengen: gemessene Hoehe + Delta zur Zielhoehe, minus Reifenradius-Zuwachs
-        "rod_front": MEASURED_ROD[0] + (tf - MEASURED_STATIC_RH[0]) - d_rf,
-        "rod_rear": MEASURED_ROD[1] + (tr - MEASURED_STATIC_RH[1]) - d_rr,
+        "rod_front": MEASURED_ROD[0] + (tf - MEASURED_STATIC_RH[0]) - m_rf,
+        "rod_rear": MEASURED_ROD[1] + (tr - MEASURED_STATIC_RH[1]) - m_rr,
         # BASEY so, dass Schwerpunkt je Achse auf gleicher Hoehe bleibt (CoG = Radius - BASEY)
         "basey_front": bf + d_rf,
         "basey_rear": br + d_rr,

@@ -54,6 +54,10 @@ Topspeed 290 km/h im Fünften bei knapp 8000/min (Begrenzer 8560, Getriebe erlau
 
 Topspeed 300 km/h mit vollem Anlauf (Drehzahl passt, Begrenzer nicht erreicht). Bei 300 km/h: 38 mm vorn, 55 mm hinten, 1999 kg Abtrieb, Balance aus Radlasten 38 Prozent (plus Widerstandsmoment, also reine Aero-Balance über 40). Das Heck liegt bei Topspeed 25 mm über dem Abriss, das Auto bleibt laut Fahrer stabil. Turbo setzt ab etwa 4000/min spürbar ein. Fahrer-Übersetzung 14/37, 18/34, 22/29, 26/26, 28/23 ist jetzt Standard in `drivetrain.ini`, Achse 8/31 angenommen. Fahreindruck Reifen: untersteuernd bei niedrigem Tempo, leicht untersteuernd bei hohem, im Grenzbereich schiebt das Heck, Hinterräder blockieren bei zu frühem Herunterschalten, kaum Gripabbau. Entspricht dem historischen Urteil über den 956.
 
+## Messung 6 (2026-10-14, Reifen 1983, `tools/out/messungen/06_reifen1983_zu_tief_20261014.csv`)
+
+Statisch nur 42/74 mm statt 55/85: Die Stangenlängen-Kompensation für den größeren Vorderreifen war 12 mm zu schwach, die Stangenlänge wirkt nicht 1:1. Folge: Heck bei 240 km/h schon auf 44 mm, mehr Abtrieb und Widerstand als geplant, Topspeed 280. Aero bei gleichen Höhen unverändert konsistent mit Messung 5. Konsequenz: `MEASURED_STATIC_RH` in `build_aero.py` auf diese Messung gesetzt, Stangenlängen jetzt -0,021/0,0535.
+
 ## Bekannte Baustellen
 
 - **Widerstand**: Cd·A 1,04 (520 kg bei 322 km/h). Mit Quali-Motor 300 km/h gemessen bei nicht ganz vollem Anlauf, rechnerisch 310 bis 320 möglich. Bleibt so.

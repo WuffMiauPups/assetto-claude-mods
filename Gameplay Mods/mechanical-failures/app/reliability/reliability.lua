@@ -13,7 +13,9 @@ local S = ac.storage({
   enabled = true, dirtyAir = true, failures = true,
   strength = 0.4, aiStrength = 0.25, aeroShare = 0.5, mode = 0,   -- mode 0 = Grip, 1 = Luftdichte
   failMult = 1.0, seasonAuto = true, season = 2008, log = true, showCars = true,
-  damageMode = 1, damageStrength = 1.0, damageFull = 80, damageSide = 8,   -- Schaden: 0 aus, 1 nur Autos ohne eigene Aero-Schadenswerte, 2 alle
+  damageMode = 1, damageStrength = 1.0, damageFull = 80, damageSide = 8, damageFloor = 0.35,
+  -- damageMode: 0 aus, 1 Flügel nur bei Autos ohne eigene Aero-Schadenswerte, 2 Flügel bei allen.
+  -- Seitenkasten/Unterboden wirkt in Modus 1 und 2 immer, weil AC das bei keinem Auto modelliert.
 }, 'reliability')
 
 local function eraForYear(y)
@@ -261,6 +263,12 @@ local function aeroDamageModelled(i)
   return false
 end
 
+-- Unterboden-Ära-Faktor: wie stark ein Seitentreffer (Seitenkasten, Bodenkante, Diffusor) den Abtrieb hinten kostet.
+-- Bodeneffekt ab 2022 am empfindlichsten; 2009 bis 2021 komplexe Böden und Diffusoren; davor flacher Boden.
+local function floorEraFactor(season)
+  if season >= 2022 then return 1.0 elseif season >= 2009 then return 0.7 elseif season >= 1995 then return 0.5 else return 0.4 end
+end
+
 local function initCar(i)
   local season = currentSeason(i)
   local factor, team = teamFactor(i, season)
@@ -322,14 +330,20 @@ local function updateDirtyAir(sim, dt)
       local scale = me.isAIControlled and S.aiStrength or S.strength
       if not S.dirtyAir then scale = 0 end
       -- Karosserieschaden (Zonen 0 vorn, 1 hinten, 2 links, 3 rechts, Werte in km/h Aufprall)
-      local useDmg = S.damageMode == 2 or (S.damageMode == 1 and not c.aeroModelled)
+      local useWings = S.damageMode == 2 or (S.damageMode == 1 and not c.aeroModelled)
       c.dmgFront, c.dmgRear, c.dmgRestr = 0, 0, 0
-      if useDmg and me.damage then
+      if S.damageMode > 0 and me.damage then
         local full = math.max(10, S.damageFull)
-        c.dmgFront = math.min(0.6, (me.damage[0] or 0) / full * 0.6) * S.damageStrength
-        c.dmgRear = math.min(0.5, (me.damage[1] or 0) / full * 0.5) * S.damageStrength
-        local side = math.max(me.damage[2] or 0, me.damage[3] or 0)
-        c.dmgRestr = math.min(S.damageSide, side / full * S.damageSide) * S.damageStrength   -- Seitenkasten: Kühlung, Leistung
+        if useWings then                                     -- Flügel vorn/hinten (nur wenn die aero.ini es nicht selbst tut)
+          c.dmgFront = math.min(0.6, (me.damage[0] or 0) / full * 0.6) * S.damageStrength
+          c.dmgRear = math.min(0.5, (me.damage[1] or 0) / full * 0.5) * S.damageStrength
+        end
+        -- Seitenkasten und Unterboden (AC modelliert das nirgends): Abtrieb hinten weg, etwas vorn, Kühlung -> Restriktor
+        local side = math.min(1, math.max(me.damage[2] or 0, me.damage[3] or 0) / full)
+        local floor = side * S.damageFloor * floorEraFactor(c.season) * S.damageStrength
+        c.dmgRear = 1 - (1 - c.dmgRear) * (1 - floor)
+        c.dmgFront = 1 - (1 - c.dmgFront) * (1 - floor * 0.4)
+        c.dmgRestr = side * S.damageSide * S.damageStrength
       end
       local k = math.min(1, 6 * dt)
       c.front = c.front + (bestF * scale - c.front) * k
@@ -573,6 +587,8 @@ function script.windowMain(dt)
     S.damageStrength = ui.slider('##ds', S.damageStrength, 0, 2, 'Stärke %.2f')
     S.damageFull = ui.slider('##df', S.damageFull, 20, 200, 'Voller Verlust bei %.0f km/h Aufprall')
     S.damageSide = ui.slider('##dside', S.damageSide, 0, 20, 'Seitenkasten: bis %.0f%% Restriktor')
+    S.damageFloor = ui.slider('##dfloor', S.damageFloor, 0, 0.8, 'Unterboden: bis %.2f Abtrieb hinten weg (x Ära-Faktor)')
+    if c0 then ui.text(string.format('Ära-Faktor Unterboden %d: %.1f', c0.season, floorEraFactor(c0.season))) end
   end
 
   ui.separator(); ui.header('Ausfälle')

@@ -38,7 +38,7 @@ def toks(s):
     return set(re.findall(r'[0-9a-z]+', str(s).lower()))
 
 
-def match_in(cons, flat, tk):
+def match_in(cons, flat, tk, allow_parts=False):
     best = None
     for name, v in cons.items():
         cand = norm(name)
@@ -60,22 +60,62 @@ def match_in(cons, flat, tk):
         a = ALIASES.get(t)
         if a and a in cons:
             return a, cons[a]
-    for name, v in cons.items():
-        for part in name.split('-'):
-            if len(part) >= 5 and norm(part) in flat and (best is None or len(part) > best[0]):
-                best = (len(part), name, v)
+    if allow_parts:
+        for name, v in cons.items():
+            for part in name.split('-'):
+                if len(part) >= 5 and norm(part) in flat and (best is None or len(part) > best[0]):
+                    best = (len(part), name, v)
     return (best[1], best[2]) if best else (None, None)
 
 
-def team_factor(rates, raw, skin, season):
+DRIVERS = json.load(open(HERE.parent / 'research' / 'data' / 'drivers_by_season.json', encoding='utf-8'))['seasons']
+
+
+def driver_team(skin, season, allow_numbers=True):
+    tbl = DRIVERS.get(str(season))
+    if not tbl:
+        return None, None
+    flat = norm(skin)
+    best = None
+    for key, team in tbl.items():
+        if not key.startswith('nr') and len(key) >= 4 and key in flat and (best is None or len(key) > best[0]):
+            best = (len(key), team, key)
+    # Startnummern bewusst nicht: "Nr. 1" in einem Skin heißt bei Mods zu oft nichts
+    return (best[1], best[2]) if best else (None, None)
+
+
+def clamp(v):
+    return max(0.3, min(2.5, v))
+
+
+def is_f1(raw, tags):
+    flat, tk = norm(raw + ' ' + tags), toks(raw + ' ' + tags)
+    return 'f1' in tk or 'gp' in tk or 'formula' in flat or 'grandprix' in flat
+
+
+def is_real_f1(raw, tags):
+    """Echte F1 (Startnummern bedeuten etwas), nicht fiktive Formel-Autos wie RSS, VRC, MAD."""
+    flat, tk = norm(raw + ' ' + tags), toks(raw + ' ' + tags)
+    return 'f1' in tk or 'gp' in tk or 'formulaone' in flat or 'grandprix' in flat
+
+
+def team_factor(rates, raw, skin, season, f1=True, real_f1=True):
+    if not f1:
+        return 1.0, None
     for s in (season, season - 1, season + 1, season - 2, season + 2):
         cons = {k.split(':')[1]: v for k, v in rates.items() if k.startswith(f'{s}:')}
         if not cons:
             continue
-        for st in (raw, raw + ' ' + skin):
-            name, v = match_in(cons, norm(st), toks(st))
-            if v:
-                return max(0.3, min(2.5, v['factor'])), (name if s == season else f'{name} ({s})')
+        tag = '' if s == season else f' ({s})'
+        name, v = match_in(cons, norm(raw), toks(raw), True)
+        if v:
+            return clamp(v['factor']), name + tag
+        team, drv = driver_team(skin, s)
+        if team and team in cons:
+            return clamp(cons[team]['factor']), f'{team} via {drv}{tag}'
+        name, v = match_in(cons, norm(raw + ' ' + skin), toks(raw + ' ' + skin), False)   # im Skin nur volle Teamnamen
+        if v:
+            return clamp(v['factor']), f'{name} via Skin{tag}'
     return 1.0, None
 
 
@@ -106,11 +146,11 @@ def main():
             if 1988 <= int(m) <= 2026:
                 year = int(m)
                 break
-        isf1 = re.search(r'f1|formula|grand prix', (raw + ' ' + tags).lower()) and 1988 <= year <= 2026
-        if not isf1 and not a.all:
+        f1 = is_f1(raw, tags)
+        if not (f1 and 1988 <= year <= 2026) and not a.all:
             continue
         skins = sorted(os.listdir(cars / c / 'skins')) if (cars / c / 'skins').is_dir() else ['']
-        f, name = team_factor(rates, raw, skins[0] if skins else '', year)
+        f, name = team_factor(rates, raw, skins[0] if skins else '', year, f1, is_real_f1(raw, tags))
         if name:
             ok += 1
         else:

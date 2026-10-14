@@ -120,7 +120,7 @@ local function constructorsOf(r, season)
 end
 
 -- Stufen: 1 voller Name oder ohne f1/racing-Suffix, 2 Alias-Token, 3 einzelner Namensteil ab 5 Zeichen
-local function matchIn(cons, flat, toks)
+local function matchIn(cons, flat, toks, allowParts)
   local best, bestLen, bestName = nil, 0, nil
   for name, v in pairs(cons) do
     local cand = normalize(name)
@@ -141,30 +141,66 @@ local function matchIn(cons, flat, toks)
     local a = ALIASES[tok]
     if a and cons[a] then return cons[a], a end
   end
-  for name, v in pairs(cons) do
-    for part in name:gmatch('[^%-]+') do
-      if #part >= 5 and flat:find(normalize(part), 1, true) and #part > bestLen then best, bestLen, bestName = v, #part, name end
+  if allowParts then
+    for name, v in pairs(cons) do
+      for part in name:gmatch('[^%-]+') do
+        if #part >= 5 and flat:find(normalize(part), 1, true) and #part > bestLen then best, bestLen, bestName = v, #part, name end
+      end
     end
   end
   return best, bestName
 end
 
--- Sucht den Konstrukteur: erst Ordnername+Brand+Anzeigename, dann zusätzlich Skin; erst die Saison, dann Nachbarsaisons.
+-- Fahrer -> Team pro Saison (research/data/drivers_by_season.json), für Skins mit Fahrernamen oder Startnummern
+local DRIVERS = nil
+local function loadDrivers()
+  if DRIVERS == nil then
+    local ok, parsed = pcall(JSON.parse, io.load(ROOT .. '/data/drivers_by_season.json') or '')
+    DRIVERS = (ok and type(parsed) == 'table' and parsed.seasons) or {}
+  end
+  return DRIVERS
+end
+
+-- Skin-Name gegen Fahrernamen (Nachname, Kürzel, voller Name) und Startnummer der Saison prüfen
+local function driverTeam(skin, season, allowNumbers)
+  local tbl = loadDrivers()[tostring(season)]
+  if not tbl then return nil, nil end
+  local flat = normalize(skin)
+  local bestName, bestLen, bestTeam = nil, 0, nil
+  for key, team in pairs(tbl) do
+    if key:sub(1, 2) ~= 'nr' and #key >= 4 and #key > bestLen and flat:find(key, 1, true) then
+      bestName, bestLen, bestTeam = key, #key, team
+    end
+  end
+  -- Startnummern bewusst nicht: "Nr. 1" in einem Skin heißt bei Mods zu oft nichts
+  return bestTeam, bestName
+end
+
+-- Sucht den Konstrukteur: erst Ordnername+Brand+Anzeigename, dann Skin (Fahrername, Teamname, Startnummer);
+-- erst die Saison, dann Nachbarsaisons.
 local function teamFactor(i, season)
   local r = loadRates()
   if not r.constructors then return 1.0, nil end
   local raw = ac.getCarID(i) .. ' ' .. tostring(ac.getCarBrand(i)) .. ' ' .. tostring(ac.getCarName(i, false))
-  local rawSkin = raw .. ' ' .. tostring(ac.getCarSkinID(i))
+  local skin = tostring(ac.getCarSkinID(i))
+  local rawSkin = raw .. ' ' .. skin
+  -- Nur Formel-1-Autos bekommen Skin-, Fahrer- und Nummern-Zuordnung; sonst trifft "Nr. 1" jeden GT3
+  local okTags, tagList = pcall(ac.getCarTags, i)
+  local tagStr = (okTags and type(tagList) == 'table') and table.concat(tagList, ' ') or ''
+  local flatAll, toksAll = normalize(raw .. ' ' .. tagStr), tokens(raw .. ' ' .. tagStr)
+  local isF1 = toksAll.f1 or toksAll.gp or flatAll:find('formula', 1, true) or flatAll:find('grandprix', 1, true)
+  if not isF1 then return 1.0, nil end
+  local function clamp(v) return math.max(0.3, math.min(2.5, v)) end   -- kleine Stichproben begrenzen
   for _, s in ipairs({ season, season - 1, season + 1, season - 2, season + 2 }) do
     local cons = constructorsOf(r, s)
     if next(cons) then
-      for _, str in ipairs({ raw, rawSkin }) do
-        local v, name = matchIn(cons, normalize(str), tokens(str))
-        if v and v.factor then
-          -- Begrenzen: kleine Stichproben (eine Saison, zwei Autos) ergeben sonst 0 oder sehr hohe Faktoren
-          return math.max(0.3, math.min(2.5, v.factor)), (s ~= season) and (name .. ' (' .. s .. ')') or name
-        end
-      end
+      local tag = (s ~= season) and (' (' .. s .. ')') or ''
+      local v, name = matchIn(cons, normalize(raw), tokens(raw), true)
+      if v and v.factor then return clamp(v.factor), name .. tag end
+      local team, drv = driverTeam(skin, s)
+      if team and cons[team] and cons[team].factor then return clamp(cons[team].factor), team .. ' via ' .. drv .. tag end
+      v, name = matchIn(cons, normalize(rawSkin), tokens(rawSkin), false)   -- im Skin nur volle Teamnamen
+      if v and v.factor then return clamp(v.factor), name .. ' via Skin' .. tag end
     end
   end
   return 1.0, nil

@@ -27,6 +27,7 @@ def main():
         if not f.name.endswith("_lateral.lut"):
             shutil.copy(f, dst / "data" / f.name); n_lut += 1
     shutil.copy(MOD / "research" / "data" / "failure_rates.json", dst / "data" / "failure_rates.json")
+    shutil.copy(MOD / "research" / "data" / "drivers_by_season.json", dst / "data" / "drivers_by_season.json")
     for f in (MOD / "profiles").glob("failures_*.ini"):
         shutil.copy(f, dst / "profiles" / f.name); n_prof += 1
     print(f"installiert nach {dst}: {n_lut} Kennlinien, {n_prof} Profile")

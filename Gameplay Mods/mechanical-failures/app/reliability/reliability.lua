@@ -216,9 +216,12 @@ local cars = {}
 local sessionId = 0
 local logTimer = 0
 
+-- Park-Miller (a=16807, m=2^31-1): Produkt bleibt unter 2^46 und damit in double exakt.
+-- Der vorherige LCG mit a=1103515245 verlor Bits und lieferte nie Werte unter ~1e-6, also nie einen Defekt.
 local function lcg(state)
-  state.v = (state.v * 1103515245 + 12345) % 2147483648
-  return state.v / 2147483648
+  state.v = (state.v * 16807) % 2147483647
+  if state.v == 0 then state.v = 1 end
+  return state.v / 2147483647
 end
 
 -- Jahr zuerst aus Ordnername oder Anzeigename (Mods tragen in ui_car.json oft ihr Erscheinungsjahr), sonst ui_car.json
@@ -248,7 +251,7 @@ local function initCar(i)
   local factor, team = teamFactor(i, season)
   cars[i] = {
     season = season, era = eraForYear(season), front = 0, rear = 0, total = 0, applied = false,
-    rng = { v = (sessionId * 7919 + (i + 1) * 104729 + math.floor(os.clock() * 1000)) % 2147483648 },
+    rng = { v = (sessionId * 7919 + (i + 1) * 104729 + math.floor(os.clock() * 1000)) % 2147483646 + 1 },
     active = {}, done = {}, baseRestrictor = nil, nearest = 1e9, peak = 0, factor = factor, team = team,
   }
   ac.log(string.format('[reliability] car %d %s: Saison %d, Team %s, Ausfall-Faktor %.2f', i, ac.getCarID(i), season,

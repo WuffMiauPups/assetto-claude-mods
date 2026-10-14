@@ -217,7 +217,6 @@ local sessionId = 0
 local logTimer = 0
 
 -- Park-Miller (a=16807, m=2^31-1): Produkt bleibt unter 2^46 und damit in double exakt.
--- Der vorherige LCG mit a=1103515245 verlor Bits und lieferte nie Werte unter ~1e-6, also nie einen Defekt.
 local function lcg(state)
   state.v = (state.v * 16807) % 2147483647
   if state.v == 0 then state.v = 1 end
@@ -351,7 +350,7 @@ local FAIL = {}
 FAIL.ENGINE = function(i, f, dt)
   if f.t < 20 then restrictor(i, 12)
   elseif f.t < 45 then restrictor(i, f.t % 2 < 0.4 and 60 or 20)
-  elseif not f.done then physics.setCarEngineLife(i, 0); f.done = true; logEvent(i, 'Motorschaden') end
+  elseif not f.done then physics.setCarEngineLife(i, 0); f.done = true; f.terminal = true; logEvent(i, 'Motorschaden') end
 end
 FAIL.POWER_LOSS = function(i, f, dt)
   if not f.pct then f.pct = 15 + math.floor(lcg(cars[i].rng) * 15) end
@@ -369,7 +368,7 @@ local function terminal(name, warnSec, warnPct)
     if f.t < warnSec then
       if warnPct > 0 then restrictor(i, warnPct) end
     elseif not f.done then
-      physics.setCarEngineLife(i, 0); f.done = true; logEvent(i, name)
+      physics.setCarEngineLife(i, 0); f.done = true; f.terminal = true; logEvent(i, name)
     end
   end
 end
@@ -389,23 +388,33 @@ FAIL.SUSPENSION = function(i, f, dt)
 end
 -- FAIL.BRAKES: keine API in der App, nur über das Auto-Script
 
+local diag = { expected = 0, eligible = 0, noPhysics = 0, slow = 0 }   -- für die Logzeile alle 10 s
+
 local function updateFailures(sim, dt)
   local sessionMult = sim.raceSessionType == ac.SessionType.Race and 1.0 or 0.5
+  diag.eligible, diag.noPhysics, diag.slow = 0, 0, 0
   for i = 0, sim.carsCount - 1 do
     local car, c = ac.getCar(i), cars[i]
-    if car and c and car.physicsAvailable and car.speedKmh > 30 then
-      local p = getProfile(c.season)
-      if S.failures then
-        for _, k in ipairs(FAIL_KEYS) do
-          if FAIL[k] and not c.active[k] and not c.done[k] then
-            local perSec = (p.rates[k] or 0) / 100 * c.factor * S.failMult * sessionMult / (p.raceLengthMin * 60)
-            if lcg(c.rng) < perSec * dt then c.active[k] = { t = 0 }; c.done[k] = true end
+    if car and c then
+      if not car.physicsAvailable then diag.noPhysics = diag.noPhysics + 1
+      elseif car.speedKmh <= 30 then diag.slow = diag.slow + 1
+      else
+        diag.eligible = diag.eligible + 1
+        local p = getProfile(c.season)
+        if S.failures and not c.dead then
+          for _, k in ipairs(FAIL_KEYS) do
+            if FAIL[k] and not c.active[k] and not c.done[k] then
+              local perSec = (p.rates[k] or 0) / 100 * c.factor * S.failMult * sessionMult / (p.raceLengthMin * 60)
+              diag.expected = diag.expected + perSec * dt
+              if lcg(c.rng) < perSec * dt then c.active[k] = { t = 0 }; c.done[k] = true end
+            end
           end
         end
-      end
-      for k, f in pairs(c.active) do
-        f.t = f.t + dt
-        FAIL[k](i, f, dt)
+        for k, f in pairs(c.active) do
+          f.t = f.t + dt
+          FAIL[k](i, f, dt)
+          if f.done and f.terminal then c.dead = true end
+        end
       end
     end
   end
@@ -425,8 +434,9 @@ function script.update(dt)
       logTimer = 0
       local c = cars[0]
       if c then
-        ac.log(string.format('[reliability] car 0: Aera %s, Vordermann %.0f m, Verlust vorn %.2f hinten %.2f, Spitze %.2f',
-          c.era, c.nearest < 1e8 and c.nearest or -1, c.front, c.rear, c.peak))
+        ac.log(string.format('[reliability] car 0: Aera %s, Vordermann %.0f m, Verlust vorn %.2f hinten %.2f, Spitze %.2f | Ausfaelle: aktiv %s, Rate x%.0f, Autos im Wuerfel %d, ohne Physik %d, langsam %d, erwartet bisher %.2f',
+          c.era, c.nearest < 1e8 and c.nearest or -1, c.front, c.rear, c.peak,
+          tostring(S.failures), S.failMult, diag.eligible, diag.noPhysics, diag.slow, diag.expected))
         c.peak = 0
       end
     end

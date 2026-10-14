@@ -190,6 +190,11 @@ local function teamFactor(i, season)
   local flatAll, toksAll = normalize(raw .. ' ' .. tagStr), tokens(raw .. ' ' .. tagStr)
   local isF1 = toksAll.f1 or toksAll.gp or flatAll:find('formula', 1, true) or flatAll:find('grandprix', 1, true)
   if not isF1 then return 1.0, nil end
+  -- Ausnahmen: keine echten F1-Autos der Saison, bekommen Faktor 1.0 (Teilstring im normalisierten Ordnernamen)
+  local idFlat = normalize(ac.getCarID(i))
+  for _, ex in ipairs({ 'formularenault', 'redbullx1', 'williamsfw14b' }) do
+    if idFlat:find(ex, 1, true) then return 1.0, nil end
+  end
   local function clamp(v) return math.max(0.3, math.min(2.5, v)) end   -- kleine Stichproben begrenzen
   for _, s in ipairs({ season, season - 1, season + 1, season - 2, season + 2 }) do
     local cons = constructorsOf(r, s)

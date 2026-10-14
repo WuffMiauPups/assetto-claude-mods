@@ -99,8 +99,11 @@ def is_real_f1(raw, tags):
     return 'f1' in tk or 'gp' in tk or 'formulaone' in flat or 'grandprix' in flat
 
 
+EXCLUDE = ('formularenault', 'redbullx1', 'williamsfw14b')   # keine echten F1-Autos der Saison, Faktor 1.0
+
+
 def team_factor(rates, raw, skin, season, f1=True, real_f1=True):
-    if not f1:
+    if not f1 or any(ex in norm(raw.split()[0]) for ex in EXCLUDE):
         return 1.0, None
     for s in (season, season - 1, season + 1, season - 2, season + 2):
         cons = {k.split(':')[1]: v for k, v in rates.items() if k.startswith(f'{s}:')}

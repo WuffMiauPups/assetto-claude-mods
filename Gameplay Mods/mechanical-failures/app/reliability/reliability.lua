@@ -92,33 +92,81 @@ local function tokens(s)
   return t
 end
 
--- Sucht den Konstrukteur der Saison, dessen Name im Ordnernamen, Brand oder Anzeigenamen des Autos vorkommt.
+-- Aliase: Token im Ordnernamen, Brand, Anzeigenamen oder Skin -> Konstrukteur in F1DB
+local ALIASES = {
+  larrousse = 'lola', amr = 'aston-martin', amr23 = 'aston-martin', amr24 = 'aston-martin', sf71h = 'ferrari', sf90 = 'ferrari',
+  f310 = 'ferrari', f310b = 'ferrari', f300 = 'ferrari', f399 = 'ferrari', f2000 = 'ferrari', f2001 = 'ferrari', f2002 = 'ferrari',
+  f2003ga = 'ferrari', f2004 = 'ferrari', w11 = 'mercedes', w12 = 'mercedes', w13 = 'mercedes', w14 = 'mercedes',
+  rb16 = 'red-bull', rb18 = 'red-bull', rb19 = 'red-bull', rb20 = 'red-bull', mp4 = 'mclaren', mcl = 'mclaren',
+  scuderia = 'ferrari', stake = 'kick-sauber', bwt = 'racing-point', visa = 'rb', vcarb = 'rb',
+  -- Chassis-Codes 1997 bis 2000 (Grand-Prix-Mods)
+  a18 = 'arrows', a19 = 'arrows', a20 = 'arrows', a21 = 'arrows', a22 = 'arrows', a23 = 'arrows',
+  b197 = 'benetton', b198 = 'benetton', b199 = 'benetton', b200 = 'benetton', b201 = 'benetton',
+  c16 = 'sauber', c17 = 'sauber', c18 = 'sauber', c19 = 'sauber', c20 = 'sauber', c21 = 'sauber', c22 = 'sauber', c23 = 'sauber',
+  fw19 = 'williams', fw20 = 'williams', fw21 = 'williams', fw22 = 'williams', fw23 = 'williams', fw24 = 'williams', fw25 = 'williams', fw26 = 'williams',
+  js45 = 'ligier', m197 = 'minardi', m198 = 'minardi', m01 = 'minardi', m02 = 'minardi', ps01 = 'minardi', ps03 = 'minardi',
+  sf01 = 'stewart', sf2 = 'stewart', sf3 = 'stewart', t97 = 'tyrrell', ap01 = 'prost', ap02 = 'prost', ap03 = 'prost', ap04 = 'prost',
+  ej10 = 'jordan', ej11 = 'jordan', ej12 = 'jordan', r1 = 'jaguar', r2 = 'jaguar', r3 = 'jaguar', r4 = 'jaguar', r5 = 'jaguar',
+  sf15t = 'ferrari', sf16h = 'ferrari', sf70h = 'ferrari', sf1000 = 'ferrari', sf21 = 'ferrari', sf23 = 'ferrari', sf24 = 'ferrari', sf25 = 'ferrari',
+}
+
+local function constructorsOf(r, season)
+  local out = {}
+  local prefix = tostring(season) .. ':'
+  for key, v in pairs(r.constructors) do
+    if key:sub(1, #prefix) == prefix then out[key:sub(#prefix + 1)] = v end
+  end
+  return out
+end
+
+-- Stufen: 1 voller Name oder ohne f1/racing-Suffix, 2 Alias-Token, 3 einzelner Namensteil ab 5 Zeichen
+local function matchIn(cons, flat, toks)
+  local best, bestLen, bestName = nil, 0, nil
+  for name, v in pairs(cons) do
+    local cand = normalize(name)
+    local hit = false
+    if #cand >= 4 then
+      hit = flat:find(cand, 1, true) ~= nil
+      if not hit then
+        local short = cand:gsub('f1$', ''):gsub('racing$', '')
+        if #short >= 4 and short ~= cand and flat:find(short, 1, true) then hit = true; cand = short end
+      end
+    else
+      hit = toks[cand] == true
+    end
+    if hit and #cand > bestLen then best, bestLen, bestName = v, #cand, name end
+  end
+  if best then return best, bestName end
+  for tok in pairs(toks) do
+    local a = ALIASES[tok]
+    if a and cons[a] then return cons[a], a end
+  end
+  for name, v in pairs(cons) do
+    for part in name:gmatch('[^%-]+') do
+      if #part >= 5 and flat:find(normalize(part), 1, true) and #part > bestLen then best, bestLen, bestName = v, #part, name end
+    end
+  end
+  return best, bestName
+end
+
+-- Sucht den Konstrukteur: erst Ordnername+Brand+Anzeigename, dann zusätzlich Skin; erst die Saison, dann Nachbarsaisons.
 local function teamFactor(i, season)
   local r = loadRates()
   if not r.constructors then return 1.0, nil end
   local raw = ac.getCarID(i) .. ' ' .. tostring(ac.getCarBrand(i)) .. ' ' .. tostring(ac.getCarName(i, false))
-  local flat, toks = normalize(raw), tokens(raw)
-  local best, bestLen, bestKey = nil, 0, nil
-  local prefix = tostring(season) .. ':'
-  for key, v in pairs(r.constructors) do
-    if key:sub(1, #prefix) == prefix then
-      local name = key:sub(#prefix + 1)
-      local cand = normalize(name)
-      local hit = false
-      if #cand >= 4 then
-        hit = flat:find(cand, 1, true) ~= nil
-        if not hit then                                    -- 'lotus-f1' -> 'lotus', 'lotus-racing' -> 'lotus'
-          local short = cand:gsub('f1$', ''):gsub('racing$', '')
-          if #short >= 4 and short ~= cand then hit = flat:find(short, 1, true) ~= nil; cand = short end
+  local rawSkin = raw .. ' ' .. tostring(ac.getCarSkinID(i))
+  for _, s in ipairs({ season, season - 1, season + 1, season - 2, season + 2 }) do
+    local cons = constructorsOf(r, s)
+    if next(cons) then
+      for _, str in ipairs({ raw, rawSkin }) do
+        local v, name = matchIn(cons, normalize(str), tokens(str))
+        if v and v.factor then
+          -- Begrenzen: kleine Stichproben (eine Saison, zwei Autos) ergeben sonst 0 oder sehr hohe Faktoren
+          return math.max(0.3, math.min(2.5, v.factor)), (s ~= season) and (name .. ' (' .. s .. ')') or name
         end
-      else
-        hit = toks[cand] == true                           -- kurze Namen (rb, bar, hrt, ags) nur als ganzes Wort
       end
-      if hit and #cand > bestLen then best, bestLen, bestKey = v, #cand, name end
     end
   end
-  -- Begrenzen: kleine Stichproben (eine Saison, zwei Autos) ergeben sonst 0 oder sehr hohe Faktoren
-  if best and best.factor then return math.max(0.3, math.min(2.5, best.factor)), bestKey end
   return 1.0, nil
 end
 
@@ -132,10 +180,21 @@ local function lcg(state)
   return state.v / 2147483648
 end
 
+-- Jahr zuerst aus Ordnername oder Anzeigename (Mods tragen in ui_car.json oft ihr Erscheinungsjahr), sonst ui_car.json
+local function yearFromName(carIdx)
+  local raw = ac.getCarID(carIdx) .. ' ' .. tostring(ac.getCarName(carIdx, false))
+  for y in raw:gmatch('%f[%d](%d%d%d%d)%f[%D]') do
+    local n = tonumber(y)
+    if n >= 1988 and n <= 2026 then return n end
+  end
+  return nil
+end
+
 local function currentSeason(carIdx)
   if S.seasonAuto then
     local c = ac.getCar(carIdx)
-    local y = c and c.year or 0
+    local y = yearFromName(carIdx) or (c and c.year or 0)
+    if y < 1950 then y = yearFromName(0) or 0 end
     if y < 1950 then local p = ac.getCar(0); y = p and p.year or 2008 end
     if y < 1950 then y = 2008 end
     return y

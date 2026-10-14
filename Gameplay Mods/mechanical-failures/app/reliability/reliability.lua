@@ -74,6 +74,54 @@ local function getProfile(season)
   return profileCache[season]
 end
 
+-- ---------- Team-Faktor aus F1DB (research/data/failure_rates.json, Konstrukteur pro Saison) ----------
+local RATES = nil
+local function loadRates()
+  if RATES == nil then
+    local ok, parsed = pcall(JSON.parse, io.load(ROOT .. '/data/failure_rates.json') or '')
+    RATES = (ok and type(parsed) == 'table') and parsed or {}
+    if not RATES.constructors then ac.log('[reliability] failure_rates.json fehlt oder unlesbar, Team-Faktor 1.0') end
+  end
+  return RATES
+end
+
+local function normalize(s) return tostring(s or ''):lower():gsub('[^%w]', '') end
+local function tokens(s)
+  local t = {}
+  for w in tostring(s or ''):lower():gmatch('%w+') do t[w] = true end
+  return t
+end
+
+-- Sucht den Konstrukteur der Saison, dessen Name im Ordnernamen, Brand oder Anzeigenamen des Autos vorkommt.
+local function teamFactor(i, season)
+  local r = loadRates()
+  if not r.constructors then return 1.0, nil end
+  local raw = ac.getCarID(i) .. ' ' .. tostring(ac.getCarBrand(i)) .. ' ' .. tostring(ac.getCarName(i, false))
+  local flat, toks = normalize(raw), tokens(raw)
+  local best, bestLen, bestKey = nil, 0, nil
+  local prefix = tostring(season) .. ':'
+  for key, v in pairs(r.constructors) do
+    if key:sub(1, #prefix) == prefix then
+      local name = key:sub(#prefix + 1)
+      local cand = normalize(name)
+      local hit = false
+      if #cand >= 4 then
+        hit = flat:find(cand, 1, true) ~= nil
+        if not hit then                                    -- 'lotus-f1' -> 'lotus', 'lotus-racing' -> 'lotus'
+          local short = cand:gsub('f1$', ''):gsub('racing$', '')
+          if #short >= 4 and short ~= cand then hit = flat:find(short, 1, true) ~= nil; cand = short end
+        end
+      else
+        hit = toks[cand] == true                           -- kurze Namen (rb, bar, hrt, ags) nur als ganzes Wort
+      end
+      if hit and #cand > bestLen then best, bestLen, bestKey = v, #cand, name end
+    end
+  end
+  -- Begrenzen: kleine Stichproben (eine Saison, zwei Autos) ergeben sonst 0 oder sehr hohe Faktoren
+  if best and best.factor then return math.max(0.3, math.min(2.5, best.factor)), bestKey end
+  return 1.0, nil
+end
+
 -- ---------- Zustand pro Auto ----------
 local cars = {}
 local sessionId = 0
@@ -97,11 +145,14 @@ end
 
 local function initCar(i)
   local season = currentSeason(i)
+  local factor, team = teamFactor(i, season)
   cars[i] = {
     season = season, era = eraForYear(season), front = 0, rear = 0, total = 0, applied = false,
     rng = { v = (sessionId * 7919 + (i + 1) * 104729 + math.floor(os.clock() * 1000)) % 2147483648 },
-    active = {}, done = {}, baseRestrictor = nil, nearest = 1e9, peak = 0,
+    active = {}, done = {}, baseRestrictor = nil, nearest = 1e9, peak = 0, factor = factor, team = team,
   }
+  ac.log(string.format('[reliability] car %d %s: Saison %d, Team %s, Ausfall-Faktor %.2f', i, ac.getCarID(i), season,
+    team or 'unbekannt (1.0)', factor))
 end
 
 local function resetAll()
@@ -244,7 +295,7 @@ local function updateFailures(sim, dt)
       if S.failures then
         for _, k in ipairs(FAIL_KEYS) do
           if FAIL[k] and not c.active[k] and not c.done[k] then
-            local perSec = (p.rates[k] or 0) / 100 * S.failMult * sessionMult / (p.raceLengthMin * 60)
+            local perSec = (p.rates[k] or 0) / 100 * c.factor * S.failMult * sessionMult / (p.raceLengthMin * 60)
             if lcg(c.rng) < perSec * dt then c.active[k] = { t = 0 }; c.done[k] = true end
           end
         end
@@ -310,7 +361,8 @@ function script.windowMain(dt)
     local p = getProfile(c0.season)
     local sum = 0
     for _, k in ipairs(FAIL_KEYS) do if FAIL[k] then sum = sum + (p.rates[k] or 0) end end
-    ui.text(string.format('Profil %d: %.1f %% pro Auto und Rennen (x %.1f)', p.season, sum, S.failMult))
+    ui.text(string.format('Profil %d: %.1f %% pro Auto und Rennen (x %.1f), dein Team %s Faktor %.2f', p.season, sum, S.failMult,
+      c0.team or 'unbekannt', c0.factor))
   end
 
   ui.separator()
@@ -322,8 +374,8 @@ function script.windowMain(dt)
       if c and car then
         local fails = {}
         for k in pairs(c.active) do fails[#fails + 1] = k end
-        ui.text(string.format('%2d %-18s %3.0f km/h  DA %.2f/%.2f  %s', i, tostring(ac.getDriverName(i)):sub(1, 18), car.speedKmh,
-          c.front, c.rear, #fails > 0 and table.concat(fails, ',') or ''))
+        ui.text(string.format('%2d %-18s %3.0f km/h  DA %.2f/%.2f  x%.2f %s', i, tostring(ac.getDriverName(i)):sub(1, 18), car.speedKmh,
+          c.front, c.rear, c.factor, #fails > 0 and table.concat(fails, ',') or ''))
       end
     end
   end

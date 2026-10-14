@@ -5,7 +5,7 @@ Sammlung eigener Assetto-Corsa-Mods. Sprache mit dem Nutzer: Deutsch. Oberste Or
 ## Umgebung des Nutzers
 
 - Assetto Corsa: `E:\SteamLibrary\steamapps\common\assettocorsa`
-- CSP: 0.3.0-preview649 (Alternative 0.2.11 installiert). Lua-SDK lokal unter `extension\internal\lua-sdk`
+- CSP: 0.3.0-preview140 laut Log (Alternative 0.2.11 installiert). Lua-SDK lokal unter `extension\internal\lua-sdk`
 - Content Manager wird für alles genutzt, die CM-Saisons und die AC-Karriere nicht (gelten als unbrauchbar)
 - Fahrzeuge: `content\cars\`, zum Beispiel `vac_groupc_956` (Porsche 956), `cim_2008_bmw_sauber` (Testauto für Ausfall-Script)
 - F1-Jahre vorhanden: 88, 93, 94, 96 bis 04, 06 bis 14, 17 bis 21, 23 bis 25. Am liebsten 06 bis 14
@@ -17,8 +17,8 @@ Sammlung eigener Assetto-Corsa-Mods. Sprache mit dem Nutzer: Deutsch. Oberste Or
 |---|---|---|
 | `AI Mods/01-fast-lane-recorder` | Python-Paket, Lua-Aufnahme-App, Build-Skripte, Test mit synthetischer Strecke grün | Original `content\tracks\monza\ai\fast_lane.ai` parsen, App im Spiel testen, Runden aufnehmen, erste echte Linie bauen |
 | `AI Mods/02` bis `06` | nur README | nach 01 |
-| `Car Mods/porsche_956` | Aero-Map kalibriert, Motor 935/76 (Quali 1,3 bar 672 PS), 895 kg, Ring-Übersetzung; 5 Messungen in `tools/out/messungen/`, 300 km/h, 2000 kg Abtrieb, Heck 55 mm. Werkzeuge: `venturi_model.py` → `build_aero.py` → `install.py`, Mess-App `app/rideheight_monitor` | Reifen Dunlop 1983 (vorn 13 Zoll), Schwerpunkt und Trägheit, Setup-Übersetzung des Fahrers als Standard übernehmen; danach Skin Rothmans |
-| `Gameplay Mods/mechanical-failures` | API gegen lua-sdk geprüft, `failures.lua` als Modul, Installer mit Hook für Autos mit eigenem Script, im `cim_2008_bmw_sauber` installiert (Testdefekt ENGINE nach 20 s) | Im Spiel fahren und Log prüfen, danach `[TEST]` entfernen; Dirty-Air-Kennlinie als `dirty_air.ini` erzeugen |
+| `Car Mods/porsche_956` | Recherche, Venturi-Modell (`tools/venturi_model.py`), CSP-Aero-Map-Kennfelder erzeugt | `data`-Ordner von `vac_groupc_956` als Basis übernehmen, `aero.ini` mit `[MAP_0]`, Fahrwerk und Motor abstimmen |
+| `Gameplay Mods/mechanical-failures` | App `app/reliability` (physics-API, alle Autos, keine data.acd-Änderung) gebaut und installiert; Auto-Script-Weg im BMW bestätigt, BMW wieder original | App im Spiel testen, Stärke und Abtriebsanteil abstimmen, Ausfälle mit Rate x20 prüfen |
 | `Career Mods/career-system` | Excel-Importer für die 2017er Datei | zurückgestellt, bis die restlichen Excels vorliegen |
 
 ## Konventionen
@@ -29,8 +29,10 @@ Sammlung eigener Assetto-Corsa-Mods. Sprache mit dem Nutzer: Deutsch. Oberste Or
 - Commits auf `main`, deutsche Commit-Nachrichten
 - Keine Lizenz-Dateien von Kunos oder fremden Mods einchecken (siehe `.gitignore`)
 
-## Geklärt gegen das lokale lua-sdk (ac_car_cphys, 0.3.0-preview649)
+## Geklärt gegen das lokale lua-sdk (ac_car_cphys)
 
+- Laufende CSP-Version laut Log: 0.3.0-preview140 (Build 3676), nicht preview649. Vor API-Fragen das Log prüfen
+- AC lädt `data.acd`; ein entpackter `data`-Ordner daneben wird ignoriert. Auto-Scripts brauchen deshalb den ACD-Packer aus `Tools/acd`, die App `app/reliability` braucht gar keine Auto-Änderung
 - `ac.accessCarPhysics()`: `wheels[i].inflation` (nur lesen, setzen mit `ac.setTyreInflation`), `waterTemperature`, `engineLifeLeft` (nur lesen, setzen mit `ac.setEngineLifeLeft`), kein Getriebeschaden-Feld, keine Bodenfreiheit (die liegt in `ac.getCar(i).rideHeight`)
 - Flügel-Gain: `ac.setWingGain(wingIndex, cdGain, clGain)`
 - Andere Autos aus dem Physik-Script: `ac.getCar(i)` erlaubt, Daten aus dem Grafik-Thread, mit Tiefpass nutzbar

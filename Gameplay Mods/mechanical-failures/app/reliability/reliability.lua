@@ -334,7 +334,11 @@ local function logEvent(i, text)
   local car = ac.getCar(i)
   local name = ac.getDriverName(i) or ('car ' .. i)
   ac.log(string.format('[reliability] %s (car %d, %s): %s', name, i, ac.getCarID(i), text))
-  if car and not car.isAIControlled then ac.setMessage('Defekt', text, nil, 8) end
+  if car and not car.isAIControlled then
+    ac.setMessage('Defekt', text, nil, 8)
+  else
+    ac.setMessage('Defekt ' .. name, text, nil, 6)
+  end
 end
 
 local function restrictor(i, pct)
@@ -413,7 +417,13 @@ local function updateFailures(sim, dt)
         for k, f in pairs(c.active) do
           f.t = f.t + dt
           FAIL[k](i, f, dt)
-          if f.done and f.terminal then c.dead = true end
+          if f.done and f.terminal and not c.dead then c.dead = true; c.deadAt = f.t end
+          -- Nachweis im Log: 15 s nach dem Totalausfall das Tempo des Autos
+          if c.dead and c.deadAt and not c.deadChecked and f.t > c.deadAt + 15 then
+            c.deadChecked = true
+            ac.log(string.format('[reliability] %s (car %d): 15 s nach Totalausfall %.0f km/h, Motorleben %.0f',
+              tostring(ac.getDriverName(i)), i, car.speedKmh, car.engineLifeLeft or -1))
+          end
         end
       end
     end

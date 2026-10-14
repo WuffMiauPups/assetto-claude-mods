@@ -377,7 +377,7 @@ end
 FAIL.ENGINE = function(i, f, dt)
   if not f.outcome then
     f.outcome = draw(i) < terminalShare(cars[i].season) and 'dead' or 'weak'
-    f.pct = 25 + math.floor(draw(i) * 20)                                 -- 25..44 % Restriktor, falls er überlebt
+    f.pct = 10 + math.floor(draw(i) * 26)                                 -- 10..35 % Restriktor, falls er überlebt
   end
   if f.t < 20 then restrictor(i, 12)
   elseif f.t < 45 then restrictor(i, f.t % 2 < 0.4 and 60 or 20)        -- Aussetzer

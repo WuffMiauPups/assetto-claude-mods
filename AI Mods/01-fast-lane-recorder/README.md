@@ -52,5 +52,7 @@ Dokumentiert in `fastlane/aifile.py`. Version 7, Header mit Punktzahl, dann pro 
 
 ## Status
 
-- Paket, Skripte und App geschrieben, Pipeline mit synthetischer Strecke getestet (`python tests/test_roundtrip.py`).
-- Offen: Test mit echter Monza-Datei, Test der App im Spiel, Abgleich der CSP-API-Funktionen in `recorder.lua` mit der installierten CSP-Version.
+- Format gegen Kunos-Dateien verifiziert (Roundtrip byteidentisch), App im Spiel getestet, CSP 0.3.0-preview649.
+- Erste Monza-Aufnahme: cim_2013_ferrari, drei komplette Runden, beste 83,9 s (`../data/monza/laps/`). Kunos-Linie im Profil etwa 93,5 s.
+- Zwei gebaute Linien in `dist/monza/`: `fast_lane.ai` (berechnetes Profil) und `fast_lane_recorded.ai` (gefahrene Geschwindigkeit).
+- Offen: Test gegen die KI im Spiel, Rundenzeiten mit Kunos-Linie und beiden Varianten vergleichen, dann Margin und lat-g kalibrieren.

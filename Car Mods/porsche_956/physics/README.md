@@ -70,6 +70,10 @@ Grip wieder gut, Einlenken mit den 13-Zoll-Vorderrädern besser als vorher. Reif
 
 Topspeed wieder 290 km/h bei 8000/min im Fünften (Fahrer-Übersetzung, Begrenzer bei 311). Bei 290: 36/52 mm, 2025 kg Abtrieb, Balance 38 Prozent. Gegenüber Messung 5 (39/58 mm, 1842 kg) 180 kg mehr Abtrieb durch den Versatz, dadurch mehr induzierter Widerstand, der die 40 PS mehr auffrisst. Konsequenz: Versatz aus (`RH_OFFSET_ACTIVE=False`), `ub_drag_induced` 0,025 auf 0,018. Erwartung rund 305 km/h.
 
+## Messung 10 (2026-10-17, 710 PS, kein Versatz, induzierter Widerstand 0,018, `tools/out/messungen/10_710ps_ohne_offset_20261017.csv`)
+
+310 km/h am Begrenzer der Fahrer-Übersetzung. 270: 44/61 mm, 1588 kg. 300: 36/52 mm, 2097 kg. 310: 32/44 mm, 2451 kg, Balance 38 bis 40 Prozent. Zwischen 300 und 310 steigt der Abtrieb um 350 kg, das Heck steht 14 mm über dem Abriss, Fahrer: etwas nervöser. Das ist das Abstimmungsziel aus dem Modell. Reifen, Motor, Übersetzung, Aero damit abgeschlossen.
+
 ## Bekannte Baustellen
 
 - **Widerstand**: Cd·A 1,04 (520 kg bei 322 km/h). Mit Quali-Motor 300 km/h gemessen bei nicht ganz vollem Anlauf, rechnerisch 310 bis 320 möglich. Bleibt so.

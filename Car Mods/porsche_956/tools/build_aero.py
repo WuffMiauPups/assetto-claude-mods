@@ -41,6 +41,7 @@ G = 9.81
 MEASURED_STATIC_RH = (0.042, 0.074)
 MEASURED_ROD = (-0.034, 0.0425)
 MEASURED_WITH_TYRE_RADIUS = (0.325, 0.325)
+MEASURED_ROD_BASE = (0.011, 0.0375)     # Stangenlaengen der Messungen 2 bis 5 (Federweg-Referenz)
 
 # Fahrwerksabstimmung (Zielwerte aus venturi_model.py Config): Design-Hoehe 55/85 mm,
 # Radraten 140/190 N/mm. ROD_LENGTH wirkt etwa 1:1 auf die Bodenfreiheit (im Spiel pruefen).
@@ -177,6 +178,8 @@ def static_geometry() -> dict:
         # BASEY so, dass Schwerpunkt je Achse auf gleicher Hoehe bleibt (CoG = Radius - BASEY)
         "basey_front": bf + d_rf,
         "basey_rear": br + d_rr,
+        "tyre_dr_front": d_rf,
+        "tyre_dr_rear": d_rr,
     }
 
 
@@ -229,6 +232,8 @@ def compute(summary: dict, geo: dict) -> dict:
         "rod_rear": geo["rod_rear"],
         "basey_front": geo["basey_front"],
         "basey_rear": geo["basey_rear"],
+        "tyre_dr_front": geo["tyre_dr_front"],
+        "tyre_dr_rear": geo["tyre_dr_rear"],
         "wheel_rate_front": SUSPENSION["wheel_rate"][0],
         "wheel_rate_rear": SUSPENSION["wheel_rate"][1],
         "cg_height": cg_h,
@@ -372,6 +377,19 @@ def tune_suspension(res: dict) -> None:
     sus = set_key(sus, "REAR", "SPRING_RATE", str(res["wheel_rate_rear"]))
     sus = set_key(sus, "FRONT", "BASEY", f"{res['basey_front']:.4f}")
     sus = set_key(sus, "REAR", "BASEY", f"{res['basey_rear']:.4f}")
+
+    ref = (REF / "suspensions.ini").read_text()
+    for sec, d_r, rod_ref in (("FRONT", res["tyre_dr_front"], MEASURED_ROD_BASE[0]),
+                              ("REAR", res["tyre_dr_rear"], MEASURED_ROD_BASE[1])):
+        # Querlenkerpunkte bleiben unveraendert: ob sie in AC relativ zum Schwerpunkt oder zur
+        # Radmitte liegen, ist nicht belegt. Eine Verschiebung um d_r waere Spekulation.
+        # Anschlaege: Einfederweg in AC = BUMPSTOP_UP + ROD_LENGTH. Den Federweg beibehalten, den die
+        # gut funktionierenden Messungen 2 bis 5 hatten (Basis-Anschlag plus damalige Stangenlaenge).
+        up_ref = float(ini_value(ref, sec, "BUMPSTOP_UP"))
+        packer_ref = float(ini_value(ref, sec, "PACKER_RANGE"))
+        rod_new = res["rod_front"] if sec == "FRONT" else res["rod_rear"]
+        sus = set_key(sus, sec, "BUMPSTOP_UP", f"{up_ref + rod_ref - rod_new:.4f}")
+        sus = set_key(sus, sec, "PACKER_RANGE", f"{packer_ref + rod_ref - rod_new:.4f}")
     sus_p.write_text(sus)
 
     tyr_p = OUT / "tyres.ini"

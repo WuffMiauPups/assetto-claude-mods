@@ -58,6 +58,10 @@ Topspeed 300 km/h mit vollem Anlauf (Drehzahl passt, Begrenzer nicht erreicht). 
 
 Statisch nur 42/74 mm statt 55/85: Die Stangenlängen-Kompensation für den größeren Vorderreifen war 12 mm zu schwach, die Stangenlänge wirkt nicht 1:1. Folge: Heck bei 240 km/h schon auf 44 mm, mehr Abtrieb und Widerstand als geplant, Topspeed 280. Aero bei gleichen Höhen unverändert konsistent mit Messung 5. Konsequenz: `MEASURED_STATIC_RH` in `build_aero.py` auf diese Messung gesetzt, Stangenlängen jetzt -0,021/0,0535.
 
+## Fahrtest 7 (2026-10-17, Stangenlängen -0,021/0,0535): deutlich weniger Grip, fährt sich fremd
+
+Ursache gefunden: In AC ist der Einfederweg `BUMPSTOP_UP + ROD_LENGTH`. Mit der negativen Stangenlänge vorn blieben nur 29 mm (Messung 6: 16 mm) bis zum harten Anschlag, das Auto lag vorn ständig auf dem Puffer. `build_aero.py` setzt `BUMPSTOP_UP` und `PACKER_RANGE` jetzt so, dass der Federweg dem der Messungen 2 bis 5 entspricht (vorn 61 mm, hinten 97 mm). Offen bleibt, warum die Stangenlänge mit den neuen Reifen nicht 1:1 wirkt; dazu statische Messung nach dieser Änderung abwarten.
+
 ## Bekannte Baustellen
 
 - **Widerstand**: Cd·A 1,04 (520 kg bei 322 km/h). Mit Quali-Motor 300 km/h gemessen bei nicht ganz vollem Anlauf, rechnerisch 310 bis 320 möglich. Bleibt so.

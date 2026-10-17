@@ -41,7 +41,11 @@ G = 9.81
 MEASURED_STATIC_RH = (0.042, 0.074)
 MEASURED_ROD = (0.000, 0.016)
 MEASURED_WITH_TYRE_RADIUS = (0.325, 0.325)
-MEASURED_ROD_BASE = (0.011, 0.0375)     # Stangenlaengen der Messungen 2 bis 5 (Federweg-Referenz)
+MEASURED_ROD_BASE = (0.011, 0.0375)
+# Stand-Messung 2026-10-17 mit dem Setup des Fahrers (Height 30/30 im Spiel): 0,063/0,085 m.
+# Das Setup bleibt, deshalb bekommt die Aero-Map einen Eingangsversatz, damit sie die
+# Design-Hoehe 55/85 sieht. Physisch steht das Auto vorn 8 mm hoeher als im Modell (Schaetzfehler klein).
+STATIC_RH_WITH_DRIVER_SETUP = (0.063, 0.085)     # Stangenlaengen der Messungen 2 bis 5 (Federweg-Referenz)
 
 # Fahrwerksabstimmung (Zielwerte aus venturi_model.py Config): Design-Hoehe 55/85 mm,
 # Radraten 140/190 N/mm. ROD_LENGTH wirkt etwa 1:1 auf die Bodenfreiheit (im Spiel pruefen).
@@ -340,8 +344,8 @@ MAP_CD_RH=aero/underbody_cd_rh.2Dlut
 MAP_BALANCE_RH=aero/underbody_balance_rh.2Dlut
 MAP_YAW_CL=aero/underbody_yaw_cl.lut
 MAP_YAW_BALANCE=aero/underbody_yaw_balance.lut
-FRONT_RH_OFFSET=0.000
-REAR_RH_OFFSET=0.000
+FRONT_RH_OFFSET={rh_off_f:.3f}
+REAR_RH_OFFSET={rh_off_r:.3f}
 CL_MULT=1.00
 CD_MULT=1.00
 BALANCE_OFFSET=0.00
@@ -471,6 +475,8 @@ def write_data(res: dict) -> None:
         total_cda=res["total_cda_static"], bal=res["front_balance_static"],
         body_cd_gain=res["body_cd_gain"], front_cl_gain=res["front_cl_gain"],
         rear_cl_gain=res["rear_cl_gain"],
+        rh_off_f=SUSPENSION["rh_design"][0] - STATIC_RH_WITH_DRIVER_SETUP[0],
+        rh_off_r=SUSPENSION["rh_design"][1] - STATIC_RH_WITH_DRIVER_SETUP[1],
     ))
     (HERE / "out" / "build_aero.json").write_text(json.dumps(res, indent=2))
 

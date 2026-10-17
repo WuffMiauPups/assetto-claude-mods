@@ -17,12 +17,12 @@ Das erzeugt genau das Fahrgefühl, das Derek Bell beschrieb: Das Auto auf der St
 
 | Baustein | Technik | Status |
 |---|---|---|
-| Physik-Daten | `physics/data`, erzeugt von `tools/build_aero.py` aus dem VAC-956; `aero.ini` und `car.ini` neu, Rest noch Basis-Mod | erste Fassung, im Spiel installiert als `porsche_956_venturi` |
-| Venturi-Modell | CSP Aero Map in `aero.ini`: 2D-Kennfelder für Abtrieb, Widerstand und Balance über Bodenfreiheit vorn und hinten, dazu Yaw-LUTs. Lua nur für Abriss-Hysterese, falls nötig | eingebaut als `[MAP_0]`, Spieltest offen |
-| Abstimmung | `tools/venturi_model.py` (Kennfelder), `tools/build_aero.py` (data-Ordner), `tools/install.py` (ins Spiel) | läuft, unkalibriert |
-| 3D-Modell | bestehender 956-Mod als Basis, nur Physik und Skin werden ersetzt | offen |
-| Skin | Rothmans Nr. 2 (oder Nr. 7 bei Brun) als Bellof-Variante | offen |
-| Sound | aus bestehendem Mod übernehmen | offen |
+| Physik-Daten | `physics/data`, erzeugt von `tools/build_aero.py` aus dem VAC-956: Aero, Fahrwerk, Reifenmaße 1983, Motor 935/76, Übersetzung Ring | fertig, 10 Messungen in `tools/out/messungen/` |
+| Venturi-Modell | CSP Aero Map in `aero.ini`: 2D-Kennfelder für Abtrieb, Widerstand und Balance über Bodenfreiheit vorn und hinten, dazu Yaw-LUTs | fertig und kalibriert: 310 km/h, 2450 kg, Heck 44 mm bei Topspeed. Lua-Hysterese nicht nötig |
+| Abstimmung | `tools/venturi_model.py` (Kennfelder), `tools/build_aero.py` (data-Ordner), `tools/install.py` (ins Spiel), Mess-App `app/rideheight_monitor` | fertig |
+| 3D-Modell | VAC-956 als Basis, Kopie unter `content/cars/porsche_956_venturi` | fertig |
+| Skin | Rothmans Nr. 2 Bellof, Ring 1983; bis dahin VAC-Skins | offen, einziger Restpunkt |
+| Sound | VAC-Sound, auf neuen Ordnernamen umgeschrieben | fertig, Fahrerentscheid |
 
 ## Quellen für die Daten
 
@@ -45,11 +45,8 @@ porsche_956/
   dist/        fertiges Auto zum Kopieren nach content/cars/
 ```
 
-## Stand und nächste Schritte
+## Stand
 
-Basis ist `vac_groupc_956` (entpackte Daten in `reference/`), CSP 0.3.0-preview649. Das Auto liegt im Spiel als eigener Ordner `porsche_956_venturi`, das Original bleibt unberührt.
+Fahrbar und kalibriert (Stand 2026-10-17). Basis `vac_groupc_956`, im Spiel als `porsche_956_venturi`. Bauen und installieren aus `tools/` mit `py -3.11 venturi_model.py`, `py -3.11 build_aero.py`, `py -3.11 install.py`. Messprotokoll und Entscheidungen in `physics/README.md`. Fahrerentscheid: Nervosität bei Topspeed bleibt (historisch), Reifenverschleiß und Sound bleiben vom VAC.
 
-1. Spieltest auf der Nordschleife: lädt das Auto, wie verhält sich die Bodenfreiheit über Geschwindigkeit, wo liegt der Abriss. Ablauf in `physics/README.md`.
-2. Kalibrierung von Abtrieb, Widerstand und Federraten in `tools/venturi_model.py`.
-3. Masse, Motor, Getriebe, Reifen auf 1983 bringen.
-4. Offen: Variante (Rothmans Werks-956 1983 oder 1984, oder Brun 1985) für den Skin.
+Offen: Skin Rothmans Nr. 2 Bellof Ring 1983.

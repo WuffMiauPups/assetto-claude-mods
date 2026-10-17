@@ -466,7 +466,7 @@ def write_data(res: dict) -> None:
 
     car = (OUT / "car.ini").read_text()
     car = re.sub(r"^VERSION\s*=\s*2\b[^\n]*", "VERSION=extended-2 ; CSP Extended Physics (Aero Map)", car, count=1, flags=re.M)
-    car = re.sub(r"^SCREEN_NAME\s*=.*$", "SCREEN_NAME=Porsche 956 Venturi (WIP)", car, flags=re.M)
+    car = re.sub(r"^SCREEN_NAME\s*=.*$", "SCREEN_NAME=Porsche 956 Venturi (Bellof, Ring 1983)", car, flags=re.M)
     car = re.sub(r"^SHORT_NAME\s*=.*$", "SHORT_NAME=956 Venturi", car, flags=re.M)
     (OUT / "car.ini").write_text(car)
     tune_suspension(res)

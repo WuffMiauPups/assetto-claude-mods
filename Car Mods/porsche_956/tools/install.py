@@ -61,6 +61,26 @@ def create_car(cars: Path) -> Path:
     return dst
 
 
+def update_ui(car: Path) -> None:
+    """Name und Kenndaten im Content Manager auf den Stand der Physik bringen."""
+    ui = car / "ui" / "ui_car.json"
+    if not ui.exists():
+        return
+    meta = json.loads(ui.read_text(encoding="utf-8"))
+    meta["name"] = "Porsche 956 Venturi (Bellof, Ring 1983)"
+    meta["specs"] = {
+        "bhp": "710 bhp (Quali 1,3 bar)",
+        "torque": "635 Nm",
+        "weight": "895 kg",
+        "topspeed": "310 km/h (Ring)",
+        "acceleration": "--s",
+        "pwratio": "1.26 kg/hp",
+    }
+    meta["year"] = 1983
+    ui.write_text(json.dumps(meta, indent=2, ensure_ascii=False), encoding="utf-8")
+    print("ui_car.json aktualisiert")
+
+
 def sync_data(car: Path) -> None:
     dst = car / "data"
     if dst.exists():
@@ -95,8 +115,9 @@ def main() -> None:
     if not car.is_dir():
         car = create_car(cars)
     sync_data(car)
+    update_ui(car)
     install_app(args.ac)
-    print("Fertig. Im Content Manager: Auto 'Porsche 956 Venturi (WIP)', CSP Extended Physics aktiv lassen.")
+    print("Fertig. Im Content Manager: Auto 'Porsche 956 Venturi (Bellof, Ring 1983)', CSP Extended Physics aktiv lassen.")
 
 
 if __name__ == "__main__":

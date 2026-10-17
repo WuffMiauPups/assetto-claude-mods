@@ -54,12 +54,14 @@ STATIC_RH_WITH_DRIVER_SETUP = (0.063, 0.085)     # Stangenlaengen der Messungen 
 # 1,2 bar Rennen (92 %), 1,1 bar Le Mans (85 %). AC: Moment = power.lut * (1 + Summe Ladedruck).
 ENGINE = {
     "boost_per_turbo": 0.65,                 # zwei Turbos, zusammen 1,3 bar bei 100 %
-    "default_adjustment": 0.92,              # Rennstufe 1,2 bar
+    "default_adjustment": 1.00,              # Fahrertest 2026-10-17: Standard auf Quali 1,3 bar, Rennen per Regler 92 %
     "limiter": 8560,
     # Zielmoment in Nm bei 1,3 bar ueber Drehzahl (Schaetzung)
-    "torque_full_boost": [(0, 60), (1000, 150), (2000, 230), (3000, 330), (3500, 420), (4000, 510),
-                          (4500, 570), (5000, 600), (5500, 600), (6000, 600), (6500, 598),
-                          (7000, 592), (7500, 585), (8000, 578), (8200, 575), (8560, 545), (9000, 500)],
+    # Fahrertest 2026-10-17: mit 672 PS nur 290 km/h, Vortrieb zu schwach. Quali-Trimm auf
+    # rund 710 PS angehoben (Porsche-Angaben galten als konservativ, Schaetzung).
+    "torque_full_boost": [(0, 60), (1000, 155), (2000, 240), (3000, 345), (3500, 440), (4000, 540),
+                          (4500, 605), (5000, 635), (5500, 635), (6000, 635), (6500, 633),
+                          (7000, 627), (7500, 620), (8000, 612), (8200, 608), (8560, 578), (9000, 530)],
     "mass_total": 895,                       # 820 kg plus 75 kg Fahrer
     # Getriebe Ring 1983 (Schaetzung): Fuenfter bei ~320 km/h und 8400/min, Radius hinten 0,33 m
     # Fahrer-Setup vom 2026-10-14: 14/37, 18/34, 22/29, 26/26, 28/23 (rto-Saetze des Basis-Mods)

@@ -58,7 +58,7 @@ class Config:
 
     # Unterboden-Widerstand: Grundanteil plus induziert
     ub_drag_base: float = 0.06              # Cd·A
-    ub_drag_induced: float = 0.025          # Cd·A pro (Cl·A)^2
+    ub_drag_induced: float = 0.018          # Cd·A pro (Cl·A)^2. Messung 9: mit 0,025 fraß der Unterboden bei 2 t Abtrieb den Leistungszuwachs auf, Topspeed blieb 290
 
     # Gier: Tunnel verlieren Anströmung
     yaw_cl: tuple = ((0, 1.00), (5, 0.96), (10, 0.88), (15, 0.78), (20, 0.65), (30, 0.50))

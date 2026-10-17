@@ -12,9 +12,9 @@
   "cg_height": 0.33860000000000007,
   "front_cl_gain": 0.9868545633907986,
   "rear_cl_gain": 1.2705191830502003,
-  "body_cd_gain": 1.7835861354775824,
+  "body_cd_gain": 1.9017425178127303,
   "underbody_cla_static": 2.2677,
-  "underbody_cda_static": 0.1886,
+  "underbody_cda_static": 0.1526,
   "underbody_front_balance_static": 0.45,
   "total_cla_static": 3.7887,
   "total_cda_static": 1.041,
@@ -30,7 +30,7 @@
   "engine": {
     "peak_ps": {
       "quali 1,3 bar": 710.0655566027859,
-      "rennen 1,2 bar": 710.0655566027859,
+      "rennen 1,2 bar": 677.9582444781382,
       "le mans 1,1 bar": 649.8643463690713
     },
     "v_top_kmh_limiter": 329.4931316330996

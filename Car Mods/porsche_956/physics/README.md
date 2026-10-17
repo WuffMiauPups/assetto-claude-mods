@@ -66,6 +66,10 @@ Ursache gefunden: In AC ist der Einfederweg `BUMPSTOP_UP + ROD_LENGTH`. Mit der 
 
 Grip wieder gut, Einlenken mit den 13-Zoll-Vorderrädern besser als vorher. Reifenmaße bleiben. Döttinger Höhe nur 290 km/h, Vortrieb subjektiv zu schwach, Begrenzer nicht erreicht. Konsequenz: Quali-Trimm von 672 auf rund 710 PS (Schätzung), Turbostufe 100 Prozent als Standard.
 
+## Messung 9 (2026-10-17, 710 PS, Map-Versatz vorn -8 mm, `tools/out/messungen/09_710ps_offset8_20261017.csv`)
+
+Topspeed wieder 290 km/h bei 8000/min im Fünften (Fahrer-Übersetzung, Begrenzer bei 311). Bei 290: 36/52 mm, 2025 kg Abtrieb, Balance 38 Prozent. Gegenüber Messung 5 (39/58 mm, 1842 kg) 180 kg mehr Abtrieb durch den Versatz, dadurch mehr induzierter Widerstand, der die 40 PS mehr auffrisst. Konsequenz: Versatz aus (`RH_OFFSET_ACTIVE=False`), `ub_drag_induced` 0,025 auf 0,018. Erwartung rund 305 km/h.
+
 ## Bekannte Baustellen
 
 - **Widerstand**: Cd·A 1,04 (520 kg bei 322 km/h). Mit Quali-Motor 300 km/h gemessen bei nicht ganz vollem Anlauf, rechnerisch 310 bis 320 möglich. Bleibt so.

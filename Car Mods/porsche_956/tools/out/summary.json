@@ -254,7 +254,7 @@
     "balance_rake_gain": -2.5,
     "balance_front_low_gain": 1.2,
     "ub_drag_base": 0.06,
-    "ub_drag_induced": 0.025,
+    "ub_drag_induced": 0.018,
     "yaw_cl": [
       [
         0,

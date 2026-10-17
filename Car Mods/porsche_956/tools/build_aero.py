@@ -45,7 +45,8 @@ MEASURED_ROD_BASE = (0.011, 0.0375)
 # Stand-Messung 2026-10-17 mit dem Setup des Fahrers (Height 30/30 im Spiel): 0,063/0,085 m.
 # Das Setup bleibt, deshalb bekommt die Aero-Map einen Eingangsversatz, damit sie die
 # Design-Hoehe 55/85 sieht. Physisch steht das Auto vorn 8 mm hoeher als im Modell (Schaetzfehler klein).
-STATIC_RH_WITH_DRIVER_SETUP = (0.063, 0.085)     # Stangenlaengen der Messungen 2 bis 5 (Federweg-Referenz)
+STATIC_RH_WITH_DRIVER_SETUP = (0.063, 0.085)
+RH_OFFSET_ACTIVE = False   # Messung 9: Versatz -8 mm vorn brachte 180 kg mehr Abtrieb und mehr Widerstand, Topspeed blieb 290. Aus.     # Stangenlaengen der Messungen 2 bis 5 (Federweg-Referenz)
 
 # Fahrwerksabstimmung (Zielwerte aus venturi_model.py Config): Design-Hoehe 55/85 mm,
 # Radraten 140/190 N/mm. ROD_LENGTH wirkt etwa 1:1 auf die Bodenfreiheit (im Spiel pruefen).
@@ -450,7 +451,7 @@ def tune_engine() -> dict:
     dt_p.write_text(dt)
 
     peak = {}
-    for name, adj in (("quali 1,3 bar", 1.0), ("rennen 1,2 bar", ENGINE["default_adjustment"]), ("le mans 1,1 bar", 0.85)):
+    for name, adj in (("quali 1,3 bar", 1.0), ("rennen 1,2 bar", 0.92), ("le mans 1,1 bar", 0.85)):
         b = boost_total * adj
         peak[name] = max(rpm * nm * (1 + b) / 9549 * 1.36 for rpm, nm in lut)
     v_top = ENGINE["limiter"] / 60 * 2 * 3.14159 * TYRES["radius"][1] / (ENGINE["gears"][-1] * ENGINE["final"]) * 3.6
@@ -477,8 +478,8 @@ def write_data(res: dict) -> None:
         total_cda=res["total_cda_static"], bal=res["front_balance_static"],
         body_cd_gain=res["body_cd_gain"], front_cl_gain=res["front_cl_gain"],
         rear_cl_gain=res["rear_cl_gain"],
-        rh_off_f=SUSPENSION["rh_design"][0] - STATIC_RH_WITH_DRIVER_SETUP[0],
-        rh_off_r=SUSPENSION["rh_design"][1] - STATIC_RH_WITH_DRIVER_SETUP[1],
+        rh_off_f=(SUSPENSION["rh_design"][0] - STATIC_RH_WITH_DRIVER_SETUP[0]) if RH_OFFSET_ACTIVE else 0.0,
+        rh_off_r=(SUSPENSION["rh_design"][1] - STATIC_RH_WITH_DRIVER_SETUP[1]) if RH_OFFSET_ACTIVE else 0.0,
     ))
     (HERE / "out" / "build_aero.json").write_text(json.dumps(res, indent=2))
 

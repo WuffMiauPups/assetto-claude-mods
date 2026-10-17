@@ -34,12 +34,12 @@ SUMMARY = HERE / "out" / "summary.json"
 RHO = 1.225
 G = 9.81
 
-# Im Spiel gemessen (Ride Height Monitor, Messung 6, 2026-10-14) mit den 1983er Reifenmassen
-# (Radius 0,325 beide, BASEY 0,010/-0,030): bei ROD_LENGTH -0,034/0,0425 statisch 0,042/0,074 m.
-# Die Annahme "Stangenlaenge wirkt 1:1" lag mit den neuen Reifen 12 mm daneben, deshalb gilt
-# der Messwert mit den aktuellen Reifen als Referenz. Bei Aenderung von TYRES neu messen.
+# Im Spiel gemessen (Ride Height Monitor, Messung 6 und Stand-Messung 2026-10-17) mit den 1983er
+# Reifenmassen (Radius 0,325 beide, BASEY 0,010/-0,030): statisch 0,042/0,074 m. Dabei galten laut
+# Setup-Bildschirm die Stangenlaengen 0,000 vorn und 0,016 hinten, nicht die aus der Datei: Das
+# gespeicherte Setup ueberschreibt ROD_LENGTH, Einheit im Setup ist 0,1 mm (160 = 0,016 m).
 MEASURED_STATIC_RH = (0.042, 0.074)
-MEASURED_ROD = (-0.034, 0.0425)
+MEASURED_ROD = (0.000, 0.016)
 MEASURED_WITH_TYRE_RADIUS = (0.325, 0.325)
 MEASURED_ROD_BASE = (0.011, 0.0375)     # Stangenlaengen der Messungen 2 bis 5 (Federweg-Referenz)
 
@@ -407,12 +407,13 @@ def tune_suspension(res: dict) -> None:
                         ("SPRING_RATE_LR", rmin, rmax), ("SPRING_RATE_RR", rmin, rmax)):
         setup = set_key(setup, sec, "MIN", str(lo))
         setup = set_key(setup, sec, "MAX", str(hi))
-    # Stangenlaenge vorn ist nach der Reifenkorrektur negativ, Setup-Bereich muss das zulassen (mm)
-    for sec, lo, hi in (("ROD_LENGTH_LF", -80, 120), ("ROD_LENGTH_RF", -80, 120),
-                        ("ROD_LENGTH_LR", -20, 140), ("ROD_LENGTH_RR", -20, 140)):
-        setup = set_key(setup, sec, "MIN", str(lo))
-        setup = set_key(setup, sec, "MAX", str(hi))
-        setup = set_key(setup, sec, "STEP", "1")
+    # Setup-Einheit fuer die Stangenlaenge ist 0,1 mm (Bildschirm 2026-10-17: 160 = 0,016 m).
+    # Bereich so, dass die Standardwerte aus der Datei und +/- 30 mm darin liegen.
+    rf, rr = round(res["rod_front"] * 10000), round(res["rod_rear"] * 10000)
+    for sec, mid in (("ROD_LENGTH_LF", rf), ("ROD_LENGTH_RF", rf), ("ROD_LENGTH_LR", rr), ("ROD_LENGTH_RR", rr)):
+        setup = set_key(setup, sec, "MIN", str(mid - 300))
+        setup = set_key(setup, sec, "MAX", str(mid + 300))
+        setup = set_key(setup, sec, "STEP", "10")
     set_p.write_text(setup)
 
 

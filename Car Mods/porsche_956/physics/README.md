@@ -60,7 +60,7 @@ Statisch nur 42/74 mm statt 55/85: Die Stangenlängen-Kompensation für den grö
 
 ## Fahrtest 7 (2026-10-17, Stangenlängen -0,021/0,0535): deutlich weniger Grip, fährt sich fremd
 
-Ursache gefunden: In AC ist der Einfederweg `BUMPSTOP_UP + ROD_LENGTH`. Mit der negativen Stangenlänge vorn blieben nur 29 mm (Messung 6: 16 mm) bis zum harten Anschlag, das Auto lag vorn ständig auf dem Puffer. `build_aero.py` setzt `BUMPSTOP_UP` und `PACKER_RANGE` jetzt so, dass der Federweg dem der Messungen 2 bis 5 entspricht (vorn 61 mm, hinten 97 mm). Offen bleibt, warum die Stangenlänge mit den neuen Reifen nicht 1:1 wirkt; dazu statische Messung nach dieser Änderung abwarten.
+Ursache gefunden: In AC ist der Einfederweg `BUMPSTOP_UP + ROD_LENGTH`. Mit der negativen Stangenlänge vorn blieben nur 29 mm (Messung 6: 16 mm) bis zum harten Anschlag, das Auto lag vorn ständig auf dem Puffer. `build_aero.py` setzt `BUMPSTOP_UP` und `PACKER_RANGE` jetzt so, dass der Federweg dem der Messungen 2 bis 5 entspricht (vorn 61 mm, hinten 97 mm). Stand-Messung danach wieder 41,5/72,5: Der Setup-Bildschirm zeigte Height LF 0 und LR 160. Das gespeicherte Setup überschreibt `ROD_LENGTH`, Einheit ist 0,1 mm (160 = 0,016 m). Die Stangenlänge wirkt also vermutlich doch 1:1, nur kamen die Dateiwerte nie an. `build_aero.py` kalibriert jetzt auf 0,000/0,016 und setzt die Setup-Bereiche in 0,1 mm um die Standardwerte. **Im Spiel müssen die Höhen im Setup einmal auf die Dateiwerte gestellt werden** (Height LF/RF und LR/RR, Werte siehe Build-Ausgabe), oder Setup auf Default.
 
 ## Bekannte Baustellen
 

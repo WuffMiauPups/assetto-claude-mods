@@ -2,6 +2,7 @@
 
   python install.py           Auto anlegen (falls noetig) und physics/data hineinkopieren
   python install.py --ac PFAD anderer AC-Ordner
+  python install.py --release  zusaetzlich content/cars/porsche_956_groupc_bellof bauen (nur Rothmans Nr. 2)
 
 Erster Lauf: kopiert content/cars/vac_groupc_956 nach content/cars/porsche_956_venturi.
   - data.acd wird nicht mitkopiert, damit AC den entpackten data-Ordner verwendet.
@@ -104,9 +105,54 @@ def install_app(ac: Path) -> None:
     print(f"App installiert: {dst}")
 
 
+RELEASE_CAR = "porsche_956_groupc_bellof"
+RELEASE_NAME = "Porsche 956 Group C Stefan Bellof"
+RELEASE_SKIN = "1982 num2"   # Rothmans Nr. 2 (LM2) des VAC-Mods
+
+
+def release(cars: Path) -> Path:
+    """Eigenstaendiges Auto aus dem Entwicklungsauto: nur der Bellof-Skin, eigener Name und Sound."""
+    src = cars / NEW_CAR
+    dst = cars / RELEASE_CAR
+    if dst.exists():
+        shutil.rmtree(dst)
+    shutil.copytree(src, dst, ignore=shutil.ignore_patterns("skins", "data.bak", "data.acd"))
+    shutil.copytree(src / "skins" / RELEASE_SKIN, dst / "skins" / RELEASE_SKIN)
+
+    sfx = dst / "sfx"
+    (sfx / f"{NEW_CAR}.bank").rename(sfx / f"{RELEASE_CAR}.bank")
+    guids = sfx / "GUIDs.txt"
+    guids.write_text(guids.read_text().replace(f"/{NEW_CAR}", f"/{RELEASE_CAR}"))
+
+    car_ini = dst / "data" / "car.ini"
+    car_ini.write_text(car_ini.read_text().replace(
+        "SCREEN_NAME=Porsche 956 Venturi (Bellof, Ring 1983)", f"SCREEN_NAME={RELEASE_NAME}"))
+
+    ui = dst / "ui" / "ui_car.json"
+    meta = json.loads(ui.read_text(encoding="utf-8"))
+    meta["name"] = RELEASE_NAME
+    meta["brand"] = "Porsche"
+    meta["description"] = (
+        "Porsche 956 Kurzheck, Rothmans Porsche Nr. 2, Stefan Bellof, Nuerburgring 1000 km 1983 "
+        "(6:11.13 im Training). Unterboden als CSP-Aero-Map: Abtrieb, Widerstand und Balance haengen "
+        "von der Bodenfreiheit vorn und hinten ab, mit Stroemungsabriss unter 30 mm hinten. "
+        "Typ 935/76 Biturbo, Turboregler 100 % = Quali 1,3 bar, 92 % = Rennen. "
+        "Basis-Modell und Sound: VAC Porsche 956. Physik: assetto-claude-mods."
+    )
+    meta["tags"] = ["Porsche", "group c", "Wec", "Rothmans", "Bellof", "1983", "venturi"]
+    ui.write_text(json.dumps(meta, indent=2, ensure_ascii=False), encoding="utf-8")
+
+    skin_ui = dst / "skins" / RELEASE_SKIN / "ui_skin.json"
+    skin_ui.write_text(json.dumps({"skinname": "Rothmans Nr. 2 Nuerburgring 1983", "drivername": "Stefan Bellof",
+                                   "country": "deu", "team": "Rothmans Porsche", "number": 2}, ensure_ascii=False))
+    print(f"Release-Auto: {dst}")
+    return dst
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--ac", type=Path, default=AC_DEFAULT)
+    ap.add_argument("--release", action="store_true", help="zusaetzlich das eigenstaendige Bellof-Auto bauen")
     args = ap.parse_args()
     if not SRC_DATA.is_dir():
         raise SystemExit("physics/data fehlt, erst build_aero.py ausfuehren")
@@ -117,6 +163,8 @@ def main() -> None:
     sync_data(car)
     update_ui(car)
     install_app(args.ac)
+    if args.release:
+        release(cars)
     print("Fertig. Im Content Manager: Auto 'Porsche 956 Venturi (Bellof, Ring 1983)', CSP Extended Physics aktiv lassen.")
 
 

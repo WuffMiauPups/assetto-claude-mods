@@ -21,7 +21,7 @@ Das erzeugt genau das Fahrgefühl, das Derek Bell beschrieb: Das Auto auf der St
 | Venturi-Modell | CSP Aero Map in `aero.ini`: 2D-Kennfelder für Abtrieb, Widerstand und Balance über Bodenfreiheit vorn und hinten, dazu Yaw-LUTs | fertig und kalibriert: 310 km/h, 2450 kg, Heck 44 mm bei Topspeed. Lua-Hysterese nicht nötig |
 | Abstimmung | `tools/venturi_model.py` (Kennfelder), `tools/build_aero.py` (data-Ordner), `tools/install.py` (ins Spiel), Mess-App `app/rideheight_monitor` | fertig |
 | 3D-Modell | VAC-956 als Basis, Kopie unter `content/cars/porsche_956_venturi` | fertig |
-| Skin | Rothmans Nr. 2 Bellof, Ring 1983; bis dahin VAC-Skins | offen, einziger Restpunkt |
+| Skin | Rothmans Nr. 2 des VAC als Bellof-Skin (Fahrerentscheid, keine Umlackierung) | fertig |
 | Sound | VAC-Sound, auf neuen Ordnernamen umgeschrieben | fertig, Fahrerentscheid |
 
 ## Quellen für die Daten
@@ -49,4 +49,4 @@ porsche_956/
 
 Fahrbar und kalibriert (Stand 2026-10-17). Basis `vac_groupc_956`, im Spiel als `porsche_956_venturi`. Bauen und installieren aus `tools/` mit `py -3.11 venturi_model.py`, `py -3.11 build_aero.py`, `py -3.11 install.py`. Messprotokoll und Entscheidungen in `physics/README.md`. Fahrerentscheid: Nervosität bei Topspeed bleibt (historisch), Reifenverschleiß und Sound bleiben vom VAC.
 
-Offen: Skin Rothmans Nr. 2 Bellof Ring 1983.
+Fertiges Auto: `content/cars/porsche_956_groupc_bellof` ("Porsche 956 Group C Stefan Bellof"), gebaut mit `py -3.11 install.py --release`, nur mit dem Rothmans-Nr.-2-Skin des VAC (Fahrer Stefan Bellof). Das Entwicklungsauto `porsche_956_venturi` mit allen Skins kann gelöscht werden. Skin-Vorschau und Metadaten in `skins/rothmans_nr2_ring_1983/`.

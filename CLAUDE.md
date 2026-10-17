@@ -17,7 +17,7 @@ Sammlung eigener Assetto-Corsa-Mods. Sprache mit dem Nutzer: Deutsch. Oberste Or
 |---|---|---|
 | `AI Mods/01-fast-lane-recorder` | Python-Paket, Lua-Aufnahme-App, Build-Skripte, Test mit synthetischer Strecke grün | Original `content\tracks\monza\ai\fast_lane.ai` parsen, App im Spiel testen, Runden aufnehmen, erste echte Linie bauen |
 | `AI Mods/02` bis `06` | nur README | nach 01 |
-| `Car Mods/porsche_956` | Fahrbar und kalibriert: Aero-Map, Fahrwerk, Reifenmaße 1983, Motor 935/76 (Quali 710 PS), 895 kg; 10 Messungen in `tools/out/messungen/`, 310 km/h, 2450 kg Abtrieb, Heck 44 mm bei Topspeed. Werkzeuge `venturi_model.py` → `build_aero.py` → `install.py` (mit `py -3.11`), Mess-App `app/rideheight_monitor`. Setup des Fahrers überschreibt ROD_LENGTH (Einheit 0,1 mm) | Reifenverschleiß und Thermik 1983, Trägheit, Skin Rothmans Bellof Nr. 2 Ring 1983, Sound prüfen |
+| `Car Mods/porsche_956` | Fertig. Release-Auto `content\cars\porsche_956_groupc_bellof` ("Porsche 956 Group C Stefan Bellof", Rothmans Nr. 2), gebaut mit `py -3.11 install.py --release`. Aero-Map, Fahrwerk, Reifenmaße 1983, Motor 935/76 (Quali 710 PS), 895 kg; 10 Messungen in `tools/out/messungen/`, 310 km/h, 2450 kg Abtrieb | keiner; bei Bedarf Reifenverschleiß 1983 oder eigener Skin |
 | `Gameplay Mods/mechanical-failures` | App `app/reliability` (physics-API, alle Autos, keine data.acd-Änderung) gebaut und installiert; Auto-Script-Weg im BMW bestätigt, BMW wieder original | App im Spiel testen, Stärke und Abtriebsanteil abstimmen, Ausfälle mit Rate x20 prüfen |
 | `Career Mods/career-system` | Excel-Importer für die 2017er Datei | zurückgestellt, bis die restlichen Excels vorliegen |
 

@@ -14,6 +14,7 @@ local S = ac.storage({
   strength = 0.4, aiStrength = 0.25, aeroShare = 0.5, mode = 0,   -- mode 0 = Grip, 1 = Luftdichte
   failMult = 1.0, seasonAuto = true, season = 2008, log = true, showCars = true,
   damageMode = 1, damageStrength = 1.0, damageFull = 80, damageSide = 8, damageFloor = 0.35,
+  aiTuneOn = false, aiTuneJson = '{}',   -- KI-Abstimmung pro Saison: {"2007": {aero=..,tyres=..,brake=..,grip=..,look=..}}
   -- damageMode: 0 aus, 1 Flügel nur bei Autos ohne eigene Aero-Schadenswerte, 2 Flügel bei allen.
   -- Seitenkasten/Unterboden wirkt in Modus 1 und 2 immer, weil AC das bei keinem Auto modelliert.
 }, 'reliability')
@@ -269,6 +270,64 @@ local function floorEraFactor(season)
   if season >= 2022 then return 1.0 elseif season >= 2009 then return 0.7 elseif season >= 1995 then return 0.5 else return 0.4 end
 end
 
+-- ---------- KI-Abstimmung pro Saison (CSP-Setter überschreiben ai.ini zur Laufzeit, nur KI-Autos) ----------
+-- Verfügbar: AERO_HINT, [TYRES] HINT, BRAKE_HINT, Extra-Grip (Standard 1.2), LOOKAHEAD BASE. Nicht verfügbar: TRAIL_HINT, GASGAIN.
+local AI_KEYS = { 'aero', 'tyres', 'brake', 'grip', 'look' }
+local aiTune = nil           -- { ['2007'] = { aero = 1.0, tyres = 1.0, brake = 0.9, grip = 1.2, look = 18 } }
+local aiOrig = {}            -- [carIndex] = Originalwerte aus ai.ini
+
+local function loadAiTune()
+  if aiTune == nil then
+    local ok, t = pcall(JSON.parse, S.aiTuneJson or '{}')
+    aiTune = (ok and type(t) == 'table') and t or {}
+  end
+  return aiTune
+end
+
+local function saveAiTune() S.aiTuneJson = JSON.stringify(aiTune or {}) end
+
+local function readAiOrig(i)
+  if aiOrig[i] then return aiOrig[i] end
+  local o = { aero = 1.0, tyres = 1.0, brake = 1.0, grip = 1.2, look = 12 }
+  local ok, ini = pcall(ac.INIConfig.carData, i, 'ai.ini')
+  if ok and ini then
+    o.aero = ini:get('PHYSICS_HINTS', 'AERO_HINT', 1.0)
+    o.tyres = ini:get('TYRES', 'HINT', 1.0)
+    o.brake = ini:get('PEDALS', 'BRAKE_HINT', 1.0)
+    o.look = ini:get('LOOKAHEAD', 'BASE', 12)
+  end
+  aiOrig[i] = o
+  return o
+end
+
+local function aiTuneFor(season)
+  local t = loadAiTune()
+  local key = tostring(season)
+  if not t[key] then
+    local o = readAiOrig(0)                       -- Startwerte: ai.ini des Spielerautos, Extra-Grip 1.2 (CSP-Standard)
+    t[key] = { aero = o.aero, tyres = o.tyres, brake = o.brake, grip = 1.2, look = o.look }
+  end
+  return t[key]
+end
+
+local function applyAiTune(i)
+  local car = ac.getCar(i)
+  if not car or not car.isAIControlled or not cars[i] then return end
+  if S.aiTuneOn then
+    local v = aiTuneFor(cars[i].season)
+    physics.setAIAeroHint(i, v.aero); physics.setAITyresHint(i, v.tyres); physics.setAIBrakeHint(i, v.brake)
+    physics.setExtraAIGrip(i, v.grip); physics.setAILookaheadBase(i, v.look)
+  else
+    local o = readAiOrig(i)
+    physics.setAIAeroHint(i, o.aero); physics.setAITyresHint(i, o.tyres); physics.setAIBrakeHint(i, o.brake)
+    physics.setExtraAIGrip(i, 1.2); physics.setAILookaheadBase(i, o.look)
+  end
+end
+
+local function applyAiTuneAll()
+  for i in pairs(cars) do applyAiTune(i) end
+end
+
 local function initCar(i)
   local season = currentSeason(i)
   local factor, team = teamFactor(i, season)
@@ -280,6 +339,7 @@ local function initCar(i)
   }
   ac.log(string.format('[reliability] car %d %s: Saison %d, Team %s, Ausfall-Faktor %.2f, Aero-Schaden in aero.ini: %s', i, ac.getCarID(i), season,
     team or 'unbekannt (1.0)', factor, cars[i].aeroModelled and 'ja' or 'nein'))
+  if S.aiTuneOn then applyAiTune(i) end
 end
 
 local function resetAll()
@@ -589,6 +649,28 @@ function script.windowMain(dt)
     S.damageSide = ui.slider('##dside', S.damageSide, 0, 20, 'Seitenkasten: bis %.0f%% Restriktor')
     S.damageFloor = ui.slider('##dfloor', S.damageFloor, 0, 0.8, 'Unterboden: bis %.2f Abtrieb hinten weg (x Ära-Faktor)')
     if c0 then ui.text(string.format('Ära-Faktor Unterboden %d: %.1f', c0.season, floorEraFactor(c0.season))) end
+  end
+
+  ui.separator(); ui.header('KI-Abstimmung')
+  if ui.checkbox('KI-Werte der Saison überschreiben (nur KI-Autos)', S.aiTuneOn) then S.aiTuneOn = not S.aiTuneOn; applyAiTuneAll() end
+  if c0 then
+    local o = readAiOrig(0)
+    ui.text(string.format('ai.ini des Spielerautos: Aero %.2f, Reifen %.2f, Bremse %.2f, Lookahead %.0f', o.aero, o.tyres, o.brake, o.look))
+    if S.aiTuneOn then
+      local v = aiTuneFor(c0.season)
+      local ch = false
+      local nv, c
+      nv, c = ui.slider('##aiaero', v.aero, 0.3, 1.5, 'Aero-Hinweis %.2f'); if c then v.aero = nv; ch = true end
+      nv, c = ui.slider('##aityres', v.tyres, 0.5, 1.5, 'Reifen-Hinweis %.2f'); if c then v.tyres = nv; ch = true end
+      nv, c = ui.slider('##aibrake', v.brake, 0.5, 1.3, 'Brems-Hinweis %.2f (höher = später bremsen)'); if c then v.brake = nv; ch = true end
+      nv, c = ui.slider('##aigrip', v.grip, 1.0, 1.6, 'Extra-Grip %.2f (CSP-Standard 1.20)'); if c then v.grip = nv; ch = true end
+      nv, c = ui.slider('##ailook', v.look, 8, 30, 'Lookahead %.0f m'); if c then v.look = math.floor(nv + 0.5); ch = true end
+      if ui.button('Auf ai.ini zurücksetzen') then
+        local oo = readAiOrig(0); v.aero, v.tyres, v.brake, v.grip, v.look = oo.aero, oo.tyres, oo.brake, 1.2, oo.look; ch = true
+      end
+      if ch then saveAiTune(); applyAiTuneAll() end
+      ui.text(string.format('Gespeichert für Saison %d, gilt für alle KI-Autos dieser Saison', c0.season))
+    end
   end
 
   ui.separator(); ui.header('Ausfälle')

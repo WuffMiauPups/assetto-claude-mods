@@ -665,6 +665,11 @@ function script.windowMain(dt)
       nv, c = ui.slider('##aibrake', v.brake, 0.5, 1.3, 'Brems-Hinweis %.2f (höher = später bremsen)'); if c then v.brake = nv; ch = true end
       nv, c = ui.slider('##aigrip', v.grip, 1.0, 1.6, 'Extra-Grip %.2f (CSP-Standard 1.20)'); if c then v.grip = nv; ch = true end
       nv, c = ui.slider('##ailook', v.look, 8, 30, 'Lookahead %.0f m'); if c then v.look = math.floor(nv + 0.5); ch = true end
+      -- Vorschlag: Werte der Mods, deren KI gut läuft (Cimmerian 2010/2012, RaceProject 1999 bis 2004)
+      if ui.button('Vorschlag übernehmen (Aero 1.0, Reifen 1.0, Bremse 0.93, Grip 1.3, Lookahead 17)') then
+        v.aero, v.tyres, v.brake, v.grip, v.look = 1.0, 1.0, 0.93, 1.3, 17; ch = true
+      end
+      ui.sameLine()
       if ui.button('Auf ai.ini zurücksetzen') then
         local oo = readAiOrig(0); v.aero, v.tyres, v.brake, v.grip, v.look = oo.aero, oo.tyres, oo.brake, 1.2, oo.look; ch = true
       end

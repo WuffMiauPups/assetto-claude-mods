@@ -65,8 +65,8 @@ def set_value(text, section, key, value):
             m = re.match(r"^(\s*)" + re.escape(key) + r"\s*=\s*([^;/\r\n]*)(.*)$", raw, re.I)
             if m:
                 old = m.group(2).strip()
-                lines[i] = f"{m.group(1)}{key}={value}{m.group(3)}"
-                if not lines[i].endswith(("\n",)): lines[i] += nl
+                rest = m.group(3).rstrip("\r\n")
+                lines[i] = f"{m.group(1)}{key}={value}{rest}{nl}"
                 return "".join(lines), old
     if sec_i is None:
         if lines and not lines[-1].endswith("\n"): lines[-1] += nl

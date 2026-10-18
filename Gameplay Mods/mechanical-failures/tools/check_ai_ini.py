@@ -73,8 +73,10 @@ def main():
             except Exception:
                 year = 0
         f = cardir / "data" / "ai.ini"
-        text = f.read_text(encoding="utf-8", errors="ignore") if f.is_file() else (
-            read_from_acd(str(cardir / "data.acd"), "ai.ini") if (cardir / "data.acd").is_file() else None)
+        acd = cardir / "data.acd"
+        # wie AC: data.acd hat Vorrang, der data-Ordner zählt nur ohne acd
+        text = read_from_acd(str(acd), "ai.ini") if acd.is_file() else (
+            f.read_text(encoding="utf-8", errors="ignore") if f.is_file() else None)
         if not text:
             continue
         ini = parse_ini(text)

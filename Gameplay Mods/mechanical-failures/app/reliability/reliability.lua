@@ -13,6 +13,10 @@ local S = ac.storage({
   enabled = true, dirtyAir = true, failures = true,
   strength = 0.4, aiStrength = 0.25, aeroShare = 0.5, mode = 0,   -- mode 0 = Grip, 1 = Luftdichte
   failMult = 1.0, seasonAuto = true, season = 2008, log = true, showCars = true,
+  damageMode = 1, damageStrength = 1.0, damageFull = 80, damageSide = 8, damageFloor = 0.35,
+  aiTuneOn = false, aiTuneJson = '{}',   -- KI-Abstimmung pro Saison: {"2007": {aero=..,tyres=..,brake=..,grip=..,look=..}}
+  -- damageMode: 0 aus, 1 Flügel nur bei Autos ohne eigene Aero-Schadenswerte, 2 Flügel bei allen.
+  -- Seitenkasten/Unterboden wirkt in Modus 1 und 2 immer, weil AC das bei keinem Auto modelliert.
 }, 'reliability')
 
 local function eraForYear(y)
@@ -49,6 +53,7 @@ local function lutLookup(t, d)
   for i = 2, #t do
     if d <= t[i][1] then
       local a, b = t[i - 1], t[i]
+      if b[1] <= a[1] then return b[2], b[3], b[4] end   -- doppelte Abstandszeile, sonst Division durch 0
       local f = (d - a[1]) / (b[1] - a[1])
       return a[2] + (b[2] - a[2]) * f, a[3] + (b[3] - a[3]) * f, a[4] + (b[4] - a[4]) * f
     end
@@ -216,9 +221,11 @@ local cars = {}
 local sessionId = 0
 local logTimer = 0
 
+-- Park-Miller (a=16807, m=2^31-1): Produkt bleibt unter 2^46 und damit in double exakt.
 local function lcg(state)
-  state.v = (state.v * 1103515245 + 12345) % 2147483648
-  return state.v / 2147483648
+  state.v = (state.v * 16807) % 2147483647
+  if state.v == 0 then state.v = 1 end
+  return state.v / 2147483647
 end
 
 -- Jahr zuerst aus Ordnername oder Anzeigename (Mods tragen in ui_car.json oft ihr Erscheinungsjahr), sonst ui_car.json
@@ -243,16 +250,97 @@ local function currentSeason(carIdx)
   return S.season
 end
 
+-- Prüft, ob der Modder Aero-Schaden eingetragen hat: AC rechnet CL = CL / (1 + ZONE_x_CL * Aufprall-km/h).
+-- Kunos-Standard ist 0.01 (50 km/h Treffer = ein Drittel weniger Abtrieb an dem Flügel). Alles 0 = nur Optik.
+local function aeroDamageModelled(i)
+  local ok, aero = pcall(ac.INIConfig.carData, i, 'aero.ini')
+  if not ok or not aero then return true end     -- im Zweifel nicht doppelt bestrafen
+  for w = 0, 63 do
+    local sec = 'WING_' .. w
+    if aero:get(sec, 'NAME', '') == '' then break end
+    for _, z in ipairs({ 'ZONE_FRONT_CL', 'ZONE_REAR_CL', 'ZONE_LEFT_CL', 'ZONE_RIGHT_CL' }) do
+      if math.abs(aero:get(sec, z, 0)) > 0 then return true end
+    end
+  end
+  return false
+end
+
+-- Unterboden-Ära-Faktor: wie stark ein Seitentreffer (Seitenkasten, Bodenkante, Diffusor) den Abtrieb hinten kostet.
+-- Bodeneffekt ab 2022 am empfindlichsten; 2009 bis 2021 komplexe Böden und Diffusoren; davor flacher Boden.
+local function floorEraFactor(season)
+  if season >= 2022 then return 1.0 elseif season >= 2009 then return 0.7 elseif season >= 1995 then return 0.5 else return 0.4 end
+end
+
+-- ---------- KI-Abstimmung pro Saison (CSP-Setter überschreiben ai.ini zur Laufzeit, nur KI-Autos) ----------
+-- Verfügbar: AERO_HINT, [TYRES] HINT, BRAKE_HINT, Extra-Grip (Standard 1.2), LOOKAHEAD BASE. Nicht verfügbar: TRAIL_HINT, GASGAIN.
+local AI_KEYS = { 'aero', 'tyres', 'brake', 'grip', 'look' }
+local aiTune = nil           -- { ['2007'] = { aero = 1.0, tyres = 1.0, brake = 0.9, grip = 1.2, look = 18 } }
+local aiOrig = {}            -- [carIndex] = Originalwerte aus ai.ini
+
+local function loadAiTune()
+  if aiTune == nil then
+    local ok, t = pcall(JSON.parse, S.aiTuneJson or '{}')
+    aiTune = (ok and type(t) == 'table') and t or {}
+  end
+  return aiTune
+end
+
+local function saveAiTune() S.aiTuneJson = JSON.stringify(aiTune or {}) end
+
+local function readAiOrig(i)
+  if aiOrig[i] then return aiOrig[i] end
+  local o = { aero = 1.0, tyres = 1.0, brake = 1.0, grip = 1.2, look = 12 }
+  local ok, ini = pcall(ac.INIConfig.carData, i, 'ai.ini')
+  if ok and ini then
+    o.aero = ini:get('PHYSICS_HINTS', 'AERO_HINT', 1.0)
+    o.tyres = ini:get('TYRES', 'HINT', 1.0)
+    o.brake = ini:get('PEDALS', 'BRAKE_HINT', 1.0)
+    o.look = ini:get('LOOKAHEAD', 'BASE', 12)
+  end
+  aiOrig[i] = o
+  return o
+end
+
+local function aiTuneFor(season)
+  local t = loadAiTune()
+  local key = tostring(season)
+  if not t[key] then
+    local o = readAiOrig(0)                       -- Startwerte: ai.ini des Spielerautos, Extra-Grip 1.2 (CSP-Standard)
+    t[key] = { aero = o.aero, tyres = o.tyres, brake = o.brake, grip = 1.2, look = o.look }
+  end
+  return t[key]
+end
+
+local function applyAiTune(i)
+  local car = ac.getCar(i)
+  if not car or not car.isAIControlled or not cars[i] then return end
+  if S.aiTuneOn then
+    local v = aiTuneFor(cars[i].season)
+    physics.setAIAeroHint(i, v.aero); physics.setAITyresHint(i, v.tyres); physics.setAIBrakeHint(i, v.brake)
+    physics.setExtraAIGrip(i, v.grip); physics.setAILookaheadBase(i, v.look)
+  else
+    local o = readAiOrig(i)
+    physics.setAIAeroHint(i, o.aero); physics.setAITyresHint(i, o.tyres); physics.setAIBrakeHint(i, o.brake)
+    physics.setExtraAIGrip(i, 1.2); physics.setAILookaheadBase(i, o.look)
+  end
+end
+
+local function applyAiTuneAll()
+  for i in pairs(cars) do applyAiTune(i) end
+end
+
 local function initCar(i)
   local season = currentSeason(i)
   local factor, team = teamFactor(i, season)
   cars[i] = {
     season = season, era = eraForYear(season), front = 0, rear = 0, total = 0, applied = false,
-    rng = { v = (sessionId * 7919 + (i + 1) * 104729 + math.floor(os.clock() * 1000)) % 2147483648 },
+    rng = { v = (sessionId * 7919 + (i + 1) * 104729 + math.floor(os.clock() * 1000)) % 2147483646 + 1 },
     active = {}, done = {}, baseRestrictor = nil, nearest = 1e9, peak = 0, factor = factor, team = team,
+    aeroModelled = aeroDamageModelled(i), dmgFront = 0, dmgRear = 0, dmgRestr = 0,
   }
-  ac.log(string.format('[reliability] car %d %s: Saison %d, Team %s, Ausfall-Faktor %.2f', i, ac.getCarID(i), season,
-    team or 'unbekannt (1.0)', factor))
+  ac.log(string.format('[reliability] car %d %s: Saison %d, Team %s, Ausfall-Faktor %.2f, Aero-Schaden in aero.ini: %s', i, ac.getCarID(i), season,
+    team or 'unbekannt (1.0)', factor, cars[i].aeroModelled and 'ja' or 'nein'))
+  if S.aiTuneOn then applyAiTune(i) end
 end
 
 local function resetAll()
@@ -302,20 +390,44 @@ local function updateDirtyAir(sim, dt)
       end
       local scale = me.isAIControlled and S.aiStrength or S.strength
       if not S.dirtyAir then scale = 0 end
-      local k = math.min(1, 6 * dt)
-      c.front = c.front + (bestF * scale - c.front) * k
-      c.rear = c.rear + (bestR * scale - c.rear) * k
-      c.total = c.total + (bestT * scale - c.total) * k
+      -- Karosserieschaden (Zonen 0 vorn, 1 hinten, 2 links, 3 rechts, Werte in km/h Aufprall)
+      local useWings = S.damageMode == 2 or (S.damageMode == 1 and not c.aeroModelled)
+      c.dmgFront, c.dmgRear, c.dmgRestr = 0, 0, 0
+      if S.damageMode > 0 and me.damage then
+        local full = math.max(10, S.damageFull)
+        if useWings then                                     -- Flügel vorn/hinten (nur wenn die aero.ini es nicht selbst tut)
+          c.dmgFront = math.min(0.6, (me.damage[0] or 0) / full * 0.6) * S.damageStrength
+          c.dmgRear = math.min(0.5, (me.damage[1] or 0) / full * 0.5) * S.damageStrength
+        end
+        -- Seitenkasten und Unterboden (AC modelliert das nirgends): Abtrieb hinten weg, etwas vorn, Kühlung -> Restriktor
+        local side = math.min(1, math.max(me.damage[2] or 0, me.damage[3] or 0) / full)
+        local floor = side * S.damageFloor * floorEraFactor(c.season) * S.damageStrength
+        c.dmgRear = 1 - (1 - c.dmgRear) * (1 - floor)
+        c.dmgFront = 1 - (1 - c.dmgFront) * (1 - floor * 0.4)
+        c.dmgRestr = side * S.damageSide * S.damageStrength
+      end
+      -- Tiefpass nur mit k in 0..1: ein negatives oder ungültiges dt ergäbe k < 0, dann wächst der Wert pro Frame
+      -- exponentiell (gesehen: DA 7e17). Ergebnis zusätzlich auf 0..1 begrenzen, NaN auf 0.
+      local k = (dt > 0 and dt < 1) and math.min(1, 6 * dt) or 0
+      local function lp(v, target)
+        v = v + (math.max(0, math.min(1, target)) - v) * k
+        return (v == v and v >= 0) and math.min(1, v) or 0
+      end
+      c.front = lp(c.front, bestF * scale)
+      c.rear = lp(c.rear, bestR * scale)
+      c.total = lp(c.total, bestT * scale)
       c.nearest = nearest
       if c.front > c.peak then c.peak = c.front end
 
-      if c.front > 0.002 or c.rear > 0.002 then
+      local lossF = 1 - (1 - c.front) * (1 - c.dmgFront)
+      local lossR = 1 - (1 - c.rear) * (1 - c.dmgRear)
+      if lossF > 0.002 or lossR > 0.002 then
         if S.mode == 0 then
           local share = aeroShare(me.speedKmh)
-          physics.setGripDecrease(i, ac.Wheel.Front, c.front * share)
-          physics.setGripDecrease(i, ac.Wheel.Rear, c.rear * share)
+          physics.setGripDecrease(i, ac.Wheel.Front, lossF * share)
+          physics.setGripDecrease(i, ac.Wheel.Rear, lossR * share)
         else
-          physics.setAirDensityMultiplier(i, 1 - c.total)
+          physics.setAirDensityMultiplier(i, 1 - (1 - (1 - c.total) * (1 - math.max(c.dmgFront, c.dmgRear))))
         end
         c.applied = true
       elseif c.applied then
@@ -332,26 +444,62 @@ local function logEvent(i, text)
   local car = ac.getCar(i)
   local name = ac.getDriverName(i) or ('car ' .. i)
   ac.log(string.format('[reliability] %s (car %d, %s): %s', name, i, ac.getCarID(i), text))
-  if car and not car.isAIControlled then ac.setMessage('Defekt', text, nil, 8) end
+  if car and not car.isAIControlled then
+    ac.setMessage('Defekt', text, nil, 8)
+  else
+    ac.setMessage('Defekt ' .. name, text, nil, 6)
+  end
 end
 
 local function restrictor(i, pct)
   local c = cars[i]
   if not c.baseRestrictor then local car = ac.getCar(i); c.baseRestrictor = car and car.restrictor or 0 end
-  physics.setCarRestrictor(i, math.max(c.baseRestrictor, pct))
+  physics.setCarRestrictor(i, math.max(c.baseRestrictor, pct, c.dmgRestr or 0))
 end
 
 local WHEELS = { ac.Wheel.FrontLeft, ac.Wheel.FrontRight, ac.Wheel.RearLeft, ac.Wheel.RearRight }
 
 local FAIL = {}
--- Jeder Defekt: apply(i, f, dt), f.t läuft mit. Terminale Defekte setzen das Motorleben auf 0, das Auto rollt aus.
+-- Totalausfall: physics.setCarEngineLife(car, 0) wirkt im Test nicht (Motorleben blieb 1000, Auto fuhr weiter).
+-- Stattdessen Motor abwürgen: Stall an, Drehzahl jedes Frame auf 0, KI zusätzlich ohne Eingaben (parkt am Rand).
+local function killEngine(i)
+  local car = ac.getCar(i)
+  physics.setEngineStallEnabled(i, true)
+  physics.setEngineRPM(i, 0)
+  if car and car.isAIControlled then physics.setAINoInput(i, true, true) end
+end
+
+-- Anteil der Motor-/Getriebeprobleme, die tödlich enden; neuere Autos überleben öfter mit Leistungsverlust
+local function terminalShare(season)
+  if season <= 1993 then return 0.85 elseif season <= 2004 then return 0.75 elseif season <= 2013 then return 0.65 else return 0.5 end
+end
+
+local function draw(i) return lcg(cars[i].rng) end
+
+local function die(i, f, text)
+  f.done, f.terminal = true, true
+  killEngine(i)
+  logEvent(i, text)
+end
+
+-- Jeder Defekt: apply(i, f, dt), f.t läuft mit, f.done markiert das Ende der Entwicklung.
+-- ENGINE: Warnphase (leichter Verlust), Aussetzer, dann Würfel: Totalausfall oder dauerhafter Leistungsverlust.
 FAIL.ENGINE = function(i, f, dt)
+  if not f.outcome then
+    f.outcome = draw(i) < terminalShare(cars[i].season) and 'dead' or 'weak'
+    f.pct = 10 + math.floor(draw(i) * 26)                                 -- 10..35 % Restriktor, falls er überlebt
+  end
   if f.t < 20 then restrictor(i, 12)
-  elseif f.t < 45 then restrictor(i, f.t % 2 < 0.4 and 60 or 20)
-  elseif not f.done then physics.setCarEngineLife(i, 0); f.done = true; logEvent(i, 'Motorschaden') end
+  elseif f.t < 45 then restrictor(i, f.t % 2 < 0.4 and 60 or 20)        -- Aussetzer
+  elseif f.outcome == 'dead' then
+    if not f.done then die(i, f, 'Motorschaden') end
+  else
+    restrictor(i, f.pct)
+    if not f.done then f.done = true; logEvent(i, string.format('Motorproblem, fährt mit %d%% Restriktor weiter', f.pct)) end
+  end
 end
 FAIL.POWER_LOSS = function(i, f, dt)
-  if not f.pct then f.pct = 15 + math.floor(lcg(cars[i].rng) * 15) end
+  if not f.pct then f.pct = 15 + math.floor(draw(i) * 15) end
   restrictor(i, f.t < 10 and 5 or f.pct)
   if f.t >= 10 and not f.done then f.done = true; logEvent(i, string.format('Leistungsverlust, Restriktor %d%%', f.pct)) end
 end
@@ -361,48 +509,90 @@ FAIL.TURBO = function(i, f, dt)
   restrictor(i, f.t < 15 and 10 or 30)
   if f.t >= 15 and not f.done then f.done = true; logEvent(i, 'Turbo defekt, Ladedruck weg') end
 end
+-- GEARBOX: Schaltprobleme in Stufen. Erst gelegentliche Fehlschaltungen (kurze Leistungslöcher), dann häufiger,
+-- dann Würfel: Getriebe fest (Totalausfall) oder dauerhaft hakelig mit Leistungslöchern.
+-- Echtes Verlieren einzelner Gänge geht nur im Auto-Script (requestedGearIndex), nicht über die App-API.
+FAIL.GEARBOX = function(i, f, dt)
+  if not f.outcome then
+    f.outcome = draw(i) < terminalShare(cars[i].season) and 'dead' or 'rough'
+    f.nextCut, f.cutUntil = 5 + draw(i) * 10, 0
+  end
+  if f.outcome == 'dead' and f.t > 90 then
+    if not f.done then die(i, f, 'Getriebeschaden') end
+    return
+  end
+  -- Fehlschaltung: 0,4 s kein Vortrieb, Abstand anfangs 5..15 s, später 3..8 s
+  if f.t >= f.nextCut then
+    f.cutUntil = f.t + 0.4
+    local gap = f.t < 45 and (5 + draw(i) * 10) or (3 + draw(i) * 5)
+    f.nextCut = f.t + gap
+    if not f.warned then f.warned = true; logEvent(i, 'Getriebe hakt, Fehlschaltungen') end
+  end
+  restrictor(i, f.t < f.cutUntil and 95 or 0)
+  if f.outcome == 'rough' and f.t > 90 and not f.done then f.done = true; logEvent(i, 'Getriebe bleibt hakelig') end
+end
 local function terminal(name, warnSec, warnPct)
   return function(i, f, dt)
     if f.t < warnSec then
       if warnPct > 0 then restrictor(i, warnPct) end
     elseif not f.done then
-      physics.setCarEngineLife(i, 0); f.done = true; logEvent(i, name)
+      die(i, f, name)
     end
   end
 end
-FAIL.GEARBOX = terminal('Getriebeschaden', 15, 0)
 FAIL.HYDRAULICS = terminal('Hydraulikausfall', 25, 8)
 FAIL.ELECTRICS = terminal('Elektrikdefekt', 30, 15)
 FAIL.COOLING = terminal('Kühlung, Motor überhitzt', 60, 10)
 FAIL.PUNCTURE = function(i, f, dt)
   if not f.done then
-    physics.blowTyres(i, WHEELS[1 + math.floor(lcg(cars[i].rng) * 4)]); f.done = true; logEvent(i, 'Reifenschaden')
+    physics.blowTyres(i, WHEELS[1 + math.floor(draw(i) * 4)]); f.done = true; logEvent(i, 'Reifenschaden')
   end
 end
 FAIL.SUSPENSION = function(i, f, dt)
   if not f.done then
-    physics.setSuspensionDamage(i, WHEELS[1 + math.floor(lcg(cars[i].rng) * 4)], 70); f.done = true; logEvent(i, 'Aufhängung beschädigt')
+    physics.setSuspensionDamage(i, WHEELS[1 + math.floor(draw(i) * 4)], 70); f.done = true; logEvent(i, 'Aufhängung beschädigt')
   end
 end
 -- FAIL.BRAKES: keine API in der App, nur über das Auto-Script
 
+local diag = { expected = 0, eligible = 0, noPhysics = 0, slow = 0 }   -- für die Logzeile alle 10 s
+
 local function updateFailures(sim, dt)
   local sessionMult = sim.raceSessionType == ac.SessionType.Race and 1.0 or 0.5
+  diag.eligible, diag.noPhysics, diag.slow = 0, 0, 0
   for i = 0, sim.carsCount - 1 do
     local car, c = ac.getCar(i), cars[i]
-    if car and c and car.physicsAvailable and car.speedKmh > 30 then
-      local p = getProfile(c.season)
-      if S.failures then
-        for _, k in ipairs(FAIL_KEYS) do
-          if FAIL[k] and not c.active[k] and not c.done[k] then
-            local perSec = (p.rates[k] or 0) / 100 * c.factor * S.failMult * sessionMult / (p.raceLengthMin * 60)
-            if lcg(c.rng) < perSec * dt then c.active[k] = { t = 0 }; c.done[k] = true end
+    if car and c then
+      if not car.physicsAvailable then diag.noPhysics = diag.noPhysics + 1
+      elseif car.speedKmh <= 30 then diag.slow = diag.slow + 1
+      else
+        diag.eligible = diag.eligible + 1
+        local p = getProfile(c.season)
+        if S.failures and not c.dead then
+          for _, k in ipairs(FAIL_KEYS) do
+            if FAIL[k] and not c.active[k] and not c.done[k] then
+              local perSec = (p.rates[k] or 0) / 100 * c.factor * S.failMult * sessionMult / (p.raceLengthMin * 60)
+              diag.expected = diag.expected + perSec * dt
+              if lcg(c.rng) < perSec * dt then c.active[k] = { t = 0 }; c.done[k] = true end
+            end
           end
         end
-      end
-      for k, f in pairs(c.active) do
-        f.t = f.t + dt
-        FAIL[k](i, f, dt)
+        if c.dead then killEngine(i) end
+        if next(c.active) == nil then                       -- kein Defekt aktiv: Restriktor nur aus Seitenkastenschaden
+          if (c.dmgRestr or 0) > 0.1 then restrictor(i, 0); c.dmgApplied = true
+          elseif c.dmgApplied then restrictor(i, 0); c.dmgApplied = false end
+        end
+        for k, f in pairs(c.active) do
+          f.t = f.t + dt
+          FAIL[k](i, f, dt)
+          if f.done and f.terminal and not c.dead then c.dead = true; c.deadAt = f.t end
+          -- Nachweis im Log: 15 s nach dem Totalausfall das Tempo des Autos
+          if c.dead and c.deadAt and not c.deadChecked and f.t > c.deadAt + 15 then
+            c.deadChecked = true
+            ac.log(string.format('[reliability] %s (car %d): 15 s nach Totalausfall %.0f km/h, Motorleben %.0f',
+              tostring(ac.getDriverName(i)), i, car.speedKmh, car.engineLifeLeft or -1))
+          end
+        end
       end
     end
   end
@@ -422,8 +612,9 @@ function script.update(dt)
       logTimer = 0
       local c = cars[0]
       if c then
-        ac.log(string.format('[reliability] car 0: Aera %s, Vordermann %.0f m, Verlust vorn %.2f hinten %.2f, Spitze %.2f',
-          c.era, c.nearest < 1e8 and c.nearest or -1, c.front, c.rear, c.peak))
+        ac.log(string.format('[reliability] car 0: Aera %s, Vordermann %.0f m, Verlust vorn %.2f hinten %.2f, Spitze %.2f | Ausfaelle: aktiv %s, Rate x%.0f, Autos im Wuerfel %d, ohne Physik %d, langsam %d, erwartet bisher %.2f',
+          c.era, c.nearest < 1e8 and c.nearest or -1, c.front, c.rear, c.peak,
+          tostring(S.failures), S.failMult, diag.eligible, diag.noPhysics, diag.slow, diag.expected))
         c.peak = 0
       end
     end
@@ -455,6 +646,45 @@ function script.windowMain(dt)
   if mc then S.mode = m - 1; resetAll() end
   if S.mode == 0 then S.aeroShare = ui.slider('##share', S.aeroShare, 0.1, 0.9, 'Abtriebsanteil an der Radlast bei 200 km/h %.2f') end
 
+  ui.separator(); ui.header('Karosserieschaden')
+  local DM = { 'Aus', 'Nur Autos ohne eigene Aero-Schadenswerte', 'Alle Autos' }
+  local dm, dmc = ui.combo('Schaden', S.damageMode + 1, ui.ComboFlags.None, DM)
+  if dmc then S.damageMode = dm - 1 end
+  if S.damageMode > 0 then
+    S.damageStrength = ui.slider('##ds', S.damageStrength, 0, 2, 'Stärke %.2f')
+    S.damageFull = ui.slider('##df', S.damageFull, 20, 200, 'Voller Verlust bei %.0f km/h Aufprall')
+    S.damageSide = ui.slider('##dside', S.damageSide, 0, 20, 'Seitenkasten: bis %.0f%% Restriktor')
+    S.damageFloor = ui.slider('##dfloor', S.damageFloor, 0, 0.8, 'Unterboden: bis %.2f Abtrieb hinten weg (x Ära-Faktor)')
+    if c0 then ui.text(string.format('Ära-Faktor Unterboden %d: %.1f', c0.season, floorEraFactor(c0.season))) end
+  end
+
+  ui.separator(); ui.header('KI-Abstimmung')
+  if ui.checkbox('KI-Werte der Saison überschreiben (nur KI-Autos)', S.aiTuneOn) then S.aiTuneOn = not S.aiTuneOn; applyAiTuneAll() end
+  if c0 then
+    local o = readAiOrig(0)
+    ui.text(string.format('ai.ini des Spielerautos: Aero %.2f, Reifen %.2f, Bremse %.2f, Lookahead %.0f', o.aero, o.tyres, o.brake, o.look))
+    if S.aiTuneOn then
+      local v = aiTuneFor(c0.season)
+      local ch = false
+      local nv, c
+      nv, c = ui.slider('##aiaero', v.aero, 0.3, 1.5, 'Aero-Hinweis %.2f'); if c then v.aero = nv; ch = true end
+      nv, c = ui.slider('##aityres', v.tyres, 0.5, 1.5, 'Reifen-Hinweis %.2f'); if c then v.tyres = nv; ch = true end
+      nv, c = ui.slider('##aibrake', v.brake, 0.5, 1.3, 'Brems-Hinweis %.2f (höher = später bremsen)'); if c then v.brake = nv; ch = true end
+      nv, c = ui.slider('##aigrip', v.grip, 1.0, 1.6, 'Extra-Grip %.2f (CSP-Standard 1.20)'); if c then v.grip = nv; ch = true end
+      nv, c = ui.slider('##ailook', v.look, 8, 30, 'Lookahead %.0f m'); if c then v.look = math.floor(nv + 0.5); ch = true end
+      -- Vorschlag: Werte der Mods, deren KI gut läuft (Cimmerian 2010/2012, RaceProject 1999 bis 2004)
+      if ui.button('Vorschlag übernehmen (Aero 1.0, Reifen 1.0, Bremse 0.93, Grip 1.3, Lookahead 17)') then
+        v.aero, v.tyres, v.brake, v.grip, v.look = 1.0, 1.0, 0.93, 1.3, 17; ch = true
+      end
+      ui.sameLine()
+      if ui.button('Auf ai.ini zurücksetzen') then
+        local oo = readAiOrig(0); v.aero, v.tyres, v.brake, v.grip, v.look = oo.aero, oo.tyres, oo.brake, 1.2, oo.look; ch = true
+      end
+      if ch then saveAiTune(); applyAiTuneAll() end
+      ui.text(string.format('Gespeichert für Saison %d, gilt für alle KI-Autos dieser Saison', c0.season))
+    end
+  end
+
   ui.separator(); ui.header('Ausfälle')
   S.failMult = ui.slider('##fm', S.failMult, 0, 20, 'Rate x %.1f', 2)
   if c0 then
@@ -474,8 +704,8 @@ function script.windowMain(dt)
       if c and car then
         local fails = {}
         for k in pairs(c.active) do fails[#fails + 1] = k end
-        ui.text(string.format('%2d %-18s %3.0f km/h  DA %.2f/%.2f  x%.2f %s', i, tostring(ac.getDriverName(i)):sub(1, 18), car.speedKmh,
-          c.front, c.rear, c.factor, #fails > 0 and table.concat(fails, ',') or ''))
+        ui.text(string.format('%2d %-18s %3.0f km/h  DA %.2f/%.2f  Schaden %.2f/%.2f  x%.2f %s', i, tostring(ac.getDriverName(i)):sub(1, 18),
+          car.speedKmh, c.front, c.rear, c.dmgFront, c.dmgRear, c.factor, #fails > 0 and table.concat(fails, ',') or ''))
       end
     end
   end

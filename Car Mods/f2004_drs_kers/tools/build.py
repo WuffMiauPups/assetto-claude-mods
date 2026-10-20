@@ -45,6 +45,17 @@ FLAP_WING = 6          # neuer Index fuer die DRS-Klappe (0..5 sind belegt)
 # Reifen: tyres.ini der Formula Hybrid 2018 wird 1:1 uebernommen (auch Breite 305/405 und Radius 0,335),
 # nur die Standardmischung wird auf Hyper-Soft gesetzt. Hier koennten Werte je Achse ueberschrieben werden.
 GEOMETRY: dict[str, dict[str, str]] = {"FRONT": {}, "REAR": {}}
+# Grip-Skalierung gegenueber dem Kunos-Rillenreifen: RSS-Hypersoft liegt im Original auf demselben
+# mu wie der Kunos-Soft 2004 (1,86 bei 3000 N). Real brachten Slick, 25 % mehr Breite und die weiche
+# Mischung rund 20 % mehr mechanischen Grip (research/02-kers-und-reifen.md). Alle fuenf Mischungen
+# werden gleich skaliert, ihre Staffelung (HS bis M rund 5 %) bleibt.
+GRIP_SCALE = 1.20
+
+
+def scale_curve(value: str, k: float) -> str:
+    """(0=2.21|1000=2.09|...) mit Faktor k multiplizieren."""
+    pairs = [p.split("=") for p in value.strip("()").split("|")]
+    return "(" + "|".join(f"{x}={float(y) * k:.6g}" for x, y in pairs) + ")"
 
 
 def load_unpacker():
@@ -119,6 +130,13 @@ def build_tyres(src: Path, data: Path) -> list[str]:
         if axle in GEOMETRY:
             for k, v in GEOMETRY[axle].items():
                 set_key(lines, k, v)
+            for i, l in enumerate(lines):
+                m = re.match(r"\s*(DY_CURVE|DX_CURVE)\s*=\s*(\(.*\))", l)
+                if m:
+                    lines[i] = f"{m.group(1)}={scale_curve(m.group(2), GRIP_SCALE)}"
+                m = re.match(r"\s*(DY_REF|DX_REF)\s*=\s*([\d.]+)", l)
+                if m:
+                    lines[i] = f"{m.group(1)}={float(m.group(2)) * GRIP_SCALE:.4f}"
             if axle == "FRONT":
                 names.append(next(l.split("=", 1)[1] for l in lines if l.startswith("NAME=")))
         if name == "COMPOUND_DEFAULT":
@@ -129,7 +147,8 @@ def build_tyres(src: Path, data: Path) -> list[str]:
                 luts.add(m.group(2))
         out.extend(lines)
     header = [
-        "; Reifen: Mischungen und Karkasse der Formula Hybrid 2018 (RSS), Geometrie des F2004 (Kunos).",
+        "; Reifen: tyres.ini der Formula Hybrid 2018 (RSS), Grip-Kurven und DY/DX_REF mit Faktor "
+        f"{GRIP_SCALE} (Slick statt Rillenreifen 2004).",
         f"; Erzeugt von {HERE.name}/build.py, nicht von Hand aendern.",
     ]
     (data / "tyres.ini").write_text("\n".join(header + out) + "\n")

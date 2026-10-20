@@ -1,0 +1,3278 @@
+{
+ "2005": {
+  "races": [
+   {
+    "round": 1,
+    "track": "Imola",
+    "type": "feature",
+    "starters": 24,
+    "laps": 37,
+    "duration_min": 62.27
+   },
+   {
+    "round": 1,
+    "track": "Imola",
+    "type": "sprint",
+    "starters": 24,
+    "laps": 17,
+    "duration_min": 28.52
+   },
+   {
+    "round": 2,
+    "track": "Catalunya",
+    "type": "feature",
+    "starters": 24,
+    "laps": 39,
+    "duration_min": 58.12
+   },
+   {
+    "round": 2,
+    "track": "Catalunya",
+    "type": "sprint",
+    "starters": 24,
+    "laps": 18,
+    "duration_min": 30.17
+   },
+   {
+    "round": 3,
+    "track": "Monaco",
+    "type": "feature",
+    "starters": 23,
+    "laps": 44,
+    "duration_min": 64.69
+   },
+   {
+    "round": 4,
+    "track": "Nürburgring",
+    "type": "feature",
+    "starters": 24,
+    "laps": 33,
+    "duration_min": 61.72
+   },
+   {
+    "round": 4,
+    "track": "Nürburgring",
+    "type": "sprint",
+    "starters": 23,
+    "laps": 24,
+    "duration_min": 42.7
+   },
+   {
+    "round": 5,
+    "track": "Magny-Cours",
+    "type": "feature",
+    "starters": 24,
+    "laps": 41,
+    "duration_min": 62.92
+   },
+   {
+    "round": 5,
+    "track": "Magny-Cours",
+    "type": "sprint",
+    "starters": 24,
+    "laps": 28,
+    "duration_min": 41.5
+   },
+   {
+    "round": 6,
+    "track": "Silverstone",
+    "type": "feature",
+    "starters": 24,
+    "laps": 36,
+    "duration_min": 58.44
+   },
+   {
+    "round": 6,
+    "track": "Silverstone",
+    "type": "sprint",
+    "starters": 24,
+    "laps": 24,
+    "duration_min": 40.17
+   },
+   {
+    "round": 7,
+    "track": "Hockenheim",
+    "type": "feature",
+    "starters": 24,
+    "laps": 40,
+    "duration_min": 59.51
+   },
+   {
+    "round": 7,
+    "track": "Hockenheim",
+    "type": "sprint",
+    "starters": 24,
+    "laps": 27,
+    "duration_min": 39.91
+   },
+   {
+    "round": 8,
+    "track": "Hungaroring",
+    "type": "feature",
+    "starters": 24,
+    "laps": 42,
+    "duration_min": 71.19
+   },
+   {
+    "round": 8,
+    "track": "Hungaroring",
+    "type": "sprint",
+    "starters": 24,
+    "laps": 25,
+    "duration_min": 45.08
+   },
+   {
+    "round": 9,
+    "track": "Istanbul",
+    "type": "feature",
+    "starters": 24,
+    "laps": 34,
+    "duration_min": 61.46
+   },
+   {
+    "round": 9,
+    "track": "Istanbul",
+    "type": "sprint",
+    "starters": 24,
+    "laps": 23,
+    "duration_min": 43.81
+   },
+   {
+    "round": 10,
+    "track": "Monza",
+    "type": "feature",
+    "starters": 24,
+    "laps": 32,
+    "duration_min": 53.92
+   },
+   {
+    "round": 10,
+    "track": "Monza",
+    "type": "sprint",
+    "starters": 24,
+    "laps": 20,
+    "duration_min": 33.9
+   },
+   {
+    "round": 11,
+    "track": "Spa-Francorchamps",
+    "type": "feature",
+    "starters": 24,
+    "laps": 26,
+    "duration_min": 68.22
+   },
+   {
+    "round": 11,
+    "track": "Spa-Francorchamps",
+    "type": "sprint",
+    "starters": 24,
+    "laps": 9,
+    "duration_min": 21.31
+   },
+   {
+    "round": 12,
+    "track": "Bahrain",
+    "type": "feature",
+    "starters": 24,
+    "laps": 34,
+    "duration_min": 63.57
+   },
+   {
+    "round": 12,
+    "track": "Bahrain",
+    "type": "sprint",
+    "starters": 24,
+    "laps": 23,
+    "duration_min": 41.75
+   }
+  ],
+  "retirements": [
+   {
+    "race_index": 0,
+    "driver": "Borja García",
+    "team": "RacingEngineering",
+    "status": "Ret",
+    "laps_completed": 31,
+    "reason_text": "brakes",
+    "category": "BRAKES"
+   },
+   {
+    "race_index": 0,
+    "driver": "Ferdinando Monfardini",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 31,
+    "reason_text": "brakes",
+    "category": "BRAKES"
+   },
+   {
+    "race_index": 0,
+    "driver": "Juan Cruz Álvarez",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 24,
+    "reason_text": "brakes",
+    "category": "BRAKES"
+   },
+   {
+    "race_index": 0,
+    "driver": "Ryan Sharp",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 12,
+    "reason_text": "brakes",
+    "category": "BRAKES"
+   },
+   {
+    "race_index": 0,
+    "driver": "Hiroki Yoshimoto",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 12,
+    "reason_text": "steering",
+    "category": "SUSPENSION"
+   },
+   {
+    "race_index": 0,
+    "driver": "Alexandre Negrão",
+    "team": "Piquet",
+    "status": "Ret",
+    "laps_completed": 5,
+    "reason_text": "brakes",
+    "category": "BRAKES"
+   },
+   {
+    "race_index": 0,
+    "driver": "Nicolas Lapierre",
+    "team": "Arden",
+    "status": "DNS",
+    "laps_completed": 0,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 1,
+    "driver": "Giorgio Pantano",
+    "team": "SuperNova",
+    "status": "Ret",
+    "laps_completed": 14,
+    "reason_text": "brakes",
+    "category": "BRAKES"
+   },
+   {
+    "race_index": 1,
+    "driver": "Nico Rosberg",
+    "team": "ART",
+    "status": "Ret",
+    "laps_completed": 12,
+    "reason_text": "brakes",
+    "category": "BRAKES"
+   },
+   {
+    "race_index": 1,
+    "driver": "Mathias Lauda",
+    "team": "Coloni",
+    "status": "Ret",
+    "laps_completed": 3,
+    "reason_text": "brakes",
+    "category": "BRAKES"
+   },
+   {
+    "race_index": 1,
+    "driver": "Can Artam",
+    "team": "iSport",
+    "status": "Ret",
+    "laps_completed": 3,
+    "reason_text": "brakes",
+    "category": "BRAKES"
+   },
+   {
+    "race_index": 1,
+    "driver": "Scott Speed",
+    "team": "iSport",
+    "status": "Ret",
+    "laps_completed": 2,
+    "reason_text": "misfire",
+    "category": "POWER_LOSS"
+   },
+   {
+    "race_index": 1,
+    "driver": "Clivio Piccione",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 1,
+    "reason_text": "fuel pump",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 1,
+    "driver": "Ernesto Viso",
+    "team": "BCN",
+    "status": "DNS",
+    "laps_completed": 0,
+    "reason_text": "brakes",
+    "category": "BRAKES"
+   },
+   {
+    "race_index": 1,
+    "driver": "Ferdinando Monfardini",
+    "team": "Durango",
+    "status": "DNS",
+    "laps_completed": 0,
+    "reason_text": "clutch",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 2,
+    "driver": "Clivio Piccione",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 35,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 2,
+    "driver": "Ryan Sharp",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 31,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 2,
+    "driver": "Olivier Pla",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 30,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 2,
+    "driver": "Mathias Lauda",
+    "team": "Coloni",
+    "status": "Ret",
+    "laps_completed": 29,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 2,
+    "driver": "Can Artam",
+    "team": "iSport",
+    "status": "Ret",
+    "laps_completed": 27,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 2,
+    "driver": "Hiroki Yoshimoto",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 20,
+    "reason_text": "misfire",
+    "category": "POWER_LOSS"
+   },
+   {
+    "race_index": 2,
+    "driver": "Ernesto Viso",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 19,
+    "reason_text": "transmission",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 2,
+    "driver": "Sergio Hernández",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 14,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 2,
+    "driver": "Juan Cruz Álvarez",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 5,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 2,
+    "driver": "Borja García",
+    "team": "RacingEngineering",
+    "status": "Ret",
+    "laps_completed": 2,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 2,
+    "driver": "Ferdinando Monfardini",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 2,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 3,
+    "driver": "Can Artam",
+    "team": "iSport",
+    "status": "Ret",
+    "laps_completed": 11,
+    "reason_text": "contact 18",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 3,
+    "driver": "Gianmaria Bruni",
+    "team": "Coloni",
+    "status": "Ret",
+    "laps_completed": 8,
+    "reason_text": "contact 8",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 3,
+    "driver": "Alexandre Prémat",
+    "team": "ART",
+    "status": "Ret",
+    "laps_completed": 4,
+    "reason_text": "crash 10",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 3,
+    "driver": "Olivier Pla",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 1,
+    "reason_text": "spin 16",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 3,
+    "driver": "Heikki Kovalainen",
+    "team": "Arden",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "transmission 6",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 3,
+    "driver": "Ernesto Viso",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "engine 20",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 4,
+    "driver": "Borja García",
+    "team": "RacingEngineering",
+    "status": "Classified-not-running",
+    "laps_completed": 40,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 4,
+    "driver": "Nelson Piquet Jr.",
+    "team": "Piquet",
+    "status": "Classified-not-running",
+    "laps_completed": 40,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 4,
+    "driver": "Nicolas Lapierre",
+    "team": "Arden",
+    "status": "Ret",
+    "laps_completed": 33,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 4,
+    "driver": "Alexandre Prémat",
+    "team": "ART",
+    "status": "Ret",
+    "laps_completed": 23,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 4,
+    "driver": "Clivio Piccione",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 11,
+    "reason_text": "crash",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 4,
+    "driver": "Neel Jani",
+    "team": "RacingEngineering",
+    "status": "Ret",
+    "laps_completed": 10,
+    "reason_text": "brakes",
+    "category": "BRAKES"
+   },
+   {
+    "race_index": 4,
+    "driver": "José María López",
+    "team": "DAMS",
+    "status": "Ret",
+    "laps_completed": 10,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 4,
+    "driver": "Ryan Sharp",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 8,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 4,
+    "driver": "Fairuz Fauzy",
+    "team": "DAMS",
+    "status": "Ret",
+    "laps_completed": 6,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 4,
+    "driver": "Giorgio Pantano",
+    "team": "SuperNova",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 4,
+    "driver": "Juan Cruz Álvarez",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 4,
+    "driver": "Ferdinando Monfardini",
+    "team": "Durango",
+    "status": "DNS",
+    "laps_completed": 0,
+    "reason_text": "stalled at start (TD: 0 laps/stalled; WP: DNS)",
+    "category": "STALL"
+   },
+   {
+    "race_index": 5,
+    "driver": "Juan Cruz Álvarez",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 30,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 5,
+    "driver": "Ernesto Viso",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 8,
+    "reason_text": "lost wheel",
+    "category": "SUSPENSION"
+   },
+   {
+    "race_index": 5,
+    "driver": "Olivier Pla",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 5,
+    "driver": "Adam Carroll",
+    "team": "SuperNova",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 5,
+    "driver": "Borja García",
+    "team": "RacingEngineering",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 5,
+    "driver": "Ferdinando Monfardini",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 5,
+    "driver": "Alexandre Negrão",
+    "team": "Piquet",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 6,
+    "driver": "Neel Jani",
+    "team": "RacingEngineering",
+    "status": "Classified-not-running",
+    "laps_completed": 22,
+    "reason_text": "brakes",
+    "category": "BRAKES"
+   },
+   {
+    "race_index": 6,
+    "driver": "Can Artam",
+    "team": "iSport",
+    "status": "Ret",
+    "laps_completed": 17,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 6,
+    "driver": "Gianmaria Bruni",
+    "team": "Coloni",
+    "status": "Ret",
+    "laps_completed": 16,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 6,
+    "driver": "Alexandre Negrão",
+    "team": "Piquet",
+    "status": "Ret",
+    "laps_completed": 6,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 6,
+    "driver": "Heikki Kovalainen",
+    "team": "Arden",
+    "status": "Ret",
+    "laps_completed": 2,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 6,
+    "driver": "Nicolas Lapierre",
+    "team": "Arden",
+    "status": "Ret",
+    "laps_completed": 1,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 6,
+    "driver": "Alexandre Prémat",
+    "team": "ART",
+    "status": "Ret",
+    "laps_completed": 1,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 6,
+    "driver": "Mathias Lauda",
+    "team": "Coloni",
+    "status": "Ret",
+    "laps_completed": 1,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 6,
+    "driver": "Hiroki Yoshimoto",
+    "team": "BCN",
+    "status": "DNS",
+    "laps_completed": 0,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 7,
+    "driver": "Borja García",
+    "team": "RacingEngineering",
+    "status": "Ret",
+    "laps_completed": 30,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 7,
+    "driver": "Nelson Piquet Jr.",
+    "team": "Piquet",
+    "status": "Ret",
+    "laps_completed": 24,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 7,
+    "driver": "Olivier Pla",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 15,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 7,
+    "driver": "Juan Cruz Álvarez",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 9,
+    "reason_text": "suspension",
+    "category": "SUSPENSION"
+   },
+   {
+    "race_index": 7,
+    "driver": "Alexandre Negrão",
+    "team": "Piquet",
+    "status": "Ret",
+    "laps_completed": 1,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 8,
+    "driver": "Alexandre Prémat",
+    "team": "ART",
+    "status": "Ret",
+    "laps_completed": 23,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 8,
+    "driver": "José María López",
+    "team": "DAMS",
+    "status": "Ret",
+    "laps_completed": 22,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 8,
+    "driver": "Ryan Sharp",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 6,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 9,
+    "driver": "Fairuz Fauzy",
+    "team": "DAMS",
+    "status": "Ret",
+    "laps_completed": 31,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 9,
+    "driver": "Ryan Sharp",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 1,
+    "reason_text": "transmission",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 9,
+    "driver": "Nelson Piquet Jr.",
+    "team": "Piquet",
+    "status": "DNS",
+    "laps_completed": 0,
+    "reason_text": "electrics, did not take the start (TD 0 laps/electrics; WP DNS)",
+    "category": "ELECTRICS"
+   },
+   {
+    "race_index": 10,
+    "driver": "Clivio Piccione",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 19,
+    "reason_text": "steering",
+    "category": "SUSPENSION"
+   },
+   {
+    "race_index": 10,
+    "driver": "Ryan Sharp",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 18,
+    "reason_text": "WP Ret after 18 laps, TD NC; no reason found",
+    "category": "UNKNOWN"
+   },
+   {
+    "race_index": 10,
+    "driver": "Nicolas Lapierre",
+    "team": "Arden",
+    "status": "Ret",
+    "laps_completed": 16,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 10,
+    "driver": "Nelson Piquet Jr.",
+    "team": "Piquet",
+    "status": "Ret",
+    "laps_completed": 8,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 10,
+    "driver": "Juan Cruz Álvarez",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 5,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 10,
+    "driver": "José María López",
+    "team": "DAMS",
+    "status": "DNS",
+    "laps_completed": 0,
+    "reason_text": "engine, did not take the start (TD 0 laps/engine; WP DNS)",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 10,
+    "driver": "Hiroki Yoshimoto",
+    "team": "BCN",
+    "status": "DNS",
+    "laps_completed": 0,
+    "reason_text": "engine, did not take the start (TD 0 laps/engine; WP DNS)",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 10,
+    "driver": "Fairuz Fauzy",
+    "team": "DAMS",
+    "status": "DNS",
+    "laps_completed": 0,
+    "reason_text": "engine, did not take the start (TD 0 laps/engine; WP DNS)",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 11,
+    "driver": "Gianmaria Bruni",
+    "team": "Coloni",
+    "status": "Ret",
+    "laps_completed": 20,
+    "reason_text": "WP Ret after 20 laps, TD NC; no reason found",
+    "category": "UNKNOWN"
+   },
+   {
+    "race_index": 11,
+    "driver": "Can Artam",
+    "team": "iSport",
+    "status": "Ret",
+    "laps_completed": 17,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 11,
+    "driver": "Clivio Piccione",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 15,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 11,
+    "driver": "Neel Jani",
+    "team": "RacingEngineering",
+    "status": "Ret",
+    "laps_completed": 10,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 11,
+    "driver": "Adam Carroll",
+    "team": "SuperNova",
+    "status": "Ret",
+    "laps_completed": 7,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 11,
+    "driver": "Fairuz Fauzy",
+    "team": "DAMS",
+    "status": "Ret",
+    "laps_completed": 6,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 11,
+    "driver": "Sergio Hernández",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 4,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 11,
+    "driver": "Ferdinando Monfardini",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 1,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 11,
+    "driver": "Alexandre Negrão",
+    "team": "Piquet",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 12,
+    "driver": "Neel Jani",
+    "team": "RacingEngineering",
+    "status": "Ret",
+    "laps_completed": 24,
+    "reason_text": "WP Ret after 24 laps, TD classified 22nd; no reason found",
+    "category": "UNKNOWN"
+   },
+   {
+    "race_index": 12,
+    "driver": "Hiroki Yoshimoto",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 21,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 12,
+    "driver": "Juan Cruz Álvarez",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 17,
+    "reason_text": "suspension",
+    "category": "SUSPENSION"
+   },
+   {
+    "race_index": 13,
+    "driver": "Nelson Piquet Jr.",
+    "team": "Piquet",
+    "status": "Ret",
+    "laps_completed": 37,
+    "reason_text": "hydraulics",
+    "category": "HYDRAULICS"
+   },
+   {
+    "race_index": 13,
+    "driver": "José María López",
+    "team": "DAMS",
+    "status": "Ret",
+    "laps_completed": 29,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 13,
+    "driver": "Juan Cruz Álvarez",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 25,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 13,
+    "driver": "Sergio Hernández",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 24,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 13,
+    "driver": "Ferdinando Monfardini",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 21,
+    "reason_text": "hydraulics",
+    "category": "HYDRAULICS"
+   },
+   {
+    "race_index": 13,
+    "driver": "Scott Speed",
+    "team": "iSport",
+    "status": "Ret",
+    "laps_completed": 18,
+    "reason_text": "hydraulics",
+    "category": "HYDRAULICS"
+   },
+   {
+    "race_index": 13,
+    "driver": "Mathias Lauda",
+    "team": "Coloni",
+    "status": "Ret",
+    "laps_completed": 18,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 13,
+    "driver": "Fairuz Fauzy",
+    "team": "DAMS",
+    "status": "Ret",
+    "laps_completed": 16,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 13,
+    "driver": "Giorgio Mondini",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 11,
+    "reason_text": "electrics",
+    "category": "ELECTRICS"
+   },
+   {
+    "race_index": 13,
+    "driver": "Clivio Piccione",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 8,
+    "reason_text": "hydraulics",
+    "category": "HYDRAULICS"
+   },
+   {
+    "race_index": 14,
+    "driver": "Olivier Pla",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 16,
+    "reason_text": "electrics",
+    "category": "ELECTRICS"
+   },
+   {
+    "race_index": 14,
+    "driver": "José María López",
+    "team": "DAMS",
+    "status": "Ret",
+    "laps_completed": 6,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 14,
+    "driver": "Borja García",
+    "team": "RacingEngineering",
+    "status": "Ret",
+    "laps_completed": 4,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 14,
+    "driver": "Ernesto Viso",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 4,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 14,
+    "driver": "Giorgio Mondini",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 2,
+    "reason_text": "accident damage",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 15,
+    "driver": "Ferdinando Monfardini",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 26,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 15,
+    "driver": "Clivio Piccione",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 23,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 15,
+    "driver": "Nicolas Lapierre",
+    "team": "Arden",
+    "status": "Ret",
+    "laps_completed": 16,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 15,
+    "driver": "Gianmaria Bruni",
+    "team": "Coloni",
+    "status": "Ret",
+    "laps_completed": 16,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 15,
+    "driver": "Fairuz Fauzy",
+    "team": "DAMS",
+    "status": "Ret",
+    "laps_completed": 10,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 15,
+    "driver": "Sergio Hernández",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 2,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 15,
+    "driver": "Neel Jani",
+    "team": "RacingEngineering",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 16,
+    "driver": "Ferdinando Monfardini",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 18,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 16,
+    "driver": "Neel Jani",
+    "team": "RacingEngineering",
+    "status": "Ret",
+    "laps_completed": 14,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 16,
+    "driver": "Juan Cruz Álvarez",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 10,
+    "reason_text": "hydraulics",
+    "category": "HYDRAULICS"
+   },
+   {
+    "race_index": 16,
+    "driver": "Giorgio Mondini",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 2,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 17,
+    "driver": "Ernesto Viso",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 5,
+    "reason_text": "crash",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 17,
+    "driver": "Sergio Hernández",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 5,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 17,
+    "driver": "Alexandre Negrão",
+    "team": "Piquet",
+    "status": "Ret",
+    "laps_completed": 4,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 17,
+    "driver": "Borja García",
+    "team": "RacingEngineering",
+    "status": "Ret",
+    "laps_completed": 4,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 17,
+    "driver": "Alexandre Prémat",
+    "team": "ART",
+    "status": "Ret",
+    "laps_completed": 2,
+    "reason_text": "crash",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 17,
+    "driver": "Scott Speed",
+    "team": "iSport",
+    "status": "Ret",
+    "laps_completed": 2,
+    "reason_text": "engine (TD); crash.net: car problem, pitted and never re-emerged",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 17,
+    "driver": "José María López",
+    "team": "DAMS",
+    "status": "Ret",
+    "laps_completed": 2,
+    "reason_text": "clutch",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 17,
+    "driver": "Olivier Pla",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 17,
+    "driver": "Giorgio Mondini",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "stalled at the start, did not complete lap 1 (crash.net; TD DNS)",
+    "category": "STALL"
+   },
+   {
+    "race_index": 18,
+    "driver": "Giorgio Mondini",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 14,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 18,
+    "driver": "José María López",
+    "team": "DAMS",
+    "status": "Ret",
+    "laps_completed": 8,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 18,
+    "driver": "Nicolas Lapierre",
+    "team": "Arden",
+    "status": "Ret",
+    "laps_completed": 8,
+    "reason_text": "crash",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 18,
+    "driver": "Ernesto Viso",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 6,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 18,
+    "driver": "Olivier Pla",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 4,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 18,
+    "driver": "Nelson Piquet Jr.",
+    "team": "Piquet",
+    "status": "Ret",
+    "laps_completed": 6,
+    "reason_text": "hit Yoshimoto at second chicane, lap 6 (autosport)",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 19,
+    "driver": "Sergio Hernández",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 22,
+    "reason_text": "hydraulics",
+    "category": "HYDRAULICS"
+   },
+   {
+    "race_index": 19,
+    "driver": "Giorgio Pantano",
+    "team": "SuperNova",
+    "status": "Ret",
+    "laps_completed": 22,
+    "reason_text": "WP Ret after 22 laps, TD NC; no reason found",
+    "category": "UNKNOWN"
+   },
+   {
+    "race_index": 19,
+    "driver": "Alexandre Prémat",
+    "team": "ART",
+    "status": "Ret",
+    "laps_completed": 16,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 19,
+    "driver": "Giorgio Mondini",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 13,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 19,
+    "driver": "Gianmaria Bruni",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 8,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 19,
+    "driver": "Hiroki Yoshimoto",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 3,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 19,
+    "driver": "Can Artam",
+    "team": "iSport",
+    "status": "Ret",
+    "laps_completed": 3,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 19,
+    "driver": "Nicolas Lapierre",
+    "team": "Arden",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 21,
+    "driver": "Olivier Pla",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 29,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 21,
+    "driver": "Ferdinando Monfardini",
+    "team": "Coloni",
+    "status": "Ret",
+    "laps_completed": 20,
+    "reason_text": "electrics",
+    "category": "ELECTRICS"
+   },
+   {
+    "race_index": 21,
+    "driver": "Nelson Piquet Jr.",
+    "team": "Piquet",
+    "status": "Ret",
+    "laps_completed": 13,
+    "reason_text": "hydraulics",
+    "category": "HYDRAULICS"
+   },
+   {
+    "race_index": 21,
+    "driver": "Scott Speed",
+    "team": "iSport",
+    "status": "Ret",
+    "laps_completed": 10,
+    "reason_text": "brakes",
+    "category": "BRAKES"
+   },
+   {
+    "race_index": 21,
+    "driver": "Gianmaria Bruni",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 7,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 22,
+    "driver": "Heikki Kovalainen",
+    "team": "Arden",
+    "status": "Ret",
+    "laps_completed": 1,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 22,
+    "driver": "Olivier Pla",
+    "team": "DPR",
+    "status": "DNS",
+    "laps_completed": 0,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   }
+  ],
+  "team_starts": {
+   "ART": 46,
+   "Arden": 46,
+   "BCN": 45,
+   "Campos": 46,
+   "Coloni": 46,
+   "DAMS": 46,
+   "DPR": 46,
+   "Durango": 46,
+   "Piquet": 46,
+   "RacingEngineering": 45,
+   "SuperNova": 46,
+   "iSport": 46
+  },
+  "not_counted_notes": [
+   "2005 race 1 Nicolas Lapierre: nach 6 Runden zurückgezogen (Teamentscheidung, kein Defekt), als Start gezählt, nicht als Ausfall",
+   "2005 race 4 Hiroki Yoshimoto: DNS Monaco, durfte ohne gefahrene Trainingsrunde nicht starten (TD), kein Defekt im Rennen",
+   "2005 race 6 Borja García: von Lauf 2 Nürburgring ausgeschlossen (WP \"EX\", 0 Runden), nicht als Start gezählt",
+   "2005 Monaco: TD führt 5 DNQ, laut Klassement starteten trotzdem 23 Autos; gezählt nach Klassement"
+  ]
+ },
+ "2006": {
+  "races": [
+   {
+    "round": 1,
+    "track": "Valencia",
+    "type": "feature",
+    "starters": 26,
+    "laps": 45,
+    "duration_min": 63.24
+   },
+   {
+    "round": 1,
+    "track": "Valencia",
+    "type": "sprint",
+    "starters": 26,
+    "laps": 28,
+    "duration_min": 38.73
+   },
+   {
+    "round": 2,
+    "track": "Imola",
+    "type": "feature",
+    "starters": 26,
+    "laps": 37,
+    "duration_min": 61.23
+   },
+   {
+    "round": 2,
+    "track": "Imola",
+    "type": "sprint",
+    "starters": 26,
+    "laps": 25,
+    "duration_min": 45.29
+   },
+   {
+    "round": 3,
+    "track": "Nürburgring",
+    "type": "feature",
+    "starters": 26,
+    "laps": 35,
+    "duration_min": 61.43
+   },
+   {
+    "round": 3,
+    "track": "Nürburgring",
+    "type": "sprint",
+    "starters": 26,
+    "laps": 24,
+    "duration_min": 41.31
+   },
+   {
+    "round": 4,
+    "track": "Catalunya",
+    "type": "feature",
+    "starters": 26,
+    "laps": 39,
+    "duration_min": 57.4
+   },
+   {
+    "round": 4,
+    "track": "Catalunya",
+    "type": "sprint",
+    "starters": 26,
+    "laps": 26,
+    "duration_min": 37.62
+   },
+   {
+    "round": 5,
+    "track": "Monaco",
+    "type": "feature",
+    "starters": 26,
+    "laps": 45,
+    "duration_min": 63.85
+   },
+   {
+    "round": 6,
+    "track": "Silverstone",
+    "type": "feature",
+    "starters": 26,
+    "laps": 36,
+    "duration_min": 60.9
+   },
+   {
+    "round": 6,
+    "track": "Silverstone",
+    "type": "sprint",
+    "starters": 23,
+    "laps": 26,
+    "duration_min": 37.45
+   },
+   {
+    "round": 7,
+    "track": "Magny-Cours",
+    "type": "feature",
+    "starters": 26,
+    "laps": 41,
+    "duration_min": 61.24
+   },
+   {
+    "round": 7,
+    "track": "Magny-Cours",
+    "type": "sprint",
+    "starters": 26,
+    "laps": 28,
+    "duration_min": 40.93
+   },
+   {
+    "round": 8,
+    "track": "Hockenheim",
+    "type": "feature",
+    "starters": 26,
+    "laps": 40,
+    "duration_min": 57.68
+   },
+   {
+    "round": 8,
+    "track": "Hockenheim",
+    "type": "sprint",
+    "starters": 26,
+    "laps": 27,
+    "duration_min": 38.61
+   },
+   {
+    "round": 9,
+    "track": "Hungaroring",
+    "type": "feature",
+    "starters": 26,
+    "laps": 42,
+    "duration_min": 65.23
+   },
+   {
+    "round": 9,
+    "track": "Hungaroring",
+    "type": "sprint",
+    "starters": 26,
+    "laps": 23,
+    "duration_min": 46.0
+   },
+   {
+    "round": 10,
+    "track": "Istanbul",
+    "type": "feature",
+    "starters": 26,
+    "laps": 34,
+    "duration_min": 55.99
+   },
+   {
+    "round": 10,
+    "track": "Istanbul",
+    "type": "sprint",
+    "starters": 26,
+    "laps": 23,
+    "duration_min": 37.92
+   },
+   {
+    "round": 11,
+    "track": "Monza",
+    "type": "feature",
+    "starters": 26,
+    "laps": 32,
+    "duration_min": 51.52
+   },
+   {
+    "round": 11,
+    "track": "Monza",
+    "type": "sprint",
+    "starters": 25,
+    "laps": 21,
+    "duration_min": 32.14
+   }
+  ],
+  "retirements": [
+   {
+    "race_index": 0,
+    "driver": "Hiroki Yoshimoto",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 27,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 0,
+    "driver": "Andreas Zuber",
+    "team": "Trident",
+    "status": "Ret",
+    "laps_completed": 23,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 0,
+    "driver": "Luca Filippi",
+    "team": "FMS",
+    "status": "Ret",
+    "laps_completed": 15,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 0,
+    "driver": "Félix Porteiro",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 7,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 0,
+    "driver": "Sergio Hernández",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 4,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 0,
+    "driver": "Tristan Gommendy",
+    "team": "iSport",
+    "status": "Ret",
+    "laps_completed": 2,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 0,
+    "driver": "Clivio Piccione",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 1,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 0,
+    "driver": "Jason Tahincioğlu",
+    "team": "FMS",
+    "status": "DNS",
+    "laps_completed": 0,
+    "reason_text": "gearbox, did not start (TD DNS; WP Ret 0 laps)",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 1,
+    "driver": "Clivio Piccione",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 24,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 1,
+    "driver": "Adrián Vallés",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 23,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 1,
+    "driver": "Adam Carroll",
+    "team": "RacingEngineering",
+    "status": "Ret",
+    "laps_completed": 22,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 1,
+    "driver": "José María López",
+    "team": "SuperNova",
+    "status": "Ret",
+    "laps_completed": 22,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 1,
+    "driver": "Ferdinando Monfardini",
+    "team": "DAMS",
+    "status": "Ret",
+    "laps_completed": 5,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 1,
+    "driver": "Alexandre Prémat",
+    "team": "ART",
+    "status": "Ret",
+    "laps_completed": 3,
+    "reason_text": "suspension",
+    "category": "SUSPENSION"
+   },
+   {
+    "race_index": 1,
+    "driver": "Luca Filippi",
+    "team": "FMS",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 1,
+    "driver": "Félix Porteiro",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 1,
+    "driver": "Jason Tahincioğlu",
+    "team": "FMS",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 1,
+    "driver": "Sergio Hernández",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "clutch",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 2,
+    "driver": "Andreas Zuber",
+    "team": "Trident",
+    "status": "Ret",
+    "laps_completed": 30,
+    "reason_text": "puncture",
+    "category": "PUNCTURE"
+   },
+   {
+    "race_index": 2,
+    "driver": "Tristan Gommendy",
+    "team": "iSport",
+    "status": "Ret",
+    "laps_completed": 30,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 2,
+    "driver": "Fairuz Fauzy",
+    "team": "SuperNova",
+    "status": "Ret",
+    "laps_completed": 29,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 2,
+    "driver": "Adam Carroll",
+    "team": "RacingEngineering",
+    "status": "Ret",
+    "laps_completed": 26,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 2,
+    "driver": "Jason Tahincioğlu",
+    "team": "FMS",
+    "status": "Ret",
+    "laps_completed": 25,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 2,
+    "driver": "Sergio Hernández",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 25,
+    "reason_text": "WP \"Retired\" after 25 laps, TD no reason",
+    "category": "UNKNOWN"
+   },
+   {
+    "race_index": 2,
+    "driver": "Alexandre Negrão",
+    "team": "Piquet",
+    "status": "Ret",
+    "laps_completed": 13,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 2,
+    "driver": "Franck Perera",
+    "team": "DAMS",
+    "status": "Ret",
+    "laps_completed": 13,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 2,
+    "driver": "Lucas di Grassi",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 7,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 2,
+    "driver": "Olivier Pla",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 7,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 2,
+    "driver": "José María López",
+    "team": "SuperNova",
+    "status": "Ret",
+    "laps_completed": 1,
+    "reason_text": "gearbox (WP, TD); crash.net: hydraulic problems",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 2,
+    "driver": "Clivio Piccione",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 3,
+    "driver": "Jason Tahincioğlu",
+    "team": "FMS",
+    "status": "Ret",
+    "laps_completed": 19,
+    "reason_text": "conflict: WP engine (lap 5) vs TD spin (lap 19)",
+    "category": "UNKNOWN"
+   },
+   {
+    "race_index": 3,
+    "driver": "Gianmaria Bruni",
+    "team": "Trident",
+    "status": "Ret",
+    "laps_completed": 12,
+    "reason_text": "brakes",
+    "category": "BRAKES"
+   },
+   {
+    "race_index": 3,
+    "driver": "Michael Ammermüller",
+    "team": "Arden",
+    "status": "Ret",
+    "laps_completed": 1,
+    "reason_text": "accident damage",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 3,
+    "driver": "Alexandre Prémat",
+    "team": "ART",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 3,
+    "driver": "Adrián Vallés",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 3,
+    "driver": "Lucas di Grassi",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 4,
+    "driver": "Nelson Piquet Jr.",
+    "team": "Piquet",
+    "status": "Ret",
+    "laps_completed": 30,
+    "reason_text": "puncture",
+    "category": "PUNCTURE"
+   },
+   {
+    "race_index": 4,
+    "driver": "Ferdinando Monfardini",
+    "team": "DAMS",
+    "status": "Ret",
+    "laps_completed": 29,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 4,
+    "driver": "Gianmaria Bruni",
+    "team": "Trident",
+    "status": "Ret",
+    "laps_completed": 18,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 4,
+    "driver": "Adrián Vallés",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 18,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 4,
+    "driver": "Luca Filippi",
+    "team": "FMS",
+    "status": "Ret",
+    "laps_completed": 11,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 4,
+    "driver": "Franck Perera",
+    "team": "DAMS",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 5,
+    "driver": "Timo Glock",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 13,
+    "reason_text": "electrics",
+    "category": "ELECTRICS"
+   },
+   {
+    "race_index": 5,
+    "driver": "Félix Porteiro",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 11,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 5,
+    "driver": "Luca Filippi",
+    "team": "FMS",
+    "status": "Ret",
+    "laps_completed": 6,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 5,
+    "driver": "Olivier Pla",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 5,
+    "reason_text": "suspension",
+    "category": "SUSPENSION"
+   },
+   {
+    "race_index": 5,
+    "driver": "Sergio Hernández",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 5,
+    "driver": "Andreas Zuber",
+    "team": "Trident",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 6,
+    "driver": "Nicolas Lapierre",
+    "team": "Arden",
+    "status": "Ret",
+    "laps_completed": 34,
+    "reason_text": "TD puncture; crash.net: tyres went off, pitted and retired; WP gearbox",
+    "category": "PUNCTURE"
+   },
+   {
+    "race_index": 6,
+    "driver": "José María López",
+    "team": "SuperNova",
+    "status": "Ret",
+    "laps_completed": 22,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 6,
+    "driver": "Gianmaria Bruni",
+    "team": "Trident",
+    "status": "Ret",
+    "laps_completed": 22,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 6,
+    "driver": "Hiroki Yoshimoto",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 20,
+    "reason_text": "gearbox (TD); WP \"Retired\"",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 6,
+    "driver": "Andreas Zuber",
+    "team": "Trident",
+    "status": "Ret",
+    "laps_completed": 16,
+    "reason_text": "left rear deflated (WP puncture, TD wheel, crash.net)",
+    "category": "PUNCTURE"
+   },
+   {
+    "race_index": 6,
+    "driver": "Sergio Hernández",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 16,
+    "reason_text": "puncture (TD); WP \"Retired\"",
+    "category": "PUNCTURE"
+   },
+   {
+    "race_index": 6,
+    "driver": "Fairuz Fauzy",
+    "team": "SuperNova",
+    "status": "Ret",
+    "laps_completed": 15,
+    "reason_text": "spin (TD); WP \"Retired\"",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 7,
+    "driver": "Nicolas Lapierre",
+    "team": "Arden",
+    "status": "Ret",
+    "laps_completed": 20,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 7,
+    "driver": "Hiroki Yoshimoto",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 16,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 7,
+    "driver": "Félix Porteiro",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 12,
+    "reason_text": "conflict: WP gearbox vs TD engine (mechanical in both)",
+    "category": "UNKNOWN",
+    "mechanical_but_category_unclear": true
+   },
+   {
+    "race_index": 7,
+    "driver": "José María López",
+    "team": "SuperNova",
+    "status": "Ret",
+    "laps_completed": 8,
+    "reason_text": "conflict: WP engine vs TD spin",
+    "category": "UNKNOWN"
+   },
+   {
+    "race_index": 7,
+    "driver": "Franck Perera",
+    "team": "DAMS",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 7,
+    "driver": "Clivio Piccione",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 8,
+    "driver": "Adrián Vallés",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 39,
+    "reason_text": "brakes",
+    "category": "BRAKES"
+   },
+   {
+    "race_index": 8,
+    "driver": "Timo Glock",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 36,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 8,
+    "driver": "Hiroki Yoshimoto",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 23,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 8,
+    "driver": "Ernesto Viso",
+    "team": "iSport",
+    "status": "Ret",
+    "laps_completed": 23,
+    "reason_text": "accident damage",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 8,
+    "driver": "Jason Tahincioğlu",
+    "team": "FMS",
+    "status": "Ret",
+    "laps_completed": 12,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 8,
+    "driver": "Giorgio Pantano",
+    "team": "FMS",
+    "status": "Ret",
+    "laps_completed": 11,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 8,
+    "driver": "Olivier Pla",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 2,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 8,
+    "driver": "Gianmaria Bruni",
+    "team": "Trident",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 8,
+    "driver": "Adam Carroll",
+    "team": "RacingEngineering",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 8,
+    "driver": "Javier Villa",
+    "team": "RacingEngineering",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 8,
+    "driver": "Nicolas Lapierre",
+    "team": "Arden",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 8,
+    "driver": "Tristan Gommendy",
+    "team": "iSport",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 8,
+    "driver": "Alexandre Negrão",
+    "team": "Piquet",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 9,
+    "driver": "Andreas Zuber",
+    "team": "Trident",
+    "status": "Ret",
+    "laps_completed": 30,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 9,
+    "driver": "Luca Filippi",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 29,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 9,
+    "driver": "Gianmaria Bruni",
+    "team": "Trident",
+    "status": "Ret",
+    "laps_completed": 26,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 9,
+    "driver": "Hiroki Yoshimoto",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 24,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 9,
+    "driver": "Ferdinando Monfardini",
+    "team": "DAMS",
+    "status": "Ret",
+    "laps_completed": 20,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 9,
+    "driver": "Ernesto Viso",
+    "team": "iSport",
+    "status": "Ret",
+    "laps_completed": 18,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 9,
+    "driver": "Lucas di Grassi",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 16,
+    "reason_text": "\"wing\" (TD), unclear whether failure or contact damage",
+    "category": "UNKNOWN"
+   },
+   {
+    "race_index": 9,
+    "driver": "Michael Ammermüller",
+    "team": "Arden",
+    "status": "Ret",
+    "laps_completed": 7,
+    "reason_text": "radiator",
+    "category": "COOLING"
+   },
+   {
+    "race_index": 9,
+    "driver": "Alexandre Negrão",
+    "team": "Piquet",
+    "status": "Ret",
+    "laps_completed": 1,
+    "reason_text": "accident damage",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 9,
+    "driver": "Franck Perera",
+    "team": "DAMS",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 9,
+    "driver": "José María López",
+    "team": "SuperNova",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 10,
+    "driver": "Adrián Vallés",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 13,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 10,
+    "driver": "Neel Jani",
+    "team": "Arden",
+    "status": "Ret",
+    "laps_completed": 5,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 10,
+    "driver": "Michael Ammermüller",
+    "team": "Arden",
+    "status": "Ret",
+    "laps_completed": 5,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 10,
+    "driver": "Alexandre Prémat",
+    "team": "ART",
+    "status": "Ret",
+    "laps_completed": 2,
+    "reason_text": "\"driver gave up\" (TD), no further detail",
+    "category": "UNKNOWN"
+   },
+   {
+    "race_index": 10,
+    "driver": "Andreas Zuber",
+    "team": "Trident",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 11,
+    "driver": "Franck Perera",
+    "team": "DAMS",
+    "status": "Ret",
+    "laps_completed": 34,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 11,
+    "driver": "Jason Tahincioğlu",
+    "team": "FMS",
+    "status": "Ret",
+    "laps_completed": 16,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 11,
+    "driver": "Fairuz Fauzy",
+    "team": "SuperNova",
+    "status": "Ret",
+    "laps_completed": 4,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 11,
+    "driver": "Gianmaria Bruni",
+    "team": "Trident",
+    "status": "Ret",
+    "laps_completed": 1,
+    "reason_text": "clutch",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 11,
+    "driver": "Luca Filippi",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 1,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 11,
+    "driver": "Andreas Zuber",
+    "team": "Trident",
+    "status": "Ret",
+    "laps_completed": 1,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 12,
+    "driver": "Gianmaria Bruni",
+    "team": "Trident",
+    "status": "Ret",
+    "laps_completed": 23,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 12,
+    "driver": "Luca Filippi",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 18,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 12,
+    "driver": "Clivio Piccione",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 16,
+    "reason_text": "suspension",
+    "category": "SUSPENSION"
+   },
+   {
+    "race_index": 12,
+    "driver": "José María López",
+    "team": "SuperNova",
+    "status": "Ret",
+    "laps_completed": 3,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 12,
+    "driver": "Alexandre Negrão",
+    "team": "Piquet",
+    "status": "Ret",
+    "laps_completed": 2,
+    "reason_text": "accident damage",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 12,
+    "driver": "Ferdinando Monfardini",
+    "team": "DAMS",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 12,
+    "driver": "Hiroki Yoshimoto",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 12,
+    "driver": "Ernesto Viso",
+    "team": "iSport",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 13,
+    "driver": "Andreas Zuber",
+    "team": "Trident",
+    "status": "Ret",
+    "laps_completed": 1,
+    "reason_text": "steering",
+    "category": "SUSPENSION"
+   },
+   {
+    "race_index": 13,
+    "driver": "Ferdinando Monfardini",
+    "team": "DAMS",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 13,
+    "driver": "Lucas di Grassi",
+    "team": "Durango",
+    "status": "DNS",
+    "laps_completed": 0,
+    "reason_text": "engine, did not start (TD DNS; WP Ret 0 laps)",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 14,
+    "driver": "Sergio Hernández",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 22,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 14,
+    "driver": "Michael Ammermüller",
+    "team": "Arden",
+    "status": "Ret",
+    "laps_completed": 20,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 14,
+    "driver": "Adrián Vallés",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 20,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 14,
+    "driver": "Lucas di Grassi",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 14,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 14,
+    "driver": "Hiroki Yoshimoto",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 9,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 14,
+    "driver": "Alexandre Prémat",
+    "team": "ART",
+    "status": "Ret",
+    "laps_completed": 9,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 14,
+    "driver": "Clivio Piccione",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 14,
+    "driver": "Nelson Piquet Jr.",
+    "team": "Piquet",
+    "status": "DNS",
+    "laps_completed": 0,
+    "reason_text": "throttle, did not start (TD)",
+    "category": "POWER_LOSS"
+   },
+   {
+    "race_index": 15,
+    "driver": "Adrián Vallés",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 26,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 15,
+    "driver": "Gianmaria Bruni",
+    "team": "Trident",
+    "status": "Ret",
+    "laps_completed": 25,
+    "reason_text": "suspension",
+    "category": "SUSPENSION"
+   },
+   {
+    "race_index": 15,
+    "driver": "Sergio Hernández",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 25,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 15,
+    "driver": "Jason Tahincioğlu",
+    "team": "FMS",
+    "status": "Ret",
+    "laps_completed": 22,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 15,
+    "driver": "Hiroki Yoshimoto",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 17,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 15,
+    "driver": "Nicolas Lapierre",
+    "team": "Arden",
+    "status": "Ret",
+    "laps_completed": 17,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 15,
+    "driver": "Javier Villa",
+    "team": "RacingEngineering",
+    "status": "Ret",
+    "laps_completed": 16,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 15,
+    "driver": "Félix Porteiro",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 16,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 15,
+    "driver": "Clivio Piccione",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 7,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 15,
+    "driver": "Michael Ammermüller",
+    "team": "Arden",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 16,
+    "driver": "Javier Villa",
+    "team": "RacingEngineering",
+    "status": "Ret",
+    "laps_completed": 21,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 16,
+    "driver": "Hiroki Yoshimoto",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 18,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 16,
+    "driver": "Sergio Hernández",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 17,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 16,
+    "driver": "Nicolas Lapierre",
+    "team": "Arden",
+    "status": "Ret",
+    "laps_completed": 12,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 16,
+    "driver": "Adam Carroll",
+    "team": "RacingEngineering",
+    "status": "Ret",
+    "laps_completed": 12,
+    "reason_text": "accident damage",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 16,
+    "driver": "Lucas di Grassi",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 10,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 16,
+    "driver": "Franck Perera",
+    "team": "DAMS",
+    "status": "Ret",
+    "laps_completed": 8,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 16,
+    "driver": "Fairuz Fauzy",
+    "team": "SuperNova",
+    "status": "Ret",
+    "laps_completed": 7,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 16,
+    "driver": "Clivio Piccione",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 5,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 16,
+    "driver": "Alexandre Negrão",
+    "team": "Piquet",
+    "status": "Ret",
+    "laps_completed": 4,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 16,
+    "driver": "José María López",
+    "team": "SuperNova",
+    "status": "Ret",
+    "laps_completed": 4,
+    "reason_text": "throttle",
+    "category": "POWER_LOSS"
+   },
+   {
+    "race_index": 16,
+    "driver": "Luca Filippi",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 4,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 17,
+    "driver": "Ferdinando Monfardini",
+    "team": "DAMS",
+    "status": "Ret",
+    "laps_completed": 32,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 17,
+    "driver": "Félix Porteiro",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 30,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 17,
+    "driver": "Hiroki Yoshimoto",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 27,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 17,
+    "driver": "Giorgio Pantano",
+    "team": "FMS",
+    "status": "Ret",
+    "laps_completed": 13,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 17,
+    "driver": "Clivio Piccione",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 11,
+    "reason_text": "brakes",
+    "category": "BRAKES"
+   },
+   {
+    "race_index": 17,
+    "driver": "Adrián Vallés",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 9,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 17,
+    "driver": "Ernesto Viso",
+    "team": "iSport",
+    "status": "Ret",
+    "laps_completed": 9,
+    "reason_text": "spin",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 17,
+    "driver": "Fairuz Fauzy",
+    "team": "SuperNova",
+    "status": "Ret",
+    "laps_completed": 8,
+    "reason_text": "brakes",
+    "category": "BRAKES"
+   },
+   {
+    "race_index": 17,
+    "driver": "Gianmaria Bruni",
+    "team": "Trident",
+    "status": "Ret",
+    "laps_completed": 6,
+    "reason_text": "wheel fell off",
+    "category": "SUSPENSION"
+   },
+   {
+    "race_index": 18,
+    "driver": "Félix Porteiro",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 3,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 18,
+    "driver": "Alexandre Negrão",
+    "team": "Piquet",
+    "status": "Ret",
+    "laps_completed": 2,
+    "reason_text": "steering",
+    "category": "SUSPENSION"
+   },
+   {
+    "race_index": 18,
+    "driver": "Fairuz Fauzy",
+    "team": "SuperNova",
+    "status": "Ret",
+    "laps_completed": 2,
+    "reason_text": "engine",
+    "category": "ENGINE"
+   },
+   {
+    "race_index": 18,
+    "driver": "Luca Filippi",
+    "team": "BCN",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 18,
+    "driver": "Clivio Piccione",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 18,
+    "driver": "Giorgio Pantano",
+    "team": "FMS",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 18,
+    "driver": "Michael Ammermüller",
+    "team": "Arden",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 19,
+    "driver": "José María López",
+    "team": "SuperNova",
+    "status": "Ret",
+    "laps_completed": 19,
+    "reason_text": "accident damage",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 19,
+    "driver": "Vitaly Petrov",
+    "team": "DPR",
+    "status": "Ret",
+    "laps_completed": 18,
+    "reason_text": "lost water",
+    "category": "COOLING"
+   },
+   {
+    "race_index": 19,
+    "driver": "Timo Glock",
+    "team": "iSport",
+    "status": "Ret",
+    "laps_completed": 17,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 19,
+    "driver": "Adrián Vallés",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 17,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 19,
+    "driver": "Gianmaria Bruni",
+    "team": "Trident",
+    "status": "Ret",
+    "laps_completed": 15,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 19,
+    "driver": "Ferdinando Monfardini",
+    "team": "DAMS",
+    "status": "Ret",
+    "laps_completed": 15,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 19,
+    "driver": "Adam Carroll",
+    "team": "RacingEngineering",
+    "status": "Ret",
+    "laps_completed": 10,
+    "reason_text": "lost wheel",
+    "category": "SUSPENSION"
+   },
+   {
+    "race_index": 19,
+    "driver": "Félix Porteiro",
+    "team": "Campos",
+    "status": "Ret",
+    "laps_completed": 8,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 19,
+    "driver": "Ernesto Viso",
+    "team": "iSport",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 19,
+    "driver": "Alexandre Negrão",
+    "team": "Piquet",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 19,
+    "driver": "Andreas Zuber",
+    "team": "Trident",
+    "status": "Ret",
+    "laps_completed": 0,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 20,
+    "driver": "José María López",
+    "team": "SuperNova",
+    "status": "Ret",
+    "laps_completed": 17,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 20,
+    "driver": "Alexandre Prémat",
+    "team": "ART",
+    "status": "Ret",
+    "laps_completed": 15,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 20,
+    "driver": "Sergio Hernández",
+    "team": "Durango",
+    "status": "Ret",
+    "laps_completed": 12,
+    "reason_text": "gearbox",
+    "category": "GEARBOX"
+   },
+   {
+    "race_index": 20,
+    "driver": "Adam Carroll",
+    "team": "RacingEngineering",
+    "status": "Ret",
+    "laps_completed": 5,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 20,
+    "driver": "Alexandre Negrão",
+    "team": "Piquet",
+    "status": "Ret",
+    "laps_completed": 4,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 20,
+    "driver": "Ferdinando Monfardini",
+    "team": "DAMS",
+    "status": "Ret",
+    "laps_completed": 4,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 20,
+    "driver": "Michael Ammermüller",
+    "team": "Arden",
+    "status": "Ret",
+    "laps_completed": 2,
+    "reason_text": "accident",
+    "category": "ACCIDENT"
+   },
+   {
+    "race_index": 20,
+    "driver": "Javier Villa",
+    "team": "RacingEngineering",
+    "status": "Ret",
+    "laps_completed": 1,
+    "reason_text": "throttle",
+    "category": "POWER_LOSS"
+   }
+  ],
+  "team_starts": {
+   "ART": 42,
+   "Arden": 42,
+   "BCN": 42,
+   "Campos": 42,
+   "DAMS": 41,
+   "DPR": 42,
+   "Durango": 40,
+   "FMS": 42,
+   "Piquet": 42,
+   "RacingEngineering": 42,
+   "SuperNova": 42,
+   "Trident": 42,
+   "iSport": 41
+  },
+  "not_counted_notes": [
+   "2006 race 20 Timo Glock: DNS injured - sprained wrist",
+   "2006 race 10 Ferdinando Monfardini: DNS Silverstone Sprint (WP DNS, Grund nicht belegt, vermutlich Folge seines schweren Unfalls im Feature), nicht gezählt",
+   "2006 race 10 Lucas di Grassi, Sergio Hernández: vom Silverstone-Sprint ausgeschlossen (WP \"Excluded\", Hernández war im Feature wegen eines illegal veränderten Flügels disqualifiziert worden, Zusammenhang nicht belegt), nicht gezählt"
+  ]
+ }
+}

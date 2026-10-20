@@ -66,6 +66,8 @@ Fahrerzuordnung über den Skin-Namen, weil KI-Fahrer im selben Auto nur so unter
 
 `profiles/failures_<jahr>.ini` für 1988 bis 2025, berechnet aus allen Rennergebnissen der Saison (F1DB). Details, Tabelle und Fahrer-Multiplikatoren: `research/ausfallstatistik.md`. Die Gruppe-C-Profile für den 956 folgen aus der WEC-Statistik.
 
+GP2 2005 und 2006 (`sr_gp2_05`, `sr_gp2_06`): Die App erkennt GP2 an Ordnername, Brand oder Tag und nimmt dann `profiles/failures_gp2_<jahr>.ini` statt des F1-Profils. Grundlage sind 319 Ausfälle aus 44 Rennen (`research/gp2-ausfallstatistik.md`, Rohdaten `research/data/gp2_retirements.json`), erzeugt mit `py -3.11 tools/gp2_profiles.py`. Mechanisch 12,2 % (2005) und 13,1 % (2006) pro Start, Bezug 50 Minuten (Mittel aus Hauptrennen etwa 61 und Sprint etwa 38 Minuten). Häufungen sind auf 3 Ausfälle gleicher Art pro Rennen gedeckelt (Imola 2005 Bremsen, Schätzung). Teamfaktor aus dem Skin-Namen über `gp2_rates.json`, zum Saisonmittel geschrumpft (20 virtuelle Starts, Schätzung): ART und iSport um 0,5, BCN, Campos, DPR, FMS und Trident um 1,4. Dirty Air nutzt die F1-Kennlinie 2005 bis 2008, für GP2 ungeprüft.
+
 ## Dirty Air
 
 Abtriebsverlust im Nachlauf pro Ära, aus FIA-CFD-Werten für 2019 bis 2026 und Schätzungen für ältere Jahre: `research/dirty-air.md`, Modell `tools/dirty_air_model.py`, Modul `script/dirty_air.lua`.

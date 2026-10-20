@@ -63,20 +63,39 @@ end
 
 local FAIL_KEYS = { 'ENGINE', 'POWER_LOSS', 'TURBO', 'GEARBOX', 'HYDRAULICS', 'ELECTRICS', 'BRAKES', 'PUNCTURE', 'SUSPENSION', 'COOLING' }
 
-local function getProfile(season)
-  season = math.max(1988, math.min(2025, season))
-  if profileCache[season] == nil then
-    local p = { season = season, raceLengthMin = 90, rates = {} }
-    local ok, ini = pcall(ac.INIConfig.load, ROOT .. '/profiles/failures_' .. season .. '.ini')
+-- Serien mit eigenem Profil (profiles/failures_<serie>_<jahr>.ini) und eigener Teamtabelle; alles andere gilt als F1.
+-- SEASONS: Jahre mit Profil, andere Baujahre nehmen das nächstliegende.
+local SERIES = {
+  gp2 = { label = 'GP2', seasons = { 2005, 2006 } },
+}
+
+local function nearestSeason(list, season)
+  local best = list[1]
+  for _, y in ipairs(list) do if math.abs(y - season) < math.abs(best - season) then best = y end end
+  return best
+end
+
+local function getProfile(season, series)
+  local file, label
+  if series and SERIES[series] then
+    season = nearestSeason(SERIES[series].seasons, season)
+    file, label = 'failures_' .. series .. '_' .. season, SERIES[series].label .. ' ' .. season
+  else
+    season = math.max(1988, math.min(2025, season))
+    file, label = 'failures_' .. season, tostring(season)
+  end
+  if profileCache[file] == nil then
+    local p = { season = season, label = label, raceLengthMin = 90, rates = {} }
+    local ok, ini = pcall(ac.INIConfig.load, ROOT .. '/profiles/' .. file .. '.ini')
     if ok and ini then
       p.raceLengthMin = ini:get('GLOBAL', 'RACE_LENGTH_MIN', 90)
       for _, k in ipairs(FAIL_KEYS) do p.rates[k] = ini:get('ERA', k, 0) end
     else
-      ac.log('[reliability] Profil fehlt: failures_' .. season .. '.ini')
+      ac.log('[reliability] Profil fehlt: ' .. file .. '.ini')
     end
-    profileCache[season] = p
+    profileCache[file] = p
   end
-  return profileCache[season]
+  return profileCache[file]
 end
 
 -- ---------- Team-Faktor aus F1DB (research/data/failure_rates.json, Konstrukteur pro Saison) ----------
@@ -250,6 +269,40 @@ local function currentSeason(carIdx)
   return S.season
 end
 
+-- Serie aus Ordnername, Brand, Anzeigename und Tags (z. B. sr_gp2_05, Brand "Gp2", Tag "#GP205")
+local function seriesOf(i)
+  local okTags, tagList = pcall(ac.getCarTags, i)
+  local raw = ac.getCarID(i) .. ' ' .. tostring(ac.getCarBrand(i)) .. ' ' .. tostring(ac.getCarName(i, false)) .. ' ' ..
+    ((okTags and type(tagList) == 'table') and table.concat(tagList, ' ') or '')
+  if normalize(raw):find('gp2', 1, true) then return 'gp2' end
+  return nil
+end
+
+-- Teamfaktor einer Serie aus data/<serie>_rates.json: { "2005": { "ART": { "factor": .., "aliases": [..] } } }
+-- Zuordnung über den Skin-Namen (z. B. "9_ART", "16_Pofms"), längster Treffer gewinnt.
+local seriesRates = {}
+local function seriesTeamFactor(i, series, season)
+  if seriesRates[series] == nil then
+    local ok, parsed = pcall(JSON.parse, io.load(ROOT .. '/data/' .. series .. '_rates.json') or '')
+    seriesRates[series] = (ok and type(parsed) == 'table') and parsed or {}
+    if not ok or type(parsed) ~= 'table' then ac.log('[reliability] ' .. series .. '_rates.json fehlt, Team-Faktor 1.0') end
+  end
+  local tbl = seriesRates[series][tostring(nearestSeason(SERIES[series].seasons, season))]
+  if type(tbl) ~= 'table' then return 1.0, nil end
+  local flat = normalize(ac.getCarSkinID(i))
+  local best, bestLen, bestName = nil, 0, nil
+  for name, v in pairs(tbl) do
+    local keys = { name }
+    for _, a in ipairs(v.aliases or {}) do keys[#keys + 1] = a end
+    for _, key in ipairs(keys) do
+      local k = normalize(key)
+      if #k >= 3 and #k > bestLen and flat:find(k, 1, true) then best, bestLen, bestName = v, #k, name end
+    end
+  end
+  if best and best.factor then return math.max(0.3, math.min(2.5, best.factor)), bestName end
+  return 1.0, nil
+end
+
 -- Prüft, ob der Modder Aero-Schaden eingetragen hat: AC rechnet CL = CL / (1 + ZONE_x_CL * Aufprall-km/h).
 -- Kunos-Standard ist 0.01 (50 km/h Treffer = ein Drittel weniger Abtrieb an dem Flügel). Alles 0 = nur Optik.
 local function aeroDamageModelled(i)
@@ -331,15 +384,17 @@ end
 
 local function initCar(i)
   local season = currentSeason(i)
-  local factor, team = teamFactor(i, season)
+  local series = seriesOf(i)
+  local factor, team
+  if series then factor, team = seriesTeamFactor(i, series, season) else factor, team = teamFactor(i, season) end
   cars[i] = {
-    season = season, era = eraForYear(season), front = 0, rear = 0, total = 0, applied = false,
+    season = season, series = series, era = eraForYear(season), front = 0, rear = 0, total = 0, applied = false,
     rng = { v = (sessionId * 7919 + (i + 1) * 104729 + math.floor(os.clock() * 1000)) % 2147483646 + 1 },
     active = {}, done = {}, baseRestrictor = nil, nearest = 1e9, peak = 0, factor = factor, team = team,
     aeroModelled = aeroDamageModelled(i), dmgFront = 0, dmgRear = 0, dmgRestr = 0,
   }
-  ac.log(string.format('[reliability] car %d %s: Saison %d, Team %s, Ausfall-Faktor %.2f, Aero-Schaden in aero.ini: %s', i, ac.getCarID(i), season,
-    team or 'unbekannt (1.0)', factor, cars[i].aeroModelled and 'ja' or 'nein'))
+  ac.log(string.format('[reliability] car %d %s: Saison %d%s, Team %s, Ausfall-Faktor %.2f, Aero-Schaden in aero.ini: %s', i, ac.getCarID(i), season,
+    series and (' ' .. SERIES[series].label) or '', team or 'unbekannt (1.0)', factor, cars[i].aeroModelled and 'ja' or 'nein'))
   if S.aiTuneOn then applyAiTune(i) end
 end
 
@@ -567,7 +622,7 @@ local function updateFailures(sim, dt)
       elseif car.speedKmh <= 30 then diag.slow = diag.slow + 1
       else
         diag.eligible = diag.eligible + 1
-        local p = getProfile(c.season)
+        local p = getProfile(c.season, c.series)
         if S.failures and not c.dead then
           for _, k in ipairs(FAIL_KEYS) do
             if FAIL[k] and not c.active[k] and not c.done[k] then
@@ -637,7 +692,7 @@ function script.windowMain(dt)
     if changed then S.season = math.floor(v + 0.5); resetAll() end
   end
   local c0 = cars[0]
-  if c0 then ui.text(string.format('Spielerauto: Saison %d, Dirty-Air-Kennlinie %s', c0.season, c0.era)) end
+  if c0 then ui.text(string.format('Spielerauto: Saison %d%s, Dirty-Air-Kennlinie %s', c0.season, c0.series and (' ' .. SERIES[c0.series].label) or '', c0.era)) end
 
   ui.separator(); ui.header('Dirty Air')
   S.strength = ui.slider('##str', S.strength, 0, 1, 'Stärke Spieler %.2f')
@@ -688,10 +743,10 @@ function script.windowMain(dt)
   ui.separator(); ui.header('Ausfälle')
   S.failMult = ui.slider('##fm', S.failMult, 0, 20, 'Rate x %.1f', 2)
   if c0 then
-    local p = getProfile(c0.season)
+    local p = getProfile(c0.season, c0.series)
     local sum = 0
     for _, k in ipairs(FAIL_KEYS) do if FAIL[k] then sum = sum + (p.rates[k] or 0) end end
-    ui.text(string.format('Profil %d: %.1f %% pro Auto und Rennen (x %.1f), dein Team %s Faktor %.2f', p.season, sum, S.failMult,
+    ui.text(string.format('Profil %s: %.1f %% pro Auto und Rennen (x %.1f), dein Team %s Faktor %.2f', p.label, sum, S.failMult,
       c0.team or 'unbekannt', c0.factor))
   end
 

@@ -1,0 +1,179 @@
+{
+ "2005": {
+  "ART": {
+   "starts": 46,
+   "mech": 1,
+   "factor": 0.43,
+   "aliases": []
+  },
+  "Arden": {
+   "starts": 46,
+   "mech": 4,
+   "factor": 0.8,
+   "aliases": []
+  },
+  "BCN": {
+   "starts": 45,
+   "mech": 9,
+   "factor": 1.44,
+   "aliases": [
+    "BCNCompeticion"
+   ]
+  },
+  "Campos": {
+   "starts": 46,
+   "mech": 9,
+   "factor": 1.42,
+   "aliases": []
+  },
+  "Coloni": {
+   "starts": 46,
+   "mech": 3,
+   "factor": 0.68,
+   "aliases": []
+  },
+  "DAMS": {
+   "starts": 46,
+   "mech": 5,
+   "factor": 0.92,
+   "aliases": []
+  },
+  "DPR": {
+   "starts": 46,
+   "mech": 9,
+   "factor": 1.42,
+   "aliases": [
+    "DavidPrice"
+   ]
+  },
+  "Durango": {
+   "starts": 46,
+   "mech": 7,
+   "factor": 1.17,
+   "aliases": []
+  },
+  "Piquet": {
+   "starts": 46,
+   "mech": 5,
+   "factor": 0.92,
+   "aliases": [
+    "PiquetSports"
+   ]
+  },
+  "RacingEngineering": {
+   "starts": 45,
+   "mech": 6,
+   "factor": 1.07,
+   "aliases": [
+    "RacingEng"
+   ]
+  },
+  "SuperNova": {
+   "starts": 46,
+   "mech": 3,
+   "factor": 0.68,
+   "aliases": [
+    "Supernova"
+   ]
+  },
+  "iSport": {
+   "starts": 46,
+   "mech": 6,
+   "factor": 1.05,
+   "aliases": []
+  }
+ },
+ "2006": {
+  "ART": {
+   "starts": 42,
+   "mech": 2,
+   "factor": 0.57,
+   "aliases": []
+  },
+  "Arden": {
+   "starts": 42,
+   "mech": 4,
+   "factor": 0.82,
+   "aliases": []
+  },
+  "BCN": {
+   "starts": 42,
+   "mech": 8,
+   "factor": 1.31,
+   "aliases": [
+    "BCNCompeticion"
+   ]
+  },
+  "Campos": {
+   "starts": 42,
+   "mech": 8,
+   "factor": 1.31,
+   "aliases": []
+  },
+  "DAMS": {
+   "starts": 41,
+   "mech": 4,
+   "factor": 0.83,
+   "aliases": []
+  },
+  "DPR": {
+   "starts": 42,
+   "mech": 6,
+   "factor": 1.06,
+   "aliases": [
+    "DavidPrice"
+   ]
+  },
+  "Durango": {
+   "starts": 40,
+   "mech": 8,
+   "factor": 1.35,
+   "aliases": []
+  },
+  "FMS": {
+   "starts": 42,
+   "mech": 9,
+   "factor": 1.43,
+   "aliases": [
+    "Pofms",
+    "PetrolOfisi"
+   ]
+  },
+  "Piquet": {
+   "starts": 42,
+   "mech": 3,
+   "factor": 0.69,
+   "aliases": [
+    "PiquetSports"
+   ]
+  },
+  "RacingEngineering": {
+   "starts": 42,
+   "mech": 3,
+   "factor": 0.69,
+   "aliases": [
+    "RacingEng"
+   ]
+  },
+  "SuperNova": {
+   "starts": 42,
+   "mech": 6,
+   "factor": 1.06,
+   "aliases": [
+    "Supernova"
+   ]
+  },
+  "Trident": {
+   "starts": 42,
+   "mech": 9,
+   "factor": 1.43,
+   "aliases": []
+  },
+  "iSport": {
+   "starts": 41,
+   "mech": 1,
+   "factor": 0.45,
+   "aliases": []
+  }
+ }
+}

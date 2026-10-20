@@ -24,7 +24,7 @@ Sammlung aller eigenen Assetto-Corsa-Mods. Oberste Ebene: Mod-Kategorien. Darunt
 | AI Mods | `04-lua-behaviour` Fake-Moves, Druck, Verteidigung | geplant |
 | AI Mods | `05-line-optimizer` Ideallinie berechnen | geplant |
 | AI Mods | `06-reinforcement-learning` RL-Agent im Simulator | geplant |
-| Car Mods | `porsche_956` Bellof Ring-Rekord 1983 mit Ground-Effect | Recherche und Venturi-Modell fertig, Physikdaten offen |
+| Car Mods | `porsche_956` Bellof Ring-Rekord 1983 mit Ground-Effect; `f2004_drs_kers` F2004 mit DRS/KERS 2013 und Pirelli 2018 | 956 fertig; F2004 gebaut, Test im Spiel offen |
 | Career Mods | `career-system` Import der Excel-Karrieren, Ziele, Beziehungen, Rennstart | Importer für 2017er Datei fertig |
 | Gameplay Mods | `mechanical-failures` Defekte, Verschleiß, Dirty Air pro Ära, Bauteil und Fahrer | Konzept, Liste und Script-Entwurf |
 

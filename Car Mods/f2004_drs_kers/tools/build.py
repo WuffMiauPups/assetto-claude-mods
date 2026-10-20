@@ -10,6 +10,8 @@ Quellen im Spielordner (werden nie veraendert):
 
 Es werden keine Kunos- oder RSS-Dateien ins Repo kopiert; alles Abgeleitete entsteht beim Bauen.
 Ein vorhandener Zielordner wird vorher als <name>.bak gesichert (nur die letzte Version).
+Die Physik wird als data.acd gepackt (AC laedt drs.ini nur daraus), die entpackte Kopie liegt in tools/out.
+Das Modell bekommt die DRS-Klappe als eigenen Knoten plus Animation (make_flap.py).
 """
 from __future__ import annotations
 
@@ -20,6 +22,9 @@ import re
 import shutil
 import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import make_flap  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 MOD = HERE.parent
@@ -37,11 +42,9 @@ FLAP_SHARE = 0.45
 REAR_WING = 2          # Heckfluegel-Index in der aero.ini des F2004
 FLAP_WING = 6          # neuer Index fuer die DRS-Klappe (0..5 sind belegt)
 
-# Reifen: Geometrie bleibt 2004 (13 Zoll, 245/325), Mischung und Karkasse 2018
-GEOMETRY = {
-    "FRONT": {"WIDTH": "0.245", "RADIUS": "0.330", "RIM_RADIUS": "0.1778", "ANGULAR_INERTIA": "1.24"},
-    "REAR": {"WIDTH": "0.325", "RADIUS": "0.330", "RIM_RADIUS": "0.1778", "ANGULAR_INERTIA": "1.3"},
-}
+# Reifen: tyres.ini der Formula Hybrid 2018 wird 1:1 uebernommen (auch Breite 305/405 und Radius 0,335),
+# nur die Standardmischung wird auf Hyper-Soft gesetzt. Hier koennten Werte je Achse ueberschrieben werden.
+GEOMETRY: dict[str, dict[str, str]] = {"FRONT": {}, "REAR": {}}
 
 
 def load_unpacker():
@@ -146,6 +149,7 @@ def build_drs(data: Path) -> None:
         return float(next(l for l in rear if l.startswith(key + "=")).split("=")[1].split(";")[0])
 
     cl, cd = gain("CL_GAIN"), gain("CD_GAIN")
+    flap_angle = gain("ANGLE")
     flap = [l for l in rear]
     flap[0] = f"[WING_{FLAP_WING}]"
     set_key(flap, "NAME", "DRS")
@@ -155,36 +159,50 @@ def build_drs(data: Path) -> None:
     set_key(rear, "CL_GAIN", f"{cl * (1 - FLAP_SHARE):.4f}")
     set_key(rear, "CD_GAIN", f"{cd * (1 - FLAP_SHARE):.4f}")
 
-    # Hochgeschwindigkeits-Regler des Heckfluegels auch auf die Klappe
-    ctrl_ids = [int(n.split("_")[-1]) for n, _ in sections if n.startswith("DYNAMIC_CONTROLLER_")]
-    ctrl = [
-        f"[DYNAMIC_CONTROLLER_{max(ctrl_ids) + 1}]",
-        f"WING={FLAP_WING}", "COMBINATOR=MULT", "INPUT=SPEED_KMH",
-        "LUT=wing_controller_highspeed.lut", "FILTER=0.80", "UP_LIMIT=35", "DOWN_LIMIT=0", "",
-    ]
+    # Klappe ohne Geschwindigkeitsregler und ohne Setup-Eintrag: fester Winkel, damit die
+    # Animation (25 Grad zu, 0 Grad offen) immer zur Physik passt
     out = []
     for name, lines in sections:
+        if name == f"WING_{FLAP_WING}" or (name.startswith("DYNAMIC_CONTROLLER_") and f"WING={FLAP_WING}" in lines):
+            continue
         out.extend(lines)
         if name == f"WING_{REAR_WING}":
             out.append("")
             out.append(f"; DRS-Klappe: {FLAP_SHARE:.0%} des Heckfluegels, Winkel 0 bei offenem DRS (drs.ini)")
             out.extend(flap)
-    out.extend([""] + ctrl)
     aero.write_text("\n".join(out) + "\n")
 
     (data / "drs.ini").write_text(f"[WING_{FLAP_WING}]\nEFFECT=0\n")
-    # Kunos-Rest ohne Animationsdatei; es gibt keine bewegte Klappe am F2004-Modell
-    (data / "wing_animations.ini").unlink(missing_ok=True)
+    (data / "wing_animations.ini").write_text(
+        "[HEADER]\nVERSION=2\n\n[ANIMATION_0]\n"
+        f"WING={FLAP_WING}\nFILE=car_wing.ksanim\nMIN=0\nMAX={flap_angle:g}\nINVERTED=1\nSPEED=8\n")
 
     setup = data / "setup.ini"
     text = setup.read_text(errors="ignore")
-    block = re.search(rf"\[WING_{REAR_WING}\].*?(?=\n\s*\n|\n/)", text, re.S).group(0)
-    flap_block = block.replace(f"[WING_{REAR_WING}]", f"[WING_{FLAP_WING}]")
-    flap_block = re.sub(r"NAME=.*", "NAME=Rear flap (DRS)", flap_block)
-    flap_block = re.sub(r"POS_Y=(\d+)", lambda m: f"POS_Y={int(m.group(1)) + 1}", flap_block)
-    text = text.replace(block, block.replace("NAME=Rear wing", "NAME=Rear wing main") + "\n\n" + flap_block)
-    setup.write_text(text)
-    print(f"DRS: Heckfluegel geteilt {1 - FLAP_SHARE:.0%} / {FLAP_SHARE:.0%}, drs.ini und Setup-Eintrag angelegt")
+    setup.write_text(text.replace("NAME=Rear wing\n", "NAME=Rear wing main\n"))
+    print(f"DRS: Heckfluegel geteilt {1 - FLAP_SHARE:.0%} / {FLAP_SHARE:.0%}, drs.ini und wing_animations.ini angelegt")
+
+
+def build_visuals(car: Path, cars: Path) -> None:
+    """Klappe im Modell abtrennen (Haupt-kn5 und LOD B) und Animation schreiben."""
+    for name in ("ferrari_f2004.kn5", "ferrari_f2004_lod_B.kn5"):
+        src = cars / BASE_CAR / name
+        if src.exists() and not make_flap.split_flap(src, car / name):
+            print(f"Hinweis: keine Klappe in {name} gefunden, Datei bleibt original")
+    make_flap.write_anim(car / "animations" / "car_wing.ksanim")
+
+
+def pack_data(car: Path) -> None:
+    """data-Ordner als data.acd packen; AC laedt DRS nur aus der acd. Entpackte Kopie nach tools/out."""
+    spec = importlib.util.spec_from_file_location("acd_pack", ACD_UNPACK.with_name("acd_pack.py"))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    mod.pack(str(car / "data"), str(car / "data.acd"))
+    keep = HERE / "out" / "data_unpacked"
+    if keep.exists():
+        shutil.rmtree(keep)
+    shutil.move(str(car / "data"), str(keep))
+    print(f"data.acd gepackt, entpackte Kopie unter {keep}")
 
 
 # ---------------------------------------------------------------- KERS, Namen
@@ -237,6 +255,8 @@ def main() -> None:
     build_drs(data)
     build_kers(data)
     update_names(car, compounds)
+    build_visuals(car, cars)
+    pack_data(car)
     print(f"fertig: {car}")
 
 

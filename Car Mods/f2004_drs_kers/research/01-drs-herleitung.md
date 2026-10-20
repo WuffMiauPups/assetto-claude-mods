@@ -38,11 +38,19 @@ Zum Vergleich der 2013er im Spiel: 15 % Widerstand, 41 % Heckflügel. Der 2004er
 
 ## Setup
 
-`setup.ini` bekommt zwei Einträge: "Rear wing main" (WING_2) und "Rear flap (DRS)" (WING_6), beide 5 bis 35 Grad, Standard 25. Wer den ganzen Flügel verstellen will, stellt beide gleich.
+"Rear wing main" (WING_2) verstellt nur das Hauptblatt, 5 bis 35 Grad. Die Klappe (WING_6) steht fest auf 25 Grad: `wing_animations.ini` bildet 25 Grad auf geschlossen und 0 Grad auf offen ab, ein verstellbarer Klappenwinkel würde die Animation halb öffnen.
+
+## Animation
+
+Das Kunos-Modell hat die obere Klappe als eigenes, nicht verbundenes Teil in der Karosserie-Mesh (128 Dreiecke, Sehne 110 mm, Anstellung rund 55 Grad, Spalt zum Hauptblatt 4 mm). `tools/make_flap.py` verschiebt diese Dreiecke in den Knoten `WING_Rear_Flap` mit Drehpunkt an der Hinterkante (0, 0.82, -2.20) und schreibt `car_wing.ksanim` (Format 2, 20 Bilder): Drehung um die Querachse, 30 Grad, Vorderkante hebt sich, Spalt rund 55 mm. Drehrichtung und Format wurden am Cimmerian 2013 nachgerechnet (dessen Klappe dreht um -45 Grad um x bei Drehpunkt hinten).
+
+## Warum DRS zuerst nicht lud
+
+Mit offenem `data`-Ordner stand im Log kein `LOADING DRS`, beim Kunos F138 mit `data.acd` schon. AC prüft die `drs.ini` offenbar nur in der acd. Seit dem Bau mit gepackter data.acd ist das zu prüfen.
 
 ## Grenzen
 
-- Am F2004-Modell gibt es keine bewegliche Klappe, DRS ist nur in der Physik und der DRS-Anzeige sichtbar.
+- LOD C und D (ab 45 m) haben die Klappe nicht abgetrennt, dort bleibt sie zu.
 - Die Klappe nutzt dieselbe Polare wie der Hauptflügel. Ein echtes Klappenprofil hätte bei 0 Grad etwas weniger Restwiderstand.
 - DRS-Zonen kommen von der Strecke (`drs_zones.ini`), CSP setzt sie durch.
 

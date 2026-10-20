@@ -20,3 +20,6 @@ AI Mods/06-reinforcement-learning/checkpoints/
 *.log
 AI Mods/data/**/laps/*.csv
 Career Mods/career-system/data/
+
+# Beim Bauen entpackte Kunos/RSS-Daten
+Car Mods/f2004_drs_kers/tools/out/

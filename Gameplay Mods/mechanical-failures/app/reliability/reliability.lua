@@ -2,7 +2,7 @@
 -- Wirkt über die physics.*-API auf jedes Auto im Feld, Spieler und KI, ohne data.acd anzufassen.
 -- Geprüft gegen lua-sdk/ac_apps (CSP 0.3.0-preview649):
 --   physics.setGripDecrease(car, wheels, 0..1)      Dirty Air, Modus "Grip" (invalidiert keine Runde)
---   physics.setAirDensityMultiplier(car, k)         Dirty Air, Modus "Luftdichte" (invalidiert die Runde)
+--   physics.setAirDensityMultiplier(car, k)         Dirty Air, Modus "Luftdichte" (invalidiert die Runde, daher nur bei KI-Autos)
 --   physics.setCarEngineLife(car, life)             Motor-, Getriebe-, Hydraulik-, Elektrik-, Kühlungsausfall (Auto rollt aus)
 --   physics.setCarRestrictor(car, pct)              Leistungsverlust, Turbo, Warnphasen
 --   physics.blowTyres(car, wheels)                  Reifenschaden
@@ -400,7 +400,8 @@ end
 
 local function resetAll()
   for i, c in pairs(cars) do
-    if c.applied then physics.setGripDecrease(i, ac.Wheel.All, 0); physics.setAirDensityMultiplier(i, 1) end
+    if c.applied then physics.setGripDecrease(i, ac.Wheel.All, 0) end
+    if c.density then physics.setAirDensityMultiplier(i, 1) end
     if c.baseRestrictor then physics.setCarRestrictor(i, c.baseRestrictor) end
   end
   cars = {}
@@ -477,17 +478,19 @@ local function updateDirtyAir(sim, dt)
       local lossF = 1 - (1 - c.front) * (1 - c.dmgFront)
       local lossR = 1 - (1 - c.rear) * (1 - c.dmgRear)
       if lossF > 0.002 or lossR > 0.002 then
-        if S.mode == 0 then
+        -- Luftdichte nur bei KI-Autos: jeder Aufruf von setAirDensityMultiplier, auch mit 1, invalidiert die Runde
+        if S.mode == 0 or not me.isAIControlled then
           local share = aeroShare(me.speedKmh)
           physics.setGripDecrease(i, ac.Wheel.Front, lossF * share)
           physics.setGripDecrease(i, ac.Wheel.Rear, lossR * share)
         else
           physics.setAirDensityMultiplier(i, 1 - (1 - (1 - c.total) * (1 - math.max(c.dmgFront, c.dmgRear))))
+          c.density = true
         end
         c.applied = true
       elseif c.applied then
         physics.setGripDecrease(i, ac.Wheel.All, 0)
-        physics.setAirDensityMultiplier(i, 1)
+        if c.density then physics.setAirDensityMultiplier(i, 1); c.density = false end
         c.applied = false
       end
     end

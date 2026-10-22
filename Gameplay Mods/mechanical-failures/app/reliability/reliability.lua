@@ -12,7 +12,7 @@
 local S = ac.storage({
   enabled = true, dirtyAir = true, failures = true,
   strength = 0.4, aiStrength = 0.25, aeroShare = 0.5, mode = 0,   -- mode 0 = Grip, 1 = Luftdichte
-  failMult = 1.0, seasonAuto = true, season = 2008, log = true, showCars = true,
+  failMult = 1.0, seasonAuto = true, season = 2008, log = true, showCars = true, retireToPits = true,
   damageMode = 1, damageStrength = 1.0, damageFull = 80, damageSide = 8, damageFloor = 0.35,
   aiTuneOn = false, aiTuneJson = '{}',   -- KI-Abstimmung pro Saison: {"2007": {aero=..,tyres=..,brake=..,grip=..,look=..}}
   -- damageMode: 0 aus, 1 Flügel nur bei Autos ohne eigene Aero-Schadenswerte, 2 Flügel bei allen.
@@ -403,6 +403,12 @@ local function resetAll()
     if c.applied then physics.setGripDecrease(i, ac.Wheel.All, 0) end
     if c.density then physics.setAirDensityMultiplier(i, 1) end
     if c.baseRestrictor then physics.setCarRestrictor(i, c.baseRestrictor) end
+    if c.dead then                                   -- Sperren aus dem Ausfall lösen (Stall war vorher aus, CSP-Standard)
+      physics.setEngineStallEnabled(i, false)
+      physics.setAINoInput(i, false, false)
+      local car = ac.getCar(i)
+      if car and not car.isAIControlled then physics.setCarNoInput(false) end
+    end
   end
   cars = {}
 end
@@ -613,6 +619,27 @@ FAIL.SUSPENSION = function(i, f, dt)
 end
 -- FAIL.BRAKES: keine API in der App, nur über das Auto-Script
 
+-- Ausgefallenes Auto: Motor bleibt tot, nach dem Ausrollen (oder spätestens 20 s) in die eigene Box, dort geparkt.
+-- Spieler: Eingaben gesperrt (physics.setCarNoInput), KI: physics.setAINoInput. Gelöst erst mit neuer Session.
+local function updateRetired(i, car, c, dt)
+  killEngine(i)
+  c.deadTime = (c.deadTime or 0) + dt
+  if not S.retireToPits or c.inPits then
+    if c.inPits and not car.isAIControlled then physics.setCarNoInput(true) end
+    return
+  end
+  if (c.deadTime > 5 and car.speedKmh < 20) or c.deadTime > 20 then
+    -- pcall: falls die laufende CSP-Version teleportCarTo nicht kennt, bleibt das Auto gesperrt an der Strecke stehen
+    local ok, err = pcall(function()
+      physics.teleportCarTo(i, ac.SpawnSet.Pits, true)
+      physics.setCarVelocity(i, vec3())
+    end)
+    c.inPits = true
+    if not car.isAIControlled then physics.setCarNoInput(true) end
+    logEvent(i, ok and 'Ausgefallen, in der Box abgestellt' or ('Ausgefallen, Box-Teleport fehlgeschlagen: ' .. tostring(err)))
+  end
+end
+
 local diag = { expected = 0, eligible = 0, noPhysics = 0, slow = 0 }   -- für die Logzeile alle 10 s
 
 local function updateFailures(sim, dt)
@@ -620,6 +647,9 @@ local function updateFailures(sim, dt)
   diag.eligible, diag.noPhysics, diag.slow = 0, 0, 0
   for i = 0, sim.carsCount - 1 do
     local car, c = ac.getCar(i), cars[i]
+    if car and c and c.dead then
+      updateRetired(i, car, c, dt)
+    end
     if car and c then
       if not car.physicsAvailable then diag.noPhysics = diag.noPhysics + 1
       elseif car.speedKmh <= 30 then diag.slow = diag.slow + 1
@@ -635,7 +665,6 @@ local function updateFailures(sim, dt)
             end
           end
         end
-        if c.dead then killEngine(i) end
         if next(c.active) == nil then                       -- kein Defekt aktiv: Restriktor nur aus Seitenkastenschaden
           if (c.dmgRestr or 0) > 0.1 then restrictor(i, 0); c.dmgApplied = true
           elseif c.dmgApplied then restrictor(i, 0); c.dmgApplied = false end
@@ -745,6 +774,7 @@ function script.windowMain(dt)
 
   ui.separator(); ui.header('Ausfälle')
   S.failMult = ui.slider('##fm', S.failMult, 0, 20, 'Rate x %.1f', 2)
+  if ui.checkbox('Ausgefallene Autos in die Box, Weiterfahren gesperrt', S.retireToPits) then S.retireToPits = not S.retireToPits end
   if c0 then
     local p = getProfile(c0.season, c0.series)
     local sum = 0

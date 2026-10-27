@@ -62,7 +62,7 @@ def set_value(text, sec, key, value):
     nl = "\r\n" if "\r\n" in text else "\n"
     if block is None:
         return text.rstrip("\r\n") + f"{nl}{nl}[{sec}]{nl}{key}={value}{nl}", None
-    m = re.search(r"^(\s*)" + re.escape(key) + r"\s*=\s*([^;\r\n]*?)(\s*(?:;[^\r\n]*)?)$", block, re.M | re.I)
+    m = re.search(r"^([ \t]*)" + re.escape(key) + r"[ \t]*=[ \t]*([^;\r\n]*?)([ \t]*(?:;[^\r\n]*)?)(?=\r?$)", block, re.M | re.I)
     if m:
         new_block = block[:m.start()] + f"{m.group(1)}{key}={value}{m.group(3)}" + block[m.end():]
         return text.replace(block, new_block, 1), m.group(2).strip()

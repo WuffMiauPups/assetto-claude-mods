@@ -37,6 +37,22 @@ py -3.11 acdini.py --ac "E:/SteamLibrary/steamapps/common/assettocorsa" --prefix
 - KI-Hinweise waren bei Cimmerian sehr vorsichtig (Bremse 0.75, Aero 0.75 bzw. 0.7): Die KI bremste viel zu früh.
 - Gewicht: Cimmerian staffelt das Gewicht pro Team. Das ist eine versteckte Rangfolge, ersetzt durch das echte Mindestgewicht des Jahres. Abgestuft wird über den Grid.
 
+### Trägheit (`car.ini [BASIC] INERTIA`)
+
+Maße des Quaders, aus dem AC die Trägheit rechnet. Ein kleinerer Quader macht das Auto um die Hochachse nervös, die KI korrigiert ständig und wird langsamer. Ausreißer auf den Jahrgangsstandard gesetzt:
+
+| Jahrgang | Autos | vorher | jetzt |
+|---|---|---|---|
+| 2010 | Red Bull | 1.38,1.1,3.42 | 1.6,0.75,4.1 |
+| 2013 | Caterham | 1.5,0.8,3.5 | 1.6,0.7,4.1 |
+| 2009 TRP | Ferrari, McLaren, Red Bull, Toro Rosso, Renault, Force India | 1.38,1.1,3.42 | 1.6,0.7,4.1 (wie BMW, Brawn, Toyota, Williams, Kunos F138) |
+
+2007 hat bei allen Autos 1.38,1.1,3.42 und bleibt so (einheitlich).
+
+### Cimmerian 2006 (11 Autos)
+
+Gewicht 605–625 auf 605. Die Reifen bleiben: Michelin (BMW, Honda, McLaren, Red Bull, Renault, Toro Rosso) und Bridgestone (Ferrari, Midland, Super Aguri, Toyota, Williams) sind der Reifenkrieg von 2006, Michelin etwas griffiger (`DY_REF` 1.75 gegen 1.73).
+
 ### Cimmerian 2007 (11 Autos)
 
 | Wert | vorher | jetzt |
@@ -69,6 +85,10 @@ Bremse 0.97 gab Blockierer, 0.94 kostete die KI fast eine Sekunde, 0.96 ist der 
 | `BRAKE_HINT` / `AERO_HINT` 2011, 2013, Williams 2010 | 0.75 / 0.7 | 0.97 / 1.0 |
 | `DOWN` 2013 | 80 | 85 |
 | 2013 `suspensions.ini [REAR] BASEY` | −0.03 bis 0.08 je Team | 0.02 für alle |
+| 2013 `[FRONT] BASEY` | 0.10 bis 0.13 | 0.10 |
+| 2011 `BASEY` vorn / hinten | 0.02–0.08 / −0.02–0.04 | 0.06 / 0.02 |
+| Gewicht 2012 / 2013 | 640–745 (HRT) / 642–655 | 640 / 642 (2011 war schon 640) |
+| 2013 Mercedes `colliders.ini GROUND_ENABLE` | 0 | 1 wie alle anderen 2013er |
 
 BASEY hinten entscheidet über die Höhe des Diffusors, dessen Kennlinie unter etwa 4 cm stark einbricht: Der Red Bull 2013 war mit −0.03 über eine Sekunde zu langsam, mit 0.02 holte er Pole.
 

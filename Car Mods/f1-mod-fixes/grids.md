@@ -1,6 +1,6 @@
 # Grids (Ballast kg / Restrictor %)
 
-Gelten nur zusammen mit den Physik-Änderungen aus der [README](README.md). Abgestimmt mit RARE aktiv, Reliability-App aus, auf der genannten Strecke. Zielabstände sind Schätzungen aus echten Quali-Zeiten der Saison.
+Gelten nur zusammen mit den Physik-Änderungen aus der [README](README.md). Seit 2026-10-27 sind zusätzlich die Trägheit (Red Bull 2010, Caterham 2013, sechs 2009er) und die Gewichte 2006, 2012, 2013 angeglichen: Grids 2009 und 2013 müssen nachgetestet werden, beim 2010er dürfte Red Bull schneller werden. Abgestimmt mit RARE aktiv, Reliability-App aus, auf der genannten Strecke. Zielabstände sind Schätzungen aus echten Quali-Zeiten der Saison.
 
 ## 2010 (Cimmerian, alle 620 kg) – Barcelona, 15 und 30 min
 

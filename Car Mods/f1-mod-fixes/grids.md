@@ -4,7 +4,7 @@ Gelten nur zusammen mit den Physik-Änderungen aus der [README](README.md). Seit
 
 ## 2010 (Cimmerian, alle 620 kg)
 
-Seit 2026-10-27 steckt die Teamstärke im Abtrieb der Autos (README). Grid: **alle 0 / 0**, nur Fahrerstärken. Noch nicht getestet; was danach abweicht, mit kleinen Werten oder den Abtrieb-Faktoren nachstellen.
+Seit 2026-10-27 steckt die Teamstärke im Abtrieb der Autos (README). Grid: **alle 0 / 0**, nur Fahrerstärken. In Barcelona getestet (zwei Sessions mit 15 min, eine mit 40 min): alle Teams im Schnitt innerhalb von 0,4 s ihres Ziels, Ergebnisse in der README.
 
 Alter Grid (vor dem Abtrieb-Umbau, Barcelona, die meisten Fahrer innerhalb von 0,6 s ihres echten Q1-Abstands):
 

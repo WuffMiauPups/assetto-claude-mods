@@ -17,7 +17,7 @@ from acd_unpack import generate_key  # noqa: E402
 def pack(folder, out):
     folder = os.path.abspath(folder)
     car = os.path.basename(os.path.dirname(folder))
-    key = generate_key(car).encode()
+    key = generate_key(car.lower()).encode()  # AC verschlüsselt mit dem Ordnernamen in Kleinbuchstaben
     buf = bytearray()
     n = 0
     for name in sorted(os.listdir(folder), key=str.upper):

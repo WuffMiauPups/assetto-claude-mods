@@ -37,7 +37,7 @@ def generate_key(n):
 
 def unpack(acd, out):
     car = os.path.basename(os.path.dirname(os.path.abspath(acd)))
-    key = generate_key(car).encode()
+    key = generate_key(car.lower()).encode()  # AC verschlüsselt mit dem Ordnernamen in Kleinbuchstaben
     data = open(acd,'rb').read()
     off = 0
     v = struct.unpack_from('<i', data, 0)[0]

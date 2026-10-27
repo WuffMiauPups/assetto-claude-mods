@@ -23,7 +23,7 @@ from acd_unpack import generate_key  # noqa: E402
 
 def acd_read(path):
     car = os.path.basename(os.path.dirname(path))
-    key = generate_key(car).encode()
+    key = generate_key(car.lower()).encode()  # AC verschlüsselt mit dem Ordnernamen in Kleinbuchstaben
     data = open(path, "rb").read()
     off = 8 if struct.unpack_from("<i", data, 0)[0] < 0 else 0
     header = data[:off]

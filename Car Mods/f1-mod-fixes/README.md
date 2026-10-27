@@ -94,17 +94,19 @@ Red Bull und Red Bull `_cod`: Diffusor-`CL_GAIN` (`WING_4` bis `WING_6`) +15 % (
 
 Nach dem Test in Barcelona (15 min, Grid 0 / 0) nachgestellt: ein Prozent Abtrieb kostet dort etwa 0,11 s, nicht 0,13 s.
 
+Nach dem zweiten Barcelona-Test nochmals nachgestellt: Sauber, Force India, Williams, Toro Rosso ×0.96, McLaren ×0.97 (das Mittelfeld lag in beiden Sessions etwa 0,5 s zu nah an Red Bull). Zwischen zwei 15-Minuten-Sessions schwanken unveränderte Teams um bis zu 1 s, deshalb nur auf Abweichungen reagieren, die in mehreren Sessions gleich sind.
+
 | Team | Faktor auf CL gegenüber Cimmerian | Abtrieb zu Red Bull (200 km/h) | Sonstiges |
 |---|---|---|---|
 | Red Bull | Diffusor ×1.15 | 0 | Balance vorn 46,4 % (andere 47,5–48 %) |
 | Renault | 1.0014 | −8 % | |
 | Ferrari | 0.9813 | −9 % | |
 | Mercedes | 0.9860 | −9 % | |
-| Williams (`_s2`) | 0.9862 | −10 % | `cim_2010_williams` hat ein anderes Aero-Modell, gleicher Faktor |
-| McLaren | 0.9663 | −10 % | Heckflügel-CD ×0.94 (F-Schacht) |
-| Sauber | 0.9603 | −13 % | |
-| Force India | 0.9434 | −14 % | alle CD ×0.96 |
-| Toro Rosso | 0.9314 | −16 % | |
+| McLaren | 0.9372 | −13 % | Heckflügel-CD ×0.94 (F-Schacht) |
+| Williams (`_s2`) | 0.9467 | −13 % | `cim_2010_williams` hat ein anderes Aero-Modell, gleicher Faktor |
+| Sauber | 0.9218 | −16 % | |
+| Force India | 0.9056 | −17 % | alle CD ×0.96 |
+| Toro Rosso | 0.8941 | −19 % | |
 | Lotus | 0.8347 | −25 % | |
 | Virgin | 0.7842 | −31 % | |
 | HRT | 0.7455 | −34 % | |

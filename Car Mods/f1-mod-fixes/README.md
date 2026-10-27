@@ -77,6 +77,23 @@ Wie 2007: Gewicht 606–645 auf 605, KI 0.92 / 0.97 / 1.0 / 1, Lookahead 17.
 
 Red Bull und Red Bull `_cod`: Diffusor-`CL_GAIN` (`WING_4` bis `WING_6`) +15 % (0.463/0.506 → 0.532/0.582), Luftwiderstand unverändert. Schätzung für den angeblasenen Diffusor des RB6. Cimmerian gab ihm nur etwa 1 % mehr Abtrieb als McLaren bei 2,7 % weniger Leistung, die KI landete hinter Mercedes und Sauber.
 
+**Teamstärke über das Autokonzept (2026-10-27):** Alle `CL_GAIN` je Auto mit einem Faktor gegenüber Cimmerian skaliert, sodass der Abtrieb-Rückstand zum Red Bull (geschätzt mit 0,13 s pro Prozent, Motorleistung nach Cimmerian) dem Quali-Abstand im Saisonschnitt 2010 entspricht. Grid danach ohne Ballast.
+
+| Team | Faktor auf CL | Abtrieb zu Red Bull (200 km/h) | Sonstiges |
+|---|---|---|---|
+| Red Bull | Diffusor ×1.15 | 0 | |
+| Ferrari | 1.0117 | −6 % | |
+| McLaren | 1.0014 | −7 % | Heckflügel-CD ×0.94 (F-Schacht) |
+| Renault | 1.0014 | −8 % | |
+| Williams (`_s2`) | 1.0065 | −8 % | `cim_2010_williams` hat ein anderes Aero-Modell, gleicher Faktor |
+| Mercedes | 0.9860 | −9 % | |
+| Force India | 0.9757 | −11 % | alle CD ×0.96 |
+| Sauber | 0.9603 | −13 % | |
+| Toro Rosso | 0.9552 | −14 % | |
+| Lotus | 0.8833 | −21 % | |
+| Virgin | 0.8525 | −25 % | |
+| HRT | 0.7806 | −31 % | |
+
 Bremse 0.97 gab Blockierer, 0.94 kostete die KI fast eine Sekunde, 0.96 ist der Kompromiss. Topspeed in Barcelona rund 307 km/h, nicht übersetzungsbegrenzt (330 km/h am Begrenzer).
 
 ### Cimmerian 2011 bis 2013

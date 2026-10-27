@@ -101,7 +101,7 @@ Nach dem zweiten Barcelona-Test nochmals nachgestellt: Sauber, Force India, Will
 | Red Bull | Diffusor ×1.15 | 0 | Balance vorn 46,4 % (andere 47,5–48 %) |
 | Renault | 1.0014 | −8 % | |
 | Ferrari | 0.9813 | −9 % | |
-| Mercedes | 0.9860 | −9 % | |
+| Mercedes | 0.9663 | −11 % | nach dem dritten Test ×0.98 |
 | McLaren | 0.9372 | −13 % | Heckflügel-CD ×0.94 (F-Schacht) |
 | Williams (`_s2`) | 0.9467 | −13 % | `cim_2010_williams` hat ein anderes Aero-Modell, gleicher Faktor |
 | Sauber | 0.9218 | −16 % | |
@@ -115,7 +115,7 @@ Ergebnis vor dem Nachstellen (Abstand zu Red Bull, Ziel Saisonschnitt): McLaren 
 
 Dritter Test mit dem heutigen Stand (40 min, Grid 0 / 0, Team-Schnitt der Bestzeiten zu Red Bull): McLaren +0.48 (Ziel +0.6), Ferrari +0.61 (+0.6), Force India +0.98 (+1.3), Renault +1.07 (+1.0, nur Kubica), Williams +1.12 (+1.3), Sauber +1.50 (+1.5), Toro Rosso +2.04 (+1.6, nur Alguersuari, Buemi fuhr mit Schaden 2 s langsamer), Lotus +2.50 (+3.0), Virgin +4.39 (+3.6), HRT +5.60 (+4.3, nur Senna), Mercedes +0.16 (+0.9, nur Rosberg, Schumacher nach einer Runde raus).
 
-Alle drei Sessions auf den heutigen Stand umgerechnet (0,11 s pro Prozent), Abweichung vom Ziel im Schnitt: Ferrari 0.00, McLaren +0.04, Williams +0.02, Renault +0.02, Toro Rosso +0.18, Virgin +0.17, Sauber −0.16, Lotus −0.22, Force India −0.27, Mercedes −0.39, HRT +0.40. Alle innerhalb der Streuung, deshalb keine weitere Änderung. Mercedes war zweimal 0,6–0,75 s zu schnell und einmal 0,1 s zu langsam; falls er auch im Rennen vorne mitfährt, Faktor ×0.98 (etwa 0,2 s).
+Alle drei Sessions auf den heutigen Stand umgerechnet (0,11 s pro Prozent), Abweichung vom Ziel im Schnitt: Ferrari 0.00, McLaren +0.04, Williams +0.02, Renault +0.02, Toro Rosso +0.18, Virgin +0.17, Sauber −0.16, Lotus −0.22, Force India −0.27, Mercedes −0.39, HRT +0.40. Alle innerhalb der Streuung. Nur Mercedes war zweimal 0,6–0,75 s zu schnell (einmal 0,1 s zu langsam) und bekam als letzte Änderung ×0.98 auf alle `CL_GAIN` (630 → 609 kg, etwa 0,2 s, Balance unverändert 47,5 %). Die übrigen Teams bleiben, weitere Korrekturen würden nur die Streuung nachzeichnen.
 
 **Motorleistung (2026-10-27):** `power.lut` gleichmäßig skaliert (Form der Kurve bleibt), Spitzenleistung aus `power.lut` gerechnet. Cimmerian lag bei 671 bis 713 PS, real 2010 rund 750 PS. Ziel (Schätzungen, keine offiziellen Werte): Mercedes 755 PS (Analyse 2009, [motorsport.com](https://www.motorsport.com/f1/news/analysis-of-f1-engine-performance-in-2009/3217681/)), Ferrari 750 PS ([Wikipedia Ferrari F10](https://en.wikipedia.org/wiki/Ferrari_F10)), Cosworth 745 PS (Cosworth nannte rund 770, aber Verbrauch und Fahrbarkeit schwächer), Renault 740 PS (galt als schwächster Motor, Abstand bester zu schlechtestem Motor unter 2,5 %).
 

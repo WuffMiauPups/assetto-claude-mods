@@ -92,20 +92,24 @@ Red Bull und Red Bull `_cod`: Diffusor-`CL_GAIN` (`WING_4` bis `WING_6`) +15 % (
 
 **Teamstärke über das Autokonzept (2026-10-27):** Alle `CL_GAIN` je Auto mit einem Faktor gegenüber Cimmerian skaliert, sodass der Abtrieb-Rückstand zum Red Bull (geschätzt mit 0,13 s pro Prozent, Motorleistung nach Cimmerian) dem Quali-Abstand im Saisonschnitt 2010 entspricht. Grid danach ohne Ballast.
 
-| Team | Faktor auf CL | Abtrieb zu Red Bull (200 km/h) | Sonstiges |
+Nach dem Test in Barcelona (15 min, Grid 0 / 0) nachgestellt: ein Prozent Abtrieb kostet dort etwa 0,11 s, nicht 0,13 s.
+
+| Team | Faktor auf CL gegenüber Cimmerian | Abtrieb zu Red Bull (200 km/h) | Sonstiges |
 |---|---|---|---|
-| Red Bull | Diffusor ×1.15 | 0 | |
-| Ferrari | 1.0117 | −6 % | |
-| McLaren | 1.0014 | −7 % | Heckflügel-CD ×0.94 (F-Schacht) |
+| Red Bull | Diffusor ×1.15 | 0 | Balance vorn 46,4 % (andere 47,5–48 %) |
 | Renault | 1.0014 | −8 % | |
-| Williams (`_s2`) | 1.0065 | −8 % | `cim_2010_williams` hat ein anderes Aero-Modell, gleicher Faktor |
+| Ferrari | 0.9813 | −9 % | |
 | Mercedes | 0.9860 | −9 % | |
-| Force India | 0.9757 | −11 % | alle CD ×0.96 |
+| Williams (`_s2`) | 0.9862 | −10 % | `cim_2010_williams` hat ein anderes Aero-Modell, gleicher Faktor |
+| McLaren | 0.9663 | −10 % | Heckflügel-CD ×0.94 (F-Schacht) |
 | Sauber | 0.9603 | −13 % | |
-| Toro Rosso | 0.9552 | −14 % | |
-| Lotus | 0.8833 | −21 % | |
-| Virgin | 0.8525 | −25 % | |
-| HRT | 0.7806 | −31 % | |
+| Force India | 0.9434 | −14 % | alle CD ×0.96 |
+| Toro Rosso | 0.9314 | −16 % | |
+| Lotus | 0.8347 | −25 % | |
+| Virgin | 0.7842 | −31 % | |
+| HRT | 0.7455 | −34 % | |
+
+Ergebnis vor dem Nachstellen (Abstand zu Red Bull, Ziel Saisonschnitt): McLaren +0.19 (Ziel +0.6), Ferrari +0.27 (+0.6), Renault +0.83 (+1.0), Force India +0.94 (+1.3), Mercedes +1.03 (+0.9), Williams +1.10 (+1.3), Toro Rosso +1.30 (+1.6), Sauber +1.42 (+1.5), Lotus +2.43 (+3.0), Virgin +2.75 (+3.6), HRT +3.85 (+4.3).
 
 **Motorleistung (2026-10-27):** `power.lut` gleichmäßig skaliert (Form der Kurve bleibt), Spitzenleistung aus `power.lut` gerechnet. Cimmerian lag bei 671 bis 713 PS, real 2010 rund 750 PS. Ziel (Schätzungen, keine offiziellen Werte): Mercedes 755 PS (Analyse 2009, [motorsport.com](https://www.motorsport.com/f1/news/analysis-of-f1-engine-performance-in-2009/3217681/)), Ferrari 750 PS ([Wikipedia Ferrari F10](https://en.wikipedia.org/wiki/Ferrari_F10)), Cosworth 745 PS (Cosworth nannte rund 770, aber Verbrauch und Fahrbarkeit schwächer), Renault 740 PS (galt als schwächster Motor, Abstand bester zu schlechtestem Motor unter 2,5 %).
 

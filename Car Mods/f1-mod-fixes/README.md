@@ -49,6 +49,19 @@ Maße des Quaders, aus dem AC die Trägheit rechnet. Ein kleinerer Quader macht 
 
 2007 hat bei allen Autos 1.38,1.1,3.42 und bleibt so (einheitlich).
 
+### Lenkung (`car.ini [CONTROLS]`)
+
+Die KI gibt bei allen Autos dieselbe Lenkeingabe. Bei kleinerer Lenkübersetzung schlagen die Räder weiter ein, die KI lenkt über den Schräglauf hinaus und schiebt (beobachtet beim Red Bull 2010 in der letzten Kurve Shanghai: voller Einschlag, rutscht über die Strecke).
+
+| Auto | vorher (Lock / Ratio / Rod / Assist) | jetzt |
+|---|---|---|
+| Red Bull 2010 | 250 / **12** / 0.00083 / 1 | 250 / 15 / 0.0017 / 0.760 wie alle 2010er |
+| Renault 2009 | 225 / **12** / 0.00083 / 1 | 225 / 15 / 0.0017 / 0.760 |
+| Force India 2009 | **420 / 16** / 0.0008 | 250 / 15 / 0.0017 (vorher bis 26° Radeinschlag) |
+| Williams 2009 | 250 / 15 / **0.0007** | 250 / 15 / 0.0017 |
+
+Einheitlich je Jahrgang sind 2006, 2008, 2012 (230/15), 2007 (225/12), 2011 und 2013 (250/13).
+
 ### Cimmerian 2006 (11 Autos)
 
 Gewicht 605–625 auf 605. Die Reifen bleiben: Michelin (BMW, Honda, McLaren, Red Bull, Renault, Toro Rosso) und Bridgestone (Ferrari, Midland, Super Aguri, Toyota, Williams) sind der Reifenkrieg von 2006, Michelin etwas griffiger (`DY_REF` 1.75 gegen 1.73).

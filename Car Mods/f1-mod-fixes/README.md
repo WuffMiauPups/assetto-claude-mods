@@ -75,6 +75,8 @@ Wie 2007: Gewicht 606–645 auf 605, KI 0.92 / 0.97 / 1.0 / 1, Lookahead 17.
 | `GASGAIN` / `BRAKE_HINT` | 0.2 / 0.97 (0.93 Williams) | 0.4 / 0.96 |
 | `UP` / `DOWN` | 17850 / 84 | 17700 / 90 (DOWN ist im Format v4 ein Prozentwert von UP) |
 
+Red Bull und Red Bull `_cod`: Diffusor-`CL_GAIN` (`WING_4` bis `WING_6`) +15 % (0.463/0.506 → 0.532/0.582), Luftwiderstand unverändert. Schätzung für den angeblasenen Diffusor des RB6. Cimmerian gab ihm nur etwa 1 % mehr Abtrieb als McLaren bei 2,7 % weniger Leistung, die KI landete hinter Mercedes und Sauber.
+
 Bremse 0.97 gab Blockierer, 0.94 kostete die KI fast eine Sekunde, 0.96 ist der Kompromiss. Topspeed in Barcelona rund 307 km/h, nicht übersetzungsbegrenzt (330 km/h am Begrenzer).
 
 ### Cimmerian 2011 bis 2013

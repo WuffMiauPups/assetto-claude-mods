@@ -103,3 +103,12 @@ mechanical-failures/
 13.10.2026: App `reliability` gebaut und installiert, noch nicht im Spiel getestet. Auto-Script-Weg im BMW Sauber 2008 getestet und bestätigt (Dirty Air bis 0,63 Verlust vorn, Flügel-Gain), danach wieder auf Original-`data.acd` zurückgesetzt, damit App und Script nicht doppelt wirken. Erkenntnis: AC lädt die `data.acd`, ein entpackter `data`-Ordner daneben wird ignoriert.
 
 Offen: App im Spiel testen (Log `[reliability]`, App-Fenster), Dirty-Air-Stärke und Abtriebsanteil abstimmen, Ausfälle mit Rate x20 einzeln prüfen. Restriktor-Skala (Prozent) und Aufhängungsschaden (70 km/h) sind Schätzwerte.
+
+## Abgleich der App gegen das lua-sdk (2026-10-18)
+
+Alle Aufrufe in `app/reliability/reliability.lua` existieren in `ac_apps/lib.lua` mit passender Signatur. Datentabellen vollständig: 38 Saisonprofile, 431 Team-Faktoren, Fahrertabelle 39 Saisons. Offene Punkte, keine Blocker:
+
+- Zufall enthält die Systemzeit, nicht reproduzierbar. Fester Seed pro Wochenende vorgesehen.
+- Bremsdefekte nicht über die App möglich (keine API), Profilrate `BRAKES` bleibt ungenutzt.
+- Team-Faktor nutzt die Gesamtquote des Konstrukteurs; getrennte Faktoren pro Bauteil (Motorhersteller) wären genauer.
+- Dirty Air im Grip-Modus ist eine Näherung über den geschätzten Abtriebsanteil; für Rennen den Luftdichte-Modus bevorzugen.

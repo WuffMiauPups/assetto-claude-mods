@@ -1,0 +1,2486 @@
+{
+ "acfl_1994_benetton": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_1994_ferrari": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_1994_footwork": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_1994_jordan": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_1994_larrousse": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_1994_ligier": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_1994_lotus": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_1994_mclaren": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_1994_minardi": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_1994_pacific": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_1994_sauber": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_1994_simtek": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_1994_tyrrell": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_1994_williams": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_2006_bmwsauber": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_2006_ferrari": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_2006_honda": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_2006_mclaren": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_2006_midland": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_2006_redbull": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_2006_renault": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_2006_str": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_2006_superaguri": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_2006_toyota": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_2006_williams": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_f1_2021": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "acfl_f1_2023_alfaromeo": {
+  "wings": 10,
+  "zone_cl": 0.02,
+  "zone_cd": 0.03,
+  "verdict": "physikalisch"
+ },
+ "acfl_f1_2023_alphatauri": {
+  "wings": 10,
+  "zone_cl": 0.02,
+  "zone_cd": 0.03,
+  "verdict": "physikalisch"
+ },
+ "acfl_f1_2023_alpine": {
+  "wings": 10,
+  "zone_cl": 0.02,
+  "zone_cd": 0.03,
+  "verdict": "physikalisch"
+ },
+ "acfl_f1_2023_astonmartin": {
+  "wings": 10,
+  "zone_cl": 0.02,
+  "zone_cd": 0.03,
+  "verdict": "physikalisch"
+ },
+ "acfl_f1_2023_ferrari_b": {
+  "wings": 10,
+  "zone_cl": 0.02,
+  "zone_cd": 0.03,
+  "verdict": "physikalisch"
+ },
+ "acfl_f1_2023_haas": {
+  "wings": 10,
+  "zone_cl": 0.02,
+  "zone_cd": 0.03,
+  "verdict": "physikalisch"
+ },
+ "acfl_f1_2023_mclaren": {
+  "wings": 10,
+  "zone_cl": 0.02,
+  "zone_cd": 0.03,
+  "verdict": "physikalisch"
+ },
+ "acfl_f1_2023_mercedes_b": {
+  "wings": 10,
+  "zone_cl": 0.02,
+  "zone_cd": 0.03,
+  "verdict": "physikalisch"
+ },
+ "acfl_f1_2023_redbull": {
+  "wings": 10,
+  "zone_cl": 0.02,
+  "zone_cd": 0.03,
+  "verdict": "physikalisch"
+ },
+ "acfl_f1_2023_williams": {
+  "wings": 10,
+  "zone_cl": 0.02,
+  "zone_cd": 0.03,
+  "verdict": "physikalisch"
+ },
+ "acr_ferrari_sf71h": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "Alpine_A521": {
+  "wings": 0,
+  "zone_cl": 0.0,
+  "zone_cd": 0.0,
+  "verdict": "kosmetisch"
+ },
+ "asr_2004_ferrari_f2004": {
+  "wings": 7,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "aston_martin_amr23": {
+  "wings": 7,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "aston_martin_amr23_s2": {
+  "wings": 7,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "aston_martin_amr23_s3": {
+  "wings": 7,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "aston_martin_amr25": {
+  "wings": 7,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "caterham_2014": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "caterham_late_2014": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2006_bmw_sauber": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2006_ferrari": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2006_honda": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2006_mclaren": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2006_midland": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2006_redbull": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2006_renault": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2006_superaguri": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2006_tororosso": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2006_toyota": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2006_williams": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2007_bmw_sauber": {
+  "wings": 7,
+  "zone_cl": 0.005,
+  "zone_cd": 0.005,
+  "verdict": "physikalisch"
+ },
+ "cim_2007_ferrari": {
+  "wings": 7,
+  "zone_cl": 0.005,
+  "zone_cd": 0.005,
+  "verdict": "physikalisch"
+ },
+ "cim_2007_honda_V2": {
+  "wings": 2,
+  "zone_cl": 0.0,
+  "zone_cd": 0.0,
+  "verdict": "kosmetisch"
+ },
+ "cim_2007_mclaren": {
+  "wings": 7,
+  "zone_cl": 0.005,
+  "zone_cd": 0.005,
+  "verdict": "physikalisch"
+ },
+ "cim_2007_redbull": {
+  "wings": 7,
+  "zone_cl": 0.005,
+  "zone_cd": 0.005,
+  "verdict": "physikalisch"
+ },
+ "cim_2007_renault": {
+  "wings": 7,
+  "zone_cl": 0.005,
+  "zone_cd": 0.005,
+  "verdict": "physikalisch"
+ },
+ "cim_2007_spyker": {
+  "wings": 7,
+  "zone_cl": 0.005,
+  "zone_cd": 0.005,
+  "verdict": "physikalisch"
+ },
+ "cim_2007_superaguri": {
+  "wings": 7,
+  "zone_cl": 0.005,
+  "zone_cd": 0.005,
+  "verdict": "physikalisch"
+ },
+ "cim_2007_tororosso": {
+  "wings": 7,
+  "zone_cl": 0.005,
+  "zone_cd": 0.005,
+  "verdict": "physikalisch"
+ },
+ "cim_2007_toyota": {
+  "wings": 7,
+  "zone_cl": 0.005,
+  "zone_cd": 0.005,
+  "verdict": "physikalisch"
+ },
+ "cim_2007_williams": {
+  "wings": 7,
+  "zone_cl": 0.005,
+  "zone_cd": 0.005,
+  "verdict": "physikalisch"
+ },
+ "cim_2008_bmw_sauber": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2008_ferrari": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2008_forceindia": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2008_honda": {
+  "wings": 11,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2008_mclaren": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2008_redbull": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2008_renault": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2008_superaguri": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2008_tororosso": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2008_toyota": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2008_williams": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2010_ferrari": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2010_ferrari_cod": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2010_forceindia": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2010_hrt": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2010_lotus": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2010_mclaren": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2010_mclaren_cod": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2010_mercedes": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2010_redbull": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2010_redbull_cod": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2010_renault": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2010_tororosso": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2010_virgin": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2010_virgin_s2": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2010_williams": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2010_williams_s2": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2011_ferrari": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2011_forceindia": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2011_hrt": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2011_lotus": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2011_mclaren": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2011_mercedes": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2011_redbull": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2011_renault": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2011_sauber": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2011_tororosso": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2011_virgin": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2011_williams": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2012_caterham": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2012_ferrari": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2012_forceindia": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2012_hrt": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2012_lotus": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2012_marussia": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2012_mclaren": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2012_mercedes": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2012_redbull": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2012_sauber": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2012_tororosso": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2012_williams": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2013_caterham": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2013_ferrari": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2013_forceindia": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2013_lotus": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2013_marussia": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2013_mclaren": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2013_mercedes": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2013_redbull": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2013_sauber": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2013_tororosso": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "cim_2013_williams": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1983_tyrrell": {
+  "wings": 4,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1988_ags": {
+  "wings": 4,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1988_arrows": {
+  "wings": 4,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1988_benetton": {
+  "wings": 4,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1988_coloni": {
+  "wings": 4,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1988_dallara": {
+  "wings": 4,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1988_eurobrun": {
+  "wings": 4,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1988_ferrari": {
+  "wings": 4,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1988_larrousse": {
+  "wings": 4,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1988_ligier": {
+  "wings": 4,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1988_lotus": {
+  "wings": 4,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1988_march": {
+  "wings": 4,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1988_mclaren": {
+  "wings": 4,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1988_minardi": {
+  "wings": 4,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1988_osella": {
+  "wings": 4,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1988_rial": {
+  "wings": 4,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1988_tyrrell": {
+  "wings": 4,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1988_williams": {
+  "wings": 4,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1988_zakspeed": {
+  "wings": 4,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1993_benetton": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1993_ferrari": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1993_footwork": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1993_jordan": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1993_larrousse": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1993_ligier": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1993_lola": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1993_lotus": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1993_mclaren": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1993_minardi": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1993_sauber": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1993_tyrrell": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1993_williams": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1996_benetton": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1996_ferrari": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1996_footwork": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1996_forti": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1996_jordan": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1996_ligier": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1996_mclaren": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1996_minardi": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1996_sauber": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1996_tyrrell": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1996_williams": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1997_arrows": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1997_benetton": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1997_ferrari": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1997_jordan": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1997_mclaren": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1997_minardi": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1997_prost": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1997_sauber": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1997_stewart": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1997_tyrrell": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1997_williams": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1999_arrows": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1999_bar": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1999_benetton": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1999_ferrari": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1999_jordan": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1999_mclaren": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1999_minardi": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1999_prost": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1999_sauber": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1999_stewart": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_1999_williams": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2001_arrows": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2001_bar": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2001_benetton": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2001_ferrari": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2001_jaguar": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2001_jordan": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2001_mclaren": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2001_minardi": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2001_prost": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2001_sauber": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2001_williams": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2002_Arrows_A23": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2002_BAR_004": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2002_Ferrari_F2002": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2002_Jaguar_R3": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2002_Jordan_EJ12": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2002_McLaren_Mp4-17": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2002_Minardi_PS02": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2002_Renault_R202": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2002_Sauber_C21": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2002_Toyota_TF102": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2002_Williams_FW24_S1": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2002_Williams_FW24_S2": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2003_bar": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2003_ferrari": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2003_jaguar": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2003_jordan": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2003_mclaren": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2003_minardi": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2003_renault": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2003_sauber": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2003_toyota": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2003_williams": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2004_BAR_006": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2004_Ferrari_F2004_Kun": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2004_Jaguar_R5": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2004_Jordan_EJ14": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2004_McLaren_MP4-19": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2004_Minardi_PS04B": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2004_Renault_R24": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2004_Sauber_C23": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2004_Toyota_TF104": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2004_Williams_FW26": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2004_Williams_FW26_Vers_B": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2006_BMWSauber_F1.06": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2006_early_mclaren": {
+  "wings": 12,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2006_Ferrari_F248": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2006_Honda_Racing_RA106": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2006_Mclaren_MP4-21": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2006_Midland_M16": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2006_Red_Bull_Racing_RB2": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2006_Renault_R26": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2006_Renault_R26_S1_Spec": {
+  "wings": 7,
+  "zone_cl": 0.005,
+  "zone_cd": 0.005,
+  "verdict": "physikalisch"
+ },
+ "F1_2006_Super_Aguri_F1_SA06": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2006_Super_Aguri_F1_SA06_S2": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2006_Toro_Rosso_STR1": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2006_Toyota_TF106": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_2006_Williams_FW28": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2012_caterham": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2012_ferrari": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2012_forceindia": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2012_hrt": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2012_lotus": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2012_marussia": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2012_mclaren": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2012_mercedes": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2012_redbull": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2012_sauber": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2012_tororosso": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2012_williams": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2014_caterham_ct05": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2014_ferrari_f14_t": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2014_force_india_vjm07": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2014_lotus_e22": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2014_marussia_mr03": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2014_mclaren_mp4_29": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2014_mercedes_w05": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2014_red_bull_rb10": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2014_sauber_c33": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2014_toro_rosso_str9": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2014_williams_fw36": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2018_sf71h": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2020_mercedes": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2020_mercedes_testing": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2020_mercedes_v2": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2020_w11": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2023_amr23": {
+  "wings": 11,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2026": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_2026_sf26": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_alpine_2025": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "f1_haas_2025": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "F1_mclaren_2024": {
+  "wings": 0,
+  "zone_cl": 0.0,
+  "zone_cd": 0.0,
+  "verdict": "kosmetisch"
+ },
+ "F1_sauber_2024": {
+  "wings": 1,
+  "zone_cl": 0.0,
+  "zone_cd": 0.0,
+  "verdict": "kosmetisch"
+ },
+ "f1_williams_fw14b": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "ferrari_2014": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "ferrari_312t": {
+  "wings": 4,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "Ferrari_F2012": {
+  "wings": 0,
+  "zone_cl": 0.0,
+  "zone_cd": 0.0,
+  "verdict": "kosmetisch"
+ },
+ "ferrari_sf25": {
+  "wings": 7,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "ferrari_sf90": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "forbys_sauber_c45": {
+  "wings": 7,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "forceindia_2014": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "formula_ultra_26": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_1997_025": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_1997_a18": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_1997_b197": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_1997_c16": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_1997_f310b": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_1997_fw19": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_1997_j197": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_1997_js45": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_1997_m197": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_1997_mp412": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_1997_sf01": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_1997_t97_30": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_1998_026": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_1998_a19": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_1998_ap01": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_1998_b198": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_1998_c17": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_1998_f300": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_1998_fw20": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_1998_j198": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_1998_m198": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_1998_mp4_13": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_1998_sf2": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_1999_ap02": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_2000_a21": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_2000_ap03": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_2000_b200": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_2000_bar_02": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_2000_c19": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_2000_ej10": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_2000_f2000": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_2000_fw22": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_2000_m02": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_2000_mp4_15": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "gp_2000_r1": {
+  "wings": 13,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "ks_ferrari_312_67": {
+  "wings": 3,
+  "zone_cl": 0.0,
+  "zone_cd": 0.01,
+  "verdict": "nur Widerstand"
+ },
+ "ks_ferrari_f138": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "ks_ferrari_f2004": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "ks_ferrari_f2004_s0": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "ks_ferrari_f2004_s1": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "ks_ferrari_f2004_s3": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "ks_ferrari_f2004_slicks": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "ks_ferrari_sf15t": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "ks_ferrari_sf70h": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "ks_lotus_25": {
+  "wings": 2,
+  "zone_cl": 0.0,
+  "zone_cd": 0.01,
+  "verdict": "nur Widerstand"
+ },
+ "ks_lotus_72d": {
+  "wings": 3,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "ks_maserati_250f_12cyl": {
+  "wings": 2,
+  "zone_cl": 0.0,
+  "zone_cd": 0.01,
+  "verdict": "nur Widerstand"
+ },
+ "ks_maserati_250f_6cyl": {
+  "wings": 2,
+  "zone_cl": 0.0,
+  "zone_cd": 0.01,
+  "verdict": "nur Widerstand"
+ },
+ "ks_mclaren_f1_gtr": {
+  "wings": 4,
+  "zone_cl": 0.01,
+  "zone_cd": 0.015,
+  "verdict": "physikalisch"
+ },
+ "lotus_2014": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "lotus_49": {
+  "wings": 2,
+  "zone_cl": 0.0,
+  "zone_cd": 0.01,
+  "verdict": "nur Widerstand"
+ },
+ "lotus_98t": {
+  "wings": 4,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "lotus_exos_125": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "lotus_exos_125_s1": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "madformulateam_mftc3": {
+  "wings": 4,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "madformulateam_mftc3_evo": {
+  "wings": 4,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "marussia_2014": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "mclaren_2014": {
+  "wings": 9,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "mclaren_mcl39": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "mercedes_W05_Hybrid": {
+  "wings": 0,
+  "zone_cl": 0.0,
+  "zone_cd": 0.0,
+  "verdict": "kosmetisch"
+ },
+ "mercedes_w16": {
+  "wings": 7,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "MHR_PS01": {
+  "wings": 0,
+  "zone_cl": 0.0,
+  "zone_cd": 0.0,
+  "verdict": "kosmetisch"
+ },
+ "msf_2004_ba_006": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "msf_2004_jag_r5": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "msf_2004_jor_ej14": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "msf_2004_mcl_mp4_19": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "msf_2004_min_ps04b": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "msf_2004_ren_r24": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "msf_2004_sau_c23": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "msf_2004_toy_tf104": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "msf_2004_will_fw26": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "msf_williams_fw26_Vers_B": {
+  "wings": 0,
+  "zone_cl": 0.0,
+  "zone_cd": 0.0,
+  "verdict": "kosmetisch"
+ },
+ "racingbulls_rb02": {
+  "wings": 7,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "red_bull_rb16b_ds": {
+  "wings": 7,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "red_bull_rb21": {
+  "wings": 11,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "red_bull_rb7": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "redbull_2014": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "redbull_rb9": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "redbull_x1_S1": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "redbull_x1_s2": {
+  "wings": 5,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "rss_formula_hybrid_2017": {
+  "wings": 10,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "rss_formula_hybrid_2018": {
+  "wings": 11,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "rss_formula_hybrid_2018_s1": {
+  "wings": 11,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "rss_formula_hybrid_2019": {
+  "wings": 12,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "rss_formula_hybrid_2020": {
+  "wings": 11,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "rss_formula_hybrid_2024": {
+  "wings": 18,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "sauber_2014": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "tororosso_2014": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "trp_2009_BmwSauber_S1": {
+  "wings": 12,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "trp_2009_BmwSauber_S2": {
+  "wings": 12,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "trp_2009_BrawnGP_001": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "trp_2009_Ferrari_F60_S2": {
+  "wings": 12,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "trp_2009_Mclaren_MP4-24_S1": {
+  "wings": 12,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "trp_2009_Mclaren_MP4-24_S2": {
+  "wings": 12,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "trp_2009_Mclaren_MP4-24_S3": {
+  "wings": 12,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "trp_2009_Mclaren_MP4-24_wing": {
+  "wings": 12,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "trp_2009_RedBull_RB5_S2": {
+  "wings": 12,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "trp_2009_RedBull_RB5_S3": {
+  "wings": 12,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "trp_2009_Renault_R29_S2": {
+  "wings": 7,
+  "zone_cl": 0.005,
+  "zone_cd": 0.005,
+  "verdict": "physikalisch"
+ },
+ "trp_2009_Tororosso_STR4": {
+  "wings": 12,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "trp_2009_Tororosso_STR4_S2": {
+  "wings": 12,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "trp_2009_Toyota_TF109_S2": {
+  "wings": 12,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "vrc_1988_mclaren_mp4-4_r02": {
+  "wings": 10,
+  "zone_cl": 0.005,
+  "zone_cd": 0.005,
+  "verdict": "physikalisch"
+ },
+ "vrc_1988_mclaren_mp4-4_r04": {
+  "wings": 10,
+  "zone_cl": 0.005,
+  "zone_cd": 0.005,
+  "verdict": "physikalisch"
+ },
+ "vrc_1988_mclaren_mp4-4_r09": {
+  "wings": 10,
+  "zone_cl": 0.005,
+  "zone_cd": 0.005,
+  "verdict": "physikalisch"
+ },
+ "vrc_1988_mclaren_mp4-4_r10": {
+  "wings": 10,
+  "zone_cl": 0.005,
+  "zone_cd": 0.005,
+  "verdict": "physikalisch"
+ },
+ "vrc_1997_ferrari_f310b": {
+  "wings": 10,
+  "zone_cl": 0.005,
+  "zone_cd": 0.005,
+  "verdict": "physikalisch"
+ },
+ "vrc_2005_mclaren_mp420": {
+  "wings": 10,
+  "zone_cl": 0.005,
+  "zone_cd": 0.005,
+  "verdict": "physikalisch"
+ },
+ "vrc_2005_renault_r25": {
+  "wings": 7,
+  "zone_cl": 0.005,
+  "zone_cd": 0.005,
+  "verdict": "physikalisch"
+ },
+ "vrc_2005_renault_r25_Slicks_Tyres": {
+  "wings": 0,
+  "zone_cl": 0.0,
+  "zone_cd": 0.0,
+  "verdict": "kosmetisch"
+ },
+ "vrc_formula_alpha_2007_mc22": {
+  "wings": 11,
+  "zone_cl": 0.001,
+  "zone_cd": 0.001,
+  "verdict": "physikalisch"
+ },
+ "vrc_formula_alpha_2024": {
+  "wings": 20,
+  "zone_cl": 0.08,
+  "zone_cd": 0.08,
+  "verdict": "physikalisch"
+ },
+ "vrc_formula_alpha_2024_csp": {
+  "wings": 16,
+  "zone_cl": 0.08,
+  "zone_cd": 0.08,
+  "verdict": "physikalisch"
+ },
+ "vsfr-formularenault35_2014_hdf": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "vsfr-formularenault35_2014_ldf": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "vsfr-formularenault35_2014_mdf": {
+  "wings": 6,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "williams_2014": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ },
+ "williams_fw47": {
+  "wings": 8,
+  "zone_cl": 0.01,
+  "zone_cd": 0.01,
+  "verdict": "physikalisch"
+ }
+}

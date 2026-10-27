@@ -94,6 +94,17 @@ Red Bull und Red Bull `_cod`: Diffusor-`CL_GAIN` (`WING_4` bis `WING_6`) +15 % (
 | Virgin | 0.8525 | −25 % | |
 | HRT | 0.7806 | −31 % | |
 
+**Motorleistung (2026-10-27):** `power.lut` gleichmäßig skaliert (Form der Kurve bleibt), Spitzenleistung aus `power.lut` gerechnet. Cimmerian lag bei 671 bis 713 PS, real 2010 rund 750 PS. Ziel (Schätzungen, keine offiziellen Werte): Mercedes 755 PS (Analyse 2009, [motorsport.com](https://www.motorsport.com/f1/news/analysis-of-f1-engine-performance-in-2009/3217681/)), Ferrari 750 PS ([Wikipedia Ferrari F10](https://en.wikipedia.org/wiki/Ferrari_F10)), Cosworth 745 PS (Cosworth nannte rund 770, aber Verbrauch und Fahrbarkeit schwächer), Renault 740 PS (galt als schwächster Motor, Abstand bester zu schlechtestem Motor unter 2,5 %).
+
+| Motor | Teams | vorher | jetzt |
+|---|---|---|---|
+| Mercedes | Mercedes, McLaren, Force India | 713 PS | 755 PS (×1.059) |
+| Ferrari | Ferrari, Sauber, Toro Rosso | 708 PS | 750 PS (×1.060) |
+| Cosworth | Williams, Lotus, Virgin, HRT | 671 PS | 745 PS (×1.111) |
+| Renault | Red Bull, Renault | 692 PS | 740 PS (×1.069) |
+
+Die Abtrieb-Faktoren oben wurden noch mit Cosworth −3 % und Renault −2,8 % gerechnet. Mit den neuen Werten sind die Cosworth-Teams etwa 0,15 s, Red Bull und Renault etwa 0,1 s schneller als dort angenommen (Schätzung, kleiner als die Unsicherheit der Abtrieb-Rechnung).
+
 Bremse 0.97 gab Blockierer, 0.94 kostete die KI fast eine Sekunde, 0.96 ist der Kompromiss. Topspeed in Barcelona rund 307 km/h, nicht übersetzungsbegrenzt (330 km/h am Begrenzer).
 
 ### Cimmerian 2011 bis 2013

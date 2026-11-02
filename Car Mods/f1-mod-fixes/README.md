@@ -105,7 +105,7 @@ Nach dem zweiten Barcelona-Test nochmals nachgestellt: Sauber, Force India, Will
 | McLaren | 0.9372 | −13 % | Heckflügel-CD ×0.94 (F-Schacht) |
 | Williams (`_s2`) | 0.9467 | −13 % | `cim_2010_williams` hat ein anderes Aero-Modell, gleicher Faktor |
 | Sauber | 0.9218 | −16 % | |
-| Force India | 0.9056 | −17 % | alle CD ×0.96 |
+| Force India | 0.8784 | −20 % | alle CD ×0.96, nach dem vierten Test ×0.97 |
 | Toro Rosso | 0.8941 | −19 % | |
 | Lotus | 0.8347 | −25 % | |
 | Virgin | 0.7842 | −31 % | |
@@ -118,6 +118,8 @@ Dritter Test mit dem heutigen Stand (40 min, Grid 0 / 0, Team-Schnitt der Bestze
 Alle drei Sessions auf den heutigen Stand umgerechnet (0,11 s pro Prozent), Abweichung vom Ziel im Schnitt: Ferrari 0.00, McLaren +0.04, Williams +0.02, Renault +0.02, Toro Rosso +0.18, Virgin +0.17, Sauber −0.16, Lotus −0.22, Force India −0.27, Mercedes −0.39, HRT +0.40. Alle innerhalb der Streuung. Nur Mercedes war zweimal 0,6–0,75 s zu schnell (einmal 0,1 s zu langsam) und bekam als letzte Änderung ×0.98 auf alle `CL_GAIN` (630 → 609 kg, etwa 0,2 s, Balance unverändert 47,5 %). Die übrigen Teams bleiben, weitere Korrekturen würden nur die Streuung nachzeichnen.
 
 Vierter Test (Barcelona, vorzeitig beendet, etwa 5 Runden je Fahrer): Kubica 0,8 s vor Red Bull statt 1,0 s dahinter, auch in Shanghai fiel der Renault als zu stark auf. Über alle vier Barcelona-Sessions im Schnitt 0,44 s zu schnell, deshalb Renault ×0.97 auf alle `CL_GAIN` (630 → 611 kg, etwa 0,3 s, Balance unverändert 47,6 %). Damit hat er etwa so viel Abtrieb wie Mercedes, aber den schwächeren Motor (740 gegen 755 PS).
+
+Force India ebenfalls ×0.97 (564 → 547 kg, etwa 0,3 s): in drei von vier Sessions zu schnell, im Schnitt 0,28 s. Er hat damit etwas weniger Abtrieb als Toro Rosso (551 kg), bleibt durch weniger Luftwiderstand und den Mercedes-Motor auf den Geraden aber schneller.
 
 **Motorleistung (2026-10-27):** `power.lut` gleichmäßig skaliert (Form der Kurve bleibt), Spitzenleistung aus `power.lut` gerechnet. Cimmerian lag bei 671 bis 713 PS, real 2010 rund 750 PS. Ziel (Schätzungen, keine offiziellen Werte): Mercedes 755 PS (Analyse 2009, [motorsport.com](https://www.motorsport.com/f1/news/analysis-of-f1-engine-performance-in-2009/3217681/)), Ferrari 750 PS ([Wikipedia Ferrari F10](https://en.wikipedia.org/wiki/Ferrari_F10)), Cosworth 745 PS (Cosworth nannte rund 770, aber Verbrauch und Fahrbarkeit schwächer), Renault 740 PS (galt als schwächster Motor, Abstand bester zu schlechtestem Motor unter 2,5 %).
 

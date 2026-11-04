@@ -98,18 +98,18 @@ Nach dem zweiten Barcelona-Test nochmals nachgestellt: Sauber, Force India, Will
 
 | Team | Faktor auf CL gegenüber Cimmerian | Abtrieb zu Red Bull (200 km/h) | Sonstiges |
 |---|---|---|---|
-| Red Bull | Diffusor ×1.15 | 0 | Balance vorn 46,4 % (andere 47,5–48 %) |
-| Renault | 0.9714 | −10 % | nach dem vierten Test ×0.97 |
-| Ferrari | 0.9813 | −9 % | |
-| Mercedes | 0.9663 | −11 % | nach dem dritten Test ×0.98 |
-| McLaren | 0.9372 | −13 % | Heckflügel-CD ×0.94 (F-Schacht) |
-| Williams (`_s2`) | 0.9467 | −13 % | `cim_2010_williams` hat ein anderes Aero-Modell, gleicher Faktor |
-| Sauber | 0.9218 | −16 % | |
-| Force India | 0.8784 | −20 % | alle CD ×0.96, nach dem vierten Test ×0.97 |
-| Toro Rosso | 0.8941 | −19 % | |
-| Lotus | 0.8347 | −25 % | |
-| Virgin | 0.7842 | −31 % | |
-| HRT | 0.7455 | −34 % | |
+| Red Bull | Diffusor ×1.15, danach alles ×1.02 (gesamt 1.089) | 0 | Balance vorn 46,4 % (andere 47,5–48 %) |
+| Renault | 0.9714 | −12 % | nach dem vierten Test ×0.97 |
+| Ferrari | 0.9813 | −11 % | |
+| Mercedes | 0.9470 | −14 % | nach dem dritten Test ×0.98, am 2026-11-04 nochmals ×0.98 |
+| McLaren | 0.9232 | −16 % | Heckflügel-CD ×0.81 (F-Schacht), 7. Gang 1.1034 |
+| Williams (`_s2`) | 0.9278 | −17 % | `cim_2010_williams` hat ein anderes Aero-Modell, gleicher Faktor |
+| Sauber | 0.9218 | −18 % | |
+| Force India | 0.8608 | −23 % | alle CD ×0.96, nach dem vierten Test ×0.97, am 2026-11-04 ×0.98 |
+| Toro Rosso | 0.8941 | −21 % | |
+| Lotus | 0.8347 | −27 % | |
+| Virgin | 0.7842 | −32 % | |
+| HRT | 0.7455 | −35 % | |
 
 Ergebnis vor dem Nachstellen (Abstand zu Red Bull, Ziel Saisonschnitt): McLaren +0.19 (Ziel +0.6), Ferrari +0.27 (+0.6), Renault +0.83 (+1.0), Force India +0.94 (+1.3), Mercedes +1.03 (+0.9), Williams +1.10 (+1.3), Toro Rosso +1.30 (+1.6), Sauber +1.42 (+1.5), Lotus +2.43 (+3.0), Virgin +2.75 (+3.6), HRT +3.85 (+4.3).
 
@@ -120,6 +120,16 @@ Alle drei Sessions auf den heutigen Stand umgerechnet (0,11 s pro Prozent), Abwe
 Vierter Test (Barcelona, vorzeitig beendet, etwa 5 Runden je Fahrer): Kubica 0,8 s vor Red Bull statt 1,0 s dahinter, auch in Shanghai fiel der Renault als zu stark auf. Über alle vier Barcelona-Sessions im Schnitt 0,44 s zu schnell, deshalb Renault ×0.97 auf alle `CL_GAIN` (630 → 611 kg, etwa 0,3 s, Balance unverändert 47,6 %). Damit hat er etwa so viel Abtrieb wie Mercedes, aber den schwächeren Motor (740 gegen 755 PS).
 
 Force India ebenfalls ×0.97 (564 → 547 kg, etwa 0,3 s): in drei von vier Sessions zu schnell, im Schnitt 0,28 s. Er hat damit etwas weniger Abtrieb als Toro Rosso (551 kg), bleibt durch weniger Luftwiderstand und den Mercedes-Motor auf den Geraden aber schneller.
+
+**Topspeed und Feinschliff (2026-11-04):** `tools/topspeed.py` rechnet den Topspeed aus Luftwiderstand (mit den dynamischen Flügel-Controllern bei Vollgas), `power.lut` und letztem Gang, ohne Rollwiderstand (absolute Werte zu hoch, Reihenfolge stimmt; für `cim_2010_williams` mit dem anderen Aero-Modell unbrauchbar). Vorher lag Force India mit 328 km/h vor McLaren mit 327, der F-Schacht brachte nur 3 km/h gegenüber Mercedes. Real waren es 5 bis 10 km/h ([Auto123](https://www.auto123.com/en/news/amp/f1-technical-how-works-the-infamous-f-duct/33798/), [Top Gear NL](https://topgear.nl/formule-1/hoe-de-f-duct-in-formule-1-de-topsnelheid-van-de-autos-verhoogde)). Deshalb beim McLaren und McLaren `_cod`:
+
+- Heckflügel-`CD_GAIN` (`WING_3`, `WING_7`) auf Original ×0.81 statt ×0.94
+- 7. Gang 1.1034 statt 1.1304 (`_cod` 1.1334), Wert aus `7th.rto`; sonst Begrenzer bei 330 km/h
+- alle `CL_GAIN` ×0.985 als Ausgleich für den geringeren Luftwiderstand (geschätzt 0,15 s in Barcelona), Rundenzeit soll gleich bleiben
+
+Topspeed danach: McLaren 331, Force India 328, Mercedes und Ferrari 324, Red Bull, Williams, Sauber, Toro Rosso 322, Renault, Lotus, Virgin, HRT 321 km/h.
+
+Nach dem Eindruck des Nutzers aus Rennen (Schätzung, je etwa 0,2 s): Red Bull alle `CL_GAIN` ×1.02 (683 → 696 kg, Balance unverändert), Mercedes, Force India und Williams ×0.98. Weil Red Bull schneller wird, wächst der Abstand aller anderen Teams zu ihm um etwa 0,2 s, bei Mercedes, Force India und Williams um etwa 0,4 s.
 
 **Motorleistung (2026-10-27):** `power.lut` gleichmäßig skaliert (Form der Kurve bleibt), Spitzenleistung aus `power.lut` gerechnet. Cimmerian lag bei 671 bis 713 PS, real 2010 rund 750 PS. Ziel (Schätzungen, keine offiziellen Werte): Mercedes 755 PS (Analyse 2009, [motorsport.com](https://www.motorsport.com/f1/news/analysis-of-f1-engine-performance-in-2009/3217681/)), Ferrari 750 PS ([Wikipedia Ferrari F10](https://en.wikipedia.org/wiki/Ferrari_F10)), Cosworth 745 PS (Cosworth nannte rund 770, aber Verbrauch und Fahrbarkeit schwächer), Renault 740 PS (galt als schwächster Motor, Abstand bester zu schlechtestem Motor unter 2,5 %).
 

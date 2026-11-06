@@ -1,6 +1,7 @@
 # assetto-claude-mods
 
 Sammlung aller eigenen Assetto-Corsa-Mods. Oberste Ebene: Mod-Kategorien. Darunter: die einzelnen Mods, jede mit eigenem README (Ziel, Installation, Status).
+KI-gestütztes erstellen/bearbeiten von Mods. feinschliff/schnelles bearbeiten durch KI.
 
 ## Kategorien
 

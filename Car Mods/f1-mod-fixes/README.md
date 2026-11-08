@@ -95,7 +95,7 @@ Wie 2007: Gewicht 606–645 auf 605, KI 0.92 / 0.97 / 1.0 / 1, Lookahead 17.
 | Toro Rosso | +0.71 | 770 | 1.0886 | 0.959 | 628 kg |
 | Williams | +0.88 | 750 | 1.0681 | 0.972 | 632 kg |
 | Honda | +1.07 | 735 | 1.0730 | 0.965 | 630 kg |
-| Force India | +1.95 | 770 | 1.0886 | 0.879 | 561 kg |
+| Force India | +1.95 | 770 | 1.0886 | 0.853 (nach dem ersten Test ×0.97) | 544 kg |
 | Super Aguri | +2.49 | 735 | 1.0730 | 0.871 | 555 kg |
 
 Motorleistung: keine offiziellen Zahlen, Quellen widersprechen sich ([f1technical](https://www.f1technical.net/forum/viewtopic.php?p=81608), [team-bhp](https://www.team-bhp.com/forum/intl-motorsport/74232-f1-engine.html), [grandprix.com](https://www.grandprix.com/ns/ns21079.html), [auto123](https://www.auto123.com/en/news/amp/f1-mercedes-benzs-advantage-is-25-horsepower-report/3966/)). Am unsichersten ist Honda. Cimmerian lag bei 685 bis 712 PS.
@@ -107,6 +107,8 @@ Motorleistung: keine offiziellen Zahlen, Quellen widersprechen sich ([f1technica
 | `ai.ini` `DOWN` | 14500 | 16000 (Format v3, Drehzahl; 16000 × größte Gangstufe 1.188 ≈ Begrenzer 19000) |
 
 Ferrari und McLaren sind bei Reifen, Bremsen, Getriebe, KI und Fahrwerk identisch, es unterscheiden sich nur 6 cm Radstand, 0,7 % Leistung und minimale Aero-Werte. Für die 1,7 s aus dem alten Silverstone-Test gibt es keine physikalische Ursache, der Ferrari bekommt deshalb keinen Extra-Malus.
+
+Erster Test (Melbourne, 10 min, Grid 0 / 0, 1 bis 5 gezeitete Runden je Fahrer): schnellste KI 1:25.520 gegen die echte Bestzeit aus Q1/Q2 von 1:25.187, die meisten Teams bis auf 0,2 s beim echten Abstand zur Spitze. Force India lag 0,8 s zu nah an der Spitze und bekam `CL_GAIN` ×0.97 (561 → 544 kg, etwa 0,35 s). Er hat damit weniger Abtrieb als Super Aguri (555 kg), aber 35 PS mehr. Massa und Heidfeld fuhren mit Schaden, Ferrari bleibt unverändert.
 
 ### Cimmerian 2010 (17 Autos inkl. `_cod`, `_s2`)
 

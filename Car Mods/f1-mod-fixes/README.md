@@ -108,7 +108,7 @@ Motorleistung: keine offiziellen Zahlen, Quellen widersprechen sich ([f1technica
 
 Ferrari und McLaren sind bei Reifen, Bremsen, Getriebe, KI und Fahrwerk identisch, es unterscheiden sich nur 6 cm Radstand, 0,7 % Leistung und minimale Aero-Werte. Für die 1,7 s aus dem alten Silverstone-Test gibt es keine physikalische Ursache, der Ferrari bekommt deshalb keinen Extra-Malus.
 
-Erster Test (Melbourne, 10 min, Grid 0 / 0, 1 bis 5 gezeitete Runden je Fahrer): schnellste KI 1:25.520 gegen die echte Bestzeit aus Q1/Q2 von 1:25.187, die meisten Teams bis auf 0,2 s beim echten Abstand zur Spitze. Force India lag 0,8 s zu nah an der Spitze und bekam `CL_GAIN` ×0.97 (561 → 544 kg, etwa 0,35 s). Er hat damit weniger Abtrieb als Super Aguri (555 kg), aber 35 PS mehr. Massa und Heidfeld fuhren mit Schaden, Ferrari bleibt unverändert.
+Erster Test (Melbourne, 10 min, Grid 0 / 0, 1 bis 5 gezeitete Runden je Fahrer): schnellste KI 1:25.520 gegen die echte Bestzeit aus Q1/Q2 von 1:25.187, die meisten Teams bis auf 0,2 s beim echten Abstand zur Spitze. Force India lag 0,8 s zu nah an der Spitze und bekam `CL_GAIN` ×0.97 (561 → 544 kg, etwa 0,35 s). Er hat damit weniger Abtrieb als Super Aguri (555 kg), aber 35 PS mehr. Einzelne langsame Zeiten kamen laut Nutzer von Schäden, Ferrari bleibt unverändert.
 
 ### Cimmerian 2010 (17 Autos inkl. `_cod`, `_s2`)
 

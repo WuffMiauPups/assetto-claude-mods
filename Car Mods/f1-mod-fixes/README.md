@@ -27,6 +27,8 @@ py -3.11 acdini.py --ac "E:/SteamLibrary/steamapps/common/assettocorsa" --prefix
 | `transplant.py` | Physik, Fahrwerk und Kollisionskörper eines Spenders übernehmen, Modell und Geometrie bleiben |
 | `sound_tausch.py` | Sound-Bank eines anderen Autos einsetzen, Pfade in `GUIDs.txt` umschreiben, `[AUDIO_VOLUME]` |
 | `auswertung.py` | Quali aus `race_out.json` auswerten, nur echte Runden, optional gegen `data/real_*.json` |
+| `topspeed.py` | Topspeed je Auto aus Luftwiderstand, `power.lut` und letztem Gang rechnen |
+| `quali_abstaende.py` | echte Quali-Abstände je Team einer Saison (Median, aus api.jolpi.ca) |
 
 `Gameplay Mods/mechanical-failures/tools/patch_ai_ini.py` setzt einzelne KI-Werte (älteres Werkzeug, gleiches Ergebnis wie `acdini.py --file ai.ini`).
 
@@ -79,6 +81,32 @@ Gewicht 605–625 auf 605. Die Reifen bleiben: Michelin (BMW, Honda, McLaren, Re
 ### Cimmerian 2008 (11 Autos)
 
 Wie 2007: Gewicht 606–645 auf 605, KI 0.92 / 0.97 / 1.0 / 1, Lookahead 17.
+
+**Teamstärke über das Autokonzept (2026-11-08, im Spiel noch nicht getestet):** Methode wie 2010, Grid danach 0 / 0. Ziel ist der echte Saisonabstand aus `tools/quali_abstaende.py 2008`. Der Abtrieb-Rückstand zum Ferrari ergibt sich aus dem Abstand abzüglich Motor (0,095 s pro Prozent Leistung, Schätzung) und Luftwiderstand (0,04 s pro Prozent, Schätzung), geteilt durch 0,12 s pro Prozent Abtrieb (aus den 2010er Barcelona-Tests). `power.lut` gleichmäßig skaliert, alle `CL_GAIN` mit demselben Faktor, die Balance bleibt.
+
+| Team | Abstand real (s) | Motor (PS, Schätzung) | Faktor `power.lut` | Faktor `CL_GAIN` | Abtrieb 200 km/h |
+|---|---|---|---|---|---|
+| Ferrari | 0.00 | 770 | 1.0886 | 1.000 | 662 kg |
+| McLaren | +0.03 | 775 | 1.0878 | 0.995 | 659 kg |
+| BMW | +0.47 | 770 | 1.0808 | 0.969 | 637 kg |
+| Toyota | +0.50 | 750 | 1.0681 | 0.996 | 651 kg |
+| Renault | +0.60 | 740 | 1.0690 | 0.992 | 652 kg |
+| Red Bull | +0.66 | 740 | 1.0690 | 0.994 | 651 kg |
+| Toro Rosso | +0.71 | 770 | 1.0886 | 0.959 | 628 kg |
+| Williams | +0.88 | 750 | 1.0681 | 0.972 | 632 kg |
+| Honda | +1.07 | 735 | 1.0730 | 0.965 | 630 kg |
+| Force India | +1.95 | 770 | 1.0886 | 0.879 | 561 kg |
+| Super Aguri | +2.49 | 735 | 1.0730 | 0.871 | 555 kg |
+
+Motorleistung: keine offiziellen Zahlen, Quellen widersprechen sich ([f1technical](https://www.f1technical.net/forum/viewtopic.php?p=81608), [team-bhp](https://www.team-bhp.com/forum/intl-motorsport/74232-f1-engine.html), [grandprix.com](https://www.grandprix.com/ns/ns21079.html), [auto123](https://www.auto123.com/en/news/amp/f1-mercedes-benzs-advantage-is-25-horsepower-report/3966/)). Am unsichersten ist Honda. Cimmerian lag bei 685 bis 712 PS.
+
+| Wert | vorher | jetzt |
+|---|---|---|
+| `electronics.ini` `[TRACTION_CONTROL]` `PRESENT` / `ACTIVE` | 1 / 1 | 0 / 0 (TC war 2008 verboten) |
+| `ai.ini` `UP` | 17800 | 18600 (beste Hochschaltdrehzahl gerechnet 18450 bis 18825) |
+| `ai.ini` `DOWN` | 14500 | 16000 (Format v3, Drehzahl; 16000 × größte Gangstufe 1.188 ≈ Begrenzer 19000) |
+
+Ferrari und McLaren sind bei Reifen, Bremsen, Getriebe, KI und Fahrwerk identisch, es unterscheiden sich nur 6 cm Radstand, 0,7 % Leistung und minimale Aero-Werte. Für die 1,7 s aus dem alten Silverstone-Test gibt es keine physikalische Ursache, der Ferrari bekommt deshalb keinen Extra-Malus.
 
 ### Cimmerian 2010 (17 Autos inkl. `_cod`, `_s2`)
 

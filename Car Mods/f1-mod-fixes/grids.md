@@ -56,7 +56,11 @@ Grid B, zweite Saisonhälfte (Red Bull vorne, McLaren stark), noch nicht geteste
 
 Grid B stammt aus der Zeit vor Transplantation, Fahrwerk Gruppe A und Brawn-Umbau. Vor Gebrauch mit einer Session prüfen.
 
-## 2008 (Cimmerian, alle 605 kg) – Silverstone, 20 min
+## 2008 (Cimmerian, alle 605 kg)
+
+Seit 2026-11-08 steckt die Teamstärke in Motor und Abtrieb der Autos (README). Grid: **alle 0 / 0**, nur Fahrerstärken. Noch nicht getestet.
+
+Alter Grid (vor dem Umbau, Silverstone, 20 min):
 
 | Team | Grid |
 |---|---|

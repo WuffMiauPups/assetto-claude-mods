@@ -29,6 +29,7 @@ py -3.11 acdini.py --ac "E:/SteamLibrary/steamapps/common/assettocorsa" --prefix
 | `auswertung.py` | Quali aus `race_out.json` auswerten, nur echte Runden, optional gegen `data/real_*.json` |
 | `topspeed.py` | Topspeed je Auto aus Luftwiderstand, `power.lut` und letztem Gang rechnen |
 | `quali_abstaende.py` | echte Quali-Abstände je Team einer Saison (Median, aus api.jolpi.ca) |
+| `saison_stufen.py` | Abtrieb aller Autos auf die Werte einer Saisonphase setzen, Plan in `data/stufen_*.json` |
 
 `Gameplay Mods/mechanical-failures/tools/patch_ai_ini.py` setzt einzelne KI-Werte (älteres Werkzeug, gleiches Ergebnis wie `acdini.py --file ai.ini`).
 
@@ -207,6 +208,33 @@ Sounds 2013: Die Banks von Mercedes, McLaren, Force India, Lotus, Williams und C
 | KI | `GASGAIN 0.4`, `BRAKE_HINT 0.94`, `UP 17700`, `DOWN 90`, `AERO_HINT 1.0`, Lookahead 17 |
 
 Brawn-Diffusor nachbauen: `acdini.py --cars f1_2009_BrawnGP_001 --file aero.ini --section WING_4 --key CL_GAIN --value 0.575 --apply`, ebenso `WING_5` und `WING_6`.
+
+**Teamstärke über das Autokonzept in zwei Saisonstufen (2026-11-09, im Spiel noch nicht getestet):** Methode wie 2008 und 2010, Grid danach 0 / 0. Vorher hatten alle außer Brawn identische 606 kg und 661 PS. Die Stärke kommt aus `tools/quali_abstaende.py`, getrennt für R1–R7 und R8–R17 (Median aus Q1/Q2, 85-Sekunden-Runde), umgerechnet mit 0,12 s pro Prozent Abtrieb und 0,095 s pro Prozent Leistung. Red Bull bleibt in beiden Stufen gleich, Brawn behält in Stufe 1 seine 643 kg.
+
+Umschalten (vor Silverstone auf Stufe 2, Stand jetzt Stufe 1):
+
+```
+py -3.11 saison_stufen.py --ac "E:/SteamLibrary/steamapps/common/assettocorsa" --plan ../data/stufen_2009.json --stufe 2 --apply
+```
+
+| Team | Motor (PS, Schätzung) | Abstand real R1–R7 | Abtrieb Stufe 1 | Abstand real R8–R17 | Abtrieb Stufe 2 |
+|---|---|---|---|---|---|
+| Brawn | 755 | 0.00 | 643 kg | +0.10 | 636 kg |
+| Red Bull | 740 | +0.01 | 653 kg | 0.00 | 653 kg |
+| Toyota | 740 | +0.18 | 643 kg | +0.35 | 634 kg |
+| Ferrari | 750 | +0.25 | 633 kg | +0.30 | 629 kg |
+| Williams | 740 | +0.26 | 639 kg | +0.20 | 642 kg |
+| BMW | 750 | +0.56 | 616 kg | +0.40 | 624 kg |
+| McLaren | 755 | +0.56 | 612 kg | +0.01 | 642 kg |
+| Renault | 740 | +0.59 | 621 kg | +0.39 | 631 kg |
+| Toro Rosso | 750 | +1.05 | 589 kg | +0.69 | 608 kg |
+| Force India | 755 | +1.38 | 567 kg | +0.66 | 606 kg |
+
+Motoren: Mercedes, Ferrari und Renault wie 2010, die Motoren waren eingefroren. BMW und Toyota sind Schätzungen aus den 2008er Werten minus Drehzahlsenkung auf 18000 U/min. `power.lut` gleichmäßig skaliert (661 PS auf Zielwert, Faktor 1.119 bis 1.142).
+
+Alle zehn Autos: 7. Gang 1.200 → 1.133 (Wert aus `7th.rto`), sonst läge der Begrenzer mit der höheren Leistung bei 317 km/h, jetzt 336 km/h.
+
+McLaren, Ferrari und BMW haben in AC KERS. Die echten Abstände enthalten es schon, diese Teams können deshalb etwas zu schnell sein. Im Test prüfen.
 
 ## Erkenntnisse zum Testen
 

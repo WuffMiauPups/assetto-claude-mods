@@ -23,7 +23,11 @@ Alter Grid (vor dem Abtrieb-Umbau, Barcelona, die meisten Fahrer innerhalb von 0
 | Virgin | 85 / 8 |
 | HRT | 140 / 14 |
 
-## 2009 (The Race Project) – Barcelona, 20 und 30 min
+## 2009 (The Race Project)
+
+Seit 2026-11-09 steckt die Teamstärke in Motor und Abtrieb der Autos, in zwei Saisonstufen (README, `tools/saison_stufen.py`). Grid: **alle 0 / 0**, nur Fahrerstärken. Noch nicht getestet. Die Grids unten sind nur noch Referenz.
+
+Alte Grids (Barcelona, 20 und 30 min):
 
 Grid A, erste Saisonhälfte (Brawn vorne, Red Bull knapp dahinter):
 

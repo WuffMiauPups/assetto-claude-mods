@@ -234,7 +234,7 @@ Motoren: Mercedes, Ferrari und Renault wie 2010, die Motoren waren eingefroren. 
 
 Alle zehn Autos: 7. Gang 1.200 → 1.133 (Wert aus `7th.rto`), sonst läge der Begrenzer mit der höheren Leistung bei 317 km/h, jetzt 336 km/h.
 
-McLaren, Ferrari und BMW haben in AC KERS. Die echten Abstände enthalten es schon, diese Teams können deshalb etwas zu schnell sein. Im Test prüfen.
+McLaren, Ferrari und BMW haben in AC KERS und wiegen deshalb 620 statt 605 kg (`TOTALMASS`, Schätzung). Das System wog real etwa 25 bis 40 kg, ging bei leichten Fahrern aber zulasten des Ballasts, sodass die Autos oft trotzdem bei 605 kg blieben ([Theissen, BMW](https://f1technical.net/news/11809)). 15 kg kosten nach den Barcelona-Tests (50 kg = 1,2 s) etwa 0,35 s und gleichen damit ungefähr den Gewinn durch 400 kJ pro Runde aus (Schätzung). Die echten Abstände enthalten KERS schon. Im Test prüfen, ob die KI das KERS überhaupt nutzt: Falls nicht, sind diese drei Teams jetzt etwas zu langsam.
 
 ## Erkenntnisse zum Testen
 

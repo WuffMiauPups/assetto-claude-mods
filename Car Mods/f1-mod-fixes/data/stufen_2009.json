@@ -2,7 +2,7 @@
  "_quelle": "Echte Quali-Abstände 2009 aus tools/quali_abstaende.py (R1-R7 und R8-R17), 0,12 s pro Prozent Abtrieb, 0,095 s pro Prozent Leistung. Faktor auf CL_GAIN gegenüber aero.ini.basis (Schätzung).",
  "stufen": {
   "1": {
-   "f1_2009_BrawnGP_001": 1.0,
+   "f1_2009_BrawnGP_001": 1.016,
    "f1_2009_RedBull_RB5_S2": 1.0774,
    "f1_2009_Toyota_TF109_S2": 1.0616,
    "f1_2009_Ferrari_F60_S2": 1.0445,

@@ -209,7 +209,7 @@ Sounds 2013: Die Banks von Mercedes, McLaren, Force India, Lotus, Williams und C
 
 Brawn-Diffusor nachbauen: `acdini.py --cars f1_2009_BrawnGP_001 --file aero.ini --section WING_4 --key CL_GAIN --value 0.575 --apply`, ebenso `WING_5` und `WING_6`.
 
-**Teamstärke über das Autokonzept in zwei Saisonstufen (2026-11-09, im Spiel noch nicht getestet):** Methode wie 2008 und 2010, Grid danach 0 / 0. Vorher hatten alle außer Brawn identische 606 kg und 661 PS. Die Stärke kommt aus `tools/quali_abstaende.py`, getrennt für R1–R7 und R8–R17 (Median aus Q1/Q2, 85-Sekunden-Runde), umgerechnet mit 0,12 s pro Prozent Abtrieb und 0,095 s pro Prozent Leistung. Red Bull bleibt in beiden Stufen gleich. Brawn liegt in Stufe 1 über dem reinen Quali-Wert (643 → 653 kg, Faktor 1.016, etwa 0,2 s): In der Quali waren Brawn und Red Bull gleichauf, im Rennen fuhr Brawn in R1–R7 im Median 0,19 s schneller (beste Rennrunde) und gewann 6 von 7 Rennen. Die KI fährt in AC im Rennen ungefähr so schnell wie in der Quali, deshalb steckt dieser Vorsprung im Auto.
+**Teamstärke über das Autokonzept in zwei Saisonstufen (2026-11-09, im Spiel noch nicht getestet):** Methode wie 2008 und 2010, Grid danach 0 / 0. Vorher hatten alle außer Brawn identische 606 kg und 661 PS. Die Stärke kommt aus `tools/quali_abstaende.py`, getrennt für R1–R7 und R8–R17 (Median aus Q1/Q2, 85-Sekunden-Runde), umgerechnet mit 0,12 s pro Prozent Abtrieb und 0,095 s pro Prozent Leistung. Brawn und Red Bull weichen in Stufe 1 bewusst vom reinen Quali-Wert ab (Schätzung): Brawn 665 kg (Faktor 1.0349), Red Bull 650 kg (Faktor 1.0731), gerechnet etwa 0,45 s Vorsprung für Brawn. In Q1/Q2 waren beide gleichauf, aber Brawn fuhr im Rennen in R1–R7 im Median 0,19 s schneller (beste Rennrunde) und gewann 6 von 7 Rennen. Der RB5 hatte bis Monaco keinen Doppeldiffusor, der real etwa 0,3 s ([ESPN](https://www.espn.co.uk/f1/story/_/id/28167450/busting-myth-brawn-gp-legendary-double-diffuser), Aussage von Brawn) bis 0,5 s ([autoevolution](https://www.autoevolution.com/news/red-bull-to-protest-brawn-gp-rear-diffuser-design-5293.html), Protest von Red Bull) wert war, also etwa 2,5 bis 4 % Abtrieb.
 
 Umschalten (vor Silverstone auf Stufe 2, Stand jetzt Stufe 1):
 
@@ -219,8 +219,8 @@ py -3.11 saison_stufen.py --ac "E:/SteamLibrary/steamapps/common/assettocorsa" -
 
 | Team | Motor (PS, Schätzung) | Abstand real R1–R7 | Abtrieb Stufe 1 | Abstand real R8–R17 | Abtrieb Stufe 2 |
 |---|---|---|---|---|---|
-| Brawn | 755 | 0.00 | 653 kg | +0.10 | 636 kg |
-| Red Bull | 740 | +0.01 | 653 kg | 0.00 | 653 kg |
+| Brawn | 755 | 0.00 | 665 kg | +0.10 | 636 kg |
+| Red Bull | 740 | +0.01 | 650 kg | 0.00 | 653 kg |
 | Toyota | 740 | +0.18 | 643 kg | +0.35 | 634 kg |
 | Ferrari | 750 | +0.25 | 633 kg | +0.30 | 629 kg |
 | Williams | 740 | +0.26 | 639 kg | +0.20 | 642 kg |

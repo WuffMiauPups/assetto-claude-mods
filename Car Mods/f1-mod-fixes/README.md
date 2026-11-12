@@ -203,7 +203,7 @@ Sounds 2013: Die Banks von Mercedes, McLaren, Force India, Lotus, Williams und C
 | Lotus | +0.22 | 740 | 1.0690 | 0.9869 | 634 kg |
 | Sauber | +0.28 | 750 | 1.0603 | 0.9886 | 624 kg |
 | Williams | +0.35 | 740 | 1.0690 | 0.9857 | 627 kg |
-| Force India | +0.37 | 755 | 1.0597 | 0.9826 | 615 kg |
+| Force India | +0.37 | 755 | 1.0597 | 1.0219 (nach Test, siehe unten) | 640 kg |
 | Toro Rosso | +0.81 | 750 | 1.0603 | 0.9622 | 597 kg |
 | Caterham | +2.10 | 740 | 1.0690 | 0.8710 | 534 kg |
 | Marussia | +3.20 | 745 | 1.1112 | 0.8029 | 487 kg |
@@ -214,6 +214,13 @@ Marussia: `kers.ini` und `kers_torque.lut` aus der `data.acd` entfernt. Der MR01
 2012 Kollider: Ferrari, Caterham und HRT hatten einen eigenen Satz Kollisionskörper (`colliders.ini`, alle sechs Körper leicht anders, `COLLIDER_3` vorn am Unterboden mit `GROUND_ENABLE=1`). Sie haben jetzt dieselben Werte wie die anderen neun 2012er (Stand Red Bull, `COLLIDER_3` ohne Bodenkontakt, `SPARKS_AS=SKIDPAD`). Fahrhöhe, Trägheit, Lenkung, Gewicht und KI-Werte waren bei allen 2012ern schon einheitlich.
 
 Erster Test 2012 (Montreal, 10 min, 1 bis 3 Runden je Fahrer): Reihenfolge stimmt, die meisten Teams etwa 0,3 s neben dem echten Wochenende, Force India 0,9 s zu langsam, KI absolut etwa 1 s langsamer als real. Zu kurz für Änderungen, die KI ist auf dieser Strecke schwach.
+
+Zweiter Test 2012 (Silverstone GP, 18 min, 3 bis 8 Runden je Fahrer, Bezug McLaren): Ferrari, Mercedes, Williams innerhalb von 0,3 s ihres Ziels, Sauber 0,5 s. Red Bull 1,1 s und der KI-Lotus 2,2 s zu langsam, Force India 0,8 s (wie in Montreal). Toro Rosso, Caterham und Marussia 0,8 bis 1,7 s zu langsam, in Montreal aber zu schnell: nicht geändert.
+
+Änderungen danach (2026-11-12, noch nicht nachgetestet):
+
+- Force India: alle `CL_GAIN` nochmals x1,04 (615 auf 640 kg, Balance unverändert 48,4 % vorn). Das Auto liegt damit über dem rechnerischen Wert, die KI kommt mit ihm schlechter zurecht.
+- Red Bull und Lotus: `electronics.ini` auf den Stand der anderen zehn 2012er gesetzt (Kopie Williams: ABS und TC `PRESENT=0`, `ACTIVE=1`, `CURVE=` leer). Vorher stand bei beiden die TC auf `ACTIVE=0` mit Kurvendatei (Red Bull verwies auf eine fehlende `t_c.lut`), beim Lotus auch ABS auf `ACTIVE=0` und ein `[EDL]`-Abschnitt. Das war der einzige Unterschied außer dem Abtrieb zu den Autos, die die KI schnell fährt. Ob es die Ursache ist, ist eine Vermutung und muss der nächste Test zeigen.
 
 ### The Race Project 2009 (`f1_2009_*`, offene data-Ordner)
 

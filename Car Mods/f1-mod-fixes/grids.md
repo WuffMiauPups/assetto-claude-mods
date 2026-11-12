@@ -4,7 +4,7 @@ Gelten nur zusammen mit den Physik-Änderungen aus der [README](README.md). Seit
 
 ## 2012 (Cimmerian, alle 640 kg)
 
-Seit 2026-11-12 steckt die Teamstärke in Motor und Abtrieb der Autos (README). Grid: **alle 0 / 0**, nur Fahrerstärken. Noch nicht getestet.
+Seit 2026-11-12 steckt die Teamstärke in Motor und Abtrieb der Autos (README). Grid: **alle 0 / 0**, nur Fahrerstärken. Getestet in Montreal (10 min) und Silverstone (18 min); danach Force India mehr Abtrieb und Elektronik von Red Bull und Lotus angeglichen, das ist noch nicht nachgetestet (README).
 
 ## 2010 (Cimmerian, alle 620 kg)
 

@@ -52,7 +52,7 @@ def section(text, name):
 
 
 def get_value(text, sec, key):
-    m = re.search(r"^\s*" + re.escape(key) + r"\s*=\s*([^;\r\n]*)", section(text, sec) or "", re.M | re.I)
+    m = re.search(r"^[ \t]*" + re.escape(key) + r"[ \t]*=[ \t]*([^;\r\n]*)", section(text, sec) or "", re.M | re.I)
     return m.group(1).strip() if m else None
 
 

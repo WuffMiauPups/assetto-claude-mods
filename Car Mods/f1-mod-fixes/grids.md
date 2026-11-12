@@ -4,7 +4,7 @@ Gelten nur zusammen mit den Physik-Änderungen aus der [README](README.md). Seit
 
 ## 2017 (Formula Hybrid 2017 von RSS, Team-Autos `rss_formula_hybrid_2017_<team>`)
 
-Seit 2026-11-12 steckt die Teamstärke in Motor und Abtrieb der zehn Team-Autos (README). Grid: **alle 0 / 0**, nur Fahrerstärken. Noch nicht getestet.
+Seit 2026-11-12 steckt die Teamstärke in Motor und Abtrieb der zehn Team-Autos (README). Grid: **alle 0 / 0**, nur Fahrerstärken. Einmal in Barcelona getestet (18 min), danach sechs Teams im Abtrieb nachgestellt, das ist noch nicht nachgetestet.
 
 ## 2012 (Cimmerian, alle 640 kg)
 

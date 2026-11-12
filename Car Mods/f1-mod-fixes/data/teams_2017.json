@@ -28,7 +28,9 @@
     "03-RedBull-M-Verstappen"
    ],
    "abstand": 0.56,
-   "ps": 907
+   "ps": 907,
+   "cl": 1.03,
+   "_hinweis": "cl nach Barcelona-Test 2026-11-12 von Hand gesetzt (ersetzt die Rechnung aus dem Abstand)"
   },
   "williams": {
    "name": "Williams FW40",
@@ -37,7 +39,9 @@
     "04-Williams-L-Stroll"
    ],
    "abstand": 1.37,
-   "ps": 949
+   "ps": 949,
+   "cl": 0.83,
+   "_hinweis": "cl nach Barcelona-Test 2026-11-12 von Hand gesetzt (ersetzt die Rechnung aus dem Abstand)"
   },
   "forceindia": {
    "name": "Force India VJM10",
@@ -46,7 +50,9 @@
     "05-ForceIndia-E-Ocon"
    ],
    "abstand": 1.22,
-   "ps": 949
+   "ps": 949,
+   "cl": 0.84,
+   "_hinweis": "cl nach Barcelona-Test 2026-11-12 von Hand gesetzt (ersetzt die Rechnung aus dem Abstand)"
   },
   "tororosso": {
    "name": "Toro Rosso STR12",
@@ -55,7 +61,9 @@
     "06-ToroRosso-D-Kvyat"
    ],
    "abstand": 1.52,
-   "ps": 907
+   "ps": 907,
+   "cl": 0.85,
+   "_hinweis": "cl nach Barcelona-Test 2026-11-12 von Hand gesetzt (ersetzt die Rechnung aus dem Abstand)"
   },
   "renault": {
    "name": "Renault R.S.17",
@@ -73,7 +81,9 @@
     "08-Haas-V-Magnussen"
    ],
    "abstand": 1.83,
-   "ps": 934
+   "ps": 934,
+   "cl": 0.79,
+   "_hinweis": "cl nach Barcelona-Test 2026-11-12 von Hand gesetzt (ersetzt die Rechnung aus dem Abstand)"
   },
   "mclaren": {
    "name": "McLaren MCL32",
@@ -91,7 +101,9 @@
     "10-Sauber-P-Wehrlein"
    ],
    "abstand": 2.64,
-   "ps": 900
+   "ps": 900,
+   "cl": 0.87,
+   "_hinweis": "cl nach Barcelona-Test 2026-11-12 von Hand gesetzt (ersetzt die Rechnung aus dem Abstand)"
   },
   "mclaren_fantasy": {
    "name": "McLaren MCL32 Fantasy",

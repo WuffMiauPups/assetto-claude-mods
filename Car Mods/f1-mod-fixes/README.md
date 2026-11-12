@@ -302,16 +302,20 @@ Stand 2026-11-12: 2017 gebaut (`rss_formula_hybrid_2017_mercedes`, `_ferrari`, `
 |---|---|---|---|---|---|
 | Mercedes | 0.00 | 949 | 1.0000 | 1.0000 | 954 kg |
 | Ferrari | +0.18 | 934 | 0.9806 | 0.9975 | 952 kg |
-| Red Bull | +0.56 | 907 | 0.9457 | 0.9884 | 943 kg |
-| Force India | +1.22 | 949 | 1.0000 | 0.8983 | 857 kg |
+| Red Bull | +0.56 | 907 | 0.9457 | 1.0300 (nach Test) | 983 kg |
+| Force India | +1.22 | 949 | 1.0000 | 0.8400 (nach Test) | 801 kg |
 | Renault | +1.22 | 907 | 0.9457 | 0.9334 | 891 kg |
-| Williams | +1.37 | 949 | 1.0000 | 0.8858 | 845 kg |
+| Williams | +1.37 | 949 | 1.0000 | 0.8300 (nach Test) | 792 kg |
 | McLaren (Honda) | +1.44 | 860 | 0.8849 | 0.9542 | 910 kg |
-| Toro Rosso | +1.52 | 907 | 0.9457 | 0.9084 | 867 kg |
-| Haas | +1.83 | 934 | 0.9806 | 0.8600 | 821 kg |
-| Sauber (Ferrari 2016) | +2.64 | 900 | 0.9366 | 0.8209 | 783 kg |
+| Toro Rosso | +1.52 | 907 | 0.9457 | 0.8500 (nach Test) | 811 kg |
+| Haas | +1.83 | 934 | 0.9806 | 0.7900 (nach Test) | 754 kg |
+| Sauber (Ferrari 2016) | +2.64 | 900 | 0.9366 | 0.8700 (nach Test) | 830 kg |
 | McLaren Fantasy (nicht historisch) | – | 940 | 0.9884 | 0.9696 | 925 kg |
 
 McLaren Fantasy: Wunschauto des Nutzers als elftes Auto (`rss_formula_hybrid_2017_mclaren_fantasy`, "F1 2017 McLaren MCL32 Fantasy", Skins Alonso und Vandoorne). 940 PS und 925 kg Abtrieb sind fest vorgegeben (`cl` im Plan), nicht aus dem Abstand gerechnet. Rechnerisch etwa 0,45 s hinter dem Mercedes (Schätzung).
 
-Nächster Schritt: Quali-Session mit allen zehn Autos (Grid 0 / 0) auswerten und die Faktoren nachstellen.
+Erster Test 2017 (Barcelona GP, 18 min, 1 bis 4 Runden je Fahrer, Bezug Schnitt beider Mercedes, Abweichung zum Ziel): Ferrari +0,40, Red Bull +0,41, Sauber +0,71, McLaren +0,20, Renault 0,0, Force India -0,60, Williams -0,59, Toro Rosso -0,61 (nur Kwjat), Haas -0,73 s. Unsicher, weil Bottas 1,0 s vor Hamilton lag. Abtrieb wirkt bei diesen Autos nur mit etwa 0,065 s pro Prozent, Leistung stärker als gerechnet; der Sauber verliert mit dem wenigsten Abtrieb überproportional.
+
+Änderung danach (2026-11-12, noch nicht nachgetestet): `CL_GAIN`-Faktor von Hand gesetzt (`cl` im Plan, etwa zwei Drittel der Abweichung): Red Bull 1,03, Force India 0,84, Williams 0,83, Toro Rosso 0,85, Haas 0,79, Sauber 0,87. Die Tabelle oben zeigt den neuen Stand. Der Red Bull hat damit mehr Abtrieb als der Mercedes; das folgt aus der Rechnung und ist kein belegter Wert.
+
+Nächster Schritt: zweite Quali-Session auswerten.

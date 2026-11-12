@@ -8,6 +8,7 @@ Das beste Team behält die Werte der Quelle. Für die anderen gilt:
              der Elektroanteil (ers_ps) bleibt, deshalb fällt der Faktor der Kurve etwas größer aus.
   Abtrieb:   (echter Abstand - Zeitverlust durch den Motor) / s_pro_prozent_abtrieb, als Faktor auf alle CL_GAIN.
              Die Balance bleibt, der Luftwiderstand auch.
+Ein Team mit "cl" im Plan (und ohne "abstand") bekommt diesen Abtrieb-Faktor fest, zum Beispiel ein Wunschauto.
 Gerechnet wird immer von den Dateien der Quelle aus, mehrfaches Anwenden summiert nichts auf.
 Die Empfindlichkeiten stammen von den V8-Jahrgängen und sind Schätzungen.
 """
@@ -42,13 +43,13 @@ def main():
     cars = Path(a.ac) / "content" / "cars"
     src = CarData(cars / quelle)
     aero, power, ice = src.read("aero.ini"), src.read("power.lut"), ice_ps(src)
-    best = min(teams.values(), key=lambda t: t["abstand"])
+    best = min((t for t in teams.values() if "abstand" in t), key=lambda t: t["abstand"])
     print(f"Quelle {quelle}: Verbrenner {ice:.0f} PS + {e['ers_ps']} PS elektrisch")
-    for key, t in sorted(teams.items(), key=lambda kv: kv[1]["abstand"]):
+    for key, t in sorted(teams.items(), key=lambda kv: kv[1].get("abstand", 99)):
         minus_ps = (1 - t["ps"] / best["ps"]) * 100
         f_lut = 1 - minus_ps / 100 * (ice + e["ers_ps"]) / ice
         s_motor = minus_ps * e["s_pro_prozent_leistung"]
-        f_cl = 1 - (t["abstand"] - best["abstand"] - s_motor) / e["s_pro_prozent_abtrieb"] / 100
+        f_cl = t["cl"] if "cl" in t else 1 - (t["abstand"] - best["abstand"] - s_motor) / e["s_pro_prozent_abtrieb"] / 100
         cd = CarData(cars / f"{quelle}_{key}")
         new_aero = aero
         for sec in re.findall(r"(?m)^\[(WING_\d+)\]", aero):
@@ -58,7 +59,7 @@ def main():
         if a.apply:
             if cd.read("aero.ini") != new_aero: cd.write("aero.ini", new_aero)
             if cd.read("power.lut") != new_power: cd.write("power.lut", new_power)
-        print(f"{key:11s} +{t['abstand']:.2f} s  {t['ps']} PS (Motor {s_motor:.2f} s)  power.lut x{f_lut:.4f}  CL_GAIN x{f_cl:.4f}" + ("" if a.apply else "  [Trockenlauf]"))
+        print(f"{key:15s} {('+%.2f s' % t['abstand']) if 'abstand' in t else 'fest   '}  {t['ps']} PS (Motor {s_motor:.2f} s)  power.lut x{f_lut:.4f}  CL_GAIN x{f_cl:.4f}" + ("" if a.apply else "  [Trockenlauf]"))
 
 
 if __name__ == "__main__":

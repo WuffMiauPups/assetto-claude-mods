@@ -92,6 +92,16 @@
    ],
    "abstand": 2.64,
    "ps": 900
+  },
+  "mclaren_fantasy": {
+   "name": "McLaren MCL32 Fantasy",
+   "skins": [
+    "09-McLaren-F-Alonso",
+    "09-McLaren-S-Vandoorne"
+   ],
+   "ps": 940,
+   "cl": 0.9696,
+   "_hinweis": "Wunschauto des Nutzers, nicht historisch: 940 PS, 925 kg Abtrieb bei 200 km/h (925/954). cl = fester Faktor statt Rechnung aus dem Abstand."
   }
  },
  "_staerke": "abstand = echter Quali-Abstand zum besten Team in s (tools/quali_abstaende.py 2017, 85-s-Runde). ps = Gesamtleistung der Antriebseinheit (Schätzung: Mercedes 949, Ferrari 934, Renault 907, Honda 860, Ferrari-Vorjahresmotor im Sauber 900). tools/team_staerke.py rechnet daraus die Faktoren.",

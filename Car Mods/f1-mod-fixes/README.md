@@ -310,5 +310,8 @@ Stand 2026-11-12: 2017 gebaut (`rss_formula_hybrid_2017_mercedes`, `_ferrari`, `
 | Toro Rosso | +1.52 | 907 | 0.9457 | 0.9084 | 867 kg |
 | Haas | +1.83 | 934 | 0.9806 | 0.8600 | 821 kg |
 | Sauber (Ferrari 2016) | +2.64 | 900 | 0.9366 | 0.8209 | 783 kg |
+| McLaren Fantasy (nicht historisch) | – | 940 | 0.9884 | 0.9696 | 925 kg |
+
+McLaren Fantasy: Wunschauto des Nutzers als elftes Auto (`rss_formula_hybrid_2017_mclaren_fantasy`, "F1 2017 McLaren MCL32 Fantasy", Skins Alonso und Vandoorne). 940 PS und 925 kg Abtrieb sind fest vorgegeben (`cl` im Plan), nicht aus dem Abstand gerechnet. Rechnerisch etwa 0,45 s hinter dem Mercedes (Schätzung).
 
 Nächster Schritt: Quali-Session mit allen zehn Autos (Grid 0 / 0) auswerten und die Faktoren nachstellen.

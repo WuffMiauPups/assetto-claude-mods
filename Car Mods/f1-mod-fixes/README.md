@@ -280,3 +280,18 @@ McLaren, Ferrari und BMW haben in AC KERS und wiegen deshalb 620 statt 605 kg (`
 ## Status
 
 Angewendet und im Spiel getestet (Stand 2026-10-27). Grids für 2009 und 2010 abgestimmt in Barcelona, 2007 in Silverstone, 2013 in Melbourne. Nächster Schritt: Grids für 2011 und 2012, Gewichte 2011 bis 2013 prüfen.
+
+## Formula Hybrid (RSS): ein Auto je Team
+
+Bei den Formula Hybrids von RSS sind die Teams nur Skins eines einzigen Autos, Motor und Abtrieb je Team lassen sich so nicht einstellen. `tools/team_autos.py` legt deshalb je Team einen eigenen Auto-Ordner an (`<quelle>_<team>`, Plan in `data/teams_<jahr>.json`):
+
+```
+python team_autos.py --ac <AC> --plan ../data/teams_2017.json            (Trockenlauf)
+python team_autos.py --ac <AC> --plan ../data/teams_2017.json --apply
+```
+
+- Modell, Texturen, Skins, Animationen und Sound-Bank sind Hardlinks auf die Quelle. Zehn Team-Autos 2017 belegen zusammen rund 5 MB. Wer eine verlinkte Datei im Team-Ordner bearbeitet (zum Beispiel einen Skin), ändert auch das Original.
+- `data.acd` wird mit dem neuen Ordnernamen neu verschlüsselt, geändert ist nur `SCREEN_NAME`. `sfx/GUIDs.txt` und `ui/ui_car.json` tragen den neuen Namen, die CSP-Konfiguration `extension/config/cars/loaded/<quelle>.ini` wird je Team kopiert.
+- Die Quelle bleibt unverändert, ein vorhandener Team-Ordner wird nie überschrieben.
+
+Stand 2026-11-12: 2017 gebaut (`rss_formula_hybrid_2017_mercedes`, `_ferrari`, `_redbull`, `_williams`, `_forceindia`, `_tororosso`, `_renault`, `_haas`, `_mclaren`, `_sauber`, im Spiel als "F1 2017 <Auto>"), Physik noch bei allen gleich der Quelle. Im Spiel noch nicht geladen. Toro Rosso hat die Skins Hartley und Kwjat, Renault Sainz und Hülkenberg (so liefert RSS sie). Nächster Schritt: laden, Sound und Skins prüfen, dann Teamstärke über Motor und Abtrieb (Hybrid-Antrieb braucht eine eigene Rechnung).

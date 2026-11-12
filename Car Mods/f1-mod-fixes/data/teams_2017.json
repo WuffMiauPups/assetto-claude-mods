@@ -1,0 +1,17 @@
+{
+ "_hinweis": "Team-Autos aus der Formula Hybrid 2017 (RSS). Ordner = <quelle>_<schluessel>. Skins sind Ordnernamen unter skins/ der Quelle.",
+ "quelle": "rss_formula_hybrid_2017",
+ "jahr": 2017,
+ "teams": {
+  "mercedes": {"name": "Mercedes W08", "skins": ["01-Mercedes-L-Hamilton", "01-Mercedes-V-Bottas"]},
+  "ferrari": {"name": "Ferrari SF70H", "skins": ["02-Ferrari-A-Vettel", "02-Ferrari-K-Raikkonen"]},
+  "redbull": {"name": "Red Bull RB13", "skins": ["03-RedBull-D-Ricciardo", "03-RedBull-M-Verstappen"]},
+  "williams": {"name": "Williams FW40", "skins": ["04-Williams-F-Massa", "04-Williams-L-Stroll"]},
+  "forceindia": {"name": "Force India VJM10", "skins": ["05-ForceIndia-C-Perez", "05-ForceIndia-E-Ocon"]},
+  "tororosso": {"name": "Toro Rosso STR12", "skins": ["06-ToroRosso-B-Hartley", "06-ToroRosso-D-Kvyat"]},
+  "renault": {"name": "Renault R.S.17", "skins": ["07-Renault-C-Sainz", "07-Renault-N-Hulkenberg"]},
+  "haas": {"name": "Haas VF-17", "skins": ["08-Haas-R-Grosjean", "08-Haas-V-Magnussen"]},
+  "mclaren": {"name": "McLaren MCL32", "skins": ["09-McLaren-F-Alonso", "09-McLaren-S-Vandoorne"]},
+  "sauber": {"name": "Sauber C36", "skins": ["10-Sauber-M-Ericsson", "10-Sauber-P-Wehrlein"]}
+ }
+}

@@ -211,6 +211,10 @@ Sounds 2013: Die Banks von Mercedes, McLaren, Force India, Lotus, Williams und C
 
 Marussia: `kers.ini` und `kers_torque.lut` aus der `data.acd` entfernt. Der MR01 fuhr 2012 ohne KERS ([Sky Sports](https://www.skysports.com/f1/news/17581/7459648/Marussia-not-running-KERS), [Wikipedia](https://en.wikipedia.org/wiki/Marussia_MR01)), HRT hatte in der Mod schon keins.
 
+2012 Kollider: Ferrari, Caterham und HRT hatten einen eigenen Satz Kollisionskörper (`colliders.ini`, alle sechs Körper leicht anders, `COLLIDER_3` vorn am Unterboden mit `GROUND_ENABLE=1`). Sie haben jetzt dieselben Werte wie die anderen neun 2012er (Stand Red Bull, `COLLIDER_3` ohne Bodenkontakt, `SPARKS_AS=SKIDPAD`). Fahrhöhe, Trägheit, Lenkung, Gewicht und KI-Werte waren bei allen 2012ern schon einheitlich.
+
+Erster Test 2012 (Montreal, 10 min, 1 bis 3 Runden je Fahrer): Reihenfolge stimmt, die meisten Teams etwa 0,3 s neben dem echten Wochenende, Force India 0,9 s zu langsam, KI absolut etwa 1 s langsamer als real. Zu kurz für Änderungen, die KI ist auf dieser Strecke schwach.
+
 ### The Race Project 2009 (`f1_2009_*`, offene data-Ordner)
 
 | Problem | Lösung |

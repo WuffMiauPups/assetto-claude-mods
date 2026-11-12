@@ -192,6 +192,25 @@ BASEY hinten entscheidet über die Höhe des Diffusors, dessen Kennlinie unter e
 
 Sounds 2013: Die Banks von Mercedes, McLaren, Force India, Lotus, Williams und Caterham hatten nur 30 Samples ohne Namen und keinen Innen-Sound. Sie bekommen die 2012er Bank desselben Teams (`sound_tausch.py`, `--int 4.9 --ext 1.0`). Ferrari, Sauber und Toro Rosso behalten ihr Original.
 
+**2012: Teamstärke über das Autokonzept (2026-11-12, im Spiel noch nicht getestet):** Methode wie 2008 bis 2010, Grid danach 0 / 0. Ziel ist der echte Saisonabstand aus `tools/quali_abstaende.py 2012`. Abtrieb-Rückstand zum Red Bull = Abstand abzüglich Motor (0,095 s pro Prozent), Luftwiderstand (0,04 s pro Prozent) und fehlendem KERS (0,3 s, Schätzung), geteilt durch 0,12 s pro Prozent Abtrieb. `power.lut` gleichmäßig skaliert, alle `CL_GAIN` mit demselben Faktor. Motorwerte wie 2010 (eingefrorene V8, Schätzungen).
+
+| Team | Abstand real (s) | Motor (PS) | Faktor `power.lut` | Faktor `CL_GAIN` | Abtrieb 200 km/h |
+|---|---|---|---|---|---|
+| Red Bull | 0.00 | 740 | 1.0690 | 1.0000 | 647 kg |
+| McLaren | +0.03 | 755 | 1.0597 | 0.9874 | 632 kg |
+| Ferrari | +0.19 | 750 | 1.0603 | 0.9844 | 630 kg |
+| Mercedes | +0.21 | 755 | 1.0597 | 0.9796 | 625 kg |
+| Lotus | +0.22 | 740 | 1.0690 | 0.9869 | 634 kg |
+| Sauber | +0.28 | 750 | 1.0603 | 0.9886 | 624 kg |
+| Williams | +0.35 | 740 | 1.0690 | 0.9857 | 627 kg |
+| Force India | +0.37 | 755 | 1.0597 | 0.9826 | 615 kg |
+| Toro Rosso | +0.81 | 750 | 1.0603 | 0.9622 | 597 kg |
+| Caterham | +2.10 | 740 | 1.0690 | 0.8710 | 534 kg |
+| Marussia | +3.20 | 745 | 1.1112 | 0.8029 | 487 kg |
+| HRT | +3.93 | 745 | 1.1112 | 0.7405 | 448 kg |
+
+Marussia: `kers.ini` und `kers_torque.lut` aus der `data.acd` entfernt. Der MR01 fuhr 2012 ohne KERS ([Sky Sports](https://www.skysports.com/f1/news/17581/7459648/Marussia-not-running-KERS), [Wikipedia](https://en.wikipedia.org/wiki/Marussia_MR01)), HRT hatte in der Mod schon keins.
+
 ### The Race Project 2009 (`f1_2009_*`, offene data-Ordner)
 
 | Problem | Lösung |

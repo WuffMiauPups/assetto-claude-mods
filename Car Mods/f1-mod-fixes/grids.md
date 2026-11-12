@@ -2,6 +2,10 @@
 
 Gelten nur zusammen mit den Physik-Änderungen aus der [README](README.md). Seit 2026-10-27 sind zusätzlich die Trägheit (Red Bull 2010, Caterham 2013, sechs 2009er) und die Gewichte 2006, 2012, 2013 angeglichen: Grids 2009 und 2013 müssen nachgetestet werden, beim 2010er dürfte Red Bull schneller werden. Abgestimmt mit RARE aktiv, Reliability-App aus, auf der genannten Strecke. Zielabstände sind Schätzungen aus echten Quali-Zeiten der Saison.
 
+## 2012 (Cimmerian, alle 640 kg)
+
+Seit 2026-11-12 steckt die Teamstärke in Motor und Abtrieb der Autos (README). Grid: **alle 0 / 0**, nur Fahrerstärken. Noch nicht getestet.
+
 ## 2010 (Cimmerian, alle 620 kg)
 
 Seit 2026-10-27 steckt die Teamstärke im Abtrieb der Autos (README). Grid: **alle 0 / 0**, nur Fahrerstärken. In Barcelona getestet (zwei Sessions mit 15 min, eine mit 40 min): alle Teams im Schnitt innerhalb von 0,4 s ihres Ziels, Ergebnisse in der README.

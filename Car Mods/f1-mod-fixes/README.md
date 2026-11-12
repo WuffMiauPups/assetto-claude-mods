@@ -196,7 +196,7 @@ Sounds 2013: Die Banks von Mercedes, McLaren, Force India, Lotus, Williams und C
 
 | Team | Abstand real (s) | Motor (PS) | Faktor `power.lut` | Faktor `CL_GAIN` | Abtrieb 200 km/h |
 |---|---|---|---|---|---|
-| Red Bull | 0.00 | 740 | 1.0690 | 1.0000 | 647 kg |
+| Red Bull | 0.00 | 747 (nach Test, siehe unten) | 1.0797 | 1.0300 | 666 kg |
 | McLaren | +0.03 | 755 | 1.0597 | 0.9874 | 632 kg |
 | Ferrari | +0.19 | 750 | 1.0603 | 0.9844 | 630 kg |
 | Mercedes | +0.21 | 755 | 1.0597 | 0.9796 | 625 kg |
@@ -221,6 +221,10 @@ Zweiter Test 2012 (Silverstone GP, 18 min, 3 bis 8 Runden je Fahrer, Bezug McLar
 
 - Force India: alle `CL_GAIN` nochmals x1,04 (615 auf 640 kg, Balance unverändert 48,4 % vorn). Das Auto liegt damit über dem rechnerischen Wert, die KI kommt mit ihm schlechter zurecht.
 - Red Bull und Lotus: `electronics.ini` auf den Stand der anderen zehn 2012er gesetzt (Kopie Williams: ABS und TC `PRESENT=0`, `ACTIVE=1`, `CURVE=` leer). Vorher stand bei beiden die TC auf `ACTIVE=0` mit Kurvendatei (Red Bull verwies auf eine fehlende `t_c.lut`), beim Lotus auch ABS auf `ACTIVE=0` und ein `[EDL]`-Abschnitt. Das war der einzige Unterschied außer dem Abtrieb zu den Autos, die die KI schnell fährt. Ob es die Ursache ist, ist eine Vermutung und muss der nächste Test zeigen.
+
+Dritter Test 2012 (Silverstone GP, 18 min, 1 bis 5 Runden je Fahrer, schnellstes Auto je Team gegen den schnellsten McLaren): Force India +0,43 s (Ziel +0,34), Räikkönen +1,02 s (vorher +2,64), Red Bull unverändert +0,95 s. Die Elektronik war beim Red Bull also nicht die Ursache; seine Physikdaten unterscheiden sich vom Williams nur im Abtrieb und um 7 mm im Radstand.
+
+Änderung danach (2026-11-12, auf Wunsch des Nutzers, noch nicht nachgetestet): Red Bull alle `CL_GAIN` x1,03 (647 auf 666 kg, Balance 48,4 % vorn) und `power.lut` x1,01 (740 auf 747 PS). Das ist ein Ausgleich für die KI und liegt über dem historisch gerechneten Wert; wer den Red Bull selbst fährt, hat ein etwas zu starkes Auto.
 
 ### The Race Project 2009 (`f1_2009_*`, offene data-Ordner)
 

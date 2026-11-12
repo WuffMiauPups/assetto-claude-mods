@@ -3,15 +3,101 @@
  "quelle": "rss_formula_hybrid_2017",
  "jahr": 2017,
  "teams": {
-  "mercedes": {"name": "Mercedes W08", "skins": ["01-Mercedes-L-Hamilton", "01-Mercedes-V-Bottas"]},
-  "ferrari": {"name": "Ferrari SF70H", "skins": ["02-Ferrari-A-Vettel", "02-Ferrari-K-Raikkonen"]},
-  "redbull": {"name": "Red Bull RB13", "skins": ["03-RedBull-D-Ricciardo", "03-RedBull-M-Verstappen"]},
-  "williams": {"name": "Williams FW40", "skins": ["04-Williams-F-Massa", "04-Williams-L-Stroll"]},
-  "forceindia": {"name": "Force India VJM10", "skins": ["05-ForceIndia-C-Perez", "05-ForceIndia-E-Ocon"]},
-  "tororosso": {"name": "Toro Rosso STR12", "skins": ["06-ToroRosso-B-Hartley", "06-ToroRosso-D-Kvyat"]},
-  "renault": {"name": "Renault R.S.17", "skins": ["07-Renault-C-Sainz", "07-Renault-N-Hulkenberg"]},
-  "haas": {"name": "Haas VF-17", "skins": ["08-Haas-R-Grosjean", "08-Haas-V-Magnussen"]},
-  "mclaren": {"name": "McLaren MCL32", "skins": ["09-McLaren-F-Alonso", "09-McLaren-S-Vandoorne"]},
-  "sauber": {"name": "Sauber C36", "skins": ["10-Sauber-M-Ericsson", "10-Sauber-P-Wehrlein"]}
+  "mercedes": {
+   "name": "Mercedes W08",
+   "skins": [
+    "01-Mercedes-L-Hamilton",
+    "01-Mercedes-V-Bottas"
+   ],
+   "abstand": 0.0,
+   "ps": 949
+  },
+  "ferrari": {
+   "name": "Ferrari SF70H",
+   "skins": [
+    "02-Ferrari-A-Vettel",
+    "02-Ferrari-K-Raikkonen"
+   ],
+   "abstand": 0.18,
+   "ps": 934
+  },
+  "redbull": {
+   "name": "Red Bull RB13",
+   "skins": [
+    "03-RedBull-D-Ricciardo",
+    "03-RedBull-M-Verstappen"
+   ],
+   "abstand": 0.56,
+   "ps": 907
+  },
+  "williams": {
+   "name": "Williams FW40",
+   "skins": [
+    "04-Williams-F-Massa",
+    "04-Williams-L-Stroll"
+   ],
+   "abstand": 1.37,
+   "ps": 949
+  },
+  "forceindia": {
+   "name": "Force India VJM10",
+   "skins": [
+    "05-ForceIndia-C-Perez",
+    "05-ForceIndia-E-Ocon"
+   ],
+   "abstand": 1.22,
+   "ps": 949
+  },
+  "tororosso": {
+   "name": "Toro Rosso STR12",
+   "skins": [
+    "06-ToroRosso-B-Hartley",
+    "06-ToroRosso-D-Kvyat"
+   ],
+   "abstand": 1.52,
+   "ps": 907
+  },
+  "renault": {
+   "name": "Renault R.S.17",
+   "skins": [
+    "07-Renault-C-Sainz",
+    "07-Renault-N-Hulkenberg"
+   ],
+   "abstand": 1.22,
+   "ps": 907
+  },
+  "haas": {
+   "name": "Haas VF-17",
+   "skins": [
+    "08-Haas-R-Grosjean",
+    "08-Haas-V-Magnussen"
+   ],
+   "abstand": 1.83,
+   "ps": 934
+  },
+  "mclaren": {
+   "name": "McLaren MCL32",
+   "skins": [
+    "09-McLaren-F-Alonso",
+    "09-McLaren-S-Vandoorne"
+   ],
+   "abstand": 1.44,
+   "ps": 860
+  },
+  "sauber": {
+   "name": "Sauber C36",
+   "skins": [
+    "10-Sauber-M-Ericsson",
+    "10-Sauber-P-Wehrlein"
+   ],
+   "abstand": 2.64,
+   "ps": 900
+  }
+ },
+ "_staerke": "abstand = echter Quali-Abstand zum besten Team in s (tools/quali_abstaende.py 2017, 85-s-Runde). ps = Gesamtleistung der Antriebseinheit (Schätzung: Mercedes 949, Ferrari 934, Renault 907, Honda 860, Ferrari-Vorjahresmotor im Sauber 900). tools/team_staerke.py rechnet daraus die Faktoren.",
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.12,
+  "s_pro_prozent_leistung": 0.095,
+  "ers_ps": 163
  }
 }

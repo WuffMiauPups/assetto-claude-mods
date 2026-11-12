@@ -294,4 +294,21 @@ python team_autos.py --ac <AC> --plan ../data/teams_2017.json --apply
 - `data.acd` wird mit dem neuen Ordnernamen neu verschlüsselt, geändert ist nur `SCREEN_NAME`. `sfx/GUIDs.txt` und `ui/ui_car.json` tragen den neuen Namen, die CSP-Konfiguration `extension/config/cars/loaded/<quelle>.ini` wird je Team kopiert.
 - Die Quelle bleibt unverändert, ein vorhandener Team-Ordner wird nie überschrieben.
 
-Stand 2026-11-12: 2017 gebaut (`rss_formula_hybrid_2017_mercedes`, `_ferrari`, `_redbull`, `_williams`, `_forceindia`, `_tororosso`, `_renault`, `_haas`, `_mclaren`, `_sauber`, im Spiel als "F1 2017 <Auto>"), Physik noch bei allen gleich der Quelle. Im Spiel noch nicht geladen. Toro Rosso hat die Skins Hartley und Kwjat, Renault Sainz und Hülkenberg (so liefert RSS sie). Nächster Schritt: laden, Sound und Skins prüfen, dann Teamstärke über Motor und Abtrieb (Hybrid-Antrieb braucht eine eigene Rechnung).
+Stand 2026-11-12: 2017 gebaut (`rss_formula_hybrid_2017_mercedes`, `_ferrari`, `_redbull`, `_williams`, `_forceindia`, `_tororosso`, `_renault`, `_haas`, `_mclaren`, `_sauber`, im Spiel als "F1 2017 <Auto>"). Laut Nutzer laden alle zehn im Spiel. Toro Rosso hat die Skins Hartley und Kwjat, Renault Sainz und Hülkenberg (so liefert RSS sie). 
+
+**2017: Teamstärke über das Autokonzept (2026-11-12, im Spiel noch nicht getestet):** `tools/team_staerke.py` mit `data/teams_2017.json`. Mercedes behält die Werte von RSS, alle anderen liegen darunter. Ziel ist der echte Saisonabstand aus `tools/quali_abstaende.py 2017`. Leistung nach geschätzter Gesamtleistung der Antriebseinheiten (Mercedes 949, Ferrari 934, Renault 907, Honda 860 PS, Vorjahres-Ferrari im Sauber 900 PS; alles Schätzungen). Skaliert wird nur `power.lut`, also der Verbrenner (im Modell 716 PS mit Ladedruck), die 163 PS der MGU-K bleiben bei allen gleich. Abtrieb-Rückstand = Abstand abzüglich Motor (0,095 s pro Prozent Gesamtleistung), geteilt durch 0,12 s pro Prozent Abtrieb; beide Empfindlichkeiten stammen von den V8-Jahrgängen und sind für diese Autos ungeprüft. Alle `CL_GAIN` mit demselben Faktor (Balance 47,2 % vorn bei allen), Luftwiderstand, ERS und Getriebe unverändert. Das Skript rechnet immer von der Quelle aus, mehrfaches Anwenden summiert nichts auf.
+
+| Team | Abstand real (s) | Leistung gesamt (PS) | Faktor `power.lut` | Faktor `CL_GAIN` | Abtrieb 200 km/h |
+|---|---|---|---|---|---|
+| Mercedes | 0.00 | 949 | 1.0000 | 1.0000 | 954 kg |
+| Ferrari | +0.18 | 934 | 0.9806 | 0.9975 | 952 kg |
+| Red Bull | +0.56 | 907 | 0.9457 | 0.9884 | 943 kg |
+| Force India | +1.22 | 949 | 1.0000 | 0.8983 | 857 kg |
+| Renault | +1.22 | 907 | 0.9457 | 0.9334 | 891 kg |
+| Williams | +1.37 | 949 | 1.0000 | 0.8858 | 845 kg |
+| McLaren (Honda) | +1.44 | 860 | 0.8849 | 0.9542 | 910 kg |
+| Toro Rosso | +1.52 | 907 | 0.9457 | 0.9084 | 867 kg |
+| Haas | +1.83 | 934 | 0.9806 | 0.8600 | 821 kg |
+| Sauber (Ferrari 2016) | +2.64 | 900 | 0.9366 | 0.8209 | 783 kg |
+
+Nächster Schritt: Quali-Session mit allen zehn Autos (Grid 0 / 0) auswerten und die Faktoren nachstellen.

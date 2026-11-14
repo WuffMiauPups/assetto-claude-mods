@@ -1,6 +1,6 @@
 {
  "_hinweis": "ACFL F1 2023: zehn eigene Auto-Ordner mit bisher gleicher Physik. Basis für die Rechnung ist data.acd.bak im jeweiligen Ordner (Originalzustand).",
- "_staerke": "abstand = echter Quali-Abstand zum besten Team in s (tools/quali_abstaende.py 2023, 85-s-Runde). ps = Gesamtleistung der Antriebseinheit (Schätzung: Honda RBPT 995, Ferrari 995, Mercedes 990, Renault 970). cd = Faktor auf den Luftwiderstand nach Autokonzept (Schätzung). Empfindlichkeiten wie 2018, für diese Autos ungeprüft.",
+ "_staerke": "abstand = echter Quali-Abstand zum besten Team in s aus den Rennen 1 bis 8 (Bahrain bis Kanada, erste Saisonphase mit starkem Aston Martin; gerechnet mit fetch/medians aus tools/quali_abstaende.py, 85-s-Runde). Ganze Saison zum Vergleich: Ferrari 0.26, Mercedes 0.36, McLaren 0.41, Aston Martin 0.47, Alpine 0.61, Haas 0.78, Williams 0.79, AlphaTauri 0.87, Alfa Romeo 0.94. ps = Gesamtleistung der Antriebseinheit (Schätzung: Honda RBPT 995, Ferrari 995, Mercedes 990, Renault 970). cd = Faktor auf den Luftwiderstand nach Autokonzept (Schätzung). Empfindlichkeiten wie 2018, für diese Autos ungeprüft.",
  "jahr": 2023,
  "ers_mitskalieren": true,
  "masse": 798,
@@ -29,28 +29,29 @@
   "ferrari": {
    "ordner": "acfl_f1_2023_ferrari_b",
    "name": "Ferrari SF-23",
-   "abstand": 0.26,
+   "abstand": 0.34,
    "ps": 995
-  },
-  "mercedes": {
-   "ordner": "acfl_f1_2023_mercedes_b",
-   "name": "Mercedes W14",
-   "abstand": 0.36,
-   "ps": 990
-  },
-  "mclaren": {
-   "ordner": "acfl_f1_2023_mclaren",
-   "name": "McLaren MCL60",
-   "abstand": 0.41,
-   "ps": 990
   },
   "astonmartin": {
    "ordner": "acfl_f1_2023_astonmartin",
    "name": "Aston Martin AMR23",
-   "abstand": 0.47,
+   "abstand": 0.41,
    "ps": 990,
    "cd": 1.03,
    "_hinweis": "cd: viel Luftwiderstand (Schätzung)"
+  },
+  "mclaren": {
+   "ordner": "acfl_f1_2023_mclaren",
+   "name": "McLaren MCL60",
+   "abstand": 0.43,
+   "ps": 990,
+   "_hinweis": "abstand auf Wunsch des Nutzers knapp vor dem Mercedes (0,05 s); real lag der McLaren in den Rennen 1 bis 8 bei 0.76"
+  },
+  "mercedes": {
+   "ordner": "acfl_f1_2023_mercedes_b",
+   "name": "Mercedes W14",
+   "abstand": 0.48,
+   "ps": 990
   },
   "alpine": {
    "ordner": "acfl_f1_2023_alpine",
@@ -61,27 +62,27 @@
   "haas": {
    "ordner": "acfl_f1_2023_haas",
    "name": "Haas VF-23",
-   "abstand": 0.78,
+   "abstand": 0.77,
    "ps": 995
   },
   "williams": {
    "ordner": "acfl_f1_2023_williams",
    "name": "Williams FW45",
-   "abstand": 0.79,
+   "abstand": 0.85,
    "ps": 990,
    "cd": 0.95,
    "_hinweis": "cd: Konzept mit wenig Luftwiderstand und wenig Abtrieb (Schätzung)"
   },
-  "alphatauri": {
-   "ordner": "acfl_f1_2023_alphatauri",
-   "name": "AlphaTauri AT04",
-   "abstand": 0.87,
-   "ps": 995
-  },
   "alfaromeo": {
    "ordner": "acfl_f1_2023_alfaromeo",
    "name": "Alfa Romeo C43",
-   "abstand": 0.94,
+   "abstand": 0.92,
+   "ps": 995
+  },
+  "alphatauri": {
+   "ordner": "acfl_f1_2023_alphatauri",
+   "name": "AlphaTauri AT04",
+   "abstand": 0.99,
    "ps": 995
   }
  }

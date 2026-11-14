@@ -353,24 +353,26 @@ Die zehn Autos `acfl_f1_2023_*` haben schon eigene Ordner, aber bis auf Kameras 
 **Stand 2026-11-14, im Spiel noch nicht getestet:**
 
 - Leistung: Honda RBPT 995, Ferrari 995, Mercedes 990, Renault 970 PS (Schätzungen). Hier bekommen `power.lut` und `kers_torque.lut` denselben Faktor, weil der Elektroanteil der Mod ohnehin nicht den realen 120 kW entspricht.
-- Abtrieb aus dem echten Saisonabstand (`tools/quali_abstaende.py 2023`) mit denselben Empfindlichkeiten wie 2018 (0,09 / 0,16 / 0,04 s pro Prozent, ungeprüft). Balance bei allen 46,5 % vorn.
+- Abtrieb aus dem echten Abstand der Rennen 1 bis 8 (Daten wie `tools/quali_abstaende.py 2023`, siehe unten) mit denselben Empfindlichkeiten wie 2018 (0,09 / 0,16 / 0,04 s pro Prozent, ungeprüft). Balance bei allen 46,5 % vorn.
 - Luftwiderstand nach Autokonzept (Schätzungen): Red Bull 0,97, Williams 0,95, Aston Martin 1,03. Weil der Red Bull als Bezug weniger Luftwiderstand hat, liegt sein Abtrieb-Faktor leicht unter 1.
 - Gewicht: `TOTALMASS` 788 auf 798 kg (Mindestgewicht 2023 mit Fahrer).
 - Mercedes angeglichen: Ihm fehlte `ctrl_turbo0.ini`, damit galt statt des Reglers der Wastegate-Wert 1,8 aus `engine.ini` (rechnerisch rund 10 % weniger Verbrennerleistung; so verstehe ich die Turbo-Logik von AC, im Spiel nicht nachgemessen). Er bekommt die Datei des Red Bull, dazu dessen `ai.ini` (KI schaltet bei 11650 statt 11450).
 - Bremsen geprüft, nicht geändert: `MAX_TORQUE=5950`, `FRONT_SHARE=0.56`, rechnerisch rund 4,2 g aus den Bremsen plus Luftwiderstand.
 
-| Team | Abstand real (s) | Leistung gesamt (PS) | Faktor Leistung | Faktor `CL_GAIN` | Faktor `CD_GAIN` | Abtrieb 200 km/h |
+| Team | Abstand Rennen 1–8 (s) | Leistung gesamt (PS) | Faktor Leistung | Faktor `CL_GAIN` | Faktor `CD_GAIN` | Abtrieb 200 km/h |
 |---|---|---|---|---|---|---|
 | Red Bull RB19 | 0.00 | 995 | 1.0000 | 0.9867 | 0.97 | 763 kg |
-| Ferrari SF-23 | +0.26 | 995 | 1.0000 | 0.9711 | 1.00 | 751 kg |
-| Mercedes W14 | +0.36 | 990 | 0.9950 | 0.9689 | 1.00 | 749 kg |
-| McLaren MCL60 | +0.41 | 990 | 0.9950 | 0.9634 | 1.00 | 745 kg |
-| Aston Martin AMR23 | +0.47 | 990 | 0.9950 | 0.9700 | 1.03 | 750 kg |
+| Ferrari SF-23 | +0.34 | 995 | 1.0000 | 0.9622 | 1.00 | 744 kg |
+| Aston Martin AMR23 | +0.41 | 990 | 0.9950 | 0.9767 | 1.03 | 755 kg |
+| McLaren MCL60 (Wunsch, real +0.76) | +0.43 | 990 | 0.9950 | 0.9612 | 1.00 | 743 kg |
+| Mercedes W14 | +0.48 | 990 | 0.9950 | 0.9556 | 1.00 | 739 kg |
 | Alpine A523 | +0.61 | 970 | 0.9749 | 0.9769 | 1.00 | 756 kg |
-| Haas VF-23 | +0.78 | 995 | 1.0000 | 0.9133 | 1.00 | 706 kg |
-| Williams FW45 | +0.79 | 990 | 0.9950 | 0.8989 | 0.95 | 695 kg |
-| AlphaTauri AT04 | +0.87 | 995 | 1.0000 | 0.9033 | 1.00 | 699 kg |
-| Alfa Romeo C43 | +0.94 | 995 | 1.0000 | 0.8956 | 1.00 | 693 kg |
+| Haas VF-23 | +0.77 | 995 | 1.0000 | 0.9144 | 1.00 | 707 kg |
+| Williams FW45 | +0.85 | 990 | 0.9950 | 0.8923 | 0.95 | 690 kg |
+| Alfa Romeo C43 | +0.92 | 995 | 1.0000 | 0.8978 | 1.00 | 694 kg |
+| AlphaTauri AT04 | +0.99 | 995 | 1.0000 | 0.8900 | 1.00 | 688 kg |
+
+Saisonphase (2026-11-14, Wunsch des Nutzers): Die Abstände stammen aus den Rennen 1 bis 8 (Bahrain bis Kanada), also der Phase mit starkem Aston Martin, nicht aus der ganzen Saison (dort Ferrari +0,26, Mercedes +0,36, McLaren +0,41, Aston Martin +0,47, Alpine +0,61, Haas +0,78, Williams +0,79, AlphaTauri +0,87, Alfa Romeo +0,94). Der McLaren ist auf Wunsch 0,05 s vor den Mercedes gesetzt; real lag er in dieser Phase bei +0,76 und war erst ab Österreich (Rennen 9) so stark.
 
 Die Abtrieb-Werte in kg stammen aus derselben Schätzformel wie bei den anderen Jahrgängen und sind bei diesen Autos vermutlich zu niedrig (Bodeneffekt über Höhen-LUTs); die Verhältnisse zwischen den Teams stimmen.
 

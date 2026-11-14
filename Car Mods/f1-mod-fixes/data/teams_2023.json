@@ -26,19 +26,19 @@
    "cd": 0.97,
    "_hinweis": "cd: sehr effizientes Auto mit wenig Luftwiderstand (Schätzung)"
   },
+  "astonmartin": {
+   "ordner": "acfl_f1_2023_astonmartin",
+   "name": "Aston Martin AMR23",
+   "abstand": 0.29,
+   "ps": 990,
+   "cd": 1.03,
+   "_hinweis": "cd: viel Luftwiderstand (Schätzung). abstand auf Wunsch des Nutzers 0,05 s vor dem Ferrari; real in der Quali der Rennen 1 bis 8 bei 0.41"
+  },
   "ferrari": {
    "ordner": "acfl_f1_2023_ferrari_b",
    "name": "Ferrari SF-23",
    "abstand": 0.34,
    "ps": 995
-  },
-  "astonmartin": {
-   "ordner": "acfl_f1_2023_astonmartin",
-   "name": "Aston Martin AMR23",
-   "abstand": 0.41,
-   "ps": 990,
-   "cd": 1.03,
-   "_hinweis": "cd: viel Luftwiderstand (Schätzung)"
   },
   "mclaren": {
    "ordner": "acfl_f1_2023_mclaren",

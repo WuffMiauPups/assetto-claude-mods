@@ -362,8 +362,8 @@ Die zehn Autos `acfl_f1_2023_*` haben schon eigene Ordner, aber bis auf Kameras 
 | Team | Abstand Rennen 1–8 (s) | Leistung gesamt (PS) | Faktor Leistung | Faktor `CL_GAIN` | Faktor `CD_GAIN` | Abtrieb 200 km/h |
 |---|---|---|---|---|---|---|
 | Red Bull RB19 | 0.00 | 995 | 1.0000 | 0.9867 | 0.97 | 763 kg |
+| Aston Martin AMR23 (Wunsch, real +0.41) | +0.29 | 990 | 0.9950 | 0.9900 | 1.03 | 765 kg |
 | Ferrari SF-23 | +0.34 | 995 | 1.0000 | 0.9622 | 1.00 | 744 kg |
-| Aston Martin AMR23 | +0.41 | 990 | 0.9950 | 0.9767 | 1.03 | 755 kg |
 | McLaren MCL60 (Wunsch, real +0.76) | +0.43 | 990 | 0.9950 | 0.9612 | 1.00 | 743 kg |
 | Mercedes W14 | +0.48 | 990 | 0.9950 | 0.9556 | 1.00 | 739 kg |
 | Alpine A523 | +0.61 | 970 | 0.9749 | 0.9769 | 1.00 | 756 kg |
@@ -372,7 +372,7 @@ Die zehn Autos `acfl_f1_2023_*` haben schon eigene Ordner, aber bis auf Kameras 
 | Alfa Romeo C43 | +0.92 | 995 | 1.0000 | 0.8978 | 1.00 | 694 kg |
 | AlphaTauri AT04 | +0.99 | 995 | 1.0000 | 0.8900 | 1.00 | 688 kg |
 
-Saisonphase (2026-11-14, Wunsch des Nutzers): Die Abstände stammen aus den Rennen 1 bis 8 (Bahrain bis Kanada), also der Phase mit starkem Aston Martin, nicht aus der ganzen Saison (dort Ferrari +0,26, Mercedes +0,36, McLaren +0,41, Aston Martin +0,47, Alpine +0,61, Haas +0,78, Williams +0,79, AlphaTauri +0,87, Alfa Romeo +0,94). Der McLaren ist auf Wunsch 0,05 s vor den Mercedes gesetzt; real lag er in dieser Phase bei +0,76 und war erst ab Österreich (Rennen 9) so stark.
+Saisonphase (2026-11-14, Wunsch des Nutzers): Die Abstände stammen aus den Rennen 1 bis 8 (Bahrain bis Kanada), also der Phase mit starkem Aston Martin, nicht aus der ganzen Saison (dort Ferrari +0,26, Mercedes +0,36, McLaren +0,41, Aston Martin +0,47, Alpine +0,61, Haas +0,78, Williams +0,79, AlphaTauri +0,87, Alfa Romeo +0,94). Der Aston Martin ist auf Wunsch 0,05 s vor den Ferrari gesetzt (in der Quali dieser Phase lag er 0,07 s dahinter, im Rennen war er meist die zweite Kraft). Der McLaren ist auf Wunsch 0,05 s vor den Mercedes gesetzt; real lag er in dieser Phase bei +0,76 und war erst ab Österreich (Rennen 9) so stark.
 
 Die Abtrieb-Werte in kg stammen aus derselben Schätzformel wie bei den anderen Jahrgängen und sind bei diesen Autos vermutlich zu niedrig (Bodeneffekt über Höhen-LUTs); die Verhältnisse zwischen den Teams stimmen.
 

@@ -112,6 +112,18 @@
    "cd": 1.08,
    "cl": 0.82,
    "_hinweis": "cl bei 0,82 gedeckelt (die KI bricht mit sehr wenig Abtrieb ein), der Rest des Abstands über cd: der FW41 war aerodynamisch ineffizient (Schätzung)"
+  },
+  "mclaren_fantasy": {
+   "name": "McLaren MCL33 Fantasy",
+   "skins": [
+    "MCL_33_Alonso_Abu_Dhabi",
+    "MCL_33_Vandoorne_Abu_Dhabi",
+    "MCL_33_Alonso_Brasil",
+    "MCL_33_Vandoorne_Brasil"
+   ],
+   "ps": 975,
+   "cl": 1.038,
+   "_hinweis": "Wunschauto des Nutzers, nicht historisch: 975 PS, 1255 kg Abtrieb bei 200 km/h (1255/1209). Luftwiderstand wie die Quelle."
   }
  }
 }

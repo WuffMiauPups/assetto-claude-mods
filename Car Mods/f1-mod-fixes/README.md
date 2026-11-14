@@ -336,6 +336,9 @@ Ferrari behält die Werte von RSS. Leistung: Ferrari 990, Mercedes 985, Renault 
 | Toro Rosso (Honda) | +1.52 | 930 | 0.9260 | 0.9389 | 1.00 | 1135 kg |
 | McLaren | +1.56 | 945 | 0.9445 | 0.9253 | 1.04 | 1119 kg |
 | Williams | +2.03 | 985 | 0.9938 | 0.8200 (gedeckelt) | 1.08 | 992 kg |
+| McLaren Fantasy (nicht historisch) | – | 975 | 0.9815 | 1.0380 | 1.00 | 1255 kg |
+
+McLaren Fantasy 2018: Wunschauto des Nutzers als elftes Auto (`rss_formula_hybrid_2018_mclaren_fantasy`, "F1 2018 McLaren MCL33 Fantasy", vier McLaren-Skins). 975 PS und 1255 kg Abtrieb sind fest vorgegeben, Luftwiderstand wie die Quelle. Mehr Abtrieb als jedes historische Auto des Jahrgangs, rechnerisch etwa 0,1 s vor dem Ferrari (Schätzung).
 
 Bremsen 2018 geprüft, nicht geändert: `MAX_TORQUE=5650`, `FRONT_SHARE=0.54`. Das ergibt rechnerisch rund 4,7 g aus den Bremsen (734 kg, Radius 0,335 m) plus Luftwiderstand, also 5,5 bis 6 g bei hohem Tempo, wie beim echten Auto. Unterschiede zwischen den Teams sind nicht belegt, deshalb bei allen gleich.
 

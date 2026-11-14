@@ -362,7 +362,7 @@ Die zehn Autos `acfl_f1_2023_*` haben schon eigene Ordner, aber bis auf Kameras 
 | Team | Abstand Rennen 1–8 (s) | Leistung gesamt (PS) | Faktor Leistung | Faktor `CL_GAIN` | Faktor `CD_GAIN` | Abtrieb 200 km/h |
 |---|---|---|---|---|---|---|
 | Red Bull RB19 | 0.00 | 995 | 1.0000 | 0.9867 | 0.97 | 763 kg |
-| Aston Martin AMR23 (Wunsch, real +0.41) | +0.29 | 990 | 0.9950 | 0.9900 | 1.03 | 765 kg |
+| Aston Martin AMR23 (Wunsch, real +0.41) | +0.29 | 990 | 0.9950 | 0.9900 | 1.03 | 766 kg |
 | Ferrari SF-23 | +0.34 | 995 | 1.0000 | 0.9622 | 1.00 | 744 kg |
 | McLaren MCL60 (Wunsch, real +0.76) | +0.43 | 990 | 0.9950 | 0.9612 | 1.00 | 743 kg |
 | Mercedes W14 | +0.48 | 990 | 0.9950 | 0.9556 | 1.00 | 739 kg |

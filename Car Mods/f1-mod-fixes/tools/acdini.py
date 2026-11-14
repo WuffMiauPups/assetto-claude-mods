@@ -93,6 +93,8 @@ class CarData:
         if self.files is not None:
             if not (self.dir / "data.acd.bak").exists():
                 shutil.copy2(self.acd, self.dir / "data.acd.bak")
+            if name.lower() not in self.files:      # Datei fehlt im Archiv: anhängen
+                self.entries.append([name, b""]); self.files[name.lower()] = self.entries[-1]
             self.files[name.lower()][1] = text.encode("latin1")
             acd_write(self.acd, self.header, self.entries, self.key)
         else:

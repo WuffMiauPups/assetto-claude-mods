@@ -345,3 +345,33 @@ Bremsen 2018 geprüft, nicht geändert: `MAX_TORQUE=5650`, `FRONT_SHARE=0.54`. D
 `tools/topspeed.py` rechnet ohne Ladedruck und taugt für die Hybrid-Autos nicht.
 
 Nächster Schritt: laden, dann Quali-Session mit Grid 0 / 0 auswerten.
+
+## ACFL F1 2023
+
+Die zehn Autos `acfl_f1_2023_*` haben schon eigene Ordner, aber bis auf Kameras und Modell dieselbe Physik. `tools/team_staerke.py` mit `data/teams_2023.json` stellt sie ein; Basis ist `data.acd.bak` im jeweiligen Ordner (Zustand von ACFL), mehrfaches Anwenden summiert nichts auf.
+
+**Stand 2026-11-14, im Spiel noch nicht getestet:**
+
+- Leistung: Honda RBPT 995, Ferrari 995, Mercedes 990, Renault 970 PS (Schätzungen). Hier bekommen `power.lut` und `kers_torque.lut` denselben Faktor, weil der Elektroanteil der Mod ohnehin nicht den realen 120 kW entspricht.
+- Abtrieb aus dem echten Saisonabstand (`tools/quali_abstaende.py 2023`) mit denselben Empfindlichkeiten wie 2018 (0,09 / 0,16 / 0,04 s pro Prozent, ungeprüft). Balance bei allen 46,5 % vorn.
+- Luftwiderstand nach Autokonzept (Schätzungen): Red Bull 0,97, Williams 0,95, Aston Martin 1,03. Weil der Red Bull als Bezug weniger Luftwiderstand hat, liegt sein Abtrieb-Faktor leicht unter 1.
+- Gewicht: `TOTALMASS` 788 auf 798 kg (Mindestgewicht 2023 mit Fahrer).
+- Mercedes angeglichen: Ihm fehlte `ctrl_turbo0.ini`, damit galt statt des Reglers der Wastegate-Wert 1,8 aus `engine.ini` (rechnerisch rund 10 % weniger Verbrennerleistung; so verstehe ich die Turbo-Logik von AC, im Spiel nicht nachgemessen). Er bekommt die Datei des Red Bull, dazu dessen `ai.ini` (KI schaltet bei 11650 statt 11450).
+- Bremsen geprüft, nicht geändert: `MAX_TORQUE=5950`, `FRONT_SHARE=0.56`, rechnerisch rund 4,2 g aus den Bremsen plus Luftwiderstand.
+
+| Team | Abstand real (s) | Leistung gesamt (PS) | Faktor Leistung | Faktor `CL_GAIN` | Faktor `CD_GAIN` | Abtrieb 200 km/h |
+|---|---|---|---|---|---|---|
+| Red Bull RB19 | 0.00 | 995 | 1.0000 | 0.9867 | 0.97 | 763 kg |
+| Ferrari SF-23 | +0.26 | 995 | 1.0000 | 0.9711 | 1.00 | 751 kg |
+| Mercedes W14 | +0.36 | 990 | 0.9950 | 0.9689 | 1.00 | 749 kg |
+| McLaren MCL60 | +0.41 | 990 | 0.9950 | 0.9634 | 1.00 | 745 kg |
+| Aston Martin AMR23 | +0.47 | 990 | 0.9950 | 0.9700 | 1.03 | 750 kg |
+| Alpine A523 | +0.61 | 970 | 0.9749 | 0.9769 | 1.00 | 756 kg |
+| Haas VF-23 | +0.78 | 995 | 1.0000 | 0.9133 | 1.00 | 706 kg |
+| Williams FW45 | +0.79 | 990 | 0.9950 | 0.8989 | 0.95 | 695 kg |
+| AlphaTauri AT04 | +0.87 | 995 | 1.0000 | 0.9033 | 1.00 | 699 kg |
+| Alfa Romeo C43 | +0.94 | 995 | 1.0000 | 0.8956 | 1.00 | 693 kg |
+
+Die Abtrieb-Werte in kg stammen aus derselben Schätzformel wie bei den anderen Jahrgängen und sind bei diesen Autos vermutlich zu niedrig (Bodeneffekt über Höhen-LUTs); die Verhältnisse zwischen den Teams stimmen.
+
+Nächster Schritt: Quali-Session mit Grid 0 / 0 auswerten.

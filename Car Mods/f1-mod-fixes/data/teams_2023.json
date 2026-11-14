@@ -1,0 +1,88 @@
+{
+ "_hinweis": "ACFL F1 2023: zehn eigene Auto-Ordner mit bisher gleicher Physik. Basis für die Rechnung ist data.acd.bak im jeweiligen Ordner (Originalzustand).",
+ "_staerke": "abstand = echter Quali-Abstand zum besten Team in s (tools/quali_abstaende.py 2023, 85-s-Runde). ps = Gesamtleistung der Antriebseinheit (Schätzung: Honda RBPT 995, Ferrari 995, Mercedes 990, Renault 970). cd = Faktor auf den Luftwiderstand nach Autokonzept (Schätzung). Empfindlichkeiten wie 2018, für diese Autos ungeprüft.",
+ "jahr": 2023,
+ "ers_mitskalieren": true,
+ "masse": 798,
+ "angleichen": {
+  "referenz": "redbull",
+  "dateien": [
+   "ctrl_turbo0.ini",
+   "ai.ini"
+  ],
+  "_hinweis": "Dem Mercedes fehlt ctrl_turbo0.ini (rund 10 % weniger Verbrennerleistung), seine KI schaltet bei 11450 statt 11650"
+ },
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.09,
+  "s_pro_prozent_leistung": 0.16,
+  "s_pro_prozent_widerstand": 0.04
+ },
+ "teams": {
+  "redbull": {
+   "ordner": "acfl_f1_2023_redbull",
+   "name": "Red Bull RB19",
+   "abstand": 0.0,
+   "ps": 995,
+   "cd": 0.97,
+   "_hinweis": "cd: sehr effizientes Auto mit wenig Luftwiderstand (Schätzung)"
+  },
+  "ferrari": {
+   "ordner": "acfl_f1_2023_ferrari_b",
+   "name": "Ferrari SF-23",
+   "abstand": 0.26,
+   "ps": 995
+  },
+  "mercedes": {
+   "ordner": "acfl_f1_2023_mercedes_b",
+   "name": "Mercedes W14",
+   "abstand": 0.36,
+   "ps": 990
+  },
+  "mclaren": {
+   "ordner": "acfl_f1_2023_mclaren",
+   "name": "McLaren MCL60",
+   "abstand": 0.41,
+   "ps": 990
+  },
+  "astonmartin": {
+   "ordner": "acfl_f1_2023_astonmartin",
+   "name": "Aston Martin AMR23",
+   "abstand": 0.47,
+   "ps": 990,
+   "cd": 1.03,
+   "_hinweis": "cd: viel Luftwiderstand (Schätzung)"
+  },
+  "alpine": {
+   "ordner": "acfl_f1_2023_alpine",
+   "name": "Alpine A523",
+   "abstand": 0.61,
+   "ps": 970
+  },
+  "haas": {
+   "ordner": "acfl_f1_2023_haas",
+   "name": "Haas VF-23",
+   "abstand": 0.78,
+   "ps": 995
+  },
+  "williams": {
+   "ordner": "acfl_f1_2023_williams",
+   "name": "Williams FW45",
+   "abstand": 0.79,
+   "ps": 990,
+   "cd": 0.95,
+   "_hinweis": "cd: Konzept mit wenig Luftwiderstand und wenig Abtrieb (Schätzung)"
+  },
+  "alphatauri": {
+   "ordner": "acfl_f1_2023_alphatauri",
+   "name": "AlphaTauri AT04",
+   "abstand": 0.87,
+   "ps": 995
+  },
+  "alfaromeo": {
+   "ordner": "acfl_f1_2023_alfaromeo",
+   "name": "Alfa Romeo C43",
+   "abstand": 0.94,
+   "ps": 995
+  }
+ }
+}

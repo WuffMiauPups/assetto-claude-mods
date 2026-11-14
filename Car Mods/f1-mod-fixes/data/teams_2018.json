@@ -1,0 +1,117 @@
+{
+ "_hinweis": "Team-Autos aus der Formula Hybrid 2018 (RSS). Ordner = <quelle>_<schluessel>. Skins sind Ordnernamen unter skins/ der Quelle.",
+ "_staerke": "abstand = echter Quali-Abstand zum besten Team in s (tools/quali_abstaende.py 2018, 85-s-Runde). ps = Gesamtleistung der Antriebseinheit (Schätzung: Ferrari 990, Mercedes 985, Renault 945, Honda 930). cd = Faktor auf den Luftwiderstand nach Autokonzept (Schätzung), cl = fester Abtrieb-Faktor statt Rechnung. Empfindlichkeiten: Abtrieb und Leistung nach dem Barcelona-Test der 2017er Team-Autos grob angepasst (dort etwa 0,065 und 0,16), alles Schätzungen.",
+ "quelle": "rss_formula_hybrid_2018",
+ "jahr": 2018,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.09,
+  "s_pro_prozent_leistung": 0.16,
+  "s_pro_prozent_widerstand": 0.04,
+  "ers_ps": 163
+ },
+ "teams": {
+  "ferrari": {
+   "name": "Ferrari SF71H",
+   "skins": [
+    "05_Scuderia_Ferrari",
+    "07_Scuderia_Ferrari"
+   ],
+   "abstand": 0.0,
+   "ps": 990
+  },
+  "mercedes": {
+   "name": "Mercedes W09",
+   "skins": [
+    "2018_Mercedes_44",
+    "2018_Mercedes_77",
+    "44_Mercedes_W09_2018",
+    "77_Mercedes_W09_2018"
+   ],
+   "abstand": 0.08,
+   "ps": 985
+  },
+  "redbull": {
+   "name": "Red Bull RB14",
+   "skins": [
+    "Red_Bull_Ricciardo_3",
+    "Red_Bull_Verstappen_33",
+    "RB14_camo_3",
+    "RB14_camo_33"
+   ],
+   "abstand": 0.42,
+   "ps": 945
+  },
+  "haas": {
+   "name": "Haas VF-18",
+   "skins": [
+    "Haas_8",
+    "Haas_20"
+   ],
+   "abstand": 1.04,
+   "ps": 990
+  },
+  "renault": {
+   "name": "Renault R.S.18",
+   "skins": [
+    "RS_18_Hulkenberg",
+    "RS_18_Sainz"
+   ],
+   "abstand": 1.09,
+   "ps": 945
+  },
+  "forceindia": {
+   "name": "Force India VJM11",
+   "skins": [
+    "Force_India_11",
+    "Force_India_31"
+   ],
+   "abstand": 1.19,
+   "ps": 985,
+   "cd": 0.97,
+   "_hinweis": "cd: Konzept mit wenig Luftwiderstand (Schätzung)"
+  },
+  "sauber": {
+   "name": "Sauber C37",
+   "skins": [
+    "Sauber_F1_16",
+    "Sauber_F1_9"
+   ],
+   "abstand": 1.32,
+   "ps": 990
+  },
+  "tororosso": {
+   "name": "Toro Rosso STR13",
+   "skins": [
+    "Toro_Rosso_10",
+    "Toro_Rosso_28"
+   ],
+   "abstand": 1.52,
+   "ps": 930
+  },
+  "mclaren": {
+   "name": "McLaren MCL33",
+   "skins": [
+    "MCL_33_Alonso_Abu_Dhabi",
+    "MCL_33_Vandoorne_Abu_Dhabi",
+    "MCL_33_Alonso_Brasil",
+    "MCL_33_Vandoorne_Brasil"
+   ],
+   "abstand": 1.56,
+   "ps": 945,
+   "cd": 1.04,
+   "_hinweis": "cd: der MCL33 hatte viel Luftwiderstand (Schätzung)"
+  },
+  "williams": {
+   "name": "Williams FW41",
+   "skins": [
+    "Williams_Martini_Racing_18",
+    "Williams_Martini_Racing_35"
+   ],
+   "abstand": 2.03,
+   "ps": 985,
+   "cd": 1.08,
+   "cl": 0.82,
+   "_hinweis": "cl bei 0,82 gedeckelt (die KI bricht mit sehr wenig Abtrieb ein), der Rest des Abstands über cd: der FW41 war aerodynamisch ineffizient (Schätzung)"
+  }
+ }
+}

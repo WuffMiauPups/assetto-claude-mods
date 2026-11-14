@@ -2,6 +2,10 @@
 
 Gelten nur zusammen mit den Physik-Änderungen aus der [README](README.md). Seit 2026-10-27 sind zusätzlich die Trägheit (Red Bull 2010, Caterham 2013, sechs 2009er) und die Gewichte 2006, 2012, 2013 angeglichen: Grids 2009 und 2013 müssen nachgetestet werden, beim 2010er dürfte Red Bull schneller werden. Abgestimmt mit RARE aktiv, Reliability-App aus, auf der genannten Strecke. Zielabstände sind Schätzungen aus echten Quali-Zeiten der Saison.
 
+## 2018 (Formula Hybrid 2018 von RSS, Team-Autos `rss_formula_hybrid_2018_<team>`)
+
+Seit 2026-11-14 steckt die Teamstärke in Motor, Abtrieb und Luftwiderstand der zehn Team-Autos (README). Grid: **alle 0 / 0**, nur Fahrerstärken. Noch nicht getestet.
+
 ## 2017 (Formula Hybrid 2017 von RSS, Team-Autos `rss_formula_hybrid_2017_<team>`)
 
 Seit 2026-11-12 steckt die Teamstärke in Motor und Abtrieb der zehn Team-Autos (README). Grid: **alle 0 / 0**, nur Fahrerstärken. Einmal in Barcelona getestet (18 min), danach sechs Teams im Abtrieb nachgestellt, das ist noch nicht nachgetestet.

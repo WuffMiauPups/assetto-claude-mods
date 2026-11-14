@@ -7,7 +7,8 @@ Das beste Team behält die Werte der Quelle. Für die anderen gilt:
   Leistung:  Gesamtleistung im Verhältnis der geschätzten PS. Skaliert wird nur power.lut (Verbrenner),
              der Elektroanteil (ers_ps) bleibt, deshalb fällt der Faktor der Kurve etwas größer aus.
   Abtrieb:   (echter Abstand - Zeitverlust durch den Motor) / s_pro_prozent_abtrieb, als Faktor auf alle CL_GAIN.
-             Die Balance bleibt, der Luftwiderstand auch.
+             Die Balance bleibt. Mit "cd" im Plan bekommt ein Team zusätzlich einen Faktor auf alle CD_GAIN
+             (Luftwiderstand nach Autokonzept); dessen Zeitwirkung wird beim Abtrieb gegengerechnet.
 Ein Team mit "cl" im Plan (und ohne "abstand") bekommt diesen Abtrieb-Faktor fest, zum Beispiel ein Wunschauto.
 Gerechnet wird immer von den Dateien der Quelle aus, mehrfaches Anwenden summiert nichts auf.
 Die Empfindlichkeiten stammen von den V8-Jahrgängen und sind Schätzungen.
@@ -49,17 +50,21 @@ def main():
         minus_ps = (1 - t["ps"] / best["ps"]) * 100
         f_lut = 1 - minus_ps / 100 * (ice + e["ers_ps"]) / ice
         s_motor = minus_ps * e["s_pro_prozent_leistung"]
-        f_cl = t["cl"] if "cl" in t else 1 - (t["abstand"] - best["abstand"] - s_motor) / e["s_pro_prozent_abtrieb"] / 100
+        f_cd = t.get("cd", 1.0)
+        s_cd = (f_cd - 1) * 100 * e.get("s_pro_prozent_widerstand", 0.04)
+        f_cl = t["cl"] if "cl" in t else 1 - (t["abstand"] - best["abstand"] - s_motor - s_cd) / e["s_pro_prozent_abtrieb"] / 100
         cd = CarData(cars / f"{quelle}_{key}")
         new_aero = aero
         for sec in re.findall(r"(?m)^\[(WING_\d+)\]", aero):
             v = float(get_value(aero, sec, "CL_GAIN") or 0)
             if v: new_aero, _ = set_value(new_aero, sec, "CL_GAIN", f"{v * f_cl:.4f}")
+            v = float(get_value(aero, sec, "CD_GAIN") or 0)
+            if v and f_cd != 1: new_aero, _ = set_value(new_aero, sec, "CD_GAIN", f"{v * f_cd:.4f}")
         new_power = ZEILE.sub(lambda m: m.group(1) + f"{float(m.group(2)) * f_lut:.4f}", power)
         if a.apply:
             if cd.read("aero.ini") != new_aero: cd.write("aero.ini", new_aero)
             if cd.read("power.lut") != new_power: cd.write("power.lut", new_power)
-        print(f"{key:15s} {('+%.2f s' % t['abstand']) if 'abstand' in t else 'fest   '}  {t['ps']} PS (Motor {s_motor:.2f} s)  power.lut x{f_lut:.4f}  CL_GAIN x{f_cl:.4f}" + ("" if a.apply else "  [Trockenlauf]"))
+        print(f"{key:15s} {('+%.2f s' % t['abstand']) if 'abstand' in t else 'fest   '}  {t['ps']} PS (Motor {s_motor:.2f} s)  power.lut x{f_lut:.4f}  CL_GAIN x{f_cl:.4f}  CD_GAIN x{f_cd:.2f}" + ("" if a.apply else "  [Trockenlauf]"))
 
 
 if __name__ == "__main__":

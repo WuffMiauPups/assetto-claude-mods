@@ -319,3 +319,26 @@ Erster Test 2017 (Barcelona GP, 18 min, 1 bis 4 Runden je Fahrer, Bezug Schnitt 
 Änderung danach (2026-11-12, noch nicht nachgetestet): `CL_GAIN`-Faktor von Hand gesetzt (`cl` im Plan, etwa zwei Drittel der Abweichung): Red Bull 1,03, Force India 0,84, Williams 0,83, Toro Rosso 0,85, Haas 0,79, Sauber 0,87. Die Tabelle oben zeigt den neuen Stand. Der Red Bull hat damit mehr Abtrieb als der Mercedes; das folgt aus der Rechnung und ist kein belegter Wert.
 
 Nächster Schritt: zweite Quali-Session auswerten.
+
+**2018: Team-Autos und Teamstärke (2026-11-14, im Spiel noch nicht geladen und nicht getestet):** Zehn Autos `rss_formula_hybrid_2018_<team>` aus `rss_formula_hybrid_2018` mit `data/teams_2018.json` (im Spiel "F1 2018 <Auto>"). Mercedes, Red Bull und McLaren haben je vier Skins (zwei Sätze von RSS), die anderen zwei. Der Ordner `rss_formula_hybrid_2018_s1` ist ein anderes Auto von RSS und gehört nicht dazu, Aufrufe mit `--prefix rss_formula_hybrid_2018_` erfassen ihn aber mit.
+
+Ferrari behält die Werte von RSS. Leistung: Ferrari 990, Mercedes 985, Renault 945, Honda 930 PS (Schätzungen). Empfindlichkeiten nach dem Barcelona-Test der 2017er grob angepasst: 0,09 s pro Prozent Abtrieb, 0,16 s pro Prozent Gesamtleistung, 0,04 s pro Prozent Luftwiderstand (alles Schätzungen, für das 2018er Auto ungeprüft). Neu ist ein Faktor auf alle `CD_GAIN` nach Autokonzept (`cd` im Plan, Schätzungen): Force India 0,97 (wenig Luftwiderstand), McLaren 1,04 und Williams 1,08 (ineffiziente Autos). Williams: Abtrieb bei 0,82 gedeckelt, weil die KI mit sehr wenig Abtrieb einbricht (Sauber 2017), der Rest des Abstands steckt im Luftwiderstand. Balance bei allen 51,6 % vorn.
+
+| Team | Abstand real (s) | Leistung gesamt (PS) | Faktor `power.lut` | Faktor `CL_GAIN` | Faktor `CD_GAIN` | Abtrieb 200 km/h |
+|---|---|---|---|---|---|---|
+| Ferrari | 0.00 | 990 | 1.0000 | 1.0000 | 1.00 | 1209 kg |
+| Mercedes | +0.08 | 985 | 0.9938 | 1.0001 | 1.00 | 1209 kg |
+| Red Bull | +0.42 | 945 | 0.9445 | 1.0341 | 1.00 | 1250 kg |
+| Haas | +1.04 | 990 | 1.0000 | 0.8844 | 1.00 | 1069 kg |
+| Renault | +1.09 | 945 | 0.9445 | 0.9597 | 1.00 | 1161 kg |
+| Force India | +1.19 | 985 | 0.9938 | 0.8634 | 0.97 | 1044 kg |
+| Sauber | +1.32 | 990 | 1.0000 | 0.8533 | 1.00 | 1032 kg |
+| Toro Rosso (Honda) | +1.52 | 930 | 0.9260 | 0.9389 | 1.00 | 1135 kg |
+| McLaren | +1.56 | 945 | 0.9445 | 0.9253 | 1.04 | 1119 kg |
+| Williams | +2.03 | 985 | 0.9938 | 0.8200 (gedeckelt) | 1.08 | 992 kg |
+
+Bremsen 2018 geprüft, nicht geändert: `MAX_TORQUE=5650`, `FRONT_SHARE=0.54`. Das ergibt rechnerisch rund 4,7 g aus den Bremsen (734 kg, Radius 0,335 m) plus Luftwiderstand, also 5,5 bis 6 g bei hohem Tempo, wie beim echten Auto. Unterschiede zwischen den Teams sind nicht belegt, deshalb bei allen gleich.
+
+`tools/topspeed.py` rechnet ohne Ladedruck und taugt für die Hybrid-Autos nicht.
+
+Nächster Schritt: laden, dann Quali-Session mit Grid 0 / 0 auswerten.

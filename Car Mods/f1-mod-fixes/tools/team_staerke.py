@@ -26,8 +26,9 @@ import re
 import shutil
 from pathlib import Path
 
-from acdini import CarData, acd_read, acd_write, get_value, set_value
+from acdini import CarData, acd_read, acd_write, get_value, section, set_value
 
+PRUEFEN = False
 ZEILE = re.compile(r"(?m)^([ \t]*\d+(?:\.\d+)?[ \t]*\|[ \t]*)(-?\d+(?:\.\d+)?)")
 
 
@@ -54,6 +55,22 @@ class OffenBak:
         return None
 
 
+class Misch:
+    """Eigene Dateien des Autos, aber die in namen genannten vom Referenz-Auto."""
+
+    def __init__(self, eigen, ref, namen, fluegel=0):
+        self.eigen, self.ref, self.namen, self.fluegel = eigen, ref, namen, fluegel
+
+    def read(self, name):
+        if name.lower() == "aero.ini" and self.fluegel:
+            # nur die ersten n Flügel vom Referenz-Auto; eigene Zusatzflügel bleiben, damit Setup und DRS weiter passen
+            text, quelle = self.eigen.read(name), self.ref.read(name)
+            for i in range(self.fluegel):
+                text = text.replace(section(text, f"WING_{i}"), section(quelle, f"WING_{i}"), 1)
+            return text
+        return (self.ref if name.lower() in self.namen else self.eigen).read(name)
+
+
 def basis(cardir):
     if (Path(cardir) / "data.acd.bak").is_file(): return Bak(cardir)
     return CarData(cardir) if (Path(cardir) / "data.acd").is_file() else OffenBak(cardir)
@@ -78,9 +95,17 @@ def absolut(plan, cars, apply):
     """
     from bestand import aero, peak_ps
     e, teams = plan["empfindlichkeit"], plan["teams"]
-    info = {}
+    info, gleich = {}, {}
+    if plan.get("angleichen"):      # Aero-, Reifen- und Motormodell eines Teams für alle (Autos verschiedener Physik-Stände)
+        refb = basis(cars / teams[plan["angleichen"]["referenz"]]["ordner"])
+        fluegel = plan["angleichen"].get("aero_fluegel", 0)
+        for f in plan["angleichen"]["dateien"]: gleich[f.lower()] = f
+        quellen = [refb.read(f) or "" for f in plan["angleichen"]["dateien"]] + [section(refb.read("aero.ini"), f"WING_{i}") for i in range(fluegel)]
+        for q in quellen:
+            for lut_name in re.findall(r"=[ \t]*([\w\-. ]+\.lut)", q): gleich[lut_name.strip().lower()] = lut_name.strip()
     for k, t in teams.items():
         b = basis(cars / t["ordner"])
+        if gleich: b = Misch(b, refb, gleich, fluegel)
         kg, cda, _ = aero(b)
         info[k] = {"b": b, "ps": peak_ps(b)[1], "kg": kg, "cda": cda * t.get("cd", 1.0)}
     ref = min((k for k in teams if "abstand" in teams[k]), key=lambda k: teams[k]["abstand"])
@@ -117,6 +142,8 @@ def absolut(plan, cars, apply):
             if v: neu["aero.ini"], _ = set_value(neu["aero.ini"], sec, "CL_GAIN", f"{v * f_cl:.4f}")
             v = zahl(get_value(text, sec, "CD_GAIN"))
             if v and f_cd != 1: neu["aero.ini"], _ = set_value(neu["aero.ini"], sec, "CD_GAIN", f"{v * f_cd:.4f}")
+        for low, name in gleich.items():
+            if low not in {n.lower() for n in neu} and refb.read(name) is not None: neu[name] = refb.read(name)
         cd = CarData(d)
         if masse(k): neu["car.ini"] = set_value(cd.read("car.ini"), "BASIC", "TOTALMASS", str(masse(k)))[0]
         if apply:
@@ -128,6 +155,7 @@ def absolut(plan, cars, apply):
                 acd_write(cd.acd, cd.header, cd.entries, cd.key)
         print(f"{k:14s} {('+%.2f s' % t['abstand']) if 'abstand' in t else 'fest   '}  {t['ps']:4d} PS  Modell {i['ps']:4.0f} -> {ziel_ps:4.0f} PS (x{f_lut:.4f}, {s_motor:+.2f} s)"
               f"  Abtrieb {i['kg']:4.0f} -> {bezug * rel:4.0f} kg (x{f_cl:.4f}, {(rel - 1) * 100:+.1f} %)  CdA {i['cda']:.3f} ({s_cd:+.2f} s)" + ("  ohne KERS" if t.get("ohne_kers") else "")
+              + (("  STIMMT" if all(cd.read(f) == x for f, x in neu.items()) else "  WEICHT AB: " + ", ".join(f for f, x in neu.items() if cd.read(f) != x)) if PRUEFEN else "")
               + (f"  {masse(k)} kg" if masse(k) else "") + (f"  Rest {rest:.2f} s" if rest > 0.005 else "") + ("" if apply else "  [Trockenlauf]"))
 
 
@@ -147,10 +175,12 @@ def ice_ps(cd):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--ac", required=True); ap.add_argument("--plan", required=True); ap.add_argument("--apply", action="store_true")
+    ap.add_argument("--pruefen", action="store_true", help="nur vergleichen: steht der Sollstand des Plans im Spielordner?")
     a = ap.parse_args()
     plan = json.load(open(a.plan, encoding="utf-8"))
     e, teams, quelle = plan["empfindlichkeit"], plan["teams"], plan.get("quelle")
     cars = Path(a.ac) / "content" / "cars"
+    global PRUEFEN; PRUEFEN = a.pruefen
     if plan.get("absolut"): return absolut(plan, cars, a.apply)
     ordner = lambda key: cars / teams[key].get("ordner", f"{quelle}_{key}")
     best = min((t for t in teams.values() if "abstand" in t), key=lambda t: t["abstand"])
@@ -185,7 +215,9 @@ def main():
             cd = CarData(ordner(key))
             for f, text in neu.items():
                 if cd.read(f) != text: cd.write(f, text)
-        print(f"{key:15s} {('+%.2f s' % t['abstand']) if 'abstand' in t else 'fest   '}  {t['ps']} PS (Motor {s_motor:.2f} s)  Leistung x{f_lut:.4f}  CL_GAIN x{f_cl:.4f}  CD_GAIN x{f_cd:.2f}" + ("" if a.apply else "  [Trockenlauf]"))
+        print(f"{key:15s} {('+%.2f s' % t['abstand']) if 'abstand' in t else 'fest   '}  {t['ps']} PS (Motor {s_motor:.2f} s)  Leistung x{f_lut:.4f}  CL_GAIN x{f_cl:.4f}  CD_GAIN x{f_cd:.2f}"
+              + (("  STIMMT" if all(CarData(ordner(key)).read(f) == x for f, x in neu.items()) else "  WEICHT AB: " + ", ".join(f for f, x in neu.items() if CarData(ordner(key)).read(f) != x)) if PRUEFEN else "")
+              + ("" if a.apply else "  [Trockenlauf]"))
 
 
 if __name__ == "__main__":

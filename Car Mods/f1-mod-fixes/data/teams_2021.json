@@ -1,0 +1,118 @@
+{
+ "_hinweis": "Team-Autos aus acfl_f1_2021, erzeugt von tools/plaene_hybrid.py. Ordner = <quelle>_<schluessel>.",
+ "_staerke": "abstand aus data/quali_abstaende.json (F1DB, 85-s-Runde), ps = Gesamtleistung und cd aus research/motoren_*.json (Schätzungen mit Quellen). Empfindlichkeiten wie 2018, für dieses Auto ungeprüft.",
+ "quelle": "acfl_f1_2021",
+ "jahr": 2021,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.09,
+  "s_pro_prozent_leistung": 0.16,
+  "s_pro_prozent_widerstand": 0.04,
+  "ers_ps": 163
+ },
+ "ers_mitskalieren": true,
+ "teams": {
+  "mercedes": {
+   "name": "Mercedes W12",
+   "skins": [
+    "hamilton",
+    "bottas"
+   ],
+   "abstand": 0.0,
+   "ps": 1005,
+   "_motor": "Mercedes-AMG F1 M12 E Performance (mittel, 995-1020)"
+  },
+  "redbull": {
+   "name": "Red Bull RB16B",
+   "skins": [
+    "verstappen",
+    "perez"
+   ],
+   "abstand": 0.15,
+   "ps": 1005,
+   "_motor": "Honda RA621H (mittel, 995-1015)"
+  },
+  "ferrari": {
+   "name": "Ferrari SF21",
+   "skins": [
+    "leclerc",
+    "sainz"
+   ],
+   "abstand": 0.49,
+   "ps": 980,
+   "_motor": "Ferrari 065/6 (mittel, 975-995)"
+  },
+  "mclaren": {
+   "name": "McLaren MCL35M",
+   "skins": [
+    "norris",
+    "ricciardo"
+   ],
+   "abstand": 0.51,
+   "ps": 1005,
+   "_motor": "Mercedes-AMG F1 M12 E Performance (Kunde) (mittel, 995-1015)",
+   "cd": 0.97,
+   "_cd": "MCL35M durchgehend sehr schnell auf den Geraden: AMuS (Spielberg): 'flogen allen anderen auf den drei Vollgasabschnitten davon', erklärt mit dem Heckflügel (starker DRS-Effekt) bei gleichem Mercedes-Motor; Doppelsieg in Monza; Schwäche in langsamen, langen Kurven (James Key). Größe des Faktors ist Schätzung."
+  },
+  "alphatauri": {
+   "name": "AlphaTauri AT02",
+   "skins": [
+    "gasly",
+    "tsunoda"
+   ],
+   "abstand": 0.65,
+   "ps": 1005,
+   "_motor": "Honda RA621H (mittel, 995-1015)"
+  },
+  "alpine": {
+   "name": "Alpine A521",
+   "skins": [
+    "alonso",
+    "ocon"
+   ],
+   "abstand": 0.8,
+   "ps": 985,
+   "_motor": "Renault E-Tech 20B (mittel, 975-990)"
+  },
+  "astonmartin": {
+   "name": "Aston Martin AMR21",
+   "skins": [
+    "vettel",
+    "stroll"
+   ],
+   "abstand": 0.96,
+   "ps": 1005,
+   "_motor": "Mercedes-AMG F1 M12 E Performance (Kunde) (mittel, 995-1015)"
+  },
+  "alfaromeo": {
+   "name": "Alfa Romeo C41",
+   "skins": [
+    "raikkonen",
+    "giovinazzi"
+   ],
+   "abstand": 1.13,
+   "ps": 980,
+   "_motor": "Ferrari 065/6 (Kunde, ohne das neue Hybridsystem) (mittel, 975-985)"
+  },
+  "williams": {
+   "name": "Williams FW43B",
+   "skins": [
+    "russel",
+    "latifi"
+   ],
+   "abstand": 1.17,
+   "ps": 1005,
+   "_motor": "Mercedes-AMG F1 M12 E Performance (Kunde) (mittel, 995-1015)"
+  },
+  "haas": {
+   "name": "Haas VF-21",
+   "skins": [
+    "schumacher",
+    "mazepin"
+   ],
+   "abstand": 2.18,
+   "ps": 980,
+   "_motor": "Ferrari 065/6 (Kunde, ohne das neue Hybridsystem) (mittel, 975-985)",
+   "cl": 0.82
+  }
+ }
+}

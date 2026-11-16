@@ -1,6 +1,6 @@
 {
- "_hinweis": "Team-Autos aus der Formula Hybrid 2019 (RSS), erzeugt von tools/plaene_hybrid.py. Ordner = <quelle>_<schluessel>.",
- "_staerke": "abstand aus data/quali_abstaende.json (F1DB, 85-s-Runde), ps = Gesamtleistung und cd aus research/motoren_2019_2020.json (Schätzungen mit Quellen). Empfindlichkeiten wie 2018, für dieses Auto ungeprüft.",
+ "_hinweis": "Team-Autos aus rss_formula_hybrid_2019, erzeugt von tools/plaene_hybrid.py. Ordner = <quelle>_<schluessel>.",
+ "_staerke": "abstand aus data/quali_abstaende.json (F1DB, 85-s-Runde), ps = Gesamtleistung und cd aus research/motoren_*.json (Schätzungen mit Quellen). Empfindlichkeiten wie 2018, für dieses Auto ungeprüft.",
  "quelle": "rss_formula_hybrid_2019",
  "jahr": 2019,
  "empfindlichkeit": {

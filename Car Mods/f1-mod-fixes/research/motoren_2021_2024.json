@@ -1,0 +1,100 @@
+{
+  "_hinweis": "Stand der Recherche 2026-11-16. Alle PS-Werte sind SCHÄTZUNGEN für die Gesamtleistung im Qualifying (Verbrenner plus MGU-K, 120 kW = 163 PS). Offizielle Zahlen gibt es nicht. Belegt sind nur ABSTÄNDE zwischen den Herstellern (AMuS Juli 2021 nach Mercedes-Messungen, Binotto September 2021, Famin 2024, FIA-Vergleich 2023); die absoluten Werte sind daraus abgeleitet und an den Projektrahmen angelehnt (2020: Mercedes 1010, Renault 985, Honda 980, Ferrari 960 PS; 2023: Honda 995, Ferrari 995, Mercedes 990, Renault 970 PS). Kundenteams bekommen denselben Wert wie das Werksteam, Unterschiede bei Kundenmotoren sind nicht belegt. Umrechnung: PS = bhp x 1,014; 1 kW = 1,36 PS. Die Seiten wurden über Suchmaschine und automatische Zusammenfassung gelesen, wörtliche Zitate vor Weiterverwendung an der Quelle prüfen.",
+  "2021": {
+    "regeln": "Mindestgewicht 752 kg mit Fahrer, ohne Kraftstoff (2020: 746 kg; Fahrer plus Sitz mindestens 80 kg). Ein Motor-Modus für Qualifying und Rennen (seit Monza 2020), also kein Quali-Zuschlag. Unterboden vor den Hinterrädern beschnitten, Diffusor-Leitbleche und Bremsbelüftungs-Flügel gekürzt (traf Autos mit wenig Anstellung wie Mercedes und Aston Martin stärker). Motoren im Winter 2020/21 einmal entwickelbar, danach bis Saisonende eingefroren, Teile der Hybridtechnik durften einmal in der Saison erneuert werden (Ferrari ab Russland). Quellen: https://www.motorsportmagazine.com/articles/single-seaters/f1/how-the-f1-chassis-is-changing-under-2026-regulations und https://racingnews365.com/how-much-does-a-formula-1-car-weigh",
+    "motoren": {
+      "honda": {
+        "ps": 1005,
+        "spanne": "995-1015",
+        "sicher": "mittel",
+        "herleitung": "Neuer RA621H (ursprünglich für 2022 geplant, vorgezogen). AMuS 01.07.2021: nach Mercedes-Messungen legte Honda mit der zweiten Spezifikation 10 kW (13,6 PS) zu und gilt als 'neuer Klassenbester'; Mercedes verlor in Frankreich 0,3 s und in Spielberg 0,25 s auf den Geraden (teils Flügelwahl). Japanische Rechnung über GPblog: Honda 1014 bhp, Mercedes 1015 bhp (wären 1028/1029 PS, absolut höher als der Projektrahmen, aber Gleichstand). Abgeleitet: 2020 plus 25 PS, Gleichstand mit Mercedes über die Saison."
+      },
+      "mercedes": {
+        "ps": 1005,
+        "spanne": "995-1020",
+        "sicher": "mittel",
+        "herleitung": "M12 mit Zuverlässigkeitssorgen (Verbrenner verlor mit Laufleistung ungewöhnlich viel Leistung, deshalb viele Motorwechsel mit Strafen bei Bottas und Hamilton). Erste Saisonhälfte laut AMuS knapp hinter Honda, ab Silverstone/Türkei auf den Geraden wieder vorn (Red Bull vermutete Motor, Mercedes bestritt Leistungsplus; Mark Hughes nennt als Theorie den früher abreißenden Diffusor). Brasilien: frischer Verbrenner bei Hamilton, Marko schätzt 'gut 15 kW, wenn nicht mehr' (rund 20 PS) gegenüber einem gebrauchten Motor, üblich seien 3 bis 5 kW; Horner: 'ein paar Zehntel'. Das ist der Unterschied frisch gegen alt, kein Dauerwert. Gewählt: Saisonmittel gleich Honda; ohne Quali-Modus etwas unter dem 2020er Wert. Für ein Auto 'Brasilien-Spezifikation' wären 1015 bis 1020 PS vertretbar."
+      },
+      "renault": {
+        "ps": 985,
+        "spanne": "975-990",
+        "sicher": "mittel",
+        "herleitung": "E-Tech 20B: Renault verzichtete 2021 auf eine Ausbaustufe (neuer Motor erst 2022), nur etwas Leistung und Standfestigkeit (Taffin). AMuS 01.07.2021: 20 bis 25 PS hinter dem Klassenbesten. Abgeleitet: Honda minus 20 bis 25 PS, entspricht dem 2020er Projektwert."
+      },
+      "ferrari": {
+        "ps": 980,
+        "spanne": "975-995",
+        "sicher": "mittel",
+        "herleitung": "Neuer Motor 065/6. AMuS 01.07.2021: 25 bis 30 PS hinter dem Klassenbesten, die Hälfte des 2020er Rückstands in einem ersten Schritt aufgeholt. Binotto nach Monza (September 2021): 'es fehlen 20 PS auf den Mercedes-Motor im McLaren'. Neues Hybridsystem (800-Volt-Batterie, Vorgriff auf 2022) ab Russland bei Leclerc, ab Türkei bei Sainz: laut The Race 8 bis 9 bhp, laut Autosport unter 10 bhp, vorab waren 10 bis 15 PS erwartet worden; Binotto danach: Rückstand 'nicht mehr dramatisch'. Gewählt: 980 PS als Wert für den größten Teil der Saison (Honda minus 25); ab Russland/Türkei rund 990 PS."
+      }
+    },
+    "teams": {
+      "mercedes": {"motor": "Mercedes-AMG F1 M12 E Performance", "ps": 1005, "sicher": "mittel", "spanne": "995-1020", "quellen": ["https://www.auto-motor-und-sport.de/formel-1/f1-motoren-power-vergleich-honda-mercedes-2021/", "https://www.grandprix247.com/2021/11/20/marko-says-mercedes-has-a-masterpiece-rocket-engine-qatar-grand-prix/"]},
+      "redbull": {"motor": "Honda RA621H", "ps": 1005, "sicher": "mittel", "spanne": "995-1015", "quellen": ["https://www.auto-motor-und-sport.de/formel-1/f1-motoren-power-vergleich-honda-mercedes-2021/", "https://www.gpblog.com/en/news/102473/which-engine-has-the-most-horsepower-close-difference-between-honda-and-mercedes.html"]},
+      "ferrari": {"motor": "Ferrari 065/6", "ps": 980, "sicher": "mittel", "spanne": "975-995", "quellen": ["https://www.grandprix.com/news/ferrari-admits-20hp-deficit-to-mercedes-engine.html", "https://www.auto-motor-und-sport.de/formel-1/f1-motoren-power-vergleich-honda-mercedes-2021/"]},
+      "mclaren": {"motor": "Mercedes-AMG F1 M12 E Performance (Kunde)", "ps": 1005, "sicher": "mittel", "spanne": "995-1015", "quellen": ["https://www.auto-motor-und-sport.de/formel-1/f1-motoren-power-vergleich-honda-mercedes-2021/", "https://www.grandprix.com/news/ferrari-admits-20hp-deficit-to-mercedes-engine.html"]},
+      "alpine": {"motor": "Renault E-Tech 20B", "ps": 985, "sicher": "mittel", "spanne": "975-990", "quellen": ["https://www.auto-motor-und-sport.de/formel-1/f1-motoren-power-vergleich-honda-mercedes-2021/", "https://racingnews365.com/alpine-explain-why-they-have-used-the-same-engine-for-three-years"]},
+      "alphatauri": {"motor": "Honda RA621H", "ps": 1005, "sicher": "mittel", "spanne": "995-1015", "quellen": ["https://www.auto-motor-und-sport.de/formel-1/f1-motoren-power-vergleich-honda-mercedes-2021/"]},
+      "astonmartin": {"motor": "Mercedes-AMG F1 M12 E Performance (Kunde)", "ps": 1005, "sicher": "mittel", "spanne": "995-1015", "quellen": ["https://www.auto-motor-und-sport.de/formel-1/f1-motoren-power-vergleich-honda-mercedes-2021/"]},
+      "williams": {"motor": "Mercedes-AMG F1 M12 E Performance (Kunde)", "ps": 1005, "sicher": "mittel", "spanne": "995-1015", "quellen": ["https://www.auto-motor-und-sport.de/formel-1/f1-motoren-power-vergleich-honda-mercedes-2021/"]},
+      "alfaromeo": {"motor": "Ferrari 065/6 (Kunde, ohne das neue Hybridsystem)", "ps": 980, "sicher": "mittel", "spanne": "975-985", "quellen": ["https://www.auto-motor-und-sport.de/formel-1/f1-motoren-power-vergleich-honda-mercedes-2021/", "https://www.grandprix.com/news/ferrari-admits-20hp-deficit-to-mercedes-engine.html"]},
+      "haas": {"motor": "Ferrari 065/6 (Kunde, ohne das neue Hybridsystem)", "ps": 980, "sicher": "mittel", "spanne": "975-985", "quellen": ["https://www.auto-motor-und-sport.de/formel-1/f1-motoren-power-vergleich-honda-mercedes-2021/", "https://www.grandprix.com/news/ferrari-admits-20hp-deficit-to-mercedes-engine.html"]}
+    },
+    "konzept": [
+      {"team": "mclaren", "cd": 0.97, "beleg": "gut", "grund": "MCL35M durchgehend sehr schnell auf den Geraden: AMuS (Spielberg): 'flogen allen anderen auf den drei Vollgasabschnitten davon', erklärt mit dem Heckflügel (starker DRS-Effekt) bei gleichem Mercedes-Motor; Doppelsieg in Monza; Schwäche in langsamen, langen Kurven (James Key). Größe des Faktors ist Schätzung.", "quelle": "https://www.auto-motor-und-sport.de/formel-1/f1-motoren-power-vergleich-honda-mercedes-2021/"},
+      {"team": "mercedes", "cd": 0.99, "beleg": "schwach", "grund": "W12 uneinheitlich: in der ersten Saisonhälfte mit größerem Heckflügel als Red Bull und auf den Geraden langsamer (Frankreich, Spielberg), ab Silverstone/Türkei dagegen deutlich schneller, weil das Heck bei hohem Tempo stark absinkt und der Diffusor abreißt (weniger Widerstand; laut Mark Hughes 'nur eine Theorie', Red Bull vermutete den Motor). Über die Saison nur ein kleiner Vorteil vertretbar; für die späte Saison eher 0,97.", "quelle": "https://www.formula1.com/en/latest/article/tech-tuesday-is-mercedes-improved-straight-line-pace-down-to-a-power.5IEJZMbr3KqKOzHts8Apdf"},
+      {"team": "redbull", "cd": 1.00, "beleg": "schwach", "grund": "RB16B mit hoher Anstellung, aber KEIN belegter Nachteil beim Luftwiderstand: Der Heckflügel war flächenmäßig kleiner als der von Mercedes (Horner: 'Scheunentor'), dafür stärker angestellt; Red Bull war in Frankreich und Österreich auf den Geraden schneller, am Saisonende langsamer als Mercedes. Die Annahme 'hohe Anstellung = mehr Widerstand' ist durch die Quellen nicht gedeckt, deshalb 1,00.", "quelle": "https://www.auto-motor-und-sport.de/formel-1/f1-motoren-power-vergleich-honda-mercedes-2021/"},
+      {"team": "ferrari", "cd": 1.00, "beleg": "schwach", "grund": "SF21 gegenüber dem widerstandsreichen SF1000 gezielt entschärft (Binotto: Problem 2020 war 'Leistung und Luftwiderstand', das Auto sei 'sicher effizienter'). Zahlen fehlen; gegenüber dem 2020er Projektwert (1,05) zurück auf Durchschnitt.", "quelle": "https://www.motorsport.com/f1/news/ferrari-straighline-speed-2021-f1-car-fix/5497375/"}
+    ],
+    "konzept_ohne_beleg": "Williams FW43B: belegt ist nur die starke Windempfindlichkeit (Preis für mehr Abtrieb und weniger Widerstand laut Russell), keine belastbare Aussage zu auffällig wenig Luftwiderstand: 1,00 lassen. Alpine A521, AlphaTauri AT02, Aston Martin AMR21 (litt wie Mercedes unter dem Unterbodenschnitt, das ist Abtrieb, nicht Widerstand), Alfa Romeo C41 und Haas VF-21 (unentwickeltes Vorjahresauto, wenig Abtrieb): nichts Belastbares zum Luftwiderstand gefunden, 1,00."
+  },
+  "2024": {
+    "regeln": "Mindestgewicht 798 kg mit Fahrer, ohne Kraftstoff (seit 2022/2023; Fahrer plus Sitz mindestens 80 kg). Bodeneffekt-Autos, 18-Zoll-Räder. Motoren seit 2022 eingefroren (Verbrenner, Turbo, MGU-H seit März 2022; Elektrik seit September 2022), nur Änderungen für Zuverlässigkeit erlaubt; E10-Kraftstoff. Alpine/Renault beantragte 2023 eine Angleichung, bekam sie nicht. Mehrere Autos starteten über dem Mindestgewicht (Williams, Alpine, siehe konzept). Quellen: https://www.motorsportmagazine.com/articles/single-seaters/f1/how-the-f1-chassis-is-changing-under-2026-regulations und https://www.gpfans.com/en/f1-news/1028252/f1-car-weight-explained/",
+    "motoren": {
+      "honda": {
+        "ps": 995,
+        "spanne": "985-1005",
+        "sicher": "mittel",
+        "herleitung": "Honda RBPTH002, eingefroren. AMuS September 2022: Gesamtleistung rund 1.000 PS, Ferrari nur 3 bis 5 kW (4 bis 7 PS) vor Honda, Mercedes und Renault 'knapp dahinter'; Honda mit dem besten Energiemanagement. Seitdem nur Standfestigkeits-Änderungen. FIA-Vergleich 2023 (Drehmomentsensoren): Honda, Ferrari und Mercedes praktisch gleichauf, nur Renault fällt ab. Projektwert 2023 übernommen."
+      },
+      "ferrari": {
+        "ps": 995,
+        "spanne": "985-1005",
+        "sicher": "mittel",
+        "herleitung": "Ferrari 066/12, eingefroren. AMuS 2022: nominell stärkster Motor (wenige PS vor Honda), 2022 aus Standfestigkeitsgründen zeitweise gedrosselt, ab 2023 wieder freigegeben. Für 2024 kein belegter Unterschied zu Honda. Projektwert 2023 übernommen."
+      },
+      "mercedes": {
+        "ps": 990,
+        "spanne": "980-1000",
+        "sicher": "mittel",
+        "herleitung": "Mercedes-AMG F1 M15, eingefroren. AMuS 2022: knapp hinter Ferrari und Honda; in der FIA-Betrachtung 2023 in der Gruppe der drei gleichwertigen Motoren. Ein Rückstand von 5 PS ist nicht hart belegt, liegt innerhalb der Unsicherheit. Projektwert 2023 übernommen."
+      },
+      "renault": {
+        "ps": 975,
+        "spanne": "965-980",
+        "sicher": "mittel",
+        "herleitung": "Renault E-Tech RE24, eingefroren. Famin (Beyond the Grid, Sommer 2024): '10 bis 15 kW zurück', das sind 14 bis 20 PS, im Schnitt zwei Zehntel pro Runde. FIA-Vergleich 2023: 15 bis 20 PS (andere Berichte 20 bis 33 bhp), Renaults eigene Rechnung rund 30 PS; laut The Race glaubte Renault an etwa 15 bhp, das Hauptdefizit liege bei der Energierückgewinnung. Abgeleitet: Honda/Ferrari minus 20 PS. Der bisherige Projektwert 2023 (970) liegt in der Spanne; wer die Jahre gleich halten will, nimmt 970."
+      }
+    },
+    "teams": {
+      "redbull": {"motor": "Honda RBPTH002", "ps": 995, "sicher": "mittel", "spanne": "985-1005", "quellen": ["https://www.auto-motor-und-sport.de/formel-1/f1-motoren-2022-ferrari-staerkster-antrieb-honda-beste-hybrid/", "https://www.grandprix.com/news/f1-rejected-alpines-bid-for-engine-power-boost.html"]},
+      "mclaren": {"motor": "Mercedes-AMG F1 M15 E Performance (Kunde)", "ps": 990, "sicher": "mittel", "spanne": "980-1000", "quellen": ["https://www.auto-motor-und-sport.de/formel-1/f1-motoren-2022-ferrari-staerkster-antrieb-honda-beste-hybrid/"]},
+      "ferrari": {"motor": "Ferrari 066/12", "ps": 995, "sicher": "mittel", "spanne": "985-1005", "quellen": ["https://www.auto-motor-und-sport.de/formel-1/f1-motoren-2022-ferrari-staerkster-antrieb-honda-beste-hybrid/"]},
+      "mercedes": {"motor": "Mercedes-AMG F1 M15 E Performance", "ps": 990, "sicher": "mittel", "spanne": "980-1000", "quellen": ["https://www.auto-motor-und-sport.de/formel-1/f1-motoren-2022-ferrari-staerkster-antrieb-honda-beste-hybrid/", "https://www.grandprix.com/news/f1-rejected-alpines-bid-for-engine-power-boost.html"]},
+      "astonmartin": {"motor": "Mercedes-AMG F1 M15 E Performance (Kunde)", "ps": 990, "sicher": "mittel", "spanne": "980-1000", "quellen": ["https://www.auto-motor-und-sport.de/formel-1/f1-motoren-2022-ferrari-staerkster-antrieb-honda-beste-hybrid/"]},
+      "racingbulls": {"motor": "Honda RBPTH002", "ps": 995, "sicher": "mittel", "spanne": "985-1005", "quellen": ["https://www.auto-motor-und-sport.de/formel-1/f1-motoren-2022-ferrari-staerkster-antrieb-honda-beste-hybrid/"]},
+      "haas": {"motor": "Ferrari 066/12 (Kunde)", "ps": 995, "sicher": "mittel", "spanne": "985-1005", "quellen": ["https://www.auto-motor-und-sport.de/formel-1/f1-motoren-2022-ferrari-staerkster-antrieb-honda-beste-hybrid/"]},
+      "alpine": {"motor": "Renault E-Tech RE24", "ps": 975, "sicher": "mittel", "spanne": "965-980", "quellen": ["https://www.crash.net/f1/news/1052999/1/revealed-numbers-behind-alpines-f1-engine-deficit-they-explore-customer-options", "https://www.the-race.com/formula-1/alpine-f1-team-engine-deficit-worst-works-team/"]},
+      "williams": {"motor": "Mercedes-AMG F1 M15 E Performance (Kunde)", "ps": 990, "sicher": "mittel", "spanne": "980-1000", "quellen": ["https://www.auto-motor-und-sport.de/formel-1/f1-motoren-2022-ferrari-staerkster-antrieb-honda-beste-hybrid/"]},
+      "sauber": {"motor": "Ferrari 066/12 (Kunde)", "ps": 995, "sicher": "mittel", "spanne": "985-1005", "quellen": ["https://www.auto-motor-und-sport.de/formel-1/f1-motoren-2022-ferrari-staerkster-antrieb-honda-beste-hybrid/"]}
+    },
+    "konzept": [
+      {"team": "redbull", "cd": 0.99, "beleg": "schwach", "grund": "RB20 gilt als aerodynamisch effizient auf den Geraden (Honda-Seite, PlanetF1: 'great aero efficiency on the straights'). AMuS (04.06.2024) schränkt aber ein: bei Topspeed und DRS gebe es 2024 'nur noch marginale Unterschiede', früher bis zu 10 km/h Vorsprung. Deshalb nur ein kleiner Vorteil.", "quelle": "https://www.auto-motor-und-sport.de/formel-1/f1-red-bull-rb-20-schwaechen-ferrari-mclaren/"},
+      {"team": "haas", "cd": 0.98, "beleg": "schwach", "grund": "VF-24 stark auf den Geraden (häufig oben in den Topspeed-Listen, schwer zu überholen), dafür laut Komatsu zu wenig Abtrieb in schnellen Kurven. Passt zu wenig Luftwiderstand, eine direkte Aussage oder Messung fehlt; Faktor ist Schätzung.", "quelle": "https://lastwordonsports.com/motorsports/2024/04/08/why-haas-f1-can-continue-to-outperform-midfield-rivals/"},
+      {"team": "mclaren", "cd": 1.02, "beleg": "schwach", "grund": "MCL38 zu Saisonbeginn mit Luftwiderstands-Problem und wenig Topspeed; das Miami-Paket hat das laut Analyse 'klar verbessert'. Gilt also nur für die ersten fünf Rennen, danach 1,00.", "quelle": "https://www.planetf1.com/features/mclaren-mcl38-red-bull-rb20-performance-data"},
+      {"team": "williams", "cd": 1.00, "beleg": "gut", "grund": "FW46 bewusst WEG vom reinen Topspeed-Konzept der Vorgänger (ausgewogeneres Auto), deshalb kein Widerstandsvorteil mehr ansetzen. Gut belegt ist dagegen das Übergewicht: laut Vowles rund 0,45 s pro Runde, das entspricht etwa 14 bis 15 kg, ab Imola über etwa sechs Rennen abgebaut. Für die Simulation eher Gewicht plus 10 bis 15 kg (erste Saisonhälfte) als cd ändern.", "quelle": "https://www.autosport.com/f1/news/overweight-williams-f1-car-costing-it-045-seconds-per-lap/10611510/"},
+      {"team": "alpine", "cd": 1.00, "beleg": "schwach", "grund": "A524 zu Saisonbeginn übergewichtig (Berichte: bis 11 kg, Gasly: weniger; Ursache laut Ex-Technikchef Harman ein Crashtest) und mit zu wenig Abtrieb und Traktion. Erhöhter Luftwiderstand ist nicht belegt (nur Gerüchte 'aerodynamisch ineffizient'), deshalb 1,00; Übergewicht nur für die ersten Rennen.", "quelle": "https://www.planetf1.com/news/alpine-weight-issue-laid-bare-former-technical-director"}
+    ],
+    "konzept_ohne_beleg": "Ferrari SF-24, Mercedes W15, Aston Martin AMR24, Racing Bulls VCARB 01 und Sauber C44: keine belastbare Aussage zum Luftwiderstand gefunden, 1,00 lassen. Generell gilt laut AMuS für 2024, dass die Topspeed-Unterschiede im Feld klein geworden sind; Faktoren deshalb enger halten als 2021."
+  }
+}

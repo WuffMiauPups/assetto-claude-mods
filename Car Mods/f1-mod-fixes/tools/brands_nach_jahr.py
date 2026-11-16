@@ -53,6 +53,7 @@ EINZELN = {
 # in "F1 <Jahr>") und der SF71H von ACR.
 WUNSCH = {"rss_formula_hybrid_2018": "Race Sim Studio", "rss_formula_hybrid_2018_s1": "Race Sim Studio",
           "rss_formula_hybrid_2019": "Race Sim Studio", "rss_formula_hybrid_2020": "Race Sim Studio",
+          "rss_formula_hybrid_2017": "Race Sim Studio", "rss_formula_hybrid_2024": "Race Sim Studio",
           "acr_ferrari_sf71h": "Ferrari",
           # Brand "F1 2026" gibt es auf Wunsch nicht: diese drei behalten ihre ursprüngliche Brand
           "f1_2026": "FIA", "f1_2026_sf26": "Ferrari F1", "formula_ultra_26": "Formula Ultra"}

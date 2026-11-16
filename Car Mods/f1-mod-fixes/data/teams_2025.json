@@ -1,0 +1,71 @@
+{
+ "_hinweis": "Erzeugt von tools/plaene_bauen.py. abstand aus data/quali_abstaende.json (F1DB), ps und cd aus research/motoren_2011_2026.json (Schätzungen mit Quellen). Empfindlichkeiten stammen aus den Tests der V8-Jahrgänge bzw. der Hybrid-Autos und sind für diesen Satz ungeprüft.",
+ "jahr": 2025,
+ "absolut": true,
+ "cl_min": 0.8,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.09,
+  "s_pro_prozent_leistung": 0.16,
+  "s_pro_prozent_widerstand": 0.04,
+  "s_pro_kg": 0.024
+ },
+ "masse": 800,
+ "angleichen": {
+  "referenz": "mclaren",
+  "dateien": [
+   "tyres.ini",
+   "power.lut"
+  ],
+  "aero_fluegel": 7
+ },
+ "teams": {
+  "mclaren": {
+   "ordner": "mclaren_mcl39",
+   "abstand": 0.0,
+   "ps": 990,
+   "_motor": "Mercedes-AMG F1 M16 E Performance (mittel, 980-1030)"
+  },
+  "redbull": {
+   "ordner": "red_bull_rb21",
+   "abstand": 0.28,
+   "ps": 995,
+   "_motor": "Honda RBPT H003 (mittel, 985-1010)"
+  },
+  "mercedes": {
+   "ordner": "mercedes_w16",
+   "abstand": 0.3,
+   "ps": 990,
+   "_motor": "Mercedes-AMG F1 M16 E Performance (mittel, 980-1030)"
+  },
+  "ferrari": {
+   "ordner": "ferrari_sf25",
+   "abstand": 0.38,
+   "ps": 995,
+   "_motor": "Ferrari 066/15 (mittel, 985-1045)"
+  },
+  "williams": {
+   "ordner": "williams_fw47",
+   "abstand": 0.52,
+   "ps": 990,
+   "_motor": "Mercedes-AMG F1 M16 E Performance (mittel, 980-1030)"
+  },
+  "racingbulls": {
+   "ordner": "racingbulls_rb02",
+   "abstand": 0.52,
+   "ps": 995,
+   "_motor": "Honda RBPT H003 (mittel, 985-1010)"
+  },
+  "astonmartin": {
+   "ordner": "aston_martin_amr25",
+   "abstand": 0.58,
+   "ps": 990,
+   "_motor": "Mercedes-AMG F1 M16 E Performance (mittel, 980-1030)"
+  },
+  "sauber": {
+   "ordner": "forbys_sauber_c45",
+   "abstand": 0.79,
+   "ps": 995,
+   "_motor": "Ferrari 066/15 (mittel, 985-1045)"
+  }
+ }
+}

@@ -1,0 +1,106 @@
+{
+ "_hinweis": "Team-Autos aus rss_formula_hybrid_2024, erzeugt von tools/plaene_hybrid.py. Ordner = <quelle>_<schluessel>.",
+ "_staerke": "abstand aus data/quali_abstaende.json (F1DB, 85-s-Runde), ps = Gesamtleistung und cd aus research/motoren_*.json (Schätzungen mit Quellen). Empfindlichkeiten wie 2018, für dieses Auto ungeprüft.",
+ "quelle": "rss_formula_hybrid_2024",
+ "jahr": 2024,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.09,
+  "s_pro_prozent_leistung": 0.16,
+  "s_pro_prozent_widerstand": 0.04,
+  "ers_ps": 163
+ },
+ "teams": {
+  "redbull": {
+   "name": "Red Bull RB20",
+   "skins": [
+    "00_fh_2024_24"
+   ],
+   "abstand": 0.0,
+   "ps": 995,
+   "_motor": "Honda RBPTH002 (mittel, 985-1005)"
+  },
+  "ferrari": {
+   "name": "Ferrari SF-24",
+   "skins": [
+    "00_fh_2024_24"
+   ],
+   "abstand": 0.14,
+   "ps": 995,
+   "_motor": "Ferrari 066/12 (mittel, 985-1005)"
+  },
+  "mclaren": {
+   "name": "McLaren MCL38",
+   "skins": [
+    "00_fh_2024_24"
+   ],
+   "abstand": 0.19,
+   "ps": 990,
+   "_motor": "Mercedes-AMG F1 M15 E Performance (Kunde) (mittel, 980-1000)"
+  },
+  "mercedes": {
+   "name": "Mercedes W15",
+   "skins": [
+    "00_fh_2024_24"
+   ],
+   "abstand": 0.28,
+   "ps": 990,
+   "_motor": "Mercedes-AMG F1 M15 E Performance (mittel, 980-1000)"
+  },
+  "astonmartin": {
+   "name": "Aston Martin AMR24",
+   "skins": [
+    "00_fh_2024_24"
+   ],
+   "abstand": 0.49,
+   "ps": 990,
+   "_motor": "Mercedes-AMG F1 M15 E Performance (Kunde) (mittel, 980-1000)"
+  },
+  "racingbulls": {
+   "name": "RB VCARB 01",
+   "skins": [
+    "00_fh_2024_24"
+   ],
+   "abstand": 0.59,
+   "ps": 995,
+   "_motor": "Honda RBPTH002 (mittel, 985-1005)"
+  },
+  "haas": {
+   "name": "Haas VF-24",
+   "skins": [
+    "00_fh_2024_24"
+   ],
+   "abstand": 0.68,
+   "ps": 995,
+   "_motor": "Ferrari 066/12 (Kunde) (mittel, 985-1005)"
+  },
+  "williams": {
+   "name": "Williams FW46",
+   "skins": [
+    "00_fh_2024_24"
+   ],
+   "abstand": 0.73,
+   "ps": 990,
+   "_motor": "Mercedes-AMG F1 M15 E Performance (Kunde) (mittel, 980-1000)",
+   "cd": 1.0,
+   "_cd": "FW46 bewusst WEG vom reinen Topspeed-Konzept der Vorgänger (ausgewogeneres Auto), deshalb kein Widerstandsvorteil mehr ansetzen. Gut belegt ist dagegen das Übergewicht: laut Vowles rund 0,45 s pro Runde, das entspricht etwa 14 bis 15 kg, ab Imola über etwa sechs Rennen abgebaut. Für die Simulation eher Gewicht plus 10 bis 15 kg (erste Saisonhälfte) als cd ändern."
+  },
+  "alpine": {
+   "name": "Alpine A524",
+   "skins": [
+    "00_fh_2024_24"
+   ],
+   "abstand": 0.8,
+   "ps": 975,
+   "_motor": "Renault E-Tech RE24 (mittel, 965-980)"
+  },
+  "sauber": {
+   "name": "Sauber C44",
+   "skins": [
+    "00_fh_2024_24"
+   ],
+   "abstand": 1.02,
+   "ps": 995,
+   "_motor": "Ferrari 066/12 (Kunde) (mittel, 985-1005)"
+  }
+ }
+}

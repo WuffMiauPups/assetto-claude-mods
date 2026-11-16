@@ -68,12 +68,18 @@ SAETZE = {
              autos("cim_2013_", "redbull=redbull:red-bull mercedes ferrari lotus=lotus:lotus-f1 mclaren forceindia=forceindia:force-india sauber tororosso=tororosso:toro-rosso williams marussia caterham"), {}),
     "2014": (2014, "motoren_2011_2026", HYBRID, 0.80, {"masse": 691},
              autos("f1_2014_", "mercedes=mercedes_w05 redbull=red_bull_rb10:red-bull williams=williams_fw36 ferrari=ferrari_f14_t mclaren=mclaren_mp4_29 forceindia=force_india_vjm07:force-india tororosso=toro_rosso_str9:toro-rosso lotus=lotus_e22:lotus-f1 marussia=marussia_mr03 sauber=sauber_c33 caterham=caterham_ct05"), {}),
+    # 2025: acht Autos der Deploy/Senna-Familie in zwei Physik-Ständen (Aston Martin und Racing Bulls: weniger Reifengrip,
+    # mehr Abtrieb, anderer Motor). Deshalb Reifen, Motorkurve und die sieben gemeinsamen Flügel (BODY bis HALO) des McLaren
+    # für alle, danach die Teamfaktoren. Eigene Zusatzflügel (Index 7 und höher) bleiben, damit Setup und DRS passen.
+    # Alpine und Haas (SuzQ, anderes Modell) sind nicht dabei.
+    "2025": (2025, "motoren_2011_2026", HYBRID, 0.80, {"masse": 800, "angleichen": {"referenz": "mclaren", "dateien": ["tyres.ini", "power.lut"], "aero_fluegel": 7}},
+             autos("", "mclaren=mclaren_mcl39 redbull=red_bull_rb21:red-bull mercedes=mercedes_w16 ferrari=ferrari_sf25 williams=williams_fw47 racingbulls=racingbulls_rb02:racing-bulls astonmartin=aston_martin_amr25:aston-martin sauber=forbys_sauber_c45:kick-sauber"), {}),
     "2026": (2026, "motoren_2011_2026", HYBRID, 0.80, {"masse": 768},
              autos("f1_2026_", "mclaren=mclaren_mcl40 mercedes=mercedes_amg_w17 redbull=redbull_rb22:red-bull ferrari=ferrari_sf26 williams=williams_fw48 racingbulls=rb_vcarb03:racing-bulls astonmartin=aston_martin_amr26:aston-martin haas=haas_vf26 audi=audi_r26 alpine=alpine_a526 cadillac=cadillac_mac26"), {}),
 }
 
 # Luftwiderstands-Vorschläge der Recherche, die nur auf Textaussagen beruhen: nicht übernommen.
-SCHWACH_BELEGT = {(1993, "lola"), (1993, "larrousse"), (1994, "pacific"), (1994, "benetton")}
+SCHWACH_BELEGT = {(1993, "lola"), (1993, "larrousse"), (1994, "pacific"), (1994, "benetton"), (2025, "williams"), (2025, "mercedes")}
 
 # Von Hand festgelegte Werte je Satz und Team (nach Tests oder auf Wunsch), überschreiben die Rechnung.
 FEST = {

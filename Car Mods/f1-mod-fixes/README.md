@@ -374,6 +374,21 @@ Die zehn Autos `acfl_f1_2023_*` haben schon eigene Ordner, aber bis auf Kameras 
 
 Saisonphase (2026-11-14, Wunsch des Nutzers): Die Abstände stammen aus den Rennen 1 bis 8 (Bahrain bis Kanada), also der Phase mit starkem Aston Martin, nicht aus der ganzen Saison (dort Ferrari +0,26, Mercedes +0,36, McLaren +0,41, Aston Martin +0,47, Alpine +0,61, Haas +0,78, Williams +0,79, AlphaTauri +0,87, Alfa Romeo +0,94). Der Aston Martin ist auf Wunsch 0,05 s vor den Ferrari gesetzt (in der Quali dieser Phase lag er 0,07 s dahinter, im Rennen war er meist die zweite Kraft). Der McLaren ist auf Wunsch 0,05 s vor den Mercedes gesetzt; real lag er in dieser Phase bei +0,76 und war erst ab Österreich (Rennen 9) so stark.
 
+**Saisonmittel (2026-11-16, Wunsch des Nutzers, ersetzt die Tabelle und die Saisonphase oben, nicht getestet):** Abstände jetzt aus allen Rennen 2023 (`data/quali_abstaende.json`), ohne Wunsch-Verschiebungen. Leistung, Luftwiderstand und Gewicht unverändert.
+
+| Team | Abstand Saison (s) | Faktor `CL_GAIN` | Abtrieb 200 km/h |
+|---|---|---|---|
+| Red Bull RB19 | 0.00 | 0.9867 | 763 kg |
+| Ferrari SF-23 | +0.26 | 0.9711 | 751 kg |
+| Mercedes W14 | +0.36 | 0.9689 | 749 kg |
+| McLaren MCL60 | +0.41 | 0.9634 | 745 kg |
+| Aston Martin AMR23 | +0.47 | 0.9700 | 750 kg |
+| Alpine A523 | +0.61 | 0.9769 | 756 kg |
+| Haas VF-23 | +0.78 | 0.9133 | 706 kg |
+| Williams FW45 | +0.79 | 0.8989 | 695 kg |
+| AlphaTauri AT04 | +0.87 | 0.9033 | 699 kg |
+| Alfa Romeo C43 | +0.94 | 0.8956 | 693 kg |
+
 Die Abtrieb-Werte in kg stammen aus derselben Schätzformel wie bei den anderen Jahrgängen und sind bei diesen Autos vermutlich zu niedrig (Bodeneffekt über Höhen-LUTs); die Verhältnisse zwischen den Teams stimmen.
 
 Nächster Schritt: Quali-Session mit Grid 0 / 0 auswerten.
@@ -456,6 +471,29 @@ Wie 2017/2018: `tools/plaene_hybrid.py` baut `data/teams_2019.json` und `data/te
 | Haas VF-20 | +1.80 | 960 | 0.9397 | 0.8880 | 1.00 |
 
 Ferrari 2019 hat den stärksten Motor (Schätzungen 20 bis 50 PS Vorsprung, hier 20) und wenig Luftwiderstand, dafür 5 % weniger Abtrieb; 2020 fehlen dem Ferrari-Motor 60 PS. Der Williams 2019 bleibt wegen der Abtrieb-Untergrenze rechnerisch etwa 0,8 s zu nah an der Spitze. Luftwiderstands-Faktoren nur für Ferrari übernommen, die übrigen Vorschläge der Recherche waren schwach belegt.
+
+## 2021, 2024 und 2025 (2026-11-16, nicht geladen, nicht getestet)
+
+Recherche in `research/motoren_2021_2024.json`, Pläne `data/teams_2021.json`, `teams_2024.json` (beide aus `plaene_hybrid.py`) und `teams_2025.json` (`plaene_bauen.py`).
+
+- **2021:** zehn Team-Autos `acfl_f1_2021_<team>` aus `acfl_f1_2021` (je zwei Fahrer-Skins). Bezug Mercedes. Honda und Mercedes 1005, Renault 985, Ferrari 980 PS; `power.lut` und `kers_torque.lut` mit demselben Faktor wie bei ACFL 2023. McLaren Luftwiderstand 0,97 (gut belegt), Haas-Abtrieb bei 0,82 gedeckelt (gerechnet 0,80).
+- **2024:** zehn Team-Autos `rss_formula_hybrid_2024_<team>`. Die Formula Hybrid 2024 hat keine Team-Skins, nur acht Hausfarben von RSS (`00_fh_2024_24` bis `07_fh_2017_17`); alle Team-Autos tragen deshalb die 2024er Hausfarbe und sehen gleich aus. Echte Skins lassen sich in `skins\` des jeweiligen Team-Ordners legen. Bezug Red Bull, Honda und Ferrari 995, Mercedes 990, Renault 975 PS.
+- **2025:** acht Autos der Deploy/Senna-Familie (McLaren, Red Bull, Mercedes, Ferrari, Williams, Racing Bulls, Aston Martin, Sauber von Forbys). Sie lagen in zwei Physik-Ständen vor (Aston Martin und Racing Bulls mit 8 % weniger Reifengrip, mehr Abtrieb und anderer Motorkurve). Deshalb bekommen alle `tyres.ini`, `power.lut` und die sieben gemeinsamen Flügel `WING_0` bis `WING_6` (BODY bis HALO) des McLaren samt deren LUTs (`angleichen` im Plan), eigene Zusatzflügel ab Index 7 bleiben, danach die Teamfaktoren. Gewicht 800 kg. Fahrwerk, Getriebe und Elektronik bleiben je Auto. Alpine und Haas (SuzQ, anderes Modell) sind unverändert; ihr Niveau gegenüber den acht anderen ist ungeprüft.
+
+| 2021 | Abstand | `CL_GAIN` | 2024 | Abstand | `CL_GAIN` | 2025 | Abstand | Abtrieb |
+|---|---|---|---|---|---|---|---|---|
+| Mercedes | 0.00 | 1.0000 | Red Bull | 0.00 | 1.0000 | McLaren | 0.00 | 1035 kg |
+| Red Bull | +0.15 | 0.9833 | Ferrari | +0.14 | 0.9844 | Red Bull | +0.28 | 994 kg |
+| Ferrari | +0.49 | 0.9898 | McLaren | +0.19 | 0.9878 | Mercedes | +0.30 | 1001 kg |
+| McLaren | +0.51 | 0.9300 | Mercedes | +0.28 | 0.9778 | Ferrari | +0.38 | 982 kg |
+| AlphaTauri | +0.65 | 0.9278 | Aston Martin | +0.49 | 0.9545 | Williams | +0.52 | 976 kg |
+| Alpine | +0.80 | 0.9465 | RB | +0.59 | 0.9344 | Racing Bulls | +0.52 | 966 kg |
+| Aston Martin | +0.96 | 0.8933 | Haas | +0.68 | 0.9244 | Aston Martin | +0.58 | 969 kg |
+| Alfa Romeo | +1.13 | 0.9187 | Williams | +0.73 | 0.9278 | Sauber | +0.79 | 935 kg |
+| Williams | +1.17 | 0.8700 | Alpine | +0.80 | 0.9468 | | | |
+| Haas | +2.18 | 0.8200 | Sauber | +1.02 | 0.8867 | | | |
+
+`team_staerke.py --pruefen` vergleicht den Sollstand eines Plans mit dem Spielordner (2026-11-16: alle 27 Pläne stimmen).
 
 ## Brands nach Saison
 

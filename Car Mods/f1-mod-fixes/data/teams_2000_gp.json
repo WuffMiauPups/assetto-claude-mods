@@ -1,0 +1,85 @@
+{
+ "_hinweis": "Erzeugt von tools/plaene_bauen.py. abstand aus data/quali_abstaende.json (F1DB), ps und cd aus research/motoren_1996_2000.json (Schätzungen mit Quellen). Empfindlichkeiten stammen aus den Tests der V8-Jahrgänge bzw. der Hybrid-Autos und sind für diesen Satz ungeprüft.",
+ "jahr": 2000,
+ "absolut": true,
+ "cl_min": 0.65,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.12,
+  "s_pro_prozent_leistung": 0.095,
+  "s_pro_prozent_widerstand": 0.04,
+  "s_pro_kg": 0.024
+ },
+ "masse": 600,
+ "teams": {
+  "ferrari": {
+   "ordner": "gp_2000_f2000",
+   "abstand": 0.0,
+   "ps": 810,
+   "_motor": "Ferrari Tipo 049 3.0 V10 (90 Grad; spät in der Saison 049B Rennen / 049C Quali) (mittel, 803-815)"
+  },
+  "mclaren": {
+   "ordner": "gp_2000_mp4_15",
+   "abstand": 0.04,
+   "ps": 815,
+   "_motor": "Mercedes FO110J 3.0 V10 (Ilmor) (mittel, 810-820)"
+  },
+  "williams": {
+   "ordner": "gp_2000_fw22",
+   "abstand": 1.08,
+   "ps": 800,
+   "_motor": "BMW E41/4 3.0 V10 (72 Grad, Werksmotor, erstes Jahr) (mittel, 760-810)"
+  },
+  "benetton": {
+   "ordner": "gp_2000_b200",
+   "abstand": 1.45,
+   "ps": 780,
+   "_motor": "Playlife FB02 3.0 V10 (Supertec, Renault RS9-Basis) (mittel, 770-780)"
+  },
+  "bar": {
+   "ordner": "gp_2000_bar_02",
+   "abstand": 1.31,
+   "ps": 810,
+   "_motor": "Honda RA000E 3.0 V10 (Werksmotor) (mittel, 800-810)",
+   "cd": 0.99,
+   "_cd": "BAR 002 gut auf Strecken mit wenig und mittlerem Abtrieb, schwach in Monaco und Ungarn: eher wenig maximaler Abtrieb als wenig Widerstand. Schwacher Beleg, Faktor nur vorsichtig; besser den Abtrieb leicht senken."
+  },
+  "jordan": {
+   "ordner": "gp_2000_ej10",
+   "abstand": 1.13,
+   "ps": 770,
+   "_motor": "Mugen-Honda MF-301HE 3.0 V10 (halber Werksmotor) (mittel, 760-780)"
+  },
+  "arrows": {
+   "ordner": "gp_2000_a21",
+   "abstand": 1.68,
+   "ps": 780,
+   "_motor": "Supertec FB02 3.0 V10 (identisch mit Benetton) (mittel, 770-780)",
+   "cd": 0.96,
+   "_cd": "Arrows A21 war laut Atlas F1 oft das schnellste Auto in den Speed-Traps und durchgehend unter den höchsten Topspeeds der Saison, stark auf Strecken mit wenig Abtrieb (Hockenheim, Monza, Montreal), schwach auf Abtriebsstrecken: wenig Luftwiderstand, wenig Abtrieb. Konkrete km/h-Werte nicht gefunden; Faktor ist eine Schätzung."
+  },
+  "sauber": {
+   "ordner": "gp_2000_c19",
+   "abstand": 1.79,
+   "ps": 795,
+   "_motor": "Petronas SPE 04A 3.0 V10 (Ferrari 048, Vorjahres-Spezifikation) (niedrig, 790-805)"
+  },
+  "jaguar": {
+   "ordner": "gp_2000_r1",
+   "abstand": 1.36,
+   "ps": 805,
+   "_motor": "Cosworth CR-2 3.0 V10 (72 Grad, Werksmotor) (mittel, 790-805)"
+  },
+  "minardi": {
+   "ordner": "gp_2000_m02",
+   "abstand": 2.85,
+   "ps": 745,
+   "_motor": "Fondmetal RV10 3.0 V10 (Ford VJ Zetec-R, Stand 1998) (niedrig, 740-770)"
+  },
+  "prost": {
+   "ordner": "gp_2000_ap03",
+   "abstand": 2.02,
+   "ps": 795,
+   "_motor": "Peugeot A20 3.0 V10 (Werksmotor, letztes Jahr, sehr unzuverlässig) (niedrig, 780-800)"
+  }
+ }
+}

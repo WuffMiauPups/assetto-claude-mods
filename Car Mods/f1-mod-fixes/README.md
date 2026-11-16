@@ -377,3 +377,89 @@ Saisonphase (2026-11-14, Wunsch des Nutzers): Die Abstände stammen aus den Renn
 Die Abtrieb-Werte in kg stammen aus derselben Schätzformel wie bei den anderen Jahrgängen und sind bei diesen Autos vermutlich zu niedrig (Bodeneffekt über Höhen-LUTs); die Verhältnisse zwischen den Teams stimmen.
 
 Nächster Schritt: Quali-Session mit Grid 0 / 0 auswerten.
+
+## Teamstärke für alle weiteren Jahrgänge (2026-11-16, im Spiel nicht getestet)
+
+Dieselbe Methode wie 2017/2018 für 21 weitere Sätze mit 243 Autos. Fahrphysik, Geometrie und Gewicht bleiben je Jahrgang gleich, angepasst werden nur Leistung, Abtrieb und Luftwiderstand.
+
+```
+py -3.11 quali_f1db.py --f1db <Ordner mit f1db-*.csv>      (echte Abstände aller Jahre -> data/quali_abstaende.json)
+py -3.11 plaene_bauen.py                                     (data/teams_<satz>.json aus Abständen und Recherche)
+py -3.11 team_staerke.py --ac <AC> --plan ../data/teams_2001.json [--apply]
+py -3.11 bestand.py --ac <AC> --prefix f1_2001_ [--bak]     (Gewicht, Leistung, Abtrieb, CdA je Auto)
+```
+
+- **Abstände:** F1DB (`f1db-csv.zip`, CC BY 4.0), weil die API von `quali_abstaende.py` vor 2003 kaum Zeiten hat. Gleiche Rechnung, für 2008 identisches Ergebnis. 2003 bis 2005 wurde die gewertete Runde mit Rennsprit gefahren, diese Abstände sind unsicherer.
+- **Motorleistung und Autokonzept:** `research/motoren_*.json`, je Team mit Motor, PS, Spanne, Sicherheit und Quellen. Fast alles sind Presse- und Forenschätzungen; die Verhältnisse innerhalb einer Saison zählen, nicht die absoluten Zahlen.
+- **Leistung:** Der stärkste echte Motor bekommt die höchste Leistung der Mod, die anderen im Verhältnis der geschätzten PS. Kein Auto wird stärker als das stärkste der Mod, die Übersetzungen passen deshalb weiter.
+- **Abtrieb:** Bezug ist das schnellste echte Team. Rückstand = (Abstand − Motor − Luftwiderstand − Gewicht) / Empfindlichkeit, als Faktor auf alle `CL_GAIN`, die Balance bleibt. Untergrenze 65 % des Bezugs (Hybride 80 %), weil die KI mit sehr wenig Abtrieb einbricht; der nicht abgebildete Rest steht in der Ausgabe ("Rest") und bleibt fürs Grid.
+- **Luftwiderstand:** Unterschiede der Mod bleiben und gehen in die Rechnung ein. Faktoren aus der Recherche nur, wo sie belegt sind (zum Beispiel March 1988 0,96, Arrows 2000 0,96, Red Bull 2011/2013/2014 1,04). Williams 2014 (TRP): Die Mod gab dem FW36 25 % mehr Luftwiderstand als dem Mercedes, jetzt Mercedes x 0,96.
+- **Gewicht:** Staffelungen je Team waren eine versteckte Rangfolge und sind durch einen Wert ersetzt: 1993 580, 1997/1998/2000 bis 2003 600, 2004 605, 2014 691 kg. Ausnahme 1988 nach Reglement: Turbos 615, Sauger 575 kg (540 bzw. 500 kg plus Fahrer).
+- **Empfindlichkeiten:** Sauger 0,12 s pro Prozent Abtrieb, 0,095 s pro Prozent Leistung, 0,04 s pro Prozent Luftwiderstand, 0,024 s pro kg (aus den V8-Tests 2010); 2014 und 2026 0,09 / 0,16 / 0,04. Für diese Mods ungeprüft.
+- **Sicherung:** `data.acd.bak` bzw. `<datei>.bak` im offenen data-Ordner. Gerechnet wird immer von dort, mehrfaches Anwenden summiert nichts auf. Nachstellen nach Tests über `FEST` in `plaene_bauen.py` (`cl`, `cd`).
+
+| Satz | Autos | Bezug | Besonderheiten |
+|---|---|---|---|
+| 1988 `f1_1988_` | 18 | McLaren | alle hatten denselben Turbo; Sauger-Teams jetzt 85 bis 88 % der Leistung und 40 kg leichter. Ab Larrousse abwärts an der Abtrieb-Untergrenze, Rest bis 1,45 s |
+| 1993 `f1_1993_` | 13 | Williams | Lola an der Untergrenze (Rest 0,57 s) |
+| 1994 `acfl_1994_` | 14 | Benetton | Benetton hat in der Mod 6 % weniger Luftwiderstand, Williams und Ferrari die stärksten Motoren; Pacific Rest 1,7 s |
+| 1996 `f1_1996_` | 11 | Williams | |
+| 1997 `f1_1997_`, `gp_1997_` | 11 + 11 | Williams | Lola T97/30 unverändert (war nie qualifiziert) |
+| 1998 `gp_1998_` | 11 | McLaren | Reifenkrieg steckt im Abtrieb, die Mod hat nur einen Reifen |
+| 1999 `f1_1999_` | 11 | McLaren | Gewicht 675 kg der Mod belassen (einheitlich) |
+| 2000 `gp_2000_` | 11 | Ferrari | |
+| 2001 `f1_2001_` | 11 | Ferrari | stärkster Motor BMW |
+| 2002 `F1_2002_` | 12 | Ferrari | Abstufung des Modders ersetzt |
+| 2003 `f1_2003_` | 10 | Ferrari | Renault: schwächster Motor, dafür 2,5 % mehr Abtrieb als Ferrari |
+| 2004 `F1_2004_`, `msf_2004_` | 11 + 9 | Ferrari / BAR | MSF hat keinen Ferrari; Minardi an der Untergrenze |
+| 2006 `cim_2006_`, `F1_2006_` (TRP) | 11 + 12 | Ferrari | Cimmerian: Reifenkrieg bleibt, Bridgestone-Teams 0,3 s angerechnet (Schätzung). TRP: Ferrari hatte 846 kg Abtrieb gegen rund 600 beim Rest, Bezug jetzt 663 kg |
+| 2007 `cim_2007_` | 11 | McLaren | |
+| 2011 `cim_2011_` | 12 | Red Bull | Lotus, HRT, Virgin ohne KERS (`kers.ini` entfernt), HRT und Virgin an der Untergrenze |
+| 2013 `cim_2013_` | 11 | Mercedes | |
+| 2014 `f1_2014_` (TRP) | 11 | Mercedes | Renault-Teams 91 %, Ferrari-Teams 93 % Leistung |
+| 2026 `f1_2026_` (TRP) | 11 | Mercedes | Honda 94 % Leistung; Cadillac an der Untergrenze |
+
+Nicht angefasst: 2025 (zehn Autos von drei Autoren mit verschiedenen Aero-Modellen, braucht eine Quali-Session als Ausgangsmessung), Einzelautos ohne Feld (1983, 1992, 2005, 2019 bis 2021, 2024), `F1_2006_early_mclaren`, `F1_2006_Renault_R26_S1_Spec`, `mercedes_W05_Hybrid`, `msf_williams_fw26_Vers_B` (jeweils anderes Aero-Modell).
+
+Aus dem Spiel entfernt und nach `content\cars_entfernt_2026-11-16` verschoben (4,6 GB, zurückschieben stellt sie wieder her): zehn `acfl_2006_*` und die elf 2014er von Mitchell Kakotsky.
+
+Später am selben Tag auf Wunsch ebenfalls dorthin verschoben (64 Autos, jedes nach Autor und Version geprüft): MSF 2004 (10), F2004 Slicks und Step 0/1/3, ASR F2004, The Race Project 2006 (13) und der ACFL-McLaren 2006, VRC McLenna MC22, TRP 2009 Version 1.0 (`trp_2009_*`, 14), VRC FW31 (2), Cimmerian 2010 Classic Cars, FW32 und VR-01 (S2 bleiben), RB7 und AMR23 von Deploy/Senna, RB9 von Buba, W05 Hybrid von GCTeam, SF71H von SPMod, SF90, die vier W11 von 2020 und `f1_2023_amr23`. Die Sätze "2004 `msf_2004_`" und "2006 `F1_2006_` (TRP)" in der Tabelle oben gibt es damit nicht mehr, ihre Pläne sind gelöscht.
+
+## Formula Hybrid 2019 und 2020: Team-Autos (2026-11-16, nicht geladen, nicht getestet)
+
+Wie 2017/2018: `tools/plaene_hybrid.py` baut `data/teams_2019.json` und `data/teams_2020.json`, `team_autos.py` je zehn Autos `rss_formula_hybrid_<jahr>_<team>` (Hardlinks, je zwei Skins), `team_staerke.py` setzt die Stärke. Mercedes ist in beiden Jahren der Bezug und behält die Werte von RSS. Leistung aus `research/motoren_2019_2020.json` (aus belegten Abständen abgeleitet, keine offiziellen Zahlen), Empfindlichkeiten wie 2018 (0,09 / 0,16 / 0,04, ungeprüft), skaliert wird nur `power.lut`.
+
+| 2019 | Abstand (s) | PS | `power.lut` | `CL_GAIN` | `CD_GAIN` |
+|---|---|---|---|---|---|
+| Mercedes W10 | 0.00 | 1000 | 1.0000 | 1.0000 | 1.00 |
+| Ferrari SF90 | +0.03 | 1020 | 1.0245 | 0.9478 | 0.97 |
+| Red Bull RB15 (Honda) | +0.29 | 970 | 0.9633 | 1.0211 | 1.00 |
+| McLaren MCL34 (Renault) | +0.73 | 985 | 0.9817 | 0.9456 | 1.00 |
+| Haas VF-19 | +1.01 | 1020 | 1.0245 | 0.8522 | 1.00 |
+| Renault R.S.19 | +1.03 | 985 | 0.9817 | 0.9122 | 1.00 |
+| Toro Rosso STR14 | +1.08 | 970 | 0.9633 | 0.9333 | 1.00 |
+| Alfa Romeo C38 | +1.19 | 1020 | 1.0245 | 0.8322 | 1.00 |
+| Racing Point RP19 | +1.26 | 1000 | 1.0000 | 0.8600 | 1.00 |
+| Williams FW42 | +2.76 | 1000 | 1.0000 | 0.8200 (gedeckelt) | 1.08 |
+
+| 2020 | Abstand (s) | PS | `power.lut` | `CL_GAIN` | `CD_GAIN` |
+|---|---|---|---|---|---|
+| Mercedes W11 | 0.00 | 1010 | 1.0000 | 1.0000 | 1.00 |
+| Red Bull RB16 (Honda) | +0.42 | 980 | 0.9638 | 1.0061 | 1.00 |
+| Racing Point RP20 | +0.70 | 1010 | 1.0000 | 0.9222 | 1.00 |
+| McLaren MCL35 (Renault) | +0.80 | 985 | 0.9698 | 0.9551 | 1.00 |
+| Ferrari SF1000 | +0.88 | 960 | 0.9397 | 1.0125 | 1.05 |
+| AlphaTauri AT01 | +0.89 | 980 | 0.9638 | 0.9539 | 1.00 |
+| Renault R.S.20 | +0.95 | 985 | 0.9698 | 0.9384 | 1.00 |
+| Williams FW43 | +1.59 | 1010 | 1.0000 | 0.8200 (gedeckelt) | 1.00 |
+| Alfa Romeo C39 | +1.75 | 960 | 0.9397 | 0.8936 | 1.00 |
+| Haas VF-20 | +1.80 | 960 | 0.9397 | 0.8880 | 1.00 |
+
+Ferrari 2019 hat den stärksten Motor (Schätzungen 20 bis 50 PS Vorsprung, hier 20) und wenig Luftwiderstand, dafür 5 % weniger Abtrieb; 2020 fehlen dem Ferrari-Motor 60 PS. Der Williams 2019 bleibt wegen der Abtrieb-Untergrenze rechnerisch etwa 0,8 s zu nah an der Spitze. Luftwiderstands-Faktoren nur für Ferrari übernommen, die übrigen Vorschläge der Recherche waren schwach belegt.
+
+## Brands nach Saison
+
+Ausnahmen auf Wunsch: Ponz 2012 (`f1_2012_*`) unter `Ponz F1`, die Formula-Hybrid-Grundautos 2018, 2018 S1, 2019 und 2020 unter `Race Sim Studio`, `acr_ferrari_sf71h` unter `Ferrari`.
+
+
+`tools/brands_nach_jahr.py` setzt die Brand aller F1-Mod-Autos auf `F1 <Jahr>` (The Race Project 2026: `F1 2026 TRP`). Alte Brands in `data/brands_vorher.json`, zurück mit `--restore`. Kunos-Originale bleiben unberührt.

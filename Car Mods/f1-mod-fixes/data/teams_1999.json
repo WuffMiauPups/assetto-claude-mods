@@ -1,0 +1,80 @@
+{
+ "_hinweis": "Erzeugt von tools/plaene_bauen.py. abstand aus data/quali_abstaende.json (F1DB), ps und cd aus research/motoren_1996_2000.json (Schätzungen mit Quellen). Empfindlichkeiten stammen aus den Tests der V8-Jahrgänge bzw. der Hybrid-Autos und sind für diesen Satz ungeprüft.",
+ "jahr": 1999,
+ "absolut": true,
+ "cl_min": 0.65,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.12,
+  "s_pro_prozent_leistung": 0.095,
+  "s_pro_prozent_widerstand": 0.04,
+  "s_pro_kg": 0.024
+ },
+ "teams": {
+  "ferrari": {
+   "ordner": "f1_1999_ferrari",
+   "abstand": 0.47,
+   "ps": 800,
+   "_motor": "Ferrari Tipo 048 3.0 V10 (80 Grad) (mittel, 790-805)"
+  },
+  "mclaren": {
+   "ordner": "f1_1999_mclaren",
+   "abstand": 0.0,
+   "ps": 815,
+   "_motor": "Mercedes FO110H 3.0 V10 (Ilmor, unter 100 kg) (mittel, 810-820)"
+  },
+  "jordan": {
+   "ordner": "f1_1999_jordan",
+   "abstand": 1.07,
+   "ps": 760,
+   "_motor": "Mugen-Honda MF-301HD 3.0 V10 (niedrig, 680-780)"
+  },
+  "stewart": {
+   "ordner": "f1_1999_stewart",
+   "abstand": 1.05,
+   "ps": 785,
+   "_motor": "Ford CR-1 3.0 V10 (Cosworth, 72 Grad, sehr leicht, anfangs unzuverlässig) (mittel, 780-790)"
+  },
+  "williams": {
+   "ordner": "f1_1999_williams",
+   "abstand": 1.67,
+   "ps": 770,
+   "_motor": "Supertec FB01 3.0 V10 (Renault RS9-Basis, Kundenmotor) (mittel, 750-780)"
+  },
+  "benetton": {
+   "ordner": "f1_1999_benetton",
+   "abstand": 1.69,
+   "ps": 770,
+   "_motor": "Playlife FB01 3.0 V10 (Supertec, identisch mit Williams und BAR) (mittel, 750-780)"
+  },
+  "prost": {
+   "ordner": "f1_1999_prost",
+   "abstand": 1.78,
+   "ps": 785,
+   "_motor": "Peugeot A18 3.0 V10 (Werksmotor) (mittel, 775-785)"
+  },
+  "sauber": {
+   "ordner": "f1_1999_sauber",
+   "abstand": 1.96,
+   "ps": 785,
+   "_motor": "Petronas SPE-03A 3.0 V10 (Ferrari 047, Vorjahres-Spezifikation) (niedrig, 770-800)"
+  },
+  "arrows": {
+   "ordner": "f1_1999_arrows",
+   "abstand": 3.23,
+   "ps": 715,
+   "_motor": "Arrows A20E 3.0 V10 (Hart 1030, 72 Grad) (mittel, 700-715)"
+  },
+  "minardi": {
+   "ordner": "f1_1999_minardi",
+   "abstand": 3.47,
+   "ps": 740,
+   "_motor": "Ford VJM1 / VJM2 Zetec-R 3.0 V10 (Kundenmotor, Stewart-Spezifikation 1998) (mittel, 730-745)"
+  },
+  "bar": {
+   "ordner": "f1_1999_bar",
+   "abstand": 1.87,
+   "ps": 770,
+   "_motor": "Supertec FB01 3.0 V10 (identisch mit Williams und Benetton) (mittel, 750-780)"
+  }
+ }
+}

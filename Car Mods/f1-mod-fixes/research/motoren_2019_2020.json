@@ -1,0 +1,99 @@
+{
+  "_hinweis": "Stand der Recherche 2026-11-16. Alle PS-Werte sind SCHÄTZUNGEN für die Gesamtleistung im Qualifying (Verbrenner plus MGU-K, 120 kW = 163 PS). Offizielle Zahlen gibt es nicht. Belegt sind vor allem die ABSTÄNDE zwischen den Herstellern (AMuS, Taffin/Renault, Binotto); die absoluten Werte sind daraus abgeleitet und an den Projektrahmen (2018: Ferrari 990, Mercedes 985, Renault 945, Honda 930 PS; 2023: Honda 995, Ferrari 995, Mercedes 990, Renault 970 PS) angelehnt. Kundenteams bekommen denselben Wert wie das Werksteam, Unterschiede bei Kundenmotoren sind nicht belegt. Umrechnung: PS = bhp x 1,014.",
+  "2019": {
+    "regeln": "Mindestgewicht 743 kg mit Fahrer, ohne Kraftstoff (Fahrer plus Sitz mindestens 80 kg, sonst Ballast im Cockpit). Erlaubte Rennspritmenge 110 kg, Durchfluss maximal 100 kg/h. Quali-Modi frei. Quelle: https://f1i.com/magazine/329075-one-last-quick-primer-on-f1s-new-rules-for-2019.html/5",
+    "motoren": {
+      "ferrari": {
+        "ps": 1020,
+        "spanne": "1010-1045",
+        "sicher": "mittel",
+        "herleitung": "AMuS 2019: Ferrari und Mercedes im Qualifying über 1.000 PS, Ferrari einige PS vorn. Binotto gegenüber AMuS: Vorsprung 'maximal 20 bhp' (= 20 PS), die Gerüchte von 50 PS wies er zurück. Rivalen sprachen von bis zu 50 PS in der Qualifikation (Spa/Monza). Eine spätere japanische Rechnung (über GPblog, 2022) nennt 1030 bhp = 1044 PS gegen Mercedes 995 bhp = 1009 PS (umgerechnet). Gewählt: Mercedes plus 20 PS; mit dem Rivalen-Wert wären es bis 1045."
+      },
+      "mercedes": {
+        "ps": 1000,
+        "spanne": "990-1010",
+        "sicher": "mittel",
+        "herleitung": "AMuS 2019: 1.000-PS-Marke im Qualifying überschritten; ein Mercedes-Ingenieur bestritt das kurz zuvor. GPblog/japanische Rechnung: 995 bhp = 1009 PS (umgerechnet)."
+      },
+      "renault": {
+        "ps": 985,
+        "spanne": "970-1000",
+        "sicher": "niedrig",
+        "herleitung": "Renault (Taffin) nennt Spitzenleistung 1.000 PS, 64 PS mehr als 2018 und gut 10 PS Rückstand auf die Besten; Januar 2020: zwischen Ferrari, Mercedes und Renault 5 bis 10 kW (7 bis 14 PS). Das sind Eigenangaben, Mercedes und unabhängige Beobachter sahen Renault eher weiter hinten. Abgeleitet: Mercedes minus 15 PS."
+      },
+      "honda": {
+        "ps": 970,
+        "spanne": "955-980",
+        "sicher": "mittel",
+        "herleitung": "AMuS 2019: rund 30 PS hinter Ferrari und Mercedes. Taffin: Honda 15 bis 20 kW (20 bis 27 PS) hinter der Spitzengruppe. Eine Tabelle (Wikipedia-Spiegel, nicht geprüft) nennt 977 hp für den RA619H. Abgeleitet: Mercedes minus 30 PS."
+      }
+    },
+    "teams": {
+      "mercedes": {"motor": "Mercedes M10 EQ Power+", "ps": 1000, "sicher": "mittel", "spanne": "990-1010", "quellen": ["https://www.auto-motor-und-sport.de/formel-1/die-staerksten-motoren-der-formel1-geschichte-8220003.html", "https://www.gpblog.com/en/news/102473/which-engine-has-the-most-horsepower-close-difference-between-honda-and-mercedes.html"]},
+      "ferrari": {"motor": "Ferrari 064", "ps": 1020, "sicher": "mittel", "spanne": "1010-1045", "quellen": ["https://www.gpfans.com/en/f1-news/48481/binotto-puts-ferrari-power-gain-into-numbers", "https://the-race.com/formula-1/how-ferrari-fuel-suspicions-began-at-monza-in-2019/"]},
+      "redbull": {"motor": "Honda RA619H", "ps": 970, "sicher": "mittel", "spanne": "955-980", "quellen": ["https://www.auto-motor-und-sport.de/formel-1/die-staerksten-motoren-der-formel1-geschichte-8220003.html", "https://f1i.com/news/366181-taffin-says-renault-engine-now-surpassed-only-by-ferrari.html"]},
+      "mclaren": {"motor": "Renault E-Tech 19 (Kunde)", "ps": 985, "sicher": "niedrig", "spanne": "970-1000", "quellen": ["https://www.grandprix.com/news/renault-claims-to-have-broken-1000hp-barrier.html", "https://f1i.com/news/366181-taffin-says-renault-engine-now-surpassed-only-by-ferrari.html"]},
+      "renault": {"motor": "Renault E-Tech 19", "ps": 985, "sicher": "niedrig", "spanne": "970-1000", "quellen": ["https://www.grandprix.com/news/renault-claims-to-have-broken-1000hp-barrier.html", "https://f1i.com/news/366181-taffin-says-renault-engine-now-surpassed-only-by-ferrari.html"]},
+      "tororosso": {"motor": "Honda RA619H", "ps": 970, "sicher": "mittel", "spanne": "955-980", "quellen": ["https://www.auto-motor-und-sport.de/formel-1/die-staerksten-motoren-der-formel1-geschichte-8220003.html", "https://f1i.com/news/366181-taffin-says-renault-engine-now-surpassed-only-by-ferrari.html"]},
+      "racingpoint": {"motor": "Mercedes M10 EQ Power+ (Kunde, als BWT Mercedes)", "ps": 1000, "sicher": "mittel", "spanne": "990-1010", "quellen": ["https://www.auto-motor-und-sport.de/formel-1/die-staerksten-motoren-der-formel1-geschichte-8220003.html"]},
+      "alfaromeo": {"motor": "Ferrari 064 (Kunde)", "ps": 1020, "sicher": "niedrig", "spanne": "1000-1045", "quellen": ["https://www.gpfans.com/en/f1-news/48481/binotto-puts-ferrari-power-gain-into-numbers"]},
+      "haas": {"motor": "Ferrari 064 (Kunde)", "ps": 1020, "sicher": "niedrig", "spanne": "1000-1045", "quellen": ["https://www.gpfans.com/en/f1-news/48481/binotto-puts-ferrari-power-gain-into-numbers"]},
+      "williams": {"motor": "Mercedes M10 EQ Power+ (Kunde)", "ps": 1000, "sicher": "mittel", "spanne": "990-1010", "quellen": ["https://www.auto-motor-und-sport.de/formel-1/die-staerksten-motoren-der-formel1-geschichte-8220003.html"]}
+    },
+    "konzept": [
+      {"team": "ferrari", "cd": 0.97, "grund": "SF90 auf wenig Luftwiderstand ausgelegt (Outwash-Frontflügel mit weniger Abtrieb als Mercedes und Red Bull): stark auf Geraden, schwach in langsamen Kurven. Binotto sagte später, er würde dem Abtrieb mehr Gewicht geben. Der Topspeed-Vorteil kam also aus Motor UND Konzept.", "quelle": "https://www.motorsport.com/f1/news/ferrari-front-wing-concept-mercedes/4683854/"},
+      {"team": "mercedes", "cd": 1.03, "grund": "W10 auf viel Abtrieb (vor allem langsame Kurven) ausgelegt, dafür mehr Luftwiderstand; Hamilton forderte für 2020 weniger Luftwiderstand, in Monza kam Mercedes trotz Windschatten und DRS nicht vorbei.", "quelle": "https://www.motorsport.com/f1/news/hamilton-less-drag-mercedes-engine-2020/4560921/"},
+      {"team": "williams", "cd": 1.04, "grund": "FW42: zu wenig Abtrieb und zugleich hoher Luftwiderstand; Russell: 'unglaublich langsam auf den Geraden'. Schätzung, Größe nicht belegt.", "quelle": "https://motorsportweek.com/2019/09/05/24323"}
+    ],
+    "konzept_ohne_beleg": "Für Red Bull RB15, Haas VF-19, Racing Point RP19 und die übrigen Autos wurde keine belastbare Aussage zum Luftwiderstand gefunden: Faktor 1,00 lassen."
+  },
+  "2020": {
+    "regeln": "Mindestgewicht 746 kg mit Fahrer, ohne Kraftstoff (plus 3 kg, unter anderem wegen des zweiten Kraftstoff-Durchflusssensors, der nach der Ferrari-Affäre Pflicht wurde). Technische Direktiven zu Kraftstofffluss und Ölverbrennung ab Ende 2019/2020. Ab dem Italien-GP in Monza (TD/037-20) ein einziger Motor-Modus für Qualifying und Rennen, das heißt keine Quali-Modi mehr; Mercedes blieb laut Berichten trotzdem vorn. Motorentwicklung in der Saison eingefroren. Quellen: https://www.motorsport.com/f1/news/car-weight-increased-fuel-flow/4719283/ und https://www.the-race.com/formula-1/everything-you-need-to-know-about-f1s-party-mode-ban/",
+    "motoren": {
+      "mercedes": {
+        "ps": 1010,
+        "spanne": "1000-1020",
+        "sicher": "mittel",
+        "herleitung": "Mercedes legte gegenüber 2019 zu (The Race; japanische Rechnung über GPblog: 1005 bhp = 1019 PS, umgerechnet). Gewählt: 2019 plus 10 PS. Wert gilt mit Quali-Modus (bis Spa); ab Monza fehlt der Quali-Zuschlag, Größe nicht belegt."
+      },
+      "renault": {
+        "ps": 985,
+        "spanne": "975-995",
+        "sicher": "mittel",
+        "herleitung": "AMuS-Analyse Juli 2020 (über GPblog): Renault etwa 25 PS hinter Mercedes, im Quali-Modus etwas stärker als Honda. Abgeleitet: Mercedes minus 25 PS."
+      },
+      "honda": {
+        "ps": 980,
+        "spanne": "970-990",
+        "sicher": "mittel",
+        "herleitung": "AMuS Juli 2020: etwa 30 PS hinter Mercedes (anderer Bericht: 20 PS), im Rennen im Schnitt besser als Renault. Verstappen: 'klar mehr Leistung als 2019'. Tabelle (Wikipedia-Spiegel, nicht geprüft): RA620H 989 hp gegen 977 hp 2019, also rund plus 10. Abgeleitet: Mercedes minus 30 PS."
+      },
+      "ferrari": {
+        "ps": 960,
+        "spanne": "950-975",
+        "sicher": "mittel",
+        "herleitung": "AMuS Juli 2020: etwa 50 PS hinter Mercedes. Binotto Ende 2020: Mercedes einzuholen hieße '40 bis 50 PS' zu gewinnen, schon Gleichstand mit Honda und Renault wäre ein großer Schritt. Marko: 'teilweise 50 PS zurück'. Andere Teams schätzen den Verlust durch FIA-Einigung und Direktiven auf 50 bis 60 bhp gegenüber 2019; Binotto hat den Verlust selbst nie beziffert, räumte aber ein, dass der Motor schwächer ist. Japanische Rechnung (GPblog): 970 bhp = 984 PS (umgerechnet). Abgeleitet: Mercedes minus 50 PS, das sind 60 PS weniger als 2019."
+      }
+    },
+    "teams": {
+      "mercedes": {"motor": "Mercedes M11 EQ Performance", "ps": 1010, "sicher": "mittel", "spanne": "1000-1020", "quellen": ["https://www.gpblog.com/en/general/striking-outcome-of-amus-analysis-renault-engine-more-powerful-than-honda-.html", "https://www.gpblog.com/en/news/102473/which-engine-has-the-most-horsepower-close-difference-between-honda-and-mercedes.html"]},
+      "redbull": {"motor": "Honda RA620H", "ps": 980, "sicher": "mittel", "spanne": "970-990", "quellen": ["https://www.gpblog.com/en/general/striking-outcome-of-amus-analysis-renault-engine-more-powerful-than-honda-.html", "https://www.planetf1.com/news/honda-reject-engine-gain-theories"]},
+      "mclaren": {"motor": "Renault E-Tech 20 (Kunde)", "ps": 985, "sicher": "mittel", "spanne": "975-995", "quellen": ["https://www.gpblog.com/en/general/striking-outcome-of-amus-analysis-renault-engine-more-powerful-than-honda-.html"]},
+      "racingpoint": {"motor": "Mercedes M11 EQ Performance (Kunde, als BWT Mercedes)", "ps": 1010, "sicher": "mittel", "spanne": "1000-1020", "quellen": ["https://www.gpblog.com/en/general/striking-outcome-of-amus-analysis-renault-engine-more-powerful-than-honda-.html", "https://the-race.com/formula-1/gary-anderson-what-speed-trap-data-tells-us-about-2020-cars/"]},
+      "renault": {"motor": "Renault E-Tech 20", "ps": 985, "sicher": "mittel", "spanne": "975-995", "quellen": ["https://www.gpblog.com/en/general/striking-outcome-of-amus-analysis-renault-engine-more-powerful-than-honda-.html"]},
+      "ferrari": {"motor": "Ferrari 065", "ps": 960, "sicher": "mittel", "spanne": "950-975", "quellen": ["https://www.grandprix.com/news/ferrari-fifty-horsepower-down-in-2020-says-binotto.html", "https://www.the-race.com/formula-1/ferraris-engine-weaker-than-in-2019-binotto/"]},
+      "alphatauri": {"motor": "Honda RA620H", "ps": 980, "sicher": "mittel", "spanne": "970-990", "quellen": ["https://www.gpblog.com/en/general/striking-outcome-of-amus-analysis-renault-engine-more-powerful-than-honda-.html"]},
+      "alfaromeo": {"motor": "Ferrari 065 (Kunde)", "ps": 960, "sicher": "mittel", "spanne": "950-975", "quellen": ["https://www.grandprix.com/news/ferrari-fifty-horsepower-down-in-2020-says-binotto.html", "https://the-race.com/formula-1/gary-anderson-what-speed-trap-data-tells-us-about-2020-cars/"]},
+      "haas": {"motor": "Ferrari 065 (Kunde)", "ps": 960, "sicher": "mittel", "spanne": "950-975", "quellen": ["https://www.grandprix.com/news/ferrari-fifty-horsepower-down-in-2020-says-binotto.html", "https://the-race.com/formula-1/gary-anderson-what-speed-trap-data-tells-us-about-2020-cars/"]},
+      "williams": {"motor": "Mercedes M11 EQ Performance (Kunde)", "ps": 1010, "sicher": "mittel", "spanne": "1000-1020", "quellen": ["https://www.gpblog.com/en/general/striking-outcome-of-amus-analysis-renault-engine-more-powerful-than-honda-.html"]}
+    },
+    "konzept": [
+      {"team": "ferrari", "cd": 1.05, "grund": "SF1000 bewusst auf mehr Abtrieb gebaut, dafür deutlich mehr Luftwiderstand (Binotto beim Launch: schneller in Kurven, langsamer auf Geraden; später: 'der Luftwiderstand war 2020 sehr, sehr hoch'). The Race: unverhältnismäßig hoher Widerstand für den gewonnenen Abtrieb; in Österreich 0,7 s Verlust allein auf den Geraden (Motor plus Widerstand).", "quelle": "https://the-race.com/formula-1/the-shocking-extent-of-ferraris-decline-and-what-happens-next"},
+      {"team": "redbull", "cd": 1.02, "grund": "RB16: Gary Anderson (Ungarn, Speed-Trap-Vergleich) sieht mangelnde Effizienz, vermutlich zusätzlicher Flügel wegen des nervösen Hecks; Verstappen beklagte fehlenden Topspeed. Schätzung, schwach belegt.", "quelle": "https://the-race.com/formula-1/gary-anderson-what-speed-trap-data-tells-us-about-2020-cars/"},
+      {"team": "renault", "cd": 0.98, "grund": "R.S.20 mit wenig Luftwiderstand, stark auf Geraden (Spa, Monza); in Silverstone zweitschnellstes Auto in den Messstellen. Schätzung.", "quelle": "https://www.autosport.com/f1/news/how-renault-is-powering-up-through-the-f1-order-5114283/5114283/"},
+      {"team": "williams", "cd": 0.98, "grund": "FW43: laut Gary Anderson zu wenig Abtrieb, aber gute Effizienz (hoher Geschwindigkeitszuwachs bis zur Messstelle). Schätzung aus einem einzigen Datensatz.", "quelle": "https://the-race.com/formula-1/gary-anderson-what-speed-trap-data-tells-us-about-2020-cars/"},
+      {"team": "racingpoint", "cd": 1.00, "grund": "RP20 nach dem Vorbild des Mercedes W10 (wenig Anstellung); in Ungarn fast derselbe Geschwindigkeitszuwachs wie Mercedes (46,3 gegen 46,9 km/h). Kein Beleg für eine Abweichung vom Durchschnitt, deshalb 1,00.", "quelle": "https://the-race.com/formula-1/gary-anderson-what-speed-trap-data-tells-us-about-2020-cars/"}
+    ],
+    "konzept_ohne_beleg": "Haas VF-20 und Alfa Romeo C39: belegt ist nur der Leistungsmangel des Ferrari-Motors und zu wenig Abtrieb, keine Auffälligkeit beim Luftwiderstand: Faktor 1,00 lassen. Für Mercedes W11, McLaren MCL35 und AlphaTauri AT01 ebenfalls nichts Belastbares."
+  }
+}

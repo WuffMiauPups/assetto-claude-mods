@@ -1,0 +1,80 @@
+{
+ "_hinweis": "Erzeugt von tools/plaene_bauen.py. abstand aus data/quali_abstaende.json (F1DB), ps und cd aus research/motoren_1996_2000.json (Schätzungen mit Quellen). Empfindlichkeiten stammen aus den Tests der V8-Jahrgänge bzw. der Hybrid-Autos und sind für diesen Satz ungeprüft.",
+ "jahr": 1996,
+ "absolut": true,
+ "cl_min": 0.65,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.12,
+  "s_pro_prozent_leistung": 0.095,
+  "s_pro_prozent_widerstand": 0.04,
+  "s_pro_kg": 0.024
+ },
+ "teams": {
+  "williams": {
+   "ordner": "f1_1996_williams",
+   "abstand": 0.0,
+   "ps": 745,
+   "_motor": "Renault RS8 3.0 V10 (67 Grad, Werksmotor) (mittel, 720-760)"
+  },
+  "ferrari": {
+   "ordner": "f1_1996_ferrari",
+   "abstand": 0.53,
+   "ps": 730,
+   "_motor": "Ferrari Tipo 046 3.0 V10 (75 Grad, erster Ferrari-V10) (niedrig, 710-760)"
+  },
+  "benetton": {
+   "ordner": "f1_1996_benetton",
+   "abstand": 1.08,
+   "ps": 745,
+   "_motor": "Renault RS8 3.0 V10 (identisch mit Williams) (mittel, 720-760)"
+  },
+  "mclaren": {
+   "ordner": "f1_1996_mclaren",
+   "abstand": 1.25,
+   "ps": 720,
+   "_motor": "Mercedes FO110D 3.0 V10 (Ilmor, 75 Grad) (mittel, 700-740)"
+  },
+  "jordan": {
+   "ordner": "f1_1996_jordan",
+   "abstand": 1.76,
+   "ps": 715,
+   "_motor": "Peugeot A12 EV5 3.0 V10 (Werksmotor) (mittel, 710-740)"
+  },
+  "sauber": {
+   "ordner": "f1_1996_sauber",
+   "abstand": 2.03,
+   "ps": 680,
+   "_motor": "Ford JD Zetec-R 3.0 V10 (72 Grad, Cosworth, Werksmotor, erstes Jahr) (mittel, 670-710)"
+  },
+  "tyrrell": {
+   "ordner": "f1_1996_tyrrell",
+   "abstand": 2.64,
+   "ps": 675,
+   "_motor": "Yamaha OX11A 3.0 V10 (72 Grad, Judd-Basis, sehr leicht) (mittel, 660-690)"
+  },
+  "ligier": {
+   "ordner": "f1_1996_ligier",
+   "abstand": 2.52,
+   "ps": 690,
+   "_motor": "Mugen-Honda MF-301HA 3.0 V10 (mittel, 680-690)"
+  },
+  "footwork": {
+   "ordner": "f1_1996_footwork",
+   "abstand": 2.8,
+   "ps": 660,
+   "_motor": "Hart 830 3.0 V8 (72 Grad) (mittel, 640-680)"
+  },
+  "minardi": {
+   "ordner": "f1_1996_minardi",
+   "abstand": 4.34,
+   "ps": 635,
+   "_motor": "Ford-Cosworth EDM2/EDM3 3.0 V8 (Kundenmotor) (niedrig, 608-660)"
+  },
+  "forti": {
+   "ordner": "f1_1996_forti",
+   "abstand": 5.31,
+   "ps": 630,
+   "_motor": "Ford ECA Zetec-R 3.0 V8 (Kundenmotor, Sauber-Spezifikation 1995) (niedrig, 619-639)"
+  }
+ }
+}

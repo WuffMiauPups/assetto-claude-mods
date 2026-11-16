@@ -1,0 +1,92 @@
+{
+ "_hinweis": "Erzeugt von tools/plaene_bauen.py. abstand aus data/quali_abstaende.json (F1DB), ps und cd aus research/motoren_2011_2026.json (Schätzungen mit Quellen). Empfindlichkeiten stammen aus den Tests der V8-Jahrgänge bzw. der Hybrid-Autos und sind für diesen Satz ungeprüft.",
+ "jahr": 2011,
+ "absolut": true,
+ "cl_min": 0.65,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.12,
+  "s_pro_prozent_leistung": 0.095,
+  "s_pro_prozent_widerstand": 0.04,
+  "s_pro_kg": 0.024
+ },
+ "ps_anker": 694,
+ "teams": {
+  "redbull": {
+   "ordner": "cim_2011_redbull",
+   "abstand": 0.0,
+   "ps": 740,
+   "_motor": "Renault RS27-2011 (niedrig, 725-760)",
+   "cd": 1.04,
+   "_cd": "RB7 mit sehr viel Abtrieb und regelmäßig niedrigem Topspeed; in Monza war Vettel in der Messung vor Kurve 1 der Langsamste und gewann trotzdem von der Pole. Ein Teil davon ist kurze Übersetzung, daher vorsichtiger Wert."
+  },
+  "mclaren": {
+   "ordner": "cim_2011_mclaren",
+   "abstand": 0.04,
+   "ps": 755,
+   "_motor": "Mercedes FO 108Y (mittel, 750-761)"
+  },
+  "ferrari": {
+   "ordner": "cim_2011_ferrari",
+   "abstand": 0.18,
+   "ps": 750,
+   "_motor": "Ferrari 056 (niedrig, 735-755)"
+  },
+  "mercedes": {
+   "ordner": "cim_2011_mercedes",
+   "abstand": 0.61,
+   "ps": 755,
+   "_motor": "Mercedes FO 108Y (mittel, 750-761)"
+  },
+  "renault": {
+   "ordner": "cim_2011_renault",
+   "abstand": 0.74,
+   "ps": 740,
+   "_motor": "Renault RS27-2011 (niedrig, 725-760)"
+  },
+  "forceindia": {
+   "ordner": "cim_2011_forceindia",
+   "abstand": 0.98,
+   "ps": 755,
+   "_motor": "Mercedes FO 108Y (mittel, 750-761)"
+  },
+  "sauber": {
+   "ordner": "cim_2011_sauber",
+   "abstand": 1.33,
+   "ps": 750,
+   "_motor": "Ferrari 056 (niedrig, 735-755)"
+  },
+  "tororosso": {
+   "ordner": "cim_2011_tororosso",
+   "abstand": 1.39,
+   "ps": 750,
+   "_motor": "Ferrari 056 (niedrig, 735-755)"
+  },
+  "williams": {
+   "ordner": "cim_2011_williams",
+   "abstand": 1.25,
+   "ps": 745,
+   "_motor": "Cosworth CA2011K (mit KERS) (niedrig, 730-755)"
+  },
+  "lotus": {
+   "ordner": "cim_2011_lotus",
+   "abstand": 3.09,
+   "ps": 740,
+   "_motor": "Renault RS27-2011 (ohne KERS) (niedrig, 725-760)",
+   "ohne_kers": true
+  },
+  "hrt": {
+   "ordner": "cim_2011_hrt",
+   "abstand": 4.94,
+   "ps": 745,
+   "_motor": "Cosworth CA2011 (ohne KERS) (niedrig, 730-755)",
+   "ohne_kers": true
+  },
+  "virgin": {
+   "ordner": "cim_2011_virgin",
+   "abstand": 4.37,
+   "ps": 745,
+   "_motor": "Cosworth CA2011 (ohne KERS) (niedrig, 730-755)",
+   "ohne_kers": true
+  }
+ }
+}

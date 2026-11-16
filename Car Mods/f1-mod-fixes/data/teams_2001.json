@@ -1,0 +1,83 @@
+{
+ "_hinweis": "Erzeugt von tools/plaene_bauen.py. abstand aus data/quali_abstaende.json (F1DB), ps und cd aus research/motoren_2001_2007.json (Schätzungen mit Quellen). Empfindlichkeiten stammen aus den Tests der V8-Jahrgänge bzw. der Hybrid-Autos und sind für diesen Satz ungeprüft.",
+ "jahr": 2001,
+ "absolut": true,
+ "cl_min": 0.65,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.12,
+  "s_pro_prozent_leistung": 0.095,
+  "s_pro_prozent_widerstand": 0.04,
+  "s_pro_kg": 0.024
+ },
+ "masse": 600,
+ "teams": {
+  "ferrari": {
+   "ordner": "f1_2001_ferrari",
+   "abstand": 0.0,
+   "ps": 840,
+   "_motor": "Ferrari Tipo 050, V10 90 Grad, 3,0 l (mittel, 826-852 PS (815-840 bhp, umgerechnet))"
+  },
+  "mclaren": {
+   "ordner": "f1_2001_mclaren",
+   "abstand": 0.6,
+   "ps": 835,
+   "_motor": "Mercedes-Benz (Ilmor) FO110K, V10 72 Grad, 3,0 l (niedrig, 816-862 PS (805-850 bhp, umgerechnet; Quellen widersprechen sich stark))"
+  },
+  "williams": {
+   "ordner": "f1_2001_williams",
+   "abstand": 0.33,
+   "ps": 875,
+   "_motor": "BMW P80, V10 90 Grad, 3,0 l (mittel, 862-892 PS (850-880 bhp, umgerechnet; Rosche: 850 bhp))",
+   "cd": 0.98,
+   "_cd": "BMW-Williams hatte 2001 laut BMW durchgehend die höchsten Speed-Trap-Werte, unabhängig vom Streckentyp. Der größte Teil davon ist Motorleistung (schon im PS-Wert enthalten), deshalb nur ein kleiner Abschlag beim Luftwiderstand."
+  },
+  "sauber": {
+   "ordner": "f1_2001_sauber",
+   "abstand": 1.56,
+   "ps": 805,
+   "_motor": "Petronas 01A (Ferrari Tipo 049 des Vorjahres), V10 90 Grad (niedrig, abgeleitet: Vorjahres-Ferrari, ca. 30-40 PS unter Werks-Ferrari)"
+  },
+  "jordan": {
+   "ordner": "f1_2001_jordan",
+   "abstand": 0.97,
+   "ps": 825,
+   "_motor": "Honda RA001E, V10 80 Grad, 3,0 l (Werksmotor wie BAR) (mittel, 811-842 PS (800-830 bhp, umgerechnet; 830 bhp gilt für Quali-Trimm))"
+  },
+  "bar": {
+   "ordner": "f1_2001_bar",
+   "abstand": 1.68,
+   "ps": 825,
+   "_motor": "Honda RA001E, V10 80 Grad, 3,0 l (mittel, 811-842 PS (800-830 bhp, umgerechnet))"
+  },
+  "benetton": {
+   "ordner": "f1_2001_benetton",
+   "abstand": 2.76,
+   "ps": 790,
+   "_motor": "Renault RS21, V10 111 Grad (Weitwinkel), 3,0 l (niedrig, nur eine Angabe: 780 bhp (umgerechnet 791 PS))"
+  },
+  "jaguar": {
+   "ordner": "f1_2001_jaguar",
+   "abstand": 2.03,
+   "ps": 835,
+   "_motor": "Cosworth CR-3, V10 72 Grad, 3,0 l (niedrig, 826-842 PS (815-830 bhp, umgerechnet))"
+  },
+  "prost": {
+   "ordner": "f1_2001_prost",
+   "abstand": 2.43,
+   "ps": 805,
+   "_motor": "Acer 01A (Ferrari Tipo 049 des Vorjahres), V10 90 Grad (niedrig, abgeleitet: gleicher Kundenmotor wie Sauber)"
+  },
+  "arrows": {
+   "ordner": "f1_2001_arrows",
+   "abstand": 3.08,
+   "ps": 785,
+   "_motor": "Asiatech 001 (ehemals Peugeot A20), V10 72 Grad (niedrig, keine Zahl für 2001 gefunden; abgeleitet aus Asiatech 2002 (770 bhp) und Motorherkunft, 770-800 PS)"
+  },
+  "minardi": {
+   "ordner": "f1_2001_minardi",
+   "abstand": 3.76,
+   "ps": 730,
+   "_motor": "European (Ford Zetec-R V10 von 1998, von Cosworth betreut), V10 72 Grad (niedrig, keine Zahl gefunden; abgeleitet aus drei Jahre altem Kundenmotor, 710-750 PS)"
+  }
+ }
+}

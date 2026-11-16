@@ -1,0 +1,125 @@
+{
+ "_hinweis": "Team-Autos aus der Formula Hybrid 2020 (RSS), erzeugt von tools/plaene_hybrid.py. Ordner = <quelle>_<schluessel>.",
+ "_staerke": "abstand aus data/quali_abstaende.json (F1DB, 85-s-Runde), ps = Gesamtleistung und cd aus research/motoren_2019_2020.json (Schätzungen mit Quellen). Empfindlichkeiten wie 2018, für dieses Auto ungeprüft.",
+ "quelle": "rss_formula_hybrid_2020",
+ "jahr": 2020,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.09,
+  "s_pro_prozent_leistung": 0.16,
+  "s_pro_prozent_widerstand": 0.04,
+  "ers_ps": 163
+ },
+ "teams": {
+  "mercedes": {
+   "name": "Mercedes W11",
+   "skins": [
+    "a_44_Mercedes-AMG_F1_W11_EQ_Performance",
+    "b_77_Mercedes-AMG_F1_W11_EQ_Performance"
+   ],
+   "abstand": 0.0,
+   "ps": 1010,
+   "_motor": "Mercedes M11 EQ Performance (mittel, 1000-1020)"
+  },
+  "redbull": {
+   "name": "Red Bull RB16",
+   "skins": [
+    "e_33_Red_Bull_Racing_RB16",
+    "f_23_Red_Bull_Racing_RB16"
+   ],
+   "abstand": 0.42,
+   "ps": 980,
+   "_motor": "Honda RA620H (mittel, 970-990)",
+   "cd": 1.0,
+   "_cd": "RB16: Gary Anderson (Ungarn, Speed-Trap-Vergleich) sieht mangelnde Effizienz, vermutlich zusätzlicher Flügel wegen des nervösen Hecks; Verstappen beklagte fehlenden Topspeed. Schätzung, schwach belegt."
+  },
+  "racingpoint": {
+   "name": "Racing Point RP20",
+   "skins": [
+    "m_11_Racing_Point_RP20",
+    "n_18_Racing_Point__RP20"
+   ],
+   "abstand": 0.7,
+   "ps": 1010,
+   "_motor": "Mercedes M11 EQ Performance (Kunde, als BWT Mercedes) (mittel, 1000-1020)",
+   "cd": 1.0,
+   "_cd": "RP20 nach dem Vorbild des Mercedes W10 (wenig Anstellung); in Ungarn fast derselbe Geschwindigkeitszuwachs wie Mercedes (46,3 gegen 46,9 km/h). Kein Beleg für eine Abweichung vom Durchschnitt, deshalb 1,00."
+  },
+  "mclaren": {
+   "name": "McLaren MCL35",
+   "skins": [
+    "g_55_McLaren_MCL35",
+    "h_4_McLaren_MCL35"
+   ],
+   "abstand": 0.8,
+   "ps": 985,
+   "_motor": "Renault E-Tech 20 (Kunde) (mittel, 975-995)"
+  },
+  "ferrari": {
+   "name": "Ferrari SF1000",
+   "skins": [
+    "c_5_Ferrari_SF1000",
+    "d_16_Ferrari_SF1000"
+   ],
+   "abstand": 0.88,
+   "ps": 960,
+   "_motor": "Ferrari 065 (mittel, 950-975)",
+   "cd": 1.05,
+   "_cd": "SF1000 bewusst auf mehr Abtrieb gebaut, dafür deutlich mehr Luftwiderstand (Binotto beim Launch: schneller in Kurven, langsamer auf Geraden; später: 'der Luftwiderstand war 2020 sehr, sehr hoch'). The Race: unverhältnismäßig hoher Widerstand für den gewonnenen Abtrieb; in Österreich 0,7 s Verlust allein auf den Geraden (Motor plus Widerstand)."
+  },
+  "alphatauri": {
+   "name": "AlphaTauri AT01",
+   "skins": [
+    "k_26_Scuderia_AlphaTauri_AT01",
+    "l_10_Scuderia_AlphaTauri_AT01"
+   ],
+   "abstand": 0.89,
+   "ps": 980,
+   "_motor": "Honda RA620H (mittel, 970-990)"
+  },
+  "renault": {
+   "name": "Renault R.S.20",
+   "skins": [
+    "i_3_Renault_R.S.20",
+    "j_31_Renault_R.S.20"
+   ],
+   "abstand": 0.95,
+   "ps": 985,
+   "_motor": "Renault E-Tech 20 (mittel, 975-995)",
+   "cd": 1.0,
+   "_cd": "R.S.20 mit wenig Luftwiderstand, stark auf Geraden (Spa, Monza); in Silverstone zweitschnellstes Auto in den Messstellen. Schätzung."
+  },
+  "williams": {
+   "name": "Williams FW43",
+   "skins": [
+    "s_63_Williams_FW43",
+    "t_6_Williams_FW43"
+   ],
+   "abstand": 1.59,
+   "ps": 1010,
+   "_motor": "Mercedes M11 EQ Performance (Kunde) (mittel, 1000-1020)",
+   "cd": 1.0,
+   "_cd": "FW43: laut Gary Anderson zu wenig Abtrieb, aber gute Effizienz (hoher Geschwindigkeitszuwachs bis zur Messstelle). Schätzung aus einem einzigen Datensatz.",
+   "cl": 0.82
+  },
+  "alfaromeo": {
+   "name": "Alfa Romeo C39",
+   "skins": [
+    "o_7_Alfa_Romeo_Racing_C39",
+    "p_99_Alfa_Romeo_Racing_C39"
+   ],
+   "abstand": 1.75,
+   "ps": 960,
+   "_motor": "Ferrari 065 (Kunde) (mittel, 950-975)"
+  },
+  "haas": {
+   "name": "Haas VF-20",
+   "skins": [
+    "q_8_Haas_VF-20",
+    "r_20_Haas_VF-20"
+   ],
+   "abstand": 1.8,
+   "ps": 960,
+   "_motor": "Ferrari 065 (Kunde) (mittel, 950-975)"
+  }
+ }
+}

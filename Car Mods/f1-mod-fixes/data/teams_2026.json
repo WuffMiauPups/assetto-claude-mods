@@ -1,0 +1,83 @@
+{
+ "_hinweis": "Erzeugt von tools/plaene_bauen.py. abstand aus data/quali_abstaende.json (F1DB), ps und cd aus research/motoren_2011_2026.json (Schätzungen mit Quellen). Empfindlichkeiten stammen aus den Tests der V8-Jahrgänge bzw. der Hybrid-Autos und sind für diesen Satz ungeprüft.",
+ "jahr": 2026,
+ "absolut": true,
+ "cl_min": 0.8,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.09,
+  "s_pro_prozent_leistung": 0.16,
+  "s_pro_prozent_widerstand": 0.04,
+  "s_pro_kg": 0.024
+ },
+ "masse": 768,
+ "teams": {
+  "mclaren": {
+   "ordner": "f1_2026_mclaren_mcl40",
+   "abstand": 0.15,
+   "ps": 1051,
+   "_motor": "Mercedes-AMG F1 M17 E Performance (Kunde) (niedrig, 1040-1060)"
+  },
+  "mercedes": {
+   "ordner": "f1_2026_mercedes_amg_w17",
+   "abstand": 0.0,
+   "ps": 1051,
+   "_motor": "Mercedes-AMG F1 M17 E Performance (niedrig, 1040-1060)"
+  },
+  "redbull": {
+   "ordner": "f1_2026_redbull_rb22",
+   "abstand": 0.18,
+   "ps": 1054,
+   "_motor": "Red Bull Ford Powertrains DM01 (niedrig, 1049-1064)",
+   "cd": 0.98,
+   "_cd": "Beim Bahrain-Test höchster Topspeed (Verstappen 344 km/h), kaum Clipping; F1Technical wertet das als wirksames Konzept mit wenig Luftwiderstand. Ein Teil davon ist Motor und Energieeinsatz, daher nur kleiner Abschlag."
+  },
+  "ferrari": {
+   "ordner": "f1_2026_ferrari_sf26",
+   "abstand": 0.12,
+   "ps": 1034,
+   "_motor": "Ferrari 067/6 (niedrig, 1029-1044)"
+  },
+  "williams": {
+   "ordner": "f1_2026_williams_fw48",
+   "abstand": 1.41,
+   "ps": 1051,
+   "_motor": "Mercedes-AMG F1 M17 E Performance (Kunde) (niedrig, 1040-1060)"
+  },
+  "racingbulls": {
+   "ordner": "f1_2026_rb_vcarb03",
+   "abstand": 0.62,
+   "ps": 1054,
+   "_motor": "Red Bull Ford Powertrains DM01 (niedrig, 1049-1064)"
+  },
+  "astonmartin": {
+   "ordner": "f1_2026_aston_martin_amr26",
+   "abstand": 2.32,
+   "ps": 993,
+   "_motor": "Honda RA626H (niedrig, 980-1005)"
+  },
+  "haas": {
+   "ordner": "f1_2026_haas_vf26",
+   "abstand": 1.15,
+   "ps": 1034,
+   "_motor": "Ferrari 067/6 (Kunde) (niedrig, 1029-1044)"
+  },
+  "audi": {
+   "ordner": "f1_2026_audi_r26",
+   "abstand": 0.66,
+   "ps": 1029,
+   "_motor": "Audi AFR 26 Hybrid (niedrig, 1024-1034)"
+  },
+  "alpine": {
+   "ordner": "f1_2026_alpine_a526",
+   "abstand": 0.75,
+   "ps": 1051,
+   "_motor": "Mercedes-AMG F1 M17 E Performance (Kunde) (niedrig, 1040-1060)"
+  },
+  "cadillac": {
+   "ordner": "f1_2026_cadillac_mac26",
+   "abstand": 2.37,
+   "ps": 1034,
+   "_motor": "Ferrari 067/6 (Kunde) (niedrig, 1029-1044)"
+  }
+ }
+}

@@ -1,0 +1,141 @@
+{
+  "_hinweise": {
+    "stand": "Recherche vom 2026-11-16 (Websuche). Alle PS-Werte sind Schätzungen aus Presse, Teamaussagen und GPS-Analysen, keine Prüfstandswerte.",
+    "einheit": "PS = bhp x 1,014. V8-Jahre (2011, 2013): Verbrenner ohne KERS, damit vergleichbar mit den Projektwerten 2010/2012. Ab 2014: Gesamtleistung inklusive MGU-K.",
+    "projektwerte": "Für die bisherigen Projektwerte (V8 2010/2012, 2017, 2018, 2023) wurde nichts Besseres gefunden. Die V8-Rangfolge Mercedes > Ferrari > Cosworth > Renault ist nur durch Aussagen von 2010 und Foren gestützt; die Abstände 2023 (Renault 20 bis 33 bhp hinter der Spitze laut FIA-Analyse) passen zu 970 gegen 990 bis 995 PS."
+  },
+  "2011": {
+    "regeln": "Mindestgewicht 640 kg mit Fahrer (von 620 kg angehoben wegen KERS). 2,4-Liter-V8, 18.000/min, Entwicklung eingefroren. KERS freiwillig: 60 kW (rund 82 PS) für 6,7 s je Runde, zusätzlich zu den PS-Werten unten. DRS neu. Doppeldiffusor verboten, angeblasener Diffusor erlaubt; ab Silverstone zeitweise Einschränkung des Anblasens im Schiebebetrieb.",
+    "ohne_kers": ["lotus", "hrt", "virgin"],
+    "ohne_kers_quellen": [
+      "https://www.autosport.com/f1/news/lotus-to-start-season-without-kers-4443205/4443205/",
+      "https://www.auto123.com/en/news/amp/f1-new-teams-to-start-2011-without-kers/8363/",
+      "https://www.racefans.net/2011/03/27/horner-reveals-red-bull-kers/"
+    ],
+    "ohne_kers_hinweis": "Team Lotus, HRT und Virgin fuhren die ganze Saison ohne KERS (Cosworth: von seinen Kunden nutzt nur Williams KERS). Red Bull hatte ein eigenes, anfälliges KERS und setzte es beim Auftakt in Australien nicht ein.",
+    "teams": {
+      "redbull": {"motor": "Renault RS27-2011", "ps": 740, "sicher": "niedrig", "spanne": "725-760", "quellen": ["https://www.autosport.com/f1/news/exploring-f1s-power-games-5081823/5081823/", "https://www.f1technical.net/forum/viewtopic.php?p=285624"]},
+      "mclaren": {"motor": "Mercedes FO 108Y", "ps": 755, "sicher": "mittel", "spanne": "750-761", "quellen": ["https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine", "https://www.f1technical.net/f1db/cars/977/mercedes-gp-w02"]},
+      "ferrari": {"motor": "Ferrari 056", "ps": 750, "sicher": "niedrig", "spanne": "735-755", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=285624"]},
+      "mercedes": {"motor": "Mercedes FO 108Y", "ps": 755, "sicher": "mittel", "spanne": "750-761", "quellen": ["https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine", "https://www.f1technical.net/f1db/cars/977/mercedes-gp-w02"]},
+      "renault": {"motor": "Renault RS27-2011", "ps": 740, "sicher": "niedrig", "spanne": "725-760", "quellen": ["https://www.autosport.com/f1/news/exploring-f1s-power-games-5081823/5081823/"]},
+      "forceindia": {"motor": "Mercedes FO 108Y", "ps": 755, "sicher": "mittel", "spanne": "750-761", "quellen": ["https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine"]},
+      "sauber": {"motor": "Ferrari 056", "ps": 750, "sicher": "niedrig", "spanne": "735-755", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=285624"]},
+      "tororosso": {"motor": "Ferrari 056", "ps": 750, "sicher": "niedrig", "spanne": "735-755", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=285624"]},
+      "williams": {"motor": "Cosworth CA2011K (mit KERS)", "ps": 745, "sicher": "niedrig", "spanne": "730-755", "quellen": ["https://www.autosport.com/f1/news/exploring-f1s-power-games-5081823/5081823/"]},
+      "lotus": {"motor": "Renault RS27-2011 (ohne KERS)", "ps": 740, "sicher": "niedrig", "spanne": "725-760", "quellen": ["https://www.autosport.com/f1/news/lotus-to-start-season-without-kers-4443205/4443205/"]},
+      "hrt": {"motor": "Cosworth CA2011 (ohne KERS)", "ps": 745, "sicher": "niedrig", "spanne": "730-755", "quellen": ["https://www.autosport.com/f1/news/exploring-f1s-power-games-5081823/5081823/"]},
+      "virgin": {"motor": "Cosworth CA2011 (ohne KERS)", "ps": 745, "sicher": "niedrig", "spanne": "730-755", "quellen": ["https://www.autosport.com/f1/news/exploring-f1s-power-games-5081823/5081823/"]}
+    },
+    "herleitung": "Einzige offiziell wirkende Zahl: Mercedes FO 108Y 560 kW (751 bhp, 761 PS). Ferrari und Renault nur aus Forengerüchten (Mercedes rund 20 PS vor Ferrari, Renault 10 bis 15 PS hinter Ferrari). Newey (Ende 2010): Renault mindestens 4 % hinter Mercedes; Cosworth-Chef Routsis (Ende 2010): alle Motoren innerhalb von rund 4 %, Cosworth eher vorn, in Foren aber mit dem größten Leistungsverlust über die Laufzeit beschrieben. Projektwerte 2010/2012 deshalb unverändert übernommen.",
+    "angeblasener_diffusor": [
+      {"team": "redbull", "staerke": "am stärksten", "grund": "Heißes Anblasen im Schiebebetrieb zusammen mit Renault entwickelt, galt als Grund für den großen Quali-Vorsprung. Marko rechnete bei einem Verbot mit rund 0,5 s Verlust je Runde; schwächere Quellen nennen 0,8 bis 1,0 s. Vorschlag: höchster Abtriebszuschlag im Feld.", "quelle": "https://team-sport.co.uk/bruces-blog/red-bull-s-motorsport-adviser-comments-on-diffuser-ban"},
+      {"team": "mclaren", "staerke": "stark", "grund": "Ebenfalls stark angeblasener Diffusor; mit der Einschränkung in Silverstone hatte McLaren sichtbar Mühe. Kein Zahlenwert gefunden.", "quelle": "https://www.autosport.com/f1/news/british-grand-prix-technical-review-5081044/5081044/"},
+      {"team": "ferrari", "staerke": "mittel (nicht belegt)", "grund": "In dieser Recherche kein belastbarer Beleg für die Stärke des Ferrari-Systems gefunden; Einstufung nur als Annahme zwischen McLaren und Renault.", "quelle": ""},
+      {"team": "renault", "staerke": "schwach in langsamen Kurven", "grund": "Frontauspuff (Austritt vor den Seitenkästen) als einziges Team. Technikchef Allison nannte das Konzept einen mutigen Fehlschlag; grundlegende Schwäche in langsamen Kurven, gute Windkanalwerte ließen sich nicht umsetzen.", "quelle": "https://www.autosport.com/f1/news/renault-admits-its-2011-car-and-exhaust-concept-was-a-bold-failure-4451279/4451279/"}
+    ],
+    "konzept": [
+      {"team": "redbull", "cd": 1.04, "grund": "RB7 mit sehr viel Abtrieb und regelmäßig niedrigem Topspeed; in Monza war Vettel in der Messung vor Kurve 1 der Langsamste und gewann trotzdem von der Pole. Ein Teil davon ist kurze Übersetzung, daher vorsichtiger Wert.", "quelle": "https://www.motorsport.com/f1/news/f1-newey-has-worked-hard-on-high-speed-weakness/411083/"}
+    ]
+  },
+  "2013": {
+    "regeln": "Mindestgewicht 642 kg mit Fahrer (Angabe aus Reglementkenntnis, in dieser Recherche nicht neu belegt). 2,4-Liter-V8, 18.000/min, eingefroren. KERS 60 kW (rund 82 PS) für 6,7 s je Runde, 2013 bei allen Teams außer Marussia zu Saisonbeginn vorhanden (Marussia ab 2013 mit KERS von Williams; nicht neu belegt). Anblasen im Schiebebetrieb verboten, Coanda-Auspuff üblich.",
+    "ohne_kers": [],
+    "teams": {
+      "redbull": {"motor": "Renault RS27-2013", "ps": 740, "sicher": "niedrig", "spanne": "725-760", "quellen": ["https://www.auto123.com/en/news/amp/f1-technique-looking-at-the-renault-sport-rs27-formula-1-engine/35495/", "https://www.f1technical.net/forum/viewtopic.php?p=458261"]},
+      "mercedes": {"motor": "Mercedes FO 108F", "ps": 755, "sicher": "mittel", "spanne": "750-761", "quellen": ["https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine"]},
+      "ferrari": {"motor": "Ferrari 056", "ps": 750, "sicher": "niedrig", "spanne": "735-760", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=458261"]},
+      "lotus": {"motor": "Renault RS27-2013", "ps": 740, "sicher": "niedrig", "spanne": "725-760", "quellen": ["https://www.auto123.com/en/news/amp/f1-technique-looking-at-the-renault-sport-rs27-formula-1-engine/35495/"]},
+      "mclaren": {"motor": "Mercedes FO 108F", "ps": 755, "sicher": "mittel", "spanne": "750-761", "quellen": ["https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine"]},
+      "forceindia": {"motor": "Mercedes FO 108F", "ps": 755, "sicher": "mittel", "spanne": "750-761", "quellen": ["https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine"]},
+      "sauber": {"motor": "Ferrari 056", "ps": 750, "sicher": "niedrig", "spanne": "735-760", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=458261"]},
+      "tororosso": {"motor": "Ferrari 056", "ps": 750, "sicher": "niedrig", "spanne": "735-760", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=458261"]},
+      "williams": {"motor": "Renault RS27-2013", "ps": 740, "sicher": "niedrig", "spanne": "725-760", "quellen": ["https://www.auto123.com/en/news/amp/f1-technique-looking-at-the-renault-sport-rs27-formula-1-engine/35495/"]},
+      "marussia": {"motor": "Cosworth CA2013", "ps": 745, "sicher": "niedrig", "spanne": "730-755", "quellen": ["https://www.grandprix.com/news/red-bull-slowest-on-the-straight-in-testing.html"]},
+      "caterham": {"motor": "Renault RS27-2013", "ps": 740, "sicher": "niedrig", "spanne": "725-760", "quellen": ["https://www.auto123.com/en/news/amp/f1-technique-looking-at-the-renault-sport-rs27-formula-1-engine/35495/"]}
+    },
+    "herleitung": "Für 2013 wurden keine motorspezifischen Zahlen gefunden. Renault nennt den RS27 offiziell mit 750 bhp (760 PS, obere Grenze der Spanne). Motoren seit 2007 eingefroren, deshalb Projektwerte 2010/2012 übernommen. Foren widersprechen sich (Ferrari stärkster, Renault schwächster). Cosworth-Wert ohne eigene Quelle für 2013.",
+    "konzept": [
+      {"team": "redbull", "cd": 1.04, "grund": "RB9 bei den Barcelona-Tests laut Auto Motor und Sport das langsamste Auto auf der Geraden (307,7 km/h gegen 316,7 bei Ferrari, Sauber, Force India). Im Barcelona-Qualifying 306,2 km/h gegen 313,1 km/h des Lotus bei fast gleicher Rundenzeit. Viel Abtrieb, teils auch kurze Übersetzung.", "quelle": "https://www.grandprix.com/news/red-bull-slowest-on-the-straight-in-testing.html"},
+      {"team": "marussia", "cd": 0.97, "grund": "Bei denselben Tests schnellstes Auto auf der Geraden (rund 320,5 km/h, errechnet) trotz Cosworth: wenig Abtrieb und wenig Luftwiderstand. Nur eine Messung, daher vorsichtig.", "quelle": "https://www.grandprix.com/news/red-bull-slowest-on-the-straight-in-testing.html"}
+    ]
+  },
+  "2014": {
+    "regeln": "Mindestgewicht 691 kg mit Fahrer (Angabe aus Reglementkenntnis, in dieser Recherche nicht neu belegt). 1,6-Liter-V6-Turbo, Durchfluss 100 kg/h, 100 kg Sprit je Rennen, MGU-K 120 kW (163 PS) und MGU-H. PS-Werte unten sind Gesamtleistung inklusive MGU-K.",
+    "teams": {
+      "mercedes": {"motor": "Mercedes PU106A Hybrid", "ps": 850, "sicher": "mittel", "spanne": "740-900", "quellen": ["https://www.autobild.de/artikel/formel-1-kampf-an-der-motorenfront-5064795.html", "https://www.grandprix247.com/formula-1-news/report-claims-mercedes-v6-turbo-producing-900-horspepower"]},
+      "redbull": {"motor": "Renault Energy F1-2014", "ps": 775, "sicher": "mittel", "spanne": "770-790", "quellen": ["https://www.grandprix.com/news/horner-says-renault-75hp-down-on-mercedes.html", "https://www.autobild.de/artikel/formel-1-kampf-an-der-motorenfront-5064795.html"]},
+      "williams": {"motor": "Mercedes PU106A Hybrid", "ps": 850, "sicher": "mittel", "spanne": "740-900", "quellen": ["https://www.autobild.de/artikel/formel-1-kampf-an-der-motorenfront-5064795.html"]},
+      "ferrari": {"motor": "Ferrari 059/3", "ps": 790, "sicher": "niedrig", "spanne": "775-800", "quellen": ["https://www.autosport.com/f1/news/ferrari-prancing-or-limping-horse-5103112/5103112/", "https://www.skysports.com/f1/news/22058/9399889"]},
+      "mclaren": {"motor": "Mercedes PU106A Hybrid", "ps": 850, "sicher": "mittel", "spanne": "740-900", "quellen": ["https://www.autobild.de/artikel/formel-1-kampf-an-der-motorenfront-5064795.html"]},
+      "forceindia": {"motor": "Mercedes PU106A Hybrid", "ps": 850, "sicher": "mittel", "spanne": "740-900", "quellen": ["https://www.autobild.de/artikel/formel-1-kampf-an-der-motorenfront-5064795.html"]},
+      "tororosso": {"motor": "Renault Energy F1-2014", "ps": 775, "sicher": "mittel", "spanne": "770-790", "quellen": ["https://www.grandprix.com/news/horner-says-renault-75hp-down-on-mercedes.html"]},
+      "lotus": {"motor": "Renault Energy F1-2014", "ps": 775, "sicher": "mittel", "spanne": "770-790", "quellen": ["https://www.grandprix.com/news/horner-says-renault-75hp-down-on-mercedes.html"]},
+      "marussia": {"motor": "Ferrari 059/3", "ps": 790, "sicher": "niedrig", "spanne": "775-800", "quellen": ["https://www.autosport.com/f1/news/ferrari-prancing-or-limping-horse-5103112/5103112/"]},
+      "sauber": {"motor": "Ferrari 059/3", "ps": 790, "sicher": "niedrig", "spanne": "775-800", "quellen": ["https://www.autosport.com/f1/news/ferrari-prancing-or-limping-horse-5103112/5103112/"]},
+      "caterham": {"motor": "Renault Energy F1-2014", "ps": 775, "sicher": "mittel", "spanne": "770-790", "quellen": ["https://www.grandprix.com/news/horner-says-renault-75hp-down-on-mercedes.html"]}
+    },
+    "herleitung": "Mercedes: Auto Bild (April 2014) rund 850 PS gesamt, Renault rund 80 PS weniger; Lauda nannte 580 + 160 = 740 PS, Rivalen schätzten bis 900 bhp. Horner (November 2014): Renault 75 PS hinter Mercedes. Auto Motor und Sport (Rückblick 2015): Mercedes-Vorsprung 2014 bis zu 60 PS. Daraus Renault 775 (Mittel aus 60 bis 80 PS Rückstand). Ferrari: nur Gerücht über 75 bhp Rückstand (Autosport) und Foren mit 50 PS; Allison bestätigte Leistungsrückstand, kleiner Verdichter wegen Aero-Packaging (Sky). Wert 790 ist Mittel aus 50 bis 75 PS Rückstand. Wichtig ist das Verhältnis Mercedes : Ferrari : Renault von etwa 1,00 : 0,93 : 0,91.",
+    "konzept": [
+      {"team": "williams", "cd": 0.96, "grund": "FW36 war 2014 oft das schnellste Auto auf den Geraden und führte regelmäßig die Speed-Trap-Listen an: Konzept mit wenig Luftwiderstand, dafür schwächer im Regen.", "quelle": "https://www.racefans.net/?p=287463"},
+      {"team": "redbull", "cd": 1.04, "grund": "RB10 mit überlegenem Abtrieb (im Nassen deutlich stärker), aber schwachem Renault und niedrigem Topspeed; im Saisonmittel 0,96 % hinter Mercedes gegen 0,85 % bei Williams.", "quelle": "https://www.racefans.net/?p=287463"}
+    ]
+  },
+  "2024": {
+    "regeln": "Mindestgewicht 798 kg mit Fahrer (Angabe aus Reglementkenntnis). Antriebe seit 2022 eingefroren, nur Zuverlässigkeitsänderungen.",
+    "teams": {
+      "mclaren": {"motor": "Mercedes-AMG F1 M15 E Performance", "ps": 990, "sicher": "mittel", "spanne": "980-1030", "quellen": ["https://www.planetf1.com/news/audi-f1-2026-engine-details-data-mercedes-comparison", "https://www.total-motorsport.com/how-much-engine-horsepower-f1-cars-have-2025-explained/"]},
+      "sauber": {"motor": "Ferrari 066/12", "ps": 995, "sicher": "mittel", "spanne": "985-1045", "quellen": ["https://www.planetf1.com/news/audi-f1-2026-engine-details-data-mercedes-comparison", "https://www.total-motorsport.com/how-much-engine-horsepower-f1-cars-have-2025-explained/"]}
+    },
+    "herleitung": "Wegen des Entwicklungsstopps gleiche Werte wie die Projektschätzung 2023. Mercedes, Ferrari und Honda liegen laut FIA-Analyse 2023 eng beisammen.",
+    "konzept": []
+  },
+  "2025": {
+    "regeln": "Mindestgewicht 800 kg mit Fahrer (2026 um 32 kg gesenkt auf 768 kg). Antriebe weiter eingefroren, letzter Jahrgang der alten Hybrid-Formel mit MGU-H.",
+    "teams": {
+      "mclaren": {"motor": "Mercedes-AMG F1 M16 E Performance", "ps": 990, "sicher": "mittel", "spanne": "980-1030", "quellen": ["https://www.total-motorsport.com/how-much-engine-horsepower-f1-cars-have-2025-explained/", "https://www.planetf1.com/news/audi-f1-2026-engine-details-data-mercedes-comparison"]},
+      "ferrari": {"motor": "Ferrari 066/15", "ps": 995, "sicher": "mittel", "spanne": "985-1045", "quellen": ["https://www.total-motorsport.com/how-much-engine-horsepower-f1-cars-have-2025-explained/"]},
+      "redbull": {"motor": "Honda RBPT H003", "ps": 995, "sicher": "mittel", "spanne": "985-1010", "quellen": ["https://www.planetf1.com/news/audi-f1-2026-engine-details-data-mercedes-comparison"]},
+      "mercedes": {"motor": "Mercedes-AMG F1 M16 E Performance", "ps": 990, "sicher": "mittel", "spanne": "980-1030", "quellen": ["https://www.total-motorsport.com/how-much-engine-horsepower-f1-cars-have-2025-explained/"]},
+      "astonmartin": {"motor": "Mercedes-AMG F1 M16 E Performance", "ps": 990, "sicher": "mittel", "spanne": "980-1030", "quellen": ["https://www.total-motorsport.com/how-much-engine-horsepower-f1-cars-have-2025-explained/"]},
+      "alpine": {"motor": "Renault E-Tech RE25", "ps": 970, "sicher": "mittel", "spanne": "957-975", "quellen": ["https://www.the-race.com/formula-1/strengths-and-weaknesses-of-every-2025-f1-car/", "https://www.planetf1.com/news/audi-f1-2026-engine-details-data-mercedes-comparison"]},
+      "haas": {"motor": "Ferrari 066/15", "ps": 995, "sicher": "mittel", "spanne": "985-1045", "quellen": ["https://www.total-motorsport.com/how-much-engine-horsepower-f1-cars-have-2025-explained/"]},
+      "racingbulls": {"motor": "Honda RBPT H003", "ps": 995, "sicher": "mittel", "spanne": "985-1010", "quellen": ["https://www.planetf1.com/news/audi-f1-2026-engine-details-data-mercedes-comparison"]},
+      "williams": {"motor": "Mercedes-AMG F1 M16 E Performance", "ps": 990, "sicher": "mittel", "spanne": "980-1030", "quellen": ["https://www.total-motorsport.com/how-much-engine-horsepower-f1-cars-have-2025-explained/"]},
+      "sauber": {"motor": "Ferrari 066/15", "ps": 995, "sicher": "mittel", "spanne": "985-1045", "quellen": ["https://www.total-motorsport.com/how-much-engine-horsepower-f1-cars-have-2025-explained/"]}
+    },
+    "herleitung": "Keine herstellerscharfe Tabelle für 2025 gefunden. Entwicklungsstopp seit 2022, deshalb Projektwerte 2023 übernommen. Gestützt: Alpine hatte 2025 laut The Race rund 15 kW (20 PS) Leistungsrückstand; FIA-Analyse 2023 sah Renault 20 bis 33 bhp hinter der Spitze. Absolute Zahlen aus allgemeinen Erklärartikeln (Mercedes um 1015 bhp im Quali-Modus, Ferrari Gerüchte bis 1030 bhp) sind schwach belegt; die Verhältnisse sind brauchbar.",
+    "konzept": [
+      {"team": "williams", "cd": 0.97, "grund": "FW47 mit durchweg hohen Topspeeds, Saisonhöchstwert in Monza (Albon 364,1 km/h, mit Windschatten); in Miami mit Ferrari höchste mittlere Topspeeds. Datenanalysten nennen wenig Luftwiderstand als Grund.", "quelle": "https://www.motorsportmagazine.com/articles/single-seaters/f1/what-are-the-fastest-speeds-recorded-at-every-f1-circuit/"},
+      {"team": "mercedes", "cd": 0.98, "grund": "W16 laut The Race mit guter aerodynamischer Effizienz als ausdrücklicher Stärke. Kein Messwert, daher nur kleiner Abschlag.", "quelle": "https://www.the-race.com/formula-1/strengths-and-weaknesses-of-every-2025-f1-car/"}
+    ]
+  },
+  "2026": {
+    "regeln": "Mindestgewicht 768 kg mit Fahrer, ohne Sprit (32 kg weniger als 2025). 1,6-Liter-V6-Turbo ohne MGU-H mit rund 400 bis 430 kW Verbrennerleistung, MGU-K 350 kW (476 PS), aktive Aerodynamik statt DRS, nachhaltiger Kraftstoff. Die volle Elektroleistung steht nur zeitweise zur Verfügung (Batterie, Abregelung bei hohem Tempo), deshalb entscheidet neben der Spitzenleistung die Energieverwaltung. Nachentwicklung über ADUO (FIA misst nur den Verbrenner: 2 bis 4 % Rückstand ein Upgrade, über 4 % zwei Upgrades).",
+    "kraefteverhaeltnis": "FIA-ADUO (drei Auswertungen, zuletzt 10.11.2026, Rennen 12 bis 18): Verbrenner von Red Bull Ford ist die Referenz, Mercedes 2 bis 4 % dahinter, Ferrari, Audi und Honda mehr als 4 % dahinter (Reihenfolge laut erster Auswertung Ferrari, Audi, Honda). Dem widersprechen GPS-Schätzungen von F1DataAnalysis (April 2026): Mercedes 576 hp, Red Bull 565, Ferrari 547 bis 560, Audi rund 545, Honda rund 519 hp Verbrennerleistung. Im Fahrerlager gilt Mercedes als beste Gesamteinheit (Energieeinsatz, Software), Red Bull selbst nennt Mercedes die Messlatte; Hamilton: Red Bull stärkster Motor, Mercedes zweiter, Ferrari dahinter. Honda laut Autoracer (September 2026) auch nach dem ersten Upgrade rund 70 PS hinter Mercedes, entspricht rund 1,2 s je Runde; Stroll spricht von zwei Sekunden Rückstand allein vom Motor. Mercedes-Kunden (McLaren, Williams, Alpine) holten anfangs weniger aus der Einheit heraus als das Werksteam (einfachere Kennfelder, Energieeinsatz); geschätzter Mercedes-Vorteil zu Saisonbeginn rund 0,3 s.",
+    "uebergewicht_kg": {
+      "hinweis": "Stand Anfang April 2026 laut RacingNews365, ungefähre Werte aus mehreren Quellen; rund 0,3 s je Runde pro 10 kg. Ein Fan-Foto deutete beim Red Bull zeitweise auf 30 kg, das ist nicht bestätigt. Spätere Abspeckstände wurden nicht gefunden.",
+      "mercedes": 0, "ferrari": 0, "audi": 0, "mclaren": 0, "haas": 1, "alpine": 2, "racingbulls": 4.5, "cadillac": 6.5, "redbull": 9.5, "astonmartin": 9.5, "williams": 26,
+      "unter_limit_mit_ballast": ["mercedes", "ferrari", "audi"],
+      "quellen": ["https://racingnews365.com/the-weights-of-every-f1-car-in-2026", "https://www.gpfans.com/en/f1-news/1078433/williams-f1-2026-car-overweight-chinese-gp-james-vowles/"]
+    },
+    "teams": {
+      "mclaren": {"motor": "Mercedes-AMG F1 M17 E Performance (Kunde)", "ps": 1051, "sicher": "niedrig", "spanne": "1040-1060", "quellen": ["https://www.f1technical.net/news/28442", "https://www.the-race.com/formula-1/f1-teams-monza-italian-gp-early-energy-depoyment-patterns/"]},
+      "mercedes": {"motor": "Mercedes-AMG F1 M17 E Performance", "ps": 1051, "sicher": "niedrig", "spanne": "1040-1060", "quellen": ["https://www.f1technical.net/news/28442", "https://www.the-race.com/formula-1/fia-makes-latest-aduo-ruling-and-hints-at-2027-revamp/"]},
+      "redbull": {"motor": "Red Bull Ford Powertrains DM01", "ps": 1054, "sicher": "niedrig", "spanne": "1049-1064", "quellen": ["https://www.the-race.com/formula-1/fia-makes-latest-aduo-ruling-and-hints-at-2027-revamp/", "https://www.f1technical.net/news/28442"]},
+      "ferrari": {"motor": "Ferrari 067/6", "ps": 1034, "sicher": "niedrig", "spanne": "1029-1044", "quellen": ["https://www.f1technical.net/news/28442", "https://www.skysports.com/f1/news/13551591/aduo-in-f1-red-bull-engine-top-rated-by-fia-as-mercedes-ferrari-granted-upgrades-for-2026-formula-1-season"]},
+      "williams": {"motor": "Mercedes-AMG F1 M17 E Performance (Kunde)", "ps": 1051, "sicher": "niedrig", "spanne": "1040-1060", "quellen": ["https://www.f1technical.net/news/28442"]},
+      "racingbulls": {"motor": "Red Bull Ford Powertrains DM01", "ps": 1054, "sicher": "niedrig", "spanne": "1049-1064", "quellen": ["https://www.the-race.com/formula-1/fia-makes-latest-aduo-ruling-and-hints-at-2027-revamp/"]},
+      "astonmartin": {"motor": "Honda RA626H", "ps": 993, "sicher": "niedrig", "spanne": "980-1005", "quellen": ["https://www.gpfans.com/en/f1-news/1089752/f1-honda-power-unit-aston-martin-70-hp-behind-mercedes-report/", "https://www.f1technical.net/news/28442"]},
+      "haas": {"motor": "Ferrari 067/6 (Kunde)", "ps": 1034, "sicher": "niedrig", "spanne": "1029-1044", "quellen": ["https://www.f1technical.net/news/28442"]},
+      "audi": {"motor": "Audi AFR 26 Hybrid", "ps": 1029, "sicher": "niedrig", "spanne": "1024-1034", "quellen": ["https://www.planetf1.com/news/audi-f1-2026-engine-details-data-mercedes-comparison", "https://www.f1technical.net/news/28442"]},
+      "alpine": {"motor": "Mercedes-AMG F1 M17 E Performance (Kunde)", "ps": 1051, "sicher": "niedrig", "spanne": "1040-1060", "quellen": ["https://www.f1technical.net/news/28442"]},
+      "cadillac": {"motor": "Ferrari 067/6 (Kunde)", "ps": 1034, "sicher": "niedrig", "spanne": "1029-1044", "quellen": ["https://www.f1technical.net/news/28442"]}
+    },
+    "herleitung": "Gesamt-PS = Verbrenner (bhp x 1,014) + 350 kW MGU-K (476 PS). Verbrenner als Mittel aus FIA-ADUO und F1DataAnalysis: Red Bull Ford 570 bhp (565-580), Mercedes 567 (556-576), Ferrari 550 (545-560), Audi 545 (540-550), Honda 510 (505-520, nach Upgrades). Red Bull und Mercedes sind praktisch gleichauf, weil sich die beiden Quellen in der Reihenfolge widersprechen. Motorbezeichnungen außer DM01 stammen nicht aus den hier gelesenen Artikeln und sind zu prüfen. Für die Simulation zusätzlich bedenken: Honda verliert auch beim Laden und Einsetzen der Batterie, Mercedes-Werksteam nutzt die Energie am besten.",
+    "konzept": [
+      {"team": "redbull", "cd": 0.98, "grund": "Beim Bahrain-Test höchster Topspeed (Verstappen 344 km/h), kaum Clipping; F1Technical wertet das als wirksames Konzept mit wenig Luftwiderstand. Ein Teil davon ist Motor und Energieeinsatz, daher nur kleiner Abschlag.", "quelle": "https://www.f1technical.net/news/28226"}
+    ],
+    "konzept_hinweis": "Der niedrige Topspeed des Aston Martin (beim Test kaum über 300 km/h) wird der Honda-Einheit zugeschrieben, nicht dem Luftwiderstand; laut The Race ist aber auch das Chassis für etwa die Hälfte des Rückstands verantwortlich. Kein cd-Vorschlag."
+  }
+}

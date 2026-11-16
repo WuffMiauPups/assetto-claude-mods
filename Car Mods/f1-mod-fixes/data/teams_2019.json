@@ -1,0 +1,121 @@
+{
+ "_hinweis": "Team-Autos aus der Formula Hybrid 2019 (RSS), erzeugt von tools/plaene_hybrid.py. Ordner = <quelle>_<schluessel>.",
+ "_staerke": "abstand aus data/quali_abstaende.json (F1DB, 85-s-Runde), ps = Gesamtleistung und cd aus research/motoren_2019_2020.json (Schätzungen mit Quellen). Empfindlichkeiten wie 2018, für dieses Auto ungeprüft.",
+ "quelle": "rss_formula_hybrid_2019",
+ "jahr": 2019,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.09,
+  "s_pro_prozent_leistung": 0.16,
+  "s_pro_prozent_widerstand": 0.04,
+  "ers_ps": 163
+ },
+ "teams": {
+  "mercedes": {
+   "name": "Mercedes W10",
+   "skins": [
+    "44_Hamilton_Mercedes_W10",
+    "77_Bottas_Mercedes_W10"
+   ],
+   "abstand": 0.0,
+   "ps": 1000,
+   "_motor": "Mercedes M10 EQ Power+ (mittel, 990-1010)",
+   "cd": 1.0,
+   "_cd": "W10 auf viel Abtrieb (vor allem langsame Kurven) ausgelegt, dafür mehr Luftwiderstand; Hamilton forderte für 2020 weniger Luftwiderstand, in Monza kam Mercedes trotz Windschatten und DRS nicht vorbei."
+  },
+  "ferrari": {
+   "name": "Ferrari SF90",
+   "skins": [
+    "05_Vettel_Ferrari_SF-90",
+    "16_Leclerc_Ferrari_SF-90"
+   ],
+   "abstand": 0.03,
+   "ps": 1020,
+   "_motor": "Ferrari 064 (mittel, 1010-1045)",
+   "cd": 0.97,
+   "_cd": "SF90 auf wenig Luftwiderstand ausgelegt (Outwash-Frontflügel mit weniger Abtrieb als Mercedes und Red Bull): stark auf Geraden, schwach in langsamen Kurven. Binotto sagte später, er würde dem Abtrieb mehr Gewicht geben. Der Topspeed-Vorteil kam also aus Motor UND Konzept."
+  },
+  "redbull": {
+   "name": "Red Bull RB15",
+   "skins": [
+    "10_Red_Bull",
+    "33_Red_Bull"
+   ],
+   "abstand": 0.29,
+   "ps": 970,
+   "_motor": "Honda RA619H (mittel, 955-980)"
+  },
+  "mclaren": {
+   "name": "McLaren MCL34",
+   "skins": [
+    "04_Norris_McLaren_MCL34_Spa",
+    "55_Sainz_McLaren_MCL34_Spa"
+   ],
+   "abstand": 0.73,
+   "ps": 985,
+   "_motor": "Renault E-Tech 19 (Kunde) (niedrig, 970-1000)"
+  },
+  "haas": {
+   "name": "Haas VF-19",
+   "skins": [
+    "08_Haas_VF19_Grosjean_FH_4K",
+    "20_Haas_VF19_Magnussen_FH_4K"
+   ],
+   "abstand": 1.01,
+   "ps": 1020,
+   "_motor": "Ferrari 064 (Kunde) (niedrig, 1000-1045)"
+  },
+  "renault": {
+   "name": "Renault R.S.19",
+   "skins": [
+    "03_Renault",
+    "27_Renault"
+   ],
+   "abstand": 1.03,
+   "ps": 985,
+   "_motor": "Renault E-Tech 19 (niedrig, 970-1000)"
+  },
+  "tororosso": {
+   "name": "Toro Rosso STR14",
+   "skins": [
+    "23_Toro_Rosso",
+    "26_Toro_Rosso"
+   ],
+   "abstand": 1.08,
+   "ps": 970,
+   "_motor": "Honda RA619H (mittel, 955-980)"
+  },
+  "alfaromeo": {
+   "name": "Alfa Romeo C38",
+   "skins": [
+    "07_Kimi_Räikkönen",
+    "99_Antonio_Giovinazzi"
+   ],
+   "abstand": 1.19,
+   "ps": 1020,
+   "_motor": "Ferrari 064 (Kunde) (niedrig, 1000-1045)"
+  },
+  "racingpoint": {
+   "name": "Racing Point RP19",
+   "skins": [
+    "11_Racing_Point",
+    "18_Racing_Point"
+   ],
+   "abstand": 1.26,
+   "ps": 1000,
+   "_motor": "Mercedes M10 EQ Power+ (Kunde, als BWT Mercedes) (mittel, 990-1010)"
+  },
+  "williams": {
+   "name": "Williams FW42",
+   "skins": [
+    "RSS_F1_2019_Rokit_Williams_Racing_63",
+    "RSS_F1_2019_Rokit_Williams_Racing_88"
+   ],
+   "abstand": 2.76,
+   "ps": 1000,
+   "_motor": "Mercedes M10 EQ Power+ (Kunde) (mittel, 990-1010)",
+   "cd": 1.08,
+   "_cd": "FW42: zu wenig Abtrieb und zugleich hoher Luftwiderstand; Russell: 'unglaublich langsam auf den Geraden'. Schätzung, Größe nicht belegt.",
+   "cl": 0.82
+  }
+ }
+}

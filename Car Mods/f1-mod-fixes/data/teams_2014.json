@@ -1,0 +1,85 @@
+{
+ "_hinweis": "Erzeugt von tools/plaene_bauen.py. abstand aus data/quali_abstaende.json (F1DB), ps und cd aus research/motoren_2011_2026.json (Schätzungen mit Quellen). Empfindlichkeiten stammen aus den Tests der V8-Jahrgänge bzw. der Hybrid-Autos und sind für diesen Satz ungeprüft.",
+ "jahr": 2014,
+ "absolut": true,
+ "cl_min": 0.8,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.09,
+  "s_pro_prozent_leistung": 0.16,
+  "s_pro_prozent_widerstand": 0.04,
+  "s_pro_kg": 0.024
+ },
+ "masse": 691,
+ "teams": {
+  "mercedes": {
+   "ordner": "f1_2014_mercedes_w05",
+   "abstand": 0.0,
+   "ps": 850,
+   "_motor": "Mercedes PU106A Hybrid (mittel, 740-900)"
+  },
+  "redbull": {
+   "ordner": "f1_2014_red_bull_rb10",
+   "abstand": 0.94,
+   "ps": 775,
+   "_motor": "Renault Energy F1-2014 (mittel, 770-790)",
+   "cd": 1.04,
+   "_cd": "RB10 mit überlegenem Abtrieb (im Nassen deutlich stärker), aber schwachem Renault und niedrigem Topspeed; im Saisonmittel 0,96 % hinter Mercedes gegen 0,85 % bei Williams."
+  },
+  "williams": {
+   "ordner": "f1_2014_williams_fw36",
+   "abstand": 0.59,
+   "ps": 850,
+   "_motor": "Mercedes PU106A Hybrid (mittel, 740-900)",
+   "cd": 0.77,
+   "_cd": "Luftwiderstand der Mod korrigiert: Ziel Mercedes x 0.96 (Speed-Trap 2014)"
+  },
+  "ferrari": {
+   "ordner": "f1_2014_ferrari_f14_t",
+   "abstand": 1.0,
+   "ps": 790,
+   "_motor": "Ferrari 059/3 (niedrig, 775-800)"
+  },
+  "mclaren": {
+   "ordner": "f1_2014_mclaren_mp4_29",
+   "abstand": 1.04,
+   "ps": 850,
+   "_motor": "Mercedes PU106A Hybrid (mittel, 740-900)"
+  },
+  "forceindia": {
+   "ordner": "f1_2014_force_india_vjm07",
+   "abstand": 1.32,
+   "ps": 850,
+   "_motor": "Mercedes PU106A Hybrid (mittel, 740-900)"
+  },
+  "tororosso": {
+   "ordner": "f1_2014_toro_rosso_str9",
+   "abstand": 1.25,
+   "ps": 775,
+   "_motor": "Renault Energy F1-2014 (mittel, 770-790)"
+  },
+  "lotus": {
+   "ordner": "f1_2014_lotus_e22",
+   "abstand": 2.05,
+   "ps": 775,
+   "_motor": "Renault Energy F1-2014 (mittel, 770-790)"
+  },
+  "marussia": {
+   "ordner": "f1_2014_marussia_mr03",
+   "abstand": 2.94,
+   "ps": 790,
+   "_motor": "Ferrari 059/3 (niedrig, 775-800)"
+  },
+  "sauber": {
+   "ordner": "f1_2014_sauber_c33",
+   "abstand": 1.87,
+   "ps": 790,
+   "_motor": "Ferrari 059/3 (niedrig, 775-800)"
+  },
+  "caterham": {
+   "ordner": "f1_2014_caterham_ct05",
+   "abstand": 3.34,
+   "ps": 775,
+   "_motor": "Renault Energy F1-2014 (mittel, 770-790)"
+  }
+ }
+}

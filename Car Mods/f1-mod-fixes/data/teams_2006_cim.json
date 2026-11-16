@@ -1,0 +1,90 @@
+{
+ "_hinweis": "Erzeugt von tools/plaene_bauen.py. abstand aus data/quali_abstaende.json (F1DB), ps und cd aus research/motoren_2001_2007.json (Schätzungen mit Quellen). Empfindlichkeiten stammen aus den Tests der V8-Jahrgänge bzw. der Hybrid-Autos und sind für diesen Satz ungeprüft.",
+ "jahr": 2006,
+ "absolut": true,
+ "cl_min": 0.65,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.12,
+  "s_pro_prozent_leistung": 0.095,
+  "s_pro_prozent_widerstand": 0.04,
+  "s_pro_kg": 0.024
+ },
+ "ps_anker": 707,
+ "teams": {
+  "renault": {
+   "ordner": "cim_2006_renault",
+   "abstand": 0.26,
+   "ps": 775,
+   "_motor": "Renault RS26, V8 90 Grad, 2,4 l (mittel, 766-791 PS (Autosprint: 755 bhp; Autosport: einer der besten Motoren, Feld bei 760-780 hp))",
+   "cd": 1.0,
+   "_cd": "Massendämpfer (ab Ende 2005, Verbot ab Hockenheim 2006): stabilere aerodynamische Plattform und mehr nutzbarer Abtrieb an der Vorderachse, laut Renault ca. 0,3 s pro Runde. Betrifft Abtrieb/Grip, nicht den Luftwiderstand; für die erste Saisonhälfte etwas mehr Abtrieb ansetzen. Außerdem geringer Kühlbedarf des V8 (Kühlöffnungen entfernt)."
+  },
+  "ferrari": {
+   "ordner": "cim_2006_ferrari",
+   "abstand": 0.0,
+   "ps": 790,
+   "_motor": "Ferrari Tipo 056, V8 90 Grad, 2,4 l (mittel, 771-796 PS (Autosprint: 785 bhp für Massas Auto, umgerechnet 796 PS))",
+   "s_sonst": 0.3
+  },
+  "mclaren": {
+   "ordner": "cim_2006_mclaren",
+   "abstand": 0.51,
+   "ps": 765,
+   "_motor": "Mercedes-Benz FO108S, V8 90 Grad, 2,4 l (niedrig, 750-790 PS (Autosprint: 740 bhp; Autosport: mindestens so gut wie die anderen V8))"
+  },
+  "honda": {
+   "ordner": "cim_2006_honda",
+   "abstand": 0.73,
+   "ps": 770,
+   "_motor": "Honda RA806E, V8 90 Grad, 2,4 l (niedrig, 760-786 PS (Autosprint nennt 775 bhp nur für den RA807E-Vorgriff im Test; RA806E selbst ohne Zahl))"
+  },
+  "bmw_sauber": {
+   "ordner": "cim_2006_bmw_sauber",
+   "abstand": 0.92,
+   "ps": 770,
+   "_motor": "BMW P86, V8 90 Grad, 2,4 l (mittel, 760-780 PS (Autosprint: 750 bhp; laut f1technical zum Saisonende drittstärkster Motor hinter Renault und Ferrari))"
+  },
+  "toyota": {
+   "ordner": "cim_2006_toyota",
+   "abstand": 0.71,
+   "ps": 755,
+   "_motor": "Toyota RVX-06, V8 90 Grad, 2,4 l (mittel, 750-756 PS (Autosprint: 745 bhp; Toyota selbst: ca. 740 bhp, galt als schwach))",
+   "s_sonst": 0.3
+  },
+  "redbull": {
+   "ordner": "cim_2006_redbull",
+   "abstand": 1.2,
+   "ps": 772,
+   "_motor": "Ferrari Tipo 056 (Kundenmotor), V8 90 Grad, 2,4 l (mittel, Autosprint: 760 bhp (umgerechnet 771 PS), 25 bhp unter Werks-Ferrari)"
+  },
+  "williams": {
+   "ordner": "cim_2006_williams",
+   "abstand": 0.87,
+   "ps": 755,
+   "_motor": "Cosworth CA2006, V8 90 Grad, 2,4 l, 20000/min (mittel, 742-760 PS (Autosprint: 732 bhp im September; ca. 750 bhp zum Saisonstart; Vorteil schwand über die Saison))",
+   "cd": 1.05,
+   "_cd": "Autosport Technical Review 2006: Der FW28 erzeugte genug Abtrieb, aber mit zu viel Luftwiderstand, also schlechte aerodynamische Effizienz.",
+   "s_sonst": 0.3
+  },
+  "tororosso": {
+   "ordner": "cim_2006_tororosso",
+   "abstand": 1.73,
+   "ps": 735,
+   "_motor": "Cosworth TJ2005, V10 90 Grad, 3,0 l, gedrosselt (77-mm-Luftmengenbegrenzer, 16700/min, zur Saisonmitte leicht angehoben) (niedrig, eine Angabe: 735 hp gedrosselt (ungedrosselt 915 hp); mehr Drehmoment im mittleren Bereich als die V8, in der Spitze laut Autosport schnell von den V8 überholt; 720-750 PS)"
+  },
+  "midland": {
+   "ordner": "cim_2006_midland",
+   "abstand": 2.37,
+   "ps": 755,
+   "_motor": "Toyota RVX-06 (Kundenmotor), V8 90 Grad, 2,4 l (mittel, Autosprint: 745 bhp, gleich wie Werks-Toyota)",
+   "s_sonst": 0.3
+  },
+  "superaguri": {
+   "ordner": "cim_2006_superaguri",
+   "abstand": 4.09,
+   "ps": 765,
+   "_motor": "Honda RA806E (Kundenmotor), V8 90 Grad, 2,4 l (niedrig, keine Zahl gefunden; abgeleitet: Kundenmotor, gleich oder knapp unter Werks-Honda; 755-770 PS)",
+   "s_sonst": 0.3
+  }
+ }
+}

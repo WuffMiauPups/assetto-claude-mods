@@ -23,9 +23,10 @@ import argparse
 import json
 import math
 import re
+import shutil
 from pathlib import Path
 
-from acdini import CarData, acd_read, get_value, set_value
+from acdini import CarData, acd_read, acd_write, get_value, set_value
 
 ZEILE = re.compile(r"(?m)^([ \t]*\d+(?:\.\d+)?[ \t]*\|[ \t]*)(-?\d+(?:\.\d+)?)")
 
@@ -41,8 +42,93 @@ class Bak:
         return c.decode("latin1") if c is not None else None
 
 
+class OffenBak:
+    """Offener data-Ordner: liest <datei>.bak (Zustand vor der ersten Änderung), sonst die Datei selbst."""
+
+    def __init__(self, cardir):
+        self.d = Path(cardir) / "data"
+
+    def read(self, name):
+        for p in (self.d / (name + ".bak"), self.d / name):
+            if p.is_file(): return p.read_text(encoding="latin1")
+        return None
+
+
 def basis(cardir):
-    return Bak(cardir) if (Path(cardir) / "data.acd.bak").is_file() else CarData(cardir)
+    if (Path(cardir) / "data.acd.bak").is_file(): return Bak(cardir)
+    return CarData(cardir) if (Path(cardir) / "data.acd").is_file() else OffenBak(cardir)
+
+
+def zahl(s):
+    """Liest Zahlen wie AC (atof): '1..17' ist 1.0, leere Werte 0."""
+    m = re.match(r"\s*(-?\d*\.?\d*)", s or "")
+    return float(m.group(1)) if m and m.group(1) not in ("", "-", ".", "-.") else 0.0
+
+
+def absolut(plan, cars, apply):
+    """Plan mit "absolut": Autos mit eigenen Ordnern, deren Ausgangswerte sich unterscheiden dürfen.
+
+    Leistung:  der stärkste echte Motor bekommt die höchste Leistung der Mod ("ps_anker" setzt sie fest), die anderen
+               im Verhältnis ihrer geschätzten PS. Jedes Auto wird von seiner eigenen Ausgangsleistung dorthin skaliert.
+    Abtrieb:   Bezug ist der Ausgangs-Abtrieb des schnellsten echten Teams. Zielwert = Bezug x (1 - Rückstand in Prozent),
+               Rückstand = (Abstand - Motor - Luftwiderstand - Gewicht - "s_sonst") / s_pro_prozent_abtrieb.
+               "cl_min" begrenzt den Rückstand (die KI bricht mit sehr wenig Abtrieb ein), der Rest wird nur gemeldet.
+    Luftwiderstand: bleibt wie in der Mod, "cd" je Team ist ein Faktor darauf. Unterschiede gehen in die Rechnung ein.
+    Gewicht:   "masse" im Plan für alle, je Team überschreibbar; Unterschiede zählen mit "s_pro_kg".
+    """
+    from bestand import aero, peak_ps
+    e, teams = plan["empfindlichkeit"], plan["teams"]
+    info = {}
+    for k, t in teams.items():
+        b = basis(cars / t["ordner"])
+        kg, cda, _ = aero(b)
+        info[k] = {"b": b, "ps": peak_ps(b)[1], "kg": kg, "cda": cda * t.get("cd", 1.0)}
+    ref = min((k for k in teams if "abstand" in teams[k]), key=lambda k: teams[k]["abstand"])
+    anker = plan.get("ps_anker") or max(i["ps"] for i in info.values())
+    ps_max = max(t["ps"] for t in teams.values())
+    masse = lambda k: teams[k].get("masse", plan.get("masse"))
+    for k, t in sorted(teams.items(), key=lambda kv: kv[1].get("abstand", 99)):
+        i, d = info[k], cars / t["ordner"]
+        ers = e.get("ers_ps", 0)                                    # Elektroanteil, der nicht in power.lut steckt
+        ziel_ps = (anker + ers) * t["ps"] / ps_max - ers
+        f_lut = ziel_ps / i["ps"]
+        s_motor = (1 - t["ps"] / teams[ref]["ps"]) * 100 * e["s_pro_prozent_leistung"]
+        s_cd = (i["cda"] / info[ref]["cda"] - 1) * 100 * e.get("s_pro_prozent_widerstand", 0.04)
+        s_m = (masse(k) - masse(ref)) * e.get("s_pro_kg", 0.024) if masse(k) else 0.0
+        rest = 0.0
+        sonst = lambda x: x.get("s_sonst", 0) + (e.get("s_ohne_kers", 0.3) if x.get("ohne_kers") else 0)
+        s_sonst = sonst(t) - sonst(teams[ref])                      # Nachteile, die schon im Auto stecken (Reifen, kein KERS)
+        if "cl" in t:
+            rel = t["cl"]
+        else:
+            rel = 1 - (t["abstand"] - teams[ref]["abstand"] - s_motor - s_cd - s_m - s_sonst) / e["s_pro_prozent_abtrieb"] / 100
+            if rel < plan.get("cl_min", 0):
+                rest, rel = (plan["cl_min"] - rel) * 100 * e["s_pro_prozent_abtrieb"], plan["cl_min"]
+        bezug = plan.get("abtrieb_bezug") or info[ref]["kg"]        # kg bei 200 km/h, die dem schnellsten Team zustehen
+        info[ref]["kg_bezug"] = bezug
+        f_cl, f_cd = bezug * rel / i["kg"], t.get("cd", 1.0)
+        en = i["b"].read("engine.ini")
+        pname = (re.search(r"(?im)^\s*POWER_CURVE\s*=\s*([^;\r\n]+)", en) or [0, "power.lut"])[1].strip()
+        neu = {pname: ZEILE.sub(lambda m: m.group(1) + f"{float(m.group(2)) * f_lut:.4f}", i["b"].read(pname))}
+        text = i["b"].read("aero.ini")
+        neu["aero.ini"] = text
+        for sec in re.findall(r"(?m)^\[(WING_\d+)\]", text):
+            v = zahl(get_value(text, sec, "CL_GAIN"))
+            if v: neu["aero.ini"], _ = set_value(neu["aero.ini"], sec, "CL_GAIN", f"{v * f_cl:.4f}")
+            v = zahl(get_value(text, sec, "CD_GAIN"))
+            if v and f_cd != 1: neu["aero.ini"], _ = set_value(neu["aero.ini"], sec, "CD_GAIN", f"{v * f_cd:.4f}")
+        cd = CarData(d)
+        if masse(k): neu["car.ini"] = set_value(cd.read("car.ini"), "BASIC", "TOTALMASS", str(masse(k)))[0]
+        if apply:
+            for f, inhalt in neu.items():
+                if cd.read(f) != inhalt: cd.write(f, inhalt)
+            if t.get("ohne_kers") and cd.files is not None and "kers.ini" in cd.files:      # Team fuhr ohne KERS
+                if not (d / "data.acd.bak").exists(): shutil.copy2(cd.acd, d / "data.acd.bak")
+                cd.entries[:] = [x for x in cd.entries if x[0].lower() not in ("kers.ini", "kers_torque.lut")]
+                acd_write(cd.acd, cd.header, cd.entries, cd.key)
+        print(f"{k:14s} {('+%.2f s' % t['abstand']) if 'abstand' in t else 'fest   '}  {t['ps']:4d} PS  Modell {i['ps']:4.0f} -> {ziel_ps:4.0f} PS (x{f_lut:.4f}, {s_motor:+.2f} s)"
+              f"  Abtrieb {i['kg']:4.0f} -> {bezug * rel:4.0f} kg (x{f_cl:.4f}, {(rel - 1) * 100:+.1f} %)  CdA {i['cda']:.3f} ({s_cd:+.2f} s)" + ("  ohne KERS" if t.get("ohne_kers") else "")
+              + (f"  {masse(k)} kg" if masse(k) else "") + (f"  Rest {rest:.2f} s" if rest > 0.005 else "") + ("" if apply else "  [Trockenlauf]"))
 
 
 def ice_ps(cd):
@@ -65,6 +151,7 @@ def main():
     plan = json.load(open(a.plan, encoding="utf-8"))
     e, teams, quelle = plan["empfindlichkeit"], plan["teams"], plan.get("quelle")
     cars = Path(a.ac) / "content" / "cars"
+    if plan.get("absolut"): return absolut(plan, cars, a.apply)
     ordner = lambda key: cars / teams[key].get("ordner", f"{quelle}_{key}")
     best = min((t for t in teams.values() if "abstand" in t), key=lambda t: t["abstand"])
     gleich = plan.get("angleichen")

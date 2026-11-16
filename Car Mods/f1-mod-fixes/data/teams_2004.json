@@ -1,0 +1,87 @@
+{
+ "_hinweis": "Erzeugt von tools/plaene_bauen.py. abstand aus data/quali_abstaende.json (F1DB), ps und cd aus research/motoren_2001_2007.json (Schätzungen mit Quellen). Empfindlichkeiten stammen aus den Tests der V8-Jahrgänge bzw. der Hybrid-Autos und sind für diesen Satz ungeprüft.",
+ "jahr": 2004,
+ "absolut": true,
+ "cl_min": 0.65,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.12,
+  "s_pro_prozent_leistung": 0.095,
+  "s_pro_prozent_widerstand": 0.04,
+  "s_pro_kg": 0.024
+ },
+ "masse": 605,
+ "ps_anker": 873,
+ "abtrieb_bezug": 819,
+ "teams": {
+  "ferrari": {
+   "ordner": "F1_2004_Ferrari_F2004_Kun",
+   "abstand": 0.0,
+   "ps": 900,
+   "_motor": "Ferrari Tipo 053, V10 90 Grad, 3,0 l (mittel, 877-933 PS (Ferrari: 865 bhp; AMuS: 880 PS; rtl.de: 915 hp; f1technical: ca. 920 bhp))"
+  },
+  "bar": {
+   "ordner": "F1_2004_BAR_006",
+   "abstand": 0.56,
+   "ps": 910,
+   "_motor": "Honda RA004E, V10 90 Grad, 3,0 l (mittel, 880-938 PS (AMuS: 880 PS; rtl.de: 925 hp))"
+  },
+  "renault": {
+   "ordner": "F1_2004_Renault_R24",
+   "abstand": 0.85,
+   "ps": 845,
+   "_motor": "Renault RS24, V10 72 Grad (neu, Abkehr vom Weitwinkel), 3,0 l (mittel, AMuS: 820 PS (60 PS unter Ferrari); Forum: ca. 70 hp Rückstand auf dem Prüfstand; 820-850 PS)"
+  },
+  "williams": {
+   "ordner": "F1_2004_Williams_FW26",
+   "abstand": 0.58,
+   "ps": 915,
+   "_motor": "BMW P84, V10 90 Grad, 3,0 l, 19000/min (mittel, 900-918 PS (AMuS: 900 PS, stärkster Motor; rtl.de: 905 hp))",
+   "cd": 0.97,
+   "_cd": "Antonio Pizzonia fuhr im Williams-BMW FW26 in Monza 2004 mit 369,9 km/h den damaligen Rekord in der offiziellen Speed-Trap. Ein Teil davon ist der stärkste Motor, deshalb nur ein moderater Abschlag."
+  },
+  "williams_b": {
+   "ordner": "F1_2004_Williams_FW26_Vers_B",
+   "abstand": 0.58,
+   "ps": 915,
+   "_motor": "BMW P84, V10 90 Grad, 3,0 l, 19000/min (mittel, 900-918 PS (AMuS: 900 PS, stärkster Motor; rtl.de: 905 hp))",
+   "cd": 0.97,
+   "_cd": "Antonio Pizzonia fuhr im Williams-BMW FW26 in Monza 2004 mit 369,9 km/h den damaligen Rekord in der offiziellen Speed-Trap. Ein Teil davon ist der stärkste Motor, deshalb nur ein moderater Abschlag."
+  },
+  "mclaren": {
+   "ordner": "F1_2004_McLaren_MP4-19",
+   "abstand": 1.05,
+   "ps": 885,
+   "_motor": "Mercedes-Benz (Ilmor) FO110Q, V10 90 Grad, 3,0 l (niedrig, AMuS: 870 PS (für FO110P genannt); laut Autosport 25-45 hp hinter dem stärksten Motor; 870-895 PS)"
+  },
+  "sauber": {
+   "ordner": "F1_2004_Sauber_C23",
+   "abstand": 2.21,
+   "ps": 890,
+   "_motor": "Petronas 04A (Ferrari Tipo 053, aktueller Kundenmotor), V10 90 Grad (mittel, AMuS: 870 PS (10 PS unter Werks-Ferrari))"
+  },
+  "jaguar": {
+   "ordner": "F1_2004_Jaguar_R5",
+   "abstand": 1.65,
+   "ps": 865,
+   "_motor": "Cosworth CR-6, V10 90 Grad, 3,0 l (mittel, AMuS: 840 PS (40 PS unter Ferrari))"
+  },
+  "toyota": {
+   "ordner": "F1_2004_Toyota_TF104",
+   "abstand": 1.49,
+   "ps": 900,
+   "_motor": "Toyota RVX-04, V10 90 Grad, 3,0 l (mittel, AMuS: 880 PS (wie Ferrari und Honda), dreht laut deutscher Presse so hoch wie der BMW)"
+  },
+  "jordan": {
+   "ordner": "F1_2004_Jordan_EJ14",
+   "abstand": 3.3,
+   "ps": 865,
+   "_motor": "Ford RS2 (Cosworth), V10 90 Grad, 3,0 l (niedrig, AMuS: 840 PS)"
+  },
+  "minardi": {
+   "ordner": "F1_2004_Minardi_PS04B",
+   "abstand": 5.54,
+   "ps": 825,
+   "_motor": "Cosworth CR-3L (alter Kundenmotor, auf Langlebigkeit umgebaut), V10 72 Grad (niedrig, AMuS: 800 PS (Zuordnung zu Minardi im Thread nur erschlossen))"
+  }
+ }
+}

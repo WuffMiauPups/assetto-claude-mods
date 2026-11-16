@@ -1,0 +1,83 @@
+{
+ "_hinweis": "Erzeugt von tools/plaene_bauen.py. abstand aus data/quali_abstaende.json (F1DB), ps und cd aus research/motoren_1996_2000.json (Schätzungen mit Quellen). Empfindlichkeiten stammen aus den Tests der V8-Jahrgänge bzw. der Hybrid-Autos und sind für diesen Satz ungeprüft.",
+ "jahr": 1998,
+ "absolut": true,
+ "cl_min": 0.65,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.12,
+  "s_pro_prozent_leistung": 0.095,
+  "s_pro_prozent_widerstand": 0.04,
+  "s_pro_kg": 0.024
+ },
+ "masse": 600,
+ "teams": {
+  "mclaren": {
+   "ordner": "gp_1998_mp4_13",
+   "abstand": 0.0,
+   "ps": 795,
+   "_motor": "Mercedes FO110G 3.0 V10 (Ilmor, 72 Grad) (mittel, 780-800)",
+   "cd": 0.98,
+   "_cd": "MP4/13 konnte laut grandprix.com mehr Flügel fahren als die Konkurrenz und blieb im Topspeed trotzdem konkurrenzfähig: aerodynamisch effizient (mehr Abtrieb bei gleichem Widerstand). Sinnvoller als weniger Widerstand ist mehr Abtrieb; Faktor ist eine Schätzung."
+  },
+  "ferrari": {
+   "ordner": "gp_1998_f300",
+   "abstand": 0.46,
+   "ps": 795,
+   "_motor": "Ferrari Tipo 047 3.0 V10 (80 Grad) (mittel, 790-805)"
+  },
+  "williams": {
+   "ordner": "gp_1998_fw20",
+   "abstand": 1.08,
+   "ps": 765,
+   "_motor": "Mecachrome GC37-01 3.0 V10 (Renault RS9, Kundenmotor ohne Werksentwicklung) (mittel, 750-775)"
+  },
+  "jordan": {
+   "ordner": "gp_1998_j198",
+   "abstand": 1.33,
+   "ps": 735,
+   "_motor": "Mugen-Honda MF-301HC 3.0 V10 (niedrig, 690-760)"
+  },
+  "benetton": {
+   "ordner": "gp_1998_b198",
+   "abstand": 1.31,
+   "ps": 765,
+   "_motor": "Playlife GC37-01 3.0 V10 (Mecachrome/Renault RS9, identisch mit Williams) (mittel, 750-775)"
+  },
+  "sauber": {
+   "ordner": "gp_1998_c17",
+   "abstand": 1.96,
+   "ps": 745,
+   "_motor": "Petronas SPE-01D 3.0 V10 (Ferrari 046/2, Vorjahres-Spezifikation) (niedrig, 730-760)"
+  },
+  "arrows": {
+   "ordner": "gp_1998_a19",
+   "abstand": 3.09,
+   "ps": 700,
+   "_motor": "Arrows T2-F1 3.0 V10 (Hart 1030, 72 Grad) (mittel, 690-715)"
+  },
+  "stewart": {
+   "ordner": "gp_1998_sf2",
+   "abstand": 2.84,
+   "ps": 735,
+   "_motor": "Ford VJ Zetec-R 3.0 V10 (Cosworth, Werksmotor) (mittel, 720-745)"
+  },
+  "prost": {
+   "ordner": "gp_1998_ap01",
+   "abstand": 2.55,
+   "ps": 765,
+   "_motor": "Peugeot A16 3.0 V10 (Werksmotor) (mittel, 755-775)"
+  },
+  "tyrrell": {
+   "ordner": "gp_1998_026",
+   "abstand": 3.4,
+   "ps": 695,
+   "_motor": "Ford JD Zetec-R 3.0 V10 (Kundenmotor, Spezifikation 1996/97) (niedrig, 680-710)"
+  },
+  "minardi": {
+   "ordner": "gp_1998_m198",
+   "abstand": 4.11,
+   "ps": 695,
+   "_motor": "Ford JD Zetec-R 3.0 V10 (Kundenmotor, wie Tyrrell) (niedrig, 680-710)"
+  }
+ }
+}

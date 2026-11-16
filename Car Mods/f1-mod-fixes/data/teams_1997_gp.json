@@ -1,0 +1,83 @@
+{
+ "_hinweis": "Erzeugt von tools/plaene_bauen.py. abstand aus data/quali_abstaende.json (F1DB), ps und cd aus research/motoren_1996_2000.json (Schätzungen mit Quellen). Empfindlichkeiten stammen aus den Tests der V8-Jahrgänge bzw. der Hybrid-Autos und sind für diesen Satz ungeprüft.",
+ "jahr": 1997,
+ "absolut": true,
+ "cl_min": 0.65,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.12,
+  "s_pro_prozent_leistung": 0.095,
+  "s_pro_prozent_widerstand": 0.04,
+  "s_pro_kg": 0.024
+ },
+ "masse": 600,
+ "teams": {
+  "williams": {
+   "ordner": "gp_1997_fw19",
+   "abstand": 0.0,
+   "ps": 750,
+   "_motor": "Renault RS9 / RS9B 3.0 V10 (71 Grad, Werksmotor) (mittel, 725-760)"
+  },
+  "ferrari": {
+   "ordner": "gp_1997_f310b",
+   "abstand": 0.65,
+   "ps": 745,
+   "_motor": "Ferrari Tipo 046/2 3.0 V10 (mittel, 730-760)"
+  },
+  "benetton": {
+   "ordner": "gp_1997_b197",
+   "abstand": 0.88,
+   "ps": 750,
+   "_motor": "Renault RS9 / RS9B 3.0 V10 (identisch mit Williams) (mittel, 725-760)"
+  },
+  "mclaren": {
+   "ordner": "gp_1997_mp412",
+   "abstand": 0.53,
+   "ps": 755,
+   "_motor": "Mercedes FO110E / FO110F 3.0 V10 (Ilmor) (mittel, 740-760)"
+  },
+  "jordan": {
+   "ordner": "gp_1997_j197",
+   "abstand": 0.79,
+   "ps": 750,
+   "_motor": "Peugeot A14 3.0 V10 (Werksmotor) (mittel, 745-750)"
+  },
+  "prost": {
+   "ordner": "gp_1997_js45",
+   "abstand": 1.13,
+   "ps": 710,
+   "_motor": "Mugen-Honda MF-301HB 3.0 V10 (mittel, 700-720)"
+  },
+  "sauber": {
+   "ordner": "gp_1997_c16",
+   "abstand": 1.57,
+   "ps": 725,
+   "_motor": "Petronas SPE-01 3.0 V10 (Ferrari 046, Vorjahres-Spezifikation) (niedrig, 710-745)"
+  },
+  "arrows": {
+   "ordner": "gp_1997_a18",
+   "abstand": 1.58,
+   "ps": 700,
+   "_motor": "Yamaha OX11C/D 3.0 V10 (72 Grad) (mittel, 690-700)"
+  },
+  "stewart": {
+   "ordner": "gp_1997_sf01",
+   "abstand": 1.4,
+   "ps": 725,
+   "_motor": "Ford VJ Zetec-R 3.0 V10 (Cosworth, Werksmotor, unzuverlässig) (mittel, 710-740)"
+  },
+  "tyrrell": {
+   "ordner": "gp_1997_025",
+   "abstand": 3.0,
+   "ps": 655,
+   "_motor": "Ford-Cosworth ED4 / ED5 3.0 V8 (Kundenmotor) (mittel, 608-665)",
+   "cd": 1.04,
+   "_cd": "Tyrrell 025 versuchte den Leistungsmangel des V8 mit mehr Abtrieb auszugleichen (X-Wings neben dem Cockpit auf Abtriebsstrecken). Mehr Abtrieb und mehr Luftwiderstand als der Durchschnitt; gilt vor allem für Abtriebsstrecken. Faktor ist eine Schätzung."
+  },
+  "minardi": {
+   "ordner": "gp_1997_m197",
+   "abstand": 3.08,
+   "ps": 665,
+   "_motor": "Hart 830 3.0 V8 (Kundenmotor, Stand 1996) (niedrig, 640-680)"
+  }
+ }
+}

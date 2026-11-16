@@ -1,0 +1,84 @@
+{
+ "_hinweis": "Erzeugt von tools/plaene_bauen.py. abstand aus data/quali_abstaende.json (F1DB), ps und cd aus research/motoren_2011_2026.json (Schätzungen mit Quellen). Empfindlichkeiten stammen aus den Tests der V8-Jahrgänge bzw. der Hybrid-Autos und sind für diesen Satz ungeprüft.",
+ "jahr": 2013,
+ "absolut": true,
+ "cl_min": 0.65,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.12,
+  "s_pro_prozent_leistung": 0.095,
+  "s_pro_prozent_widerstand": 0.04,
+  "s_pro_kg": 0.024
+ },
+ "teams": {
+  "redbull": {
+   "ordner": "cim_2013_redbull",
+   "abstand": 0.06,
+   "ps": 740,
+   "_motor": "Renault RS27-2013 (niedrig, 725-760)",
+   "cd": 1.04,
+   "_cd": "RB9 bei den Barcelona-Tests laut Auto Motor und Sport das langsamste Auto auf der Geraden (307,7 km/h gegen 316,7 bei Ferrari, Sauber, Force India). Im Barcelona-Qualifying 306,2 km/h gegen 313,1 km/h des Lotus bei fast gleicher Rundenzeit. Viel Abtrieb, teils auch kurze Übersetzung."
+  },
+  "mercedes": {
+   "ordner": "cim_2013_mercedes",
+   "abstand": 0.0,
+   "ps": 755,
+   "_motor": "Mercedes FO 108F (mittel, 750-761)"
+  },
+  "ferrari": {
+   "ordner": "cim_2013_ferrari",
+   "abstand": 0.22,
+   "ps": 750,
+   "_motor": "Ferrari 056 (niedrig, 735-760)"
+  },
+  "lotus": {
+   "ordner": "cim_2013_lotus",
+   "abstand": 0.3,
+   "ps": 740,
+   "_motor": "Renault RS27-2013 (niedrig, 725-760)"
+  },
+  "mclaren": {
+   "ordner": "cim_2013_mclaren",
+   "abstand": 0.64,
+   "ps": 755,
+   "_motor": "Mercedes FO 108F (mittel, 750-761)"
+  },
+  "forceindia": {
+   "ordner": "cim_2013_forceindia",
+   "abstand": 0.75,
+   "ps": 755,
+   "_motor": "Mercedes FO 108F (mittel, 750-761)"
+  },
+  "sauber": {
+   "ordner": "cim_2013_sauber",
+   "abstand": 0.68,
+   "ps": 750,
+   "_motor": "Ferrari 056 (niedrig, 735-760)"
+  },
+  "tororosso": {
+   "ordner": "cim_2013_tororosso",
+   "abstand": 0.87,
+   "ps": 750,
+   "_motor": "Ferrari 056 (niedrig, 735-760)"
+  },
+  "williams": {
+   "ordner": "cim_2013_williams",
+   "abstand": 1.14,
+   "ps": 740,
+   "_motor": "Renault RS27-2013 (niedrig, 725-760)"
+  },
+  "marussia": {
+   "ordner": "cim_2013_marussia",
+   "abstand": 2.82,
+   "ps": 745,
+   "_motor": "Cosworth CA2013 (niedrig, 730-755)",
+   "cd": 0.97,
+   "_cd": "Bei denselben Tests schnellstes Auto auf der Geraden (rund 320,5 km/h, errechnet) trotz Cosworth: wenig Abtrieb und wenig Luftwiderstand. Nur eine Messung, daher vorsichtig."
+  },
+  "caterham": {
+   "ordner": "cim_2013_caterham",
+   "abstand": 2.58,
+   "ps": 740,
+   "_motor": "Renault RS27-2013 (niedrig, 725-760)"
+  }
+ }
+}

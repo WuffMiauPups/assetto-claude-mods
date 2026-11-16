@@ -1,0 +1,95 @@
+{
+ "_hinweis": "Erzeugt von tools/plaene_bauen.py. abstand aus data/quali_abstaende.json (F1DB), ps und cd aus research/motoren_1988_1994.json (Schätzungen mit Quellen). Empfindlichkeiten stammen aus den Tests der V8-Jahrgänge bzw. der Hybrid-Autos und sind für diesen Satz ungeprüft.",
+ "jahr": 1993,
+ "absolut": true,
+ "cl_min": 0.65,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.12,
+  "s_pro_prozent_leistung": 0.095,
+  "s_pro_prozent_widerstand": 0.04,
+  "s_pro_kg": 0.024
+ },
+ "masse": 580,
+ "teams": {
+  "williams": {
+   "ordner": "f1_1993_williams",
+   "abstand": 0.0,
+   "ps": 781,
+   "_motor": "Renault RS5 3,5 V10 (hoch, 760-780)",
+   "cd": 0.97,
+   "_cd": "FW15C laut Artikel mit 12 % besserem Verhältnis Abtrieb zu Luftwiderstand als der FW14B; aktives Fahrwerk konnte auf der Geraden per Knopf das Heck absenken und den Diffusor-Widerstand wegnehmen. Effizientestes Auto des Feldes, zusätzlich mehr Abtrieb ansetzen."
+  },
+  "mclaren": {
+   "ordner": "f1_1993_mclaren",
+   "abstand": 1.93,
+   "ps": 700,
+   "_motor": "Ford Cosworth HB 3,5 V8 (Kunde: Serie V zu Beginn, Serie VII ab Silverstone, Serie VIII ab Hockenheim) (mittel, 670-725 (Kundenmotor rund 680, etwa 20 bis 40 bhp unter Benetton; ab Saisonmitte gleichwertig))"
+  },
+  "benetton": {
+   "ordner": "f1_1993_benetton",
+   "abstand": 1.78,
+   "ps": 725,
+   "_motor": "Ford Cosworth HB 3,5 V8 (Werk: Serie VII, ab Sommer Serie VIII) (mittel, 700-730 (Serie VII 710, Serie VIII 725))"
+  },
+  "ferrari": {
+   "ordner": "f1_1993_ferrari",
+   "abstand": 2.54,
+   "ps": 755,
+   "_motor": "Ferrari Tipo 041 3,5 V12 (mittel, 740-745)"
+  },
+  "ligier": {
+   "ordner": "f1_1993_ligier",
+   "abstand": 3.23,
+   "ps": 770,
+   "_motor": "Renault RS5 3,5 V10 (Kunde) (mittel, 750-780 (keine eigene Zahl; gleicher Motortyp wie Williams, kleiner Kundenabschlag angenommen))"
+  },
+  "lotus": {
+   "ordner": "f1_1993_lotus",
+   "abstand": 3.8,
+   "ps": 690,
+   "_motor": "Ford Cosworth HB 3,5 V8 (Kunde, Serie V oder VI, Quellen uneins) (mittel, 670-700 (Serie V rund 670; Datenblatt Lotus 107 nennt 700))"
+  },
+  "sauber": {
+   "ordner": "f1_1993_sauber",
+   "abstand": 3.22,
+   "ps": 710,
+   "_motor": "Ilmor 2175A 3,5 V10 (mittel, 686-710 (696 PS laut Hersteller, andere Tabelle 710 hp))"
+  },
+  "footwork": {
+   "ordner": "f1_1993_footwork",
+   "abstand": 3.49,
+   "ps": 730,
+   "_motor": "Mugen-Honda MF-351HB 3,5 V10 (mittel, 700-720 (nur Datenblattwert 720 hp))"
+  },
+  "jordan": {
+   "ordner": "f1_1993_jordan",
+   "abstand": 3.76,
+   "ps": 710,
+   "_motor": "Hart 1035 3,5 V10 (mittel, 680-700)"
+  },
+  "larrousse": {
+   "ordner": "f1_1993_larrousse",
+   "abstand": 3.88,
+   "ps": 710,
+   "_motor": "Lamborghini LE3512 3,5 V12 (mittel, 700-750 (700 im Renneinsatz, etwa 80 unter Renault und 40 unter Ferrari; 750 nur die McLaren-Testversion, die Larrousse nie bekam))"
+  },
+  "lola": {
+   "ordner": "f1_1993_lola",
+   "abstand": 5.86,
+   "ps": 715,
+   "_motor": "Ferrari Tipo 038 3,5 V12 (Kundenmotor, Vorjahresstand 1992) (niedrig, 690-740 (keine Zahl gefunden; abgeleitet: Vorjahresmotor unter dem Werks-041 mit 745; laut Artikel konnte Lola das Potenzial nicht nutzen, wenig Drehmoment unten))"
+  },
+  "minardi": {
+   "ordner": "f1_1993_minardi",
+   "abstand": 4.47,
+   "ps": 659,
+   "_motor": "Ford Cosworth HB 3,5 V8 (Kunde, Serie-III-Blöcke, Entwicklungsstand 1990) (niedrig, 630-670 (keine Zahl für Serie III; Serie I 630, Serie IV über 650, Serie V 670))"
+  },
+  "tyrrell": {
+   "ordner": "f1_1993_tyrrell",
+   "abstand": 4.52,
+   "ps": 690,
+   "_motor": "Yamaha OX10A 3,5 V10 (Basis Judd GV) (niedrig, 660-750 (keine Zahl für OX10A; Yamaha-Familie bis 700 hp, Judd GV mit 750 angegeben, was für 1993 zu hoch wirkt; Auto ohne Punkte))"
+  }
+ }
+}

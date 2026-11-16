@@ -1,0 +1,517 @@
+{
+  "_hinweis": "Recherche-Stand 2026-11-16. PS = bhp x 1,014 (alle Werte umgerechnet, Quellen nennen bhp/hp). Alle Zahlen sind Schätzungen aus Sekundärquellen (überwiegend Wikipedia-Fahrzeug- und Motorartikel, Honda, Motor Sport Magazine); wichtig sind die Verhältnisse innerhalb einer Saison. 'spanne' steht in bhp wie in den Quellen. 'sicher' = hoch/mittel/niedrig; 'niedrig' heißt: keine direkte Zahl gefunden, aus Motortyp abgeleitet. Speed-Trap-Listen für 1993 und 1994 wurden nicht gefunden, die Konzept-Einträge dieser Jahre stützen sich deshalb nur auf Textaussagen.",
+  "1988": {
+    "regeln": "Letztes Turbojahr. Turbo 1,5 Liter: Ladedruck auf 2,5 bar begrenzt (FIA-Pop-off-Ventil, 1987 noch 4,0 bar), Sprit 150 Liter pro Renndistanz ohne Nachtanken (einzelne Quellen nennen 155 Liter), Mindestgewicht 540 kg. Sauger 3,5 Liter: keine Spritbegrenzung, Mindestgewicht 500 kg (jeweils ohne Fahrer; 500 kg laut Datenblatt March 881, 540 kg laut McLaren MP4/4, eine Suchquelle ordnet die 500 kg nur 1987 zu, also mittlere Sicherheit). Quali-Leistung realistisch: beste Turbos (Honda, Ferrari) rund 685 bis 720 bhp, im Rennen wegen Sprit 620 bis 650 bhp; Sauger 575 bis 620 bhp in Quali und Rennen gleich. Verhältnis Turbo zu Sauger in der Quali also etwa 1,12 bis 1,18, im Rennen etwa 1,05 bis 1,10. Die Turbos verloren gegenüber 1987 rund 300 bhp.",
+    "regeln_quellen": [
+      "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship",
+      "https://global.honda/en/POWEREDbyHONDA/1988_ra168e/",
+      "https://www.motorsportmagazine.com/articles/single-seaters/f1/when-f1-had-two-sets-of-engine-rules-and-why-that-wouldnt-work-today/"
+    ],
+    "teams": {
+      "mclaren": {
+        "motor": "Honda RA168E 1,5 V6 Turbo",
+        "ps": 695,
+        "sicher": "hoch",
+        "spanne": "640-700 (Rennen 640 zu Saisonbeginn, 685 laut Honda, über 700 in der Quali laut Motor Sport)",
+        "quellen": [
+          "https://global.honda/en/POWEREDbyHONDA/1988_ra168e/",
+          "https://www.motorsportmagazine.com/articles/single-seaters/f1/when-f1-had-two-sets-of-engine-rules-and-why-that-wouldnt-work-today/"
+        ]
+      },
+      "ferrari": {
+        "motor": "Ferrari Tipo 033E (033A) 1,5 V6 Turbo",
+        "ps": 700,
+        "sicher": "mittel",
+        "spanne": "650-720 (Quali etwa 720, Rennen 620; hoher Verbrauch, schlechteres Ansprechverhalten als Honda)",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Ferrari_F1/87",
+          "https://en.wikipedia.org/wiki/Formula_One_engines"
+        ]
+      },
+      "lotus": {
+        "motor": "Honda RA168E 1,5 V6 Turbo (gleicher Motor wie McLaren)",
+        "ps": 695,
+        "sicher": "mittel",
+        "spanne": "640-685 (Lotus-Artikel nennt 640-675; Motor baugleich, Rückstand lag am Chassis)",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Lotus_100T",
+          "https://global.honda/en/POWEREDbyHONDA/1988_ra168e/"
+        ]
+      },
+      "arrows": {
+        "motor": "Megatron M12/13 (BMW) 1,5 R4 Turbo",
+        "ps": 649,
+        "sicher": "mittel",
+        "spanne": "600-640 (640 bhp erst ab Monza; vorher öffnete das Pop-off-Ventil schon bei 2,3 bar, laut Team etwa 20 bhp je 0,1 bar, also rund 600)",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Arrows_A10"
+        ]
+      },
+      "zakspeed": {
+        "motor": "Zakspeed 1500/4 1,5 R4 Turbo",
+        "ps": 649,
+        "sicher": "mittel",
+        "spanne": "620-640 (640 bhp laut Artikel; Auto mit 560 kg rund 20 kg über Mindestgewicht, sehr unzuverlässig, oft nicht qualifiziert, die Zahl wirkt eher optimistisch)",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Zakspeed_881"
+        ]
+      },
+      "osella": {
+        "motor": "Osella 890T (Alfa Romeo) 1,5 V8 Turbo",
+        "ps": 620,
+        "sicher": "niedrig",
+        "spanne": "600-700 (Saisonartikel nennt 'around 700 bhp', das passt nicht zu Topspeeds auf dem Niveau der langsameren Sauger; Wert abgeleitet, Auto 560 kg)",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship",
+          "https://en.wikipedia.org/wiki/Osella_FA1L"
+        ]
+      },
+      "williams": {
+        "motor": "Judd CV 3,5 V8",
+        "ps": 598,
+        "sicher": "mittel",
+        "spanne": "570-610 (570 zu Saisonbeginn, etwa 590 am Ende; andere Quelle 600)",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Judd_(engine)",
+          "https://en.wikipedia.org/wiki/Formula_One_engines"
+        ]
+      },
+      "benetton": {
+        "motor": "Ford Cosworth DFR 3,5 V8 (exklusiv für Benetton)",
+        "ps": 613,
+        "sicher": "mittel",
+        "spanne": "585-620 (stärkster Sauger der Saison)",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Benetton_B188",
+          "https://en.wikipedia.org/wiki/Cosworth_DFV"
+        ]
+      },
+      "march": {
+        "motor": "Judd CV 3,5 V8",
+        "ps": 598,
+        "sicher": "mittel",
+        "spanne": "570-610",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Judd_(engine)"
+        ]
+      },
+      "ligier": {
+        "motor": "Judd CV 3,5 V8",
+        "ps": 598,
+        "sicher": "mittel",
+        "spanne": "570-610",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Judd_(engine)"
+        ]
+      },
+      "tyrrell": {
+        "motor": "Ford Cosworth DFZ 3,5 V8",
+        "ps": 593,
+        "sicher": "mittel",
+        "spanne": "575-590",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Cosworth_DFV"
+        ]
+      },
+      "rial": {
+        "motor": "Ford Cosworth DFZ 3,5 V8",
+        "ps": 593,
+        "sicher": "mittel",
+        "spanne": "575-590",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Cosworth_DFV"
+        ]
+      },
+      "minardi": {
+        "motor": "Ford Cosworth DFZ 3,5 V8",
+        "ps": 593,
+        "sicher": "mittel",
+        "spanne": "575-590",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Cosworth_DFV"
+        ]
+      },
+      "larrousse": {
+        "motor": "Ford Cosworth DFZ 3,5 V8 (Lola LC88)",
+        "ps": 593,
+        "sicher": "mittel",
+        "spanne": "575-590",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Cosworth_DFV"
+        ]
+      },
+      "ags": {
+        "motor": "Ford Cosworth DFZ 3,5 V8",
+        "ps": 593,
+        "sicher": "mittel",
+        "spanne": "575-590",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Cosworth_DFV"
+        ]
+      },
+      "coloni": {
+        "motor": "Ford Cosworth DFZ 3,5 V8",
+        "ps": 593,
+        "sicher": "mittel",
+        "spanne": "575-590",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Cosworth_DFV"
+        ]
+      },
+      "dallara": {
+        "motor": "Ford Cosworth DFZ 3,5 V8 (Dallara F188; nur beim ersten Rennen F3000-Auto 3087 mit 3,0-Liter-DFV)",
+        "ps": 593,
+        "sicher": "mittel",
+        "spanne": "575-590",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Cosworth_DFV",
+          "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
+        ]
+      },
+      "eurobrun": {
+        "motor": "Ford Cosworth DFZ 3,5 V8",
+        "ps": 593,
+        "sicher": "mittel",
+        "spanne": "575-590",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Cosworth_DFV"
+        ]
+      }
+    },
+    "konzept": [
+      {
+        "team": "march",
+        "cd": 0.96,
+        "grund": "March 881 (Newey) war durchgehend der schnellste Sauger in den Speed-Traps, obwohl der Judd schwächer war als der Ford DFR: 312 km/h in Hockenheim, gleichauf mit den Arrows-Turbos (McLaren 333, Ferrari 328). Spricht für sehr niedrigen Luftwiderstand.",
+        "quelle": "https://en.wikipedia.org/wiki/March_881"
+      },
+      {
+        "team": "osella",
+        "cd": 1.07,
+        "grund": "Aerodynamik stammt vom Alfa Romeo 183T von 1983; laut Artikel übermäßiger Luftwiderstand, der den Topspeed kostete, dazu wenig Abtrieb. Topspeed trotz Turbo nur auf dem Niveau der langsameren Sauger.",
+        "quelle": "https://en.wikipedia.org/wiki/Osella_FA1L"
+      },
+      {
+        "team": "arrows",
+        "cd": 0.97,
+        "grund": "In Monza mit funktionierendem Pop-off-Ventil 322 km/h (Cheever) gegen 309 km/h von McLaren und Ferrari, bei etwa 45 bhp weniger Leistung. Kann teils an flacherem Flügel liegen, daher vorsichtig.",
+        "quelle": "https://en.wikipedia.org/wiki/Arrows_A10"
+      },
+      {
+        "team": "lotus",
+        "cd": 1.0,
+        "grund": "Kein Luftwiderstands-Befund (in Imola 1,5 km/h schneller als McLaren in der Speed-Trap), aber belegt weniger Abtrieb: Auto mit falschen Windkanaldaten entwickelt, Chassis zu weich. Rückstand also über Abtrieb abbilden, nicht über Motor oder cd.",
+        "quelle": "https://en.wikipedia.org/wiki/Lotus_100T"
+      }
+    ]
+  },
+  "1993": {
+    "regeln": "3,5-Liter-Sauger, Mindestgewicht 505 kg, schmalere Autos und Reifen. Letztes Jahr mit aktivem Fahrwerk, Traktionskontrolle und ABS; fast alle Top-Teams fuhren aktiv (Williams, McLaren, Benetton, Ferrari, Lotus, Footwork ab Silverstone mit McLaren-System).",
+    "teams": {
+      "williams": {
+        "motor": "Renault RS5 3,5 V10",
+        "ps": 781,
+        "sicher": "hoch",
+        "spanne": "760-780",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Williams_FW15C"
+        ]
+      },
+      "mclaren": {
+        "motor": "Ford Cosworth HB 3,5 V8 (Kunde: Serie V zu Beginn, Serie VII ab Silverstone, Serie VIII ab Hockenheim)",
+        "ps": 700,
+        "sicher": "mittel",
+        "spanne": "670-725 (Kundenmotor rund 680, etwa 20 bis 40 bhp unter Benetton; ab Saisonmitte gleichwertig)",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/McLaren_MP4/8",
+          "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
+        ]
+      },
+      "benetton": {
+        "motor": "Ford Cosworth HB 3,5 V8 (Werk: Serie VII, ab Sommer Serie VIII)",
+        "ps": 725,
+        "sicher": "mittel",
+        "spanne": "700-730 (Serie VII 710, Serie VIII 725)",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Benetton_B193",
+          "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
+        ]
+      },
+      "ferrari": {
+        "motor": "Ferrari Tipo 041 3,5 V12",
+        "ps": 755,
+        "sicher": "mittel",
+        "spanne": "740-745",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Ferrari_F93A",
+          "https://en.wikipedia.org/wiki/Jordan_193"
+        ]
+      },
+      "ligier": {
+        "motor": "Renault RS5 3,5 V10 (Kunde)",
+        "ps": 770,
+        "sicher": "mittel",
+        "spanne": "750-780 (keine eigene Zahl; gleicher Motortyp wie Williams, kleiner Kundenabschlag angenommen)",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Ligier_JS39",
+          "https://en.wikipedia.org/wiki/Williams_FW15C"
+        ]
+      },
+      "lotus": {
+        "motor": "Ford Cosworth HB 3,5 V8 (Kunde, Serie V oder VI, Quellen uneins)",
+        "ps": 690,
+        "sicher": "mittel",
+        "spanne": "670-700 (Serie V rund 670; Datenblatt Lotus 107 nennt 700)",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine",
+          "https://en.wikipedia.org/wiki/Lotus_107"
+        ]
+      },
+      "sauber": {
+        "motor": "Ilmor 2175A 3,5 V10",
+        "ps": 710,
+        "sicher": "mittel",
+        "spanne": "686-710 (696 PS laut Hersteller, andere Tabelle 710 hp)",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine",
+          "https://en.wikipedia.org/wiki/Pacific_PR01"
+        ]
+      },
+      "footwork": {
+        "motor": "Mugen-Honda MF-351HB 3,5 V10",
+        "ps": 730,
+        "sicher": "mittel",
+        "spanne": "700-720 (nur Datenblattwert 720 hp)",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Footwork_FA14"
+        ]
+      },
+      "jordan": {
+        "motor": "Hart 1035 3,5 V10",
+        "ps": 710,
+        "sicher": "mittel",
+        "spanne": "680-700",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Jordan_193"
+        ]
+      },
+      "larrousse": {
+        "motor": "Lamborghini LE3512 3,5 V12",
+        "ps": 710,
+        "sicher": "mittel",
+        "spanne": "700-750 (700 im Renneinsatz, etwa 80 unter Renault und 40 unter Ferrari; 750 nur die McLaren-Testversion, die Larrousse nie bekam)",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Larrousse_LH93"
+        ]
+      },
+      "lola": {
+        "motor": "Ferrari Tipo 038 3,5 V12 (Kundenmotor, Vorjahresstand 1992)",
+        "ps": 715,
+        "sicher": "niedrig",
+        "spanne": "690-740 (keine Zahl gefunden; abgeleitet: Vorjahresmotor unter dem Werks-041 mit 745; laut Artikel konnte Lola das Potenzial nicht nutzen, wenig Drehmoment unten)",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Lola_T93/30",
+          "https://en.wikipedia.org/wiki/Ferrari_F93A"
+        ]
+      },
+      "minardi": {
+        "motor": "Ford Cosworth HB 3,5 V8 (Kunde, Serie-III-Blöcke, Entwicklungsstand 1990)",
+        "ps": 659,
+        "sicher": "niedrig",
+        "spanne": "630-670 (keine Zahl für Serie III; Serie I 630, Serie IV über 650, Serie V 670)",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
+        ]
+      },
+      "tyrrell": {
+        "motor": "Yamaha OX10A 3,5 V10 (Basis Judd GV)",
+        "ps": 690,
+        "sicher": "niedrig",
+        "spanne": "660-750 (keine Zahl für OX10A; Yamaha-Familie bis 700 hp, Judd GV mit 750 angegeben, was für 1993 zu hoch wirkt; Auto ohne Punkte)",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Yamaha_F1_engine",
+          "https://en.wikipedia.org/wiki/Judd_(engine)"
+        ]
+      }
+    },
+    "konzept": [
+      {
+        "team": "williams",
+        "cd": 0.97,
+        "grund": "FW15C laut Artikel mit 12 % besserem Verhältnis Abtrieb zu Luftwiderstand als der FW14B; aktives Fahrwerk konnte auf der Geraden per Knopf das Heck absenken und den Diffusor-Widerstand wegnehmen. Effizientestes Auto des Feldes, zusätzlich mehr Abtrieb ansetzen.",
+        "quelle": "https://en.wikipedia.org/wiki/Williams_FW15C"
+      },
+      {
+        "team": "lola",
+        "cd": 1.04,
+        "grund": "Aerodynamik laut Artikel schlecht, Auto in Kyalami 'praktisch unfahrbar', meist letzte Startreihe trotz Ferrari-V12. Belegt ist vor allem fehlender Abtrieb; der Luftwiderstands-Aufschlag ist eine vorsichtige Annahme für ein ineffizientes Auto.",
+        "quelle": "https://en.wikipedia.org/wiki/Lola_T93/30"
+      },
+      {
+        "team": "larrousse",
+        "cd": 1.02,
+        "grund": "Schwach belegt: vergrößerte Seitenkästen für die Kühlung des V12 und größerer Frontflügel. Keine Topspeed-Daten gefunden, Faktor nur als kleine Tendenz.",
+        "quelle": "https://en.wikipedia.org/wiki/Larrousse_LH93"
+      }
+    ]
+  },
+  "1994": {
+    "regeln": "3,5-Liter-Sauger, letztes Jahr vor 3,0 Litern. Aktives Fahrwerk, Traktionskontrolle und ABS verboten, Tankstopps wieder erlaubt. Nach Imola Eingriffe: ab Spanien kleinere Frontflügel-Endplatten und Diffusoren, ab Kanada Löcher in der Airbox (weniger Leistung) und Standardsprit, ab Deutschland 10-mm-Holzplanke unter dem Auto. Die Leistungswerte unten gelten ohne den Airbox-Abzug.",
+    "teams": {
+      "benetton": {
+        "motor": "Ford Zetec-R (Cosworth EC) 3,5 V8",
+        "ps": 750,
+        "sicher": "hoch",
+        "spanne": "730-750",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Benetton_B194",
+          "https://en.wikipedia.org/wiki/Formula_One_engines"
+        ]
+      },
+      "williams": {
+        "motor": "Renault RS6 3,5 V10",
+        "ps": 821,
+        "sicher": "mittel",
+        "spanne": "790-830",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Williams_FW16"
+        ]
+      },
+      "ferrari": {
+        "motor": "Ferrari Tipo 041 (65 Grad, Saisonbeginn) und Tipo 043 (75 Grad, Quali ab Imola, Rennen ab Hockenheim) 3,5 V12",
+        "ps": 820,
+        "sicher": "mittel",
+        "spanne": "750-850 (041: 750 bei 15.300/min; 043: 830 bis 850 bei 15.800/min). Für zwei Saisonstufen: früh etwa 760 PS, spät etwa 850 PS",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Ferrari_412_T1",
+          "https://en.wikipedia.org/wiki/Formula_One_engines"
+        ]
+      },
+      "mclaren": {
+        "motor": "Peugeot A4 (Saisonbeginn) und A6 3,5 V10",
+        "ps": 740,
+        "sicher": "mittel",
+        "spanne": "700-760 (A4 700, A6 760; sehr unzuverlässig)",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/McLaren_MP4/9"
+        ]
+      },
+      "jordan": {
+        "motor": "Hart 1035 3,5 V10",
+        "ps": 710,
+        "sicher": "mittel",
+        "spanne": "690-710 (nur Datenblattwert 700 hp bei 13.000/min)",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Jordan_194"
+        ]
+      },
+      "tyrrell": {
+        "motor": "Yamaha OX10B 3,5 V10 (Basis Judd GV)",
+        "ps": 710,
+        "sicher": "niedrig",
+        "spanne": "680-750 (keine Zahl gefunden; OX10B laut Quelle deutlich besser als OX10A, Yamaha-Familie bis 700 hp, Judd GV 750)",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Yamaha_F1_engine",
+          "https://en.wikipedia.org/wiki/Judd_(engine)"
+        ]
+      },
+      "ligier": {
+        "motor": "Renault RS6 3,5 V10 (Kunde)",
+        "ps": 800,
+        "sicher": "mittel",
+        "spanne": "770-830 (keine eigene Zahl; gleicher Motortyp wie Williams, Kundenabschlag angenommen)",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Ligier_JS39",
+          "https://en.wikipedia.org/wiki/Williams_FW16"
+        ]
+      },
+      "sauber": {
+        "motor": "Mercedes-Benz (Ilmor) 2175B 3,5 V10",
+        "ps": 748,
+        "sicher": "mittel",
+        "spanne": "720-755",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Sauber_C13"
+        ]
+      },
+      "footwork": {
+        "motor": "Ford Cosworth HB 3,5 V8 (Kunde, Serie VII, ab Sommer Serie VIII)",
+        "ps": 720,
+        "sicher": "mittel",
+        "spanne": "700-725 (Datenblatt 700; Serie VII 710, Serie VIII 725)",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Footwork_FA15",
+          "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
+        ]
+      },
+      "minardi": {
+        "motor": "Ford Cosworth HB 3,5 V8 (Kunde, Serie VII, ab Hockenheim Serie VIII)",
+        "ps": 720,
+        "sicher": "mittel",
+        "spanne": "700-725",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
+        ]
+      },
+      "larrousse": {
+        "motor": "Ford Cosworth HB 3,5 V8 (Kunde, Serie VII, ab Hockenheim Serie VIII)",
+        "ps": 720,
+        "sicher": "mittel",
+        "spanne": "700-725",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine",
+          "https://en.wikipedia.org/wiki/Larrousse_LH94"
+        ]
+      },
+      "lotus": {
+        "motor": "Mugen-Honda MF-351HC, ab Monza MF-351HD 3,5 V10",
+        "ps": 735,
+        "sicher": "mittel",
+        "spanne": "715-725 (725 hp bei 13.500/min ist der Datenblattwert, vermutlich für den späten HD; der HC war schwächer und schwerer)",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Lotus_109",
+          "https://en.wikipedia.org/wiki/Lotus_107"
+        ]
+      },
+      "simtek": {
+        "motor": "Ford Cosworth HB 3,5 V8 (Kunde, Serie VI laut Meldeliste, nach anderen Quellen Serie IV)",
+        "ps": 679,
+        "sicher": "niedrig",
+        "spanne": "650-700 (Datenblatt nennt 700 hp, Text aber 'underpowered'; Serie IV über 650, Serie V 670; abgeleitet)",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Simtek_S941",
+          "https://en.wikipedia.org/wiki/Ford-Cosworth_HB_engine"
+        ]
+      },
+      "pacific": {
+        "motor": "Ilmor 2175A 3,5 V10 (Stand 1993, nicht weiterentwickelt)",
+        "ps": 700,
+        "sicher": "mittel",
+        "spanne": "686-696 (696 laut Datenblatt, je nach Quelle hp oder PS)",
+        "quellen": [
+          "https://en.wikipedia.org/wiki/Pacific_PR01"
+        ]
+      }
+    },
+    "konzept": [
+      {
+        "team": "pacific",
+        "cd": 1.04,
+        "grund": "PR01 ohne Windkanaltests, Aerodynamik nach 'best guess' auf Basis eines Entwurfs von 1991/92, keine Weiterentwicklung. Belegt ist das ineffiziente Gesamtpaket; Faktor ist eine vorsichtige Annahme, dazu deutlich weniger Abtrieb.",
+        "quelle": "https://en.wikipedia.org/wiki/Pacific_PR01"
+      },
+      {
+        "team": "benetton",
+        "cd": 0.97,
+        "grund": "Rennbericht Hockenheim: Beobachter staunten, dass der Benetton mit dem V8 beim Beschleunigen und auf den Geraden an Bergers Ferrari-V12 dranblieb, trotz rund 80 bis 100 bhp weniger. Spricht für wenig Luftwiderstand (und geringes Gewicht); Einzelbeobachtung, daher vorsichtig.",
+        "quelle": "https://www.motorsportmagazine.com/archive/article/september-1994/10/seeing-red-2/"
+      },
+      {
+        "team": "williams",
+        "cd": 1.0,
+        "grund": "Kein Luftwiderstands-Befund, aber belegt: FW16 anfangs sehr empfindlich auf Bodenfreiheit, Strömungsabriss am Diffusor (zu lange Seitenkästen), behoben mit dem FW16B ab Hockenheim. Für Saisonstufen: früh etwas weniger nutzbarer Abtrieb.",
+        "quelle": "https://en.wikipedia.org/wiki/Williams_FW16"
+      }
+    ]
+  }
+}

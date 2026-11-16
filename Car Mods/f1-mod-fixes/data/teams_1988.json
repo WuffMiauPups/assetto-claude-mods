@@ -1,0 +1,148 @@
+{
+ "_hinweis": "Erzeugt von tools/plaene_bauen.py. abstand aus data/quali_abstaende.json (F1DB), ps und cd aus research/motoren_1988_1994.json (Schätzungen mit Quellen). Empfindlichkeiten stammen aus den Tests der V8-Jahrgänge bzw. der Hybrid-Autos und sind für diesen Satz ungeprüft.",
+ "jahr": 1988,
+ "absolut": true,
+ "cl_min": 0.65,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.12,
+  "s_pro_prozent_leistung": 0.095,
+  "s_pro_prozent_widerstand": 0.04,
+  "s_pro_kg": 0.024
+ },
+ "teams": {
+  "mclaren": {
+   "ordner": "f1_1988_mclaren",
+   "abstand": 0.0,
+   "ps": 695,
+   "_motor": "Honda RA168E 1,5 V6 Turbo (hoch, 640-700 (Rennen 640 zu Saisonbeginn, 685 laut Honda, über 700 in der Quali laut Motor Sport))",
+   "masse": 615
+  },
+  "ferrari": {
+   "ordner": "f1_1988_ferrari",
+   "abstand": 1.16,
+   "ps": 700,
+   "_motor": "Ferrari Tipo 033E (033A) 1,5 V6 Turbo (mittel, 650-720 (Quali etwa 720, Rennen 620; hoher Verbrauch, schlechteres Ansprechverhalten als Honda))",
+   "masse": 615
+  },
+  "lotus": {
+   "ordner": "f1_1988_lotus",
+   "abstand": 2.33,
+   "ps": 695,
+   "_motor": "Honda RA168E 1,5 V6 Turbo (gleicher Motor wie McLaren) (mittel, 640-685 (Lotus-Artikel nennt 640-675; Motor baugleich, Rückstand lag am Chassis))",
+   "cd": 1.0,
+   "_cd": "Kein Luftwiderstands-Befund (in Imola 1,5 km/h schneller als McLaren in der Speed-Trap), aber belegt weniger Abtrieb: Auto mit falschen Windkanaldaten entwickelt, Chassis zu weich. Rückstand also über Abtrieb abbilden, nicht über Motor oder cd.",
+   "masse": 615
+  },
+  "arrows": {
+   "ordner": "f1_1988_arrows",
+   "abstand": 3.18,
+   "ps": 649,
+   "_motor": "Megatron M12/13 (BMW) 1,5 R4 Turbo (mittel, 600-640 (640 bhp erst ab Monza; vorher öffnete das Pop-off-Ventil schon bei 2,3 bar, laut Team etwa 20 bhp je 0,1 bar, also rund 600))",
+   "cd": 0.97,
+   "_cd": "In Monza mit funktionierendem Pop-off-Ventil 322 km/h (Cheever) gegen 309 km/h von McLaren und Ferrari, bei etwa 45 bhp weniger Leistung. Kann teils an flacherem Flügel liegen, daher vorsichtig.",
+   "masse": 615
+  },
+  "zakspeed": {
+   "ordner": "f1_1988_zakspeed",
+   "abstand": 5.66,
+   "ps": 649,
+   "_motor": "Zakspeed 1500/4 1,5 R4 Turbo (mittel, 620-640 (640 bhp laut Artikel; Auto mit 560 kg rund 20 kg über Mindestgewicht, sehr unzuverlässig, oft nicht qualifiziert, die Zahl wirkt eher optimistisch))",
+   "masse": 615
+  },
+  "osella": {
+   "ordner": "f1_1988_osella",
+   "abstand": 6.15,
+   "ps": 620,
+   "_motor": "Osella 890T (Alfa Romeo) 1,5 V8 Turbo (niedrig, 600-700 (Saisonartikel nennt 'around 700 bhp', das passt nicht zu Topspeeds auf dem Niveau der langsameren Sauger; Wert abgeleitet, Auto 560 kg))",
+   "cd": 1.07,
+   "_cd": "Aerodynamik stammt vom Alfa Romeo 183T von 1983; laut Artikel übermäßiger Luftwiderstand, der den Topspeed kostete, dazu wenig Abtrieb. Topspeed trotz Turbo nur auf dem Niveau der langsameren Sauger.",
+   "masse": 615
+  },
+  "williams": {
+   "ordner": "f1_1988_williams",
+   "abstand": 2.92,
+   "ps": 598,
+   "_motor": "Judd CV 3,5 V8 (mittel, 570-610 (570 zu Saisonbeginn, etwa 590 am Ende; andere Quelle 600))",
+   "masse": 575
+  },
+  "benetton": {
+   "ordner": "f1_1988_benetton",
+   "abstand": 2.59,
+   "ps": 613,
+   "_motor": "Ford Cosworth DFR 3,5 V8 (exklusiv für Benetton) (mittel, 585-620 (stärkster Sauger der Saison))",
+   "masse": 575
+  },
+  "march": {
+   "ordner": "f1_1988_march",
+   "abstand": 3.3,
+   "ps": 598,
+   "_motor": "Judd CV 3,5 V8 (mittel, 570-610)",
+   "cd": 0.96,
+   "_cd": "March 881 (Newey) war durchgehend der schnellste Sauger in den Speed-Traps, obwohl der Judd schwächer war als der Ford DFR: 312 km/h in Hockenheim, gleichauf mit den Arrows-Turbos (McLaren 333, Ferrari 328). Spricht für sehr niedrigen Luftwiderstand.",
+   "masse": 575
+  },
+  "tyrrell": {
+   "ordner": "f1_1988_tyrrell",
+   "abstand": 5.02,
+   "ps": 593,
+   "_motor": "Ford Cosworth DFZ 3,5 V8 (mittel, 575-590)",
+   "masse": 575
+  },
+  "rial": {
+   "ordner": "f1_1988_rial",
+   "abstand": 4.02,
+   "ps": 593,
+   "_motor": "Ford Cosworth DFZ 3,5 V8 (mittel, 575-590)",
+   "masse": 575
+  },
+  "minardi": {
+   "ordner": "f1_1988_minardi",
+   "abstand": 4.82,
+   "ps": 593,
+   "_motor": "Ford Cosworth DFZ 3,5 V8 (mittel, 575-590)",
+   "masse": 575
+  },
+  "ligier": {
+   "ordner": "f1_1988_ligier",
+   "abstand": 5.19,
+   "ps": 598,
+   "_motor": "Judd CV 3,5 V8 (mittel, 570-610)",
+   "masse": 575
+  },
+  "larrousse": {
+   "ordner": "f1_1988_larrousse",
+   "abstand": 4.65,
+   "ps": 593,
+   "_motor": "Ford Cosworth DFZ 3,5 V8 (Lola LC88) (mittel, 575-590)",
+   "masse": 575
+  },
+  "ags": {
+   "ordner": "f1_1988_ags",
+   "abstand": 4.66,
+   "ps": 593,
+   "_motor": "Ford Cosworth DFZ 3,5 V8 (mittel, 575-590)",
+   "masse": 575
+  },
+  "coloni": {
+   "ordner": "f1_1988_coloni",
+   "abstand": 6.08,
+   "ps": 593,
+   "_motor": "Ford Cosworth DFZ 3,5 V8 (mittel, 575-590)",
+   "masse": 575
+  },
+  "dallara": {
+   "ordner": "f1_1988_dallara",
+   "abstand": 4.54,
+   "ps": 593,
+   "_motor": "Ford Cosworth DFZ 3,5 V8 (Dallara F188; nur beim ersten Rennen F3000-Auto 3087 mit 3,0-Liter-DFV) (mittel, 575-590)",
+   "masse": 575
+  },
+  "eurobrun": {
+   "ordner": "f1_1988_eurobrun",
+   "abstand": 5.97,
+   "ps": 593,
+   "_motor": "Ford Cosworth DFZ 3,5 V8 (mittel, 575-590)",
+   "masse": 575
+  }
+ }
+}

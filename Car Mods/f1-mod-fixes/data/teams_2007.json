@@ -1,0 +1,84 @@
+{
+ "_hinweis": "Erzeugt von tools/plaene_bauen.py. abstand aus data/quali_abstaende.json (F1DB), ps und cd aus research/motoren_2001_2007.json (Schätzungen mit Quellen). Empfindlichkeiten stammen aus den Tests der V8-Jahrgänge bzw. der Hybrid-Autos und sind für diesen Satz ungeprüft.",
+ "jahr": 2007,
+ "absolut": true,
+ "cl_min": 0.65,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.12,
+  "s_pro_prozent_leistung": 0.095,
+  "s_pro_prozent_widerstand": 0.04,
+  "s_pro_kg": 0.024
+ },
+ "teams": {
+  "mclaren": {
+   "ordner": "cim_2007_mclaren",
+   "abstand": 0.0,
+   "ps": 770,
+   "_motor": "Mercedes-Benz FO108T, V8 90 Grad, 2,4 l (niedrig, 750-791 PS (Forum: 740-750 hp; Gerücht: ca. 780 bhp))"
+  },
+  "ferrari": {
+   "ordner": "cim_2007_ferrari",
+   "abstand": 0.09,
+   "ps": 770,
+   "_motor": "Ferrari Tipo 056, V8 90 Grad, 2,4 l (niedrig, 760-791 PS (Forum: 750-760 hp; Gerücht: ca. 780 bhp))",
+   "cd": 0.98,
+   "_cd": "Mark Hughes (Autosport): Der F2007 hatte die bessere Hochgeschwindigkeits-Aerodynamik, also mehr Abtrieb bei gleichem Luftwiderstand (langer Radstand); stark auf schnellen Strecken, schwächer auf langsamen und welligen, wo der McLaren MP4-22 besser war. Die genaue Hughes-Kolumne wurde nicht einzeln geöffnet, Aussage aus dem Suchtreffer."
+  },
+  "bmw_sauber": {
+   "ordner": "cim_2007_bmw_sauber",
+   "abstand": 0.6,
+   "ps": 768,
+   "_motor": "BMW P86/7, V8 90 Grad, 2,4 l (niedrig, 760-771 PS (Forum: 760 hp, dort stärkster Motor))"
+  },
+  "renault": {
+   "ordner": "cim_2007_renault",
+   "abstand": 0.89,
+   "ps": 745,
+   "_motor": "Renault RS27, V8 90 Grad, 2,4 l (niedrig, 730-760 PS (Forum: 740-750 hp; Gerücht: 40-50 bhp hinter Ferrari und Mercedes))"
+  },
+  "williams": {
+   "ordner": "cim_2007_williams",
+   "abstand": 1.05,
+   "ps": 750,
+   "_motor": "Toyota RVX-07 (Kundenmotor), V8 90 Grad, 2,4 l (niedrig, abgeleitet: gleicher Motor wie Werks-Toyota (ca. 740 bhp))"
+  },
+  "redbull": {
+   "ordner": "cim_2007_redbull",
+   "abstand": 1.08,
+   "ps": 745,
+   "_motor": "Renault RS27 (Kundenmotor), V8 90 Grad, 2,4 l (niedrig, abgeleitet: gleicher Motor wie Werks-Renault)"
+  },
+  "toyota": {
+   "ordner": "cim_2007_toyota",
+   "abstand": 1.08,
+   "ps": 750,
+   "_motor": "Toyota RVX-07, V8 90 Grad, 2,4 l (mittel, Toyota selbst: ca. 740 bhp (umgerechnet 750 PS); Forum: 740 hp)"
+  },
+  "tororosso": {
+   "ordner": "cim_2007_tororosso",
+   "abstand": 1.65,
+   "ps": 765,
+   "_motor": "Ferrari Tipo 056 (Kundenmotor, homologierte Spezifikation 2006), V8 90 Grad (niedrig, abgeleitet: Kunden-Ferrari, gleich oder knapp unter Werksmotor; 755-770 PS)"
+  },
+  "honda": {
+   "ordner": "cim_2007_honda_V2",
+   "abstand": 1.28,
+   "ps": 740,
+   "_motor": "Honda RA807E, V8 90 Grad, 2,4 l (niedrig, 730-745 PS (Forum: 730 hp; Honda nennt nur 'über 700 PS'; Gerücht: 40-50 bhp hinter der Spitze))",
+   "cd": 1.05,
+   "_cd": "RA107: laut Honda aerodynamische Probleme; Button nennt instabiles Heck und grundsätzlich zu wenig Abtrieb, Autosport-Analyse: Konzept auf viel Abtrieb ausgelegt, aber nicht effizient. Zusätzlich weniger Abtrieb als der Durchschnitt ansetzen."
+  },
+  "superaguri": {
+   "ordner": "cim_2007_superaguri",
+   "abstand": 1.57,
+   "ps": 740,
+   "_motor": "Honda RA807E (Kundenmotor), V8 90 Grad, 2,4 l (niedrig, abgeleitet: gleicher Motor wie Werks-Honda)"
+  },
+  "spyker": {
+   "ordner": "cim_2007_spyker",
+   "abstand": 3.16,
+   "ps": 765,
+   "_motor": "Ferrari Tipo 056 (Kundenmotor, homologierte Spezifikation 2006), V8 90 Grad (niedrig, abgeleitet: Kunden-Ferrari wie Toro Rosso; 755-770 PS)"
+  }
+ }
+}

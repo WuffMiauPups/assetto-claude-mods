@@ -1,0 +1,155 @@
+{
+  "2001": {
+    "hinweis": "Stand der Recherche 2026-11-16. Alle PS-Werte sind Schätzungen aus zeitgenössischen Presse- und Forenangaben, keine Herstellerdaten. bhp wurde mit 1,014 in PS umgerechnet. Die Niveaus verschiedener Jahre stammen aus verschiedenen Quellen und sind untereinander nur grob vergleichbar; belastbar sind vor allem die Verhältnisse innerhalb einer Saison. Für 2001 gibt es zwei widersprüchliche Forenlisten (jeweils 'von einem Freund'), dazu eine Aussage von Paul Rosche (BMW 850 bhp bei ca. 17200/min) und eine Angabe für Honda im Quali-Trimm (830 bhp).",
+    "regeln": "Mindestgewicht 600 kg mit Fahrer (aus dem Gedächtnis, in dieser Recherche nicht per Reglement-Dokument belegt). Erstes Jahr des Reifenkriegs Bridgestone gegen Michelin. Qualifying: kein klarer Vorteil. Laut einem Saisonrückblick war der Michelin auf eine Runde stark, hatte im Rennen aber Hinterreifenverschleiß (vor allem Williams-BMW); Bridgestone/Ferrari holte trotzdem die meisten Poles. Vorschlag: im Qualifying gleich behandeln.",
+    "reifen": {
+      "michelin": ["williams", "benetton", "jaguar", "prost", "minardi"],
+      "bridgestone": ["ferrari", "mclaren", "sauber", "jordan", "bar", "arrows"]
+    },
+    "teams": {
+      "ferrari": {"motor": "Ferrari Tipo 050, V10 90 Grad, 3,0 l", "ps": 840, "sicher": "mittel", "spanne": "826-852 PS (815-840 bhp, umgerechnet)", "quellen": ["https://forums.autosport.com/topic/25897-f1-engine-powers-2001", "https://www.supercars.net/blog/2001-ferrari-f2001/"]},
+      "mclaren": {"motor": "Mercedes-Benz (Ilmor) FO110K, V10 72 Grad, 3,0 l", "ps": 835, "sicher": "niedrig", "spanne": "816-862 PS (805-850 bhp, umgerechnet; Quellen widersprechen sich stark)", "quellen": ["https://forums.autosport.com/topic/25897-f1-engine-powers-2001"]},
+      "williams": {"motor": "BMW P80, V10 90 Grad, 3,0 l", "ps": 875, "sicher": "mittel", "spanne": "862-892 PS (850-880 bhp, umgerechnet; Rosche: 850 bhp)", "quellen": ["https://forums.autosport.com/topic/25897-f1-engine-powers-2001", "https://www.grandprix.com/features/david-tremayne/news-feature-the-rise-and-rise-of-bmw-williams.html"]},
+      "sauber": {"motor": "Petronas 01A (Ferrari Tipo 049 des Vorjahres), V10 90 Grad", "ps": 805, "sicher": "niedrig", "spanne": "abgeleitet: Vorjahres-Ferrari, ca. 30-40 PS unter Werks-Ferrari", "quellen": ["https://formula1-dictionary.net/engine_supplier_history.html"]},
+      "jordan": {"motor": "Honda RA001E, V10 80 Grad, 3,0 l (Werksmotor wie BAR)", "ps": 825, "sicher": "mittel", "spanne": "811-842 PS (800-830 bhp, umgerechnet; 830 bhp gilt für Quali-Trimm)", "quellen": ["https://forums.autosport.com/topic/25897-f1-engine-powers-2001", "https://global.honda/en/POWEREDbyHONDA/2001_ra001e/"]},
+      "bar": {"motor": "Honda RA001E, V10 80 Grad, 3,0 l", "ps": 825, "sicher": "mittel", "spanne": "811-842 PS (800-830 bhp, umgerechnet)", "quellen": ["https://forums.autosport.com/topic/25897-f1-engine-powers-2001", "https://global.honda/en/POWEREDbyHONDA/2001_ra001e/"]},
+      "benetton": {"motor": "Renault RS21, V10 111 Grad (Weitwinkel), 3,0 l", "ps": 790, "sicher": "niedrig", "spanne": "nur eine Angabe: 780 bhp (umgerechnet 791 PS)", "quellen": ["https://forums.autosport.com/topic/25897-f1-engine-powers-2001"]},
+      "jaguar": {"motor": "Cosworth CR-3, V10 72 Grad, 3,0 l", "ps": 835, "sicher": "niedrig", "spanne": "826-842 PS (815-830 bhp, umgerechnet)", "quellen": ["https://forums.autosport.com/topic/25897-f1-engine-powers-2001"]},
+      "prost": {"motor": "Acer 01A (Ferrari Tipo 049 des Vorjahres), V10 90 Grad", "ps": 805, "sicher": "niedrig", "spanne": "abgeleitet: gleicher Kundenmotor wie Sauber", "quellen": ["https://formula1-dictionary.net/engine_supplier_history.html"]},
+      "arrows": {"motor": "Asiatech 001 (ehemals Peugeot A20), V10 72 Grad", "ps": 785, "sicher": "niedrig", "spanne": "keine Zahl für 2001 gefunden; abgeleitet aus Asiatech 2002 (770 bhp) und Motorherkunft, 770-800 PS", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=324", "https://formula1-dictionary.net/engine_supplier_history.html"]},
+      "minardi": {"motor": "European (Ford Zetec-R V10 von 1998, von Cosworth betreut), V10 72 Grad", "ps": 730, "sicher": "niedrig", "spanne": "keine Zahl gefunden; abgeleitet aus drei Jahre altem Kundenmotor, 710-750 PS", "quellen": ["https://formula1-dictionary.net/engine_supplier_history.html"]}
+    },
+    "konzept": [
+      {"team": "williams", "cd": 0.98, "grund": "BMW-Williams hatte 2001 laut BMW durchgehend die höchsten Speed-Trap-Werte, unabhängig vom Streckentyp. Der größte Teil davon ist Motorleistung (schon im PS-Wert enthalten), deshalb nur ein kleiner Abschlag beim Luftwiderstand.", "quelle": "https://www.grandprix.com/features/david-tremayne/exclusive-interview-mario-thiessen-ready-to-rumble.html"}
+    ]
+  },
+  "2002": {
+    "hinweis": "Einzige durchgehende Liste ist ein unbelegter Forenbeitrag ('predicted horsepower'), Niveau vermutlich etwas hoch. Verhältnisse plausibel (BMW vorn, Renault mit Weitwinkel-V10 rund 80 PS zurück, vom f1technical-Betreiber so bestätigt).",
+    "regeln": "Mindestgewicht 600 kg mit Fahrer (nicht per Dokument belegt). Qualifying-Vorteil nicht durch eine Quelle belegt. Eigene Einschätzung: Ferrari/Bridgestone war im Rennen überlegen, auf eine Runde war Williams-BMW auf Michelin oft schneller (Montoya mit 7 Poles, schnellste Pole-Runde der F1-Geschichte in Monza). Vorschlag: Michelin im Qualifying leicht im Vorteil oder gleich.",
+    "reifen": {
+      "michelin": ["williams", "mclaren", "renault", "jaguar", "toyota", "minardi"],
+      "bridgestone": ["ferrari", "sauber", "jordan", "bar", "arrows"]
+    },
+    "teams": {
+      "ferrari": {"motor": "Ferrari Tipo 051, V10 90 Grad, 3,0 l", "ps": 885, "sicher": "mittel", "spanne": "875 bhp (umgerechnet 887 PS), eine Quelle", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=324"]},
+      "williams": {"motor": "BMW P82, V10 90 Grad, 3,0 l", "ps": 900, "sicher": "mittel", "spanne": "knapp unter 890 bhp (umgerechnet ca. 900 PS); ein Fan-Wiki nennt 940 hp, das passt eher zum P83 von 2003", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=324", "https://www.autosport.com/f1/news/2002-montoyas-fastest-ever-f1-pole-lap-5036888/5036888/"]},
+      "mclaren": {"motor": "Mercedes-Benz (Ilmor) FO110M, V10 90 Grad, 3,0 l", "ps": 880, "sicher": "niedrig", "spanne": "870 bhp (umgerechnet 882 PS), eine Quelle", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=324"]},
+      "renault": {"motor": "Renault RS22, V10 111 Grad (Weitwinkel), 3,0 l", "ps": 820, "sicher": "mittel", "spanne": "810 bhp (umgerechnet 821 PS); laut f1technical mehr als 80 hp hinter den Topteams", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=324"]},
+      "sauber": {"motor": "Petronas 02A (Ferrari Tipo 050 des Vorjahres), V10 90 Grad", "ps": 855, "sicher": "niedrig", "spanne": "845 bhp (umgerechnet 857 PS), eine Quelle", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=324"]},
+      "jordan": {"motor": "Honda RA002E, V10 94 Grad, 3,0 l", "ps": 880, "sicher": "niedrig", "spanne": "870-875 bhp (umgerechnet 882-887 PS); wirkt gemessen an den Ergebnissen hoch, eher 860-885 PS", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=324", "https://global.honda/en/POWEREDbyHONDA/2002_ra002e/"]},
+      "jaguar": {"motor": "Cosworth CR-3, ab Saisonmitte CR-4, V10 72 Grad, 3,0 l", "ps": 865, "sicher": "niedrig", "spanne": "855 bhp (umgerechnet 867 PS), eine Quelle", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=324"]},
+      "bar": {"motor": "Honda RA002E, V10 94 Grad, 3,0 l", "ps": 880, "sicher": "niedrig", "spanne": "870-875 bhp (umgerechnet 882-887 PS); eher 860-885 PS", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=324", "https://global.honda/en/POWEREDbyHONDA/2002_ra002e/"]},
+      "minardi": {"motor": "Asiatech AT02, V10 72 Grad, 3,0 l", "ps": 780, "sicher": "niedrig", "spanne": "770 bhp (umgerechnet 781 PS), eine Quelle", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=324"]},
+      "toyota": {"motor": "Toyota RVX-02, V10 90 Grad, 3,0 l", "ps": 860, "sicher": "niedrig", "spanne": "850 bhp (umgerechnet 862 PS), eine Quelle", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=324"]},
+      "arrows": {"motor": "Cosworth CR-3 (Kundenmotor, Vorjahres-Spezifikation von Jaguar), V10 72 Grad", "ps": 850, "sicher": "niedrig", "spanne": "abgeleitet: Kunden-Cosworth, ca. 15 PS unter Jaguar; 835-865 PS", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=324"]}
+    },
+    "konzept": []
+  },
+  "2003": {
+    "hinweis": "Belegt sind BMW (940 PS, Herstellerangabe 'über 900 bhp'), Ferrari (Schätzung 920 bhp, Gerücht 910-915 PS zum Saisonende) und Renault (AMuS 840 PS). Mercedes, Honda, Toyota, Sauber, Jaguar, Jordan und Minardi sind aus Abständen und Motortyp abgeleitet.",
+    "regeln": "Mindestgewicht 600 kg mit Fahrer (nicht per Dokument belegt). Einzelrunden-Qualifying mit Rennbenzin, Startaufstellung deshalb durch Spritmenge verzerrt. Für den Qualifying-Vorteil wurde keine direkte Quelle gefunden. Eigene Einschätzung: Michelin 2003 besonders bei Hitze stark (Williams, McLaren, Renault), Bridgestone praktisch nur mit Ferrari konkurrenzfähig. Vorschlag: Michelin leicht im Vorteil.",
+    "reifen": {
+      "michelin": ["williams", "mclaren", "renault", "jaguar", "toyota"],
+      "bridgestone": ["ferrari", "bar", "sauber", "jordan", "minardi"]
+    },
+    "teams": {
+      "ferrari": {"motor": "Ferrari Tipo 052, V10 90 Grad, 3,0 l", "ps": 920, "sicher": "mittel", "spanne": "910-933 PS (Gerücht 910-915 PS; f1technical 920 bhp bei 18600/min, umgerechnet 933 PS)", "quellen": ["https://www.f1technical.net/f1db/cars/863", "https://forums.autosport.com/topic/66486-2004-engines-output-weight"]},
+      "williams": {"motor": "BMW P83, V10 90 Grad, 3,0 l, 19200/min", "ps": 940, "sicher": "hoch", "spanne": "915-940 PS (BMW: über 900 bhp; Grand Prix Engines: 940 PS = 927 bhp bei 19000/min)", "quellen": ["https://www.grandprixengines.co.uk/CORRECTIONS%20&%20ADDITIONS(14).pdf", "https://au.motorsport.com/f1/news/bmw-p83-engine-for-2003/1016327/"]},
+      "mclaren": {"motor": "Mercedes-Benz (Ilmor) FO110M, später FO110P, V10 90 Grad (MP4-17D)", "ps": 900, "sicher": "niedrig", "spanne": "abgeleitet: laut Forenschätzung 2003 ca. 35 hp hinter BMW; 890-910 PS", "quellen": ["https://forums.autosport.com/topic/66486-2004-engines-output-weight"]},
+      "renault": {"motor": "Renault RS23, V10 111 Grad (Weitwinkel), 3,0 l", "ps": 840, "sicher": "mittel", "spanne": "815-855 PS (f1technical: über 800 bhp; AMuS: 840 PS; Saisonende angeblich über 850 PS)", "quellen": ["https://forums.autosport.com/topic/66486-2004-engines-output-weight", "https://www.f1technical.net/f1db/cars/869"]},
+      "bar": {"motor": "Honda RA003E, V10 90 Grad, 3,0 l", "ps": 890, "sicher": "niedrig", "spanne": "F1 Racing: Suzuka-Motor 900+ hp bei 19100/min; Saisonmittel geschätzt 880-900 PS", "quellen": ["https://forums.autosport.com/topic/66486-2004-engines-output-weight"]},
+      "sauber": {"motor": "Petronas 03A (Ferrari Tipo 051 des Vorjahres), V10 90 Grad", "ps": 885, "sicher": "niedrig", "spanne": "abgeleitet: Vorjahres-Ferrari, ca. 35 PS unter Werks-Ferrari; 870-895 PS", "quellen": ["https://formula1-dictionary.net/engine_supplier_history.html"]},
+      "jaguar": {"motor": "Cosworth CR-5, V10 90 Grad, 3,0 l", "ps": 875, "sicher": "niedrig", "spanne": "keine Zahl für 2003 gefunden; abgeleitet aus CR-6 2004 (AMuS 840 PS, dort 40 PS unter Ferrari); 860-885 PS", "quellen": ["https://forums.autosport.com/topic/66486-2004-engines-output-weight"]},
+      "toyota": {"motor": "Toyota RVX-03, V10 90 Grad, 3,0 l", "ps": 885, "sicher": "niedrig", "spanne": "keine Zahl für 2003 gefunden; abgeleitet aus Stellung 2002 und 2004 (2004 auf Ferrari-Niveau); 870-900 PS", "quellen": ["https://forums.autosport.com/topic/66486-2004-engines-output-weight", "https://www.f1technical.net/forum/viewtopic.php?p=324"]},
+      "jordan": {"motor": "Ford RS1 (Cosworth, Basis CR-3), V10 72 Grad", "ps": 865, "sicher": "niedrig", "spanne": "Forenaussage: mindestens 50 hp hinter Ferrari; 850-870 PS", "quellen": ["https://forums.autosport.com/topic/66486-2004-engines-output-weight"]},
+      "minardi": {"motor": "Cosworth CR-3 (Kundenmotor, Stand 2001/2002), V10 72 Grad", "ps": 835, "sicher": "niedrig", "spanne": "abgeleitet aus CR-3L 2004 (AMuS 800 PS, 80 PS unter Ferrari); 820-845 PS", "quellen": ["https://forums.autosport.com/topic/66486-2004-engines-output-weight"]}
+    },
+    "konzept": []
+  },
+  "2004": {
+    "hinweis": "Zwei Quellen mit verschiedenem Niveau: auto motor und sport Spezial 2004 (Ferrari 880, BMW 900, Mercedes 870, Renault 820, Honda 880, Petronas 870, Toyota 880, Ford CR-6 840, Ford RS2 840, CR-3L 800 PS) und rtl.de vom Juni 2004 (Honda 925, Ferrari 915, BMW 905 hp). Ferrari selbst nennt 865 bhp bei 18300/min. Die Werte hier sind die AMuS-Reihenfolge, um rund 25 PS auf die Mitte beider Quellen angehoben; die Verhältnisse entsprechen AMuS, an der Spitze gemittelt. Motor musste erstmals ein ganzes Wochenende halten.",
+    "regeln": "Mindestgewicht 600 kg mit Fahrer, im Qualifying nach meiner Erinnerung 605 kg (nicht per Dokument belegt). Für den Qualifying-Vorteil wurde keine direkte Quelle gefunden. Eigene Einschätzung: Ferrari/Bridgestone 2004 klar überlegen (Paket, nicht nur Reifen); bei den übrigen Bridgestone-Teams kein Vorteil erkennbar. Vorschlag: Reifen gleich behandeln.",
+    "reifen": {
+      "michelin": ["bar", "renault", "williams", "mclaren", "jaguar", "toyota"],
+      "bridgestone": ["ferrari", "sauber", "jordan", "minardi"]
+    },
+    "teams": {
+      "ferrari": {"motor": "Ferrari Tipo 053, V10 90 Grad, 3,0 l", "ps": 900, "sicher": "mittel", "spanne": "877-933 PS (Ferrari: 865 bhp; AMuS: 880 PS; rtl.de: 915 hp; f1technical: ca. 920 bhp)", "quellen": ["https://forums.autosport.com/topic/66486-2004-engines-output-weight", "https://www.f1technical.net/forum/viewtopic.php?p=5853"]},
+      "bar": {"motor": "Honda RA004E, V10 90 Grad, 3,0 l", "ps": 910, "sicher": "mittel", "spanne": "880-938 PS (AMuS: 880 PS; rtl.de: 925 hp)", "quellen": ["https://forums.autosport.com/topic/66486-2004-engines-output-weight", "https://www.f1technical.net/forum/viewtopic.php?p=5853"]},
+      "renault": {"motor": "Renault RS24, V10 72 Grad (neu, Abkehr vom Weitwinkel), 3,0 l", "ps": 845, "sicher": "mittel", "spanne": "AMuS: 820 PS (60 PS unter Ferrari); Forum: ca. 70 hp Rückstand auf dem Prüfstand; 820-850 PS", "quellen": ["https://forums.autosport.com/topic/66486-2004-engines-output-weight", "https://www.f1technical.net/forum/viewtopic.php?p=5853"]},
+      "williams": {"motor": "BMW P84, V10 90 Grad, 3,0 l, 19000/min", "ps": 915, "sicher": "mittel", "spanne": "900-918 PS (AMuS: 900 PS, stärkster Motor; rtl.de: 905 hp)", "quellen": ["https://forums.autosport.com/topic/66486-2004-engines-output-weight", "https://www.f1technical.net/forum/viewtopic.php?p=5853"]},
+      "mclaren": {"motor": "Mercedes-Benz (Ilmor) FO110Q, V10 90 Grad, 3,0 l", "ps": 885, "sicher": "niedrig", "spanne": "AMuS: 870 PS (für FO110P genannt); laut Autosport 25-45 hp hinter dem stärksten Motor; 870-895 PS", "quellen": ["https://forums.autosport.com/topic/66486-2004-engines-output-weight"]},
+      "sauber": {"motor": "Petronas 04A (Ferrari Tipo 053, aktueller Kundenmotor), V10 90 Grad", "ps": 890, "sicher": "mittel", "spanne": "AMuS: 870 PS (10 PS unter Werks-Ferrari)", "quellen": ["https://forums.autosport.com/topic/66486-2004-engines-output-weight"]},
+      "jaguar": {"motor": "Cosworth CR-6, V10 90 Grad, 3,0 l", "ps": 865, "sicher": "mittel", "spanne": "AMuS: 840 PS (40 PS unter Ferrari)", "quellen": ["https://forums.autosport.com/topic/66486-2004-engines-output-weight"]},
+      "toyota": {"motor": "Toyota RVX-04, V10 90 Grad, 3,0 l", "ps": 900, "sicher": "mittel", "spanne": "AMuS: 880 PS (wie Ferrari und Honda), dreht laut deutscher Presse so hoch wie der BMW", "quellen": ["https://forums.autosport.com/topic/66486-2004-engines-output-weight"]},
+      "jordan": {"motor": "Ford RS2 (Cosworth), V10 90 Grad, 3,0 l", "ps": 865, "sicher": "niedrig", "spanne": "AMuS: 840 PS", "quellen": ["https://forums.autosport.com/topic/66486-2004-engines-output-weight"]},
+      "minardi": {"motor": "Cosworth CR-3L (alter Kundenmotor, auf Langlebigkeit umgebaut), V10 72 Grad", "ps": 825, "sicher": "niedrig", "spanne": "AMuS: 800 PS (Zuordnung zu Minardi im Thread nur erschlossen)", "quellen": ["https://forums.autosport.com/topic/66486-2004-engines-output-weight"]}
+    },
+    "konzept": [
+      {"team": "williams", "cd": 0.97, "grund": "Antonio Pizzonia fuhr im Williams-BMW FW26 in Monza 2004 mit 369,9 km/h den damaligen Rekord in der offiziellen Speed-Trap. Ein Teil davon ist der stärkste Motor, deshalb nur ein moderater Abschlag.", "quelle": "https://www.grandprix247.com/formula-1-news/pizzonias-top-speed-f1-record-could-tumble-at-monza"}
+    ]
+  },
+  "2005": {
+    "hinweis": "Quellen widersprechen sich stark. F1 Racing (Mai 2005, Ingenieursschätzungen): Toyota 950-970 ch, BMW 940-960, Ferrari 930-950, Mercedes nur 870-890 ch ('weit hinter den Besten', Saisonbeginn). Wikipedia nennt für den FO110R 930 hp bei 19000/min, Gerüchte 920-950 bhp. Renault RS25: 800 (Pressetext) bis 950 hp (Wikipedia), Autosport 900 bhp, ein Forenwert 960 ch auf dem Prüfstand. Motoren mussten zwei Wochenenden halten.",
+    "regeln": "Mindestgewicht 600 kg mit Fahrer, im Qualifying nach meiner Erinnerung 605 kg (nicht per Dokument belegt). Ein Reifensatz für Qualifying und Rennen, kein Reifenwechsel. Michelin klar im Vorteil, auch im Qualifying: Bridgestone/Ferrari brachte die harten Mischungen auf einer Runde nicht schnell genug auf Temperatur (Autosport, 'Deconstructing Bridgestone').",
+    "reifen": {
+      "michelin": ["mclaren", "renault"],
+      "bridgestone": []
+    },
+    "teams": {
+      "mclaren": {"motor": "Mercedes-Benz (Ilmor) FO110R, V10 90 Grad, 3,0 l", "ps": 925, "sicher": "niedrig", "spanne": "870-960 PS (F1 Racing Mai 2005: 870-890 ch; Wikipedia: 930 hp bei 19000/min; Gerüchte bis 950 bhp)", "quellen": ["https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine", "https://www.planeterenault.com/forum/post150219.html"]},
+      "renault": {"motor": "Renault RS25, V10 72 Grad, 3,0 l", "ps": 910, "sicher": "niedrig", "spanne": "800-960 PS (Autosport: 900 bhp bei 19000/min, umgerechnet 913 PS; Wikipedia: 950 hp; Forum: ca. 960 ch auf dem Prüfstand)", "quellen": ["https://www.autosport.com/f1/feature/8016/why-alonso-first-title-winner-should-be-an-alltime-great", "https://www.planeterenault.com/forum/post150219.html"]}
+    },
+    "konzept": []
+  },
+  "2006": {
+    "hinweis": "Grundlage ist die Autosprint-Liste vom Monza-Test im September 2006 (bhp, im Forum zitiert, dort Fehler mit +/- 50 bhp eingeschätzt): Ferrari 785 (nur Massas Auto), Honda RA807E 775 (schon 2007-Spezifikation), Red Bull-Ferrari 760, Renault RS26-D 755, BMW 750, Toyota und Midland 745, Mercedes 740, Cosworth 732. Autosport (Technical Review 2006) hält dagegen: fast alle lagen bei 760-780 hp, eng beieinander; Mercedes mindestens so gut wie die anderen V8, Renault einer der besten. Die Werte hier liegen deshalb enger zusammen als die Autosprint-Liste.",
+    "regeln": "Mindestgewicht 600 kg mit Fahrer, im Qualifying nach meiner Erinnerung 605 kg (nicht per Dokument belegt). 2,4-Liter-V8, Reifenwechsel wieder erlaubt, K.-o.-Qualifying. Qualifying: Michelin in den ersten Rennen im Vorteil (bessere Balance aus einer Runde und Renndistanz, Bridgestone-Teams taten sich im Qualifying schwer); ab Saisonmitte drehte Bridgestone das um und Ferrari stand regelmäßig auf Pole, McLaren bekam die Michelin im Qualifying nicht auf Temperatur (Autosport Technical Review 2006).",
+    "reifen": {
+      "michelin": ["renault", "mclaren", "honda", "bmw_sauber", "redbull", "tororosso"],
+      "bridgestone": ["ferrari", "toyota", "williams", "midland", "superaguri"]
+    },
+    "teams": {
+      "renault": {"motor": "Renault RS26, V8 90 Grad, 2,4 l", "ps": 775, "sicher": "mittel", "spanne": "766-791 PS (Autosprint: 755 bhp; Autosport: einer der besten Motoren, Feld bei 760-780 hp)", "quellen": ["https://forums.autosport.com/topic/89958-current-engine-ranking", "https://www.autosport.com/general/news/the-2006-technical-review-part-i-5077263/5077263/"]},
+      "ferrari": {"motor": "Ferrari Tipo 056, V8 90 Grad, 2,4 l", "ps": 790, "sicher": "mittel", "spanne": "771-796 PS (Autosprint: 785 bhp für Massas Auto, umgerechnet 796 PS)", "quellen": ["https://forums.autosport.com/topic/89958-current-engine-ranking", "https://www.autosport.com/general/news/the-2006-technical-review-part-i-5077263/5077263/"]},
+      "mclaren": {"motor": "Mercedes-Benz FO108S, V8 90 Grad, 2,4 l", "ps": 765, "sicher": "niedrig", "spanne": "750-790 PS (Autosprint: 740 bhp; Autosport: mindestens so gut wie die anderen V8)", "quellen": ["https://forums.autosport.com/topic/89958-current-engine-ranking", "https://www.autosport.com/general/news/the-2006-technical-review-part-i-5077263/5077263/"]},
+      "honda": {"motor": "Honda RA806E, V8 90 Grad, 2,4 l", "ps": 770, "sicher": "niedrig", "spanne": "760-786 PS (Autosprint nennt 775 bhp nur für den RA807E-Vorgriff im Test; RA806E selbst ohne Zahl)", "quellen": ["https://forums.autosport.com/topic/89958-current-engine-ranking"]},
+      "bmw_sauber": {"motor": "BMW P86, V8 90 Grad, 2,4 l", "ps": 770, "sicher": "mittel", "spanne": "760-780 PS (Autosprint: 750 bhp; laut f1technical zum Saisonende drittstärkster Motor hinter Renault und Ferrari)", "quellen": ["https://forums.autosport.com/topic/89958-current-engine-ranking", "https://www.f1technical.net/forum/viewtopic.php?p=45052"]},
+      "toyota": {"motor": "Toyota RVX-06, V8 90 Grad, 2,4 l", "ps": 755, "sicher": "mittel", "spanne": "750-756 PS (Autosprint: 745 bhp; Toyota selbst: ca. 740 bhp, galt als schwach)", "quellen": ["https://forums.autosport.com/topic/89958-current-engine-ranking", "https://www.f1technical.net/forum/viewtopic.php?p=45052"]},
+      "redbull": {"motor": "Ferrari Tipo 056 (Kundenmotor), V8 90 Grad, 2,4 l", "ps": 772, "sicher": "mittel", "spanne": "Autosprint: 760 bhp (umgerechnet 771 PS), 25 bhp unter Werks-Ferrari", "quellen": ["https://forums.autosport.com/topic/89958-current-engine-ranking"]},
+      "williams": {"motor": "Cosworth CA2006, V8 90 Grad, 2,4 l, 20000/min", "ps": 755, "sicher": "mittel", "spanne": "742-760 PS (Autosprint: 732 bhp im September; ca. 750 bhp zum Saisonstart; Vorteil schwand über die Saison)", "quellen": ["https://forums.autosport.com/topic/89958-current-engine-ranking", "https://www.autosport.com/general/news/the-2006-technical-review-part-i-5077263/5077263/"]},
+      "tororosso": {"motor": "Cosworth TJ2005, V10 90 Grad, 3,0 l, gedrosselt (77-mm-Luftmengenbegrenzer, 16700/min, zur Saisonmitte leicht angehoben)", "ps": 735, "sicher": "niedrig", "spanne": "eine Angabe: 735 hp gedrosselt (ungedrosselt 915 hp); mehr Drehmoment im mittleren Bereich als die V8, in der Spitze laut Autosport schnell von den V8 überholt; 720-750 PS", "quellen": ["https://en.wikipedia.org/wiki/Toro_Rosso_STR1", "https://www.autosport.com/general/news/the-2006-technical-review-part-i-5077263/5077263/"]},
+      "midland": {"motor": "Toyota RVX-06 (Kundenmotor), V8 90 Grad, 2,4 l", "ps": 755, "sicher": "mittel", "spanne": "Autosprint: 745 bhp, gleich wie Werks-Toyota", "quellen": ["https://forums.autosport.com/topic/89958-current-engine-ranking"]},
+      "superaguri": {"motor": "Honda RA806E (Kundenmotor), V8 90 Grad, 2,4 l", "ps": 765, "sicher": "niedrig", "spanne": "keine Zahl gefunden; abgeleitet: Kundenmotor, gleich oder knapp unter Werks-Honda; 755-770 PS", "quellen": ["https://forums.autosport.com/topic/89958-current-engine-ranking"]}
+    },
+    "konzept": [
+      {"team": "williams", "cd": 1.05, "grund": "Autosport Technical Review 2006: Der FW28 erzeugte genug Abtrieb, aber mit zu viel Luftwiderstand, also schlechte aerodynamische Effizienz.", "quelle": "https://www.autosport.com/general/news/the-2006-technical-review-part-i-5077263/5077263/"},
+      {"team": "renault", "cd": 1.0, "grund": "Massendämpfer (ab Ende 2005, Verbot ab Hockenheim 2006): stabilere aerodynamische Plattform und mehr nutzbarer Abtrieb an der Vorderachse, laut Renault ca. 0,3 s pro Runde. Betrifft Abtrieb/Grip, nicht den Luftwiderstand; für die erste Saisonhälfte etwas mehr Abtrieb ansetzen. Außerdem geringer Kühlbedarf des V8 (Kühlöffnungen entfernt).", "quelle": "https://www.autosport.com/f1/news/149299/banned-the-renault-r26-mass-damper"}
+    ]
+  },
+  "2007": {
+    "hinweis": "Keine belastbaren Einzelwerte gefunden. Eine Forenliste nennt BMW 760, Ferrari 750-760, Renault 740-750, Mercedes 740-750, Toyota 740, Honda 730 hp; ein anderes Gerücht sieht Ferrari und McLaren bei ca. 780 bhp und Honda und Renault 40-50 bhp dahinter. f1technical allgemein: ca. 720 hp bei 19000/min (ohne Limit 780). Die Werte hier sind auf das im Projekt für 2008 benutzte Niveau gelegt. Zu den 2008er Schätzungen (Ferrari 770, Mercedes 775, BMW 770, Toyota 750, Renault 740, Honda 735 PS): nichts Besseres gefunden; die Reihenfolge passt zu den Quellen, einzig die Forenliste sieht BMW vorn und Mercedes nur auf Renault-Niveau.",
+    "regeln": "Mindestgewicht 605 kg mit Fahrer (laut F1MATHS auf f1technical; dort als Wert für 2007 genannt). Einheitsreifen Bridgestone für alle Teams, damit kein Reifenvorteil im Qualifying. Drehzahllimit 19000/min, Motoren homologiert (Stand Ende 2006) und eingefroren.",
+    "reifen": {
+      "michelin": [],
+      "bridgestone": ["mclaren", "ferrari", "bmw_sauber", "renault", "williams", "redbull", "toyota", "tororosso", "honda", "superaguri", "spyker"]
+    },
+    "teams": {
+      "mclaren": {"motor": "Mercedes-Benz FO108T, V8 90 Grad, 2,4 l", "ps": 770, "sicher": "niedrig", "spanne": "750-791 PS (Forum: 740-750 hp; Gerücht: ca. 780 bhp)", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=81608", "https://www.f1technical.net/forum/viewtopic.php?p=87107"]},
+      "ferrari": {"motor": "Ferrari Tipo 056, V8 90 Grad, 2,4 l", "ps": 770, "sicher": "niedrig", "spanne": "760-791 PS (Forum: 750-760 hp; Gerücht: ca. 780 bhp)", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=81608", "https://www.f1technical.net/forum/viewtopic.php?p=87107"]},
+      "bmw_sauber": {"motor": "BMW P86/7, V8 90 Grad, 2,4 l", "ps": 768, "sicher": "niedrig", "spanne": "760-771 PS (Forum: 760 hp, dort stärkster Motor)", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=81608"]},
+      "renault": {"motor": "Renault RS27, V8 90 Grad, 2,4 l", "ps": 745, "sicher": "niedrig", "spanne": "730-760 PS (Forum: 740-750 hp; Gerücht: 40-50 bhp hinter Ferrari und Mercedes)", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=81608", "https://www.f1technical.net/forum/viewtopic.php?p=87107"]},
+      "williams": {"motor": "Toyota RVX-07 (Kundenmotor), V8 90 Grad, 2,4 l", "ps": 750, "sicher": "niedrig", "spanne": "abgeleitet: gleicher Motor wie Werks-Toyota (ca. 740 bhp)", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=45052"]},
+      "redbull": {"motor": "Renault RS27 (Kundenmotor), V8 90 Grad, 2,4 l", "ps": 745, "sicher": "niedrig", "spanne": "abgeleitet: gleicher Motor wie Werks-Renault", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=81608"]},
+      "toyota": {"motor": "Toyota RVX-07, V8 90 Grad, 2,4 l", "ps": 750, "sicher": "mittel", "spanne": "Toyota selbst: ca. 740 bhp (umgerechnet 750 PS); Forum: 740 hp", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=45052", "https://www.f1technical.net/forum/viewtopic.php?p=81608"]},
+      "tororosso": {"motor": "Ferrari Tipo 056 (Kundenmotor, homologierte Spezifikation 2006), V8 90 Grad", "ps": 765, "sicher": "niedrig", "spanne": "abgeleitet: Kunden-Ferrari, gleich oder knapp unter Werksmotor; 755-770 PS", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=81608"]},
+      "honda": {"motor": "Honda RA807E, V8 90 Grad, 2,4 l", "ps": 740, "sicher": "niedrig", "spanne": "730-745 PS (Forum: 730 hp; Honda nennt nur 'über 700 PS'; Gerücht: 40-50 bhp hinter der Spitze)", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=81608", "https://global.honda/en/POWEREDbyHONDA/2007_ra807e/"]},
+      "superaguri": {"motor": "Honda RA807E (Kundenmotor), V8 90 Grad, 2,4 l", "ps": 740, "sicher": "niedrig", "spanne": "abgeleitet: gleicher Motor wie Werks-Honda", "quellen": ["https://global.honda/en/POWEREDbyHONDA/2007_ra807e/"]},
+      "spyker": {"motor": "Ferrari Tipo 056 (Kundenmotor, homologierte Spezifikation 2006), V8 90 Grad", "ps": 765, "sicher": "niedrig", "spanne": "abgeleitet: Kunden-Ferrari wie Toro Rosso; 755-770 PS", "quellen": ["https://www.f1technical.net/forum/viewtopic.php?p=81608"]}
+    },
+    "konzept": [
+      {"team": "honda", "cd": 1.05, "grund": "RA107: laut Honda aerodynamische Probleme; Button nennt instabiles Heck und grundsätzlich zu wenig Abtrieb, Autosport-Analyse: Konzept auf viel Abtrieb ausgelegt, aber nicht effizient. Zusätzlich weniger Abtrieb als der Durchschnitt ansetzen.", "quelle": "https://www.autosport.com/general/news/tech-analysis-honda-ra107-5077377/5077377/"},
+      {"team": "ferrari", "cd": 0.98, "grund": "Mark Hughes (Autosport): Der F2007 hatte die bessere Hochgeschwindigkeits-Aerodynamik, also mehr Abtrieb bei gleichem Luftwiderstand (langer Radstand); stark auf schnellen Strecken, schwächer auf langsamen und welligen, wo der McLaren MP4-22 besser war. Die genaue Hughes-Kolumne wurde nicht einzeln geöffnet, Aussage aus dem Suchtreffer.", "quelle": "https://www.autosport.com/motorsport/feature/1431/mark-hughes-f1-inside-line"}
+    ]
+  }
+}

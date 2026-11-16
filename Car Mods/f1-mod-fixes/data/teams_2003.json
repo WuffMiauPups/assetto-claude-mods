@@ -1,0 +1,75 @@
+{
+ "_hinweis": "Erzeugt von tools/plaene_bauen.py. abstand aus data/quali_abstaende.json (F1DB), ps und cd aus research/motoren_2001_2007.json (Schätzungen mit Quellen). Empfindlichkeiten stammen aus den Tests der V8-Jahrgänge bzw. der Hybrid-Autos und sind für diesen Satz ungeprüft.",
+ "jahr": 2003,
+ "absolut": true,
+ "cl_min": 0.65,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.12,
+  "s_pro_prozent_leistung": 0.095,
+  "s_pro_prozent_widerstand": 0.04,
+  "s_pro_kg": 0.024
+ },
+ "masse": 600,
+ "teams": {
+  "ferrari": {
+   "ordner": "f1_2003_ferrari",
+   "abstand": 0.0,
+   "ps": 920,
+   "_motor": "Ferrari Tipo 052, V10 90 Grad, 3,0 l (mittel, 910-933 PS (Gerücht 910-915 PS; f1technical 920 bhp bei 18600/min, umgerechnet 933 PS))"
+  },
+  "williams": {
+   "ordner": "f1_2003_williams",
+   "abstand": 0.27,
+   "ps": 940,
+   "_motor": "BMW P83, V10 90 Grad, 3,0 l, 19200/min (hoch, 915-940 PS (BMW: über 900 bhp; Grand Prix Engines: 940 PS = 927 bhp bei 19000/min))"
+  },
+  "mclaren": {
+   "ordner": "f1_2003_mclaren",
+   "abstand": 0.54,
+   "ps": 900,
+   "_motor": "Mercedes-Benz (Ilmor) FO110M, später FO110P, V10 90 Grad (MP4-17D) (niedrig, abgeleitet: laut Forenschätzung 2003 ca. 35 hp hinter BMW; 890-910 PS)"
+  },
+  "renault": {
+   "ordner": "f1_2003_renault",
+   "abstand": 0.53,
+   "ps": 840,
+   "_motor": "Renault RS23, V10 111 Grad (Weitwinkel), 3,0 l (mittel, 815-855 PS (f1technical: über 800 bhp; AMuS: 840 PS; Saisonende angeblich über 850 PS))"
+  },
+  "bar": {
+   "ordner": "f1_2003_bar",
+   "abstand": 1.41,
+   "ps": 890,
+   "_motor": "Honda RA003E, V10 90 Grad, 3,0 l (niedrig, F1 Racing: Suzuka-Motor 900+ hp bei 19100/min; Saisonmittel geschätzt 880-900 PS)"
+  },
+  "sauber": {
+   "ordner": "f1_2003_sauber",
+   "abstand": 1.78,
+   "ps": 885,
+   "_motor": "Petronas 03A (Ferrari Tipo 051 des Vorjahres), V10 90 Grad (niedrig, abgeleitet: Vorjahres-Ferrari, ca. 35 PS unter Werks-Ferrari; 870-895 PS)"
+  },
+  "jaguar": {
+   "ordner": "f1_2003_jaguar",
+   "abstand": 1.35,
+   "ps": 875,
+   "_motor": "Cosworth CR-5, V10 90 Grad, 3,0 l (niedrig, keine Zahl für 2003 gefunden; abgeleitet aus CR-6 2004 (AMuS 840 PS, dort 40 PS unter Ferrari); 860-885 PS)"
+  },
+  "toyota": {
+   "ordner": "f1_2003_toyota",
+   "abstand": 1.14,
+   "ps": 885,
+   "_motor": "Toyota RVX-03, V10 90 Grad, 3,0 l (niedrig, keine Zahl für 2003 gefunden; abgeleitet aus Stellung 2002 und 2004 (2004 auf Ferrari-Niveau); 870-900 PS)"
+  },
+  "jordan": {
+   "ordner": "f1_2003_jordan",
+   "abstand": 2.1,
+   "ps": 865,
+   "_motor": "Ford RS1 (Cosworth, Basis CR-3), V10 72 Grad (niedrig, Forenaussage: mindestens 50 hp hinter Ferrari; 850-870 PS)"
+  },
+  "minardi": {
+   "ordner": "f1_2003_minardi",
+   "abstand": 4.31,
+   "ps": 835,
+   "_motor": "Cosworth CR-3 (Kundenmotor, Stand 2001/2002), V10 72 Grad (niedrig, abgeleitet aus CR-3L 2004 (AMuS 800 PS, 80 PS unter Ferrari); 820-845 PS)"
+  }
+ }
+}

@@ -1,0 +1,87 @@
+{
+ "_hinweis": "Erzeugt von tools/plaene_bauen.py. abstand aus data/quali_abstaende.json (F1DB), ps und cd aus research/motoren_2001_2007.json (Schätzungen mit Quellen). Empfindlichkeiten stammen aus den Tests der V8-Jahrgänge bzw. der Hybrid-Autos und sind für diesen Satz ungeprüft.",
+ "jahr": 2002,
+ "absolut": true,
+ "cl_min": 0.65,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.12,
+  "s_pro_prozent_leistung": 0.095,
+  "s_pro_prozent_widerstand": 0.04,
+  "s_pro_kg": 0.024
+ },
+ "masse": 600,
+ "teams": {
+  "ferrari": {
+   "ordner": "F1_2002_Ferrari_F2002",
+   "abstand": 0.0,
+   "ps": 885,
+   "_motor": "Ferrari Tipo 051, V10 90 Grad, 3,0 l (mittel, 875 bhp (umgerechnet 887 PS), eine Quelle)"
+  },
+  "williams": {
+   "ordner": "F1_2002_Williams_FW24_S1",
+   "abstand": 0.21,
+   "ps": 900,
+   "_motor": "BMW P82, V10 90 Grad, 3,0 l (mittel, knapp unter 890 bhp (umgerechnet ca. 900 PS); ein Fan-Wiki nennt 940 hp, das passt eher zum P83 von 2003)"
+  },
+  "williams_s2": {
+   "ordner": "F1_2002_Williams_FW24_S2",
+   "abstand": 0.21,
+   "ps": 900,
+   "_motor": "BMW P82, V10 90 Grad, 3,0 l (mittel, knapp unter 890 bhp (umgerechnet ca. 900 PS); ein Fan-Wiki nennt 940 hp, das passt eher zum P83 von 2003)"
+  },
+  "mclaren": {
+   "ordner": "F1_2002_McLaren_Mp4-17",
+   "abstand": 1.06,
+   "ps": 880,
+   "_motor": "Mercedes-Benz (Ilmor) FO110M, V10 90 Grad, 3,0 l (niedrig, 870 bhp (umgerechnet 882 PS), eine Quelle)"
+  },
+  "renault": {
+   "ordner": "F1_2002_Renault_R202",
+   "abstand": 1.71,
+   "ps": 820,
+   "_motor": "Renault RS22, V10 111 Grad (Weitwinkel), 3,0 l (mittel, 810 bhp (umgerechnet 821 PS); laut f1technical mehr als 80 hp hinter den Topteams)"
+  },
+  "sauber": {
+   "ordner": "F1_2002_Sauber_C21",
+   "abstand": 1.76,
+   "ps": 855,
+   "_motor": "Petronas 02A (Ferrari Tipo 050 des Vorjahres), V10 90 Grad (niedrig, 845 bhp (umgerechnet 857 PS), eine Quelle)"
+  },
+  "jordan": {
+   "ordner": "F1_2002_Jordan_EJ12",
+   "abstand": 1.98,
+   "ps": 880,
+   "_motor": "Honda RA002E, V10 94 Grad, 3,0 l (niedrig, 870-875 bhp (umgerechnet 882-887 PS); wirkt gemessen an den Ergebnissen hoch, eher 860-885 PS)"
+  },
+  "jaguar": {
+   "ordner": "F1_2002_Jaguar_R3",
+   "abstand": 2.45,
+   "ps": 865,
+   "_motor": "Cosworth CR-3, ab Saisonmitte CR-4, V10 72 Grad, 3,0 l (niedrig, 855 bhp (umgerechnet 867 PS), eine Quelle)"
+  },
+  "bar": {
+   "ordner": "F1_2002_BAR_004",
+   "abstand": 2.02,
+   "ps": 880,
+   "_motor": "Honda RA002E, V10 94 Grad, 3,0 l (niedrig, 870-875 bhp (umgerechnet 882-887 PS); eher 860-885 PS)"
+  },
+  "minardi": {
+   "ordner": "F1_2002_Minardi_PS02",
+   "abstand": 3.74,
+   "ps": 780,
+   "_motor": "Asiatech AT02, V10 72 Grad, 3,0 l (niedrig, 770 bhp (umgerechnet 781 PS), eine Quelle)"
+  },
+  "toyota": {
+   "ordner": "F1_2002_Toyota_TF102",
+   "abstand": 2.19,
+   "ps": 860,
+   "_motor": "Toyota RVX-02, V10 90 Grad, 3,0 l (niedrig, 850 bhp (umgerechnet 862 PS), eine Quelle)"
+  },
+  "arrows": {
+   "ordner": "F1_2002_Arrows_A23",
+   "abstand": 2.39,
+   "ps": 850,
+   "_motor": "Cosworth CR-3 (Kundenmotor, Vorjahres-Spezifikation von Jaguar), V10 72 Grad (niedrig, abgeleitet: Kunden-Cosworth, ca. 15 PS unter Jaguar; 835-865 PS)"
+  }
+ }
+}

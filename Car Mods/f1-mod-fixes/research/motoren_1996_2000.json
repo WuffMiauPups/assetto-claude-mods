@@ -1,0 +1,513 @@
+{
+  "1996": {
+    "regeln": "3,0-Liter-Saugmotoren (V8, V10, V12 erlaubt). Mindestgewicht 600 kg mit Fahrer (laut Wikipedia 1996 von 595 auf 600 kg angehoben; RaceFans und RacingNews365 nennen durchgehend 595 kg, Widerspruch nicht aufgelöst). Einheitsreifen Goodyear (Slicks), kein Reifenvorteil. Hinweis zu allen PS-Werten dieser Datei: Angaben in 'hp' aus Wikipedia/StatsF1/Jahrbüchern wurden als PS übernommen (dort nicht sauber getrennt); nur ausdrücklich als bhp genannte Werte wurden mit 1,014 umgerechnet und sind im Feld 'hinweis' markiert. Alle Zahlen sind Schätzungen aus Sekundärquellen, keine Prüfstandswerte.",
+    "reifen": {
+      "goodyear": ["williams", "ferrari", "benetton", "mclaren", "jordan", "sauber", "tyrrell", "ligier", "footwork", "minardi", "forti"],
+      "bridgestone": []
+    },
+    "teams": {
+      "williams": {
+        "motor": "Renault RS8 3.0 V10 (67 Grad, Werksmotor)",
+        "ps": 745,
+        "sicher": "mittel",
+        "spanne": "720-760",
+        "hinweis": "Französisches F1-Jahrbuch 745, Quattroruote (Saisonbeginn) 720, Wikipedia 700-760.",
+        "quellen": ["https://groups.google.com/g/rec.autos.sport.f1/c/2ErRvq8RvFs", "https://en.wikipedia.org/wiki/Renault_RS_engine"]
+      },
+      "benetton": {
+        "motor": "Renault RS8 3.0 V10 (identisch mit Williams)",
+        "ps": 745,
+        "sicher": "mittel",
+        "spanne": "720-760",
+        "quellen": ["https://groups.google.com/g/rec.autos.sport.f1/c/2ErRvq8RvFs", "https://en.wikipedia.org/wiki/Renault_RS_engine"]
+      },
+      "ferrari": {
+        "motor": "Ferrari Tipo 046 3.0 V10 (75 Grad, erster Ferrari-V10)",
+        "ps": 730,
+        "sicher": "niedrig",
+        "spanne": "710-760",
+        "hinweis": "Quellen widersprechen sich stark: Jahrbuch 760, Quattroruote 710, Wikipedia 715-725. Mittlerer Wert genommen.",
+        "quellen": ["https://en.wikipedia.org/wiki/Ferrari_V10_engine", "https://groups.google.com/g/rec.autos.sport.f1/c/2ErRvq8RvFs"]
+      },
+      "mclaren": {
+        "motor": "Mercedes FO110D 3.0 V10 (Ilmor, 75 Grad)",
+        "ps": 720,
+        "sicher": "mittel",
+        "spanne": "700-740",
+        "hinweis": "Wikipedia und Jahrbuch 720, Quattroruote 700 zu Saisonbeginn, Hochrechnung zur Saisonmitte etwa 740.",
+        "quellen": ["https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine", "https://groups.google.com/g/rec.autos.sport.f1/c/2ErRvq8RvFs"]
+      },
+      "jordan": {
+        "motor": "Peugeot A12 EV5 3.0 V10 (Werksmotor)",
+        "ps": 715,
+        "sicher": "mittel",
+        "spanne": "710-740",
+        "hinweis": "Jahrbuch und Quattroruote 710, Wikipedia-Liste 720, Hochrechnung Saisonmitte etwa 740.",
+        "quellen": ["https://groups.google.com/g/rec.autos.sport.f1/c/2ErRvq8RvFs", "https://en.wikipedia.org/wiki/Formula_One_French_engine_manufacturers"]
+      },
+      "sauber": {
+        "motor": "Ford JD Zetec-R 3.0 V10 (72 Grad, Cosworth, Werksmotor, erstes Jahr)",
+        "ps": 680,
+        "sicher": "mittel",
+        "spanne": "670-710",
+        "hinweis": "Cosworth-Artikel etwa 670 bhp (umgerechnet 679 PS), Quattroruote 670, Jahrbuch 710. Probleme mit der Leistungsentfaltung belegt.",
+        "quellen": ["https://en.wikipedia.org/wiki/Sauber_C15", "https://en.wikipedia.org/wiki/Cosworth"]
+      },
+      "tyrrell": {
+        "motor": "Yamaha OX11A 3.0 V10 (72 Grad, Judd-Basis, sehr leicht)",
+        "ps": 675,
+        "sicher": "mittel",
+        "spanne": "660-690",
+        "hinweis": "Jahrbuch 690, Quattroruote 660. Mika Salo sprach von rund 100 PS Rückstand auf die Spitze (Fahreraussage, nicht gemessen).",
+        "quellen": ["https://groups.google.com/g/rec.autos.sport.f1/c/2ErRvq8RvFs"]
+      },
+      "ligier": {
+        "motor": "Mugen-Honda MF-301HA 3.0 V10",
+        "ps": 690,
+        "sicher": "mittel",
+        "spanne": "680-690",
+        "quellen": ["https://en.wikipedia.org/wiki/Ligier_JS43", "https://groups.google.com/g/rec.autos.sport.f1/c/2ErRvq8RvFs"]
+      },
+      "footwork": {
+        "motor": "Hart 830 3.0 V8 (72 Grad)",
+        "ps": 660,
+        "sicher": "mittel",
+        "spanne": "640-680",
+        "hinweis": "Jahrbuch/Wikipedia 680, Quattroruote 640. Leistungsmangel des Hart-V8 belegt.",
+        "quellen": ["https://en.wikipedia.org/wiki/Footwork_FA17", "https://groups.google.com/g/rec.autos.sport.f1/c/2ErRvq8RvFs"]
+      },
+      "minardi": {
+        "motor": "Ford-Cosworth EDM2/EDM3 3.0 V8 (Kundenmotor)",
+        "ps": 635,
+        "sicher": "niedrig",
+        "spanne": "608-660",
+        "hinweis": "Keine Zahl für EDM gefunden. Abgeleitet aus Ford ED: Jahrbuch ED2 640, Quattroruote 660, Cosworth-Artikel etwa 600 bhp (umgerechnet 608 PS).",
+        "quellen": ["https://groups.google.com/g/rec.autos.sport.f1/c/2ErRvq8RvFs", "https://en.wikipedia.org/wiki/Cosworth"]
+      },
+      "forti": {
+        "motor": "Ford ECA Zetec-R 3.0 V8 (Kundenmotor, Sauber-Spezifikation 1995)",
+        "ps": 630,
+        "sicher": "niedrig",
+        "spanne": "619-639",
+        "hinweis": "Quattroruote 630 ('Ford EC'); Cosworth-Artikel 610-630 bhp ausentwickelt (umgerechnet 619-639 PS). Schwächster Motor im Feld.",
+        "quellen": ["https://groups.google.com/g/rec.autos.sport.f1/c/2ErRvq8RvFs", "https://en.wikipedia.org/wiki/Cosworth"]
+      }
+    },
+    "konzept": []
+  },
+  "1997": {
+    "regeln": "Technisch fast unverändert, Mindestgewicht 600 kg mit Fahrer (siehe Hinweis 1996), letzte Saison mit Slicks und 2,0 m Breite. Reifenkrieg: Bridgestone neu mit fünf kleineren Teams, alle Spitzenteams auf Goodyear. Reifenvorteil: keine belastbare Sekundenangabe gefunden. Belegt ist, dass Bridgestone vor allem bei Haltbarkeit stark war und streckenabhängig klar besser (Ungarn: Hill im Arrows führte lange; Panis im Prost in Argentinien/Spanien vorn dabei); Goodyear musste laut Peter Wright teils 'bis an die Grenze' gehen (Blasenbildung). Ferrari-Präsident behauptete rund 1 s pro Runde Vorteil für Bridgestone (Behauptung, nicht gemessen). Vorsichtige Schätzung für die Simulation: Bridgestone im Mittel 0,2 bis 0,5 s pro Runde besser, auf reifenmordenden Strecken mehr, auf anderen null.",
+    "reifen": {
+      "goodyear": ["williams", "ferrari", "benetton", "mclaren", "jordan", "sauber", "tyrrell"],
+      "bridgestone": ["prost", "arrows", "stewart", "minardi", "lola"]
+    },
+    "teams": {
+      "williams": {
+        "motor": "Renault RS9 / RS9B 3.0 V10 (71 Grad, Werksmotor)",
+        "ps": 750,
+        "sicher": "mittel",
+        "spanne": "725-760",
+        "hinweis": "Wikipedia 730-760; Ferrari-Ingenieur schätzte im Januar 1997 nur 725.",
+        "quellen": ["https://en.wikipedia.org/wiki/Renault_RS_engine", "https://groups.google.com/g/rec.autos.sport.f1/c/2ErRvq8RvFs"]
+      },
+      "benetton": {
+        "motor": "Renault RS9 / RS9B 3.0 V10 (identisch mit Williams)",
+        "ps": 750,
+        "sicher": "mittel",
+        "spanne": "725-760",
+        "quellen": ["https://en.wikipedia.org/wiki/Renault_RS_engine"]
+      },
+      "ferrari": {
+        "motor": "Ferrari Tipo 046/2 3.0 V10",
+        "ps": 745,
+        "sicher": "mittel",
+        "spanne": "730-760",
+        "quellen": ["https://en.wikipedia.org/wiki/Ferrari_V10_engine"]
+      },
+      "mclaren": {
+        "motor": "Mercedes FO110E / FO110F 3.0 V10 (Ilmor)",
+        "ps": 755,
+        "sicher": "mittel",
+        "spanne": "740-760",
+        "hinweis": "Wikipedia 740-760 für FO110E; Ferrari-Ingenieur nannte 755 und damit den stärksten Motor. Für die F-Spezifikation (ab Saisonmitte) keine eigene Zahl gefunden.",
+        "quellen": ["https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine", "https://groups.google.com/g/rec.autos.sport.f1/c/2ErRvq8RvFs"]
+      },
+      "jordan": {
+        "motor": "Peugeot A14 3.0 V10 (Werksmotor)",
+        "ps": 750,
+        "sicher": "mittel",
+        "spanne": "745-750",
+        "quellen": ["https://en.wikipedia.org/wiki/Jordan_197", "https://en.wikipedia.org/wiki/Formula_One_French_engine_manufacturers"]
+      },
+      "prost": {
+        "motor": "Mugen-Honda MF-301HB 3.0 V10",
+        "ps": 710,
+        "sicher": "mittel",
+        "spanne": "700-720",
+        "hinweis": "Nur eine Quelle (Wikipedia-Infobox nach StatsF1: 710 bei 13.900/min).",
+        "quellen": ["https://en.wikipedia.org/wiki/Prost_JS45"]
+      },
+      "sauber": {
+        "motor": "Petronas SPE-01 3.0 V10 (Ferrari 046, Vorjahres-Spezifikation)",
+        "ps": 725,
+        "sicher": "niedrig",
+        "spanne": "710-745",
+        "hinweis": "Keine eigene Zahl gefunden. Abgeleitet: Ferrari 046 von 1996 (Wikipedia 715-725), als Kundenmotor ohne Weiterentwicklung.",
+        "quellen": ["https://en.wikipedia.org/wiki/Ferrari_V10_engine", "https://en.wikipedia.org/wiki/Sauber_C17"]
+      },
+      "arrows": {
+        "motor": "Yamaha OX11C/D 3.0 V10 (72 Grad)",
+        "ps": 700,
+        "sicher": "mittel",
+        "spanne": "690-700",
+        "quellen": ["https://en.wikipedia.org/wiki/Arrows_A18", "https://groups.google.com/g/rec.autos.sport.f1/c/2ErRvq8RvFs"]
+      },
+      "stewart": {
+        "motor": "Ford VJ Zetec-R 3.0 V10 (Cosworth, Werksmotor, unzuverlässig)",
+        "ps": 725,
+        "sicher": "mittel",
+        "spanne": "710-740",
+        "hinweis": "Wikipedia-Infobox SF01: 710 bei 15.000/min; Cosworth-Artikel VJ 720 bhp Rennen / 730 bhp Quali (umgerechnet 730/740 PS).",
+        "quellen": ["https://en.wikipedia.org/wiki/Stewart_SF01", "https://en.wikipedia.org/wiki/Cosworth"]
+      },
+      "tyrrell": {
+        "motor": "Ford-Cosworth ED4 / ED5 3.0 V8 (Kundenmotor)",
+        "ps": 655,
+        "sicher": "mittel",
+        "spanne": "608-665",
+        "hinweis": "Wikipedia-Infobox 665 bei 13.700/min; Cosworth-Artikel 600 bhp (608 PS); Peter Wright: behauptete 100 bhp Rückstand auf die Spitzenmotoren (ergibt etwa 650-660).",
+        "quellen": ["https://en.wikipedia.org/wiki/Tyrrell_025", "https://www.grandprix.com/features/peter-wright/technical-1997-formula-1-technical-review.html"]
+      },
+      "minardi": {
+        "motor": "Hart 830 3.0 V8 (Kundenmotor, Stand 1996)",
+        "ps": 665,
+        "sicher": "niedrig",
+        "spanne": "640-680",
+        "hinweis": "Keine Zahl für 1997 gefunden. Abgeleitet aus den 1996er Angaben zum Hart 830 (680 Jahrbuch, 640 Quattroruote), keine nennenswerte Weiterentwicklung (Geldmangel bei Hart belegt).",
+        "quellen": ["https://en.wikipedia.org/wiki/Footwork_FA17", "https://en.wikipedia.org/wiki/Brian_Hart_Ltd."]
+      },
+      "lola": {
+        "motor": "Ford ECA Zetec-R 3.0 V8 (Kundenmotor, Spezifikation 1995)",
+        "ps": 630,
+        "sicher": "niedrig",
+        "spanne": "619-639",
+        "hinweis": "Abgeleitet aus dem Motortyp (wie Forti 1996); Cosworth-Artikel 610-630 bhp, umgerechnet 619-639 PS. Lola fuhr nur in Melbourne und qualifizierte sich nicht.",
+        "quellen": ["https://en.wikipedia.org/wiki/Cosworth", "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"]
+      }
+    },
+    "konzept": [
+      {
+        "team": "tyrrell",
+        "cd": 1.04,
+        "grund": "Tyrrell 025 versuchte den Leistungsmangel des V8 mit mehr Abtrieb auszugleichen (X-Wings neben dem Cockpit auf Abtriebsstrecken). Mehr Abtrieb und mehr Luftwiderstand als der Durchschnitt; gilt vor allem für Abtriebsstrecken. Faktor ist eine Schätzung.",
+        "quelle": "https://www.grandprix.com/features/peter-wright/technical-1997-formula-1-technical-review.html"
+      }
+    ]
+  },
+  "1998": {
+    "regeln": "Schmale Autos (1,80 m statt 2,00 m) und Rillenreifen (vorn 3, hinten 4 Rillen). Mindestgewicht 600 kg mit Fahrer (siehe Hinweis 1996). X-Wings ab Spanien verboten. Reifenkrieg: McLaren und Benetton wechselten zu Bridgestone, Ferrari und Williams blieben bei Goodyear. Reifenvorteil: Bridgestone hatte in den ersten zwei Rennen einen 'leichten Vorteil' (breiterer Vorderreifen, Goodyear-Autos untersteuerten und bauten im Rennen ab); ab Argentinien zog Goodyear mit neuem, breiterem Vorderreifen nach und hatte im Spätsommer zeitweise die Oberhand. Keine belastbare Sekundenangabe gefunden. Vorsichtige Schätzung: zu Saisonbeginn 0,3 bis 0,5 s pro Runde für Bridgestone, über die Saison gemittelt etwa Gleichstand (0 bis 0,2 s). Goodyear zog sich Ende 1998 zurück.",
+    "reifen": {
+      "goodyear": ["ferrari", "williams", "jordan", "sauber", "tyrrell"],
+      "bridgestone": ["mclaren", "benetton", "arrows", "stewart", "prost", "minardi"]
+    },
+    "teams": {
+      "mclaren": {
+        "motor": "Mercedes FO110G 3.0 V10 (Ilmor, 72 Grad)",
+        "ps": 795,
+        "sicher": "mittel",
+        "spanne": "780-800",
+        "hinweis": "Wikipedia 780-800. grandprix.com (April 1998) nennt ihn den derzeit stärksten Motor der F1, deshalb oberes Ende der Spanne.",
+        "quellen": ["https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine", "https://www.grandprix.com/news/mini-feature-how-did-mclaren-get-so-far-ahead.html"]
+      },
+      "ferrari": {
+        "motor": "Ferrari Tipo 047 3.0 V10 (80 Grad)",
+        "ps": 795,
+        "sicher": "mittel",
+        "spanne": "790-805",
+        "hinweis": "Wikipedia nennt 790-805, 794 und 805 an verschiedenen Stellen.",
+        "quellen": ["https://en.wikipedia.org/wiki/Ferrari_V10_engine"]
+      },
+      "williams": {
+        "motor": "Mecachrome GC37-01 3.0 V10 (Renault RS9, Kundenmotor ohne Werksentwicklung)",
+        "ps": 765,
+        "sicher": "mittel",
+        "spanne": "750-775",
+        "quellen": ["https://en.wikipedia.org/wiki/Renault_RS_engine", "https://en.wikipedia.org/wiki/Formula_One_French_engine_manufacturers"]
+      },
+      "benetton": {
+        "motor": "Playlife GC37-01 3.0 V10 (Mecachrome/Renault RS9, identisch mit Williams)",
+        "ps": 765,
+        "sicher": "mittel",
+        "spanne": "750-775",
+        "quellen": ["https://en.wikipedia.org/wiki/Renault_RS_engine", "https://en.wikipedia.org/wiki/Formula_One_French_engine_manufacturers"]
+      },
+      "jordan": {
+        "motor": "Mugen-Honda MF-301HC 3.0 V10",
+        "ps": 735,
+        "sicher": "niedrig",
+        "spanne": "690-760",
+        "hinweis": "Wikipedia-Infobox nennt 690 bei 13.800/min (vermutlich der Wert von 1996, unplausibel niedrig). Belegt: zu Saisonbeginn schwach, im Lauf der Saison von Mugen weiterentwickelt (Sieg in Spa). Wert zwischen HB 1997 (710) und HE 2000 (770) interpoliert, Schätzung.",
+        "quellen": ["https://en.wikipedia.org/wiki/Jordan_198", "https://en.wikipedia.org/wiki/Prost_JS45"]
+      },
+      "prost": {
+        "motor": "Peugeot A16 3.0 V10 (Werksmotor)",
+        "ps": 765,
+        "sicher": "mittel",
+        "spanne": "755-775",
+        "hinweis": "Nur eine Quelle (765 bei 17.000/min).",
+        "quellen": ["https://en.wikipedia.org/wiki/Formula_One_French_engine_manufacturers"]
+      },
+      "sauber": {
+        "motor": "Petronas SPE-01D 3.0 V10 (Ferrari 046/2, Vorjahres-Spezifikation)",
+        "ps": 745,
+        "sicher": "niedrig",
+        "spanne": "730-760",
+        "hinweis": "Keine eigene Zahl gefunden. Abgeleitet aus Ferrari 046/2 von 1997 (Wikipedia 730-760).",
+        "quellen": ["https://en.wikipedia.org/wiki/Sauber_C17", "https://en.wikipedia.org/wiki/Ferrari_V10_engine"]
+      },
+      "arrows": {
+        "motor": "Arrows T2-F1 3.0 V10 (Hart 1030, 72 Grad)",
+        "ps": 700,
+        "sicher": "mittel",
+        "spanne": "690-715",
+        "hinweis": "Wikipedia-Infobox 700 bei 15.000/min; Motor als Hauptschwäche des Autos belegt.",
+        "quellen": ["https://en.wikipedia.org/wiki/Arrows_A19"]
+      },
+      "stewart": {
+        "motor": "Ford VJ Zetec-R 3.0 V10 (Cosworth, Werksmotor)",
+        "ps": 735,
+        "sicher": "mittel",
+        "spanne": "720-745",
+        "hinweis": "Cosworth-Artikel: 720 bhp Rennen / 730 bhp Quali, umgerechnet 730/740 PS.",
+        "quellen": ["https://en.wikipedia.org/wiki/Cosworth"]
+      },
+      "tyrrell": {
+        "motor": "Ford JD Zetec-R 3.0 V10 (Kundenmotor, Spezifikation 1996/97)",
+        "ps": 695,
+        "sicher": "niedrig",
+        "spanne": "680-710",
+        "hinweis": "Abgeleitet aus dem Motortyp: JD 1996 etwa 670 bhp (679 PS), als JD im Stewart 1997 mit 710 angegeben. Kundenmotor rund 40 PS unter dem Werks-VJ.",
+        "quellen": ["https://en.wikipedia.org/wiki/Cosworth", "https://en.wikipedia.org/wiki/Stewart_SF01"]
+      },
+      "minardi": {
+        "motor": "Ford JD Zetec-R 3.0 V10 (Kundenmotor, wie Tyrrell)",
+        "ps": 695,
+        "sicher": "niedrig",
+        "spanne": "680-710",
+        "hinweis": "Abgeleitet wie bei Tyrrell.",
+        "quellen": ["https://en.wikipedia.org/wiki/Cosworth", "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"]
+      }
+    },
+    "konzept": [
+      {
+        "team": "mclaren",
+        "cd": 0.98,
+        "grund": "MP4/13 konnte laut grandprix.com mehr Flügel fahren als die Konkurrenz und blieb im Topspeed trotzdem konkurrenzfähig: aerodynamisch effizient (mehr Abtrieb bei gleichem Widerstand). Sinnvoller als weniger Widerstand ist mehr Abtrieb; Faktor ist eine Schätzung.",
+        "quelle": "https://www.grandprix.com/news/mini-feature-how-did-mclaren-get-so-far-ahead.html"
+      }
+    ]
+  },
+  "1999": {
+    "regeln": "Mindestgewicht 600 kg mit Fahrer (siehe Hinweis 1996). Vier Rillen an allen Reifen, schmalerer Vorderreifen (355 mm). Einheitsreifen Bridgestone nach Goodyear-Rückzug, kein Reifenvorteil.",
+    "reifen": {
+      "goodyear": [],
+      "bridgestone": ["ferrari", "mclaren", "jordan", "stewart", "williams", "benetton", "prost", "sauber", "arrows", "minardi", "bar"]
+    },
+    "teams": {
+      "mclaren": {
+        "motor": "Mercedes FO110H 3.0 V10 (Ilmor, unter 100 kg)",
+        "ps": 815,
+        "sicher": "mittel",
+        "spanne": "810-820",
+        "hinweis": "Wikipedia 810; Peter Wright (April 1999) nennt gerüchteweise rund 820 PS und Mercedes als Maßstab.",
+        "quellen": ["https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine", "https://www.grandprix.com/features/peter-wright/technical-power-war.html"]
+      },
+      "ferrari": {
+        "motor": "Ferrari Tipo 048 3.0 V10 (80 Grad)",
+        "ps": 800,
+        "sicher": "mittel",
+        "spanne": "790-805",
+        "hinweis": "Wikipedia widersprüchlich (790 im Text, 805 in der Tabelle; 740 in der Infobox ist offensichtlich ein Fehler).",
+        "quellen": ["https://en.wikipedia.org/wiki/Ferrari_V10_engine"]
+      },
+      "jordan": {
+        "motor": "Mugen-Honda MF-301HD 3.0 V10",
+        "ps": 760,
+        "sicher": "niedrig",
+        "spanne": "680-780",
+        "hinweis": "Wikipedia-Infobox nennt 680 bei 15.000/min, das passt nicht zu Platz 3 der WM und zum Folgemotor HE (770). Wert aus HE 2000 minus etwa 10 PS abgeleitet, Schätzung.",
+        "quellen": ["https://en.wikipedia.org/wiki/Jordan_199", "https://en.wikipedia.org/wiki/Jordan_EJ10"]
+      },
+      "stewart": {
+        "motor": "Ford CR-1 3.0 V10 (Cosworth, 72 Grad, sehr leicht, anfangs unzuverlässig)",
+        "ps": 785,
+        "sicher": "mittel",
+        "spanne": "780-790",
+        "hinweis": "Wikipedia-Infobox 790 bei 16.200/min; Cosworth-Artikel 770 bhp (umgerechnet 781 PS). Vorteil laut Peter Wright vor allem das geringe Motorgewicht.",
+        "quellen": ["https://en.wikipedia.org/wiki/Stewart_SF3", "https://en.wikipedia.org/wiki/Cosworth"]
+      },
+      "williams": {
+        "motor": "Supertec FB01 3.0 V10 (Renault RS9-Basis, Kundenmotor)",
+        "ps": 770,
+        "sicher": "mittel",
+        "spanne": "750-780",
+        "quellen": ["https://en.wikipedia.org/wiki/Renault_RS_engine", "https://en.wikipedia.org/wiki/Formula_One_French_engine_manufacturers"]
+      },
+      "benetton": {
+        "motor": "Playlife FB01 3.0 V10 (Supertec, identisch mit Williams und BAR)",
+        "ps": 770,
+        "sicher": "mittel",
+        "spanne": "750-780",
+        "quellen": ["https://en.wikipedia.org/wiki/Renault_RS_engine", "https://en.wikipedia.org/wiki/Formula_One_French_engine_manufacturers"]
+      },
+      "bar": {
+        "motor": "Supertec FB01 3.0 V10 (identisch mit Williams und Benetton)",
+        "ps": 770,
+        "sicher": "mittel",
+        "spanne": "750-780",
+        "quellen": ["https://en.wikipedia.org/wiki/Renault_RS_engine", "https://en.wikipedia.org/wiki/Formula_One_French_engine_manufacturers"]
+      },
+      "prost": {
+        "motor": "Peugeot A18 3.0 V10 (Werksmotor)",
+        "ps": 785,
+        "sicher": "mittel",
+        "spanne": "775-785",
+        "hinweis": "Nur eine Quelle (785 bei 17.000/min); Nennwert eher optimistisch.",
+        "quellen": ["https://en.wikipedia.org/wiki/Formula_One_French_engine_manufacturers"]
+      },
+      "sauber": {
+        "motor": "Petronas SPE-03A 3.0 V10 (Ferrari 047, Vorjahres-Spezifikation)",
+        "ps": 785,
+        "sicher": "niedrig",
+        "spanne": "770-800",
+        "hinweis": "Keine eigene Zahl gefunden. Abgeleitet aus Ferrari 047 von 1998 (790-805), als Kundenmotor leicht darunter angesetzt.",
+        "quellen": ["https://en.wikipedia.org/wiki/Ferrari_V10_engine"]
+      },
+      "arrows": {
+        "motor": "Arrows A20E 3.0 V10 (Hart 1030, 72 Grad)",
+        "ps": 715,
+        "sicher": "mittel",
+        "spanne": "700-715",
+        "hinweis": "Schwächster Motor 1999; de la Rosa machte den Motor, nicht das Chassis verantwortlich.",
+        "quellen": ["https://en.wikipedia.org/wiki/Arrows_A20"]
+      },
+      "minardi": {
+        "motor": "Ford VJM1 / VJM2 Zetec-R 3.0 V10 (Kundenmotor, Stewart-Spezifikation 1998)",
+        "ps": 740,
+        "sicher": "mittel",
+        "spanne": "730-745",
+        "hinweis": "Cosworth-Artikel: VJ/VJM 720 bhp Rennen / 730 bhp Quali, umgerechnet 730/740 PS.",
+        "quellen": ["https://en.wikipedia.org/wiki/Cosworth"]
+      }
+    },
+    "konzept": []
+  },
+  "2000": {
+    "regeln": "V10 vorgeschrieben, Mindestgewicht 600 kg mit Fahrer (siehe Hinweis 1996), vier Rillen, Einheitsreifen Bridgestone, kein Reifenvorteil. Letzte volle Saison ohne Traktionskontrolle.",
+    "reifen": {
+      "goodyear": [],
+      "bridgestone": ["ferrari", "mclaren", "williams", "benetton", "bar", "jordan", "arrows", "sauber", "jaguar", "minardi", "prost"]
+    },
+    "teams": {
+      "ferrari": {
+        "motor": "Ferrari Tipo 049 3.0 V10 (90 Grad; spät in der Saison 049B Rennen / 049C Quali)",
+        "ps": 810,
+        "sicher": "mittel",
+        "spanne": "803-815",
+        "quellen": ["https://en.wikipedia.org/wiki/Ferrari_V10_engine", "http://atlasf1.autosport.com/2000/nov01/tytler.html"]
+      },
+      "mclaren": {
+        "motor": "Mercedes FO110J 3.0 V10 (Ilmor)",
+        "ps": 815,
+        "sicher": "mittel",
+        "spanne": "810-820",
+        "hinweis": "Nur eine Quelle (Wikipedia: 815 bei 17.800/min).",
+        "quellen": ["https://en.wikipedia.org/wiki/Mercedes-Benz_FO_engine"]
+      },
+      "williams": {
+        "motor": "BMW E41/4 3.0 V10 (72 Grad, Werksmotor, erstes Jahr)",
+        "ps": 800,
+        "sicher": "mittel",
+        "spanne": "760-810",
+        "hinweis": "Rund 810 bei 17.500/min erst in der letzten Ausbaustufe zum Saisonende; Infobox-Untergrenze 760 für den Saisonstart. Saisonmittel angesetzt.",
+        "quellen": ["https://en.wikipedia.org/wiki/BMW_E41_/_P80_engine"]
+      },
+      "bar": {
+        "motor": "Honda RA000E 3.0 V10 (Werksmotor)",
+        "ps": 810,
+        "sicher": "mittel",
+        "spanne": "800-810",
+        "hinweis": "Wikipedia-Infobox nach StatsF1: 810 bei 17.000/min. Honda nannte sich selbst 'sehr konkurrenzfähig bei der Motorleistung'.",
+        "quellen": ["https://en.wikipedia.org/wiki/BAR_002", "http://atlasf1.autosport.com/2000/nov01/tytler.html"]
+      },
+      "jordan": {
+        "motor": "Mugen-Honda MF-301HE 3.0 V10 (halber Werksmotor)",
+        "ps": 770,
+        "sicher": "mittel",
+        "spanne": "760-780",
+        "hinweis": "Nur eine Quelle (770 bei 15.800/min). EJ10B ab Deutschland auf Augenhöhe mit BAR-Honda.",
+        "quellen": ["https://en.wikipedia.org/wiki/Jordan_EJ10", "http://atlasf1.autosport.com/2000/nov01/tytler.html"]
+      },
+      "jaguar": {
+        "motor": "Cosworth CR-2 3.0 V10 (72 Grad, Werksmotor)",
+        "ps": 805,
+        "sicher": "mittel",
+        "spanne": "790-805",
+        "hinweis": "Nur eine Quelle (805 bei 17.500/min).",
+        "quellen": ["https://en.wikipedia.org/wiki/Jaguar_R1"]
+      },
+      "benetton": {
+        "motor": "Playlife FB02 3.0 V10 (Supertec, Renault RS9-Basis)",
+        "ps": 780,
+        "sicher": "mittel",
+        "spanne": "770-780",
+        "quellen": ["https://en.wikipedia.org/wiki/Renault_RS_engine"]
+      },
+      "arrows": {
+        "motor": "Supertec FB02 3.0 V10 (identisch mit Benetton)",
+        "ps": 780,
+        "sicher": "mittel",
+        "spanne": "770-780",
+        "quellen": ["https://en.wikipedia.org/wiki/Arrows_A21", "https://en.wikipedia.org/wiki/Renault_RS_engine"]
+      },
+      "prost": {
+        "motor": "Peugeot A20 3.0 V10 (Werksmotor, letztes Jahr, sehr unzuverlässig)",
+        "ps": 795,
+        "sicher": "niedrig",
+        "spanne": "780-800",
+        "hinweis": "Einzige gefundene Zahl ist der Nennwert 800 bei 17.500/min. Angesichts null Punkten und vieler Defekte vermutlich optimistisch; leicht darunter angesetzt (Schätzung).",
+        "quellen": ["https://en.wikipedia.org/wiki/Formula_One_French_engine_manufacturers"]
+      },
+      "sauber": {
+        "motor": "Petronas SPE 04A 3.0 V10 (Ferrari 048, Vorjahres-Spezifikation)",
+        "ps": 795,
+        "sicher": "niedrig",
+        "spanne": "790-805",
+        "hinweis": "Keine eigene Zahl gefunden. Abgeleitet aus Ferrari 048 von 1999 (790-805); Atlas F1 bestätigt die 048-Basis.",
+        "quellen": ["http://atlasf1.autosport.com/2000/nov01/tytler.html", "https://en.wikipedia.org/wiki/Ferrari_V10_engine"]
+      },
+      "minardi": {
+        "motor": "Fondmetal RV10 3.0 V10 (Ford VJ Zetec-R, Stand 1998)",
+        "ps": 745,
+        "sicher": "niedrig",
+        "spanne": "740-770",
+        "hinweis": "Wikipedia-Infobox nennt 770 bei 15.800/min (fraglich). Cosworth-Artikel für VJ/VJM: 730 bhp Quali, umgerechnet 740 PS. Atlas F1: 'zwei Jahre alter Cosworth', veraltet. Schwächster Motor 2000.",
+        "quellen": ["https://en.wikipedia.org/wiki/Minardi_M02", "https://en.wikipedia.org/wiki/Cosworth"]
+      }
+    },
+    "konzept": [
+      {
+        "team": "arrows",
+        "cd": 0.96,
+        "grund": "Arrows A21 war laut Atlas F1 oft das schnellste Auto in den Speed-Traps und durchgehend unter den höchsten Topspeeds der Saison, stark auf Strecken mit wenig Abtrieb (Hockenheim, Monza, Montreal), schwach auf Abtriebsstrecken: wenig Luftwiderstand, wenig Abtrieb. Konkrete km/h-Werte nicht gefunden; Faktor ist eine Schätzung.",
+        "quelle": "http://atlasf1.autosport.com/2000/nov01/tytler.html"
+      },
+      {
+        "team": "bar",
+        "cd": 0.99,
+        "grund": "BAR 002 gut auf Strecken mit wenig und mittlerem Abtrieb, schwach in Monaco und Ungarn: eher wenig maximaler Abtrieb als wenig Widerstand. Schwacher Beleg, Faktor nur vorsichtig; besser den Abtrieb leicht senken.",
+        "quelle": "http://atlasf1.autosport.com/2000/nov01/tytler.html"
+      }
+    ]
+  }
+}

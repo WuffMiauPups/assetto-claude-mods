@@ -1,0 +1,13 @@
+{
+ "_hinweis": "Team-Autos aus der Formula RSS 3 V6 (tools/team_autos.py). Einheitsserie: gleiche Physik für alle, keine Teamstärke. Die 15 Skins von RSS haben keine Teamnamen, je drei aufeinanderfolgende tragen dieselben Farben; die Teams heißen hier nach der Farbe.",
+ "quelle": "rss_formula_rss_3_v6",
+ "prefix": "F3",
+ "brand": "F3",
+ "teams": {
+  "blau": {"name": "Team Blau", "skins": ["17_rss", "18_rss", "19_rss"]},
+  "schwarz_gelb": {"name": "Team Schwarz-Gelb", "skins": ["20_rss", "21_rss", "22_rss"]},
+  "orange": {"name": "Team Orange", "skins": ["23_rss", "24_rss", "25_rss"]},
+  "rot_weiss": {"name": "Team Rot-Weiß", "skins": ["26_rss", "27_rss", "28_rss"]},
+  "schwarz_gruen": {"name": "Team Schwarz-Grün", "skins": ["29_rss", "30_rss", "31_rss"]}
+ }
+}

@@ -16,6 +16,7 @@ Abtrieb je Team einstellen wie bei den Cimmerian-Jahrgängen (acdini.py). Die Qu
 """
 import argparse
 import json
+import re
 import os
 import shutil
 from pathlib import Path
@@ -39,7 +40,7 @@ def link_tree(src, dst):
         if p.is_file(): link(p, dst / p.relative_to(src))
 
 
-def build(ac, quelle, key, team, jahr):
+def build(ac, quelle, key, team, plan):
     cars = ac / "content" / "cars"
     src, name = cars / quelle, f"{quelle}_{key}"
     dst = cars / name
@@ -48,6 +49,13 @@ def build(ac, quelle, key, team, jahr):
         elif p.is_dir() and p.name.lower() not in ("skins", "sfx", "ui", "data"): link_tree(p, dst / p.name)
     for skin in team["skins"]:
         link_tree(src / "skins" / skin, dst / "skins" / skin)
+    for neu, alt in team.get("skin_kopien", {}).items():      # zweiter Wagen eines Teams mit nur einem Skin
+        link_tree(src / "skins" / alt, dst / "skins" / neu)
+        p = dst / "skins" / neu / "ui_skin.json"
+        text = p.read_text(encoding="utf-8-sig", errors="replace")
+        p.unlink()                                            # Hardlink lösen, sonst ändert sich das Original
+        nr = neu.split("_")[0]
+        p.write_text(re.sub(r'("number"\s*:\s*)"?\d+"?', rf'\g<1>"{nr}"', re.sub(r"#\d+", f"#{nr}", text)), encoding="utf-8")
     # Sound: Bank unter neuem Namen, Ereignispfade auf den neuen Ordner
     (dst / "sfx").mkdir(exist_ok=True)
     link(src / "sfx" / f"{quelle}.bank", dst / "sfx" / f"{name}.bank")
@@ -58,10 +66,12 @@ def build(ac, quelle, key, team, jahr):
     for p in (src / "ui").iterdir():
         if p.is_file() and p.name != "ui_car.json": shutil.copy2(p, dst / "ui" / p.name)
     ui = json.loads((src / "ui" / "ui_car.json").read_text(encoding="utf-8-sig"), strict=False)
-    titel = f"F1 {jahr} {team['name']}"
+    prefix = plan.get("prefix") or f"F1 {plan['jahr']}"
+    titel = f"{prefix} {team['name']}"
     ui["name"] = titel
     ui["description"] = f"{team['name']}, Team-Auto aus {quelle} (eigene Physik je Team).<br><br>" + ui.get("description", "")
-    ui["tags"] = ui.get("tags", []) + [f"f1 {jahr} teams"]
+    ui["tags"] = ui.get("tags", []) + [f"{prefix.lower()} teams"]
+    if plan.get("brand"): ui["brand"] = plan["brand"]
     (dst / "ui" / "ui_car.json").write_text(json.dumps(ui, indent=2, ensure_ascii=False), encoding="utf-8")
     # Physik: gleiche Dateien, neuer Schlüssel
     header, entries, _ = acd_read(src / "data.acd")
@@ -96,8 +106,8 @@ def main():
         if dst.exists():
             print(f"{dst.name}: vorhanden, nicht angefasst"); continue
         if not a.apply:
-            print(f"{dst.name}: würde entstehen als 'F1 {plan['jahr']} {team['name']}' mit {team['skins']}  [Trockenlauf]"); continue
-        build(ac, quelle, key, team, plan["jahr"])
+            print(f"{dst.name}: würde entstehen als '{plan.get('prefix', 'F1 ' + str(plan.get('jahr')))} {team['name']}' mit {team['skins']}  [Trockenlauf]"); continue
+        build(ac, quelle, key, team, plan)
         print(f"{dst.name}: gebaut, {len(team['skins'])} Skins")
     if a.apply: print(f"{stat['link']} Hardlinks, {stat['kopie']} Kopien")
 

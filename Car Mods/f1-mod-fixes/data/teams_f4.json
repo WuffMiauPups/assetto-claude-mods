@@ -1,0 +1,16 @@
+{
+ "_hinweis": "Team-Autos aus der Formula RSS 4 (tools/team_autos.py). Einheitsserie: gleiche Physik für alle, keine Teamstärke. Teamnamen aus ui_skin.json von RSS. Greenery FH hat nur einen Skin (#85), der zweite Wagen ist eine Kopie mit der Nummer 86. Die Skins ohne Team (white, carbon clean, carbon realistic, carbon dark, black) sind auf Wunsch nicht dabei.",
+ "quelle": "rss_formula_rss_4",
+ "prefix": "F4",
+ "brand": "F4",
+ "teams": {
+  "team_rss": {"name": "Team RSS", "skins": ["01_Team_RSS", "02_Team_RSS"]},
+  "rss_junior": {"name": "RSS junior", "skins": ["03_RSS_junior", "04_RSS_junior"]},
+  "smith_racing": {"name": "Smith Racing", "skins": ["05_Smith_Racing", "06_Smith_Racing"]},
+  "chinese_dragon": {"name": "Chinese Dragon", "skins": ["07_Chinese_Dragons", "08_Chinese_Dragons"]},
+  "nacho_racing": {"name": "Nacho Racing", "skins": ["09_Nacho_Racing", "10_Nacho_Racing"]},
+  "eastasia_gp": {"name": "EastAsia.GP", "skins": ["11_EastAsia_GP", "12_EastAsia_GP"]},
+  "outback_stars": {"name": "Outback Stars", "skins": ["13_Outback_Stars", "14_Outback_Stars"]},
+  "greenery_fh": {"name": "Greenery FH", "skins": ["85_Greenery_FH"], "skin_kopien": {"86_Greenery_FH": "85_Greenery_FH"}}
+ }
+}

@@ -495,6 +495,17 @@ Recherche in `research/motoren_2021_2024.json`, Pläne `data/teams_2021.json`, `
 
 `team_staerke.py --pruefen` vergleicht den Sollstand eines Plans mit dem Spielordner (2026-11-16: alle 27 Pläne stimmen).
 
+## F3 und F4 (RSS), Team-Autos ohne Teamstärke (2026-11-16, nicht geladen)
+
+Einheitsserien: `team_autos.py` legt je Team einen Ordner an, die Physik ist bei allen die des Grundautos. Die Pläne tragen `prefix` (Name im Spiel) und `brand` statt `jahr`.
+
+- **F3** (`data/teams_f3.json`, aus `rss_formula_rss_3_v6`): fünf Autos `rss_formula_rss_3_v6_<farbe>` mit je drei Skins, Brand `F3`. Die Skins von RSS haben keine Teamnamen, die Teams heißen nach der Farbe (Blau 17 bis 19, Schwarz-Gelb 20 bis 22, Orange 23 bis 25, Rot-Weiß 26 bis 28, Schwarz-Grün 29 bis 31).
+- **F4** (`data/teams_f4.json`, aus `rss_formula_rss_4`): acht Autos mit je zwei Skins, Brand `F4`, Teamnamen von RSS. Greenery FH hat nur den Skin #85; der zweite ist eine Kopie mit der Nummer 86 (`skin_kopien` im Plan). Die Skins ohne Team (white, carbon, black) sind nicht dabei.
+
+Die Grundautos bleiben unverändert unter `Race Sim Studio`.
+
+Ebenfalls nach `content\cars_entfernt_2026-11-16` verschoben: `Alpine_A521` und `red_bull_rb16b_ds` (Deploy/Senna, 2021).
+
 ## Brands nach Saison
 
 Ausnahmen auf Wunsch: Ponz 2012 (`f1_2012_*`) unter `Ponz F1`, die Formula-Hybrid-Grundautos 2018, 2018 S1, 2019 und 2020 unter `Race Sim Studio`, `acr_ferrari_sf71h` unter `Ferrari`.

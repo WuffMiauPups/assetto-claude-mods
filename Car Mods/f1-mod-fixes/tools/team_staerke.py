@@ -107,8 +107,11 @@ def absolut(plan, cars, apply):
         b = basis(cars / t["ordner"])
         if gleich: b = Misch(b, refb, gleich, fluegel)
         kg, cda, _ = aero(b)
-        info[k] = {"b": b, "ps": peak_ps(b)[1], "kg": kg, "cda": cda * t.get("cd", 1.0)}
+        info[k] = {"b": b, "ps": peak_ps(b)[1], "kg": kg, "cda0": cda}
     ref = min((k for k in teams if "abstand" in teams[k]), key=lambda k: teams[k]["abstand"])
+    for k, i in info.items():       # "cd_angleichen": Luftwiderstand aller auf den des Bezugs, "cd" je Team gilt dann darauf
+        i["fcd"] = teams[k].get("cd", 1.0) * (info[ref]["cda0"] / i["cda0"] if plan.get("cd_angleichen") else 1.0)
+        i["cda"] = i["cda0"] * i["fcd"]
     anker = plan.get("ps_anker") or max(i["ps"] for i in info.values())
     ps_max = max(t["ps"] for t in teams.values())
     masse = lambda k: teams[k].get("masse", plan.get("masse"))
@@ -131,7 +134,7 @@ def absolut(plan, cars, apply):
                 rest, rel = (plan["cl_min"] - rel) * 100 * e["s_pro_prozent_abtrieb"], plan["cl_min"]
         bezug = plan.get("abtrieb_bezug") or info[ref]["kg"]        # kg bei 200 km/h, die dem schnellsten Team zustehen
         info[ref]["kg_bezug"] = bezug
-        f_cl, f_cd = bezug * rel / i["kg"], t.get("cd", 1.0)
+        f_cl, f_cd = bezug * rel / i["kg"], i["fcd"]
         en = i["b"].read("engine.ini")
         pname = (re.search(r"(?im)^\s*POWER_CURVE\s*=\s*([^;\r\n]+)", en) or [0, "power.lut"])[1].strip()
         neu = {pname: ZEILE.sub(lambda m: m.group(1) + f"{float(m.group(2)) * f_lut:.4f}", i["b"].read(pname))}

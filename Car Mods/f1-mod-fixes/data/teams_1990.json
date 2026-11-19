@@ -1,0 +1,133 @@
+{
+ "_hinweis": "Erzeugt von tools/plaene_bauen.py. abstand aus data/quali_abstaende.json (F1DB), ps und cd aus research/motoren_1990_1995_2016.json (Schätzungen mit Quellen). Empfindlichkeiten stammen aus den Tests der V8-Jahrgänge bzw. der Hybrid-Autos und sind für diesen Satz ungeprüft.",
+ "jahr": 1990,
+ "absolut": true,
+ "cl_min": 0.65,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.12,
+  "s_pro_prozent_leistung": 0.095,
+  "s_pro_prozent_widerstand": 0.04,
+  "s_pro_kg": 0.024
+ },
+ "masse": 575,
+ "teams": {
+  "mclaren": {
+   "ordner": "f1_1990_mclaren",
+   "abstand": 0.0,
+   "ps": 700,
+   "_motor": "Honda RA100E, 3,5 l V10 (72 Grad), Werksmotor (mittel, 685-720)"
+  },
+  "ferrari": {
+   "ordner": "f1_1990_ferrari",
+   "abstand": 0.5,
+   "ps": 690,
+   "_motor": "Ferrari Tipo 036, ab Imola 037, 3,5 l V12 (65 Grad), Werksmotor (mittel, 680-715)"
+  },
+  "williams": {
+   "ordner": "f1_1990_williams",
+   "abstand": 1.26,
+   "ps": 669,
+   "_motor": "Renault RS2, 3,5 l V10 (67 Grad), Werksmotor (mittel, 659-680)"
+  },
+  "tyrrell": {
+   "ordner": "f1_1990_tyrrell",
+   "abstand": 1.37,
+   "ps": 629,
+   "_motor": "Ford-Cosworth DFR, 3,5 l V8 (90 Grad), Kundenmotor, von Brian Hart vorbereitet (mittel, 615-640)",
+   "cd": 0.97,
+   "_cd": "Tyrrell 019 mit erster Hochnase und geknicktem Frontflügel: mehr Luft unter das Auto, weniger Luftwiderstand bei gleichem Abtrieb, flachere Flügel möglich. Glich die DFR-Schwäche auf langsamen Strecken aus, auf schnellen Strecken trotzdem zu wenig Leistung. Faktor geschätzt."
+  },
+  "benetton": {
+   "ordner": "f1_1990_benetton",
+   "abstand": 1.72,
+   "ps": 659,
+   "_motor": "Ford-Cosworth HBA4, 3,5 l V8 (75 Grad), exklusiver Werksmotor (mittel, 650-670)"
+  },
+  "larrousse": {
+   "ordner": "f1_1990_larrousse",
+   "abstand": 2.96,
+   "ps": 649,
+   "_motor": "Lamborghini LE3512, 3,5 l V12 (80 Grad), Kundenmotor (Lola LC89B/LC90) (mittel, 635-660)"
+  },
+  "lotus": {
+   "ordner": "f1_1990_lotus",
+   "abstand": 2.97,
+   "ps": 649,
+   "_motor": "Lamborghini LE3512, 3,5 l V12 (80 Grad), Kundenmotor (mittel, 635-660)"
+  },
+  "minardi": {
+   "ordner": "f1_1990_minardi",
+   "abstand": 3.23,
+   "ps": 613,
+   "_motor": "Ford-Cosworth DFR, 3,5 l V8 (90 Grad), Kundenmotor (niedrig, 600-629)"
+  },
+  "dallara": {
+   "ordner": "f1_1990_dallara",
+   "abstand": 3.42,
+   "ps": 613,
+   "_motor": "Ford-Cosworth DFR, 3,5 l V8 (90 Grad), Kundenmotor (BMS Scuderia Italia) (niedrig, 600-629)"
+  },
+  "brabham": {
+   "ordner": "f1_1990_brabham",
+   "abstand": 3.48,
+   "ps": 640,
+   "_motor": "Judd EV, 3,5 l V8 (76 Grad), Kundenmotor (niedrig, 629-660)"
+  },
+  "leytonhouse": {
+   "ordner": "f1_1990_march",
+   "abstand": 3.53,
+   "ps": 640,
+   "_motor": "Judd EV, 3,5 l V8 (76 Grad), Kundenmotor (niedrig, 629-660)",
+   "cd": 0.96,
+   "_cd": "CG901 (Newey) aerodynamisch sehr effizient, aber extrem empfindlich auf Nicken und Rollen, nur auf sehr glatten Strecken gut. In Paul Ricard auf der Mistral-Geraden laut Berichten schneller als der Ferrari. Windkanalfehler bis zur B-Version (Frankreich) korrigiert. Faktor geschätzt; gilt eher für die B-Version."
+  },
+  "ligier": {
+   "ordner": "f1_1990_ligier",
+   "abstand": 3.74,
+   "ps": 613,
+   "_motor": "Ford-Cosworth DFR, 3,5 l V8 (90 Grad), Kundenmotor (niedrig, 600-629)"
+  },
+  "arrows": {
+   "ordner": "f1_1990_footwork",
+   "abstand": 3.96,
+   "ps": 619,
+   "_motor": "Ford-Cosworth DFR, 3,5 l V8 (90 Grad), Kundenmotor (niedrig, 605-630)"
+  },
+  "osella": {
+   "ordner": "f1_1990_osella",
+   "abstand": 4.61,
+   "ps": 613,
+   "_motor": "Ford-Cosworth DFR, 3,5 l V8 (90 Grad), Kundenmotor (niedrig, 600-629)"
+  },
+  "onyx": {
+   "ordner": "f1_1990_onyx",
+   "abstand": 4.8,
+   "ps": 613,
+   "_motor": "Ford-Cosworth DFR, 3,5 l V8 (90 Grad), Kundenmotor (ab Saisonmitte als Monteverdi) (niedrig, 600-629)"
+  },
+  "ags": {
+   "ordner": "f1_1990_ags",
+   "abstand": 5.2,
+   "ps": 613,
+   "_motor": "Ford-Cosworth DFR, 3,5 l V8 (90 Grad), Kundenmotor (niedrig, 600-629)"
+  },
+  "eurobrun": {
+   "ordner": "f1_1990_eurobrun",
+   "abstand": 5.27,
+   "ps": 618,
+   "_motor": "Judd CV, 3,5 l V8 (90 Grad), Kundenmotor, Vorjahrestechnik (mittel, 598-620)"
+  },
+  "coloni": {
+   "ordner": "f1_1990_coloni",
+   "abstand": 7.33,
+   "ps": 567,
+   "_motor": "Subaru 1235 (Motori Moderni), 3,5 l Boxer-12, bis Großbritannien; ab Deutschland Ford-Cosworth DFR V8 (Langford & Peck) (mittel, 550-570 (Subaru), 600-629 (DFR))"
+  },
+  "life": {
+   "ordner": "f1_1990_life",
+   "ps": 477,
+   "_motor": "Life F35, 3,5 l W12 (Rocchi), Eigenbau; in Portugal und Spanien Judd CV V8 (niedrig, 300-480)",
+   "cl": 0.65
+  }
+ }
+}

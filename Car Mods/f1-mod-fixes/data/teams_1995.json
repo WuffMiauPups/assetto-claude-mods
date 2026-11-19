@@ -1,0 +1,90 @@
+{
+ "_hinweis": "Erzeugt von tools/plaene_bauen.py. abstand aus data/quali_abstaende.json (F1DB), ps und cd aus research/motoren_1990_1995_2016.json (Schätzungen mit Quellen). Empfindlichkeiten stammen aus den Tests der V8-Jahrgänge bzw. der Hybrid-Autos und sind für diesen Satz ungeprüft.",
+ "jahr": 1995,
+ "absolut": true,
+ "cl_min": 0.65,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.12,
+  "s_pro_prozent_leistung": 0.095,
+  "s_pro_prozent_widerstand": 0.04,
+  "s_pro_kg": 0.024
+ },
+ "masse": 595,
+ "ps_anker": 732,
+ "teams": {
+  "williams": {
+   "ordner": "f1_1995_williams",
+   "abstand": 0.0,
+   "ps": 715,
+   "_motor": "Renault RS7, 3,0 l V10 (67 Grad), Werksmotor, identisch zu Benetton (mittel, 684-760)"
+  },
+  "benetton": {
+   "ordner": "f1_1995_benetton",
+   "abstand": 0.32,
+   "ps": 715,
+   "_motor": "Renault RS7, 3,0 l V10 (67 Grad), Werksmotor (mittel, 684-760)"
+  },
+  "mclaren": {
+   "ordner": "f1_1995_mclaren",
+   "abstand": 1.52,
+   "ps": 700,
+   "_motor": "Mercedes-Benz FO 110 (Ilmor), 3,0 l V10 (75 Grad), Werksmotor (mittel, 680-710)"
+  },
+  "jordan": {
+   "ordner": "f1_1995_jordan",
+   "abstand": 1.74,
+   "ps": 705,
+   "_motor": "Peugeot A10, 3,0 l V10 (72 Grad), Werksmotor (niedrig, 680-760)"
+  },
+  "sauber": {
+   "ordner": "f1_1995_sauber",
+   "abstand": 2.28,
+   "ps": 645,
+   "_motor": "Ford-Cosworth ECA Zetec-R, 3,0 l V8 (75 Grad), Ford-Werksmotor (mittel, 608-660)"
+  },
+  "ligier": {
+   "ordner": "f1_1995_ligier",
+   "abstand": 2.59,
+   "ps": 679,
+   "_motor": "Mugen-Honda MF-301H, 3,0 l V10 (72 Grad), Werksunterstützung (mittel, 665-690)",
+   "cd": 1.0,
+   "_cd": "JS41 dem Benetton B195 auffallend ähnlich, Getriebe von Benetton. Aerodynamik deshalb wie Benetton ansetzen, kein eigener Luftwiderstands-Beleg."
+  },
+  "tyrrell": {
+   "ordner": "f1_1995_tyrell",
+   "abstand": 3.59,
+   "ps": 685,
+   "_motor": "Yamaha OX10C (Judd-Basis), 3,0 l V10 (72 Grad), Werksunterstützung (niedrig, 665-690)"
+  },
+  "footwork": {
+   "ordner": "f1_1995_arrows",
+   "abstand": 3.76,
+   "ps": 670,
+   "_motor": "Hart 830, 3,0 l V8 (72 Grad), Kundenmotor (niedrig, 640-690)"
+  },
+  "minardi": {
+   "ordner": "f1_1995_minardi",
+   "abstand": 4.17,
+   "ps": 615,
+   "_motor": "Ford-Cosworth EDM, 3,0 l V8 (75 Grad), Kundenmotor (beste ED-Ausführung) (niedrig, 595-640)"
+  },
+  "simtek": {
+   "ordner": "f1_1995_simtek",
+   "abstand": 4.75,
+   "ps": 605,
+   "_motor": "Ford-Cosworth EDB, 3,0 l V8 (75 Grad), Kundenmotor (niedrig, 590-640)"
+  },
+  "pacific": {
+   "ordner": "f1_1995_pacific",
+   "abstand": 6.87,
+   "ps": 605,
+   "_motor": "Ford-Cosworth EDC, 3,0 l V8 (75 Grad), Kundenmotor (niedrig, 590-640)"
+  },
+  "forti": {
+   "ordner": "f1_1995_forti",
+   "abstand": 7.13,
+   "ps": 605,
+   "_motor": "Ford-Cosworth EDD, 3,0 l V8 (75 Grad), Kundenmotor (niedrig, 590-660)"
+  }
+ }
+}

@@ -495,6 +495,18 @@ Recherche in `research/motoren_2021_2024.json`, Pläne `data/teams_2021.json`, `
 
 `team_staerke.py --pruefen` vergleicht den Sollstand eines Plans mit dem Spielordner (2026-11-16: alle 27 Pläne stimmen).
 
+## 1990, 1995 und 2016 (2026-11-16, nicht geladen, nicht getestet)
+
+Neue Mods, gleiche Methode (`plaene_bauen.py`, `research/motoren_1990_1995_2016.json`, Brands `F1 1990`, `F1 1995`, `F1 2016`).
+
+| Satz | Autos | Bezug | Besonderheiten |
+|---|---|---|---|
+| 1990 `f1_1990_` (Sim Dream) | 19 | McLaren | Alle hatten denselben Motor und dieselbe Aero, Gewicht je Team 675 bis 790 kg, jetzt 575 kg (500 kg plus Fahrer, wie 1993 aus derselben Mod-Familie). Honda 700, Ferrari 690, Renault 669, Kunden-DFR 613 PS. Tyrrell 0,97 und Leyton House 0,96 Luftwiderstand (gut belegt). Coloni an der Abtrieb-Untergrenze (Rest 1,3 s). Life hat nie eine Quali-Zeit gesetzt: fester Abtrieb an der Untergrenze und der W12 mit 477 PS (im Modell 508 statt 722 PS) |
+| 1995 `f1_1995_` (sagastiiim) | 12 | Williams | kein Ferrari in der Mod. Gewicht 650 bis 730 auf 595 kg. Renault 715, Mercedes 700, Ford ED 605 PS. Pacific und Forti an der Untergrenze (Rest 1,2 und 1,5 s) |
+| 2016 `acfl_2016_*_off` (ACFL) | 11 | Mercedes | Die Mod staffelte den Luftwiderstand um 19 % als Rangfolge (Manor, Renault, Sauber am höchsten). Jetzt alle auf dem Wert des Mercedes (`cd_angleichen` im Plan), darauf Red Bull 1,04, Williams und Force India 0,97 (gut belegt). Mercedes 930, Ferrari 912, Renault 885, Ferrari 2015 im Toro Rosso 868, Honda 858 PS. Manor und Sauber an der Untergrenze von 80 % (Rest 0,5 und 0,25 s) |
+
+Stand der Prüfung mit `--pruefen` nach diesen Sätzen: 344 Autos in 30 Plänen stimmen mit dem Spielordner überein.
+
 ## F3 und F4 (RSS), Team-Autos ohne Teamstärke (2026-11-16, nicht geladen)
 
 Einheitsserien: `team_autos.py` legt je Team einen Ordner an, die Physik ist bei allen die des Grundautos. Die Pläne tragen `prefix` (Name im Spiel) und `brand` statt `jahr`.

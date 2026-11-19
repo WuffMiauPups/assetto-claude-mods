@@ -1,0 +1,87 @@
+{
+ "_hinweis": "Erzeugt von tools/plaene_bauen.py. abstand aus data/quali_abstaende.json (F1DB), ps und cd aus research/motoren_1990_1995_2016.json (Schätzungen mit Quellen). Empfindlichkeiten stammen aus den Tests der V8-Jahrgänge bzw. der Hybrid-Autos und sind für diesen Satz ungeprüft.",
+ "jahr": 2016,
+ "absolut": true,
+ "cl_min": 0.8,
+ "empfindlichkeit": {
+  "s_pro_prozent_abtrieb": 0.09,
+  "s_pro_prozent_leistung": 0.16,
+  "s_pro_prozent_widerstand": 0.04,
+  "s_pro_kg": 0.024
+ },
+ "cd_angleichen": true,
+ "teams": {
+  "mercedes": {
+   "ordner": "acfl_2016_mercedes_off",
+   "abstand": 0.0,
+   "ps": 930,
+   "_motor": "Mercedes PU106C Hybrid, 1,6 l V6 Turbo, Werksmotor (mittel, 915-975)"
+  },
+  "ferrari": {
+   "ordner": "acfl_2016_ferrari_off",
+   "abstand": 0.61,
+   "ps": 912,
+   "_motor": "Ferrari 061, 1,6 l V6 Turbo, Werksmotor (mittel, 895-970)"
+  },
+  "redbull": {
+   "ordner": "acfl_2016_redbull_off",
+   "abstand": 0.64,
+   "ps": 885,
+   "_motor": "TAG Heuer F1-2016 (umbenannter Renault R.E.16), 1,6 l V6 Turbo, Kundenmotor auf Werksstand (mittel, 870-940)",
+   "cd": 1.04,
+   "_cd": "RB12 mit starker Anstellung (High Rake) und viel Abtrieb, der Unterboden wirkt wie ein großer Diffusor; mehr Luftwiderstand am Oberkörper, teilweise durch Absenken des Hecks bei hohem Tempo ausgeglichen. Speed-Trap Melbourne nur 320,8 km/h, gleichauf mit Renault-Werksteam trotz viel mehr Abtrieb. Faktor geschätzt."
+  },
+  "williams": {
+   "ordner": "acfl_2016_williams_off",
+   "abstand": 1.11,
+   "ps": 930,
+   "_motor": "Mercedes PU106C Hybrid, 1,6 l V6 Turbo, Kundenmotor (mittel, 910-975)",
+   "cd": 0.97,
+   "_cd": "FW38 übernimmt das Konzept wenig Luftwiderstand und hohe Endgeschwindigkeit vom FW36; Speed-Trap Melbourne 329,8 km/h (Platz 2 und 3), dafür Abtriebsschwäche in langsamen Kurven. Faktor geschätzt."
+  },
+  "forceindia": {
+   "ordner": "acfl_2016_force_india_off",
+   "abstand": 1.16,
+   "ps": 930,
+   "_motor": "Mercedes PU106C Hybrid, 1,6 l V6 Turbo, Kundenmotor (mittel, 910-975)",
+   "cd": 0.97,
+   "_cd": "VJM09 Schnellster der Speed-Trap in Melbourne (330,3 km/h), laut Quelle die ganze Saison unter den Schnellsten auf der Geraden, schneller als das Mercedes-Werksteam mit gleichem Motor. Faktor geschätzt."
+  },
+  "mclaren": {
+   "ordner": "acfl_2016_mclaren_off",
+   "abstand": 1.31,
+   "ps": 858,
+   "_motor": "Honda RA616H, 1,6 l V6 Turbo, Werksmotor (niedrig, 845-920)"
+  },
+  "tororosso": {
+   "ordner": "acfl_2016_toro_rosso_off",
+   "abstand": 1.49,
+   "ps": 868,
+   "_motor": "Ferrari 060 (Vorjahresmotor 2015), 1,6 l V6 Turbo, Kundenmotor ohne Weiterentwicklung (niedrig, 850-890)"
+  },
+  "haas": {
+   "ordner": "acfl_2016_haas_off",
+   "abstand": 1.61,
+   "ps": 912,
+   "_motor": "Ferrari 061, 1,6 l V6 Turbo, Kundenmotor (aktueller Stand) (mittel, 890-970)"
+  },
+  "renault": {
+   "ordner": "acfl_2016_renault_off",
+   "abstand": 2.14,
+   "ps": 885,
+   "_motor": "Renault R.E.16, 1,6 l V6 Turbo, Werksmotor (mittel, 870-940)"
+  },
+  "manor": {
+   "ordner": "acfl_2016_manor_off",
+   "abstand": 2.33,
+   "ps": 930,
+   "_motor": "Mercedes PU106C Hybrid, 1,6 l V6 Turbo, Kundenmotor (mittel, 910-975)"
+  },
+  "sauber": {
+   "ordner": "acfl_2016_sauber_off",
+   "abstand": 2.36,
+   "ps": 912,
+   "_motor": "Ferrari 061, 1,6 l V6 Turbo, Kundenmotor (aktueller Stand) (mittel, 890-970)"
+  }
+ }
+}

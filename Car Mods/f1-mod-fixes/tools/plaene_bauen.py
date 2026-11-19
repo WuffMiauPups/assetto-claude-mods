@@ -33,6 +33,17 @@ SAETZE = {
     "1988": (1988, "motoren_1988_1994", SAUGER, 0.65, {},
              autos("f1_1988_", "mclaren ferrari lotus arrows zakspeed osella williams benetton march tyrrell rial minardi ligier larrousse=larrousse:lola ags coloni dallara eurobrun"),
              {k: {"masse": 615 if k in TURBO88 else 575} for k in "mclaren ferrari lotus arrows zakspeed osella williams benetton march tyrrell rial minardi ligier larrousse ags coloni dallara eurobrun".split()}),
+    # 1990 (Sim Dream): gleiche Mod-Familie wie 1993. Life hat sich nie vorqualifiziert und hat keinen Abstand: fester Abtrieb.
+    "1990": (1990, "motoren_1990_1995_2016", SAUGER, 0.65, {"masse": 575},
+             autos("f1_1990_", "mclaren ferrari williams tyrrell benetton larrousse=larrousse:lola lotus minardi dallara brabham leytonhouse=march:leyton-house ligier arrows=footwork:arrows osella onyx ags eurobrun coloni life"), {}),
+    # 1995 (sagastiiim): kein Ferrari in der Mod. Ordner f1_1995_tyrell (so geschrieben) und f1_1995_arrows (Footwork).
+    "1995": (1995, "motoren_1990_1995_2016", SAUGER, 0.65, {"masse": 595, "ps_anker": 732},
+             autos("f1_1995_", "williams benetton mclaren jordan sauber ligier tyrrell=tyrell footwork=arrows minardi simtek pacific forti"), {}),
+    # 2016 (ACFL): Die Mod staffelt den Luftwiderstand von Mercedes bis Sauber/Renault/Manor um 19 % als Rangfolge
+    # (der Manor war real eines der Autos mit dem wenigsten Luftwiderstand). Deshalb alle auf den Wert des Mercedes,
+    # darauf nur die gut belegten Faktoren der Recherche.
+    "2016": (2016, "motoren_1990_1995_2016", HYBRID, 0.80, {"cd_angleichen": True},
+             autos("acfl_2016_", "mercedes=mercedes_off ferrari=ferrari_off redbull=redbull_off:red-bull williams=williams_off forceindia=force_india_off:force-india mclaren=mclaren_off tororosso=toro_rosso_off:toro-rosso haas=haas_off renault=renault_off manor=manor_off sauber=sauber_off"), {}),
     "1993": (1993, "motoren_1988_1994", SAUGER, 0.65, {"masse": 580},
              autos("f1_1993_", "williams mclaren benetton ferrari ligier lotus sauber footwork jordan larrousse lola minardi tyrrell"), {}),
     "1994": (1994, "motoren_1988_1994", SAUGER, 0.65, {},
@@ -83,6 +94,8 @@ SCHWACH_BELEGT = {(1993, "lola"), (1993, "larrousse"), (1994, "pacific"), (1994,
 
 # Von Hand festgelegte Werte je Satz und Team (nach Tests oder auf Wunsch), überschreiben die Rechnung.
 FEST = {
+    "1990": {"life": {"cl": 0.65}},      # ohne Quali-Zeit: Abtrieb an der Untergrenze, dazu der schwache W12
+
     # Die Mod gibt dem FW36 rund 25 % mehr Luftwiderstand als dem Mercedes; real war er das Auto mit dem wenigsten
     # Luftwiderstand. 0.77 bringt ihn auf Mercedes x 0.96 (Vorschlag der Recherche).
     "2014": {"williams": {"cd": 0.77, "_cd": "Luftwiderstand der Mod korrigiert: Ziel Mercedes x 0.96 (Speed-Trap 2014)"}},
@@ -97,13 +110,13 @@ def main():
         if not (RES / f"{datei}.json").is_file():
             print(f"teams_{name}.json: research/{datei}.json fehlt, übersprungen"); continue
         res = json.loads((RES / f"{datei}.json").read_text(encoding="utf-8"))[str(jahr)]
-        konzept = {k["team"]: k for k in res.get("konzept", []) if k.get("cd")}
+        konzept = {k["team"]: k for k in res.get("konzept", []) if k.get("cd") and k.get("beleg", "gut") == "gut"}
         ohne_kers = set(res.get("ohne_kers", []))
         teams = {}
         for key, (ordner, fid) in cars.items():
             rk = key.split("_s2")[0].replace("williams_b", "williams").replace("caterham_late", "caterham")
             m = res["teams"][rk]
-            t = {"ordner": ordner, "abstand": quali[str(jahr)][fid][0], "ps": int(round(m["ps"])),
+            t = {"ordner": ordner, **({"abstand": quali[str(jahr)][fid][0]} if fid in quali[str(jahr)] else {}), "ps": int(round(m["ps"])),
                  "_motor": f"{m['motor']} ({m.get('sicher', '?')}" + (f", {m['spanne']}" if m.get("spanne") else "") + ")"}
             if rk in konzept and (jahr, rk) not in SCHWACH_BELEGT:
                 t["cd"] = min(1.08, max(0.95, konzept[rk]["cd"])); t["_cd"] = konzept[rk]["grund"]

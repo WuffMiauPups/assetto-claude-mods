@@ -1,0 +1,505 @@
+{
+  "_hinweis": "Recherche vom 2026-11-16. PS = bhp x 1,014 (umgerechnet, sofern die Quelle bhp/hp nennt). Alle Werte sind Schätzungen aus Sekundärquellen (überwiegend Wikipedia-Infoboxen, die StatsF1/Autocourse zitieren, sowie Presseberichte); wichtig sind die Verhältnisse innerhalb einer Saison. 2016 wurden die Absolutwerte an den Projektrahmen angepasst (2014 Mercedes 850, 2017 Mercedes 949), die Abstände stammen aus den Quellen. Faktor 'cd' im Konzept: 1,00 = Durchschnitt, kleiner = weniger Luftwiderstand; die Faktoren selbst sind vorsichtige Schätzungen, 'beleg' bewertet nur, wie gut die Auffälligkeit an sich belegt ist.",
+  "1990": {
+    "regeln": "3,5-Liter-Saugmotoren, Turbos verboten, kein Nachtanken. Mindestgewicht 500 kg OHNE Fahrer (Fahrer wurde erst ab 1995 mitgewogen). Zwei Reifenhersteller: Goodyear und Pirelli.",
+    "regeln_quellen": [
+      "https://www.f1technical.net/news/28346",
+      "https://en.wikipedia.org/wiki/Benetton_B190"
+    ],
+    "reifen": {
+      "goodyear": ["mclaren", "ferrari", "williams", "benetton", "lotus", "arrows", "leytonhouse", "larrousse", "ligier", "ags", "onyx", "coloni", "life"],
+      "pirelli": ["tyrrell", "brabham", "minardi", "dallara", "osella", "eurobrun"]
+    },
+    "reifen_quelle": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship",
+    "teams": {
+      "mclaren": {
+        "motor": "Honda RA100E, 3,5 l V10 (72 Grad), Werksmotor",
+        "ps": 700,
+        "sicher": "mittel",
+        "spanne": "685-720",
+        "hinweis": "690 bhp umgerechnet; Infobox MP4/5 nennt 675-710 hp über 1989/1990",
+        "quellen": ["https://en.wikipedia.org/wiki/Benetton_B190", "https://en.wikipedia.org/wiki/McLaren_MP4/5"]
+      },
+      "ferrari": {
+        "motor": "Ferrari Tipo 036, ab Imola 037, 3,5 l V12 (65 Grad), Werksmotor",
+        "ps": 690,
+        "sicher": "mittel",
+        "spanne": "680-715",
+        "hinweis": "680 bhp umgerechnet; laut Quelle knapp unter Honda, weniger elastisch aus langsamen Kurven. Für die spätere 037-Ausbaustufe keine eigene Zahl gefunden",
+        "quellen": ["https://en.wikipedia.org/wiki/Ferrari_641"]
+      },
+      "williams": {
+        "motor": "Renault RS2, 3,5 l V10 (67 Grad), Werksmotor",
+        "ps": 669,
+        "sicher": "mittel",
+        "spanne": "659-680",
+        "hinweis": "660 bhp (Autocourse 1990) umgerechnet",
+        "quellen": ["https://en.wikipedia.org/wiki/Williams_FW13"]
+      },
+      "benetton": {
+        "motor": "Ford-Cosworth HBA4, 3,5 l V8 (75 Grad), exklusiver Werksmotor",
+        "ps": 659,
+        "sicher": "mittel",
+        "spanne": "650-670",
+        "hinweis": "650 bhp umgerechnet; kleiner und leichter als V10/V12",
+        "quellen": ["https://en.wikipedia.org/wiki/Benetton_B190"]
+      },
+      "tyrrell": {
+        "motor": "Ford-Cosworth DFR, 3,5 l V8 (90 Grad), Kundenmotor, von Brian Hart vorbereitet",
+        "ps": 629,
+        "sicher": "mittel",
+        "spanne": "615-640",
+        "hinweis": "620 bhp umgerechnet (bester DFR-Stand); auf schnellen Strecken laut Saisonrückblick klar untermotorisiert",
+        "quellen": ["https://en.wikipedia.org/wiki/Tyrrell_019", "https://www.grandprix.com/features/joe-saward/news-feature-team-by-team-review-of-1990.html"]
+      },
+      "lotus": {
+        "motor": "Lamborghini LE3512, 3,5 l V12 (80 Grad), Kundenmotor",
+        "ps": 649,
+        "sicher": "mittel",
+        "spanne": "635-660",
+        "hinweis": "640 bhp umgerechnet; Motor schwer und durstig",
+        "quellen": ["https://en.wikipedia.org/wiki/Lamborghini_V12"]
+      },
+      "brabham": {
+        "motor": "Judd EV, 3,5 l V8 (76 Grad), Kundenmotor",
+        "ps": 640,
+        "sicher": "niedrig",
+        "spanne": "629-660",
+        "hinweis": "Quelle nennt für den EV nur 620-680 hp über die gesamte Laufzeit (1989 bis 1991); Wert für 1990 daraus abgeleitet, etwas über DFR, unter Ford HB",
+        "quellen": ["https://en.wikipedia.org/wiki/Judd_(engine)"]
+      },
+      "arrows": {
+        "motor": "Ford-Cosworth DFR, 3,5 l V8 (90 Grad), Kundenmotor",
+        "ps": 619,
+        "sicher": "niedrig",
+        "spanne": "605-630",
+        "hinweis": "keine teamspezifische Zahl; aus Kunden-DFR abgeleitet (Projektrahmen DFR 613, Tyrrell-Spitzenstand 629)",
+        "quellen": ["https://en.wikipedia.org/wiki/Cosworth_DFV"]
+      },
+      "leytonhouse": {
+        "motor": "Judd EV, 3,5 l V8 (76 Grad), Kundenmotor",
+        "ps": 640,
+        "sicher": "niedrig",
+        "spanne": "629-660",
+        "hinweis": "wie Brabham, gleiche Motorbasis",
+        "quellen": ["https://en.wikipedia.org/wiki/Judd_(engine)"]
+      },
+      "larrousse": {
+        "motor": "Lamborghini LE3512, 3,5 l V12 (80 Grad), Kundenmotor (Lola LC89B/LC90)",
+        "ps": 649,
+        "sicher": "mittel",
+        "spanne": "635-660",
+        "hinweis": "640 bhp umgerechnet, gleicher Motor wie Lotus",
+        "quellen": ["https://en.wikipedia.org/wiki/Lamborghini_V12"]
+      },
+      "ligier": {
+        "motor": "Ford-Cosworth DFR, 3,5 l V8 (90 Grad), Kundenmotor",
+        "ps": 613,
+        "sicher": "niedrig",
+        "spanne": "600-629",
+        "hinweis": "keine teamspezifische Zahl; Standard-Kunden-DFR laut Projektrahmen",
+        "quellen": ["https://en.wikipedia.org/wiki/Cosworth_DFV"]
+      },
+      "minardi": {
+        "motor": "Ford-Cosworth DFR, 3,5 l V8 (90 Grad), Kundenmotor",
+        "ps": 613,
+        "sicher": "niedrig",
+        "spanne": "600-629",
+        "hinweis": "keine teamspezifische Zahl; Standard-Kunden-DFR",
+        "quellen": ["https://en.wikipedia.org/wiki/Cosworth_DFV"]
+      },
+      "dallara": {
+        "motor": "Ford-Cosworth DFR, 3,5 l V8 (90 Grad), Kundenmotor (BMS Scuderia Italia)",
+        "ps": 613,
+        "sicher": "niedrig",
+        "spanne": "600-629",
+        "hinweis": "keine teamspezifische Zahl; Standard-Kunden-DFR",
+        "quellen": ["https://en.wikipedia.org/wiki/Cosworth_DFV"]
+      },
+      "osella": {
+        "motor": "Ford-Cosworth DFR, 3,5 l V8 (90 Grad), Kundenmotor",
+        "ps": 613,
+        "sicher": "niedrig",
+        "spanne": "600-629",
+        "hinweis": "keine teamspezifische Zahl; Standard-Kunden-DFR",
+        "quellen": ["https://en.wikipedia.org/wiki/Cosworth_DFV"]
+      },
+      "ags": {
+        "motor": "Ford-Cosworth DFR, 3,5 l V8 (90 Grad), Kundenmotor",
+        "ps": 613,
+        "sicher": "niedrig",
+        "spanne": "600-629",
+        "hinweis": "keine teamspezifische Zahl; Standard-Kunden-DFR",
+        "quellen": ["https://en.wikipedia.org/wiki/Cosworth_DFV"]
+      },
+      "onyx": {
+        "motor": "Ford-Cosworth DFR, 3,5 l V8 (90 Grad), Kundenmotor (ab Saisonmitte als Monteverdi)",
+        "ps": 613,
+        "sicher": "niedrig",
+        "spanne": "600-629",
+        "hinweis": "keine teamspezifische Zahl; Standard-Kunden-DFR",
+        "quellen": ["https://en.wikipedia.org/wiki/Cosworth_DFV"]
+      },
+      "eurobrun": {
+        "motor": "Judd CV, 3,5 l V8 (90 Grad), Kundenmotor, Vorjahrestechnik",
+        "ps": 618,
+        "sicher": "mittel",
+        "spanne": "598-620",
+        "hinweis": "rund 610 bhp (Stand 1989) umgerechnet",
+        "quellen": ["https://en.wikipedia.org/wiki/Judd_(engine)"]
+      },
+      "coloni": {
+        "motor": "Subaru 1235 (Motori Moderni), 3,5 l Boxer-12, bis Großbritannien; ab Deutschland Ford-Cosworth DFR V8 (Langford & Peck)",
+        "ps": 567,
+        "ps_spaeter": 613,
+        "sicher": "mittel",
+        "spanne": "550-570 (Subaru), 600-629 (DFR)",
+        "hinweis": "Subaru: 417 kW = 567 PS laut Quelle, Ziel waren 608 PS; Motor 159 kg schwer, Auto laut Saisonartikel rund 140 kg über Mindestgewicht. DFR-Wert abgeleitet (niedrig)",
+        "quellen": ["https://en.wikipedia.org/wiki/Coloni_C3", "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"]
+      },
+      "life": {
+        "motor": "Life F35, 3,5 l W12 (Rocchi), Eigenbau; in Portugal und Spanien Judd CV V8",
+        "ps": 477,
+        "ps_spaeter": 618,
+        "sicher": "niedrig",
+        "spanne": "300-480",
+        "hinweis": "470 bhp ist die verbreitete Angabe (umgerechnet 477 PS); Giacomelli sprach laut Quelle von kaum mehr als 300 bhp. Auto mit 530 kg eines der schwersten",
+        "quellen": ["https://en.wikipedia.org/wiki/Life_Racing_Engines"]
+      }
+    },
+    "gewicht_hinweise": [
+      {"team": "coloni", "text": "mit Subaru-Motor rund 140 kg (300 lb) über dem Mindestgewicht", "quelle": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"},
+      {"team": "life", "text": "530 kg, also etwa 30 kg über dem Mindestgewicht", "quelle": "https://en.wikipedia.org/wiki/Life_Racing_Engines"}
+    ],
+    "konzept": [
+      {
+        "team": "tyrrell",
+        "cd": 0.97,
+        "beleg": "gut",
+        "grund": "Tyrrell 019 mit erster Hochnase und geknicktem Frontflügel: mehr Luft unter das Auto, weniger Luftwiderstand bei gleichem Abtrieb, flachere Flügel möglich. Glich die DFR-Schwäche auf langsamen Strecken aus, auf schnellen Strecken trotzdem zu wenig Leistung. Faktor geschätzt.",
+        "quelle": "https://primotipo.com/2014/09/16/tyrrell-019-ford-1990-and-tyrrell-innovation/"
+      },
+      {
+        "team": "leytonhouse",
+        "cd": 0.96,
+        "beleg": "gut",
+        "grund": "CG901 (Newey) aerodynamisch sehr effizient, aber extrem empfindlich auf Nicken und Rollen, nur auf sehr glatten Strecken gut. In Paul Ricard auf der Mistral-Geraden laut Berichten schneller als der Ferrari. Windkanalfehler bis zur B-Version (Frankreich) korrigiert. Faktor geschätzt; gilt eher für die B-Version.",
+        "quelle": "https://www.autosport.com/f1/news/the-paul-ricard-trick-behind-capellis-1990-french-gp-shock-5296421/5296421/"
+      },
+      {
+        "team": "ferrari",
+        "cd": 1.0,
+        "beleg": "schwach",
+        "grund": "Ferrari 641: Quelle beschreibt überarbeitete Aerodynamik und sehr gutes Handling, aber keine Aussage zum Luftwiderstand gefunden. Deshalb neutral.",
+        "quelle": "https://en.wikipedia.org/wiki/Ferrari_641"
+      }
+    ]
+  },
+  "1995": {
+    "regeln": "Hubraum von 3,5 auf 3,0 Liter reduziert (Ziel etwa 100 PS weniger), Nachtanken erlaubt. Mindestgewicht 595 kg MIT Fahrer (erstmals inklusive Fahrer; vorher 505 bis 515 kg ohne Fahrer). Bodenfreiheit plus 50 mm (Stufenboden), kleinere Flügel und Diffusor, Abtrieb etwa 30 bis 40 % geringer. Einheitsreifen in der Praxis: alle Teams Goodyear.",
+    "regeln_quellen": ["https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"],
+    "reifen": {
+      "goodyear": ["benetton", "williams", "ferrari", "mclaren", "jordan", "ligier", "sauber", "footwork", "tyrrell", "minardi", "forti", "pacific", "simtek", "larrousse"],
+      "pirelli": []
+    },
+    "teams": {
+      "benetton": {
+        "motor": "Renault RS7, 3,0 l V10 (67 Grad), Werksmotor",
+        "ps": 715,
+        "sicher": "mittel",
+        "spanne": "684-760",
+        "hinweis": "Infobox 675-700 bhp (684-710 PS); andere Angaben bis 750 hp. Mittlerer Wert, passt zwischen Projektrahmen 1994 (821, 3,5 l) und 1996 (745)",
+        "quellen": ["https://en.wikipedia.org/wiki/Benetton_B195"]
+      },
+      "williams": {
+        "motor": "Renault RS7, 3,0 l V10 (67 Grad), Werksmotor, identisch zu Benetton",
+        "ps": 715,
+        "sicher": "mittel",
+        "spanne": "684-760",
+        "hinweis": "gleicher Motor wie Benetton laut Quelle",
+        "quellen": ["https://en.wikipedia.org/wiki/Benetton_B195"]
+      },
+      "ferrari": {
+        "motor": "Ferrari Tipo 044/1, 3,0 l V12 (75 Grad), Werksmotor",
+        "ps": 710,
+        "sicher": "mittel",
+        "spanne": "700-760",
+        "hinweis": "Infobox 700-760 PS bei 17.000/min; Saisonmittel im unteren Drittel angesetzt, praktisch gleichauf mit Renault",
+        "quellen": ["https://en.wikipedia.org/wiki/Ferrari_412_T2"]
+      },
+      "mclaren": {
+        "motor": "Mercedes-Benz FO 110 (Ilmor), 3,0 l V10 (75 Grad), Werksmotor",
+        "ps": 700,
+        "sicher": "mittel",
+        "spanne": "680-710",
+        "hinweis": "690 bhp umgerechnet; Motor laut Quelle oft unzuverlässig",
+        "quellen": ["https://en.wikipedia.org/wiki/McLaren_MP4/10"]
+      },
+      "jordan": {
+        "motor": "Peugeot A10, 3,0 l V10 (72 Grad), Werksmotor",
+        "ps": 705,
+        "sicher": "niedrig",
+        "spanne": "680-760",
+        "hinweis": "Infobox 700-760 hp, der Artikeltext nennt den Motor aber untermotorisiert und unzuverlässig. Widerspruch, deshalb unterer Bereich",
+        "quellen": ["https://en.wikipedia.org/wiki/Jordan_195"]
+      },
+      "ligier": {
+        "motor": "Mugen-Honda MF-301H, 3,0 l V10 (72 Grad), Werksunterstützung",
+        "ps": 679,
+        "sicher": "mittel",
+        "spanne": "665-690",
+        "hinweis": "670 hp umgerechnet",
+        "quellen": ["https://en.wikipedia.org/wiki/Ligier_JS41"]
+      },
+      "sauber": {
+        "motor": "Ford-Cosworth ECA Zetec-R, 3,0 l V8 (75 Grad), Ford-Werksmotor",
+        "ps": 645,
+        "sicher": "mittel",
+        "spanne": "608-660",
+        "hinweis": "Quelle: rund 600 bhp bei Einführung, entwickelt auf 610 (608-619 PS). Projektrahmen 1994 (750 PS bei 3,5 l) ergäbe hubraumskaliert rund 643. Mittlerer bis oberer Wert gewählt",
+        "quellen": ["https://en.wikipedia.org/wiki/Ford-Cosworth_EC_/_ED_engine"]
+      },
+      "footwork": {
+        "motor": "Hart 830, 3,0 l V8 (72 Grad), Kundenmotor",
+        "ps": 670,
+        "sicher": "niedrig",
+        "spanne": "640-690",
+        "hinweis": "Infobox 680 hp (690 PS), Artikeltext aber 'down on power and unreliable'; deshalb unter dem Infobox-Wert angesetzt",
+        "quellen": ["https://en.wikipedia.org/wiki/Footwork_FA16"]
+      },
+      "tyrrell": {
+        "motor": "Yamaha OX10C (Judd-Basis), 3,0 l V10 (72 Grad), Werksunterstützung",
+        "ps": 685,
+        "sicher": "niedrig",
+        "spanne": "665-690",
+        "hinweis": "680 hp umgerechnet 690 PS (StatsF1 über Wikipedia), leicht darunter angesetzt",
+        "quellen": ["https://en.wikipedia.org/wiki/Tyrrell_023"]
+      },
+      "minardi": {
+        "motor": "Ford-Cosworth EDM, 3,0 l V8 (75 Grad), Kundenmotor (beste ED-Ausführung)",
+        "ps": 615,
+        "sicher": "niedrig",
+        "spanne": "595-640",
+        "hinweis": "keine eigene Zahl; aus ED abgeleitet, leicht über den übrigen ED-Kunden",
+        "quellen": ["https://en.wikipedia.org/wiki/Forti_FG01", "https://en.wikipedia.org/wiki/Ford-Cosworth_EC_/_ED_engine"]
+      },
+      "forti": {
+        "motor": "Ford-Cosworth EDD, 3,0 l V8 (75 Grad), Kundenmotor",
+        "ps": 605,
+        "sicher": "niedrig",
+        "spanne": "590-660",
+        "hinweis": "Quelle: geschätzt 100 bhp weniger als der Renault V10; Datentabelle nennt dagegen 630-660 hp. Wert folgt der 100-bhp-Aussage",
+        "quellen": ["https://en.wikipedia.org/wiki/Forti_FG01"]
+      },
+      "pacific": {
+        "motor": "Ford-Cosworth EDC, 3,0 l V8 (75 Grad), Kundenmotor",
+        "ps": 605,
+        "sicher": "niedrig",
+        "spanne": "590-640",
+        "hinweis": "keine eigene Zahl; wie Forti aus ED abgeleitet",
+        "quellen": ["https://en.wikipedia.org/wiki/Forti_FG01"]
+      },
+      "simtek": {
+        "motor": "Ford-Cosworth EDB, 3,0 l V8 (75 Grad), Kundenmotor",
+        "ps": 605,
+        "sicher": "niedrig",
+        "spanne": "590-640",
+        "hinweis": "keine eigene Zahl; wie Forti aus ED abgeleitet",
+        "quellen": ["https://en.wikipedia.org/wiki/Forti_FG01"]
+      },
+      "larrousse": {
+        "motor": "Ford-Cosworth ED, 3,0 l V8 (75 Grad), Kundenmotor; Team trat nicht an, LH95 wurde nie gebaut",
+        "ps": 605,
+        "sicher": "niedrig",
+        "spanne": "590-640",
+        "hinweis": "rein hypothetisch, Wert des Kunden-ED übernommen",
+        "quellen": ["https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"]
+      }
+    },
+    "gewicht_hinweise": [
+      {"team": "forti", "text": "FG01 zu Saisonbeginn deutlich übergewichtig (über die Saison mehr als 60 kg abgespeckt, Mindestgewicht erst ab Silverstone), einziges Auto mit Handschaltung (Halbautomatik später rund 0,5 s pro Runde wert)", "quelle": "https://en.wikipedia.org/wiki/Forti_FG01"}
+    ],
+    "konzept": [
+      {
+        "team": "ligier",
+        "cd": 1.0,
+        "beleg": "gut",
+        "grund": "JS41 dem Benetton B195 auffallend ähnlich, Getriebe von Benetton. Aerodynamik deshalb wie Benetton ansetzen, kein eigener Luftwiderstands-Beleg.",
+        "quelle": "https://en.wikipedia.org/wiki/Ligier_JS41"
+      },
+      {
+        "team": "forti",
+        "cd": 1.04,
+        "beleg": "schwach",
+        "grund": "FG01 kantig und bullig, schlechte Aerodynamik, anfangs ohne Airbox. Zum Luftwiderstand direkt sagt die Quelle nichts, Faktor nur aus der Beschreibung abgeleitet.",
+        "quelle": "https://en.wikipedia.org/wiki/Forti_FG01"
+      },
+      {
+        "team": "mclaren",
+        "cd": 1.0,
+        "beleg": "schwach",
+        "grund": "MP4/10: Handlingprobleme durch zu wenig Grip an der Vorderachse, aber keine Aussage zum Luftwiderstand gefunden. Neutral.",
+        "quelle": "https://en.wikipedia.org/wiki/McLaren_MP4/10"
+      }
+    ],
+    "konzept_hinweis": "Für 1995 wurden keine belastbaren Quellen zu Luftwiderstands-Unterschieden (Speed-Trap-Daten, Technikanalysen) gefunden. Teamstärke besser über Motorleistung und Abtrieb aus Quali-Abständen abbilden."
+  },
+  "2016": {
+    "regeln": "1,6-Liter-V6-Turbo-Hybrid (MGU-K 120 kW, MGU-H), Kraftstoffdurchfluss maximal 100 kg/h. Mindestgewicht 702 kg MIT Fahrer. Alle Teams auf Pirelli. Toro Rosso fuhr mit Sondergenehmigung den Ferrari-Vorjahresmotor (Typ 060) ohne Weiterentwicklung.",
+    "regeln_quellen": [
+      "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship",
+      "https://www.f1technical.net/news/28346"
+    ],
+    "reifen": {
+      "pirelli": ["mercedes", "ferrari", "redbull", "williams", "forceindia", "tororosso", "mclaren", "haas", "renault", "sauber", "manor"]
+    },
+    "leistung_hinweis": "Gesamtleistung inklusive MGU-K im Quali-Modus. Rohquellen: BBC/Benson Februar 2016 Mercedes 950, Ferrari 930, Renault knapp 900, Honda 850; Forenangabe Abu Dhabi (unbestätigt) 975/970/940/920; Autosport: Honda Ende 2016 rund 80 bhp hinter Mercedes; Paddy Lowe (März 2016): schwächster Motor sei der 2015er Ferrari im Toro Rosso, Renault und Honda nur 1 bis 2 % hinter den Besten. Absolutwerte an den Projektrahmen 2017 (Mercedes 949) angepasst, also Saisonmittel etwas unter den Rohquellen.",
+    "teams": {
+      "mercedes": {
+        "motor": "Mercedes PU106C Hybrid, 1,6 l V6 Turbo, Werksmotor",
+        "ps": 930,
+        "sicher": "mittel",
+        "spanne": "915-975",
+        "quellen": ["https://f1grandprix.motorionline.com/en/bbc-motore-mercedes-950-cv-ferrari-vicina-honda-cento-cv-in-meno/"]
+      },
+      "ferrari": {
+        "motor": "Ferrari 061, 1,6 l V6 Turbo, Werksmotor",
+        "ps": 912,
+        "sicher": "mittel",
+        "spanne": "895-970",
+        "hinweis": "rund 20 PS hinter Mercedes laut BBC-Schätzung",
+        "quellen": ["https://f1grandprix.motorionline.com/en/bbc-motore-mercedes-950-cv-ferrari-vicina-honda-cento-cv-in-meno/"]
+      },
+      "redbull": {
+        "motor": "TAG Heuer F1-2016 (umbenannter Renault R.E.16), 1,6 l V6 Turbo, Kundenmotor auf Werksstand",
+        "ps": 885,
+        "sicher": "mittel",
+        "spanne": "870-940",
+        "hinweis": "Renault knapp 900 laut BBC, also rund 45 bis 50 PS hinter Mercedes",
+        "quellen": ["https://f1grandprix.motorionline.com/en/bbc-motore-mercedes-950-cv-ferrari-vicina-honda-cento-cv-in-meno/"]
+      },
+      "williams": {
+        "motor": "Mercedes PU106C Hybrid, 1,6 l V6 Turbo, Kundenmotor",
+        "ps": 930,
+        "sicher": "mittel",
+        "spanne": "910-975",
+        "hinweis": "gleiche Hardware wie das Werksteam; mögliche Unterschiede bei Quali-Modus und Kraftstoff nicht belegt",
+        "quellen": ["https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"]
+      },
+      "forceindia": {
+        "motor": "Mercedes PU106C Hybrid, 1,6 l V6 Turbo, Kundenmotor",
+        "ps": 930,
+        "sicher": "mittel",
+        "spanne": "910-975",
+        "hinweis": "gleiche Hardware wie das Werksteam",
+        "quellen": ["https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"]
+      },
+      "tororosso": {
+        "motor": "Ferrari 060 (Vorjahresmotor 2015), 1,6 l V6 Turbo, Kundenmotor ohne Weiterentwicklung",
+        "ps": 868,
+        "sicher": "niedrig",
+        "spanne": "850-890",
+        "hinweis": "Keine Zahl gefunden. Laut Mercedes-GPS-Daten (Lowe, März 2016) schwächster Motor im Feld; über die Saison fiel er weiter zurück, weil eingefroren. Verhältnis zu Honda unsicher (siehe mclaren)",
+        "quellen": ["https://www.espn.com.au/f1/story/_/id/15138570/mercedes-data-shows-toro-rosso-least-powerful-engine-f1"]
+      },
+      "mclaren": {
+        "motor": "Honda RA616H, 1,6 l V6 Turbo, Werksmotor",
+        "ps": 858,
+        "sicher": "niedrig",
+        "spanne": "845-920",
+        "hinweis": "BBC Februar 2016: 850, rund 100 hinter Mercedes; Autosport: Ende 2016 rund 80 bhp (81 PS) Rückstand; Lowe sah Honda dagegen vor dem 2015er Ferrari. Mittlerer Wert: rund 72 PS hinter Mercedes",
+        "quellen": ["https://www.autosport.com/f1/news/why-honda-is-still-up-against-it-5105308/5105308/", "https://f1grandprix.motorionline.com/en/bbc-motore-mercedes-950-cv-ferrari-vicina-honda-cento-cv-in-meno/"]
+      },
+      "haas": {
+        "motor": "Ferrari 061, 1,6 l V6 Turbo, Kundenmotor (aktueller Stand)",
+        "ps": 912,
+        "sicher": "mittel",
+        "spanne": "890-970",
+        "hinweis": "gleiche Hardware wie das Werksteam",
+        "quellen": ["https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"]
+      },
+      "renault": {
+        "motor": "Renault R.E.16, 1,6 l V6 Turbo, Werksmotor",
+        "ps": 885,
+        "sicher": "mittel",
+        "spanne": "870-940",
+        "quellen": ["https://f1grandprix.motorionline.com/en/bbc-motore-mercedes-950-cv-ferrari-vicina-honda-cento-cv-in-meno/"]
+      },
+      "sauber": {
+        "motor": "Ferrari 061, 1,6 l V6 Turbo, Kundenmotor (aktueller Stand)",
+        "ps": 912,
+        "sicher": "mittel",
+        "spanne": "890-970",
+        "hinweis": "gleiche Hardware wie das Werksteam",
+        "quellen": ["https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"]
+      },
+      "manor": {
+        "motor": "Mercedes PU106C Hybrid, 1,6 l V6 Turbo, Kundenmotor",
+        "ps": 930,
+        "sicher": "mittel",
+        "spanne": "910-975",
+        "hinweis": "gleiche Hardware wie das Werksteam",
+        "quellen": ["https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"]
+      }
+    },
+    "speedtrap_melbourne_quali_kmh": {
+      "forceindia": 330.3,
+      "williams": 329.8,
+      "mercedes": 328.1,
+      "ferrari": 325.9,
+      "manor": 325.8,
+      "haas": 325.3,
+      "sauber": 322.7,
+      "renault": 321.4,
+      "tororosso": 320.9,
+      "redbull": 320.8,
+      "mclaren": 320.4,
+      "quelle": "https://f1technical.net/news/20281",
+      "hinweis": "jeweils schnellerer Fahrer; Werte mischen Motorleistung und Luftwiderstand"
+    },
+    "konzept": [
+      {
+        "team": "redbull",
+        "cd": 1.04,
+        "beleg": "gut",
+        "grund": "RB12 mit starker Anstellung (High Rake) und viel Abtrieb, der Unterboden wirkt wie ein großer Diffusor; mehr Luftwiderstand am Oberkörper, teilweise durch Absenken des Hecks bei hohem Tempo ausgeglichen. Speed-Trap Melbourne nur 320,8 km/h, gleichauf mit Renault-Werksteam trotz viel mehr Abtrieb. Faktor geschätzt.",
+        "quelle": "https://www.motorsport.com/f1/news/tech-analysis-explaining-red-bulls-mysterious-pace-improvement-806747/806747/"
+      },
+      {
+        "team": "williams",
+        "cd": 0.97,
+        "beleg": "gut",
+        "grund": "FW38 übernimmt das Konzept wenig Luftwiderstand und hohe Endgeschwindigkeit vom FW36; Speed-Trap Melbourne 329,8 km/h (Platz 2 und 3), dafür Abtriebsschwäche in langsamen Kurven. Faktor geschätzt.",
+        "quelle": "https://www.autosport.com/f1/news/technical-analysis-williams-fw38-5105193/5105193/"
+      },
+      {
+        "team": "forceindia",
+        "cd": 0.97,
+        "beleg": "gut",
+        "grund": "VJM09 Schnellster der Speed-Trap in Melbourne (330,3 km/h), laut Quelle die ganze Saison unter den Schnellsten auf der Geraden, schneller als das Mercedes-Werksteam mit gleichem Motor. Faktor geschätzt.",
+        "quelle": "https://f1technical.net/news/20281"
+      },
+      {
+        "team": "manor",
+        "cd": 0.98,
+        "beleg": "schwach",
+        "grund": "MRT05 mit Mercedes-Motor in Melbourne 325,8 km/h, also auf Höhe Ferrari und knapp hinter dem Werks-Mercedes bei deutlich weniger Abtrieb. Für einen ausgeprägt niedrigen Luftwiderstand kein klarer Beleg gefunden; Stärke kam vor allem vom Motor. Faktor geschätzt.",
+        "quelle": "https://f1technical.net/news/20281"
+      },
+      {
+        "team": "tororosso",
+        "cd": 1.03,
+        "beleg": "schwach",
+        "grund": "STR11 trotz Ferrari-Motor am Ende der Speed-Trap (320,9 km/h, rund 5 km/h hinter den anderen Ferrari-Autos). Ursache ist eine Mischung aus Vorjahresmotor und abtriebsstarkem Chassis; Aufteilung nicht belegt. Faktor geschätzt.",
+        "quelle": "https://f1technical.net/news/20281"
+      },
+      {
+        "team": "mclaren",
+        "cd": 1.02,
+        "beleg": "schwach",
+        "grund": "MP4-31 Letzter der Speed-Trap in Melbourne (320,4 km/h); Honda nannte fehlende Leistung im oberen Bereich als Hauptproblem, der Anteil des Luftwiderstands ist nicht belegt. Faktor geschätzt.",
+        "quelle": "https://www.autosport.com/f1/news/honda-to-focus-on-top-end-speed-after-mclarens-good-start-to-2016-4991263/4991263/"
+      }
+    ]
+  }
+}
